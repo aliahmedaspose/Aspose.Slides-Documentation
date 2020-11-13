@@ -2,7 +2,7 @@
 title: Slide Layout
 type: docs
 weight: 60
-url: /net/edit-slide-layout/
+url: /net/slide-layout/
 ---
 
 
@@ -21,7 +21,7 @@ In the example given below, we have added Layout Slides to Presentation.
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Slides-Layout-AddLayoutSlides-AddLayoutSlides.cs" >}}
 
 
-## **Set the Size and Type of a Slide**
+## **Set Size and Type of Slide**
 [SlideSize.Type](https://apireference.aspose.com/net/slides/aspose.slides/slidesize/properties/type) and [SlideSize.Size](https://apireference.aspose.com/net/slides/aspose.slides/slidesize/properties/size) are the properties of presentation class which could be set or get as shown below in the example.
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Slides-Layout-SetSizeAndType-SetSizeAndType.cs" >}}
@@ -48,12 +48,12 @@ To set footer and child footer a slide using its index position in the slides co
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Slides-Layout-SetChildFooter-SetChildFooter.cs" >}}
 
-## **Set the Slide Size with respect to Content Scaling**
+## **Set Slide Size with Respect to Content Scaling**
 You can also set the slide size by using it with different ways of content scaling.[SlideSize.Type](https://apireference.aspose.com/net/slides/aspose.slides/slidesize/properties/type) and [SlideSize.Size](https://apireference.aspose.com/net/slides/aspose.slides/slidesize/properties/size) are the properties of presentation class which could be set or get as shown below in the example.
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Slides-Layout-SetSlideSizeScale-SetSlideSizeScale.cs" >}}
 
-## **Set the page size when generating PDF**
+## **Set Page Size when Generating PDF**
 Slides in presentation could be set as different paper sizes. The [SlideSize.Type](https://apireference.aspose.com/net/slides/aspose.slides/slidesize/properties/type) property can be used to set the slide size. Developers can set the size of a slide as shown below in the example.
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Slides-Layout-SetPDFPageSize-SetPDFPageSize.cs" >}}

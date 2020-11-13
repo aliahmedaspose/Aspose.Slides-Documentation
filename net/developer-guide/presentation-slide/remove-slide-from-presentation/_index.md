@@ -5,7 +5,7 @@ weight: 30
 url: /net/remove-slide-from-presentation/
 ---
 
-## **Remove Slide from Presentation**
+## Overview
 Sometimes, developers may need to remove a slide from the presentation due to any reason. Aspose.Slides for .NET offers few methods to do so. In this topic, we will explore these methods to accomplish this task. We know that [Presentation](https://apireference.aspose.com/net/slides/aspose.slides/presentation) class in Aspose.Slides for .NET represents a presentation file. [Presentation](https://apireference.aspose.com/net/slides/aspose.slides/presentation) class encapsulates a [ISlideCollection](https://apireference.aspose.com/net/slides/aspose.slides/islidecollection) that acts as a repository of all slides that are the part of the presentation. Developers can remove a slide from this Slides collection in two ways:
 
 1. Using Slide Reference

@@ -7,7 +7,7 @@ keywords: "convert pptx to html, ppt to html, powerpoint to html, save pptx as h
 description: "Convert PowerPoint to HTML of any format: PPTX to HTML, PPT to HTML. Save PPTX to HTML and use PowerPoint HTML export."
 ---
 
-# **About PowerPoint to HTML Conversion**
+## **About PowerPoint to HTML Conversion**
 [**Aspose.Slides for .NET** ](https://products.aspose.com/slides/net)provides support for converting a PowerPoint presentation to HTML. With Aspose.Slides API you may set up the conversion process to enhance the resulting HTML. Both PPT to HTML and PPTX to HTML conversions are available.
 
 There are many ways to convert PPT(X) to HTML. You could use PowerPoint native tools or online web tools to do that, however, they will cover only the basic scenarios to convert PPT(X) to HTML. If you need to built-in an HTML result to your website or integrate it into an enterprise-level solution - you would rather need to have more flexibility in PPT(X) to HTML conversion.
@@ -42,50 +42,50 @@ Find other live [**Aspose.Slides Conversion**](https://products.aspose.app/slide
 {{% /alert %}} 
 
 
-# **Convert Powerpoint to HTML**
+## **Convert Powerpoint to HTML**
 Convert PPT or PPTX presentation to HTML file using Aspose.Slides. For that, save a PowerPoint presentation to HTML in two-lines:
 
 1. Create an instance of [Presentation](https://apireference.aspose.com/net/slides/aspose.slides/presentation) class.
 1. Call [**Save** ](https://apireference.aspose.com/slides/net/aspose.slides/presentation/methods/save)method from it specifying the resulting file as an HTML file:
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Presentations-Conversion-ConvertWholePresentationToHTML-ConvertWholePresentationToHTML.cs" >}}
-# **Convert Powerpoint to Responsive HTML**
+## **Convert Powerpoint to Responsive HTML**
 Convert PPT(X) presentation to Responsive HTML, which will ensure the generated HTML will be displayed properly across all browsers and devices. [**ResponsiveHtmlController** ](https://apireference.aspose.com/net/slides/aspose.slides.export/responsivehtmlcontroller)class provides the possibility to generate responsive HTML files. This controller can be used in the same manner as other HTML controllers:
 
 
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Presentations-Conversion-ConvertPresentationToResponsiveHTML-ConvertPresentationToResponsiveHTML.cs" >}}
-# **Convert Powerpoint to HTML with Notes**
+## **Convert Powerpoint to HTML with Notes**
 The following example shows how to convert PPT(X) presentation to HTML with the rendered speaker notes. Using the options of [**HtmlOptions**](https://apireference.aspose.com/net/slides/aspose.slides.export/htmloptions) class and [**INotesCommentsLayoutingOptions** ](https://apireference.aspose.com/net/slides/aspose.slides.export/inotescommentslayoutingoptions/properties/index)interface you can render speaker notes to HTML:
 
 {{< gist "aspose-com-gists" "a56eda38c01ad33dc653116c7bae4293" "Examples-CSharp-Presentations-Conversion-RenderingNotesWhileConvertingToHTML-RenderingNotesWhileConvertingToHTML.cs" >}}
-# **Convert Powerpoint to HTML with Original Fonts**
+## **Convert Powerpoint to HTML with Original Fonts**
 Preserve original fonts that are used in presentation while converting PPT(X) to HTML. [**EmbedAllFontsHtmlController** ](https://apireference.aspose.com/slides/net/aspose.slides.export/embedallfontshtmlcontroller)class preserves the original fonts in generated HTML:
 
 
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Presentations-Conversion-ConvertingPresentationToHTMLWithPreservingOriginalFonts-ConvertingPresentationToHTMLWithPreservingOriginalFonts.cs" >}}
-# **Convert Slide to HTML**
+## **Convert Slide to HTML**
 Convert a separate presentation slide to HTML. Fo that use the same [**Save**](https://apireference.aspose.com/net/slides/aspose.slides/presentation/methods/save/index) method exposed by the [Presentation](https://apireference.aspose.com/net/slides/aspose.slides/presentation) class that is used to convert the whole PPT(X) presentation into a HTML document. The [**HtmlOptions**](https://apireference.aspose.com/net/slides/aspose.slides.export/htmloptions) class can be also used to set the additional conversion options:
 
 
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Presentations-Conversion-ConvertIndividualSlide-ConvertIndividualSlide.cs" >}}
-# **Save CSS and Images when Exporting To HTML**
+## **Save CSS and Images when Exporting To HTML**
 Use new CSS styles file to change the resulting styles of the HTML file while PPT(X) to HTML conversion with Aspose.Slides. Please review the example below how to use overridable methods to create a custom HTML document with a link to CSS file:
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Presentations-Conversion-SavingHTMLAndCSSFileWhenExportingIntoHTML-SavingHTMLAndCSSFileWhenExportingIntoHTML.cs" >}}
-# **Embed All Fonts When Converting Presentation to HTML**
+## **Embed All Fonts When Converting Presentation to HTML**
 Convert PPT(X) presentation to HTML with all its embedded fonts. [**EmbedAllFontsHtmlController** ](https://apireference.aspose.com/slides/net/aspose.slides.export/embedallfontshtmlcontroller)class is used to embed all presentation fonts into HTML document. EmbedAllFontsHtmlController has a parameterized constructor where an array of font names can be passed to prevent them from embedding. Some fonts, like Calibri or Arial, used in the presentation are not needed to be embedded (which leads the resulting HTML document to become larger) because almost every system already has them installed. The EmbedAllFontsHtmlController also supports inheritance and WriteFont method that is intended to be overridden:
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Presentations-Conversion-ConvertingPresentationToHtmlWithEmbedAllFontsHtmlController-ConvertingPresentationToHtmlWithEmbedAllFontsHtmlController.cs" >}}
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Presentations-Conversion-CustomHeaderAndFontsController-CustomHeaderAndFontsController.cs" >}}
-# **Support of SVG Responsive Property**
+## **Support of SVG Responsive Property**
 The code sample below shows how to export a PPT(X) presentation to HTML with the responsive layout:
 
 {{< gist "aspose-com-gists" "a56eda38c01ad33dc653116c7bae4293" "Examples-CSharp-Presentations-Conversion-ExportToHTMLWithResponsiveLayout-ExportToHTMLWithResponsiveLayout.cs" >}}
-# **Exporting Media Files to HTML file**
+## **Exporting Media Files to HTML file**
 In order to export media files from PPT(X) presentation to HTML. Please follow the steps below:
 
 1. Create an instance of [Presentation](https://apireference.aspose.com/net/slides/aspose.slides/presentation) class.

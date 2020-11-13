@@ -7,7 +7,7 @@ keywords: "Convert PowerPoint to JPG, "
 description: "Convert PowerPoint to JPG: PPT to JPG, PPTX to JPG, with Aspose.Slides API."
 ---
 
-# **About PowerPoint to JPG Conversion**
+## **About PowerPoint to JPG Conversion**
 With [**Aspose.Slides .NET API**](https://products.aspose.com/slides/net) you can convert PowerPoint PPT or PPTX presentation to JPG image. It is also possible to convert PPT/PPTX to BMP, PNG or SVG. With this features it's easy to implement your own presentation viewer, create  the thumbnail for every slide. This may be useful if you want to protect presentation slides from copywriting, demonstrate presentation in read-only mode. Aspose.Slides allows to convert the whole presentation or a certain slide into image formats. 
 
 
@@ -19,7 +19,7 @@ To see how Aspose.Slides API converts PPT/PPTX to JPG, you may try [**Aspose.Sl
 [![todo:image_alt_text](ppt-to-jpg.png)](https://products.aspose.app/slides/conversion)
 
 {{% /alert %}} 
-# **Convert PowerPoint PPT/PPTX to JPG**
+## **Convert PowerPoint PPT/PPTX to JPG**
 Here are the steps to convert PPT/PPTX to JPG:
 
 - Create an instance of [Presentation ](https://apireference.aspose.com/net/slides/aspose.slides/presentation)type.
@@ -35,11 +35,19 @@ Here are the steps to convert PPT/PPTX to JPG:
 {{< gist "aspose-com-gists" "ea7de1097bd23deee0a6d59674d5f465" "Convert-PPT-to-JPG.cs" >}}
 
 
-# **Convert PowerPoint PPT/PPTX to JPG with Customized Dimensions**
+## **Convert PowerPoint PPT/PPTX to JPG with Customized Dimensions**
 To change the dimension of the resulting thumbnail and JPG image, you can set the *ScaleX* and *ScaleY* for it. To do that, pass *ScaleX* and *ScaleY* values into [**ISlide.GetThumbnail(float scaleX, float scaleY)**](https://apireference.aspose.com/net/slides/aspose.slides.islide/getthumbnail/methods/6) method:
 
 {{< gist "aspose-com-gists" "ea7de1097bd23deee0a6d59674d5f465" "Convert-PPT-to-JPG-Customized-Scaling.cs" >}}
-# **See also**
+
+
+## **Render Comments when saving Presentation into Image**
+Aspose.Slides for .NET provides a facility to render comments of presentations or slide when converting those into images.  An example is given below that shows how to render comments of presentation into an image.
+
+{{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Rendering-Printing-RenderComments-RenderComments.cs" >}}
+
+
+## **See also**
 See other options to convert PPT/PPTX into image, like:
 
 - [PPT/PPTX to SVG conversion](/slides/net/presentation-viewer/)

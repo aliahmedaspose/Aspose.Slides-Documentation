@@ -111,7 +111,7 @@ Aspose.Slides for .NET now supports, Setting custom rotation angle for textframe
 In the example given below, we set the RotationAngle property.
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Text-CustomRotationAngleTextframe-CustomRotationAngleTextframe.cs" >}}
-## **Line Spacing of a Paragraph**
+## **Line Spacing of Paragraph**
 Aspose.Slides for .NET lets developers to set the properties of ParagraphFormat to deal with line spacing of the paragraph. The properties SpaceAfter, SpaceBefore and SpaceWithin could be set for different line spacing. This article explains how to set these properties of ParagraphFormat. Aspose.Slides for .NET provides a simple API for setting properties of ParagraphFormat:
 
 - Load a presentation with an AutoShape having some text in it.

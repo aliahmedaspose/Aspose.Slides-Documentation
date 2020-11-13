@@ -26,7 +26,7 @@ If you want to clone a slide and then use it within the same presentation file a
 In the example given below, we have cloned a slide (lying at the first position – zero index – of the presentation) to the end of the presentation.
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Slides-CRUD-CloneWithinSamePresentationToEnd-CloneWithinSamePresentationToEnd.cs" >}}
-## **Clone at Another Position with in Presentation.**
+## **Clone at Another Position with in Presentation**
 If you want to clone a slide and then use it within the same presentation file but at a different position, use the [InsertClone](https://apireference.aspose.com/net/slides/aspose.slides.ishapecollection/insertclone/methods/1) method:
 
 1. Create an instance of the [Presentation](https://apireference.aspose.com/net/slides/aspose.slides/presentation) class.

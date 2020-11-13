@@ -8,7 +8,7 @@ description: "PowerPoint Equations and Spreadsheet Formulas"
 ---
 
 
-# **About Chart Spreadsheet Formula in Presentation**
+## **About Chart Spreadsheet Formula in Presentation**
 **Chart spreadsheet** (or chart worksheet) in presentation is the data source of the chart. Chart spreadsheet contains data, which are represented on the chart in a graphic way. When you create a chart in PowerPoint, the worksheet associated with this chart is automatically created too. Chart worksheet is created for all types of charts: line chart, bar chart, sunburst chart, pie chart, etc. To see chart spreadsheet in PowerPoint you should double-click on the chart:
 
 ![todo:image_alt_text](chart-worksheet-formulas_1.png)
@@ -41,7 +41,7 @@ The following functionality is supported for formulas in Aspose.Slides:
 
 
 Typically, spreadsheets store the last calculated formula values. If after presentation loading, the chart data were not changed - **IChartDataCell.Value** property it returns those values while reading. But, if spreadsheet data had been changed, while reading **ChartDataCell.Value** property it throws the **CellUnsupportedDataException** for the unsupported formulas. This is because when formulas are successfully parsed, the cell dependencies are determined and the correctness of the last values is determined. But, if the formula can not be parsed, the correctness of cell value cannot be guaranteed.
-# **Add Chart Spreadsheet Formula to Presentation**
+## **Add Chart Spreadsheet Formula to Presentation**
 First, add a chart to the first slide of a new presentation with 
 [IShapeCollection.Shapes.AddChart](https://apireference.aspose.com/net/slides/aspose.slides.ishapecollection/addchart/methods/1). 
 The worksheet of the chart is automatically created and can be accessed with 
@@ -115,25 +115,25 @@ object value2 = cell2.Value; // 2.1
 ``` 
 
 
-# **Logical Constants**
+## **Logical Constants**
 You can use logical constants such as *FALSE* and *TRUE* in cell formulas:
 
 
 
 
-# **Numerical Constants**
+## **Numerical Constants**
 Numbers can be used in common or scientific notations to create chart spreadsheet formula:
 
 
 
 
-# **String Constants**
+## **String Constants**
 String (or literal) constant is a specific value that is used as it is and does not change. String constants may be: dates, texts, numbers, etc.:
 
 
 
 
-# **Error Constants**
+## **Error Constants**
 Sometimes its not possible to calculate the result by the formula. In that case, the error code is shown in the cell instead of its value. Each type of error has a specific code:
 
 - #DIV/0! - formula tries to divide by zero.
@@ -148,7 +148,7 @@ Sometimes its not possible to calculate the result by the formula. In that case,
 
 
 
-# **Arithmetic Operators**
+## **Arithmetic Operators**
 You can use all the arithmetic operators in chart worksheet formulas:
 
 
@@ -166,7 +166,7 @@ You can use all the arithmetic operators in chart worksheet formulas:
 *Note*: To change the order of evaluation, enclose in parentheses the part of the formula to be calculated first.
 
 
-# **Comparison Operators**
+## **Comparison Operators**
 You can compare the values of cells with the comparison operators. When two values are compared by using these operators, the result is a logical value either *TRUE* or FALSE:
 
 
@@ -180,7 +180,7 @@ You can compare the values of cells with the comparison operators. When two valu
 |< (less than sign)|Less than|A2 < 3|
 |<= (less than or equal to sign)|Less than or equal to|A2 <= 3|
 
-# **A1-style Cell References**
+## **A1-style Cell References**
 **A1-style cell references** are used for the worksheets, where the column has a letter identifier (e.g. "*A*") and the row has a numeric identifier (e.g. "*1*"). A1-style cell references can be used in the following way:
 
 
@@ -199,7 +199,7 @@ Here is an example how to use A1-style cell reference in formula:
 
 
 
-# **R1C1-style Cell References**
+## **R1C1-style Cell References**
 **R1C1-style cell references** are used for the worksheets, where both a row and a column has the numeric identifier. R1C1-style cell references can be used in the following way:
 
 
@@ -218,7 +218,7 @@ Here is an example how to use A1-style cell reference in formula:
 
 
 
-# **Predefined Functions**
+## **Predefined Functions**
 There are predefined functions, that can be used in the formulas to simplify their implementation. These functions encapsulate the most commonly used operations, like: 
 
 - ABS

@@ -36,14 +36,3 @@ The following code snippets below shows how to use IProgressCallback interface:
 {{< gist "aspose-com-gists" "a56eda38c01ad33dc653116c7bae4293" "Examples-CSharp-Presentations-Conversion-CovertToPDFWithProgressUpdate-CovertToPDFWithProgressUpdate.cs" >}}
 
 {{< gist "aspose-com-gists" "a56eda38c01ad33dc653116c7bae4293" "Examples-CSharp-Presentations-Conversion-CovertToPDFWithProgressUpdate-ExportProgressHandler.cs" >}}
-
-
-## **Render Comments when saving Presentation into Image**
-Aspose.Slides for .NET provides a facility to render comments of presentations or slide when converting those into images.  An example is given below that shows how to render comments of presentation into an image.
-
-{{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Rendering-Printing-RenderComments-RenderComments.cs" >}}
-
-
-
-## **Support for Rendering Emoji Characters**
-Aspose.Slides for .NET provides a facility to render emoji characters of presentations or slide when converting those into [PDF](https://wiki.fileformat.com/view/pdf/), image, [XPS](https://wiki.fileformat.com/page-description-language/xps/) or [SWF](https://wiki.fileformat.com/page-description-language/swf/).

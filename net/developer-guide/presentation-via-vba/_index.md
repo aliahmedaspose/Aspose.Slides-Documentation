@@ -1,8 +1,8 @@
 ---
-title: VBA in Presentation
+title: Presentation via VBA
 type: docs
 weight: 250
-url: /net/vba-in-presentation/
+url: /net/presentation-via-vba/
 ---
 
 ## **Add VBA Macros**

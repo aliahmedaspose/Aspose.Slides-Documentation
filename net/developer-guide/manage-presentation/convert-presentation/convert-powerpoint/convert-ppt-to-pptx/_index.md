@@ -7,7 +7,7 @@ keywords: "PowerPoint PPT to PPTX"
 description: "Convert PowerPoint PPT to PPTX with Aspose.Slides."
 ---
 
-# **About PPT to PPTX Conversion**
+## **About PPT to PPTX Conversion**
 Convert old PPT format to PPTX with Aspose.Slides API. If you need to convert thousands of PPT presentations to PPTX format, the best solution is to do it programmatically. With Aspose.Slides API its possible to do it just in few lines of code. The API supports full compatibility to convert PPT presentation to PPTX and its possible to:
 
 - Convert complicated structures of masters, layouts and slides.
@@ -30,7 +30,7 @@ Find other live [**Aspose.Slides Conversion**](https://products.aspose.app/slide
 {{% /alert %}} 
 
 
-# **Convert PPT to PPTX**
+## **Convert PPT to PPTX**
 To convert a PPT to PPTX simply pass the file name and save format to the [**Save**](https://apireference.aspose.com/net/slides/aspose.slides/presentation/methods/save/index) method of [**Presentation**](https://apireference.aspose.com/net/slides/aspose.slides/presentation) class. The code sample below converts a Presentation from PPT to PPTX using default options.
 
 

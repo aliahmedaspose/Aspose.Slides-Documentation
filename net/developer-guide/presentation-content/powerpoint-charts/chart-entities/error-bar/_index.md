@@ -4,7 +4,7 @@ type: docs
 url: /net/error-bar/
 ---
 
-## **Add Error Bars**
+## **Add Error Bar**
 Aspose.Slides for .NET provides a simple API for managing error bar values. The sample code applies when using a custom value type. To specify a value, use the **ErrorBarCustomValues** property of a specific data point in the **DataPoints** collection of series:
 
 1. Create an instance of the [Presentation](http://www.aspose.com/api/net/slides/aspose.slides/presentation) class.

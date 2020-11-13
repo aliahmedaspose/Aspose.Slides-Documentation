@@ -148,7 +148,7 @@ Aspose.Slides for .NET provides a simple API for creating a multi category chart
 The following code is used to create a chart.
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Charts-MultiCategoryChart-MultiCategoryChart.cs" >}}
-## **Update an Existing Chart**
+## **Update Chart**
 Aspose.Slides for .NET has provided the simplest API to update charts in an easiest way. To update a chart in a slide:
 
 - Open an instance of [Presentation](https://apireference.aspose.com/net/slides/aspose.slides/presentation) class containing the chart.

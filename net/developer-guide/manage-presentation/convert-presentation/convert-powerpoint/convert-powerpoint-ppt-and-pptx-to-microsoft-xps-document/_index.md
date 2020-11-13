@@ -9,7 +9,7 @@ description: "Convert PowerPoint PPT, PPTX to XPS document with Aspose.Slides AP
 
 
 
-# **About PowerPoint to XPS Conversion**
+## **About PowerPoint to XPS Conversion**
 Convert PowerPoint presentations to [XPS ](https://wiki.fileformat.com/page-description-language/xps)format if you need to minimize the costs on their storing and transmitting. XPS is an electronic document format based on XML, which can help to represent any document and information in a structured and hierarchical way. After converting your presentations to XPS format, you can operate them in a unified way together with other document formats converted to XPS. Create, share, print and save converted to XPS digital documents. XPS is an alternative to PDF format, when you need various document formats and files to be opened on different devices or operational systems without destroying the file layouts. XPS is also called a page layout file format, highlighting the key feature of this format - to save the layout of the document.
 
 
@@ -28,13 +28,13 @@ In [**Aspose.Slides**](https://products.aspose.com/slides/net) the [**Save**](h
 | :- | :- |
 
 
-# **Convert PowerPoint to XPS without XpsOptions**
+## **Convert PowerPoint to XPS without XpsOptions**
 The following example shows how to convert a presentation into XPS document without using options provided by [XPSOptions](https://apireference.aspose.com/net/slides/aspose.slides.export/xpsoptions).
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Presentations-Conversion-ConvertWithoutXpsOptions-ConvertWithoutXpsOptions.cs" >}}
 
 
-# **Convert PowerPoint to XPS with XpsOptions**
+## **Convert PowerPoint to XPS with XpsOptions**
 The following example shows how to convert a presentation into XPS document using options provided by [XPSOptions](https://apireference.aspose.com/net/slides/aspose.slides.export/xpsoptions).
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Presentations-Conversion-ConvertWithXpsOptions-ConvertWithXpsOptions.cs" >}}

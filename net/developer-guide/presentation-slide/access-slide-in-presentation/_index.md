@@ -34,7 +34,7 @@ The example given below moves the slide (that was at position 1 to the second po
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Slides-CRUD-ChangePosition-ChangePosition.cs" >}}
 
 
-## **Setting the Slide Number**
+## **Set Slide Number**
 Aspose.Slides for .NET now supports, setting the Slide Number. In this topic, we will see with an example how to get and set the slide number property in Aspose.Slides. The new methods added to the Presentation allows to get or to set the number of the first slide in a presentation. When a new FirstSlideNumber value is specified all slide numbers are recalculated. In order to get or set the Slide Number, please follow the steps below:
 
 1. Create an instance of Presentation class.

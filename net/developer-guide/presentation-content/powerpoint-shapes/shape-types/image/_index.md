@@ -12,7 +12,7 @@ Now Aspose.Slides for .NET allows you to add Svg image into presentation image c
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Presentations-Properties-InsertSvgIntoPresentation-InsertSvgIntoPresentation.cs" >}}
 
 
-## **Add EMZ image to Images collection**
+## **Add EMZ Image to Images collection**
 Aspose.Slides for .NET provides a facility to embed EMZ file inside a presentation images collection. An example is given below that shows how to add EMZ image to images collection.
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Presentations-Properties-AddingEMZImagesToImageCollection-AddingEMZImagesToImageCollection.cs" >}}

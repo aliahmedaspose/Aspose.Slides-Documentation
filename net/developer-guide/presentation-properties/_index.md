@@ -26,7 +26,7 @@ Please note that you cannot set values against the **Application** and **Prod
 {{% /alert %}} 
 
 
-## **Manage Document Properties**
+## **Manage Presentation Properties**
 Microsoft PowerPoint provides a feature to add some properties to the presentation files. These document properties allow some useful information to be stored along with the documents (presentation files). There are two kinds of document properties as follows
 
 - System Defined (Built-in) Properties
@@ -42,7 +42,7 @@ Modifying the built-in properties of presentation files is as easy as that of ac
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Presentations-Properties-ModifyBuiltinProperties-ModifyBuiltinProperties.cs" >}}
 
-## **Add Custom Document Properties**
+## **Add Custom Presentation Properties**
 Aspose.Slides for .NET also allows developers to add the custom the values for presentation Document properties. An example is given below that shows how to set the custom properties for a presentation.
 
 {{< gist "aspose-slides" "53249e5573d2cd6e66f91f708e8fe008" "Examples-CSharp-Presentations-Properties-AddCustomDocumentProperties-AddCustomDocumentProperties.cs" >}}

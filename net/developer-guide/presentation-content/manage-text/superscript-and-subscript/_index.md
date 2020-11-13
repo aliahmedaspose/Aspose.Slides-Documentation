@@ -5,7 +5,7 @@ weight: 70
 url: /net/superscript-and-subscript/
 ---
 
-### **Manage Super Script and Sub Script Text**
+## **Manage Super Script and Sub Script Text**
 You can add superscript and subscript text inside any paragraph portion. For adding Superscript or Subscript text in Aspose.Slides text frame one must use **the Escapement** properties of PortionFormat class.
 
 This property returns or sets the superscript or subscript text (value from -100% (subscript) to 100% (superscript). For example :

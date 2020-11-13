@@ -4,7 +4,7 @@ type: docs
 url: /net/trend-line/
 ---
 
-## **Ad Trend Lines**
+## **Add Trend Line**
 Aspose.Slides for .NET provides a simple API for managing different chart Trend Lines:
 
 1. Create an instance of the [Presentation](http://www.aspose.com/api/net/slides/aspose.slides/presentation) class.

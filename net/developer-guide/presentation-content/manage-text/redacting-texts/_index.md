@@ -1,18 +1,18 @@
 ---
-title: Redacting Text
+title: Redacting Texts
 type: docs
 weight: 30
-url: /net/redacting-text/
+url: /net/redacting-texts/
 
 ---
 
-# Redacting Text in Slides
+# Redacting Texts in Slides
 
-Aspose.Slides for .NET allows you hide texts in slides through the redact function. For example, when you have sensitive or confidential details in a presentation you are planning to show an audience, you can redact the details to prevent others from seeing them. 
+Aspose.Slides for .NET allows you to hide texts in slides through the redact function. For example, when you have sensitive or confidential details in a presentation you plan to show an audience, you can redact the details to prevent people from seeing them. 
 
 You can use our [online Text Redaction App](https://products.aspose.app/slides/redaction) to see how Aspose.Slides redacts texts in slides. 
 
-This sample code shows you how to redact text in Slides:
+This sample code shows you how to redact a text in a slide:
 
 ```c#
 using (Presentation pres = new Presentation("pres.pptx"))

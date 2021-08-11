@@ -8,9 +8,7 @@ url: /java/hello-world-application-in-php/
 ## **Aspose.Slides - Hello World**
 In this simple application, we will create a PowerPoint presentation having Hello World text at a specified position of the slide. To create Hello Word document using **Aspose.Slides Java for PHP**, simply call **HelloWord** module. Below you can see example code.
 
-**PHP Code**
-
-```
+``` php
 
  # Instantiate Presentation
 

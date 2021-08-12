@@ -79,7 +79,7 @@ are used to create extrusion on shape:
 $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape((new Java("com.aspose.slides.ShapeType"))->Rectangle, 200, 150, 200, 200);
 $shape->getThreeDFormat()->getCamera()->setRotation(20, 30, 40);
 $shape->getThreeDFormat()->setExtrusionHeight(100);
-$shape->getThreeDFormat()->getExtrusionColor()->setColor(new Java("java.awt.Color" ,128, 0, 128));
+$shape->getThreeDFormat()->getExtrusionColor()->setColor(new Java("java.awt.Color", 128, 0, 128));
 // ... set other 3D scene parameters
 try {
     (new Java("javax.imageio.ImageIO"))->write($pres->getSlides()->get_Item(0)->getThumbnail(2, 2), "PNG", new Java("java.io.File", "sample_3d.png"));
@@ -110,7 +110,7 @@ try {
     $shape->getThreeDFormat()->getLightRig()->setLightType((new Java("com.aspose.slides.LightRigPresetType"))->Flat);
     $shape->getThreeDFormat()->getLightRig()->setDirection((new Java("com.aspose.slides.LightingDirection"))->Top);
     $shape->getThreeDFormat()->setExtrusionHeight(150);
-    $shape->getThreeDFormat()->getExtrusionColor()->setColor(new Java("java.awt.Color" ,255, 140, 0));
+    $shape->getThreeDFormat()->getExtrusionColor()->setColor(new Java("java.awt.Color", 255, 140, 0));
  
     try {
         (new Java("javax.imageio.ImageIO"))->write($pres->getSlides()->get_Item(0)->getThumbnail(2, 2), "PNG", new Java("java.io.File", "sample_3d.png"));
@@ -159,7 +159,7 @@ try {
  
     $portion = $shape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0);
     $portion->getPortionFormat()->getFillFormat()->setFillType((new Java("com.aspose.slides.FillType"))->Pattern);
-    $portion->getPortionFormat()->getFillFormat()->getPatternFormat()->getForeColor()->setColor(new Java("java.awt.Color" , 255, 140, 0));
+    $portion->getPortionFormat()->getFillFormat()->getPatternFormat()->getForeColor()->setColor(new Java("java.awt.Color",  255, 140, 0));
     $portion->getPortionFormat()->getFillFormat()->getPatternFormat()->getBackColor()->setColor((new Java("java.awt.Color"))->WHITE);
     $portion->getPortionFormat()->getFillFormat()->getPatternFormat()->setPatternStyle((new Java("com.aspose.slides.PatternStyle"))->LargeGrid);
  

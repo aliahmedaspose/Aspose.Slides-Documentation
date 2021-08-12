@@ -22,29 +22,33 @@ All effects implemented in **[ThreeDFormat](https://apireference.aspose.com/slid
 Let us have a quick look on the main methods of **[ThreeDFormat](https://apireference.aspose.com/slides/java/com.aspose.slides/ThreeDFormat)** class. In the next example 
 we create a rectangle 2D shape with a text on it. By getting camera view on the shape, we change its rotation and make looking as a 3D model. Setting a flat light 
 and its direction to the top of the 3D model, bring more volume to the model. Changed materials, extrusion height and color make the 3D model look more alive.  
-``` java 
-Presentation pres = new Presentation();
+``` php
+<?php require_once("JavaBridge/java/Java.inc"); 
+
+$pres = new Presentation();
+
 try {
-    IAutoShape shape = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 200, 150, 200, 200);
-    shape.getTextFrame().setText("3D");
-    shape.getTextFrame().getParagraphs().get_Item(0).getParagraphFormat().getDefaultPortionFormat().setFontHeight(64);
+    $shape = pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(ShapeType->Rectangle, 200, 150, 200, 200);
+    $shape->getTextFrame()->setText("3D");
+    $shape->getTextFrame()->getParagraphs()->get_Item(0)->getParagraphFormat()->getDefaultPortionFormat()->setFontHeight(64);
  
-    shape.getThreeDFormat().getCamera().setCameraType(CameraPresetType.OrthographicFront);
-    shape.getThreeDFormat().getCamera().setRotation(20, 30, 40);
-    shape.getThreeDFormat().getLightRig().setLightType(LightRigPresetType.Flat);
-    shape.getThreeDFormat().getLightRig().setDirection(LightingDirection.Top);
-    shape.getThreeDFormat().setMaterial(MaterialPresetType.Flat);
-    shape.getThreeDFormat().setExtrusionHeight(100);
-    shape.getThreeDFormat().getExtrusionColor().setColor(Color.BLUE);
+    $shape->getThreeDFormat()->getCamera()->setCameraType(CameraPresetType->OrthographicFront);
+    $shape->getThreeDFormat()->getCamera()->setRotation(20, 30, 40);
+    $shape->getThreeDFormat()->getLightRig()->setLightType(LightRigPresetType->Flat);
+    $shape->getThreeDFormat()->getLightRig()->setDirection(LightingDirection->Top);
+    $shape->getThreeDFormat()->setMaterial(MaterialPresetType->Flat);
+    $shape->getThreeDFormat()->setExtrusionHeight(100);
+    $shape->getThreeDFormat()->getExtrusionColor()->setColor(Color->BLUE);
  
     try {
-        ImageIO.write(pres.getSlides().get_Item(0).getThumbnail(2, 2), "PNG", new File("sample_3d.png"));
-    } catch (IOException e) { }
+        ImageIO->write(pres->getSlides()->get_Item(0)->getThumbnail(2, 2), "PNG", new File("sample_3d->png"));
+    } catch (JavaException $e) { }
  
-    pres.save("sandbox_3d.pptx", SaveFormat.Pptx);
+    pres->save("sandbox_3d->pptx", SaveFormat->Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if (pres != null) pres->dispose();
 }
+?>
 ```
 
 Here is the resulting 3D model:

@@ -23,7 +23,7 @@ Let us have a quick look on the main methods of **[ThreeDFormat](https://apirefe
 we create a rectangle 2D $shape with a text on it. By getting camera view on the $shape, we change its rotation and make looking as a 3D model. Setting a flat light 
 and its direction to the top of the 3D model, bring more volume to the model. Changed materials, extrusion height and color make the 3D model look more alive.  
 ``` php
-<?php require_once("java/Java.inc");
+<?php require_once("JavaBridge/java/Java.inc");
 $pres = new Presentation();
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(ShapeType->Rectangle, 200, 150, 200, 200);
@@ -62,7 +62,7 @@ To rotate 3D model with Aspose.Slides API, use **[IThreeDFormat.getCamera()](htt
 method, set the rotation of the camera relatively to 3D $shape:
 
 ``` php
-<?php require_once("java/Java.inc");
+<?php require_once("JavaBridge/java/Java.inc");
 $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(ShapeType->Rectangle, 200, 150, 200, 200);
 $shape->getThreeDFormat()->getCamera()->setRotation(20, 30, 40);
 // ... set other 3D scene parameters
@@ -77,7 +77,7 @@ and **[IThreeDFormat.getExtrusionColor()](https://apireference.aspose.com/slides
 are used to create extrusion on $shape:
 
 ``` php
-<?php require_once("java/Java.inc");
+<?php require_once("JavaBridge/java/Java.inc");
 $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(ShapeType->Rectangle, 200, 150, 200, 200);
 $shape->getThreeDFormat()->getCamera()->setRotation(20, 30, 40);
 $shape->getThreeDFormat()->setExtrusionHeight(100);
@@ -96,7 +96,7 @@ In PowerPoint, Depth of the $shape is set via:
 3D gradient can bring more volume to PowerPoint 3D $shape:
 
 ``` php
-<?php require_once("java/Java.inc");
+<?php require_once("JavaBridge/java/Java.inc");
 $pres = new Presentation();
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(ShapeType->Rectangle, 200, 150, 250, 250);
@@ -128,7 +128,7 @@ Thats how it looks like:
   
 You may also create an image gradient:
 ``` php
-<?php require_once("java/Java.inc");
+<?php require_once("JavaBridge/java/Java.inc");
 $shape->getFillFormat()->setFillType(FillType->Picture);
 $picture = null;
 try {
@@ -150,7 +150,7 @@ Here is the result:
 ## 3D Text (WordArt)
 To create a 3D text (WordArt), do the following:
 ``` php
-<?php require_once("java/Java.inc");
+<?php require_once("JavaBridge/java/Java.inc");
 $pres = new Presentation();
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(ShapeType->Rectangle, 200, 150, 200, 200);

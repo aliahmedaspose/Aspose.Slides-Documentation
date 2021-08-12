@@ -38,7 +38,7 @@ try {
     $shape->getThreeDFormat()->getExtrusionColor()->setColor((new Java("java.awt.Color"))->BLUE);
  
     try {
-        (new Java("javax.imageio.ImageIO"))->write($pres->getSlides()->get_Item(0)->getThumbnail(2, 2), "PNG", (new Java("java.io.File('sample_3d.png')")));
+        (new Java("javax.imageio.ImageIO"))->write($pres->getSlides()->get_Item(0)->getThumbnail(2, 2), "PNG", (new Java("java.io.File", "sample_3d.png")));
     } catch (JavaException $e) {}
  
     $pres->save("sandbox_3d.pptx", (new Java("com.aspose.slides.SaveFormat"))->Pptx);

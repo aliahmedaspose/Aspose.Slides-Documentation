@@ -44,9 +44,9 @@ try {
         ImageIO->write(pres->getSlides()->get_Item(0)->getThumbnail(2, 2), "PNG", new File("sample_3d->png"));
     } catch (JavaException $e) { }
  
-    pres->save("sandbox_3d->pptx", SaveFormat->Pptx);
+    $pres->save("sandbox_3d->pptx", SaveFormat->Pptx);
 } finally {
-    if (pres != null) pres->dispose();
+    if ($pres != null) $pres->dispose();
 }
 ?>
 ```

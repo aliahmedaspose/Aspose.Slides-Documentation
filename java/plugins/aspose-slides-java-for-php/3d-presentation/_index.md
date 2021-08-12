@@ -23,6 +23,7 @@ Let us have a quick look on the main methods of **[ThreeDFormat](https://apirefe
 we create a rectangle 2D shape with a text on it. By getting camera view on the shape, we change its rotation and make looking as a 3D model. Setting a flat light 
 and its direction to the top of the 3D model, bring more volume to the model. Changed materials, extrusion height and color make the 3D model look more alive.  
 ``` php
+<?php require_once("http://localhost:8087/JavaBridge/java/Java.inc");
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape((new Java("com.aspose.slides.ShapeType"))->Rectangle, 200, 150, 200, 200);

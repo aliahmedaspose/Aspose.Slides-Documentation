@@ -26,7 +26,7 @@ and its direction to the top of the 3D model, bring more volume to the model. Ch
 <?php require_once("java/Java.inc");
 $pres = new Presentation();
 try {
-    $shape = $pres ->getSlides()->get_Item(0)->getShapes()->addAutoShape(ShapeType->Rectangle, 200, 150, 200, 200);
+    $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(ShapeType->Rectangle, 200, 150, 200, 200);
     $shape->getTextFrame()->setText("3D");
     $shape->getTextFrame()->getParagraphs()->get_Item(0)->getParagraphFormat()->getDefaultPortionFormat()->setFontHeight(64);
  
@@ -138,7 +138,7 @@ $shape->getFillFormat()->getPictureFillFormat()->getPicture()->setImage(picture)
 $shape->getFillFormat()->getPictureFillFormat()->setPictureFillMode(PictureFillMode->Stretch);
 // .. setup 3D: $shape->ThreeDFormat->Camera, $shape->ThreeDFormat->LightRig, $shape->ThreeDFormat->Extrusion* properties
 try {
-    ImageIO->write($pres ->getSlides()->get_Item(0)->getThumbnail(2, 2), "PNG", new File("sample_3d->png"));
+    ImageIO->write($pres->getSlides()->get_Item(0)->getThumbnail(2, 2), "PNG", new File("sample_3d->png"));
 } catch (JavaException $e) { }
 ```
 
@@ -153,7 +153,7 @@ To create a 3D text (WordArt), do the following:
 <?php require_once("java/Java.inc");
 $pres = new Presentation();
 try {
-    $shape = $pres ->getSlides()->get_Item(0)->getShapes()->addAutoShape(ShapeType->Rectangle, 200, 150, 200, 200);
+    $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(ShapeType->Rectangle, 200, 150, 200, 200);
  
     $shape->getFillFormat()->setFillType(FillType->NoFill);
     $shape->getLineFormat()->getFillFormat()->setFillType(FillType->NoFill);
@@ -184,7 +184,7 @@ try {
         ImageIO->write($pres->getSlides()->get_Item(0)->getThumbnail(2, 2), "PNG", new File("text3d->png"));
     } catch (JavaException $e) { }
  
-    $pres ->save("text3d->pptx", SaveFormat->Pptx);
+    $pres->save("text3d->pptx", SaveFormat->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

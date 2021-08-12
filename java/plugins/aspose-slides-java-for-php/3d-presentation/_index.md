@@ -24,7 +24,7 @@ we create a rectangle 2D $shape with a text on it. By getting camera view on the
 and its direction to the top of the 3D model, bring more volume to the model. Changed materials, extrusion height and color make the 3D model look more alive.  
 ``` php
 <?php require_once("JavaBridge/java/Java.inc");
-$pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(ShapeType->Rectangle, 200, 150, 200, 200);
     $shape->getTextFrame()->setText("3D");
@@ -97,7 +97,7 @@ In PowerPoint, Depth of the $shape is set via:
 
 ``` php
 <?php require_once("JavaBridge/java/Java.inc");
-$pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(ShapeType->Rectangle, 200, 150, 250, 250);
     $shape->getTextFrame()->setText("3D");
@@ -151,7 +151,7 @@ Here is the result:
 To create a 3D text (WordArt), do the following:
 ``` php
 <?php require_once("JavaBridge/java/Java.inc");
-$pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(ShapeType->Rectangle, 200, 150, 200, 200);
  

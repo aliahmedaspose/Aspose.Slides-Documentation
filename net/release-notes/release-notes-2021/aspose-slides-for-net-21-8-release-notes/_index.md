@@ -80,5 +80,5 @@ Export result:
 - Check for unsupported formulas within the entire workbook: If unsupported formulas are found, CellUnsupportedDataException will be thrown and values will not be updated. 
 - Formula calculations and updating: If unsupported formulas are not found, the formulas will be calculated for the workbook and cells values will be updated.
 
-Cell's formula reset on setting the value (and vice versa) has been removed.
+Cells and their formulas **no** longer reset when new values are set. Value too are **no** longer recalculated when new formulas are set. 
 

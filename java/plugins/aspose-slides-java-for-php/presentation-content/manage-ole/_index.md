@@ -102,7 +102,7 @@ try {
         String extractedPath = "excelFromOLE_out" + fileExtention;
 
         // Save extracted data
-        FileOutputStream fstr = new FileOutputStream(extractedPath);
+        $fstr = new Java("java.io.FileOutputStream", extractedPath);
         try {
             fstr.write(data, 0, data.length);
         } finally {
@@ -287,7 +287,7 @@ try {
             String extension = oleFrame.getEmbeddedData().getEmbeddedFileExtension();
 
             // Save extracted data
-            FileOutputStream fstr = new FileOutputStream("oleFrame" + index + extension);
+            $fstr = new Java("java.io.FileOutputStream", "oleFrame" + index + extension);
             try {
                 fstr.write(data, 0, data.length);
             } finally {

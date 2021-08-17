@@ -131,11 +131,11 @@ $shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Picture
 $picture = null;
 try {
 	$f = new Java("java.io.File", "image.jpg");
-	$fos = new Java("java.io.FileInputStream", new Java("java.io.File", "sample_3d.png"));
+	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "sample_3d.png"));
 	$picture = $pres->getImages()->addImage(new Java("java.io.FileInputStream", new Java("java.io.File", "sample_3d.png")));
 } catch (JavaException $e) { }
 finally {
-    if ($fos != null) $fos->close();
+    if ($fis != null) $fis->close();
 }
 $shape->getFillFormat()->getPictureFillFormat()->getPicture()->setImage($picture);
 $shape->getFillFormat()->getPictureFillFormat()->setPictureFillMode(Java("com.aspose.slides.PictureFillMode")->Stretch);

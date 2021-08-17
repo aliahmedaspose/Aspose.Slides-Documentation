@@ -56,7 +56,7 @@ try {
         // that allows us to not load the whole video into memory.
         InputStream presVideoStream = video.getStream();
         try {
-            OutputStream outputFileStream = new FileOutputStream("video" + index + ".avi");
+            $outputFileStream = new Java("java.io.FileOutputStream", "video" + index + ".avi");
             try {
                 int bytesRead;
                 while ((bytesRead = presVideoStream.read(buffer, 0, buffer.length)) > 0) {

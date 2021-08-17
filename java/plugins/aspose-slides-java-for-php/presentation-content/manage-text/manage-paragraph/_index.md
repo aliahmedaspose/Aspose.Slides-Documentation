@@ -263,7 +263,7 @@ try {
     IAutoShape ashape = (IAutoShape) slide.getShapes().get_Item(index);
 
     // Creating output HTML file
-    OutputStream os = new FileOutputStream("output.html");
+    $os = new Java("java.io.FileOutputStream", "output.html");
     Writer writer = new OutputStreamWriter(os, "UTF-8");
 
     //Extracting first paragraph as HTML

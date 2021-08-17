@@ -268,7 +268,7 @@ Now Aspose.Slides for Java support for rendering a shape as svg. Method [writeAs
 ```java
 Presentation pres = new Presentation("TestExportShapeToSvg.pptx");
 try {
-    FileOutputStream stream = new FileOutputStream("SingleShape.svg");
+    $stream = new Java("java.io.FileOutputStream", "SingleShape.svg");
     try {
         pres.getSlides().get_Item(0).getShapes().get_Item(0).writeAsSvg(stream);
     } finally {

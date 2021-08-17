@@ -115,7 +115,7 @@ try {
         file.delete();
 
     byte[] worbookData = chart.getChartData().readWorkbookStream();
-    FileOutputStream outputStream = new FileOutputStream(file);
+    $outputStream = new Java("java.io.FileOutputStream", file);
     outputStream.write(worbookData);
     outputStream.close();
 

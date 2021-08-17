@@ -154,7 +154,7 @@ try {
                 int charIndex = type.indexOf("/");
                 type = type.substring(charIndex + 1);
 
-                FileOutputStream fop = new FileOutputStream("testing2." + type);
+                $fop = new Java("java.io.FileOutputStream", "testing2." + type);
                 fop.write(buffer);
                 fop.flush();
                 fop.close();

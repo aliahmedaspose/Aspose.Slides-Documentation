@@ -44,7 +44,7 @@ try {
     // Add text to shape
     shape.getTextFrame().setText("This demo shows how to Create PowerPoint file and save it to Stream.");
 
-    OutputStream os = new FileOutputStream("Save_As_Stream_out.pptx");
+    $os = new Java("java.io.FileOutputStream", "Save_As_Stream_out.pptx");
 
     pres.save(os, Java("com.aspose.slides.SaveFormat")->Pptx);
 

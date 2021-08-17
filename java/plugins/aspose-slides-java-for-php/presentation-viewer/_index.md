@@ -36,7 +36,7 @@ try {
     ISlide sld = pres.getSlides().get_Item(0);
 
     // Create a memory stream object
-    FileOutputStream svgStream = new FileOutputStream("Aspose_out.svg");
+    $svgStream = new Java("java.io.FileOutputStream", "Aspose_out.svg");
 
     // Generate SVG image of slide and save in memory stream
     sld.writeAsSvg(svgStream);
@@ -54,7 +54,7 @@ Aspose.Slides for Java can be used to generate [SVG](https://wiki.fileformat.co
 ```java
 Presentation pres = new Presentation("pptxFileName.pptx");
 try {
-    FileOutputStream stream = new FileOutputStream("Aspose_out.svg");
+    $stream = new Java("java.io.FileOutputStream", "Aspose_out.svg");
     try {
         SVGOptions svgOptions = new SVGOptions();
         svgOptions.setShapeFormattingController(new CustomSvgShapeFormattingController());

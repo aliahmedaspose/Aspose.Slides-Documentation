@@ -34,7 +34,7 @@ try {
             join("=").
             join(new MathematicalText("c").setSuperscript("2")));
 
-    FileOutputStream stream = new FileOutputStream("mathml.xml");
+    $stream = new Java("java.io.FileOutputStream", "mathml.xml");
     mathParagraph.writeAsMathMl(stream);
 } catch (IOException e) {
 } finally {

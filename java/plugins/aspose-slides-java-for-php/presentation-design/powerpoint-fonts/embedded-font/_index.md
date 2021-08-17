@@ -42,7 +42,7 @@ try {
     pres.save("WithoutManageEmbeddedFonts_out.ppt", SaveFormat.Ppt);
 } catch(IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -72,7 +72,7 @@ try {
     // Save the presentation
     pres.save("AddEmbeddedFont_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

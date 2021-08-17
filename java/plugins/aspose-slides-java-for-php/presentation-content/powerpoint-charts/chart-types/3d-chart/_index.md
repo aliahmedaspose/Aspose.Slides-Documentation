@@ -14,7 +14,7 @@ Aspose.Slides for Java provides a simple API for setting these properties. This 
 1. Write the modified presentation to a PPTX file.
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Access first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -60,6 +60,6 @@ try {
     // Write presentation to disk
     pres.save("Rotation3D_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

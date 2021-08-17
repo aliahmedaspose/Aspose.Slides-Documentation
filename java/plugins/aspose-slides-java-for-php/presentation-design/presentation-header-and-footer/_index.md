@@ -36,7 +36,7 @@ try {
     // Save presentation
     pres.save("HeaderFooterJava.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 ```java
@@ -113,6 +113,6 @@ try {
     }
     pres.save("testresult.pptx",SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

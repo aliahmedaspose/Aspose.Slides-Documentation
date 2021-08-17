@@ -87,7 +87,7 @@ Method [IGeometryPath.getPathData](https://apireference.aspose.com/slides/java/c
 - Apply the path to the shape.
   
 ``` java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     GeometryShape shape = (GeometryShape) pres.getSlides().get_Item(0).
             getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 200, 100);
@@ -97,7 +97,7 @@ try {
     geometryPath.lineTo(100, 50, 4);
     shape.setGeometryPath(geometryPath);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -111,7 +111,7 @@ try {
 - Apply the path to the shape.
   
 ``` java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     GeometryShape shape = (GeometryShape) pres.getSlides().get_Item(0).
             getShapes().addAutoShape(ShapeType.Heart, 100, 100, 300, 300);
@@ -120,7 +120,7 @@ try {
     path.removeAt(2);
     shape.setGeometryPath(path);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 ![example2_image](custom_shape_2.png)
@@ -162,14 +162,14 @@ for (int i = 1; i < points.size(); i++)
 
 starPath.closeFigure();
 
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     GeometryShape shape = (GeometryShape) pres.getSlides().get_Item(0).
             getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, R * 2, R * 2);
 
     shape.setGeometryPath(starPath);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 
 ```
@@ -184,7 +184,7 @@ try {
   - Apply the paths to the shape.
 
 ``` java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     GeometryShape shape = (GeometryShape) pres.getSlides().get_Item(0).
             getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 200, 100);
@@ -205,7 +205,7 @@ try {
 
     shape.setGeometryPaths(new GeometryPath[] { geometryPath0, geometryPath1});
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 ![example4_image](custom_shape_4.png)
@@ -218,7 +218,7 @@ try {
 - Apply the paths to the shape.
   
 ``` java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Create new shape
     GeometryShape shape = (GeometryShape)pres.getSlides().get_Item(0).
@@ -254,7 +254,7 @@ try {
     // Save the presentation
     pres.save(resultPath, SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 ![example5_image](custom_shape_5.png)

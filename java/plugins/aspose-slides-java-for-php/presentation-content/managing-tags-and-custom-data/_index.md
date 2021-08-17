@@ -29,7 +29,7 @@ Presentation pres = new Presentation("pres.pptx");
 try{
     String keywords = pres.getDocumentProperties().getKeywords();
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -50,32 +50,32 @@ try {
     ITagCollection tags = pres.getCustomData().getTags();
     pres.getCustomData().getTags().set_Item("MyTag", "My Tag Value");
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
 Tags also can be set for [Slide](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlide):
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     ISlide slide = pres.getSlides().get_Item(0);
     slide.getCustomData().getTags().set_Item("tag", "value");
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
 Or any individual [Shape](https://apireference.aspose.com/slides/java/com.aspose.slides/IAutoShape):
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     ISlide slide = pres.getSlides().get_Item(0);
     IAutoShape shape = slide.getShapes().addAutoShape(ShapeType.Rectangle, 10, 10, 100, 50);
     shape.getTextFrame().setText("My text");
     shape.getCustomData().getTags().set_Item("tag", "value");
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

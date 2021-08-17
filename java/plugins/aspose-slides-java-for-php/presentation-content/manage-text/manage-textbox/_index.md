@@ -19,7 +19,7 @@ The implementation of the above steps is demonstrated below in an example.
 
 ```java
 // Instantiate Presentation
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -45,7 +45,7 @@ try {
     // Save the presentation to disk
     pres.save("TextBox_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -55,7 +55,7 @@ Using Aspose.Slides for Java, developers can add column in text boxes on a [Slid
 The implementation is demonstrated below in an example.
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide of presentation
     ISlide slide = pres.getSlides().get_Item(0);
@@ -81,7 +81,7 @@ try {
     // Save created presentation
     pres.save("ColumnCount.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -91,7 +91,7 @@ Using Aspose.Slides for Java, developers can add columns in text frames on a [Sl
 The implementation is demonstrated below in an example.
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     IAutoShape shape1 = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 300, 300);
     TextFrameFormat format = (TextFrameFormat)shape1.getTextFrame().getTextFrameFormat();
@@ -134,7 +134,7 @@ try {
         if (test3 != null) test3.dispose();
     }
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -153,7 +153,7 @@ The implementation of the above steps is demonstrated below in an example.
 
 ```java
 // Instantiate a Presentation class that represents a PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -178,6 +178,6 @@ try {
     // Save the PPTX Presentation
     pres.save("hLinkPPTX_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

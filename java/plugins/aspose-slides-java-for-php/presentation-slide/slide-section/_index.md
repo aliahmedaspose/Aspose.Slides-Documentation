@@ -21,7 +21,7 @@ To add a section that will house slides in a presentation, Aspose.Slides for Jav
 This sample code shows you to create a section in a presentation in Java:
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     ISlide defaultSlide = pres.getSlides().get_Item(0);
     ISlide newSlide1 = pres.getSlides().addEmptySlide(pres.getLayoutSlides().get_Item(0));
@@ -43,7 +43,7 @@ try {
 
     pres.save("pres-section-with-empty.pptx",SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -59,7 +59,7 @@ try {
     ISection section = pres.getSections().get_Item(0);
     section.setName("My section");
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

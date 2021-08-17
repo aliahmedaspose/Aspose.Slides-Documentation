@@ -45,7 +45,7 @@ try {
     }
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -72,7 +72,7 @@ try {
     }
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -98,7 +98,7 @@ try {
     }
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

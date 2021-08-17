@@ -34,7 +34,7 @@ try {
     // Saving presentation to disk
     pres.save("test.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -55,7 +55,7 @@ try {
     // Saving presentation to disk
     pres.save("test.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -79,6 +79,6 @@ try {
     }
     pres.save("NotesSlideWithNotesStyle.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

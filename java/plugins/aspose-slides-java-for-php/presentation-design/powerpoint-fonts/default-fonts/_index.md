@@ -38,7 +38,7 @@ try {
     pres.save("output_out.xps", SaveFormat.Xps);
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

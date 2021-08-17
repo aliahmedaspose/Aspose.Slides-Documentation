@@ -23,7 +23,7 @@ try {
         System.out.println("Shape Name: " + shape.getName());
     }
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 ```java
@@ -69,7 +69,7 @@ try {
     // Write the PPTX file to disk
     pres.save("CloneShape_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -84,7 +84,7 @@ Aspose.Slides for Java allows developers to remove any shape. To remove the shap
 
 ```java
 // Create Presentation object
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -107,7 +107,7 @@ try {
     // Save presentation to disk
     pres.save("RemoveShape_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -122,7 +122,7 @@ Aspose.Slides for Java allows developers to hide any shape. To hide the shape fr
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -145,7 +145,7 @@ try {
     // Save presentation to disk
     pres.save("Hiding_Shapes_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -178,7 +178,7 @@ try {
 
     pres.save("Reshape_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -192,7 +192,7 @@ try {
     long officeInteropShapeId = pres.getSlides().get_Item(0).getShapes().get_Item(0).getOfficeInteropShapeId();
 
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -214,7 +214,7 @@ To set the AlternateText of a shape, please follow the steps below:
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -237,7 +237,7 @@ try {
     // Save presentation to disk
     pres.save("Set_AlternativeText_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -258,7 +258,7 @@ try {
         }
     }
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -276,7 +276,7 @@ try {
     }
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -301,7 +301,7 @@ try {
         slide.getShapes().indexOf(shape3)
     });
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 }
 ```
@@ -315,6 +315,6 @@ Presentation pres = new Presentation("example.pptx");
 try {
     SlideUtil.alignShapes(ShapesAlignmentType.AlignBottom, false, pres.getSlides().get_Item(0));
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

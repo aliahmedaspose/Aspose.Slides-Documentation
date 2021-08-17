@@ -20,12 +20,12 @@ The Read-Only recommendation is a simple yet effective deterrent that discourage
 Aspose.Slides for Java allows you to set a presentation to **Read-Only**, which means users (after they open the presentation) see the **Read-Only** recommendation. This sample code shows you how to set a presentation to **Read-Only** in Java using Aspose.Slides:
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     pres.getProtectionManager().setReadOnlyRecommended(true);
     pres.save("ReadOnlyPresentation.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

@@ -31,7 +31,7 @@ try {
         }
     }
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -48,7 +48,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 
 ```java
 // Instantiate Presentation class that represents PPTX file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Access first slide
     Slide sld = (Slide)pres.getSlides().get_Item(0);
@@ -77,7 +77,7 @@ try {
     // Write PPTX to Disk
     pres.save("table_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -86,7 +86,7 @@ If we merge 2 pairs of cells (1, 1) x (2, 1) and (1, 2) x (2, 2) then table will
 
 ```java
 // Instantiate Presentation class that represents PPTX file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Access first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -129,7 +129,7 @@ try {
 
     pres.save("MergeCells_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -137,7 +137,7 @@ Let's continue merging cells. Now we merge (1, 1) and (1, 2). As a result we hav
 
 ```java
 // Instantiate Presentation class that represents PPTX file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Access first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -183,7 +183,7 @@ try {
 
     pres.save("MergeCells_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -192,7 +192,7 @@ We could see in previous example when table cells are merged then numeration of 
 
 ```java
 // Instantiate Presentation class that represents PPTX file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Access first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -238,7 +238,7 @@ try {
 
     pres.save("SplitCells_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -258,7 +258,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 
 ```java
 // Instantiate Presentation class object
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Access first slide
     ISlide islide = pres.getSlides().get_Item(0);
@@ -286,6 +286,6 @@ try {
     pres.save("Image_In_TableCell_out.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

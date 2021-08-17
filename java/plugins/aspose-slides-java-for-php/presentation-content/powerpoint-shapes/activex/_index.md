@@ -25,7 +25,7 @@ This sample code, based on the steps above, shows to how to add Media Player Act
 
 ```java
 // Create empty presentation instance
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Adding the Media Player ActiveX control
     pres.getSlides().get_Item(0).getControls().addControl(ControlType.WindowsMediaPlayer, 100, 100, 400, 400);
@@ -36,7 +36,7 @@ try {
     // Save the Presentation
     pres.save("Output.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -160,6 +160,6 @@ try {
     pres.getSlides().get_Item(0).getControls().clear();
     pres.save("withActiveX-cleared_java.pptm", SaveFormat.Pptm);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

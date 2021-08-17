@@ -54,7 +54,7 @@ try {
     // Write the modified presentation to disk
     pres.save("AnimatingSeries_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -97,7 +97,7 @@ try {
 
     pres.save("Sample_Animation_C.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -153,7 +153,7 @@ try {
     // Write the presentation file to disk 
     pres.save("AnimatingSeriesElements_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -208,6 +208,6 @@ try {
     // Write the presentation file to disk
     pres.save("AnimatingCategoriesElements_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

@@ -16,7 +16,7 @@ In the example given below, we have set different properties of Pie of Pie chart
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Add chart on slide
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.PieOfPie, 50, 50, 500, 400);
@@ -30,7 +30,7 @@ try {
     // Write presentation to disk
     pres.save("SecondPlotOptionsforCharts_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -52,7 +52,7 @@ Write the modified presentation to a PPTX file.
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Add chart with default data
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 100, 100, 400, 400);
@@ -92,6 +92,6 @@ try {
     series.getParentSeriesGroup().setColorVaried(true);
     pres.save("Pie.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

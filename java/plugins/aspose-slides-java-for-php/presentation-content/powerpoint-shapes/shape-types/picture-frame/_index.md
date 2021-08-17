@@ -33,7 +33,7 @@ The above steps are implemented in the example given below.
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -48,7 +48,7 @@ try {
     pres.save("RectPicFrame.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -66,7 +66,7 @@ The above steps are implemented in the example given below.
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -86,7 +86,7 @@ try {
     pres.save("RectPicFrame.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -110,7 +110,7 @@ The above steps are implemented in the example given below.
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -131,7 +131,7 @@ try {
     pres.save("RectPicFrame.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -152,7 +152,7 @@ The above steps are implemented in the example given below.
 
 ```java
 // Instantiate Prseetation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -183,6 +183,6 @@ try {
     pres.save("StretchOffsetLeftForPictureFrame_out.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

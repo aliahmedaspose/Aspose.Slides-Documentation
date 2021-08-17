@@ -22,7 +22,7 @@ The following code is used to create a chart with Trend Lines.
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Creating a clustered column chart
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 20, 20, 500, 400);
@@ -64,7 +64,7 @@ try {
     // Saving presentation
     pres.save("ChartTrendLines_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -82,7 +82,7 @@ The following code is used to create a chart with Custom Lines.
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 400);
     IAutoShape shape = chart.getUserShapes().getShapes().addAutoShape(ShapeType.Line, 0, chart.getHeight()/2, chart.getWidth(), 0);
@@ -92,6 +92,6 @@ try {
     
     pres.save("Presentation.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

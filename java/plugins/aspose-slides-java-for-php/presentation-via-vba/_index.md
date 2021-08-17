@@ -30,7 +30,7 @@ The implementation of the above steps is demonstrated in the example below.
 
 ```java
 // Instantiate Presentation
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Create new VBA Project
     pres.setVbaProject(new VbaProject());
@@ -54,7 +54,7 @@ try {
     
     pres.save("test.pptm", SaveFormat.Pptm);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -83,7 +83,7 @@ try {
     // Save Presentation
     pres.save("test.pptm", SaveFormat.Pptm);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -109,7 +109,7 @@ try {
         }
     }
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

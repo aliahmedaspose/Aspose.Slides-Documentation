@@ -57,7 +57,7 @@ try {
     // Saving the presentation to XPS document
     pres.save("XPS_Output_Without_XPSOption.xps", SaveFormat.Xps);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -78,6 +78,6 @@ try {
     // Save the presentation to XPS document
     pres.save("XPS_Output_With_Options.xps", SaveFormat.Xps, options);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

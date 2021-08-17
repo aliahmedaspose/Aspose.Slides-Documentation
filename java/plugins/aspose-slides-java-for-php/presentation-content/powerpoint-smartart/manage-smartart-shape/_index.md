@@ -16,7 +16,7 @@ Aspose.Slides for Java has provided an API to create SmartArt shapes. To create 
 
 ```java
 // Instantiate Presentation Class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -27,7 +27,7 @@ try {
     // Saving presentation
     pres.save("SimpleSmartArt.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -54,7 +54,7 @@ try {
         }
     }
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -87,7 +87,7 @@ try {
         }
     }
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

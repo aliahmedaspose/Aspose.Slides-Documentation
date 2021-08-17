@@ -46,7 +46,7 @@ try {
     // Saving Presentation
     pres.save("AddSmartArtNode.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -62,7 +62,7 @@ In the following sample code we have explained how to add the child nodes belong
 
 ```java
 // Creating a presentation instance
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Access the presentation slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -82,7 +82,7 @@ try {
     // Save Presentation
     pres.save("AddSmartArtNodeByPosition.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -124,7 +124,7 @@ try {
         }
     }
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -175,7 +175,7 @@ try {
         }
     }
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -192,7 +192,7 @@ In this example, we will learn to access the child nodes at some particular posi
 
 ```java
 // Instantiate the presentation
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Accessing the first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -210,7 +210,7 @@ try {
     // Printing the SmartArt child node parameters
     System.out.print("Text = " + chNode.getTextFrame().getText() + ",  Level = " + chNode.getLevel() + ", Position = " + chNode.getPosition());
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -253,7 +253,7 @@ try {
     // Save Presentation
     pres.save("RemoveSmartArtNode.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -299,7 +299,7 @@ try {
     // Save Presentation
     pres.save("RemoveSmartArtNodeByPosition.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -392,7 +392,7 @@ try {
     // Save Presentation
     pres.save("ChangeAssitantNode.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -413,7 +413,7 @@ Please follow the steps below:
 
 ```java
 // Instantiate the presentation
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Accessing the slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -433,7 +433,7 @@ try {
     // Save the presentation
     pres.save("TestSmart.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -448,7 +448,7 @@ Developers can generate a thumbnail of Child node of a SmartArt by following the
 
 ```java
 // Instantiate Presentation class that represents the PPTX file 
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Add SmartArt 
     ISmartArt smart = pres.getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.BasicCycle);
@@ -463,7 +463,7 @@ try {
     ImageIO.write(bmp, "PNG", new File("SmartArt_ChildNote_Thumbnail.png"));
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

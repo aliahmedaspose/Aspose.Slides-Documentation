@@ -22,7 +22,7 @@ We know that Aspose.Slides for Java may contain two types of slides: Master Slid
 
 ```java
 // Instantiate the Presentation class that represents the presentation file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Set the background color of the Master ISlide to Green
     pres.getMasters().get_Item(0).getBackground().setType(BackgroundType.OwnBackground);
@@ -32,7 +32,7 @@ try {
     // Write the presentation to disk
     pres.save("MasterBG.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -56,7 +56,7 @@ try {
     
     pres.save("ContentBG.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -83,7 +83,7 @@ try {
     // Write the presentation to disk
     pres.save("ContentBG_Grad.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -101,7 +101,7 @@ To use an image as the background of a slide using Aspose.Slides for Java, pleas
 
 ```java
 // Instantiate the Presentation class that represents the presentation file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Set the background with Image
     pres.getSlides().get_Item(0).getBackground().setType(BackgroundType.OwnBackground);
@@ -119,7 +119,7 @@ try {
     pres.save("ContentBG_Img.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -141,6 +141,6 @@ try {
     else
         System.out.println("Fill type: " + effBackground.getFillFormat().getFillType());
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

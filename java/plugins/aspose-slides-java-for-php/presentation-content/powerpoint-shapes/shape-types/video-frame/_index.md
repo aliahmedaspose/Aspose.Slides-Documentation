@@ -19,7 +19,7 @@ In the example below, we added a Video Frame to the slide.
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -41,7 +41,7 @@ try {
     pres.save("VideoFrame.pptx", SaveFormat.Pptx);
 } catch (Exception e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -60,12 +60,12 @@ This sample code shows you how to add a video from YouTube to a slide:
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     addVideoFromYouTube(pres, "Tj75Arhq5ho");
     pres.save("out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 ```java
@@ -107,7 +107,7 @@ In the example below, we added a Video Frame to the slide.
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -122,7 +122,7 @@ try {
     // Write the PPTX file to disk
     pres.save("VideoFrame.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -163,6 +163,6 @@ try {
     }
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

@@ -33,7 +33,7 @@ try {
     }
 } catch (Exception e) {  
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 ## **Convert Slide to Image with Custom Size**
@@ -53,7 +53,7 @@ try {
     }
 } catch (Exception e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -97,7 +97,7 @@ try {
     ImageIO.write(bmp, "GIF", new File("Slide_Notes_Comments_0.gif"));
 } catch (Exception e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -133,7 +133,7 @@ try {
     pres.save("Slide_Notes_Comments_0.tiff", SaveFormat.Tiff, options);
 } catch (Exception e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -163,6 +163,6 @@ try {
     }
 } catch (Exception e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 } 
 ```

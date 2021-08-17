@@ -62,7 +62,7 @@ try {
     pdfOptions.setCompliance(PdfCompliance.PdfUa);
     pres.save("pres-ua-compliance.pdf", SaveFormat.Pdf, pdfOptions);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -108,7 +108,7 @@ try {
     // Save the presentation as PDF
     pres.save("PPT-to-PDF.pdf", SaveFormat.Pdf);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -137,7 +137,7 @@ try {
     // Save the presentation as PDF
     pres.save("PowerPoint-to-PDF.pdf", SaveFormat.Pdf, pdfOptions);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -163,7 +163,7 @@ try {
     // Save the presentation as PDF
     pres.save("PowerPoint-to-PDF.pdf", SaveFormat.Pdf, pdfOptions);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -184,7 +184,7 @@ try {
     // Save the presentation as PDF
     pres.save("PPTX-to-PDF.pdf", SaveFormat.Pdf, pdfOptions);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -201,7 +201,7 @@ try {
     // Save the presentation as PDF
     pres.save("PPTX-to-PDF.pdf", slides, SaveFormat.Pdf);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -227,10 +227,10 @@ try {
 
         outPres.save("PDFnotes_out.pdf", SaveFormat.Pdf, pdfOptions);
     } finally {
-        if (pres != null) pres.dispose();
+        if ($pres != null) $pres->dispose();
     }
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -247,7 +247,7 @@ try {
 
     pres.save("Pdf_With_Notes.pdf", SaveFormat.Pdf, pdfOptions);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

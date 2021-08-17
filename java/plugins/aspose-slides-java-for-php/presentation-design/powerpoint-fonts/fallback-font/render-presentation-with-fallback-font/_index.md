@@ -43,7 +43,7 @@ try {
             "PNG", new File("Slide_0.png"));
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

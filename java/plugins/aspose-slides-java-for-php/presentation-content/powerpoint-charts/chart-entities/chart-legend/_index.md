@@ -17,7 +17,7 @@ In the example given below, we have set the position and size for Chart legend.
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get reference of the slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -34,7 +34,7 @@ try {
     // Write presentation to disk
     pres.save("Legend_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -50,7 +50,7 @@ The Aspose.Slides for Java lets developers allow to set font size of legend. Pl
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
 
@@ -63,7 +63,7 @@ try {
 
     pres.save("output.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -80,7 +80,7 @@ The Aspose.Slides for Java lets developers allow to set font size of individual 
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
 
@@ -94,7 +94,7 @@ try {
     
     pres.save("output.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

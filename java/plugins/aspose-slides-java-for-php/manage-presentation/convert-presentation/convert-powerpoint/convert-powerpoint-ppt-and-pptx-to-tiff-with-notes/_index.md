@@ -20,7 +20,7 @@ try {
     //Saving the presentation to TIFF notes
     pres.save("Tiff-Notes.tiff", SaveFormat.Tiff,opts);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

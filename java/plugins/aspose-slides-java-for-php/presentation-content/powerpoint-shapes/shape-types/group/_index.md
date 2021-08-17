@@ -18,7 +18,7 @@ The example below adds a group shape to a slide.
 
 ```java
 // Instantiate Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -41,7 +41,7 @@ try {
     // Write the PPTX file to disk
     pres.save("GroupShape.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -82,6 +82,6 @@ try {
         }
     }
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

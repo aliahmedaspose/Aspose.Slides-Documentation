@@ -69,7 +69,7 @@ try {
     System.out.println("Subject : " + dp.getSubject());
     System.out.println("Title : " + dp.getTitle());
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -92,7 +92,7 @@ try {
     // Save your presentation to a file
     pres.save("DocProps.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -106,7 +106,7 @@ This example modifies the built-in properties of the presentation that can be vi
 Aspose.Slides for Java also allows developers to add the custom the values for presentation Document properties. An example is given below that shows how to set the custom properties for a presentation.
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Getting Document Properties
     IDocumentProperties dProps = pres.getDocumentProperties();
@@ -125,7 +125,7 @@ try {
     // Saving presentation
     pres.save("CustomDemo.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -155,7 +155,7 @@ try {
     // Save your presentation to a file
     pres.save("CustomDemoModified.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

@@ -42,7 +42,7 @@ Aspose.Slides for Java provides a simple API for managing different chart entiti
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Accessing the first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -194,7 +194,7 @@ try {
     // Save Presentation
     pres.save("FormattedChart.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -210,7 +210,7 @@ Below sample example is given.
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 400);
     
@@ -219,7 +219,7 @@ try {
     
     pres.save("FontPropertiesForChart.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -238,7 +238,7 @@ Aspose.Slides for Java provides a simple API for managing chart data format:
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Access the first presentation slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -263,7 +263,7 @@ try {
     // Saving presentation
     pres.save("PresetNumberFormat.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 
 ```
@@ -321,7 +321,7 @@ Below sample example is given. 
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     ISlide slide = pres.getSlides().get_Item(0);
     
@@ -332,7 +332,7 @@ try {
 
     pres.save("output.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

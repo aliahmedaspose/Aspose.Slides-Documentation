@@ -21,14 +21,14 @@ The examples that follow show how to save a presentation with Aspose.Slides for 
 
 ```java
 // Instantiate a Presentation object that represents a PPT file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // ...do some work here...
     
     // Save your presentation to a file
     pres.save("demoPass.pptx", com.aspose.slides.SaveFormat.Pptx);
 } finally {
-    if(pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -37,9 +37,9 @@ It is possible to save a presentation to a stream by passing an output stream to
 
 ```java
 // Instantiate a Presentation object that represents a PPT file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
-    IAutoShape shape = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 200, 200, 200, 200);
+    $shape = $pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 200, 200, 200, 200);
 
     // Add text to shape
     shape.getTextFrame().setText("This demo shows how to Create PowerPoint file and save it to Stream.");
@@ -51,7 +51,7 @@ try {
     os.close();
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -60,7 +60,7 @@ Aspose.Slides for Java provides a facility to set the view type for the generate
 
 ```java
 // Opening the presentation file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Setting view type
     pres.getViewProperties().setLastView((byte) ViewType.SlideMasterView);
@@ -68,7 +68,7 @@ try {
     // Saving presentation
     pres.save("newDemo.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -79,7 +79,7 @@ The following sample code creates a presentation and saves it in the Strict Open
 
 ```java
 // Instantiate a Presentation object that represents a PPT file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -94,7 +94,7 @@ try {
     // Save your presentation to a file
     pres.save("demoPass.pptx", SaveFormat.Pptx, options);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 
 ```

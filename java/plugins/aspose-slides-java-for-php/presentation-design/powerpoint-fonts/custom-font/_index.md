@@ -32,7 +32,7 @@ Presentation pres = new Presentation("DefaultFonts.pptx");
 try {
     pres.save("NewFonts_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 
     // Clear Font Cachce
     FontsLoader.clearCache();
@@ -64,7 +64,7 @@ try {
     //work with the presentation
     //CustomFont1, CustomFont2 as well as fonts from assets\fonts & global\fonts folders and their subfolders are available to the presentation
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

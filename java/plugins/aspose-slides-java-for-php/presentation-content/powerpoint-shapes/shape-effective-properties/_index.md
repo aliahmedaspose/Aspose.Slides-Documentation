@@ -26,7 +26,7 @@ try {
     IPortionFormat localPortionFormat = shape.getTextFrame().getParagraphs().get_Item(0).getPortions().get_Item(0).getPortionFormat();
     IPortionFormatEffectiveData effectivePortionFormat = localPortionFormat.getEffective();
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -45,7 +45,7 @@ try {
     System.out.println("Field of view: " + threeDEffectiveData.getCamera().getFieldOfViewAngle());
     System.out.println("Zoom: " + threeDEffectiveData.getCamera().getZoom());
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -63,7 +63,7 @@ try {
     System.out.println("Type: " + threeDEffectiveData.getLightRig().getLightType());
     System.out.println("Direction: " + threeDEffectiveData.getLightRig().getDirection());
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -82,7 +82,7 @@ try {
     System.out.println("Width: " + threeDEffectiveData.getBevelTop().getWidth());
     System.out.println("Height: " + threeDEffectiveData.getBevelTop().getHeight());
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -106,7 +106,7 @@ try {
     System.out.println("   Right: " + effectiveTextFrameFormat.getMarginRight());
     System.out.println("   Bottom: " + effectiveTextFrameFormat.getMarginBottom());
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -132,7 +132,7 @@ try {
         System.out.println("Font alignment: " + effectiveStyleLevel.getFontAlignment());
     }
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -140,7 +140,7 @@ try {
 Using Aspose.Slides for Java, you can get effective properties of Font Height. Here, we are providing a code that shows the portion's effective font height value changing after local font height values are set on different presentation structure levels:
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     IAutoShape newShape = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 400, 75, false);
     newShape.addTextFrame("");
@@ -178,7 +178,7 @@ try {
 
     pres.save("SetLocalFontHeightValues.pptx",SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -199,7 +199,7 @@ try {
     IFillFormatEffectiveData columnFillFormatEffective = columnFormatEffective.getFillFormat();
     IFillFormatEffectiveData cellFillFormatEffective = cellFormatEffective.getFillFormat();
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

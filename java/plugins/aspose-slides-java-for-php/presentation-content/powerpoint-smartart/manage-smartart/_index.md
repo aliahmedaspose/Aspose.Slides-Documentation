@@ -24,7 +24,7 @@ try {
         }
     }
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -39,7 +39,7 @@ In order to change the layout type of [SmartArt](https://apireference.aspose.com
   In the example given below, we have added a connector between two shapes.
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Add SmartArt BasicProcess
     ISmartArt smart = pres.getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.BasicBlockList);
@@ -50,7 +50,7 @@ try {
     // Saving Presentation
     pres.save("ChangeSmartArtLayout_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -66,7 +66,7 @@ Please note: method [ISmartArtNode.isHidden()]((https://apireference.aspose.com/
 In the example given below, we have added a connector between two shapes.
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Add SmartArt BasicProcess 
     ISmartArt smart = pres.getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.RadialCycle);
@@ -84,7 +84,7 @@ try {
     // Saving Presentation
     pres.save("CheckSmartArtHiddenProperty_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -98,7 +98,7 @@ Methods [ISmartArtNode.getOrganizationChartLayout()](https://apireference.aspose
   In the example given below, we have added a connector between two shapes.
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Add SmartArt BasicProcess
     ISmartArt smart = pres.getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.OrganizationChart);
@@ -109,7 +109,7 @@ try {
     // Saving Presentation
     pres.save("OrganizeChartLayoutType_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -129,7 +129,7 @@ try {
     ISmartArt smartArt = pres.getSlides().get_Item(0).getShapes().addSmartArt(0, 0, 400, 400, SmartArtLayoutType.PictureOrganizationChart);
     pres.save("OrganizationChart.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -145,7 +145,7 @@ The following code is used to create a chart.
 
 ```java
 // Instantiate Presentation class that represents the PPTX file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Add SmartArt BasicProcess
     ISmartArt smart = pres.getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.BasicProcess);
@@ -157,7 +157,7 @@ try {
     // Saving Presentation
     pres.save("output.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

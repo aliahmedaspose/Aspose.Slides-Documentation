@@ -33,7 +33,7 @@ try {
     // Save PPTX to Disk
     pres.save("pres.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -90,7 +90,7 @@ try {
     // Write PPTX to Disk
     pres.save("table_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -107,7 +107,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 - Write the modified presentation as a PPTX file.
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     ISlide slide = pres.getSlides().get_Item(0);
     
@@ -120,7 +120,7 @@ try {
     
     pres.save("TestTable_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -137,7 +137,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // the first shape on the first slide is a table
     ITable someTable = (ITable)pres.getSlides().get_Item(0).getShapes().get_Item(0); 
@@ -163,7 +163,7 @@ try {
 
     pres.save("result.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -180,7 +180,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // the first shape on the first slide is a table
     ITable someTable = (ITable)pres.getSlides().get_Item(0).getShapes().get_Item(0)];
@@ -206,6 +206,6 @@ try {
 
     pres.save("result.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

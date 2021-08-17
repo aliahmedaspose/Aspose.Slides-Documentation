@@ -69,15 +69,15 @@ Here is possible to add new colors not defined in presentation theme, or change 
 In [**Aspose.Slides**](https://products.aspose.com/slides/java) to choose the appropriate color from the theme color set and set it to the element, use [**IFillFormat.getSolidFillColor.getSchemeColor**](https://apireference.aspose.com/slides/java/com.aspose.slides/IColorFormat#getSchemeColor--) method:
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
-    IAutoShape shape = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 10, 10, 100, 100);
+    $shape = $pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 10, 10, 100, 100);
 
     shape.getFillFormat().setFillType(FillType.Solid);
 
     shape.getFillFormat().getSolidFillColor().setSchemeColor(SchemeColor.Accent4);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ``` 
 
@@ -132,7 +132,7 @@ In [**Aspose.Slides**](https://products.aspose.com/slides/java) (the same as in 
 Let us create an element with the text, and assign the Latin font from the font scheme to it: 
 
 ```java
-IAutoShape shape = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 10, 10, 100, 100);
+$shape = $pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 10, 10, 100, 100);
 
 Paragraph paragraph = new Paragraph();
 
@@ -180,7 +180,7 @@ try {
 
     System.out.println("Number of background fill styles for theme is " + numberOfBackgroundFills);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ``` 
 
@@ -230,7 +230,7 @@ try {
 
     pres.save("Design_04_Subtle_Moderate_Intense-out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ``` 
 

@@ -19,7 +19,7 @@ In the example given below, we have added an Embedded Audio Frame into the slide
 
 ```java
 // Instantiate Prseetation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -38,7 +38,7 @@ try {
     pres.save("AudioFrameEmbed_out.pptx", SaveFormat.Pptx);
 } catch (Exception e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -64,6 +64,6 @@ try {
     byte[] audio = transition.getSound().getBinaryData();
     System.out.println("Length: " + audio.length);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

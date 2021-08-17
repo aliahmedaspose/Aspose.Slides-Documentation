@@ -40,7 +40,7 @@ try {
     ImageIO.write(image, "jpeg", new File("output.jpg"));
 } catch (Exception e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -65,7 +65,7 @@ try {
     ImageIO.write(image, "jpeg", new File("output.jpg"));
 } catch (Exception e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -90,6 +90,6 @@ try {
     ImageIO.write(image, "jpeg", new File("output.jpg"));
 } catch (Exception e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

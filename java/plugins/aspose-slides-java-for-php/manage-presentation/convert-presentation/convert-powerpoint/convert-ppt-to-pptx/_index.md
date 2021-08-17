@@ -41,7 +41,7 @@ try {
 // Saving the PPTX presentation to PPTX format
     pres.save("ConvertedAspose.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

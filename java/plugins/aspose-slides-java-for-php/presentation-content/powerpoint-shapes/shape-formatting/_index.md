@@ -22,7 +22,7 @@ In the example given below, we have selected an AutoShape of Rectangle type whos
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -46,7 +46,7 @@ try {
     // Write the PPTX file to disk
     pres.save("RectShpLn.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -61,7 +61,7 @@ In the example given below, we will create three rectangles with each of the Joi
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -105,7 +105,7 @@ try {
     // Write the PPTX file to disk
     pres.save("RectShpLnJoin.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -123,7 +123,7 @@ In the example given below, we have selected the ellipse shape for the demonstra
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -145,7 +145,7 @@ try {
     // Write the PPTX file to disk
     pres.save("EllipseShpGrad.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -165,7 +165,7 @@ The above steps are implemented in the example given below.
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -186,7 +186,7 @@ try {
     // Write the PPTX file to disk
     pres.save("RectShpPatt.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -206,7 +206,7 @@ The above steps are implemented in the example given below.
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -228,7 +228,7 @@ try {
     pres.save("RectShpPic.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -246,7 +246,7 @@ The above steps are implemented in the example given below.
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -263,7 +263,7 @@ try {
     // Write the PPTX file to disk
     pres.save("RectShpSolid.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -280,7 +280,7 @@ In the example given below, we have rotated a rectangle shape to 90 degrees for 
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -294,7 +294,7 @@ try {
     // Write the PPTX file to disk
     pres.save("RectShpRot_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -310,7 +310,7 @@ In the example given below, we have applied 3D bevel effects on a shape.
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     ISlide slide = pres.getSlides().get_Item(0);
     
@@ -335,7 +335,7 @@ try {
     // Write the presentation as a PPTX file
     pres.save("Bavel.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -351,7 +351,7 @@ In the example given below, we have applied 3D Rotation effects on a shape.
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     IShape autoShape = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 30, 30, 200, 200);
     
@@ -368,6 +368,6 @@ try {
     
     pres.save("Rotation_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

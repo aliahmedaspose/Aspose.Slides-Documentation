@@ -26,7 +26,7 @@ try {
     // Saving the presentation to TIFF document
     pres.save("tiff-image.tiff", SaveFormat.Tiff);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -64,7 +64,7 @@ try {
     // Save the presentation to TIFF with specified image size
     pres.save("tiff-ImageSize.tiff", SaveFormat.Tiff, opts);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }    
 ```
 
@@ -90,6 +90,6 @@ try {
     // Save the presentation to TIFF with specified image size
     pres.save("Tiff-PixelFormat.tiff", SaveFormat.Tiff, options);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

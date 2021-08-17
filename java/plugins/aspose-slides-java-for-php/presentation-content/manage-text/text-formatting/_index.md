@@ -24,7 +24,7 @@ try {
     
     pres.save("OutputPresentation-highlight.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -44,7 +44,7 @@ try {
     
     pres.save("OutputPresentation-highlight.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -86,7 +86,7 @@ try {
     //Writing the presentation as a PPTX file
     pres.save("Centeralign_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -116,7 +116,7 @@ try {
 
     pres.save("transparency-2.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -181,7 +181,7 @@ try {
     //Write the PPTX to disk
     pres.save("WelcomeFont_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -203,7 +203,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Instantiate Presentation
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
 
     // Get first slide
@@ -244,7 +244,7 @@ try {
     // Write the PPTX to disk 
     pres.save("SetTextFontProperties_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 
 ```
@@ -261,7 +261,7 @@ Aspose.Slides for Java allows developers to rotate the text. Text could be set t
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide 
     ISlide slide = pres.getSlides().get_Item(0);
@@ -289,7 +289,7 @@ try {
     // Save Presentation
     pres.save("RotateText_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -305,7 +305,7 @@ In the example given below, we set the RotationAngle property.
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -333,7 +333,7 @@ try {
     // Save Presentation
     pres.save(resourcesOutputPath+"RotateText_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -368,7 +368,7 @@ try {
     // Save Presentation
     pres.save("LineSpacing_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -384,7 +384,7 @@ In this topic, we will explore the different formatting properties of text frame
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Access the first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -412,7 +412,7 @@ try {
     // Save Presentation
     pres.save(resourcesOutputPath + "formatText_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -428,7 +428,7 @@ Aspose.Slides for Java allows developers to Anchor of any TextFrame. TextAnchorT
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide 
     ISlide slide = pres.getSlides().get_Item(0);
@@ -456,7 +456,7 @@ try {
     // Save Presentation
     pres.save("AnchorText_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

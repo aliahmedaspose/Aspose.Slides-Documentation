@@ -11,7 +11,7 @@ url: /java/chart-workbook/
 A new property has been added to set chart data from workbook. Now Aspose.Slides does allow [readWorkbookStream()](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartData#readWorkbookStream--) and [wrtiteWorkbookStream()](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartData#writeWorkbookStream-byte:A-) methods to read and write chart data workbooks containing chart data edited using Aspose.Cells. However, the chart data needs to be organized in same way or of similar type as of source type. Below sample example is given.
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 500, 400);
     chart.getChartData().getChartDataWorkbook().clear(0);
@@ -30,7 +30,7 @@ try {
 } catch (Exception ex) {
     ex.printStackTrace();
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -62,7 +62,7 @@ try {
 
     pres.save("resultchart.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -88,7 +88,7 @@ try {
         String path = chart.getChartData().getExternalWorkbookPath();
     }
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -124,7 +124,7 @@ try {
     pres.save("output.pptx", SaveFormat.Pptx);
 } catch (Exception e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -155,7 +155,7 @@ try {
     
     pres.save("Presentation_with_externalWorkbook.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -174,7 +174,7 @@ try {
 
     pres.save("Presentation_with_externalWorkbookWithUpdateChartData.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -194,6 +194,6 @@ try {
     
     pres.save("presentation_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

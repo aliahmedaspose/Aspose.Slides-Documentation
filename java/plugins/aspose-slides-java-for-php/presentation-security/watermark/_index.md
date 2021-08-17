@@ -52,7 +52,7 @@ All the other logic is the same as in adding watermark into a single slide - cre
 
 ```java
 // Open presentation
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     IMasterSlide master = pres.getMasters().get_Item(0);
 
@@ -61,7 +61,7 @@ try {
     ITextFrame watermarkTextFrame = watermarkShape.addTextFrame("Watermark");
 
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ``` 
 

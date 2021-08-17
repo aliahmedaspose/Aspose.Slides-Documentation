@@ -24,7 +24,7 @@ In the example given below, we have added an ellipse to the first slide
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -35,7 +35,7 @@ try {
     // Write the PPTX file to disk
     pres.save("EllipseShp1.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -55,7 +55,7 @@ In the example given below, we have added a formatted ellipse to the first slide
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -75,6 +75,6 @@ try {
     // Write the PPTX file to disk
     pres.save("EllipseShp1.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

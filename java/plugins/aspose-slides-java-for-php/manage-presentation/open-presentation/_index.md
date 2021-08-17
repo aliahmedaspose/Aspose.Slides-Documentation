@@ -22,7 +22,7 @@ try {
     // Printing the total number of slides present in the presentation
     System.out.println(pres.getSlides().size());
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -43,7 +43,7 @@ try {
     // Printing the total number of slides present in the presentation
     System.out.println(pres.getSlides().size());
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -65,7 +65,7 @@ try {
     // presentation will be saved to the other file, the memory consumptions still low during saving.
     pres.save("veryLargePresentation-copy.pptx", SaveFormat.Pptx);
 } finally {
-    if(pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

@@ -22,7 +22,7 @@ This sample code, based on the steps above, shows you how to apply the PathFootb
 
 ```java
 // Instantiate PrseetationEx class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     ISlide sld = pres.getSlides().get_Item(0);
 
@@ -56,6 +56,6 @@ try {
     //Write the presentation as PPTX to disk
     pres.save("AnimExample_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

@@ -28,7 +28,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Instantiate a Presentation class that represents a PPTX file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Accessing first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -97,7 +97,7 @@ This topic is also the part of the topic series of managing text in paragraphs. 
 The implementation of the above steps is given below.
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Accessing the first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -132,7 +132,7 @@ try {
     pres.save("Bullet.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -155,7 +155,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Instantiate a Presentation class that represents a PPTX file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Accessing first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -222,7 +222,7 @@ try {
     // saving the presentation as a PPTX file
     pres.save("MultilevelBullet.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -244,7 +244,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Instantiate a Presentation class that represents a PPTX file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Accessing first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -283,6 +283,6 @@ try {
 
     pres.save(resourcesOutputPath + "SetCustomBulletsNumber-slides.pptx.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

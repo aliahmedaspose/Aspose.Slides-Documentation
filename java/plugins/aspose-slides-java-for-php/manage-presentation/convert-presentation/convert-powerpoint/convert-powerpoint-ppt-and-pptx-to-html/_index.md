@@ -58,7 +58,7 @@ try {
     // Saving the presentation to HTML
     pres.save("ConvertWholePresentationToHTML_out.html", SaveFormat.Html, htmlOpt);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 
 ```
@@ -77,7 +77,7 @@ try {
     // Saving the presentation to HTML
     pres.save("ConvertPresentationToResponsiveHTML_out.html", SaveFormat.Html, htmlOptions);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -94,7 +94,7 @@ try {
     // Saving notes pages
     pres.save("Output.html", SaveFormat.Html, opt);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -114,7 +114,7 @@ try {
 
     pres.save("input-PFDinDisplayPro-Regular-installed.html", SaveFormat.Html, htmlOptionsEmbed);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -132,7 +132,7 @@ try {
     for (int i = 0; i < pres.getSlides().size(); i++)
         pres.save("Individual Slide" + (i + 1) + "_out.html", new int[]{i + 1},SaveFormat.Html, htmlOptions);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 ```java
@@ -179,7 +179,7 @@ try {
 
     pres.save("pres.html", SaveFormat.Html, options);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 
 ```
@@ -235,7 +235,7 @@ try
     pres.save("pres.html", SaveFormat.Html, htmlOptionsEmbed);
 }
 finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -288,7 +288,7 @@ try {
     saveOptions.setSvgResponsiveLayout(true);
     pres.save("SomePresentation-out.html", SaveFormat.Html, saveOptions);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -322,6 +322,6 @@ try {
     // Saving the file
     pres.save(fileName, SaveFormat.Html, htmlOptions);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

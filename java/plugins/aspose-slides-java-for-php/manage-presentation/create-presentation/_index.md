@@ -17,7 +17,7 @@ In the example given below, we have added a line to the first slide of the prese
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -26,6 +26,6 @@ try {
     slide.getShapes().addAutoShape(ShapeType.Line, 50, 150, 300, 0);
     pres.save("NewPresentation_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

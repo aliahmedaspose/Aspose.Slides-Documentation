@@ -24,7 +24,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Instantiate a Presentation class that represents a PPTX file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Accessing first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -83,7 +83,7 @@ try {
     //Write PPTX to Disk
     pres.save("multiParaPort_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -102,7 +102,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Instantiate Presentation Class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -148,7 +148,7 @@ try {
     //Write the Presentation to disk
     pres.save("InOutDent_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -166,9 +166,9 @@ This page will illustrate how we can manage end paragraph run properties. We wil
 The implementation of the above steps is given below.
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
-    IAutoShape shape = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 10, 10, 200, 250);
+    $shape = $pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 10, 10, 200, 250);
 
     Paragraph para1 = new Paragraph();
     para1.getPortions().add(new Portion("Sample text"));
@@ -186,7 +186,7 @@ try {
 
     pres.save(resourcesOutputPath+"pres.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -207,7 +207,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Create Empty presentation instance
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Acesss the default first slide of presentation
     ISlide slide = pres.getSlides().get_Item(0);
@@ -233,7 +233,7 @@ try {
     // Saving Presentation
     pres.save("output_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -272,7 +272,7 @@ try {
     writer.close();
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

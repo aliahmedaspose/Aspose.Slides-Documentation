@@ -20,6 +20,6 @@ try {
     // Saving presentation
     pres.save("Sample.swf", SaveFormat.Swf, swfOptions);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

@@ -8,7 +8,7 @@ url: /java/chart-data-label/
 Aspose.Slides for Java provides a simple API for setting precision of data in chart data label. Below sample example is given. 
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Line, 50, 50, 450, 300);
     
@@ -17,7 +17,7 @@ try {
 
     pres.save("output.pptx",SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -35,7 +35,7 @@ In the example given below, we have set the percentage as label.
 
 ```java
 // Creating empty presentation
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Access first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -78,7 +78,7 @@ try {
     // Save presentation with chart
     pres.save("output.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -97,7 +97,7 @@ In order to set the percentage sign with chart data labels. Please follow the st
 
 ```java
 // Creating empty presentation
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get reference of the slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -155,7 +155,7 @@ try {
     // Write presentation to disk
     pres.save("SetDataLabelsPercentageSign_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -172,7 +172,7 @@ In the example given below, we have set the label distance from category axis.
 
 ```java
 // Creating empty presentation
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get reference of the slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -186,6 +186,6 @@ try {
     // Write the presentation to disk
     pres.save("output.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

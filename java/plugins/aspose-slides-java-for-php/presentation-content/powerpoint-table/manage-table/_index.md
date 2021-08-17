@@ -21,7 +21,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 
 ```java
 // Instantiate Presentation class that represents PPTX file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Access first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -66,7 +66,7 @@ try {
     // Save PPTX to Disk
     pres.save("table.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -105,7 +105,7 @@ try {
     //Write the PPTX to Disk
     pres.save("table1_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -122,7 +122,7 @@ Aspose.Slides for Java has provided the simplest API to work with tables in an e
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide 
     ISlide slide = pres.getSlides().get_Item(0);
@@ -157,7 +157,7 @@ try {
     // Save Presentation
     pres.save("Vertical_Align_Text_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -197,7 +197,7 @@ try {
     
     pres.save("result.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -212,7 +212,7 @@ In a standard table numeration of cells is straightforward and zero-based. The f
 
 ```java
 // Instantiate Presentation class that represents PPTX file
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Access first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -250,7 +250,7 @@ try {
     //Write PPTX to Disk
     pres.save("StandardTables_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -269,6 +269,6 @@ try {
 
     pres.save("pres-out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

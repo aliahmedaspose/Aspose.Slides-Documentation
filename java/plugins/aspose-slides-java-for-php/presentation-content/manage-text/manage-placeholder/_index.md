@@ -42,7 +42,7 @@ try {
     // Save the PPTX to Disk
     pres.save("output_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -76,6 +76,6 @@ try {
 
     pres.save("Placeholders_PromptText.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

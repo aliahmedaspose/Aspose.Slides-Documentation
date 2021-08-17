@@ -29,7 +29,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Instantiate a Presentation class that represents a PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -73,7 +73,7 @@ try {
 
     pres.save("formatText.pptx",SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

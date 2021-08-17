@@ -18,7 +18,7 @@ In the example given below, we have set the chart marker options on data points 
 
 ```java
 // Creating empty presentation
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Access first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -71,6 +71,6 @@ try {
     pres.save("ScatterChart.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

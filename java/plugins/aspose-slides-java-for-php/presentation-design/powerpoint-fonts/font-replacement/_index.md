@@ -32,6 +32,6 @@ try {
     // Save the presentation
     pres.save("UpdatedFont_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

@@ -10,7 +10,7 @@ Aspose.Slides for Java provides a facility to add large files (video file in tha
 
 ```java
 // create a new presentation which will contain this video
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     InputStream fileStream = new FileInputStream("veryLargeVideo.avi");
     try {
@@ -84,7 +84,7 @@ This example demonstrates how to include the large Blob (image) and prevent a hi
 
 ```java
 // create a new presentation which will contain this image
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     FileInputStream fip = new FileInputStream("large_image.jpg");
     try {

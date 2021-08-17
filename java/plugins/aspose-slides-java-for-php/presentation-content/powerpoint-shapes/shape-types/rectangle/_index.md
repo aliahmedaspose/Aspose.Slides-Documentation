@@ -23,7 +23,7 @@ In the example given below, we have added a simple rectangle to the first slide 
 
 ```java
 // Instantiate Prseetation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -34,7 +34,7 @@ try {
     // Write the PPTX file to disk
     pres.save("RecShp1.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 
@@ -54,7 +54,7 @@ The above steps are implemented in the example given below.
 
 ```java
 // Instantiate Prseetation class that represents the PPTX
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -74,6 +74,6 @@ try {
     // Write the PPTX file to disk
     pres.save("RecShp2.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```

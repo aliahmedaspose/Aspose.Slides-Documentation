@@ -45,7 +45,7 @@ try {
     ImageIO.write(image, "PNG", new File("Thumbnail_out.jpg"));
 } catch (IOException e) {
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

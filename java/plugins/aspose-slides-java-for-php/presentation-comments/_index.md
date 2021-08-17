@@ -80,7 +80,7 @@ New methods [**getParentComment**](https://apireference.aspose.com/slides/java/c
 The code snippet below shows a sample of adding some comments and some replies to them:
 
 ```java
-Presentation pres = new Presentation();
+$pres = new Java("com.aspose.slides.Presentation");;
 try {
     // Add comment
     ICommentAuthor author1 = pres.getCommentAuthors().addAuthor("Author_1", "A.A.");
@@ -126,7 +126,7 @@ try {
 
     pres.save("remove_comment.pptx",SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

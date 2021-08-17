@@ -32,7 +32,7 @@ try {
 // Saving the PPT presentation to PPTX format
     pres.save("PPTtoPPTX_out.pptx", SaveFormat.Pptx);
 } finally {
-    if (pres != null) pres.dispose();
+    if ($pres != null) $pres->dispose();
 }
 ```
 

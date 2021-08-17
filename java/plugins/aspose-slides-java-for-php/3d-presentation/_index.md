@@ -130,9 +130,14 @@ You may also create an image gradient:
 $shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Picture);
 $picture = null;
 try {
-    $picture = $pres->getImages()->addImage(Java("java.nio.file.Files")->readAllBytes(Java("java.nio.file.Paths")->get("image.jpg")));
+	$f = new Java("java.io.File", "image.jpg");
+	$fos = new Java("java.io.FileInputStream", new Java("java.io.File", "sample_3d.png"));
+	$picture = $pres->getImages()->addImage(new Java("java.io.FileInputStream", new Java("java.io.File", "sample_3d.png")));
 } catch (JavaException $e) { }
-$shape->getFillFormat()->getPictureFillFormat()->getPicture()->setImage(picture);
+finally {
+    if ($fos != null) $fos->close();
+}
+$shape->getFillFormat()->getPictureFillFormat()->getPicture()->setImage($picture);
 $shape->getFillFormat()->getPictureFillFormat()->setPictureFillMode(Java("com.aspose.slides.PictureFillMode")->Stretch);
 // .. setup 3D: $shape->ThreeDFormat->Camera, $shape->ThreeDFormat->LightRig, $shape->ThreeDFormat->Extrusion* properties
 try {

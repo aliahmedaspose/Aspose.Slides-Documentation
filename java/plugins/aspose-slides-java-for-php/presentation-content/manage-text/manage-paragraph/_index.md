@@ -24,7 +24,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Instantiate a Presentation class that represents a PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -102,7 +102,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Instantiate Presentation Class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -166,7 +166,7 @@ This page will illustrate how we can manage end paragraph run properties. We wil
 The implementation of the above steps is given below.
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     $shape = $pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 10, 10, 200, 250);
 
@@ -207,7 +207,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Create Empty presentation instance
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Acesss the default first slide of presentation
     ISlide slide = pres.getSlides().get_Item(0);

@@ -22,7 +22,7 @@ This sample code, based on the steps above, shows you how to apply the PathFootb
 
 ```java
 // Instantiate PrseetationEx class that represents the PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide sld = pres.getSlides().get_Item(0);
 

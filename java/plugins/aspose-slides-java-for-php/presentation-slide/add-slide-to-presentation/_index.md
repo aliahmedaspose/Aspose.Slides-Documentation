@@ -22,7 +22,7 @@ Aspose.Slides for Java allows developers to add empty slides to their presentati
 
 ```java
 // Instantiate Presentation class that represents the presentation file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Instantiate SlideCollection calss
     ISlideCollection slds = pres.getSlides();

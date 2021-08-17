@@ -8,7 +8,7 @@ url: /java/callout/
 New methods [**getShowLabelAsDataCallout()**](https://apireference.aspose.com/slides/java/com.aspose.slides/IDataLabelFormat#getShowLabelAsDataCallout--) and [**setShowLabelAsDataCallout()**](https://apireference.aspose.com/slides/java/com.aspose.slides/IDataLabelFormat#setShowLabelAsDataCallout-boolean-) have been added to [DataLabelFormat](http://www.aspose.com/api/java/slides/com.aspose.slides/classes/DataLabelFormat) class and [IDataLabelFormat](http://www.aspose.com/api/java/slides/com.aspose.slides/interfaces/IDataLabelFormat) interface. These methods determine either specified chart's data label will be displayed as data callout or as data label.
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 500, 400);
     
@@ -26,7 +26,7 @@ try {
 Aspose.Slides for Java provides support for setting series data label callout shape for a Doughnut chart. Below sample example is given. 
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = pres.getSlides().get_Item(0);
     IChart chart = slide.getShapes().addChart(ChartType.Doughnut, 10, 10, 500, 500, false);

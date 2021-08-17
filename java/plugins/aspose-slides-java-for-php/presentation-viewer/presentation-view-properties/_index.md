@@ -40,7 +40,7 @@ An example is given below shows how can you access [**ViewProperties.getNormalVi
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     pres.getViewProperties().getNormalViewProperties().setHorizontalBarState(SplitterBarStateType.Restored);
     pres.getViewProperties().getNormalViewProperties().setVerticalBarState(SplitterBarStateType.Maximized);

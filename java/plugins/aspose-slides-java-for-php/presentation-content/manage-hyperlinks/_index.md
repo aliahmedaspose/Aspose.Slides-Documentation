@@ -20,7 +20,7 @@ To add a hyperlink in a presentation on the presentation level:
 1. Save the presentation as a [PPTX ](https://wiki.fileformat.com/presentation/pptx/)file.
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape shape1 = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 600, 50, false);
     shape1.addTextFrame("Aspose: File Format APIs");
@@ -64,7 +64,7 @@ It allows to get or set the source of hyperlink color, which could be obtained e
 The code snippet below shows a sample of adding two hyperlinks with different colors to the same slide:
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape shape1 = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 450, 50, false);
     shape1.addTextFrame("This is a sample of colored hyperlink.");
@@ -96,7 +96,7 @@ Hyperlink class changed to be mutable. Now it is possible to change values of th
 The code snippet below shows adding a hyperlink to the slide and editing its tooltip later:
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape shape1 = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 600, 50, false);
     shape1.addTextFrame("Aspose: File Format APIs");

@@ -16,7 +16,7 @@ Aspose.Slides for Java provides a simple API for managing error bar values. The 
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Creating a bubble chart
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Bubble, 50, 50, 400, 300, true);
@@ -55,7 +55,7 @@ Aspose.Slides for Java provides a simple API for managing custom error bar value
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Creating a bubble chart
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Bubble, 50, 50, 400, 300, true);

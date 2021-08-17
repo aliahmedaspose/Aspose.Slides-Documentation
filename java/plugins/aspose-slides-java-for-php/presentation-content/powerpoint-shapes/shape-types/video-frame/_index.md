@@ -19,7 +19,7 @@ In the example below, we added a Video Frame to the slide.
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -60,7 +60,7 @@ This sample code shows you how to add a video from YouTube to a slide:
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     addVideoFromYouTube(pres, "Tj75Arhq5ho");
     pres.save("out.pptx", SaveFormat.Pptx);
@@ -107,7 +107,7 @@ In the example below, we added a Video Frame to the slide.
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);

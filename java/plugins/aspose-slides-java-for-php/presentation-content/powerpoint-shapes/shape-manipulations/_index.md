@@ -84,7 +84,7 @@ Aspose.Slides for Java allows developers to remove any shape. To remove the shap
 
 ```java
 // Create Presentation object
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -122,7 +122,7 @@ Aspose.Slides for Java allows developers to hide any shape. To hide the shape fr
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -214,7 +214,7 @@ To set the AlternateText of a shape, please follow the steps below:
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);

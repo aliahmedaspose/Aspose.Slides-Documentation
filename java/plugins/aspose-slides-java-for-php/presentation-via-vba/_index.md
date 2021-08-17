@@ -30,7 +30,7 @@ The implementation of the above steps is demonstrated in the example below.
 
 ```java
 // Instantiate Presentation
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Create new VBA Project
     pres.setVbaProject(new VbaProject());

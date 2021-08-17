@@ -12,7 +12,7 @@ You can access the flash control by name and extract it from the presentation an
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IControlCollection controls = pres.getSlides().get_Item(0).getControls();
     Control flashControl = null;

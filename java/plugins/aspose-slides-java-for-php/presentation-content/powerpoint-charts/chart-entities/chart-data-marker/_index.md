@@ -18,7 +18,7 @@ In the example given below, we have set the chart marker options on data points 
 
 ```java
 // Creating empty presentation
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
     ISlide slide = pres.getSlides().get_Item(0);

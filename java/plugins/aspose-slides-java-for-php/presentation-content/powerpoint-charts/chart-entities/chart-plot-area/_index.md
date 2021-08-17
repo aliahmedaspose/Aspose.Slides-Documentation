@@ -19,7 +19,7 @@ Aspose.Slides for Java provides a simple API for . 
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     Chart chart = (Chart)pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 350);
     chart.validateChartLayout();
@@ -43,7 +43,7 @@ Sample code is given below.
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = pres.getSlides().get_Item(0);
     IChart chart = slide.getShapes().addChart(ChartType.ClusteredColumn, 20, 100, 600, 400);

@@ -22,7 +22,7 @@ We know that Aspose.Slides for Java may contain two types of slides: Master Slid
 
 ```java
 // Instantiate the Presentation class that represents the presentation file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Set the background color of the Master ISlide to Green
     pres.getMasters().get_Item(0).getBackground().setType(BackgroundType.OwnBackground);
@@ -101,7 +101,7 @@ To use an image as the background of a slide using Aspose.Slides for Java, pleas
 
 ```java
 // Instantiate the Presentation class that represents the presentation file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Set the background with Image
     pres.getSlides().get_Item(0).getBackground().setType(BackgroundType.OwnBackground);

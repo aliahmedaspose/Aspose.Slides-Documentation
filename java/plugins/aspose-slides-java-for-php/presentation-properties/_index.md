@@ -106,7 +106,7 @@ This example modifies the built-in properties of the presentation that can be vi
 Aspose.Slides for Java also allows developers to add the custom the values for presentation Document properties. An example is given below that shows how to set the custom properties for a presentation.
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Getting Document Properties
     IDocumentProperties dProps = pres.getDocumentProperties();

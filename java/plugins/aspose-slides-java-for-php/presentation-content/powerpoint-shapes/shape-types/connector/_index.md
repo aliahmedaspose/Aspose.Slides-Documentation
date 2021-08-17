@@ -19,7 +19,7 @@ In order to add a connector shape for joining two shapes. Please follow the step
 
 ```java
 // Instantiate Presentation class that represents the PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing shapes collection for selected slide
     IShapeCollection shapes = pres.getSlides().get_Item(0).getShapes();
@@ -68,7 +68,7 @@ In the example given below, we have added a connector between two shapes.
 
 ```java
 // Instantiate Presentation class that represents the PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing shapes collection for selected slide
     IShapeCollection shapes = pres.getSlides().get_Item(0).getShapes();

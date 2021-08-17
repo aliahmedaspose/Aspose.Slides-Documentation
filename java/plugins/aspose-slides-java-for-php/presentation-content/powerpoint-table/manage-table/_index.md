@@ -21,7 +21,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 
 ```java
 // Instantiate Presentation class that represents PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -122,7 +122,7 @@ Aspose.Slides for Java has provided the simplest API to work with tables in an e
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide 
     ISlide slide = pres.getSlides().get_Item(0);
@@ -212,7 +212,7 @@ In a standard table numeration of cells is straightforward and zero-based. The f
 
 ```java
 // Instantiate Presentation class that represents PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
     ISlide sld = pres.getSlides().get_Item(0);

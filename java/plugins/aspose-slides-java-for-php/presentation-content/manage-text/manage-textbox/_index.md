@@ -19,7 +19,7 @@ The implementation of the above steps is demonstrated below in an example.
 
 ```java
 // Instantiate Presentation
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -55,7 +55,7 @@ Using Aspose.Slides for Java, developers can add column in text boxes on a [Slid
 The implementation is demonstrated below in an example.
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide of presentation
     ISlide slide = pres.getSlides().get_Item(0);
@@ -91,7 +91,7 @@ Using Aspose.Slides for Java, developers can add columns in text frames on a [Sl
 The implementation is demonstrated below in an example.
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape shape1 = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 300, 300);
     TextFrameFormat format = (TextFrameFormat)shape1.getTextFrame().getTextFrameFormat();
@@ -153,7 +153,7 @@ The implementation of the above steps is demonstrated below in an example.
 
 ```java
 // Instantiate a Presentation class that represents a PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get first slide
     ISlide slide = pres.getSlides().get_Item(0);

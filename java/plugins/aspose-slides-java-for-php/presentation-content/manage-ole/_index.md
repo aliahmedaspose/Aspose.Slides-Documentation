@@ -32,7 +32,7 @@ In the example below, we added a chart from an Excel file to a slide as an OLE O
 
 ``` java 
 // Instantiate Prseetation class that represents the PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -190,7 +190,7 @@ Besides Excel charts, Aspose.Slides for Java allows you to embed other types of 
 This sample code shows you how to embed HTML and ZIP in a slide:
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = pres.getSlides().get_Item(0);
 
@@ -244,7 +244,7 @@ If you want to use a specific image and text as elements in the preview, you can
 This Java code shows you how to set the icon image and title for an embedded object: 
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = pres.getSlides().get_Item(0);
     IOleObjectFrame oleObjectFrame = (IOleObjectFrame) slide.getShapes().get_Item(0);

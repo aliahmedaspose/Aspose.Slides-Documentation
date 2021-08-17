@@ -14,7 +14,7 @@ Aspose.Slides for Java provides a simple API for setting these properties. This 
 1. Write the modified presentation to a PPTX file.
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
     ISlide slide = pres.getSlides().get_Item(0);

@@ -33,7 +33,7 @@ The above steps are implemented in the example given below.
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -66,7 +66,7 @@ The above steps are implemented in the example given below.
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -110,7 +110,7 @@ The above steps are implemented in the example given below.
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -152,7 +152,7 @@ The above steps are implemented in the example given below.
 
 ```java
 // Instantiate Prseetation class that represents the PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide slide = pres.getSlides().get_Item(0);

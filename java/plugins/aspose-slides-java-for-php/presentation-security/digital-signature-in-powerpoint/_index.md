@@ -29,7 +29,7 @@ The code sample below demonstrates how to add digital signature from a PFX cer
 
 ```java
 // Opening the presentation file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Create DigitalSignature object with PFX file and PFX password 
     DigitalSignature signature = new DigitalSignature("testsignature1.pfx", "testpass1");

@@ -69,7 +69,7 @@ Here is possible to add new colors not defined in presentation theme, or change 
 In [**Aspose.Slides**](https://products.aspose.com/slides/java) to choose the appropriate color from the theme color set and set it to the element, use [**IFillFormat.getSolidFillColor.getSchemeColor**](https://apireference.aspose.com/slides/java/com.aspose.slides/IColorFormat#getSchemeColor--) method:
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     $shape = $pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 10, 10, 100, 100);
 

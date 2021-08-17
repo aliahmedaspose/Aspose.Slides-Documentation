@@ -17,7 +17,7 @@ In the example given below, we have added a line to the first slide of the prese
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide slide = pres.getSlides().get_Item(0);

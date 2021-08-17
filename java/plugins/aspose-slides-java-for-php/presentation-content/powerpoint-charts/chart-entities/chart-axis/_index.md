@@ -18,7 +18,7 @@ Aspose.Slides for Java provides a simple API for getting value of vertical axis.
 1. Get actual minor unit scale of the axis.
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     Chart chart = (Chart)pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Area, 100, 100, 500, 350);
     chart.validateChartLayout();
@@ -37,7 +37,7 @@ try {
 A new property has been added which Swap the data over the axis. Data being charted on the X axis will move to the Y axis and vice versa. Below sample example is given.
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 400, 300);
 
@@ -74,7 +74,7 @@ try {
 Aspose.Slides for Java provides a simple API for setting date format for category axis value. Below sample example is given. 
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Area, 50, 50, 450, 300);
 
@@ -118,7 +118,7 @@ public static String convertToOADate(GregorianCalendar date) throws ParseExcepti
 Aspose.Slides for Java provides a simple API for setting rotation angle for chart axis title. Below sample example is given. 
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
     
@@ -136,7 +136,7 @@ try {
 Aspose.Slides for Java provides a simple API for setting Position axis in category or Value axis. Below sample example is given. 
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
     
@@ -152,7 +152,7 @@ try {
 Aspose.Slides for Java provides support for showing Display unit label on chart value axis. Below sample example is given. 
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
 

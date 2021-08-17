@@ -62,7 +62,7 @@ In the following sample code we have explained how to add the child nodes belong
 
 ```java
 // Creating a presentation instance
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access the presentation slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -192,7 +192,7 @@ In this example, we will learn to access the child nodes at some particular posi
 
 ```java
 // Instantiate the presentation
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing the first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -413,7 +413,7 @@ Please follow the steps below:
 
 ```java
 // Instantiate the presentation
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing the slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -448,7 +448,7 @@ Developers can generate a thumbnail of Child node of a SmartArt by following the
 
 ```java
 // Instantiate Presentation class that represents the PPTX file 
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add SmartArt 
     ISmartArt smart = pres.getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.BasicCycle);

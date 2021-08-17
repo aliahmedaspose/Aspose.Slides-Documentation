@@ -42,7 +42,7 @@ Let's see how we can create the following mathematical equation via Aspose.Slide
 To add a mathematical expression on the slide, first, add a shape that will contain the mathematical text:
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape mathShape = pres.getSlides().get_Item(0).getShapes().addMathShape(0, 0, 720, 150);
 } finally {
@@ -80,7 +80,7 @@ Operations of the interface [**IMathElement**](https://apireference.aspose.com/
 The full source code sample:
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape mathShape = pres.getSlides().get_Item(0).getShapes().addMathShape(0, 0, 720, 150);
 

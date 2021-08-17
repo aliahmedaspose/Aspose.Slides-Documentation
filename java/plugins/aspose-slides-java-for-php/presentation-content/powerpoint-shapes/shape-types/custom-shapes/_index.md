@@ -87,7 +87,7 @@ Method [IGeometryPath.getPathData](https://apireference.aspose.com/slides/java/c
 - Apply the path to the shape.
   
 ``` java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     GeometryShape shape = (GeometryShape) pres.getSlides().get_Item(0).
             getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 200, 100);
@@ -111,7 +111,7 @@ try {
 - Apply the path to the shape.
   
 ``` java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     GeometryShape shape = (GeometryShape) pres.getSlides().get_Item(0).
             getShapes().addAutoShape(ShapeType.Heart, 100, 100, 300, 300);
@@ -162,7 +162,7 @@ for (int i = 1; i < points.size(); i++)
 
 starPath.closeFigure();
 
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     GeometryShape shape = (GeometryShape) pres.getSlides().get_Item(0).
             getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, R * 2, R * 2);
@@ -184,7 +184,7 @@ try {
   - Apply the paths to the shape.
 
 ``` java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     GeometryShape shape = (GeometryShape) pres.getSlides().get_Item(0).
             getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 200, 100);
@@ -218,7 +218,7 @@ try {
 - Apply the paths to the shape.
   
 ``` java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Create new shape
     GeometryShape shape = (GeometryShape)pres.getSlides().get_Item(0).

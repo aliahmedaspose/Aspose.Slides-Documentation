@@ -27,7 +27,7 @@ You can add a zoom frame in a slide using Aspose.Slides for Java this way:
 
 This sample code shows you how to create a zoom frame in a slide:
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     //Add new slides to the presentation
     ISlide slide2 = pres.getSlides().addEmptySlide(pres.getSlides().get_Item(0).getLayoutSlide());
@@ -73,7 +73,7 @@ With Aspose.Slides for Java, you can create a zoom frame with an image other tha
 This sample code shows you how to create a zoom frame with a different image:
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     //Add a new slide to the presentation
     ISlide slide = pres.getSlides().addEmptySlide(pres.getSlides().get_Item(0).getLayoutSlide());
@@ -120,7 +120,7 @@ You can control the formatting of a zoom frame in a slide this way:
 This sample code shows you how to change the formatting of a zoom frame: 
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     //Add new slides to presentation
     ISlide slide2 = pres.getSlides().addEmptySlide(pres.getSlides().get_Item(0).getLayoutSlide());
@@ -192,7 +192,7 @@ You can create a summary zoom in a slide this way:
 This sample code shows you how to create a summary zoom using Aspose.Slides for Java:
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Create slides array
     for (int slideNumber = 0; slideNumber < 5; slideNumber++)

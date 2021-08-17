@@ -28,7 +28,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Instantiate a Presentation class that represents a PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -97,7 +97,7 @@ This topic is also the part of the topic series of managing text in paragraphs. 
 The implementation of the above steps is given below.
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing the first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -155,7 +155,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Instantiate a Presentation class that represents a PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -244,7 +244,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Instantiate a Presentation class that represents a PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing first slide
     ISlide slide = pres.getSlides().get_Item(0);

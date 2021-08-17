@@ -16,7 +16,7 @@ Aspose.Slides for Java provides a simple API interface to set chart series overl
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Adding chart
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400, true);
@@ -48,7 +48,7 @@ Below sample example is given. 
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 600, 400);
 
@@ -77,7 +77,7 @@ Below sample example is given. 
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
 
@@ -103,7 +103,7 @@ Aspose.Slides for Java provides a simple API for setting automatic fill color fo
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Creating a clustered column chart
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 50, 600, 400);
@@ -131,7 +131,7 @@ Aspose.Slides for Java provides a simple API for setting invert fill color for c
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 400, 300);
     IChartDataWorkbook workBook = chart.getChartData().getChartDataWorkbook();
@@ -168,7 +168,7 @@ try {
 The Aspose.Slides for Java lets developers allow to set inverts. Methods [**setInvertIfNegative**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataPoint#setInvertIfNegative-boolean-) and [**getInvertIfNegative**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataPoint#getInvertIfNegative--) methods have been added to [IChartDataPoint](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataPoint) interface and [ChartDataPoint](https://apireference.aspose.com/slides/java/com.aspose.slides/ChartDataPoint) class. This Specifies the data point shall invert its colors if the value is negative. Sample code is given below.
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400, true);
     IChartSeriesCollection series = chart.getChartData().getSeries();
@@ -237,7 +237,7 @@ Aspose.Slides for Java provides a simple API for setting [**gapWidth**](https://
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
     ISlide sld = pres.getSlides().get_Item(0);

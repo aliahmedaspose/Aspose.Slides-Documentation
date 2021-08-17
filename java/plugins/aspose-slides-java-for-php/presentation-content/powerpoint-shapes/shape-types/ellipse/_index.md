@@ -24,7 +24,7 @@ In the example given below, we have added an ellipse to the first slide
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -55,7 +55,7 @@ In the example given below, we have added a formatted ellipse to the first slide
 
 ```java
 // Instantiate Presentation class that represents the PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);

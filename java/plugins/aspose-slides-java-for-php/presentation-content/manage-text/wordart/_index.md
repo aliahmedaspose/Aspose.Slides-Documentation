@@ -32,7 +32,7 @@ With Aspose.Slides for Java, you can easily create your own WordArt template (on
 First, we create a simple text using this Java code: 
 
 ``` java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = pres.getSlides().get_Item(0);
     IAutoShape autoShape = slide.getShapes().addAutoShape(ShapeType.Rectangle, 200, 200, 400, 200);
@@ -291,7 +291,7 @@ Aspose.Slides for Java provides the [**IOuterShadow**](http://www.aspose.com/api
 This sample code in Java—an implementation of the steps above—shows you how to apply the outer shadow effect to a text:
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -336,7 +336,7 @@ Go through these steps:
 This sample code (based on the steps above) shows you how to add a connector between two shapes in Java:
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
     ISlide slide = pres.getSlides().get_Item(0);

@@ -42,7 +42,7 @@ Aspose.Slides for Java provides a simple API for managing different chart entiti
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing the first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -210,7 +210,7 @@ Below sample example is given.
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 400);
     
@@ -238,7 +238,7 @@ Aspose.Slides for Java provides a simple API for managing chart data format:
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access the first presentation slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -321,7 +321,7 @@ Below sample example is given. 
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = pres.getSlides().get_Item(0);
     

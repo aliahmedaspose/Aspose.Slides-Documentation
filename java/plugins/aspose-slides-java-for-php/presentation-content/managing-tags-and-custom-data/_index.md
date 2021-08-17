@@ -57,7 +57,7 @@ try {
 Tags also can be set for [Slide](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlide):
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = pres.getSlides().get_Item(0);
     slide.getCustomData().getTags().set_Item("tag", "value");
@@ -69,7 +69,7 @@ try {
 Or any individual [Shape](https://apireference.aspose.com/slides/java/com.aspose.slides/IAutoShape):
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = pres.getSlides().get_Item(0);
     IAutoShape shape = slide.getShapes().addAutoShape(ShapeType.Rectangle, 10, 10, 100, 50);

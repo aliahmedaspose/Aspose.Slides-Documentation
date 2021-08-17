@@ -101,7 +101,7 @@ In PowerPoint, Slide Master can be found in "View -> Slide Master" menu:
 With Aspose.Slides its possible to access Slide Master this way:
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // access to the Presentation's master slide
     IMasterSlide masterSlide = pres.getMasters().get_Item(0);

@@ -39,7 +39,7 @@ In order to change the layout type of [SmartArt](https://apireference.aspose.com
   In the example given below, we have added a connector between two shapes.
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add SmartArt BasicProcess
     ISmartArt smart = pres.getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.BasicBlockList);
@@ -66,7 +66,7 @@ Please note: method [ISmartArtNode.isHidden()]((https://apireference.aspose.com/
 In the example given below, we have added a connector between two shapes.
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add SmartArt BasicProcess 
     ISmartArt smart = pres.getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.RadialCycle);
@@ -98,7 +98,7 @@ Methods [ISmartArtNode.getOrganizationChartLayout()](https://apireference.aspose
   In the example given below, we have added a connector between two shapes.
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add SmartArt BasicProcess
     ISmartArt smart = pres.getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.OrganizationChart);
@@ -145,7 +145,7 @@ The following code is used to create a chart.
 
 ```java
 // Instantiate Presentation class that represents the PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add SmartArt BasicProcess
     ISmartArt smart = pres.getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.BasicProcess);

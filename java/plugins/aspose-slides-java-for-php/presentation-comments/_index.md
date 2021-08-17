@@ -80,7 +80,7 @@ New methods [**getParentComment**](https://apireference.aspose.com/slides/java/c
 The code snippet below shows a sample of adding some comments and some replies to them:
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add comment
     ICommentAuthor author1 = pres.getCommentAuthors().addAuthor("Author_1", "A.A.");

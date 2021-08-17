@@ -17,7 +17,7 @@ Aspose.Slides for Java provides support for changing color of categories in a se
 
 ```java
 // Creating empty presentation
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
 

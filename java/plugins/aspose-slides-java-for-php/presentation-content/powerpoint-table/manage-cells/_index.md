@@ -48,7 +48,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 
 ```java
 // Instantiate Presentation class that represents PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
     Slide sld = (Slide)pres.getSlides().get_Item(0);
@@ -86,7 +86,7 @@ If we merge 2 pairs of cells (1, 1) x (2, 1) and (1, 2) x (2, 2) then table will
 
 ```java
 // Instantiate Presentation class that represents PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -137,7 +137,7 @@ Let's continue merging cells. Now we merge (1, 1) and (1, 2). As a result we hav
 
 ```java
 // Instantiate Presentation class that represents PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -192,7 +192,7 @@ We could see in previous example when table cells are merged then numeration of 
 
 ```java
 // Instantiate Presentation class that represents PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -258,7 +258,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 
 ```java
 // Instantiate Presentation class object
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
     ISlide islide = pres.getSlides().get_Item(0);

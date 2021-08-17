@@ -21,12 +21,12 @@ The examples that follow show how to save a presentation with Aspose.Slides for 
 
 ```java
 // Instantiate a Presentation object that represents a PPT file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // ...do some work here...
     
     // Save your presentation to a file
-    pres.save("demoPass.pptx", com.aspose.slides.SaveFormat.Pptx);
+    pres.save("demoPass.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -37,7 +37,7 @@ It is possible to save a presentation to a stream by passing an output stream to
 
 ```java
 // Instantiate a Presentation object that represents a PPT file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     $shape = $pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 200, 200, 200, 200);
 
@@ -46,7 +46,7 @@ try {
 
     OutputStream os = new FileOutputStream("Save_As_Stream_out.pptx");
 
-    pres.save(os, com.aspose.slides.SaveFormat.Pptx);
+    pres.save(os, Java("com.aspose.slides.SaveFormat")->Pptx);
 
     os.close();
 } catch (IOException e) {
@@ -60,7 +60,7 @@ Aspose.Slides for Java provides a facility to set the view type for the generate
 
 ```java
 // Opening the presentation file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Setting view type
     pres.getViewProperties().setLastView((byte) ViewType.SlideMasterView);
@@ -79,7 +79,7 @@ The following sample code creates a presentation and saves it in the Strict Open
 
 ```java
 // Instantiate a Presentation object that represents a PPT file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide slide = pres.getSlides().get_Item(0);

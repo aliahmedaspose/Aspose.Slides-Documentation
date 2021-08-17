@@ -25,7 +25,7 @@ In the example given below, we have added a line to the first slide of the prese
 
 ```java
 // Instantiate PresentationEx class that represents the PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);
@@ -56,7 +56,7 @@ Aspose.Slides for Java also allows developers to configure some properties of th
 
 ```java
 // Instantiate PresentationEx class that represents the PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide sld = pres.getSlides().get_Item(0);

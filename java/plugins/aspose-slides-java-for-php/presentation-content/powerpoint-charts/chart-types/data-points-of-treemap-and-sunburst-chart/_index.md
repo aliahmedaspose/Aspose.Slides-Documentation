@@ -16,7 +16,7 @@ Here is a Sunburst Chart, where data in Series1 column define the leaf nodes, w
 Let’s start with adding a new Sunburst chart to the presentation:
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Sunburst, 100, 100, 450, 400);
 
@@ -75,7 +75,7 @@ branch1Label.getDataLabelFormat().getTextFormat().getPortionFormat().getFillForm
 Change color of "Steam 4" branch:
 
 ```java
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Sunburst, 100, 100, 450, 400);
 

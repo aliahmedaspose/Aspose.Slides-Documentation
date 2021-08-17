@@ -203,7 +203,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Instantiate Presentation
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
 
     // Get first slide
@@ -261,7 +261,7 @@ Aspose.Slides for Java allows developers to rotate the text. Text could be set t
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide 
     ISlide slide = pres.getSlides().get_Item(0);
@@ -305,7 +305,7 @@ In the example given below, we set the RotationAngle property.
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -384,7 +384,7 @@ In this topic, we will explore the different formatting properties of text frame
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access the first slide
     ISlide slide = pres.getSlides().get_Item(0);
@@ -428,7 +428,7 @@ Aspose.Slides for Java allows developers to Anchor of any TextFrame. TextAnchorT
 
 ```java
 // Create an instance of Presentation class
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide 
     ISlide slide = pres.getSlides().get_Item(0);

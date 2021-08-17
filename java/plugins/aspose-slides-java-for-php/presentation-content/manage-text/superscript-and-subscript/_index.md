@@ -29,7 +29,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Instantiate a Presentation class that represents a PPTX
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get slide
     ISlide slide = pres.getSlides().get_Item(0);

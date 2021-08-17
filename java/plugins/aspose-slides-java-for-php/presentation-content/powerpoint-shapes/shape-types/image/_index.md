@@ -15,7 +15,7 @@ This sample code shows you how to add an EMZ image to the images collection:
 
 ```java 
 // Instantiate Presentation class that represents PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = pres.getSlides().get_Item(0);
 
@@ -46,7 +46,7 @@ To create an image object based on SVG image, you can do it this way:
 This sample code shows you how to implement the steps above to add an SVG image into a presentation:
 ```java 
 // Instantiate Presentation class that represents PPTX file
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     String svgContent = new String(Files.readAllBytes(Paths.get("image.svg")));
     ISvgImage svgImage = new SvgImage(svgContent);
@@ -109,7 +109,7 @@ options.setImageType(ImageType.EMF);
 
 //Save the workbook to stream
 SheetRender sr = new SheetRender(sheet, options);
-$pres = new Java("com.aspose.slides.Presentation");;
+$pres = new Java("com.aspose.slides.Presentation");
 try {
     pres.getSlides().removeAt(0);
     

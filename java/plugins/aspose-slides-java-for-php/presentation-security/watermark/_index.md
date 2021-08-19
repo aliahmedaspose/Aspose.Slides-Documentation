@@ -28,7 +28,7 @@ To add text watermark in PPT, PPTX or ODP you can first add a shape into the sli
 // Open presentation
 $presentation = new Java("com.aspose.slides.Presentation");
 try {
-    $slide = presentation->getSlides()->get_Item(0);
+    $slide = $presentation->getSlides()->get_Item(0);
 
     $watermarkShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Triangle, 0, 0, 0, 0);
 
@@ -166,7 +166,7 @@ $watermarkShape->getShapeLock()->setGroupingLocked(true);
 In Aspose.Slides the Z-Order of shapes can be set via [**SlideCollection.reorder**](https://apireference.aspose.com/slides/java/com.aspose.slides/SlideCollection#reorder-int-com.aspose.slides.ISlide...-) method. For that, you need to call this method from presentation slides list and pass shape reference and its order number into the method. This way its possible to put shape to the front or back of the slide. This feature is especially useful if you need to place watermark on front of presentation:
 
 ```java
-slide->getShapes().reorder(slide->getShapes().size() - 1, watermarkShape);
+slide->getShapes().reorder(slide->getShapes()->size() - 1, watermarkShape);
 ``` 
 
 
@@ -188,11 +188,11 @@ $watermarkShape->setRotation(calculateRotation(h, w));
 ```java
 private int calculateRotation(float height, float width)
 {
-    double pageHeight = height;
+    $double pageHeight = height;
     
-    double pageWidth = width;
+    $double pageWidth = width;
     
-    double rotation = Math.atan((pageHeight / pageWidth)) * 180 / Math.PI;
+    $double rotation = Math.atan((pageHeight / pageWidth)) * 180 / Math.PI;
     
     return (int) rotation;
 }
@@ -213,7 +213,7 @@ $watermarkShape->setName("watermark");
 To remove watermark shape and its child controls from slide, use [AutoShape->getName](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#getName--) method to find it in slide shapes. Then pass watermark shape into [**ShapeCollection.remove**](https://apireference.aspose.com/slides/java/com.aspose.slides/ShapeCollection#remove-com.aspose.slides.IShape-) method:
 
 ```java
-for (int i = 0; i < slide->getShapes().size(); i++)
+for (int i = 0; i < slide->getShapes()->size(); i++)
 {
     AutoShape shape = (AutoShape)slide->getShapes()->get_Item(i);
 

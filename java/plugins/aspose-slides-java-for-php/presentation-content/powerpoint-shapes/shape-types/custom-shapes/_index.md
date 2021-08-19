@@ -141,9 +141,9 @@ int step = 72;
 
 for (int angle = -90; angle < 270; angle += step)
 {
-    double radians = angle * (Math.PI / 180f);
-    double x = R * Math.cos(radians);
-    double y = R * Math.sin(radians);
+    $double radians = angle * (Math.PI / 180f);
+    $double x = R * Math.cos(radians);
+    $double y = R * Math.sin(radians);
     points.add(new Point2D.Float((float)x + R, (float)y + R));
 
     radians = Math.PI * (angle + step / 2) / 180.0;
@@ -155,7 +155,7 @@ for (int angle = -90; angle < 270; angle += step)
 GeometryPath starPath = new GeometryPath();
 starPath.moveTo(points->get(0));
 
-for (int i = 1; i < points.size(); i++)
+for (int i = 1; i < points->size(); i++)
 {
     starPath.lineTo(points->get(i));
 }
@@ -252,7 +252,7 @@ try {
     shape->setGeometryPaths(new IGeometryPath[] { originalPath, textPath });
 
     // Save the presentation
-    $pres->save(resultPath, SaveFormat.Pptx);
+    $pres->save(resultPath, Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

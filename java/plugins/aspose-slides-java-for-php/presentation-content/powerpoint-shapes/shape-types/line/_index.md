@@ -34,7 +34,7 @@ try {
     sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 50, 150, 300, 0);
     
     // Write the PPTX to Disk
-    $pres->save("LineShape.pptx", SaveFormat.Pptx);
+    $pres->save("LineShape.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -80,7 +80,7 @@ try {
     shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(new Color(PresetColor.Maroon));
 
     // Write the PPTX to Disk
-    $pres->save("LineShape.pptx", SaveFormat.Pptx);
+    $pres->save("LineShape.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -315,7 +315,7 @@ try {
     shadow->getShadowColor()->setPresetColor(PresetColor.Black);
 
     //Write the presentation to disk
-    $pres->save("pres_out.pptx", SaveFormat.Pptx);
+    $pres->save("pres_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -368,7 +368,7 @@ try {
     ef->getInnerShadowEffect()->getShadowColor()->setSchemeColor(SchemeColor.Accent1);
 
     // Save Presentation
-    $pres->save("WordArt_out.pptx", SaveFormat.Pptx);
+    $pres->save("WordArt_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

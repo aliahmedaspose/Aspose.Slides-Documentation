@@ -24,10 +24,10 @@ try {
     Chart chart = (Chart)pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 350);
     chart.validateChartLayout();
 
-    double x = chart->getPlotArea()->getActualX();
-    double y = chart->getPlotArea()->getActualY();
-    double w = chart->getPlotArea()->getActualWidth();
-    double h = chart->getPlotArea()->getActualHeight();
+    $double x = chart->getPlotArea()->getActualX();
+    $double y = chart->getPlotArea()->getActualY();
+    $double w = chart->getPlotArea()->getActualWidth();
+    $double h = chart->getPlotArea()->getActualHeight();
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -53,7 +53,7 @@ try {
     chart->getPlotArea()->setHeight(0.7f);
     chart->getPlotArea()->setLayoutTargetType(LayoutTargetType.Inner);
 
-    $pres->save("SetLayoutMode_outer.pptx", SaveFormat.Pptx);
+    $pres->save("SetLayoutMode_outer.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

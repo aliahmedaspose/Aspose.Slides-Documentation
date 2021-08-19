@@ -34,9 +34,9 @@ try {
     ITable tbl = sld->getShapes().addTable(100, 50, dblCols, dblRows);
 
     // Set border format for each cell
-    for (int row = 0; row < tbl->getRows().size(); row++)
+    for (int row = 0; row < tbl->getRows()->size(); row++)
     {
-        for (int cell = 0; cell < tbl->getRows()->get_Item(row).size(); cell++)
+        for (int cell = 0; cell < tbl->getRows()->get_Item(row)->size(); cell++)
         {
             ICellFormat cellFormat = tbl->getRows()->get_Item(row)->get_Item(cell)->getCellFormat();
             
@@ -64,7 +64,7 @@ try {
     tbl->getRows()->get_Item(0)->get_Item(0)->getTextFrame()->setText("Merged Cells");
 
     // Save PPTX to Disk
-    $pres->save("table.pptx", SaveFormat.Pptx);
+    $pres->save("table.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -103,7 +103,7 @@ try {
     }
     
     //Write the PPTX to Disk
-    $pres->save("table1_out.pptx", SaveFormat.Pptx);
+    $pres->save("table1_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -155,7 +155,7 @@ try {
     cell->setTextVerticalType(TextVerticalType.Vertical270);
     
     // Save Presentation
-    $pres->save("Vertical_Align_Text_out.pptx", SaveFormat.Pptx);
+    $pres->save("Vertical_Align_Text_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -195,7 +195,7 @@ try {
     textFrameFormat->setTextVerticalType(TextVerticalType.Vertical);
     someTable->setTextFormat(textFrameFormat);
     
-    $pres->save("result.pptx", SaveFormat.Pptx);
+    $pres->save("result.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -248,7 +248,7 @@ try {
     }
 
     //Write PPTX to Disk
-    $pres->save("StandardTables_out.pptx", SaveFormat.Pptx);
+    $pres->save("StandardTables_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -267,7 +267,7 @@ try {
 
     System.out.println("Lock aspect ratio set: " + table->getGraphicalObjectLock()->getAspectRatioLocked());
 
-    $pres->save("pres-out.pptx", SaveFormat.Pptx);
+    $pres->save("pres-out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

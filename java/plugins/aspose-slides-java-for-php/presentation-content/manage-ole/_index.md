@@ -61,8 +61,8 @@ try {
             dataInfo);
 
     //Write the PPTX to disk
-    $pres->save("OleEmbed_out.pptx", SaveFormat.Pptx);
-} catch (IOException e) {
+    $pres->save("OleEmbed_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -109,7 +109,7 @@ try {
             fstr.close();
         }
     }
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -176,7 +176,7 @@ try {
         }
     }
 
-    $pres->save("OleEdit_out.pptx", SaveFormat.Pptx);
+    $pres->save("OleEdit_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -204,7 +204,7 @@ try {
     IOleObjectFrame oleFrameZip = $slide->getShapes().addOleObjectFrame(150, 220, 50, 50, dataInfoZip);
     oleFrameZip->setObjectIcon(true);
 
-    $pres->save("embeddedOle.pptx", SaveFormat.Pptx);
+    $pres->save("embeddedOle.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -228,7 +228,7 @@ try {
 
     oleObjectFrame->setEmbeddedData(new OleEmbeddedDataInfo(Files.readAllBytes(Paths->get("embedOle.zip")), "zip"));
 
-    $pres->save("embeddedChanged.pptx", SaveFormat.Pptx);
+    $pres->save("embeddedChanged.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -254,8 +254,8 @@ try {
     oleObjectFrame->getSubstitutePictureFormat()->getPicture()->setImage(oleImage);
     oleObjectFrame->setObjectIcon(false);
 
-    $pres->save("embeddedOle-newImage.pptx", SaveFormat.Pptx);
-} catch (IOException e) {
+    $pres->save("embeddedOle-newImage.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -276,7 +276,7 @@ $pres = new Java("com.aspose.slides.Presentation", "embeddedOle.pptx");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
 
-    for (int index = 0; index < slide->getShapes().size(); index++)
+    for (int index = 0; index < slide->getShapes()->size(); index++)
     {
         IShape shape = $slide->getShapes()->get_Item(index);
         IOleObjectFrame oleFrame = (IOleObjectFrame)shape;
@@ -295,7 +295,7 @@ try {
             }
         }
     }
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

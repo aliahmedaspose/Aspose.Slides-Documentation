@@ -55,8 +55,8 @@ try {
     // Delete default generated series and categories
     chart->getChartData()->getSeries().clear();
     chart->getChartData()->getCategories().clear();
-    int s = chart->getChartData()->getSeries().size();
-    s = chart->getChartData()->getCategories().size();
+    int s = chart->getChartData()->getSeries()->size();
+    s = chart->getChartData()->getCategories()->size();
     
     // Adding new series
     chart->getChartData()->getSeries().add(fact->getCell(defaultWorksheetIndex, 0, 1, "Series 1"),chart->getType());
@@ -106,7 +106,7 @@ try {
     lbl->getDataLabelFormat()->setSeparator("/");
     
     // Save presentation with chart
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -173,7 +173,7 @@ try {
     series->getMarker()->setSize(10);
     series->getMarker()->setSymbol(MarkerStyleType.Circle);
     
-    $pres->save("AsposeChart_out.pptx", SaveFormat.Pptx);
+    $pres->save("AsposeChart_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -297,7 +297,7 @@ try {
     chart->getChartData()->getSeriesGroups()->get_Item(0)->setFirstSliceAngle(180);
     
     // Save presentation with chart
-    $pres->save("PieChart_out.pptx", SaveFormat.Pptx);
+    $pres->save("PieChart_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -362,7 +362,7 @@ try {
 
     series->setParentLabelLayout(ParentLabelLayoutType.Overlapping);
 
-    $pres->save("Treemap.pptx", SaveFormat.Pptx);
+    $pres->save("Treemap.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -429,7 +429,7 @@ try {
         ser->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
     }
 
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -479,7 +479,7 @@ try {
     series->getDataPoints().addDataPointForBoxAndWhiskerSeries(wb->getCell(0, "B5", 23));
     series->getDataPoints().addDataPointForBoxAndWhiskerSeries(wb->getCell(0, "B6", 16));
 
-    $pres->save("BoxAndWhisker.pptx", SaveFormat.Pptx);
+    $pres->save("BoxAndWhisker.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -520,7 +520,7 @@ try {
     series->getDataPoints().addDataPointForFunnelSeries(wb->getCell(0, "B5", 400));
     series->getDataPoints().addDataPointForFunnelSeries(wb->getCell(0, "B6", 500));
 
-    $pres->save("Funnel.pptx", SaveFormat.Pptx);
+    $pres->save("Funnel.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -579,7 +579,7 @@ try {
     series->getDataPoints().addDataPointForSunburstSeries(wb->getCell(0, "D7", 4));
     series->getDataPoints().addDataPointForSunburstSeries(wb->getCell(0, "D8", 3));
     
-    $pres->save("Sunburst.pptx", SaveFormat.Pptx);
+    $pres->save("Sunburst.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -616,7 +616,7 @@ try {
 
     chart->getAxes()->getHorizontalAxis()->setAggregationType(AxisAggregationType.Automatic;)
 
-    $pres->save("Histogram.pptx", SaveFormat.Pptx);
+    $pres->save("Histogram.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -675,7 +675,7 @@ try {
     series->getDataPoints().addDataPointForBarSeries(fact->getCell(defaultWorksheetIndex, "D9", 80));
     
     // Save presentation with chart
-    $pres->save("AsposeChart_out.pptx", SaveFormat.Pptx);
+    $pres->save("AsposeChart_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -745,7 +745,7 @@ try {
     chart->setType(ChartType.ClusteredCylinder);
 
     // Save presentation with chart
-    $pres->save("AsposeChartModified_out.pptx", SaveFormat.Pptx);
+    $pres->save("AsposeChartModified_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -771,7 +771,7 @@ try {
     
     chart->getChartData()->setRange("Sheet1!A1:B4");
     
-    $pres->save("SetDataRange_out.pptx", SaveFormat.Pptx);
+    $pres->save("SetDataRange_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -817,7 +817,7 @@ try {
     chart->setLegend(true);
     chart->getLegend()->setOverlay(false);
 
-    $pres->save("DefaultMarkersInChart.pptx", SaveFormat.Pptx);
+    $pres->save("DefaultMarkersInChart.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -32,7 +32,7 @@ try {
     chart->getLegend()->setHeight(100 / chart->getHeight());
     
     // Write presentation to disk
-    $pres->save("Legend_out.pptx", SaveFormat.Pptx);
+    $pres->save("Legend_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -61,7 +61,7 @@ try {
     chart->getAxes()->getVerticalAxis()->setAutomaticMaxValue(false);
     chart->getAxes()->getVerticalAxis()->setMaxValue(10);
 
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -92,7 +92,7 @@ try {
     tf->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
     tf->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLUE);
     
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

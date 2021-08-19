@@ -50,7 +50,7 @@ try {
     $pres->getViewProperties()->getNormalViewProperties()->getRestoredTop()->setDimensionSize(80);
     $pres->getViewProperties()->getNormalViewProperties()->setShowOutlineIcons(true);
 
-    $pres->save("presentation_normal_view_state.pptx", SaveFormat.Pptx);
+    $pres->save("presentation_normal_view_state.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     $pres->dispose();
 }
@@ -75,10 +75,10 @@ In order to set the view properties. Please follow the steps below:
 $presentation = new Java("com.aspose.slides.Presentation");
 try {
     // Setting View Properties of Presentation
-    presentation->getViewProperties()->getSlideViewProperties()->setScale(100); // Zoom value in percentages for slide view
-    presentation->getViewProperties()->getNotesViewProperties()->setScale(100); // Zoom value in percentages for notes view 
+    $presentation->getViewProperties()->getSlideViewProperties()->setScale(100); // Zoom value in percentages for slide view
+    $presentation->getViewProperties()->getNotesViewProperties()->setScale(100); // Zoom value in percentages for notes view 
 
-    presentation->save("Zoom_out.pptx", SaveFormat.Pptx);
+    $presentation->save("Zoom_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     presentation.dispose();
 }

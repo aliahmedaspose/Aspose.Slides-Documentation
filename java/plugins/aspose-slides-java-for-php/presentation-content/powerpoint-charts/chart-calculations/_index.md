@@ -14,11 +14,11 @@ try {
     Chart chart = (Chart)pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Area, 100, 100, 500, 350);
     chart.validateChartLayout();
     
-    double maxValue = chart->getAxes()->getVerticalAxis()->getActualMaxValue();
-    double minValue = chart->getAxes()->getVerticalAxis()->getActualMinValue();
+    $double maxValue = chart->getAxes()->getVerticalAxis()->getActualMaxValue();
+    $double minValue = chart->getAxes()->getVerticalAxis()->getActualMinValue();
     
-    double majorUnit = chart->getAxes()->getHorizontalAxis()->getActualMajorUnit();
-    double minorUnit = chart->getAxes()->getHorizontalAxis()->getActualMinorUnit();
+    $double majorUnit = chart->getAxes()->getHorizontalAxis()->getActualMajorUnit();
+    $double minorUnit = chart->getAxes()->getHorizontalAxis()->getActualMinorUnit();
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -33,10 +33,10 @@ try {
     Chart chart = (Chart) $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 350);
     chart.validateChartLayout();
 
-    double x = chart->getPlotArea()->getActualX();
-    double y = chart->getPlotArea()->getActualY();
-    double w = chart->getPlotArea()->getActualWidth();
-    double h = chart->getPlotArea()->getActualHeight();
+    $double x = chart->getPlotArea()->getActualX();
+    $double y = chart->getPlotArea()->getActualY();
+    $double w = chart->getPlotArea()->getActualWidth();
+    $double h = chart->getPlotArea()->getActualHeight();
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -66,7 +66,7 @@ try {
     //Hiding MajorGridLines
     chart->getAxes()->getHorizontalAxis()->getMajorGridLinesFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
 
-    for (int i = 0; i < chart->getChartData()->getSeries().size(); i++)
+    for (int i = 0; i < chart->getChartData()->getSeries()->size(); i++)
     {
         chart->getChartData()->getSeries().removeAt(i);
     }
@@ -83,7 +83,7 @@ try {
     series->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor(Color.MAGENTA);
     series->getFormat()->getLine()->setDashStyle(LineDashStyle.Solid);
 
-    $pres->save("HideInformationFromChart.pptx", SaveFormat.Pptx);
+    $pres->save("HideInformationFromChart.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -98,7 +98,7 @@ try {
             .join(new MathematicalText("b")->setSuperscript("2"));
     mathParagraph.add(mathBlock);
 
-    $pres->save("math.pptx", SaveFormat.Pptx);
+    $pres->save("math.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

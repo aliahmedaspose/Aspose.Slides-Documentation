@@ -24,7 +24,7 @@ try {
 
     // Add an autoshape of type line
     slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 50, 150, 300, 0);
-    $pres->save("NewPresentation_out.pptx", SaveFormat.Pptx);
+    $pres->save("NewPresentation_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

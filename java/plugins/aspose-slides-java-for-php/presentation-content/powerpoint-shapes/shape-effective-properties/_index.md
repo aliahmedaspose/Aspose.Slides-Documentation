@@ -176,7 +176,7 @@ try {
     System.out.println("Portion #0: " + portion0->getPortionFormat()->getEffective()->getFontHeight());
     System.out.println("Portion #1: " + portion1->getPortionFormat()->getEffective()->getFontHeight());
 
-    $pres->save("SetLocalFontHeightValues.pptx",SaveFormat.Pptx);
+    $pres->save("SetLocalFontHeightValues.pptx",Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

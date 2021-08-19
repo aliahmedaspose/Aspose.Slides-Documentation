@@ -20,7 +20,7 @@ Aspose.Slides for Java provides [Presentation](https://apireference.aspose.com/j
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Printing the total number of slides present in the presentation
-    System.out.println($pres->getSlides().size());
+    System.out.println($pres->getSlides()->size());
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -41,7 +41,7 @@ loadOptions->setPassword("pass");
 $pres = new Java("com.aspose.slides.Presentation", "demoPassDocument.pptx", loadOptions);
 try {
     // Printing the total number of slides present in the presentation
-    System.out.println($pres->getSlides().size());
+    System.out.println($pres->getSlides()->size());
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -63,7 +63,7 @@ try {
     $pres->getSlides()->get_Item(0)->setName("Very large presentation");
 
     // presentation will be saved to the other file, the memory consumptions still low during saving.
-    $pres->save("veryLargePresentation-copy.pptx", SaveFormat.Pptx);
+    $pres->save("veryLargePresentation-copy.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -95,7 +95,7 @@ class ImageLoadingHandler implements IResourceLoadingCallback
                 return ResourceLoadingAction.UserProvided;
             } catch (RuntimeException ex) {
                 return ResourceLoadingAction.Skip;
-            }  catch (IOException ex) {
+            }  catch (JavaException $ex) {
                 ex.printStackTrace();
             }
         } else if (args->getOriginalUri().endsWith(".png")) {

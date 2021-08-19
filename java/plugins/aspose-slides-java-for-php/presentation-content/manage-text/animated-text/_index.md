@@ -12,17 +12,17 @@ description: "Animated text in PowerPoint with Java"
 We added the [**addEffect()**](https://apireference.aspose.com/slides/java/com.aspose.slides/Sequence#addEffect-com.aspose.slides.IParagraph-int-int-int-) method to the [**Sequence**](https://apireference.aspose.com/slides/java/com.aspose.slides/Sequence) and [**ISequence**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISequence) classes. This method allows you to add animation effects to a single paragraph. This sample code shows you how to add an animation effect to a single paragraph:
 
 ```java
-Presentation presentation = new Presentation("Presentation.pptx");
+$presentation = new Java("com.aspose.slides.Presentation"), "Presentation.pptx");
 try {
     // select paragraph to add effect
     IAutoShape autoShape = (IAutoShape)presentation->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     IParagraph paragraph = autoShape->getTextFrame()->getParagraphs()->get_Item(0);
 
     // add Fly animation effect to selected paragraph
-    IEffect effect = presentation->getSlides()->get_Item(0)->getTimeline()->getMainSequence().
+    IEffect effect = $presentation->getSlides()->get_Item(0)->getTimeline()->getMainSequence().
             addEffect(paragraph, EffectType.Fly, EffectSubtype.Left, EffectTriggerType.OnClick);
 
-    presentation->save("AnimationEffectinParagraph.pptx", SaveFormat.Pptx);
+    $presentation->save("AnimationEffectinParagraph.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($presentation != null) $presentation->dispose();
 }

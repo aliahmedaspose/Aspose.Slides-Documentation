@@ -30,7 +30,7 @@ try {
     $pres->getMasters()->get_Item(0)->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Color.GREEN);
     
     // Write the presentation to disk
-    $pres->save("MasterBG.pptx", SaveFormat.Pptx);
+    $pres->save("MasterBG.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -54,7 +54,7 @@ try {
     $pres->getSlides()->get_Item(0)->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
     $pres->getSlides()->get_Item(0)->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Color.BLUE);
     
-    $pres->save("ContentBG.pptx", SaveFormat.Pptx);
+    $pres->save("ContentBG.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -81,7 +81,7 @@ try {
     $pres->getSlides()->get_Item(0)->getBackground()->getFillFormat()->getGradientFormat()->setTileFlip(TileFlip.FlipBoth);
     
     // Write the presentation to disk
-    $pres->save("ContentBG_Grad.pptx", SaveFormat.Pptx);
+    $pres->save("ContentBG_Grad.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -116,8 +116,8 @@ try {
     $pres->getSlides()->get_Item(0)->getBackground()->getFillFormat()->getPictureFillFormat()->getPicture()->setImage(imgx);
     
     // Write the presentation to disk
-    $pres->save("ContentBG_Img.pptx", SaveFormat.Pptx);
-} catch (IOException e) {
+    $pres->save("ContentBG_Img.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

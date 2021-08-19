@@ -44,7 +44,7 @@ try {
     shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLUE);
     
     // Write the PPTX file to disk
-    $pres->save("RectShpLn.pptx", SaveFormat.Pptx);
+    $pres->save("RectShpLn.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -103,7 +103,7 @@ try {
     ((IAutoShape) shp3)->getTextFrame()->setText("This is Round Join Style");
     
     // Write the PPTX file to disk
-    $pres->save("RectShpLnJoin.pptx", SaveFormat.Pptx);
+    $pres->save("RectShpLnJoin.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -143,7 +143,7 @@ try {
     shp->getFillFormat()->getGradientFormat()->getGradientStops().add((float) 0, Color.red);
     
     // Write the PPTX file to disk
-    $pres->save("EllipseShpGrad.pptx", SaveFormat.Pptx);
+    $pres->save("EllipseShpGrad.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -184,7 +184,7 @@ try {
     shp->getFillFormat()->getPatternFormat()->getForeColor()->setColor(Color.YELLOW);
     
     // Write the PPTX file to disk
-    $pres->save("RectShpPatt.pptx", SaveFormat.Pptx);
+    $pres->save("RectShpPatt.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -225,8 +225,8 @@ try {
     shp->getFillFormat()->getPictureFillFormat()->getPicture()->setImage(imgx);
     
     // Write the PPTX file to disk
-    $pres->save("RectShpPic.pptx", SaveFormat.Pptx);
-} catch (IOException e) {
+    $pres->save("RectShpPic.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -261,7 +261,7 @@ try {
     shp->getFillFormat()->getSolidFillColor()->setColor(Color.YELLOW);
 
     // Write the PPTX file to disk
-    $pres->save("RectShpSolid.pptx", SaveFormat.Pptx);
+    $pres->save("RectShpSolid.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -292,7 +292,7 @@ try {
     shp->setRotation(90);
 
     // Write the PPTX file to disk
-    $pres->save("RectShpRot_out.pptx", SaveFormat.Pptx);
+    $pres->save("RectShpRot_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -333,7 +333,7 @@ try {
     shape->getThreeDFormat()->getLightRig()->setDirection(LightingDirection.Top);
     
     // Write the presentation as a PPTX file
-    $pres->save("Bavel.pptx", SaveFormat.Pptx);
+    $pres->save("Bavel.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -366,7 +366,7 @@ try {
     autoShape->getThreeDFormat()->getCamera()->setCameraType(CameraPresetType.IsometricLeftUp);
     autoShape->getThreeDFormat()->getLightRig()->setLightType(LightRigPresetType.Balanced);
     
-    $pres->save("Rotation_out.pptx", SaveFormat.Pptx);
+    $pres->save("Rotation_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

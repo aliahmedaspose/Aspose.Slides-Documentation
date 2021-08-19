@@ -58,7 +58,7 @@ try {
     series->getParentSeriesGroup()->setOverlap((byte)100);
     
     // Write presentation to disk
-    $pres->save("Rotation3D_out.pptx", SaveFormat.Pptx);
+    $pres->save("Rotation3D_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

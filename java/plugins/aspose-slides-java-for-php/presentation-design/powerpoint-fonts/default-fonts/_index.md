@@ -32,11 +32,11 @@ try {
     ImageIO.write(image, "png", new File("output.png"));
 
     // Generate PDF
-    $pres->save("output_out.pdf", SaveFormat.Pdf);
+    $pres->save("output_out.pdf", Java("com.aspose.slides.SaveFormat")->Pdf);
 
     // Generate XPS
-    $pres->save("output_out.xps", SaveFormat.Xps);
-} catch (IOException e) {
+    $pres->save("output_out.xps", Java("com.aspose.slides.SaveFormat")->Xps);
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

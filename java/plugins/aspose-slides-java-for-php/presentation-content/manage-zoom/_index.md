@@ -56,7 +56,7 @@ try {
     $pres->getSlides()->get_Item(0)->getShapes().addZoomFrame(200, 250, 250, 200, slide3);
 
     // Save the presentation
-    $pres->save("presentation.pptx", SaveFormat.Pptx);
+    $pres->save("presentation.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -95,7 +95,7 @@ try {
     $pres->getSlides()->get_Item(0)->getShapes().addZoomFrame(20, 20, 300, 200, slide, image);
 
     // Save the presentation
-    $pres->save("presentation.pptx", SaveFormat.Pptx);
+    $pres->save("presentation.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch(IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -165,7 +165,7 @@ try {
     zoomFrame2->setShowBackground(false);
 
     // Save the presentation
-    $pres->save("presentation.pptx", SaveFormat.Pptx);
+    $pres->save("presentation.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch(IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -211,7 +211,7 @@ try {
     }
 
     // Create zoom objects for all slides in the first slide
-    for (int slideNumber = 1; slideNumber < $pres->getSlides().size(); slideNumber++)
+    for (int slideNumber = 1; slideNumber < $pres->getSlides()->size(); slideNumber++)
     {
         int x = (slideNumber - 1) * 100;
         int y = (slideNumber - 1) * 100;
@@ -222,7 +222,7 @@ try {
     }
 
     // Save the presentation
-    $pres->save("presentation.pptx", SaveFormat.Pptx);
+    $pres->save("presentation.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

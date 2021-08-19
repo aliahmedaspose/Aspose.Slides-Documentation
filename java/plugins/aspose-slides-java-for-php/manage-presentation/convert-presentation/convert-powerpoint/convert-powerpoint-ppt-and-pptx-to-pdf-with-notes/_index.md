@@ -24,7 +24,7 @@ try {
     PdfOptions pdfOptions = new PdfOptions();
     pdfOptions->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomFull);
 
-    presOut->save("PDF-SelectedSlide.pdf", SaveFormat.Pdf, pdfOptions);
+    presOut->save("PDF-SelectedSlide.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
 } finally {
     if (presIn != null) presIn.dispose();
     if (presOut != null) presOut.dispose();
@@ -40,7 +40,7 @@ try {
     PdfOptions pdfOptions = new PdfOptions();
     pdfOptions->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomFull);
 
-    $pres->save(resourcesOutputPath+"PDF-Notes.pdf", SaveFormat.Pdf, pdfOptions);
+    $pres->save(resourcesOutputPath+"PDF-Notes.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }

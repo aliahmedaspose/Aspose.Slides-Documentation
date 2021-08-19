@@ -43,7 +43,7 @@ try {
         // Save the image to disk in JPEG format
         ImageIO.write(bmp, "JPEG", new java.io.File(String.format("Slide_%d.jpg", sld->getSlideNumber())));
     }
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -70,7 +70,7 @@ try {
         // Save the image to disk in JPEG format
         ImageIO.write(bmp, "JPEG", new java.io.File(String.format("Slide_%d.jpg", sld->getSlideNumber())));
     }
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -96,7 +96,7 @@ try {
         }
         ImageIO.write(image,"png", new java.io.File(String.format("Slide_%d.png", sld->getSlideNumber())));
     }
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

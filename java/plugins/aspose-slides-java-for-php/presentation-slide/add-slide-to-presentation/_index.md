@@ -27,14 +27,14 @@ try {
     // Instantiate SlideCollection calss
     ISlideCollection slds = $pres->getSlides();
 
-    for (int i = 0; i < $pres->getLayoutSlides().size(); i++) {
+    for (int i = 0; i < $pres->getLayoutSlides()->size(); i++) {
         // Add an empty slide to the Slides collection
         slds.addEmptySlide($pres->getLayoutSlides()->get_Item(i));
     }
     // Do some work on the newly added slide
 
     // Save the PPTX file to the Disk
-    $pres->save("EmptySlide.pptx", SaveFormat.Pptx);
+    $pres->save("EmptySlide.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     $pres->dispose();
 }

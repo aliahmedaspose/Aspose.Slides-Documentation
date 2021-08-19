@@ -31,7 +31,7 @@ try {
     }
     
     // Save PPTX to Disk
-    $pres->save("pres.pptx", SaveFormat.Pptx);
+    $pres->save("pres.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -88,7 +88,7 @@ try {
     table->getColumns().insertClone(3,table->getColumns()->get_Item(1), false);
     
     // Write PPTX to Disk
-    $pres->save("table_out.pptx", SaveFormat.Pptx);
+    $pres->save("table_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -118,7 +118,7 @@ try {
     table->getRows().removeAt(1, false);
     table->getColumns().removeAt(1, false);
     
-    $pres->save("TestTable_out.pptx", SaveFormat.Pptx);
+    $pres->save("TestTable_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -161,7 +161,7 @@ try {
 	
     someTable->getRows()->get_Item(1)->setTextFormat(textFrameFormat);
 
-    $pres->save("result.pptx", SaveFormat.Pptx);
+    $pres->save("result.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -204,7 +204,7 @@ try {
 	
     someTable->getColumns()->get_Item(1)->setTextFormat(textFrameFormat);
 
-    $pres->save("result.pptx", SaveFormat.Pptx);
+    $pres->save("result.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

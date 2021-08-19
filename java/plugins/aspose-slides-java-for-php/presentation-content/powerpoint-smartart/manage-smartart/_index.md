@@ -48,7 +48,7 @@ try {
     smart->setLayout(SmartArtLayoutType.BasicProcess);
 
     // Saving Presentation
-    $pres->save("ChangeSmartArtLayout_out.pptx", SaveFormat.Pptx);
+    $pres->save("ChangeSmartArtLayout_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -82,7 +82,7 @@ try {
         // Do some actions or notifications
     }
     // Saving Presentation
-    $pres->save("CheckSmartArtHiddenProperty_out.pptx", SaveFormat.Pptx);
+    $pres->save("CheckSmartArtHiddenProperty_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -107,7 +107,7 @@ try {
     smart->getNodes()->get_Item(0)->setOrganizationChartLayout(OrganizationChartLayoutType.LeftHanging);
 
     // Saving Presentation
-    $pres->save("OrganizeChartLayoutType_out.pptx", SaveFormat.Pptx);
+    $pres->save("OrganizeChartLayoutType_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -127,7 +127,7 @@ The following code is used to create a chart.
 $pres = new Java("com.aspose.slides.Presentation", "test.pptx");
 try {
     ISmartArt smartArt = $pres->getSlides()->get_Item(0)->getShapes().addSmartArt(0, 0, 400, 400, SmartArtLayoutType.PictureOrganizationChart);
-    $pres->save("OrganizationChart.pptx", SaveFormat.Pptx);
+    $pres->save("OrganizationChart.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -155,7 +155,7 @@ try {
     boolean flag = smart.isReversed();
     
     // Saving Presentation
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

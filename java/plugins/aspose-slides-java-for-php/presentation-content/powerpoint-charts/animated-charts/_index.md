@@ -52,7 +52,7 @@ try {
             EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
     // Write the modified presentation to disk
-    $pres->save("AnimatingSeries_out.pptx", SaveFormat.Pptx);
+    $pres->save("AnimatingSeries_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -95,7 +95,7 @@ try {
             EffectChartMajorGroupingType.ByCategory, 3, 
             EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
-    $pres->save("Sample_Animation_C.pptx", SaveFormat.Pptx);
+    $pres->save("Sample_Animation_C.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -151,7 +151,7 @@ try {
             2, 3, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
     // Write the presentation file to disk 
-    $pres->save("AnimatingSeriesElements_out.pptx", SaveFormat.Pptx);
+    $pres->save("AnimatingSeriesElements_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -206,7 +206,7 @@ try {
             2, 3, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
     // Write the presentation file to disk
-    $pres->save("AnimatingCategoriesElements_out.pptx", SaveFormat.Pptx);
+    $pres->save("AnimatingCategoriesElements_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

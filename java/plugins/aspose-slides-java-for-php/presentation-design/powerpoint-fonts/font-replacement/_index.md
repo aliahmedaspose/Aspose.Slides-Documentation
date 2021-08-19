@@ -30,7 +30,7 @@ try {
     $pres->getFontsManager().replaceFont(sourceFont, destFont);
     
     // Save the presentation
-    $pres->save("UpdatedFont_out.pptx", SaveFormat.Pptx);
+    $pres->save("UpdatedFont_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

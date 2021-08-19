@@ -36,7 +36,7 @@ try {
 
     $stream = new Java("java.io.FileOutputStream", "mathml.xml");
     mathParagraph.writeAsMathMl(stream);
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -64,7 +64,7 @@ try {
     $pres->getSlides().insertEmptySlide(0, layoutSlide);
 
     // Save presentation
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     $pres->dispose();
 }
@@ -75,7 +75,7 @@ try {
 
 ```java
 // Instantiate Presentation objects that represent presentation files
-Presentation presentation = new Presentation("demo.pptx");
+$presentation = new Java("com.aspose.slides.Presentation"), "demo.pptx");
 try {
     Presentation auxPresentation = new Presentation();
     try {
@@ -89,7 +89,7 @@ try {
         auxPresentation->getSlides().removeAt(0);
         
         // Save Presentation to disk
-        auxPresentation->save("size.pptx", SaveFormat.Pptx);
+        auxPresentation->save("size.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
     } finally {
         auxPresentation.dispose();
     }
@@ -108,9 +108,9 @@ To set footer in a slide using its index position in the slides collection of th
 1. Write the modified presentation file.
 
 ```java
-Presentation presentation = new Presentation("presentation.ppt");
+$presentation = new Java("com.aspose.slides.Presentation"), "presentation.ppt");
 try {
-    IBaseSlideHeaderFooterManager headerFooterManager = presentation->getSlides()->get_Item(0)->getHeaderFooterManager();
+    IBaseSlideHeaderFooterManager headerFooterManager = $presentation->getSlides()->get_Item(0)->getHeaderFooterManager();
     if (!headerFooterManager.isFooterVisible()) // Method isFooterVisible is used for indicating that a slide footer placeholder is not present.
     {
         headerFooterManager->setFooterVisibility(true); // Method setFooterVisibility is used for making a slide footer placeholder visible.
@@ -141,9 +141,9 @@ To set footer and child footer a slide using its index position in the slides co
 1. Write the modified presentation file.
 
 ```java
-Presentation presentation = new Presentation("presentation.ppt");
+$presentation = new Java("com.aspose.slides.Presentation"), "presentation.ppt");
 try {
-    IMasterSlideHeaderFooterManager headerFooterManager = presentation->getMasters()->get_Item(0)->getHeaderFooterManager();
+    IMasterSlideHeaderFooterManager headerFooterManager = $presentation->getMasters()->get_Item(0)->getHeaderFooterManager();
     headerFooterManager->setFooterAndChildFootersVisibility(true); // Method setFooterAndChildFootersVisibility is used for making a master slide and all child footer placeholders visible.
     headerFooterManager->setSlideNumberAndChildSlideNumbersVisibility(true); // Method setSlideNumberAndChildSlideNumbersVisibility is used for making a master slide and all child page number placeholders visible.
     headerFooterManager->setDateTimeAndChildDateTimesVisibility(true); // Method setDateTimeAndChildDateTimesVisibility is used for making a master slide and all child date-time placeholders visible.
@@ -160,14 +160,14 @@ You can also set the slide size by using it with different ways of content scali
 
 ```java
 // Instantiate Presentation objects that represent presentation files
-Presentation presentation = new Presentation("demo.pptx");
+$presentation = new Java("com.aspose.slides.Presentation"), "demo.pptx");
 try {
     // Set the slide size of generated presentations to that of source
-    presentation->getSlideSize()->setSize(540, 720, SlideSizeScaleType.EnsureFit); // Method SetSize is used for set slide size with scale content to ensure fit
-    presentation->getSlideSize()->setSize(SlideSizeType.A4Paper, SlideSizeScaleType.Maximize); // Method SetSize is used for set slide size with maximize size of content
+    $presentation->getSlideSize()->setSize(540, 720, SlideSizeScaleType.EnsureFit); // Method SetSize is used for set slide size with scale content to ensure fit
+    $presentation->getSlideSize()->setSize(SlideSizeType.A4Paper, SlideSizeScaleType.Maximize); // Method SetSize is used for set slide size with maximize size of content
 
     // Save Presentation to disk
-    presentation->save("Set_Size&Type_out.pptx", SaveFormat.Pptx);
+    $presentation->save("Set_Size&Type_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     presentation.dispose();
 }
@@ -181,14 +181,14 @@ Slides in presentation could be set as different paper sizes. The [SlideSize->ge
 $presentation = new Java("com.aspose.slides.Presentation");
 try {
     // Set SlideSize.Type Property 
-    presentation->getSlideSize()->setSize(SlideSizeType.A4Paper,SlideSizeScaleType.EnsureFit);
+    $presentation->getSlideSize()->setSize(SlideSizeType.A4Paper,SlideSizeScaleType.EnsureFit);
     
     // Set different properties of PDF Options
     PdfOptions opts = new  PdfOptions();
     opts->setSufficientResolution(600);
     
     // Save presentation to disk
-    presentation->save("SetPDFPageSize_out.pdf", SaveFormat.Pdf, opts);
+    $presentation->save("SetPDFPageSize_out.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, opts);
 } finally {
     presentation.dispose();
 }

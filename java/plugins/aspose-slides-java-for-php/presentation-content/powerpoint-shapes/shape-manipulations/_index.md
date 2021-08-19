@@ -31,7 +31,7 @@ try {
 public static IShape findShape(ISlide slide, String alttext)
 {
     // Iterating through all shapes inside the slide
-    for (int i = 0; i < slide->getShapes().size(); i++)
+    for (int i = 0; i < slide->getShapes()->size(); i++)
     {
         // If the alternative text of the slide matches with the required one then
         // Return the shape
@@ -67,7 +67,7 @@ try {
     destShapes.insertClone(0, sourceShapes->get_Item(0), 50, 150);
 
     // Write the PPTX file to disk
-    $pres->save("CloneShape_out.pptx", SaveFormat.Pptx);
+    $pres->save("CloneShape_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -94,7 +94,7 @@ try {
     sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Moon, 160, 40, 150, 50);
 
     String altText = "User Defined";
-    int iCount = sld->getShapes().size();
+    int iCount = sld->getShapes()->size();
     for (int i = 0; i < iCount; i++)
     {
         AutoShape ashp = (AutoShape)sld->getShapes()->get_Item(0);
@@ -105,7 +105,7 @@ try {
     }
 
     // Save presentation to disk
-    $pres->save("RemoveShape_out.pptx", SaveFormat.Pptx);
+    $pres->save("RemoveShape_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -132,7 +132,7 @@ try {
     sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Moon, 160, 40, 150, 50);
 
     String alttext = "User Defined";
-    int iCount = sld->getShapes().size();
+    int iCount = sld->getShapes()->size();
     for (int i = 0; i < iCount; i++)
     {
         AutoShape ashp = (AutoShape)sld->getShapes()->get_Item(i);
@@ -143,7 +143,7 @@ try {
     }
 
     // Save presentation to disk
-    $pres->save("Hiding_Shapes_out.pptx", SaveFormat.Pptx);
+    $pres->save("Hiding_Shapes_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -176,7 +176,7 @@ try {
 
     slide->getShapes().reorder(2, shp3);
 
-    $pres->save("Reshape_out.pptx", SaveFormat.Pptx);
+    $pres->save("Reshape_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -225,7 +225,7 @@ try {
     shp2->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
     shp2->getFillFormat()->getSolidFillColor()->setColor(Color.GRAY);
 
-    for (int i = 0; i < sld->getShapes().size(); i++)
+    for (int i = 0; i < sld->getShapes()->size(); i++)
     {
         AutoShape shape = (AutoShape) sld->getShapes()->get_Item(i);
         if (shape != null)
@@ -235,7 +235,7 @@ try {
     }
 
     // Save presentation to disk
-    $pres->save("Set_AlternativeText_out.pptx", SaveFormat.Pptx);
+    $pres->save("Set_AlternativeText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -274,7 +274,7 @@ try {
     } finally {
         if (stream != null) stream.close();
     }
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

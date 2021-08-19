@@ -43,7 +43,7 @@ try {
     
     // Save the image to disk in JPEG format
     ImageIO.write(image, "PNG", new File("Thumbnail_out.jpg"));
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

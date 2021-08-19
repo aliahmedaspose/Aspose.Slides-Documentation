@@ -33,7 +33,7 @@ try {
     sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 50, 150, 150, 50);
     
     // Write the PPTX file to disk
-    $pres->save("EllipseShp1.pptx", SaveFormat.Pptx);
+    $pres->save("EllipseShp1.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -73,7 +73,7 @@ try {
     shp->getLineFormat()->setWidth(5);
 
     // Write the PPTX file to disk
-    $pres->save("EllipseShp1.pptx", SaveFormat.Pptx);
+    $pres->save("EllipseShp1.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

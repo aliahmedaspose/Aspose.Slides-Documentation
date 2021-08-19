@@ -15,9 +15,9 @@ Presentation presentation1 = new Presentation("AccessSlides.pptx");
 try {
     Presentation presentation2 = new Presentation("HelloWorld.pptx");
     try {
-        for (int i = 0; i < presentation1->getMasters().size(); i++)
+        for (int i = 0; i < presentation1->getMasters()->size(); i++)
         {
-            for (int j = 0; j < presentation2->getMasters().size(); j++)
+            for (int j = 0; j < presentation2->getMasters()->size(); j++)
             {
                 if (presentation1->getMasters()->get_Item(i).equals(presentation2->getMasters()->get_Item(j)))
                     System.out.println(String.format("SomePresentation1 MasterSlide#%d is equal to SomePresentation2 MasterSlide#%d", i, j));

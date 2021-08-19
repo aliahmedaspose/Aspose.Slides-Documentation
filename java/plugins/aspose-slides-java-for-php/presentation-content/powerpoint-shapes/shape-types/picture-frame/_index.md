@@ -45,8 +45,8 @@ try {
     sld->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, imgx->getWidth(), imgx->getHeight(), imgx);
     
     // Write the PPTX file to disk
-    $pres->save("RectPicFrame.pptx", SaveFormat.Pptx);
-} catch (IOException e) {
+    $pres->save("RectPicFrame.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -83,8 +83,8 @@ try {
     pf->setRelativeScaleWidth(1.35f);
     
     // Write the PPTX file to disk
-    $pres->save("RectPicFrame.pptx", SaveFormat.Pptx);
-} catch (IOException e) {
+    $pres->save("RectPicFrame.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -128,8 +128,8 @@ try {
     pf->setRotation(45);
     
     // Write the PPTX file to disk
-    $pres->save("RectPicFrame.pptx", SaveFormat.Pptx);
-} catch (IOException e) {
+    $pres->save("RectPicFrame.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -180,8 +180,8 @@ try {
     aShape->getFillFormat()->getPictureFillFormat()->setStretchOffsetBottom(-10);
     
     //Write the PPTX file to disk
-    $pres->save("StretchOffsetLeftForPictureFrame_out.pptx", SaveFormat.Pptx);
-} catch (IOException e) {
+    $pres->save("StretchOffsetLeftForPictureFrame_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

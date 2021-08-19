@@ -39,7 +39,7 @@ Aspose.Slides for Java offers [Presentation](https://apireference.aspose.com/jav
 $pres = new Java("com.aspose.slides.Presentation", "Aspose.ppt");
 try {
 // Saving the PPTX presentation to PPTX format
-    $pres->save("ConvertedAspose.pptx", SaveFormat.Pptx);
+    $pres->save("ConvertedAspose.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

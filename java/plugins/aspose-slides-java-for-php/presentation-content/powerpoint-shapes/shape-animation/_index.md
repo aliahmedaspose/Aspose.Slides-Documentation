@@ -54,7 +54,7 @@ try {
     motionBhv->getPath().add(MotionCommandPathType.End, null, MotionPathPointsType.Auto, false);
 
     //Write the presentation as PPTX to disk
-    $pres->save("AnimExample_out.pptx", SaveFormat.Pptx);
+    $pres->save("AnimExample_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

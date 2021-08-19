@@ -37,7 +37,7 @@ try {
     $pres->getSlides().remove(slide);
     
     // Writing the presentation file
-    $pres->save("modified.pptx", SaveFormat.Pptx);
+    $pres->save("modified.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     $pres->dispose();
 }
@@ -58,7 +58,7 @@ try {
     $pres->getSlides().removeAt(0);
     
     // Writing the presentation file
-    $pres->save("modified.pptx", SaveFormat.Pptx);
+    $pres->save("modified.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     $pres->dispose();
 }

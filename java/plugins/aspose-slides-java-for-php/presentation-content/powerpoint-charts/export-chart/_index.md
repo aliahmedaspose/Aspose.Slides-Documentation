@@ -16,7 +16,7 @@ try {
     BufferedImage img = chart->getThumbnail();
     
     ImageIO.write(img, "PNG", new java.io.File("image.png"));
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

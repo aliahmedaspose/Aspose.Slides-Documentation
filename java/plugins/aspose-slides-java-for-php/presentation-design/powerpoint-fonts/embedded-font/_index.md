@@ -39,7 +39,7 @@ try {
             "PNG", new File("picture2_out.png"));
 
     // save the presentation without embedded "Calibri" font
-    $pres->save("WithoutManageEmbeddedFonts_out.ppt", SaveFormat.Ppt);
+    $pres->save("WithoutManageEmbeddedFonts_out.ppt", Java("com.aspose.slides.SaveFormat")->Ppt);
 } catch(IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -70,7 +70,7 @@ try {
     }
 
     // Save the presentation
-    $pres->save("AddEmbeddedFont_out.pptx", SaveFormat.Pptx);
+    $pres->save("AddEmbeddedFont_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

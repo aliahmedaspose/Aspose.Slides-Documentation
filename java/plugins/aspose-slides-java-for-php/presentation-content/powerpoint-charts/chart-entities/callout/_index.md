@@ -16,7 +16,7 @@ try {
     chart->getChartData()->getSeries()->get_Item(0)->getLabels()->getDefaultDataLabelFormat()->setShowLabelAsDataCallout(true);
     chart->getChartData()->getSeries()->get_Item(0)->getLabels()->get_Item(2)->getDataLabelFormat()->setShowLabelAsDataCallout(false);
     
-    $pres->save("DisplayCharts.pptx", SaveFormat.Pptx);
+    $pres->save("DisplayCharts.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -48,7 +48,7 @@ try {
     {
         chart->getChartData()->getCategories().add(workBook->getCell(0, categoryIndex + 1, 0, "CATEGORY " + categoryIndex));
         int i = 0;
-        while (i < chart->getChartData()->getSeries().size())
+        while (i < chart->getChartData()->getSeries()->size())
         {
             IChartSeries iCS = chart->getChartData()->getSeries()->get_Item(i);
             IChartDataPoint dataPoint = iCS->getDataPoints().addDataPointForDoughnutSeries(workBook->getCell(0, categoryIndex + 1, i + 1, 1));
@@ -58,7 +58,7 @@ try {
             dataPoint->getFormat()->getLine()->setWidth(1);
             dataPoint->getFormat()->getLine()->setStyle(LineStyle.Single);
             dataPoint->getFormat()->getLine()->setDashStyle(LineDashStyle.Solid);
-            if (i == chart->getChartData()->getSeries().size() - 1)
+            if (i == chart->getChartData()->getSeries()->size() - 1)
             {
                 IDataLabel lbl = dataPoint->getLabel();
                 lbl->getTextFormat()->getTextBlockFormat()->setAutofitType(TextAutofitType.Shape);
@@ -81,7 +81,7 @@ try {
         }
         categoryIndex++;
     }
-    $pres->save("chart.pptx", SaveFormat.Pptx);
+    $pres->save("chart.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

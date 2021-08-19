@@ -32,7 +32,7 @@ try {
     mgr.removeNotesSlide();
 
     // Saving presentation to disk
-    $pres->save("test.pptx", SaveFormat.Pptx);
+    $pres->save("test.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -47,13 +47,13 @@ $pres = new Java("com.aspose.slides.Presentation", "presWithNotes.pptx");
 try {
     // Removing notes of all slides
     INotesSlideManager mgr = null;
-    for (int i = 0; i < $pres->getSlides().size(); i++) {
+    for (int i = 0; i < $pres->getSlides()->size(); i++) {
         mgr = $pres->getSlides()->get_Item(i)->getNotesSlideManager();
         mgr.removeNotesSlide();
     }
     
     // Saving presentation to disk
-    $pres->save("test.pptx", SaveFormat.Pptx);
+    $pres->save("test.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -77,7 +77,7 @@ try {
         IParagraphFormat paragraphFormat = notesStyle->getLevel(0);
         paragraphFormat->getBullet()->setType(BulletType.Symbol);
     }
-    $pres->save("NotesSlideWithNotesStyle.pptx", SaveFormat.Pptx);
+    $pres->save("NotesSlideWithNotesStyle.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

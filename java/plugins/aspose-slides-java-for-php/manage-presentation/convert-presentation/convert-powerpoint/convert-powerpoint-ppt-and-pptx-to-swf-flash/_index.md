@@ -18,7 +18,7 @@ try {
     swfOptions->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomFull);
     
     // Saving presentation
-    $pres->save("Sample.swf", SaveFormat.Swf, swfOptions);
+    $pres->save("Sample.swf", Java("com.aspose.slides.SaveFormat")->Swf, swfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }

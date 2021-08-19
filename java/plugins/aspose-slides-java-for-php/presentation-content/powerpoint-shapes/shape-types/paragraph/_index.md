@@ -47,8 +47,8 @@ try {
     Table tbl = (Table)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     ICell cell = tbl->getRows()->get_Item(1)->get_Item(1);
 
-    double x = tbl->getX() + tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetX();
-    double y = tbl->getY() + tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetY();
+    $double x = tbl->getX() + tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetX();
+    $double y = tbl->getY() + tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetY();
 
     for (IParagraph para : cell->getTextFrame()->getParagraphs())
     {

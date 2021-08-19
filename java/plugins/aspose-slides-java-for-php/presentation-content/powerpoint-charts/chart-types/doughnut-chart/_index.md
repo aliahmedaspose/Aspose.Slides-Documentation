@@ -30,7 +30,7 @@ try {
     chart->getChartData()->getSeriesGroups()->get_Item(0)->setDoughnutHoleSize((byte)90);
 
     // Write presentation to disk
-    $pres->save("DoughnutHoleSize_out.pptx", SaveFormat.Pptx);
+    $pres->save("DoughnutHoleSize_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

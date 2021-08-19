@@ -38,7 +38,7 @@ try {
     vf->setVolume(AudioVolumeMode.Loud);
 
     // Write the PPTX file to disk
-    $pres->save("VideoFrame.pptx", SaveFormat.Pptx);
+    $pres->save("VideoFrame.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -63,7 +63,7 @@ This sample code shows you how to add a video from YouTube to a slide:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     addVideoFromYouTube(pres, "Tj75Arhq5ho");
-    $pres->save("out.pptx", SaveFormat.Pptx);
+    $pres->save("out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -85,7 +85,7 @@ private static void addVideoFromYouTube(Presentation pres, String videoID)
         videoFrame->getPictureFormat()->getPicture()->setImage($pres->getImages().addImage(url.openStream()));
     } catch (MalformedURLException e) {
         e.printStackTrace();
-    } catch (IOException e) {
+    } catch (JavaException $e) {
         e.printStackTrace();
     }
 }
@@ -120,7 +120,7 @@ try {
     vf->setVolume(AudioVolumeMode.Loud);
 
     // Write the PPTX file to disk
-    $pres->save("VideoFrame.pptx", SaveFormat.Pptx);
+    $pres->save("VideoFrame.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -161,7 +161,7 @@ try {
             }
         }
     }
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

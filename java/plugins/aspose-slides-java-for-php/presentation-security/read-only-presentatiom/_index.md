@@ -23,7 +23,7 @@ Aspose.Slides for Java allows you to set a presentation to **Read-Only**, which 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     $pres->getProtectionManager()->setReadOnlyRecommended(true);
-    $pres->save("ReadOnlyPresentation.pptx", SaveFormat.Pptx);
+    $pres->save("ReadOnlyPresentation.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

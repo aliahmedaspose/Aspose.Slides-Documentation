@@ -69,7 +69,7 @@ try {
     txtFrm->getParagraphs().add(para);
     
     // saving the presentation as a PPTX file
-    $pres->save("Bullet.pptx", SaveFormat.Pptx);
+    $pres->save("Bullet.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     $pres->dispose();
 }
@@ -129,8 +129,8 @@ try {
     txtFrm->getParagraphs().add(para);
 
     // Writing the presentation as a PPTX file
-    $pres->save("Bullet.pptx", SaveFormat.Pptx);
-} catch (IOException e) {
+    $pres->save("Bullet.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -220,7 +220,7 @@ try {
     txtFrm->getParagraphs().add(para4);
     
     // saving the presentation as a PPTX file
-    $pres->save("MultilevelBullet.pptx", SaveFormat.Pptx);
+    $pres->save("MultilevelBullet.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -281,7 +281,7 @@ try {
     paragraph5->getParagraphFormat()->getBullet()->setType(BulletType.Numbered);
     txtFrm->getParagraphs().add(paragraph5);
 
-    $pres->save(resourcesOutputPath + "SetCustomBulletsNumber-slides.pptx.pptx", SaveFormat.Pptx);
+    $pres->save(resourcesOutputPath + "SetCustomBulletsNumber-slides.pptx.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

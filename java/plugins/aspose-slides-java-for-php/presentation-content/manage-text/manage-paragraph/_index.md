@@ -81,7 +81,7 @@ try {
     }
 
     //Write PPTX to Disk
-    $pres->save("multiParaPort_out.pptx", SaveFormat.Pptx);
+    $pres->save("multiParaPort_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -146,7 +146,7 @@ try {
     para3->getParagraphFormat()->setIndent(50);
     
     //Write the Presentation to disk
-    $pres->save("InOutDent_out.pptx", SaveFormat.Pptx);
+    $pres->save("InOutDent_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -184,7 +184,7 @@ try {
     shape->getTextFrame()->getParagraphs().add(para1);
     shape->getTextFrame()->getParagraphs().add(para2);
 
-    $pres->save(resourcesOutputPath+"pres.pptx", SaveFormat.Pptx);
+    $pres->save(resourcesOutputPath+"pres.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -231,7 +231,7 @@ try {
     ashape->getTextFrame()->getParagraphs().addFromHtml(tr.readToEnd());
 
     // Saving Presentation
-    $pres->save("output_out.pptx", SaveFormat.Pptx);
+    $pres->save("output_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -270,7 +270,7 @@ try {
     // Writing Paragraphs data to HTML by providing paragraph starting index, total paragraphs to be copied
     writer.write(ashape->getTextFrame()->getParagraphs().exportToHtml(0, ashape->getTextFrame()->getParagraphs()->getCount(), null));
     writer.close();
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

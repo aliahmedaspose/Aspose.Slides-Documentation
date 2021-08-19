@@ -40,7 +40,7 @@ try {
     }
 
     // Save the PPTX to Disk
-    $pres->save("output_out.pptx", SaveFormat.Pptx);
+    $pres->save("output_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -74,7 +74,7 @@ try {
         }
     }
 
-    $pres->save("Placeholders_PromptText.pptx", SaveFormat.Pptx);
+    $pres->save("Placeholders_PromptText.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

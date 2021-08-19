@@ -49,7 +49,7 @@ try {
     $pres->save(os, Java("com.aspose.slides.SaveFormat")->Pptx);
 
     os.close();
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -66,7 +66,7 @@ try {
     $pres->getViewProperties()->setLastView((byte) ViewType.SlideMasterView);
     
     // Saving presentation
-    $pres->save("newDemo.pptx", SaveFormat.Pptx);
+    $pres->save("newDemo.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -92,7 +92,7 @@ try {
     options->setConformance(Conformance.Iso29500_2008_Strict);
     
     // Save your presentation to a file
-    $pres->save("demoPass.pptx", SaveFormat.Pptx, options);
+    $pres->save("demoPass.pptx", Java("com.aspose.slides.SaveFormat")->Pptx, options);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -110,7 +110,7 @@ $pres = new Java("com.aspose.slides.Presentation", "ConvertToPDF.pptx");
 try {
     ISaveOptions saveOptions = new PdfOptions();
     saveOptions->setProgressCallback((IProgressCallback) new ExportProgressHandler());
-    $pres->save("ConvertToPDF.pdf", SaveFormat.Pdf, saveOptions);
+    $pres->save("ConvertToPDF.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, saveOptions);
 } finally {
     $pres->dispose();
 }

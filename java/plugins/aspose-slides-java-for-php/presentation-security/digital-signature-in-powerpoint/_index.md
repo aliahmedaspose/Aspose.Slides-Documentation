@@ -41,7 +41,7 @@ try {
     $pres->getDigitalSignatures().add(signature);
 
     // Save presentation
-    $pres->save("SomePresentationSigned.pptx", SaveFormat.Pptx);
+    $pres->save("SomePresentationSigned.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     $pres->dispose();
 }
@@ -53,7 +53,7 @@ Now its possible to check if the presentation was digitally signed and has not 
 // Open presentation
 $pres = new Java("com.aspose.slides.Presentation", "SomePresentationSigned.pptx");
 try {
-    if ($pres->getDigitalSignatures().size() > 0)
+    if ($pres->getDigitalSignatures()->size() > 0)
     {
         boolean allSignaturesAreValid = true;
 

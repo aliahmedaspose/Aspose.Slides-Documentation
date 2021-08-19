@@ -32,7 +32,7 @@ try {
     IShape shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 150, 50);
 
     // Write the PPTX file to disk
-    $pres->save("RecShp1.pptx", SaveFormat.Pptx);
+    $pres->save("RecShp1.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -72,7 +72,7 @@ try {
     shp->getLineFormat()->setWidth(5);
 
     // Write the PPTX file to disk
-    $pres->save("RecShp2.pptx", SaveFormat.Pptx);
+    $pres->save("RecShp2.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

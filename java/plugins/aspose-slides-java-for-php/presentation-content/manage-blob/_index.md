@@ -21,11 +21,11 @@ try {
 
         // save the presentation. Despite that the output presentation will be very large, the memory
         // consumption will be low the whole lifetime of the pres object
-        $pres->save("presentationWithLargeVideo.pptx", SaveFormat.Pptx);
+        $pres->save("presentationWithLargeVideo.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
     } finally {
         fileStream.close();
     }
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     $pres->dispose();
 }
@@ -47,7 +47,7 @@ try {
     byte[] buffer = new byte[8 * 1024];
 
     // iterate through the videos
-    for (int index = 0; index < $pres->getVideos().size(); index++) {
+    for (int index = 0; index < $pres->getVideos()->size(); index++) {
         IVideo video = $pres->getVideos()->get_Item(index);
 
         // open the presentation video stream. Please note that we intentionally avoid accessing properties
@@ -71,7 +71,7 @@ try {
         // memory consumption will stay low no matter what size the videos or presentation is.
     }
     // do the same for audios if needed.
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     $pres->dispose();
 }
@@ -95,11 +95,11 @@ try {
 
         // save the presentation. Despite that the output presentation will be
         // large, the memory consumption will be low the whole lifetime of the pres object
-        $pres->save("presentationWithLargeImage.pptx", SaveFormat.Pptx);
+        $pres->save("presentationWithLargeImage.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
     } finally {
         fip.close();
     }
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     $pres->dispose();
 }

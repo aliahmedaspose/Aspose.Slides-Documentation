@@ -42,7 +42,7 @@ try {
     sld.writeAsSvg(svgStream);
 
     svgStream.close();
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     $pres->dispose();
 }
@@ -63,7 +63,7 @@ try {
     } finally {
         if (stream != null) stream.close();
     }
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     $pres->dispose();
 }
@@ -110,7 +110,7 @@ try {
 
     // Save the image to disk in JPEG format
     ImageIO.write(bmp, "PNG", new java.io.File("Thumbnail_out.png"));
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     $pres->dispose();
 }
@@ -143,7 +143,7 @@ try {
 
     // Save the image to disk in JPEG format
     ImageIO.write(bmp, "PNG", new java.io.File("Thumbnail_out.png"));
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     $pres->dispose();
 }
@@ -182,7 +182,7 @@ try {
 
     // Save the image to disk in JPEG format
     ImageIO.write(bmp, "PNG", new java.io.File("Thumbnail_out.png"));
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     $pres->dispose();
 }

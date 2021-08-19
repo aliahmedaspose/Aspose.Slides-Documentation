@@ -44,7 +44,7 @@ try {
     }
     
     // Saving Presentation
-    $pres->save("AddSmartArtNode.pptx", SaveFormat.Pptx);
+    $pres->save("AddSmartArtNode.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -80,7 +80,7 @@ try {
     chNode->getTextFrame()->setText("Sample Text Added");
 
     // Save Presentation
-    $pres->save("AddSmartArtNodeByPosition.pptx", SaveFormat.Pptx);
+    $pres->save("AddSmartArtNodeByPosition.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -113,7 +113,7 @@ try {
             ISmartArt smart = (ISmartArt) shape;
     
             // Traverse through all nodes inside SmartArt
-            for (int i = 0; i < smart->getAllNodes().size(); i++) 
+            for (int i = 0; i < smart->getAllNodes()->size(); i++) 
             {
                 // Accessing SmartArt node at index i
                 SmartArtNode node = (SmartArtNode) smart->getAllNodes()->get_Item(i);
@@ -157,13 +157,13 @@ try {
             ISmartArt smart = (ISmartArt) shape;
     
             // Traverse through all nodes inside SmartArt
-            for (int i = 0; i < smart->getAllNodes().size(); i++) 
+            for (int i = 0; i < smart->getAllNodes()->size(); i++) 
             {
                 // Accessing SmartArt node at index i
                 SmartArtNode node0 = (SmartArtNode) smart->getAllNodes()->get_Item(i);
                 
                 // Traversing through the child nodes in SmartArt node at index i
-                for (int j = 0; j < node0->getChildNodes().size(); j++) 
+                for (int j = 0; j < node0->getChildNodes()->size(); j++) 
                 {
                     // Accessing the child node in SmartArt node
                     SmartArtNode node = (SmartArtNode) node0->getChildNodes()->get_Item(j);
@@ -239,7 +239,7 @@ try {
             // Typecast shape to SmartArt
             ISmartArt smart = (ISmartArt) shape;
     
-            if (smart->getAllNodes().size() > 0) 
+            if (smart->getAllNodes()->size() > 0) 
             {
                 // Accessing SmartArt node at index 0
                 ISmartArtNode node = smart->getAllNodes()->get_Item(0);
@@ -251,7 +251,7 @@ try {
     }
     
     // Save Presentation
-    $pres->save("RemoveSmartArtNode.pptx", SaveFormat.Pptx);
+    $pres->save("RemoveSmartArtNode.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -282,12 +282,12 @@ try {
             // Typecast shape to SmartArt
             SmartArt smart = (SmartArt) shape;
     
-            if (smart->getAllNodes().size() > 0) 
+            if (smart->getAllNodes()->size() > 0) 
             {
                 // Accessing SmartArt node at index 0
                 ISmartArtNode node = smart->getAllNodes()->get_Item(0);
     
-                if (node->getChildNodes().size() >= 2) 
+                if (node->getChildNodes()->size() >= 2) 
                 {
                     // Removing the child node at position 1
                     (node->getChildNodes()).removeNode(1);
@@ -297,7 +297,7 @@ try {
     }
     
     // Save Presentation
-    $pres->save("RemoveSmartArtNodeByPosition.pptx", SaveFormat.Pptx);
+    $pres->save("RemoveSmartArtNodeByPosition.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -333,7 +333,7 @@ try{
     shape = node->getShapes()->get_Item(1);
     shape->setRotation(90);
 
-    $pres->save("SmartArt.pptx", SaveFormat.Pptx);
+    $pres->save("SmartArt.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 }finally {
     $pres->dispose();
 }
@@ -376,7 +376,7 @@ try {
             ISmartArt smart = (SmartArt) shape;
     
             // Traversing through all nodes of SmartArt shape
-            for (int i = 0; i < smart->getAllNodes().size(); i++) 
+            for (int i = 0; i < smart->getAllNodes()->size(); i++) 
             {
                 ISmartArtNode node = smart->getAllNodes()->get_Item(i);
                 // Check if node is Assistant node
@@ -390,7 +390,7 @@ try {
     }
     
     // Save Presentation
-    $pres->save("ChangeAssitantNode.pptx", SaveFormat.Pptx);
+    $pres->save("ChangeAssitantNode.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -431,7 +431,7 @@ try {
     }
     
     // Save the presentation
-    $pres->save("TestSmart.pptx", SaveFormat.Pptx);
+    $pres->save("TestSmart.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -461,7 +461,7 @@ try {
 
     // Save thumbnail
     ImageIO.write(bmp, "PNG", new File("SmartArt_ChildNote_Thumbnail.png"));
-} catch (IOException e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

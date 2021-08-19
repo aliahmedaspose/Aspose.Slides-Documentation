@@ -27,8 +27,8 @@ try {
             (float) $pres->getSlideSize()->getSize()->getWidth(), 
 			(float) $pres->getSlideSize()->getSize()->getHeight(), 
 			image);
-    $pres->save("output.pptx", SaveFormat.Pptx);
-} catch (IOException e) {
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -53,8 +53,8 @@ try {
     IPPImage ppImage = $pres->getImages().addImage(svgImage);
     $pres->getSlides()->get_Item(0)->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0, 
 			ppImage->getWidth(), ppImage->getHeight(), ppImage);
-    $pres->save("output.pptx", SaveFormat.Pptx);
-} catch (IOException e) {
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -80,15 +80,15 @@ try {
     ISvgImage svgImage = new SvgImage(svgContent);
 
     // Get slide size
-    Dimension2D slideSize = presentation->getSlideSize()->getSize();
+    Dimension2D slideSize = $presentation->getSlideSize()->getSize();
 
     // Convert SVG image to group of shapes scaling it to slide size
-    presentation->getSlides()->get_Item(0)->getShapes().
+    $presentation->getSlides()->get_Item(0)->getShapes().
             addGroupShape(svgImage, 0f, 0f, (float)slideSize->getWidth(), (float)slideSize->getHeight());
 
     // Save presentation in PPTX format
-    presentation->save("output.pptx", SaveFormat.Pptx);
-} catch (IOException e) {
+    $presentation->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+} catch (JavaException $e) {
 } finally {
     if ($presentation != null) $presentation->dispose();
 }
@@ -129,8 +129,8 @@ try {
 					emfImage);
     }
     
-    $pres->save("output.pptx", SaveFormat.Pptx);
-} catch (IOException e) {
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

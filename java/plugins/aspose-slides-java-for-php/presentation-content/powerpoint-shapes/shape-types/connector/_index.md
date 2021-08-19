@@ -41,7 +41,7 @@ try {
     connector.reroute();
     
     // Saving Presentation
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -98,7 +98,7 @@ try {
     }
 
     // Saving presentation
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -120,9 +120,9 @@ $pres = new Java("com.aspose.slides.Presentation", "ConnectorLineAngle.pptx");
 try {
     Slide slide = (Slide)pres->getSlides()->get_Item(0);
     
-    for (int i = 0; i < slide->getShapes().size(); i++)
+    for (int i = 0; i < slide->getShapes()->size(); i++)
     {
-        double dir = 0.0;
+        $double dir = 0.0;
         Shape shape = (Shape)slide->getShapes()->get_Item(i);
         if (shape instanceof AutoShape)
         {
@@ -153,7 +153,7 @@ public static double getDirection(float w, float h, boolean flipH, boolean flipV
     float endLineY = h * (flipV ? -1 : 1);
     float endYAxisX = 0;
     float endYAxisY = h;
-    double angle = (Math.atan2(endYAxisY, endYAxisX) - Math.atan2(endLineY, endLineX));
+    $double angle = (Math.atan2(endYAxisY, endYAxisX) - Math.atan2(endLineY, endLineX));
     if (angle < 0) angle += 2 * Math.PI;
     return angle * 180.0 / Math.PI;
 }

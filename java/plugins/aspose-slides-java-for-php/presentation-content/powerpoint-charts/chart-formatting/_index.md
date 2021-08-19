@@ -192,7 +192,7 @@ try {
     chart->getPlotArea()->getFormat()->getFill()->getSolidFillColor()->setColor(new Color(PresetColor.LightCyan));
 
     // Save Presentation
-    $pres->save("FormattedChart.pptx", SaveFormat.Pptx);
+    $pres->save("FormattedChart.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -217,7 +217,7 @@ try {
     chart->getTextFormat()->getPortionFormat()->setFontHeight(20);
     chart->getChartData()->getSeries()->get_Item(0)->getLabels()->getDefaultDataLabelFormat()->setShowValue(true);
     
-    $pres->save("FontPropertiesForChart.pptx", SaveFormat.Pptx);
+    $pres->save("FontPropertiesForChart.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -261,7 +261,7 @@ try {
     }
 
     // Saving presentation
-    $pres->save("PresetNumberFormat.pptx", SaveFormat.Pptx);
+    $pres->save("PresetNumberFormat.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -330,7 +330,7 @@ try {
     chart->getLineFormat()->setStyle(LineStyle.Single);
     chart->setRoundedCorners(true);
 
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

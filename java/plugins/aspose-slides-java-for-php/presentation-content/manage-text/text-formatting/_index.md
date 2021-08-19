@@ -22,7 +22,7 @@ try {
     ((AutoShape)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame().highlightText("title", Color.BLUE); // highlighting all words 'important'
     ((AutoShape)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame().highlightText("to", Color.MAGENTA, textHighlightingOptions);// highlighting all separate 'the' occurrences
     
-    $pres->save("OutputPresentation-highlight.pptx", SaveFormat.Pptx);
+    $pres->save("OutputPresentation-highlight.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -42,7 +42,7 @@ try {
     
     ((AutoShape) $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame().highlightRegex("\\b[^\\s]{4}\\b", java.awt.Color.YELLOW, options); // highlighting all words with 10 symbols or longer
     
-    $pres->save("OutputPresentation-highlight.pptx", SaveFormat.Pptx);
+    $pres->save("OutputPresentation-highlight.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -84,7 +84,7 @@ try {
     para2->getParagraphFormat()->setAlignment(TextAlignment.Center);
 
     //Writing the presentation as a PPTX file
-    $pres->save("Centeralign_out.pptx", SaveFormat.Pptx);
+    $pres->save("Centeralign_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -114,7 +114,7 @@ try {
     // set transparency to zero percent
     outerShadowEffect->getShadowColor()->setColor(new Color(shadowColor->getRed(), shadowColor->getGreen(), shadowColor->getBlue(), 255));
 
-    $pres->save("transparency-2.pptx", SaveFormat.Pptx);
+    $pres->save("transparency-2.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -179,7 +179,7 @@ try {
     port2->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.ORANGE);
 
     //Write the PPTX to disk
-    $pres->save("WelcomeFont_out.pptx", SaveFormat.Pptx);
+    $pres->save("WelcomeFont_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -242,7 +242,7 @@ try {
     port->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLUE);
 
     // Write the PPTX to disk 
-    $pres->save("SetTextFontProperties_out.pptx", SaveFormat.Pptx);
+    $pres->save("SetTextFontProperties_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -287,7 +287,7 @@ try {
     portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
     
     // Save Presentation
-    $pres->save("RotateText_out.pptx", SaveFormat.Pptx);
+    $pres->save("RotateText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -331,7 +331,7 @@ try {
     portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
 
     // Save Presentation
-    $pres->save(resourcesOutputPath+"RotateText_out.pptx", SaveFormat.Pptx);
+    $pres->save(resourcesOutputPath+"RotateText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -366,7 +366,7 @@ try {
     para->getParagraphFormat()->setSpaceAfter(40);
     
     // Save Presentation
-    $pres->save("LineSpacing_out.pptx", SaveFormat.Pptx);
+    $pres->save("LineSpacing_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -410,7 +410,7 @@ try {
     portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
 
     // Save Presentation
-    $pres->save(resourcesOutputPath + "formatText_out.pptx", SaveFormat.Pptx);
+    $pres->save(resourcesOutputPath + "formatText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -454,7 +454,7 @@ try {
     portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
     
     // Save Presentation
-    $pres->save("AnchorText_out.pptx", SaveFormat.Pptx);
+    $pres->save("AnchorText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

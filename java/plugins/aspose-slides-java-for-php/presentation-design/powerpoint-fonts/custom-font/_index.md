@@ -30,7 +30,7 @@ FontsLoader.loadExternalFonts(folders);
 // Do Some work and perform presentation/slides rendering
 $pres = new Java("com.aspose.slides.Presentation", "DefaultFonts.pptx");
 try {
-    $pres->save("NewFonts_out.pptx", SaveFormat.Pptx);
+    $pres->save("NewFonts_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 

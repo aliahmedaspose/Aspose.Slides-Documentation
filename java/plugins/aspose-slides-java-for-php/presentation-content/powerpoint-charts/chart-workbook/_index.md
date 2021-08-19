@@ -26,7 +26,7 @@ try {
     chart->getChartData()->setRange("Sheet1!$A$1:$B$9");
     IChartSeries series = chart->getChartData()->getSeries()->get_Item(0);
     series->getParentSeriesGroup()->setColorVaried(true);
-    $pres->save("response2.pptx", SaveFormat.Pptx);
+    $pres->save("response2.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch (Exception ex) {
     ex.printStackTrace();
 } finally {
@@ -60,7 +60,7 @@ try {
     series->getLabels()->get_Item(1)->setValueFromCell(wb->getCell(0, "A11", "Label 1 cell value"));
     series->getLabels()->get_Item(2)->setValueFromCell(wb->getCell(0, "A12", "Label 2 cell value"));
 
-    $pres->save("resultchart.pptx", SaveFormat.Pptx);
+    $pres->save("resultchart.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -121,7 +121,7 @@ try {
 
     chart->getChartData()->setExternalWorkbook(externalWbPath);
 
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -153,7 +153,7 @@ try {
     chartData->getCategories().add(chartData->getChartDataWorkbook()->getCell(0, "A3"));
     chartData->getCategories().add(chartData->getChartDataWorkbook()->getCell(0, "A4"));
     
-    $pres->save("Presentation_with_externalWorkbook.pptx", SaveFormat.Pptx);
+    $pres->save("Presentation_with_externalWorkbook.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -172,7 +172,7 @@ try {
 
     ((ChartData)chartData)->setExternalWorkbook("http://path/doesnt/exists", false);
 
-    $pres->save("Presentation_with_externalWorkbookWithUpdateChartData.pptx", SaveFormat.Pptx);
+    $pres->save("Presentation_with_externalWorkbookWithUpdateChartData.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -192,7 +192,7 @@ try {
     
     chartData->getSeries()->get_Item(0)->getDataPoints()->get_Item(0)->getValue()->getAsCell()->setValue(100);
     
-    $pres->save("presentation_out.pptx", SaveFormat.Pptx);
+    $pres->save("presentation_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

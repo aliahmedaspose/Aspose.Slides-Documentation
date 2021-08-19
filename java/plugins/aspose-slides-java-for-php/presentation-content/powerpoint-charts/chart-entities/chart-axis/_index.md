@@ -23,11 +23,11 @@ try {
     Chart chart = (Chart)pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Area, 100, 100, 500, 350);
     chart.validateChartLayout();
 
-    double maxValue = chart->getAxes()->getVerticalAxis()->getActualMaxValue();
-    double minValue = chart->getAxes()->getVerticalAxis()->getActualMinValue();
+    $double maxValue = chart->getAxes()->getVerticalAxis()->getActualMaxValue();
+    $double minValue = chart->getAxes()->getVerticalAxis()->getActualMinValue();
 
-    double majorUnit = chart->getAxes()->getHorizontalAxis()->getActualMajorUnit();
-    double minorUnit = chart->getAxes()->getHorizontalAxis()->getActualMinorUnit();
+    $double majorUnit = chart->getAxes()->getHorizontalAxis()->getActualMajorUnit();
+    $double minorUnit = chart->getAxes()->getHorizontalAxis()->getActualMinorUnit();
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -45,7 +45,7 @@ try {
     chart->getChartData().switchRowColumn();
 
     // Saving presentation
-    $pres->save("SwitchChartRowColumns_out.pptx", SaveFormat.Pptx);
+    $pres->save("SwitchChartRowColumns_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -64,7 +64,7 @@ try {
     chart->getAxes()->getHorizontalAxis()->setMajorUnit(1);
     chart->getAxes()->getHorizontalAxis()->setMajorUnitScale(TimeUnitType.Months);
     
-    $pres->save("ChangeChartCategoryAxis_out.pptx", SaveFormat.Pptx);
+    $pres->save("ChangeChartCategoryAxis_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -97,7 +97,7 @@ try {
     chart->getAxes()->getHorizontalAxis()->setNumberFormatLinkedToSource(false);
     chart->getAxes()->getHorizontalAxis()->setNumberFormat("yyyy");
 	
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -105,7 +105,7 @@ try {
 ```java
 public static String convertToOADate(GregorianCalendar date) throws ParseException
 {
-    double oaDate;
+    $double oaDate;
     SimpleDateFormat myFormat = new SimpleDateFormat("dd MM yyyy");
     java.util.Date baseDate = myFormat.parse("30 12 1899");
     Long days = TimeUnit.DAYS.convert(date->getTimeInMillis() - baseDate->getTime(), TimeUnit.MILLISECONDS);
@@ -125,7 +125,7 @@ try {
     chart->getAxes()->getVerticalAxis()->setTitle(true);
     chart->getAxes()->getVerticalAxis()->getTitle()->getTextFormat()->getTextBlockFormat()->setRotationAngle(90);
 
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -142,7 +142,7 @@ try {
     
     chart->getAxes()->getHorizontalAxis()->setAxisBetweenCategories(true);
 
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -158,7 +158,7 @@ try {
 
     chart->getAxes()->getVerticalAxis()->setDisplayUnit(DisplayUnitType.Millions);
     
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

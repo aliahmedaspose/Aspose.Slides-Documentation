@@ -32,16 +32,16 @@ try {
     ISection section1 = $pres->getSections().addSection("Section 1", newSlide1);
     ISection section2 = $pres->getSections().addSection("Section 2", newSlide3); // section1 will be ended at newSlide2 and after it section2 will start   
 
-    $pres->save("pres-sections.pptx", SaveFormat.Pptx);
+    $pres->save("pres-sections.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 
     $pres->getSections().reorderSectionWithSlides(section2, 0);
-    $pres->save("pres-sections-moved.pptx", SaveFormat.Pptx);
+    $pres->save("pres-sections-moved.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 
     $pres->getSections().removeSectionWithSlides(section2);
 
     $pres->getSections().appendEmptySection("Last empty section");
 
-    $pres->save("pres-section-with-empty.pptx",SaveFormat.Pptx);
+    $pres->save("pres-section-with-empty.pptx",Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -75,7 +75,7 @@ try {
     sld->setSlideNumber(2);
     
     // Write the presentation to disk
-    $pres->save("helloworld_Pos.pptx", SaveFormat.Pptx);
+    $pres->save("helloworld_Pos.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     $pres->dispose();
 }
@@ -108,7 +108,7 @@ try {
     // Set the slide number
     $pres->setFirstSlideNumber(10);
 
-    $pres->save("Set_Slide_Number_out.pptx", SaveFormat.Pptx);
+    $pres->save("Set_Slide_Number_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     $pres->dispose();
 }

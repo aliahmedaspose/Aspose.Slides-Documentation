@@ -90,7 +90,7 @@ try {
     dp->setManager("Aspose Manager");
     
     // Save your presentation to a file
-    $pres->save("DocProps.pptx", SaveFormat.Pptx);
+    $pres->save("DocProps.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -123,7 +123,7 @@ try {
     dProps.removeCustomProperty(getPropertyName);
     
     // Saving presentation
-    $pres->save("CustomDemo.pptx", SaveFormat.Pptx);
+    $pres->save("CustomDemo.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -153,7 +153,7 @@ try {
     }
     
     // Save your presentation to a file
-    $pres->save("CustomDemoModified.pptx", SaveFormat.Pptx);
+    $pres->save("CustomDemoModified.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -18,9 +18,9 @@ Aspose.Slides for Java has provided the simplest API to identify merge table cel
 $pres = new Java("com.aspose.slides.Presentation", "SomePresentationWithTable.pptx");
 try {
     ITable table = (ITable)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0); // assuming that Slide#0.Shape#0 is a table
-    for (int i = 0; i < table->getRows().size(); i++)
+    for (int i = 0; i < table->getRows()->size(); i++)
     {
-        for (int j = 0; j < table->getColumns().size(); j++)
+        for (int j = 0; j < table->getColumns()->size(); j++)
         {
             ICell currentCell = table->getRows()->get_Item(i)->get_Item(j);
             if (currentCell.isMergedCell())
@@ -75,7 +75,7 @@ try {
     }
 
     // Write PPTX to Disk
-    $pres->save("table_out.pptx", SaveFormat.Pptx);
+    $pres->save("table_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -127,7 +127,7 @@ try {
     // Merging cells (1, 2) x (2, 2)
     tbl.mergeCells(tbl->get_Item(1, 2), tbl->get_Item(2, 2), false);
 
-    $pres->save("MergeCells_out.pptx", SaveFormat.Pptx);
+    $pres->save("MergeCells_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -181,7 +181,7 @@ try {
     // Merging cells (1, 1) x (1, 2)
     tbl.mergeCells(tbl->get_Item(1, 1), tbl->get_Item(1, 2), true);
 
-    $pres->save("MergeCells_out.pptx", SaveFormat.Pptx);
+    $pres->save("MergeCells_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -236,7 +236,7 @@ try {
     // Spliting cell (1, 1)
     tbl->get_Item(1, 1).splitByWidth(tbl->get_Item(2, 1)->getWidth() / 2);
 
-    $pres->save("SplitCells_out.pptx", SaveFormat.Pptx);
+    $pres->save("SplitCells_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -283,8 +283,8 @@ try {
     cellFormat->getFillFormat()->getPictureFillFormat()->getPicture()->setImage(imgx1);
 
     // Save PPTX to Disk
-    $pres->save("Image_In_TableCell_out.pptx", SaveFormat.Pptx);
-} catch (IOException e) {
+    $pres->save("Image_In_TableCell_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

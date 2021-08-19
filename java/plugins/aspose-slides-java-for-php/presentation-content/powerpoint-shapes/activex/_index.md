@@ -34,7 +34,7 @@ try {
     $pres->getSlides()->get_Item(0)->getControls()->get_Item(0)->getProperties()->set_Item("URL", "Wildlife.wmv");
 
     // Save the Presentation
-    $pres->save("Output.pptx", SaveFormat.Pptx);
+    $pres->save("Output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -154,11 +154,11 @@ try {
         ctl->setFrame(new ShapeFrame(frame->getX(), frame->getY() + 100,
                 frame->getWidth(), frame->getHeight(), frame->getFlipH(), frame->getFlipV(), frame->getRotation()));
     }
-    $pres->save("withActiveX-edited_java.pptm", SaveFormat.Pptm);
+    $pres->save("withActiveX-edited_java.pptm", Java("com.aspose.slides.SaveFormat")->Pptm);
     
     // removing controls
     $pres->getSlides()->get_Item(0)->getControls().clear();
-    $pres->save("withActiveX-cleared_java.pptm", SaveFormat.Pptm);
+    $pres->save("withActiveX-cleared_java.pptm", Java("com.aspose.slides.SaveFormat")->Pptm);
 } finally {
     if ($pres != null) $pres->dispose();
 }

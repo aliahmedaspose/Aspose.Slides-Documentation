@@ -34,7 +34,7 @@ try {
     }
 
     // Save presentation
-    $pres->save("HeaderFooterJava.pptx", SaveFormat.Pptx);
+    $pres->save("HeaderFooterJava.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -111,7 +111,7 @@ try {
         headerFooterManager->setFooterText("New footer text"); // set text to notes slide Footer placeholder
         headerFooterManager->setDateTimeText("New date and time text"); // set text to notes slide Date-time placeholder
     }
-    $pres->save("testresult.pptx",SaveFormat.Pptx);
+    $pres->save("testresult.pptx",Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

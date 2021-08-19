@@ -231,10 +231,10 @@ Its possible to set Slide Master as a default view, when you open the Aspose.Sli
 $presentation = new Java("com.aspose.slides.Presentation");
 try {
     // Set Default View as SlideMasterView
-    presentation->getViewProperties()->setLastView(ViewType.SlideMasterView);
+    $presentation->getViewProperties()->setLastView(ViewType.SlideMasterView);
 
     // Save presentation
-    presentation->save("PresView.pptx", SaveFormat.Pptx);
+    $presentation->save("PresView.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     presentation.dispose();
 }

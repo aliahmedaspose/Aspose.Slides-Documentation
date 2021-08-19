@@ -29,7 +29,7 @@ try {
     }
 
     // Saving presentation
-    $pres->save("ErrorBars.pptx", SaveFormat.Pptx);
+    $pres->save("ErrorBars.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -58,7 +58,7 @@ try {
     point->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
     point->getFormat()->getFill()->getSolidFillColor()->setColor(Color.BLUE);
     
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -86,7 +86,7 @@ try {
     point->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
     point->getFormat()->getFill()->getSolidFillColor()->setColor(Color.BLUE);
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -109,12 +109,12 @@ try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 50, 600, 400);
 
     // Setting series fill format to automatic
-    for (int i = 0; i < chart->getChartData()->getSeries().size(); i++) {
+    for (int i = 0; i < chart->getChartData()->getSeries()->size(); i++) {
         chart->getChartData()->getSeries()->get_Item(i)->getAutomaticSeriesColor();
     }
 
     // Saving presentation
-    $pres->save("AutoFillSeries.pptx", SaveFormat.Pptx);
+    $pres->save("AutoFillSeries.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -158,7 +158,7 @@ try {
     series->getFormat()->getFill()->getSolidFillColor()->setColor(seriesColor);
     series->getInvertedSolidFillColor()->setColor(Color.RED);
     
-    $pres->save("SetInvertFillColorChart_out.pptx", SaveFormat.Pptx);
+    $pres->save("SetInvertFillColorChart_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -184,7 +184,7 @@ try {
     series->get_Item(0)->getInvertIfNegative();
     series->get_Item(0)->getDataPoints()->get_Item(2)->setInvertIfNegative(true);
 
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     $pres->dispose();
 }
@@ -219,7 +219,7 @@ try {
 
     chart->getChartData()->getSeries()->get_Item(0)->getDataPoints().clear();
 
-    $pres->save("ClearSpecificChartSeriesDataPointsData.pptx", SaveFormat.Pptx);
+    $pres->save("ClearSpecificChartSeriesDataPointsData.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -275,7 +275,7 @@ try {
     series->getParentSeriesGroup()->setGapWidth(50);
     
     // Save presentation with chart
-    $pres->save("GapWidth_out.pptx", SaveFormat.Pptx);
+    $pres->save("GapWidth_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

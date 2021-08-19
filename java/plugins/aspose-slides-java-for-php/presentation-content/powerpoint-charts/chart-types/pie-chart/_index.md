@@ -28,7 +28,7 @@ try {
     chart->getChartData()->getSeries()->get_Item(0)->getParentSeriesGroup()->setPieSplitPosition(53);
     
     // Write presentation to disk
-    $pres->save("SecondPlotOptionsforCharts_out.pptx", SaveFormat.Pptx);
+    $pres->save("SecondPlotOptionsforCharts_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -90,7 +90,7 @@ try {
     series->getDataPoints().addDataPointForPieSeries(fact->getCell(defaultWorksheetIndex, 3, 1, 30));
 
     series->getParentSeriesGroup()->setColorVaried(true);
-    $pres->save("Pie.pptx", SaveFormat.Pptx);
+    $pres->save("Pie.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

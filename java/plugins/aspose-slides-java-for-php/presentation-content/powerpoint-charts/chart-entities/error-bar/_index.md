@@ -36,7 +36,7 @@ try {
     errBarX.hasEndCap();
 
     // Saving presentation
-    $pres->save("ErrorBars.pptx", SaveFormat.Pptx);
+    $pres->save("ErrorBars.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -78,7 +78,7 @@ try {
     points->getDataSourceTypeForErrorBarsCustomValues()->setDataSourceTypeForYMinusValues((byte) DataSourceType.DoubleLiterals);
 
     // Setting error bars for chart series points
-    for (int i = 0; i < points.size(); i++) {
+    for (int i = 0; i < points->size(); i++) {
         points->get_Item(i)->getErrorBarsCustomValues()->getXMinus()->setAsLiteralDouble(i + 1);
         points->get_Item(i)->getErrorBarsCustomValues()->getXPlus()->setAsLiteralDouble(i + 1);
         points->get_Item(i)->getErrorBarsCustomValues()->getYMinus()->setAsLiteralDouble(i + 1);
@@ -86,7 +86,7 @@ try {
     }
 
     // Saving presentation
-    $pres->save("ErrorBarsCustomValues.pptx", SaveFormat.Pptx);
+    $pres->save("ErrorBarsCustomValues.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

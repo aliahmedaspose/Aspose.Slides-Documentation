@@ -14,7 +14,7 @@ try {
 
     chart->getChartData()->getSeriesGroups()->get_Item(0)->setBubbleSizeScale(150);
 
-    $pres->save("Result.pptx", SaveFormat.Pptx);
+    $pres->save("Result.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -30,7 +30,7 @@ try {
 
     chart->getChartData()->getSeriesGroups()->get_Item(0)->setBubbleSizeRepresentation(BubbleSizeRepresentationType.Width);
 
-    $pres->save("Presentation_BubbleSizeRepresentation.pptx", SaveFormat.Pptx);
+    $pres->save("Presentation_BubbleSizeRepresentation.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

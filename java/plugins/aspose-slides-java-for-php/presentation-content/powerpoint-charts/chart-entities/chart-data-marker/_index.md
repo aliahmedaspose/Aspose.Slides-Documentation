@@ -68,8 +68,8 @@ try {
     series->getMarker()->setSize(15);
     
     // Save presentation with chart
-    $pres->save("ScatterChart.pptx", SaveFormat.Pptx);
-} catch (IOException e) {
+    $pres->save("ScatterChart.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

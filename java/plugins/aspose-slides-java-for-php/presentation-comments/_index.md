@@ -16,22 +16,22 @@ In Aspose.Slides for Java, the presentation slide comment are associated with a 
 $presentation = new Java("com.aspose.slides.Presentation");
 try {
     // Adding Empty slide
-    presentation->getSlides().addEmptySlide(presentation->getLayoutSlides()->get_Item(0));
+    $presentation->getSlides().addEmptySlide(presentation->getLayoutSlides()->get_Item(0));
 
     // Adding Author
-    ICommentAuthor author = presentation->getCommentAuthors().addAuthor("Jawad", "MF");
+    ICommentAuthor author = $presentation->getCommentAuthors().addAuthor("Jawad", "MF");
 
     // Position of comments
     Point2D.Float point = new Point2D.Float(0.2f, 0.2f);
 
     // Adding slide comment for an author on slide 1
-    author->getComments().addComment("Hello Jawad, this is slide comment", presentation->getSlides()->get_Item(0), point, new Date());
+    author->getComments().addComment("Hello Jawad, this is slide comment", $presentation->getSlides()->get_Item(0), point, new Date());
 
     // Adding slide comment for an author on slide 1
-    author->getComments().addComment("Hello Jawad, this is second slide comment", presentation->getSlides()->get_Item(1), point, new Date());
+    author->getComments().addComment("Hello Jawad, this is second slide comment", $presentation->getSlides()->get_Item(1), point, new Date());
 
     // Accessing ISlide 1
-    $slide = presentation->getSlides()->get_Item(0);
+    $slide = $presentation->getSlides()->get_Item(0);
 
     // if null is passed as an argument then it will bring comments from all authors on selected slide
     IComment[] comments = slide->getSlideComments(author);
@@ -39,7 +39,7 @@ try {
     // Accessin the comment at index 0 for slide 1
     String str = comments[0]->getText();
 
-    presentation->save("Comments_out.pptx", SaveFormat.Pptx);
+    $presentation->save("Comments_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 
     if (comments.length > 0)
     {
@@ -57,9 +57,9 @@ In the following example, we will learn how to access the existing slide comment
 
 ```java
 // Instantiate a Presentation class that represents the presentation file
-Presentation presentation = new Presentation("Comments1.pptx");
+$presentation = new Java("com.aspose.slides.Presentation"), "Comments1.pptx");
 try {
-    for (ICommentAuthor commentAuthor : presentation->getCommentAuthors())
+    for (ICommentAuthor commentAuthor : $presentation->getCommentAuthors())
     {
         CommentAuthor author = (CommentAuthor) commentAuthor;
         for (IComment comment1 : author->getComments())
@@ -120,11 +120,11 @@ try {
         System.out.println(comments[i]->getAuthor()->getName() +  " : " + comments[i]->getText());
         System.out.println();
     }
-    $pres->save("parent_comment.pptx",SaveFormat.Pptx);
+    $pres->save("parent_comment.pptx",Java("com.aspose.slides.SaveFormat")->Pptx);
     // Remove comment1 and all its replies
     comment1.remove();
 
-    $pres->save("remove_comment.pptx",SaveFormat.Pptx);
+    $pres->save("remove_comment.pptx",Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

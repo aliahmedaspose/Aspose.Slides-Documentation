@@ -28,7 +28,7 @@ try {
     shape1->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0)->getPortionFormat()->getHyperlinkClick()->setTooltip( "More than 70% Fortune 100 companies trust Aspose APIs");
     shape1->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0)->getPortionFormat()->setFontHeight(32);
 
-    $pres->save("presentation-out.pptx", SaveFormat.Pptx);
+    $pres->save("presentation-out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -50,7 +50,7 @@ try {
     $pres->getHyperlinkQueries().removeAllHyperlinks();
     
     //Writing the presentation as a PPTX file
-    $pres->save("TestSaved.pptx", SaveFormat.Pptx);
+    $pres->save("TestSaved.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -78,7 +78,7 @@ try {
     shape2->addTextFrame("This is a sample of usual hyperlink.");
     shape2->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0)->getPortionFormat()->setHyperlinkClick(new Hyperlink("https://www.aspose.com/"));
 
-    $pres->save("presentation-out.pptx", SaveFormat.Pptx);
+    $pres->save("presentation-out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -105,7 +105,7 @@ try {
     portionFormat->getHyperlinkClick()->setTooltip("More than 70% Fortune 100 companies trust Aspose APIs");
     portionFormat->setFontHeight(32);
 
-    $pres->save("presentation-out.pptx", SaveFormat.Pptx);
+    $pres->save("presentation-out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

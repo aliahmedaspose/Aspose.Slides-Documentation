@@ -35,7 +35,7 @@ try {
     af->setVolume(AudioVolumeMode.Loud);
 
     //Write the PPTX file to disk
-    $pres->save("AudioFrameEmbed_out.pptx", SaveFormat.Pptx);
+    $pres->save("AudioFrameEmbed_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();

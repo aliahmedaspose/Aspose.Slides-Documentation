@@ -71,7 +71,7 @@ try {
     textFrame->getParagraphs().add(superPar);
     textFrame->getParagraphs().add(paragraph2);
 
-    $pres->save("formatText.pptx",SaveFormat.Pptx);
+    $pres->save("formatText.pptx",Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

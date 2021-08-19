@@ -52,7 +52,7 @@ try {
     $pres->getVbaProject()->getReferences().add(stdoleReference);
     $pres->getVbaProject()->getReferences().add(officeReference);
     
-    $pres->save("test.pptm", SaveFormat.Pptm);
+    $pres->save("test.pptm", Java("com.aspose.slides.SaveFormat")->Pptm);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -81,7 +81,7 @@ try {
     $pres->getVbaProject()->getModules().remove($pres->getVbaProject()->getModules()->get_Item(0));
     
     // Save Presentation
-    $pres->save("test.pptm", SaveFormat.Pptm);
+    $pres->save("test.pptm", Java("com.aspose.slides.SaveFormat")->Pptm);
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -86,7 +86,7 @@ try {
     stem4branch->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
     stem4branch->getFormat()->getFill()->getSolidFillColor()->setColor(Color.RED);
 
-    $pres->save("pres.pptx", SaveFormat.Pptx);
+    $pres->save("pres.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -176,7 +176,7 @@ On the images above you can see, that to design the Background Style in PowerPoi
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
-    int numberOfBackgroundFills = $pres->getMasterTheme()->getFormatScheme()->getBackgroundFillStyles().size();
+    int numberOfBackgroundFills = $pres->getMasterTheme()->getFormatScheme()->getBackgroundFillStyles()->size();
 
     System.out.println("Number of background fill styles for theme is " + numberOfBackgroundFills);
 } finally {
@@ -228,7 +228,7 @@ try {
 
     $pres->getMasterTheme()->getFormatScheme()->getEffectStyles()->get_Item(2)->getEffectFormat()->getOuterShadowEffect()->setDistance(10f);
 
-    $pres->save("Design_04_Subtle_Moderate_Intense-out.pptx", SaveFormat.Pptx);
+    $pres->save("Design_04_Subtle_Moderate_Intense-out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -26,7 +26,7 @@ try {
     chart->getChartDataTable()->getTextFormat()->getPortionFormat()->setFontBold(NullableBool.True);
     chart->getChartDataTable()->getTextFormat()->getPortionFormat()->setFontHeight(20);
 
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

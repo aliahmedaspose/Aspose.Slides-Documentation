@@ -15,7 +15,7 @@ try {
     chart->setDataTable(true);
     chart->getChartData()->getSeries()->get_Item(0)->setNumberFormatOfValues("#,##0.00");
 
-    $pres->save("output.pptx",SaveFormat.Pptx);
+    $pres->save("output.pptx",Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -42,21 +42,21 @@ try {
     
     IChart chart = $slide->getShapes().addChart(ChartType.StackedColumn, 20, 20, 400, 400);
     IChartSeries series;
-    double[] total_for_Cat = new double[chart->getChartData()->getCategories().size()];
-    for (int k = 0; k < chart->getChartData()->getCategories().size(); k++) {
+    double[] total_for_Cat = new double[chart->getChartData()->getCategories()->size()];
+    for (int k = 0; k < chart->getChartData()->getCategories()->size(); k++) {
         IChartCategory cat = chart->getChartData()->getCategories()->get_Item(k);
     
-        for (int i = 0; i < chart->getChartData()->getSeries().size(); i++) {
+        for (int i = 0; i < chart->getChartData()->getSeries()->size(); i++) {
             total_for_Cat[k] = total_for_Cat[k] + (double) (chart->getChartData()->getSeries()->get_Item(i)->getDataPoints()->get_Item(k)->getValue()->getData());
         }
     }
     
-    double dataPontPercent = 0f;
-    for (int x = 0; x < chart->getChartData()->getSeries().size(); x++) {
+    $double dataPontPercent = 0f;
+    for (int x = 0; x < chart->getChartData()->getSeries()->size(); x++) {
         series = chart->getChartData()->getSeries()->get_Item(x);
         series->getLabels()->getDefaultDataLabelFormat()->setShowLegendKey(false);
     
-        for (int j = 0; j < series->getDataPoints().size(); j++) {
+        for (int j = 0; j < series->getDataPoints()->size(); j++) {
             IDataLabel lbl = series->getDataPoints()->get_Item(j)->getLabel();
             dataPontPercent = (double) ((series->getDataPoints()->get_Item(j)->getValue()->getData())) / (double) (total_for_Cat[j]) * 100;
     
@@ -76,7 +76,7 @@ try {
     }
     
     // Save presentation with chart
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -153,7 +153,7 @@ try {
     series2->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.WHITE);
     
     // Write presentation to disk
-    $pres->save("SetDataLabelsPercentageSign_out.pptx", SaveFormat.Pptx);
+    $pres->save("SetDataLabelsPercentageSign_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -184,7 +184,7 @@ try {
     ch->getAxes()->getHorizontalAxis()->setLabelOffset(500);
     
     // Write the presentation to disk
-    $pres->save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

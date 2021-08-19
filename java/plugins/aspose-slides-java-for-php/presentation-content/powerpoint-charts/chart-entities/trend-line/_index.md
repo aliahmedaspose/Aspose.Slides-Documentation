@@ -62,7 +62,7 @@ try {
     tredLinePower->setBackward(1);
     
     // Saving presentation
-    $pres->save("ChartTrendLines_out.pptx", SaveFormat.Pptx);
+    $pres->save("ChartTrendLines_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -90,7 +90,7 @@ try {
     shape->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
     shape->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(java.awt.Color.RED);
     
-    $pres->save("Presentation.pptx", SaveFormat.Pptx);
+    $pres->save("Presentation.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

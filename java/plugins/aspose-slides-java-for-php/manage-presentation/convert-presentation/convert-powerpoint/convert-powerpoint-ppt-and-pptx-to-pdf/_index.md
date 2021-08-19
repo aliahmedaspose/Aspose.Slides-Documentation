@@ -54,13 +54,13 @@ try {
     PdfOptions pdfOptions = new PdfOptions();
     
     pdfOptions->setCompliance(PdfCompliance.PdfA1a);
-    $pres->save("pres-a1a-compliance.pdf", SaveFormat.Pdf, pdfOptions);
+    $pres->save("pres-a1a-compliance.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
 
     pdfOptions->setCompliance(PdfCompliance.PdfA1b);
-    $pres->save("pres-a1b-compliance.pdf", SaveFormat.Pdf, pdfOptions);
+    $pres->save("pres-a1b-compliance.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
 
     pdfOptions->setCompliance(PdfCompliance.PdfUa);
-    $pres->save("pres-ua-compliance.pdf", SaveFormat.Pdf, pdfOptions);
+    $pres->save("pres-ua-compliance.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -106,7 +106,7 @@ The following example shows you how to convert a PowerPoint PPT, PPTX, and OpenO
 $pres = new Java("com.aspose.slides.Presentation", "PowerPoint.ppt");
 try {
     // Save the presentation as PDF
-    $pres->save("PPT-to-PDF.pdf", SaveFormat.Pdf);
+    $pres->save("PPT-to-PDF.pdf", Java("com.aspose.slides.SaveFormat")->Pdf);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -135,7 +135,7 @@ try {
     pdfOptions->setCompliance(PdfCompliance.Pdf15);
     
     // Save the presentation as PDF
-    $pres->save("PowerPoint-to-PDF.pdf", SaveFormat.Pdf, pdfOptions);
+    $pres->save("PowerPoint-to-PDF.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -161,7 +161,7 @@ try {
     pdfOptions->setShowHiddenSlides(true);
     
     // Save the presentation as PDF
-    $pres->save("PowerPoint-to-PDF.pdf", SaveFormat.Pdf, pdfOptions);
+    $pres->save("PowerPoint-to-PDF.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -182,7 +182,7 @@ try {
     pdfOptions->setAccessPermissions(PdfAccessPermissions.PrintDocument | PdfAccessPermissions.HighQualityPrint);
     
     // Save the presentation as PDF
-    $pres->save("PPTX-to-PDF.pdf", SaveFormat.Pdf, pdfOptions);
+    $pres->save("PPTX-to-PDF.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -199,7 +199,7 @@ try {
     int[] slides = { 1, 3 };
     
     // Save the presentation as PDF
-    $pres->save("PPTX-to-PDF.pdf", slides, SaveFormat.Pdf);
+    $pres->save("PPTX-to-PDF.pdf", slides, Java("com.aspose.slides.SaveFormat")->Pdf);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -225,7 +225,7 @@ try {
         INotesCommentsLayoutingOptions options = pdfOptions->getNotesCommentsLayouting();
         options->setNotesPosition(NotesPositions.BottomFull);
 
-        outPres->save("PDFnotes_out.pdf", SaveFormat.Pdf, pdfOptions);
+        outPres->save("PDFnotes_out.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
     } finally {
         if ($pres != null) $pres->dispose();
     }
@@ -245,7 +245,7 @@ try {
     INotesCommentsLayoutingOptions options = pdfOptions->getNotesCommentsLayouting();
     options->setNotesPosition(NotesPositions.BottomFull);
 
-    $pres->save("Pdf_With_Notes.pdf", SaveFormat.Pdf, pdfOptions);
+    $pres->save("Pdf_With_Notes.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }

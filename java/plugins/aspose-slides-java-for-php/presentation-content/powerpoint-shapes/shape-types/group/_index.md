@@ -39,7 +39,7 @@ try {
     groupShape->setFrame(new ShapeFrame(100, 300, 500, 40, NullableBool.False, NullableBool.False, 0));
 
     // Write the PPTX file to disk
-    $pres->save("GroupShape.pptx", SaveFormat.Pptx);
+    $pres->save("GroupShape.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -63,7 +63,7 @@ try {
     // Get the first slide
     ISlide sld = $pres->getSlides()->get_Item(0);
     
-    for (int i = 0; i < sld->getShapes().size(); i++)
+    for (int i = 0; i < sld->getShapes()->size(); i++)
     {
         // Accessing the shape collection of slides
         IShape shape = sld->getShapes()->get_Item(i);
@@ -72,7 +72,7 @@ try {
         {
             // Accessing the group shape.
             IGroupShape grphShape = (IGroupShape)shape;
-            for (int j = 0; j < grphShape->getShapes().size(); j++)
+            for (int j = 0; j < grphShape->getShapes()->size(); j++)
             {
                 IShape shape2 = grphShape->getShapes()->get_Item(j);
                 

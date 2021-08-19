@@ -25,7 +25,7 @@ try {
     ISmartArt smart = $slide->getShapes().addSmartArt(0, 0, 400, 400, SmartArtLayoutType.BasicBlockList);
     
     // Saving presentation
-    $pres->save("SimpleSmartArt.pptx", SaveFormat.Pptx);
+    $pres->save("SimpleSmartArt.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -126,7 +126,7 @@ try {
         }
     }
     // Saving presentation
-    $pres->save("ChangeSmartArtStyle.pptx", SaveFormat.Pptx);
+    $pres->save("ChangeSmartArtStyle.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     $pres->dispose();
 }
@@ -171,7 +171,7 @@ try {
         }
     }
     // Saving presentation
-    $pres->save("ChangeSmartArtColorStyle.pptx", SaveFormat.Pptx);
+    $pres->save("ChangeSmartArtColorStyle.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     $pres->dispose();
 }

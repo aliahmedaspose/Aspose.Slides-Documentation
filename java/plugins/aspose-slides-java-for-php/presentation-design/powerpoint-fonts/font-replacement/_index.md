@@ -27,10 +27,10 @@ try {
     IFontData destFont = new FontData("Times New Roman");
     
     // Replace the fonts
-    pres.getFontsManager().replaceFont(sourceFont, destFont);
+    $pres->getFontsManager().replaceFont(sourceFont, destFont);
     
     // Save the presentation
-    pres.save("UpdatedFont_out.pptx", SaveFormat.Pptx);
+    $pres->save("UpdatedFont_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

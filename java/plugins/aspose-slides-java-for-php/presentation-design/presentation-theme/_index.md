@@ -95,7 +95,7 @@ System.out.println(String.format("Color [A=%d, R=%d, G=%d, B=%d]",
 We can check that color matches the one defined as *Accent4* for the presentation theme:
 
 ```java
-Color themeAccent4 = pres.getMasterTheme().getColorScheme().getAccent4().getColor();
+Color themeAccent4 = $pres->getMasterTheme().getColorScheme().getAccent4().getColor();
 
 System.out.println(String.format("Color [A=%d, R=%d, G=%d, B=%d] - from theme",
         themeAccent4.getAlpha(), themeAccent4.getRed(), themeAccent4.getGreen(), themeAccent4.getBlue()));
@@ -104,7 +104,7 @@ System.out.println(String.format("Color [A=%d, R=%d, G=%d, B=%d] - from theme",
 Lets us create one more element and assign it the same *Accent4* color from the scheme. Then we will change this color in the scheme:
 
 ```java
-IAutoShape otherShape = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 10, 120, 100, 100);
+IAutoShape otherShape = $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 10, 120, 100, 100);
 
 otherShape.getFillFormat().setFillType(FillType.Solid);
 
@@ -150,7 +150,7 @@ Now lets check that the same font is set for Body Latin:
 ```java
 System.out.println("Portion Body Latin font is: " + portion.getPortionFormat().getEffective().getLatinFont().getFontName());
 
-System.out.println("Theme Body Latin font is: " + pres.getMasterTheme().getFontScheme().getMinor().getLatinFont());
+System.out.println("Theme Body Latin font is: " + $pres->getMasterTheme().getFontScheme().getMinor().getLatinFont());
 ``` 
 
 It is possible to change the presentation theme font, which will be updated for all presentation text accordingly:
@@ -176,7 +176,7 @@ On the images above you can see, that to design the Background Style in PowerPoi
 ```java
 Presentation pres = new Presentation("pres.pptx");
 try {
-    int numberOfBackgroundFills = pres.getMasterTheme().getFormatScheme().getBackgroundFillStyles().size();
+    int numberOfBackgroundFills = $pres->getMasterTheme().getFormatScheme().getBackgroundFillStyles().size();
 
     System.out.println("Number of background fill styles for theme is " + numberOfBackgroundFills);
 } finally {
@@ -220,15 +220,15 @@ So, the effects you can use in PowerPoint are strictly limited. While, in Aspos
 ```java
 Presentation pres = new Presentation("Subtle_Moderate_Intense.pptx");
 try {
-    pres.getMasterTheme().getFormatScheme().getLineStyles().get_Item(0).getFillFormat().getSolidFillColor().setColor(Color.RED);
+    $pres->getMasterTheme().getFormatScheme().getLineStyles().get_Item(0).getFillFormat().getSolidFillColor().setColor(Color.RED);
 
-    pres.getMasterTheme().getFormatScheme().getFillStyles().get_Item(2).setFillType(FillType.Solid);
+    $pres->getMasterTheme().getFormatScheme().getFillStyles().get_Item(2).setFillType(FillType.Solid);
 
-    pres.getMasterTheme().getFormatScheme().getFillStyles().get_Item(2).getSolidFillColor().setColor(Color.GREEN);
+    $pres->getMasterTheme().getFormatScheme().getFillStyles().get_Item(2).getSolidFillColor().setColor(Color.GREEN);
 
-    pres.getMasterTheme().getFormatScheme().getEffectStyles().get_Item(2).getEffectFormat().getOuterShadowEffect().setDistance(10f);
+    $pres->getMasterTheme().getFormatScheme().getEffectStyles().get_Item(2).getEffectFormat().getOuterShadowEffect().setDistance(10f);
 
-    pres.save("Design_04_Subtle_Moderate_Intense-out.pptx", SaveFormat.Pptx);
+    $pres->save("Design_04_Subtle_Moderate_Intense-out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

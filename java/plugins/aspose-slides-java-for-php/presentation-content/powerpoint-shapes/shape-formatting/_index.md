@@ -25,7 +25,7 @@ In the example given below, we have selected an AutoShape of Rectangle type whos
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
     
     // Add AutoShape of rectangle type
     IShape shp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 150, 150, 75);
@@ -44,7 +44,7 @@ try {
     shp.getLineFormat().getFillFormat().getSolidFillColor().setColor(Color.BLUE);
     
     // Write the PPTX file to disk
-    pres.save("RectShpLn.pptx", SaveFormat.Pptx);
+    $pres->save("RectShpLn.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -64,7 +64,7 @@ In the example given below, we will create three rectangles with each of the Joi
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
     
     // Add three AutoShapes of rectangle type
     IShape shp1 = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 100, 150, 75);
@@ -103,7 +103,7 @@ try {
     ((IAutoShape) shp3).getTextFrame().setText("This is Round Join Style");
     
     // Write the PPTX file to disk
-    pres.save("RectShpLnJoin.pptx", SaveFormat.Pptx);
+    $pres->save("RectShpLnJoin.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -126,7 +126,7 @@ In the example given below, we have selected the ellipse shape for the demonstra
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
     
     // Add AutoShape of ellipse type
     IShape shp = sld.getShapes().addAutoShape(ShapeType.Ellipse, 50, 150, 75, 150);
@@ -143,7 +143,7 @@ try {
     shp.getFillFormat().getGradientFormat().getGradientStops().add((float) 0, Color.red);
     
     // Write the PPTX file to disk
-    pres.save("EllipseShpGrad.pptx", SaveFormat.Pptx);
+    $pres->save("EllipseShpGrad.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -168,7 +168,7 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
     
     // Add AutoShape of rectangle type
     IShape shp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 150, 75, 150);
@@ -184,7 +184,7 @@ try {
     shp.getFillFormat().getPatternFormat().getForeColor().setColor(Color.YELLOW);
     
     // Write the PPTX file to disk
-    pres.save("RectShpPatt.pptx", SaveFormat.Pptx);
+    $pres->save("RectShpPatt.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -209,7 +209,7 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
     
     // Add AutoShape of rectangle type
     IShape shp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 150, 75, 150);
@@ -221,11 +221,11 @@ try {
     shp.getFillFormat().getPictureFillFormat().setPictureFillMode(PictureFillMode.Tile);
     
     // Set the picture
-    IPPImage imgx = pres.getImages().addImage(new FileInputStream(new File("aspose1.jpg")));
+    IPPImage imgx = $pres->getImages().addImage(new FileInputStream(new File("aspose1.jpg")));
     shp.getFillFormat().getPictureFillFormat().getPicture().setImage(imgx);
     
     // Write the PPTX file to disk
-    pres.save("RectShpPic.pptx", SaveFormat.Pptx);
+    $pres->save("RectShpPic.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -249,7 +249,7 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Add AutoShape of rectangle type
     IShape shp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 150, 75, 150);
@@ -261,7 +261,7 @@ try {
     shp.getFillFormat().getSolidFillColor().setColor(Color.YELLOW);
 
     // Write the PPTX file to disk
-    pres.save("RectShpSolid.pptx", SaveFormat.Pptx);
+    $pres->save("RectShpSolid.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -283,7 +283,7 @@ In the example given below, we have rotated a rectangle shape to 90 degrees for 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Add autoshape of rectangle type
     IShape shp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 150, 75, 150);
@@ -292,7 +292,7 @@ try {
     shp.setRotation(90);
 
     // Write the PPTX file to disk
-    pres.save("RectShpRot_out.pptx", SaveFormat.Pptx);
+    $pres->save("RectShpRot_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -312,7 +312,7 @@ In the example given below, we have applied 3D bevel effects on a shape.
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Add a shape on slide
     IAutoShape shape = slide.getShapes().addAutoShape(ShapeType.Ellipse, 30, 30, 100, 100);
@@ -333,7 +333,7 @@ try {
     shape.getThreeDFormat().getLightRig().setDirection(LightingDirection.Top);
     
     // Write the presentation as a PPTX file
-    pres.save("Bavel.pptx", SaveFormat.Pptx);
+    $pres->save("Bavel.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -353,20 +353,20 @@ In the example given below, we have applied 3D Rotation effects on a shape.
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IShape autoShape = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 30, 30, 200, 200);
+    IShape autoShape = $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 30, 30, 200, 200);
     
     autoShape.getThreeDFormat().setDepth(6);
     autoShape.getThreeDFormat().getCamera().setRotation(40, 35, 20);
     autoShape.getThreeDFormat().getCamera().setCameraType(CameraPresetType.IsometricLeftUp);
     autoShape.getThreeDFormat().getLightRig().setLightType(LightRigPresetType.Balanced);
     
-    autoShape = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Line, 30, 300, 200, 200);
+    autoShape = $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Line, 30, 300, 200, 200);
     autoShape.getThreeDFormat().setDepth(6);
     autoShape.getThreeDFormat().getCamera().setRotation(0, 35, 20);
     autoShape.getThreeDFormat().getCamera().setCameraType(CameraPresetType.IsometricLeftUp);
     autoShape.getThreeDFormat().getLightRig().setLightType(LightRigPresetType.Balanced);
     
-    pres.save("Rotation_out.pptx", SaveFormat.Pptx);
+    $pres->save("Rotation_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

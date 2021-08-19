@@ -55,30 +55,30 @@ In the above section, we just applied a simple transition effect on the slide. N
 Presentation pres = new Presentation("BetterSlideTransitions.pptx");
 try {
     // Apply circle type transition on slide 1
-    pres.getSlides().get_Item(0).getSlideShowTransition().setType(TransitionType.Circle);
+    $pres->getSlides().get_Item(0).getSlideShowTransition().setType(TransitionType.Circle);
 
     // Set the transition time of 3 seconds
-    pres.getSlides().get_Item(0).getSlideShowTransition().setAdvanceOnClick(true);
-    pres.getSlides().get_Item(0).getSlideShowTransition().setAdvanceAfterTime(3000);
+    $pres->getSlides().get_Item(0).getSlideShowTransition().setAdvanceOnClick(true);
+    $pres->getSlides().get_Item(0).getSlideShowTransition().setAdvanceAfterTime(3000);
 
     // Apply comb type transition on slide 2
-    pres.getSlides().get_Item(1).getSlideShowTransition().setType(TransitionType.Comb);
+    $pres->getSlides().get_Item(1).getSlideShowTransition().setType(TransitionType.Comb);
     
     // Set the transition time of 5 seconds
-    pres.getSlides().get_Item(1).getSlideShowTransition().setAdvanceOnClick(true);
-    pres.getSlides().get_Item(1).getSlideShowTransition().setAdvanceAfterTime(5000);
+    $pres->getSlides().get_Item(1).getSlideShowTransition().setAdvanceOnClick(true);
+    $pres->getSlides().get_Item(1).getSlideShowTransition().setAdvanceAfterTime(5000);
 
     // Apply zoom type transition on slide 3
-    pres.getSlides().get_Item(2).getSlideShowTransition().setType(TransitionType.Zoom);
+    $pres->getSlides().get_Item(2).getSlideShowTransition().setType(TransitionType.Zoom);
     
     // Set the transition time of 7 seconds
-    pres.getSlides().get_Item(2).getSlideShowTransition().setAdvanceOnClick(true);
-    pres.getSlides().get_Item(2).getSlideShowTransition().setAdvanceAfterTime(7000);
+    $pres->getSlides().get_Item(2).getSlideShowTransition().setAdvanceOnClick(true);
+    $pres->getSlides().get_Item(2).getSlideShowTransition().setAdvanceAfterTime(7000);
 
     // Write the presentation to disk
-    pres.save("SampleTransition_out.pptx", SaveFormat.Pptx);
+    $pres->save("SampleTransition_out.pptx", SaveFormat.Pptx);
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 

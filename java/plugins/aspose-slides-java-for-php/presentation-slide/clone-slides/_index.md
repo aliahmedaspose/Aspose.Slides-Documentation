@@ -32,14 +32,14 @@ In the example given below, we have cloned a slide (lying at the first position 
 Presentation pres = new Presentation("CloneWithinSamePresentationToEnd.pptx");
 try {
     // Clone the desired slide to the end of the collection of slides in the same presentation
-    ISlideCollection slds = pres.getSlides();
+    ISlideCollection slds = $pres->getSlides();
 
     slds.addClone(pres.getSlides().get_Item(0));
 
     // Write the modified presentation to disk
-    pres.save("Aspose_CloneWithinSamePresentationToEnd_out.pptx", SaveFormat.Pptx);
+    $pres->save("Aspose_CloneWithinSamePresentationToEnd_out.pptx", SaveFormat.Pptx);
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 
@@ -58,15 +58,15 @@ In the example given below, we have cloned a slide (lying at the zero index – 
 Presentation pres = new Presentation("CloneWithInSamePresentation.pptx");
 try {
     // Clone the desired slide to the end of the collection of slides in the same presentation
-    ISlideCollection slds = pres.getSlides();
+    ISlideCollection slds = $pres->getSlides();
 
     // Clone the desired slide to the specified index in the same presentation
-    slds.insertClone(2, pres.getSlides().get_Item(1));
+    slds.insertClone(2, $pres->getSlides().get_Item(1));
 
     // Write the modified presentation to disk
-    pres.save("Aspose_CloneWithInSamePresentation_out.pptx", SaveFormat.Pptx);
+    $pres->save("Aspose_CloneWithInSamePresentation_out.pptx", SaveFormat.Pptx);
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 

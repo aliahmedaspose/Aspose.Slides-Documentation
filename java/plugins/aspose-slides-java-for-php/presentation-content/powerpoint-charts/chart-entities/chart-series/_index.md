@@ -19,7 +19,7 @@ Aspose.Slides for Java provides a simple API interface to set chart series overl
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Adding chart
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400, true);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400, true);
 
     IChartSeriesCollection series = chart.getChartData().getSeries();
     
@@ -29,7 +29,7 @@ try {
     }
 
     // Saving presentation
-    pres.save("ErrorBars.pptx", SaveFormat.Pptx);
+    $pres->save("ErrorBars.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -50,7 +50,7 @@ Below sample example is given. 
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 600, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 600, 400);
 
     IChartDataPoint point = chart.getChartData().getSeries().get_Item(0).getDataPoints().get_Item(1);
 
@@ -58,7 +58,7 @@ try {
     point.getFormat().getFill().setFillType(FillType.Solid);
     point.getFormat().getFill().getSolidFillColor().setColor(Color.BLUE);
     
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -79,14 +79,14 @@ Below sample example is given. 
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
 
     IChartDataPoint point = chart.getChartData().getSeries().get_Item(0).getDataPoints().get_Item(0);
 
     point.getFormat().getFill().setFillType(FillType.Solid);
 
     point.getFormat().getFill().getSolidFillColor().setColor(Color.BLUE);
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -106,7 +106,7 @@ Aspose.Slides for Java provides a simple API for setting automatic fill color fo
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Creating a clustered column chart
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 50, 600, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 50, 600, 400);
 
     // Setting series fill format to automatic
     for (int i = 0; i < chart.getChartData().getSeries().size(); i++) {
@@ -114,7 +114,7 @@ try {
     }
 
     // Saving presentation
-    pres.save("AutoFillSeries.pptx", SaveFormat.Pptx);
+    $pres->save("AutoFillSeries.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -133,7 +133,7 @@ Aspose.Slides for Java provides a simple API for setting invert fill color for c
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 400, 300);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 400, 300);
     IChartDataWorkbook workBook = chart.getChartData().getChartDataWorkbook();
 
     chart.getChartData().getSeries().clear();
@@ -158,7 +158,7 @@ try {
     series.getFormat().getFill().getSolidFillColor().setColor(seriesColor);
     series.getInvertedSolidFillColor().setColor(Color.RED);
     
-    pres.save("SetInvertFillColorChart_out.pptx", SaveFormat.Pptx);
+    $pres->save("SetInvertFillColorChart_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -170,7 +170,7 @@ The Aspose.Slides for Java lets developers allow to set inverts. Methods [**set
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400, true);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400, true);
     IChartSeriesCollection series = chart.getChartData().getSeries();
     chart.getChartData().getSeries().clear();
 
@@ -184,9 +184,9 @@ try {
     series.get_Item(0).getInvertIfNegative();
     series.get_Item(0).getDataPoints().get_Item(2).setInvertIfNegative(true);
 
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 
@@ -207,7 +207,7 @@ Sample code is given below.
 Presentation pres = new Presentation("Chart.pptx");
 try {
     // Accessing the first slide in presentation
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     IChart chart = (IChart)slide.getShapes().get_Item(0);
 
@@ -219,7 +219,7 @@ try {
 
     chart.getChartData().getSeries().get_Item(0).getDataPoints().clear();
 
-    pres.save("ClearSpecificChartSeriesDataPointsData.pptx", SaveFormat.Pptx);
+    $pres->save("ClearSpecificChartSeriesDataPointsData.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -240,7 +240,7 @@ Aspose.Slides for Java provides a simple API for setting [**gapWidth**](https://
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Add chart with default data
     IChart chart = sld.getShapes().addChart(ChartType.StackedColumn, 0, 0, 500, 500);
@@ -275,7 +275,7 @@ try {
     series.getParentSeriesGroup().setGapWidth(50);
     
     // Save presentation with chart
-    pres.save("GapWidth_out.pptx", SaveFormat.Pptx);
+    $pres->save("GapWidth_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

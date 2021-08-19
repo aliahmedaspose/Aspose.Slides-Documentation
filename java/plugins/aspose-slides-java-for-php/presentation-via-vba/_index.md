@@ -33,10 +33,10 @@ The implementation of the above steps is demonstrated in the example below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Create new VBA Project
-    pres.setVbaProject(new VbaProject());
+    $pres->setVbaProject(new VbaProject());
     
     // Add empty module to the VBA project
-    IVbaModule module = pres.getVbaProject().getModules().addEmptyModule("Module");
+    IVbaModule module = $pres->getVbaProject().getModules().addEmptyModule("Module");
     
     // Set module source code
     module.setSourceCode("Sub Test(oShape As Shape)MsgBox Test End Sub");
@@ -49,10 +49,10 @@ try {
             "*\\G{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}#2.0#0#C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE14\\MSO.DLL#Microsoft Office 14.0 Object Library");
     
     // Add references to the VBA project
-    pres.getVbaProject().getReferences().add(stdoleReference);
-    pres.getVbaProject().getReferences().add(officeReference);
+    $pres->getVbaProject().getReferences().add(stdoleReference);
+    $pres->getVbaProject().getReferences().add(officeReference);
     
-    pres.save("test.pptm", SaveFormat.Pptm);
+    $pres->save("test.pptm", SaveFormat.Pptm);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -78,10 +78,10 @@ The implementation of the above steps is demonstrated in the example below.
 Presentation pres = new Presentation("VBA.pptm");
 try {
     // Access the Vba module and remove
-    pres.getVbaProject().getModules().remove(pres.getVbaProject().getModules().get_Item(0));
+    $pres->getVbaProject().getModules().remove(pres.getVbaProject().getModules().get_Item(0));
     
     // Save Presentation
-    pres.save("test.pptm", SaveFormat.Pptm);
+    $pres->save("test.pptm", SaveFormat.Pptm);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -102,7 +102,7 @@ Presentation pres = new Presentation("VBA.pptm");
 try {
     if (pres.getVbaProject() != null) // check if Presentation contains VBA Project
     {
-        for (IVbaModule module : pres.getVbaProject().getModules())
+        for (IVbaModule module : $pres->getVbaProject().getModules())
         {
             System.out.println(module.getName());
             System.out.println(module.getSourceCode());

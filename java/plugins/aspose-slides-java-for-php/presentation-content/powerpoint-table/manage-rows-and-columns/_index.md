@@ -13,7 +13,7 @@ Aspose.Slides for Java provides the feature to set the first row as header using
 Presentation pres = new Presentation("table.pptx");
 try {
     // Access the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Initialize null TableEx
     ITable tbl = null;
@@ -31,7 +31,7 @@ try {
     }
     
     // Save PPTX to Disk
-    pres.save("pres.pptx", SaveFormat.Pptx);
+    $pres->save("pres.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -54,7 +54,7 @@ Aspose.Slides for Java has provided the simplest API to work with tables in an e
 Presentation pres = new Presentation("Test.pptx");
 try {
     // Access first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Define columns with widths and rows with heights
     double[] dblCols = { 50, 50, 50 };
@@ -88,7 +88,7 @@ try {
     table.getColumns().insertClone(3,table.getColumns().get_Item(1), false);
     
     // Write PPTX to Disk
-    pres.save("table_out.pptx", SaveFormat.Pptx);
+    $pres->save("table_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -109,7 +109,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     double[] colWidth = { 100, 50, 30 };
     double[] rowHeight = { 30, 50, 30 };
@@ -118,7 +118,7 @@ try {
     table.getRows().removeAt(1, false);
     table.getColumns().removeAt(1, false);
     
-    pres.save("TestTable_out.pptx", SaveFormat.Pptx);
+    $pres->save("TestTable_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -161,7 +161,7 @@ try {
 	
     someTable.getRows().get_Item(1).setTextFormat(textFrameFormat);
 
-    pres.save("result.pptx", SaveFormat.Pptx);
+    $pres->save("result.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -204,7 +204,7 @@ try {
 	
     someTable.getColumns().get_Item(1).setTextFormat(textFrameFormat);
 
-    pres.save("result.pptx", SaveFormat.Pptx);
+    $pres->save("result.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

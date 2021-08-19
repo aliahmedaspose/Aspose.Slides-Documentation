@@ -30,7 +30,7 @@ Aspose.Slides for Java provides a simple API for getting these properties. Prop
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    Chart chart = (Chart) pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 350);
+    Chart chart = (Chart) $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 350);
     chart.validateChartLayout();
 
     double x = chart.getPlotArea().getActualX();
@@ -48,7 +48,7 @@ This topic helps you to understand how to hide information from chart. Using Asp
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     IChart chart = slide.getShapes().addChart(ChartType.LineWithMarkers, 140, 118, 320, 370);
 
     //Hiding chart Title
@@ -83,7 +83,7 @@ try {
     series.getFormat().getLine().getFillFormat().getSolidFillColor().setColor(Color.MAGENTA);
     series.getFormat().getLine().setDashStyle(LineDashStyle.Solid);
 
-    pres.save("HideInformationFromChart.pptx", SaveFormat.Pptx);
+    $pres->save("HideInformationFromChart.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

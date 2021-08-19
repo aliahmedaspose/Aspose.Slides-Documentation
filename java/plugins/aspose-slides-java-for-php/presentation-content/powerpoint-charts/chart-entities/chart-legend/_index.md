@@ -20,7 +20,7 @@ In the example given below, we have set the position and size for Chart legend.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Add a clustered column chart on the slide
     IChart chart = slide.getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 500, 500);
@@ -32,7 +32,7 @@ try {
     chart.getLegend().setHeight(100 / chart.getHeight());
     
     // Write presentation to disk
-    pres.save("Legend_out.pptx", SaveFormat.Pptx);
+    $pres->save("Legend_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -52,7 +52,7 @@ The Aspose.Slides for Java lets developers allow to set font size of legend. Pl
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
 
     chart.getLegend().getTextFormat().getPortionFormat().setFontHeight(20);
 
@@ -61,7 +61,7 @@ try {
     chart.getAxes().getVerticalAxis().setAutomaticMaxValue(false);
     chart.getAxes().getVerticalAxis().setMaxValue(10);
 
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -82,7 +82,7 @@ The Aspose.Slides for Java lets developers allow to set font size of individual 
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
 
     IChartTextFormat tf = chart.getLegend().getEntries().get_Item(1).getTextFormat();
 
@@ -92,7 +92,7 @@ try {
     tf.getPortionFormat().getFillFormat().setFillType(FillType.Solid);
     tf.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.BLUE);
     
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

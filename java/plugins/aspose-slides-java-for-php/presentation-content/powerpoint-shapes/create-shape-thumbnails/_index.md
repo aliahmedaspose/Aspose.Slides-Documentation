@@ -34,7 +34,7 @@ This sample code shows you how to generate a shape thumbnail from a slide:
 Presentation pres = new Presentation("Thumbnail.pptx");
 try {
     // Create a full scale image
-    BufferedImage image = pres.getSlides().get_Item(0).getShapes().get_Item(0).getThumbnail();
+    BufferedImage image = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getThumbnail();
     
     // Save the image to disk in PNG format
     ImageIO.write(image, "jpeg", new File("output.jpg"));
@@ -59,7 +59,7 @@ This sample code shows you how to generate a shape thumbnail based on a defined 
 Presentation pres = new Presentation("Thumbnail.pptx");
 try {
     // Create a full scale image
-    BufferedImage image = pres.getSlides().get_Item(0).getShapes().get_Item(0).getThumbnail(ShapeThumbnailBounds.Shape, 1, 1);
+    BufferedImage image = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getThumbnail(ShapeThumbnailBounds.Shape, 1, 1);
 
     // Save the image to disk in PNG format
     ImageIO.write(image, "jpeg", new File("output.jpg"));
@@ -84,7 +84,7 @@ This sample code is based on the steps above:
 Presentation pres = new Presentation("Thumbnail.pptx");
 try {
     // Create a full scale image
-    BufferedImage image = pres.getSlides().get_Item(0).getShapes().get_Item(0).getThumbnail(ShapeThumbnailBounds.Appearance, 1, 1);
+    BufferedImage image = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getThumbnail(ShapeThumbnailBounds.Appearance, 1, 1);
 
     // Save the image to disk in PNG format
     ImageIO.write(image, "jpeg", new File("output.jpg"));

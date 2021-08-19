@@ -19,7 +19,7 @@ Aspose.Slides for Java provides a simple API for managing error bar values. The 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Creating a bubble chart
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Bubble, 50, 50, 400, 300, true);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Bubble, 50, 50, 400, 300, true);
 
     // Adding Error bars and setting its format
     IErrorBarsFormat errBarX = chart.getChartData().getSeries().get_Item(0).getErrorBarsXFormat();
@@ -36,7 +36,7 @@ try {
     errBarX.hasEndCap();
 
     // Saving presentation
-    pres.save("ErrorBars.pptx", SaveFormat.Pptx);
+    $pres->save("ErrorBars.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -58,7 +58,7 @@ Aspose.Slides for Java provides a simple API for managing custom error bar value
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Creating a bubble chart
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Bubble, 50, 50, 400, 300, true);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Bubble, 50, 50, 400, 300, true);
 
     // Adding custom Error bars and setting its format
     IChartSeries series = chart.getChartData().getSeries().get_Item(0);
@@ -86,7 +86,7 @@ try {
     }
 
     // Saving presentation
-    pres.save("ErrorBarsCustomValues.pptx", SaveFormat.Pptx);
+    $pres->save("ErrorBarsCustomValues.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -35,7 +35,7 @@ In the example below, we added a chart from an Excel file to a slide as an OLE O
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Load an cel file to stream
     FileInputStream fs = new FileInputStream("book1.xlsx");
@@ -56,12 +56,12 @@ try {
 
     // Add an Ole Object Frame shape
     IOleObjectFrame oleObjectFrame = sld.getShapes().addOleObjectFrame(0, 0,
-            (float) pres.getSlideSize().getSize().getWidth(),
-            (float) pres.getSlideSize().getSize().getHeight(),
+            (float) $pres->getSlideSize().getSize().getWidth(),
+            (float) $pres->getSlideSize().getSize().getHeight(),
             dataInfo);
 
     //Write the PPTX to disk
-    pres.save("OleEmbed_out.pptx", SaveFormat.Pptx);
+    $pres->save("OleEmbed_out.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -85,7 +85,7 @@ In the example below, an OLE Object Frame (an Excel chart object embedded in a s
 Presentation pres = new Presentation("AccessingOLEObjectFrame.pptx");
 try {
     // Access the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Cast the shape to OleObjectFrame
     OleObjectFrame oleObjectFrame = (OleObjectFrame) sld.getShapes().get_Item(0);
@@ -135,7 +135,7 @@ In the example below, an OLE Object Frame (an Excel chart object embedded in a s
 ``` java 
 Presentation pres = new Presentation("ChangeOLEObjectData.pptx");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 	
     OleObjectFrame ole = null;
 
@@ -176,7 +176,7 @@ try {
         }
     }
 
-    pres.save("OleEdit_out.pptx", SaveFormat.Pptx);
+    $pres->save("OleEdit_out.pptx", SaveFormat.Pptx);
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -192,7 +192,7 @@ This sample code shows you how to embed HTML and ZIP in a slide:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     byte[] htmlBytes = Files.readAllBytes(Paths.get("embedOle.html"));
     IOleEmbeddedDataInfo dataInfoHtml = new OleEmbeddedDataInfo(htmlBytes, "html");
@@ -204,7 +204,7 @@ try {
     IOleObjectFrame oleFrameZip = slide.getShapes().addOleObjectFrame(150, 220, 50, 50, dataInfoZip);
     oleFrameZip.setObjectIcon(true);
 
-    pres.save("embeddedOle.pptx", SaveFormat.Pptx);
+    $pres->save("embeddedOle.pptx", SaveFormat.Pptx);
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -222,13 +222,13 @@ This sample code shows you how to set the file type for an embedded OLE object:
 ```java
 Presentation pres = new Presentation("embeddedOle.pptx");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     IOleObjectFrame oleObjectFrame = (IOleObjectFrame)slide.getShapes().get_Item(0);
     System.out.println("Current embedded data extension is: " + oleObjectFrame.getEmbeddedData().getEmbeddedFileExtension());
 
     oleObjectFrame.setEmbeddedData(new OleEmbeddedDataInfo(Files.readAllBytes(Paths.get("embedOle.zip")), "zip"));
 
-    pres.save("embeddedChanged.pptx", SaveFormat.Pptx);
+    $pres->save("embeddedChanged.pptx", SaveFormat.Pptx);
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -246,15 +246,15 @@ This Java code shows you how to set the icon image and title for an embedded obj
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     IOleObjectFrame oleObjectFrame = (IOleObjectFrame) slide.getShapes().get_Item(0);
 
-    IPPImage oleImage = pres.getImages().addImage(Files.readAllBytes(Paths.get("image.png")));
+    IPPImage oleImage = $pres->getImages().addImage(Files.readAllBytes(Paths.get("image.png")));
     oleObjectFrame.setSubstitutePictureTitle("My title");
     oleObjectFrame.getSubstitutePictureFormat().getPicture().setImage(oleImage);
     oleObjectFrame.setObjectIcon(false);
 
-    pres.save("embeddedOle-newImage.pptx", SaveFormat.Pptx);
+    $pres->save("embeddedOle-newImage.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -274,7 +274,7 @@ This sample code shows you how to extract a file embedded in a slide as an OLE o
 ```java
 Presentation pres = new Presentation("embeddedOle.pptx");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     for (int index = 0; index < slide.getShapes().size(); index++)
     {

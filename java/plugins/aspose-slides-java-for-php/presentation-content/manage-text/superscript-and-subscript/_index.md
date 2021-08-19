@@ -32,7 +32,7 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Create text box
     IAutoShape shape = slide.getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 200, 100);
@@ -71,7 +71,7 @@ try {
     textFrame.getParagraphs().add(superPar);
     textFrame.getParagraphs().add(paragraph2);
 
-    pres.save("formatText.pptx",SaveFormat.Pptx);
+    $pres->save("formatText.pptx",SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

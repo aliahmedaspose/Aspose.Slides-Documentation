@@ -23,7 +23,7 @@ In the example given below, we have added Layout Slides to Presentation.
 Presentation pres = new Presentation("AccessSlides.pptx");
 try {
     // Try to search by layout slide type
-    IMasterLayoutSlideCollection layoutSlides = pres.getMasters().get_Item(0).getLayoutSlides();
+    IMasterLayoutSlideCollection layoutSlides = $pres->getMasters().get_Item(0).getLayoutSlides();
     ILayoutSlide layoutSlide = null;
 
     if (layoutSlides.getByType(SlideLayoutType.TitleAndObject) != null)
@@ -61,12 +61,12 @@ try {
     }
 
     // Adding empty slide with added layout slide
-    pres.getSlides().insertEmptySlide(0, layoutSlide);
+    $pres->getSlides().insertEmptySlide(0, layoutSlide);
 
     // Save presentation
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 

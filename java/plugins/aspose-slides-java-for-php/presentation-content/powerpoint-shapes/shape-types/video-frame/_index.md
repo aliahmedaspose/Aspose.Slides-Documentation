@@ -22,10 +22,10 @@ In the example below, we added a Video Frame to the slide.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
     
     // Embed video inside presentation
-    IVideo vid = pres.getVideos().addVideo(new FileInputStream(new File("Wildlife.mp4")));
+    IVideo vid = $pres->getVideos().addVideo(new FileInputStream(new File("Wildlife.mp4")));
 
     // Add Video Frame
     IVideoFrame vf = sld.getShapes().addVideoFrame(50, 150, 300, 350, vid);
@@ -38,7 +38,7 @@ try {
     vf.setVolume(AudioVolumeMode.Loud);
 
     // Write the PPTX file to disk
-    pres.save("VideoFrame.pptx", SaveFormat.Pptx);
+    $pres->save("VideoFrame.pptx", SaveFormat.Pptx);
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -63,7 +63,7 @@ This sample code shows you how to add a video from YouTube to a slide:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     addVideoFromYouTube(pres, "Tj75Arhq5ho");
-    pres.save("out.pptx", SaveFormat.Pptx);
+    $pres->save("out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -72,7 +72,7 @@ try {
 private static void addVideoFromYouTube(Presentation pres, String videoID)
 {
     // add videoFrame
-    IVideoFrame videoFrame = pres.getSlides().get_Item(0).getShapes().addVideoFrame(
+    IVideoFrame videoFrame = $pres->getSlides().get_Item(0).getShapes().addVideoFrame(
             10, 10, 427, 240, "https://www.youtube.com/embed/" + videoID);
     videoFrame.setPlayMode(VideoPlayModePreset.Auto);
 
@@ -110,7 +110,7 @@ In the example below, we added a Video Frame to the slide.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Add Video Frame
     IVideoFrame vf = sld.getShapes().addVideoFrame(50, 150, 300, 150, "Wildlife.mp4");
@@ -120,7 +120,7 @@ try {
     vf.setVolume(AudioVolumeMode.Loud);
 
     // Write the PPTX file to disk
-    pres.save("VideoFrame.pptx", SaveFormat.Pptx);
+    $pres->save("VideoFrame.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -139,7 +139,7 @@ In the example given below, we saved the video file from a slide.
 ```java
 Presentation pres = new Presentation("VideoSample.pptx");
 try {
-    for (ISlide slide : pres.getSlides()) 
+    for (ISlide slide : $pres->getSlides()) 
     {
         for (IShape shape : slide.getShapes()) 
         {

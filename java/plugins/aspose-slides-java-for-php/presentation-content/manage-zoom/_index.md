@@ -30,8 +30,8 @@ This sample code shows you how to create a zoom frame in a slide:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     //Add new slides to the presentation
-    ISlide slide2 = pres.getSlides().addEmptySlide(pres.getSlides().get_Item(0).getLayoutSlide());
-    ISlide slide3 = pres.getSlides().addEmptySlide(pres.getSlides().get_Item(0).getLayoutSlide());
+    ISlide slide2 = $pres->getSlides().addEmptySlide(pres.getSlides().get_Item(0).getLayoutSlide());
+    ISlide slide3 = $pres->getSlides().addEmptySlide(pres.getSlides().get_Item(0).getLayoutSlide());
 
     // Create a background for the second slide
     slide2.getBackground().setType(BackgroundType.OwnBackground);
@@ -52,11 +52,11 @@ try {
     autoshape.getTextFrame().setText("Trird Slide");
 
     //Add ZoomFrame objects
-    pres.getSlides().get_Item(0).getShapes().addZoomFrame(20, 20, 250, 200, slide2);
-    pres.getSlides().get_Item(0).getShapes().addZoomFrame(200, 250, 250, 200, slide3);
+    $pres->getSlides().get_Item(0).getShapes().addZoomFrame(20, 20, 250, 200, slide2);
+    $pres->getSlides().get_Item(0).getShapes().addZoomFrame(200, 250, 250, 200, slide3);
 
     // Save the presentation
-    pres.save("presentation.pptx", SaveFormat.Pptx);
+    $pres->save("presentation.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -76,7 +76,7 @@ This sample code shows you how to create a zoom frame with a different image:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     //Add a new slide to the presentation
-    ISlide slide = pres.getSlides().addEmptySlide(pres.getSlides().get_Item(0).getLayoutSlide());
+    ISlide slide = $pres->getSlides().addEmptySlide(pres.getSlides().get_Item(0).getLayoutSlide());
 
     // Create a background for the second slide
     slide.getBackground().setType(BackgroundType.OwnBackground);
@@ -89,13 +89,13 @@ try {
 
     // Create a new image for the zoom object
     byte[] imageBytes = Files.readAllBytes(Paths.get("image.png"));
-    IPPImage image = pres.getImages().addImage(imageBytes);
+    IPPImage image = $pres->getImages().addImage(imageBytes);
 
     //Add the ZoomFrame object
-    pres.getSlides().get_Item(0).getShapes().addZoomFrame(20, 20, 300, 200, slide, image);
+    $pres->getSlides().get_Item(0).getShapes().addZoomFrame(20, 20, 300, 200, slide, image);
 
     // Save the presentation
-    pres.save("presentation.pptx", SaveFormat.Pptx);
+    $pres->save("presentation.pptx", SaveFormat.Pptx);
 } catch(IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -123,8 +123,8 @@ This sample code shows you how to change the formatting of a zoom frame:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     //Add new slides to presentation
-    ISlide slide2 = pres.getSlides().addEmptySlide(pres.getSlides().get_Item(0).getLayoutSlide());
-    ISlide slide3 = pres.getSlides().addEmptySlide(pres.getSlides().get_Item(0).getLayoutSlide());
+    ISlide slide2 = $pres->getSlides().addEmptySlide(pres.getSlides().get_Item(0).getLayoutSlide());
+    ISlide slide3 = $pres->getSlides().addEmptySlide(pres.getSlides().get_Item(0).getLayoutSlide());
 
     // Create a background for the second slide
     slide2.getBackground().setType(BackgroundType.OwnBackground);
@@ -145,12 +145,12 @@ try {
     autoshape.getTextFrame().setText("Trird Slide");
 
     //Add ZoomFrame objects
-    IZoomFrame zoomFrame1 = pres.getSlides().get_Item(0).getShapes().addZoomFrame(20, 20, 250, 200, slide2);
-    IZoomFrame zoomFrame2 = pres.getSlides().get_Item(0).getShapes().addZoomFrame(200, 250, 250, 200, slide3);
+    IZoomFrame zoomFrame1 = $pres->getSlides().get_Item(0).getShapes().addZoomFrame(20, 20, 250, 200, slide2);
+    IZoomFrame zoomFrame2 = $pres->getSlides().get_Item(0).getShapes().addZoomFrame(200, 250, 250, 200, slide3);
 
     // Create a new image for the zoom object
     byte[] imageBytes = Files.readAllBytes(Paths.get("image.png")); 
-    IPPImage image = pres.getImages().addImage(imageBytes);
+    IPPImage image = $pres->getImages().addImage(imageBytes);
 	
     // Set custom image for zoomFrame1 object
     zoomFrame1.setImage(image);
@@ -165,7 +165,7 @@ try {
     zoomFrame2.setShowBackground(false);
 
     // Save the presentation
-    pres.save("presentation.pptx", SaveFormat.Pptx);
+    $pres->save("presentation.pptx", SaveFormat.Pptx);
 } catch(IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -198,7 +198,7 @@ try {
     for (int slideNumber = 0; slideNumber < 5; slideNumber++)
     {
         //Add new slides to presentation
-        ISlide slide = pres.getSlides().addEmptySlide(pres.getSlides().get_Item(0).getLayoutSlide());
+        ISlide slide = $pres->getSlides().addEmptySlide(pres.getSlides().get_Item(0).getLayoutSlide());
 
         // Create a background for the slide
         slide.getBackground().setType(BackgroundType.OwnBackground);
@@ -211,18 +211,18 @@ try {
     }
 
     // Create zoom objects for all slides in the first slide
-    for (int slideNumber = 1; slideNumber < pres.getSlides().size(); slideNumber++)
+    for (int slideNumber = 1; slideNumber < $pres->getSlides().size(); slideNumber++)
     {
         int x = (slideNumber - 1) * 100;
         int y = (slideNumber - 1) * 100;
-        IZoomFrame zoomFrame = pres.getSlides().get_Item(0).getShapes().addZoomFrame(x, y, 150, 120, pres.getSlides().get_Item(slideNumber));
+        IZoomFrame zoomFrame = $pres->getSlides().get_Item(0).getShapes().addZoomFrame(x, y, 150, 120, $pres->getSlides().get_Item(slideNumber));
 
         // Set the ReturnToParent property to return to the first slide
         zoomFrame.setReturnToParent(true);
     }
 
     // Save the presentation
-    pres.save("presentation.pptx", SaveFormat.Pptx);
+    $pres->save("presentation.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

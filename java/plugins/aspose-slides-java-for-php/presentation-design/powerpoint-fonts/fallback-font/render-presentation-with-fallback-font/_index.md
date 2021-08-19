@@ -36,7 +36,7 @@ if (rulesList.size() > 0)
 Presentation pres = new Presentation("input.pptx");
 try {
     //Assigning a prepared rules list for using
-    pres.getFontsManager().setFontFallBackRulesCollection(rulesList);
+    $pres->getFontsManager().setFontFallBackRulesCollection(rulesList);
 
     // Rendering of thumbnail with using of initialized rules collection and saving to PNG
     ImageIO.write(pres.getSlides().get_Item(0).getThumbnail(1f, 1f), 

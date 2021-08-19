@@ -13,7 +13,7 @@ A new property has been added to set chart data from workbook. Now Aspose.Slide
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 500, 400);
     chart.getChartData().getChartDataWorkbook().clear(0);
 
     Workbook workbook = new Workbook("a1.xlsx");
@@ -26,7 +26,7 @@ try {
     chart.getChartData().setRange("Sheet1!$A$1:$B$9");
     IChartSeries series = chart.getChartData().getSeries().get_Item(0);
     series.getParentSeriesGroup().setColorVaried(true);
-    pres.save("response2.pptx", SaveFormat.Pptx);
+    $pres->save("response2.pptx", SaveFormat.Pptx);
 } catch (Exception ex) {
     ex.printStackTrace();
 } finally {
@@ -48,7 +48,7 @@ Aspose.Slides for Java provides a simple API for getting value from WorkBook Cel
 // Create an instance of Presentation class
 Presentation pres = new Presentation("chart.pptx");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Bubble, 50, 50, 600, 400, true);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Bubble, 50, 50, 600, 400, true);
 
     IChartSeries series = chart.getChartData().getSeries().get_Item(0);
 
@@ -60,7 +60,7 @@ try {
     series.getLabels().get_Item(1).setValueFromCell(wb.getCell(0, "A11", "Label 1 cell value"));
     series.getLabels().get_Item(2).setValueFromCell(wb.getCell(0, "A12", "Label 2 cell value"));
 
-    pres.save("resultchart.pptx", SaveFormat.Pptx);
+    $pres->save("resultchart.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -79,7 +79,7 @@ Aspose.Slides for Java provides a simple API for getting value from WorkBook Cel
 // Create an instance of Presentation class
 Presentation pres = new Presentation("chart.pptx");
 try {
-    ISlide slide = pres.getSlides().get_Item(1);
+    ISlide slide = $pres->getSlides().get_Item(1);
     IChart chart = (IChart)slide.getShapes().get_Item(0);
     int sourceType = chart.getChartData().getDataSourceType();
     
@@ -108,7 +108,7 @@ Presentation pres = new Presentation("chart.pptx");
 try {
     String externalWbPath = dataPath + "externalWorkbook1.xlsx";
     
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 400, 600);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 400, 600);
 
     java.io.File file = new File(externalWbPath);
     if (file.exists())
@@ -121,7 +121,7 @@ try {
 
     chart.getChartData().setExternalWorkbook(externalWbPath);
 
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -139,7 +139,7 @@ The implementation is demonstrated below in an example.
 // Create an instance of Presentation class
 Presentation pres = new Presentation("chart.pptx");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 400, 600, false);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 400, 600, false);
     IChartData chartData = chart.getChartData();
 
     chartData.setExternalWorkbook(dataPath +"externalWorkbook.xlsx");
@@ -153,7 +153,7 @@ try {
     chartData.getCategories().add(chartData.getChartDataWorkbook().getCell(0, "A3"));
     chartData.getCategories().add(chartData.getChartDataWorkbook().getCell(0, "A4"));
     
-    pres.save("Presentation_with_externalWorkbook.pptx", SaveFormat.Pptx);
+    $pres->save("Presentation_with_externalWorkbook.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -167,12 +167,12 @@ The **updateChartData** parameter defines whether an excel workbook will be loa
 // Create an instance of Presentation class
 Presentation pres = new Presentation("chart.pptx");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 400, 600, true);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 400, 600, true);
     IChartData chartData = chart.getChartData();
 
     ((ChartData)chartData).setExternalWorkbook("http://path/doesnt/exists", false);
 
-    pres.save("Presentation_with_externalWorkbookWithUpdateChartData.pptx", SaveFormat.Pptx);
+    $pres->save("Presentation_with_externalWorkbookWithUpdateChartData.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -192,7 +192,7 @@ try {
     
     chartData.getSeries().get_Item(0).getDataPoints().get_Item(0).getValue().getAsCell().setValue(100);
     
-    pres.save("presentation_out.pptx", SaveFormat.Pptx);
+    $pres->save("presentation_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

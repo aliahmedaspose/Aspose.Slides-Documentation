@@ -37,7 +37,7 @@ Aspose.Slides for Java allows you to get all the animation effects applied to pa
 ```java
 Presentation pres = new Presentation("Presentation.pptx");
 try {
-    ISequence sequence = pres.getSlides().get_Item(0).getTimeline().getMainSequence();
+    ISequence sequence = $pres->getSlides().get_Item(0).getTimeline().getMainSequence();
     IAutoShape autoShape = (IAutoShape)pres.getSlides().get_Item(0).getShapes().get_Item(0);
 
     for (IParagraph paragraph : autoShape.getTextFrame().getParagraphs())
@@ -48,6 +48,6 @@ try {
             System.out.println("Paragraph \"" + paragraph.getText() + "\" has " + effects[0].getType() + " effect.");
     }
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```

@@ -22,7 +22,7 @@ In order to add a connector shape for joining two shapes. Please follow the step
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing shapes collection for selected slide
-    IShapeCollection shapes = pres.getSlides().get_Item(0).getShapes();
+    IShapeCollection shapes = $pres->getSlides().get_Item(0).getShapes();
     
     // Add Autoshape Ellipse
     IAutoShape ellipse = shapes.addAutoShape(ShapeType.Ellipse, 0, 100, 100, 100);
@@ -41,7 +41,7 @@ try {
     connector.reroute();
     
     // Saving Presentation
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -71,7 +71,7 @@ In the example given below, we have added a connector between two shapes.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing shapes collection for selected slide
-    IShapeCollection shapes = pres.getSlides().get_Item(0).getShapes();
+    IShapeCollection shapes = $pres->getSlides().get_Item(0).getShapes();
 
     // Add Autoshape Ellipse
     IAutoShape ellipse = shapes.addAutoShape(ShapeType.Ellipse, 0, 100, 100, 100);
@@ -98,7 +98,7 @@ try {
     }
 
     // Saving presentation
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

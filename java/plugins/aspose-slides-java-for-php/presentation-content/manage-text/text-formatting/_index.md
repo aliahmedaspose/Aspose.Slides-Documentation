@@ -22,7 +22,7 @@ try {
     ((AutoShape)pres.getSlides().get_Item(0).getShapes().get_Item(0)).getTextFrame().highlightText("title", Color.BLUE); // highlighting all words 'important'
     ((AutoShape)pres.getSlides().get_Item(0).getShapes().get_Item(0)).getTextFrame().highlightText("to", Color.MAGENTA, textHighlightingOptions);// highlighting all separate 'the' occurrences
     
-    pres.save("OutputPresentation-highlight.pptx", SaveFormat.Pptx);
+    $pres->save("OutputPresentation-highlight.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -40,9 +40,9 @@ Presentation pres = new Presentation("Presentation.pptx");
 try {
     TextHighlightingOptions options = new TextHighlightingOptions();
     
-    ((AutoShape) pres.getSlides().get_Item(0).getShapes().get_Item(0)).getTextFrame().highlightRegex("\\b[^\\s]{4}\\b", java.awt.Color.YELLOW, options); // highlighting all words with 10 symbols or longer
+    ((AutoShape) $pres->getSlides().get_Item(0).getShapes().get_Item(0)).getTextFrame().highlightRegex("\\b[^\\s]{4}\\b", java.awt.Color.YELLOW, options); // highlighting all words with 10 symbols or longer
     
-    pres.save("OutputPresentation-highlight.pptx", SaveFormat.Pptx);
+    $pres->save("OutputPresentation-highlight.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -65,7 +65,7 @@ The implementation of the above steps is given below.
 Presentation pres = new Presentation("ParagraphsAlignment.pptx");
 try {
     // Accessing first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Accessing the first and second placeholder in the slide and typecasting it as AutoShape
     ITextFrame tf1 = ((IAutoShape)slide.getShapes().get_Item(0)).getTextFrame();
@@ -84,7 +84,7 @@ try {
     para2.getParagraphFormat().setAlignment(TextAlignment.Center);
 
     //Writing the presentation as a PPTX file
-    pres.save("Centeralign_out.pptx", SaveFormat.Pptx);
+    $pres->save("Centeralign_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -114,7 +114,7 @@ try {
     // set transparency to zero percent
     outerShadowEffect.getShadowColor().setColor(new Color(shadowColor.getRed(), shadowColor.getGreen(), shadowColor.getBlue(), 255));
 
-    pres.save("transparency-2.pptx", SaveFormat.Pptx);
+    $pres->save("transparency-2.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -142,7 +142,7 @@ The implementation of the above steps is given below. It takes an unadorned pres
 Presentation pres = new Presentation("FontProperties.pptx");
 try {
     // Accessing a slide using its slide position
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Accessing the first and second placeholder in the slide and typecasting it as AutoShape
     ITextFrame tf1 = ((IAutoShape)slide.getShapes().get_Item(0)).getTextFrame();
@@ -179,7 +179,7 @@ try {
     port2.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.ORANGE);
 
     //Write the PPTX to disk
-    pres.save("WelcomeFont_out.pptx", SaveFormat.Pptx);
+    $pres->save("WelcomeFont_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -207,7 +207,7 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
 
     // Get first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Add an AutoShape of Rectangle type
     IAutoShape ashp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 50, 200, 50);
@@ -242,7 +242,7 @@ try {
     port.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.BLUE);
 
     // Write the PPTX to disk 
-    pres.save("SetTextFontProperties_out.pptx", SaveFormat.Pptx);
+    $pres->save("SetTextFontProperties_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -264,7 +264,7 @@ Aspose.Slides for Java allows developers to rotate the text. Text could be set t
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide 
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Add an AutoShape of Rectangle type
     IAutoShape ashp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 150, 75, 350, 350);
@@ -287,7 +287,7 @@ try {
     portion.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.BLACK);
     
     // Save Presentation
-    pres.save("RotateText_out.pptx", SaveFormat.Pptx);
+    $pres->save("RotateText_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -308,7 +308,7 @@ In the example given below, we set the RotationAngle property.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Add an AutoShape of Rectangle type
     IAutoShape ashp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 150, 75, 350, 350);
@@ -331,7 +331,7 @@ try {
     portion.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.BLACK);
 
     // Save Presentation
-    pres.save(resourcesOutputPath+"RotateText_out.pptx", SaveFormat.Pptx);
+    $pres->save(resourcesOutputPath+"RotateText_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -352,7 +352,7 @@ Aspose.Slides for Java lets developers to set the properties of ParagraphFormat 
 Presentation pres = new Presentation("Fonts.pptx");
 try {
     // Obtain a slide's reference by its index
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
     
     // Access the TextFrame
     ITextFrame tf1 = ((IAutoShape)sld.getShapes().get_Item(0)).getTextFrame();
@@ -366,7 +366,7 @@ try {
     para.getParagraphFormat().setSpaceAfter(40);
     
     // Save Presentation
-    pres.save("LineSpacing_out.pptx", SaveFormat.Pptx);
+    $pres->save("LineSpacing_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -387,7 +387,7 @@ In this topic, we will explore the different formatting properties of text frame
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access the first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Add an AutoShape of Rectangle type
     IAutoShape ashp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 150, 75, 350, 150);
@@ -410,7 +410,7 @@ try {
     portion.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.BLACK);
 
     // Save Presentation
-    pres.save(resourcesOutputPath + "formatText_out.pptx", SaveFormat.Pptx);
+    $pres->save(resourcesOutputPath + "formatText_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -431,7 +431,7 @@ Aspose.Slides for Java allows developers to Anchor of any TextFrame. TextAnchorT
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide 
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Add an AutoShape of Rectangle type
     IAutoShape ashp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 150, 75, 350, 350);
@@ -454,7 +454,7 @@ try {
     portion.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.BLACK);
     
     // Save Presentation
-    pres.save("AnchorText_out.pptx", SaveFormat.Pptx);
+    $pres->save("AnchorText_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

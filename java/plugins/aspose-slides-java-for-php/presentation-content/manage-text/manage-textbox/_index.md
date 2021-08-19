@@ -22,7 +22,7 @@ The implementation of the above steps is demonstrated below in an example.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Add an AutoShape of Rectangle type
     IAutoShape ashp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 150, 75, 150, 50);
@@ -43,7 +43,7 @@ try {
     portion.setText("Aspose TextBox");
 
     // Save the presentation to disk
-    pres.save("TextBox_out.pptx", SaveFormat.Pptx);
+    $pres->save("TextBox_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -58,7 +58,7 @@ The implementation is demonstrated below in an example.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide of presentation
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Add an AutoShape of Rectangle type
     IAutoShape aShape = slide.getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 300, 300);
@@ -79,7 +79,7 @@ try {
     format.setColumnSpacing(10);
     
     // Save created presentation
-    pres.save("ColumnCount.pptx", SaveFormat.Pptx);
+    $pres->save("ColumnCount.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -93,7 +93,7 @@ The implementation is demonstrated below in an example.
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IAutoShape shape1 = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 300, 300);
+    IAutoShape shape1 = $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 300, 300);
     TextFrameFormat format = (TextFrameFormat)shape1.getTextFrame().getTextFrameFormat();
 
     format.setColumnCount(2);
@@ -101,7 +101,7 @@ try {
             "you can add or delete text and the new or remaining text automatically adjusts " +
             "itself to flow within the container. You cannot have text flow from one container " +
             "to other though -- we told you PowerPoint's column options for text are limited!");
-    pres.save("output_column1.pptx", SaveFormat.Pptx);
+    $pres->save("output_column1.pptx", SaveFormat.Pptx);
 
     Presentation test1 = new Presentation("output_column1.pptx");
     try {
@@ -112,7 +112,7 @@ try {
     }
 
     format.setColumnSpacing(20);
-    pres.save("output_column2.pptx", SaveFormat.Pptx);
+    $pres->save("output_column2.pptx", SaveFormat.Pptx);
 
     Presentation test2 = new Presentation("output_column2.pptx");
     try {
@@ -124,7 +124,7 @@ try {
 
     format.setColumnCount(3);
     format.setColumnSpacing(15);
-    pres.save("output_column3.pptx", SaveFormat.Pptx);
+    $pres->save("output_column3.pptx", SaveFormat.Pptx);
 
     Presentation test3 = new Presentation("output_column3.pptx");
     try {
@@ -156,7 +156,7 @@ The implementation of the above steps is demonstrated below in an example.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Add an AutoShape of Rectangle Type
     IShape pptxShape = slide.getShapes().addAutoShape(ShapeType.Rectangle, 150, 150, 150, 50);
@@ -176,7 +176,7 @@ try {
     IHyperlinkManager HypMan = ITextFrame.getParagraphs().get_Item(0).getPortions().get_Item(0).getPortionFormat().getHyperlinkManager();
     HypMan.setExternalHyperlinkClick("http://www.aspose.com");
     // Save the PPTX Presentation
-    pres.save("hLinkPPTX_out.pptx", SaveFormat.Pptx);
+    $pres->save("hLinkPPTX_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

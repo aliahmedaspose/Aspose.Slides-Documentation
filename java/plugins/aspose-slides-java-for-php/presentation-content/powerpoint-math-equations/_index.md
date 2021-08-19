@@ -44,7 +44,7 @@ To add a mathematical expression on the slide, first, add a shape that will con
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IAutoShape mathShape = pres.getSlides().get_Item(0).getShapes().addMathShape(0, 0, 720, 150);
+    IAutoShape mathShape = $pres->getSlides().get_Item(0).getShapes().addMathShape(0, 0, 720, 150);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -82,7 +82,7 @@ The full source code sample:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IAutoShape mathShape = pres.getSlides().get_Item(0).getShapes().addMathShape(0, 0, 720, 150);
+    IAutoShape mathShape = $pres->getSlides().get_Item(0).getShapes().addMathShape(0, 0, 720, 150);
 
     IMathParagraph mathParagraph = ((MathPortion)mathShape.getTextFrame().getParagraphs().get_Item(0).getPortions().get_Item(0)).getMathParagraph();
     
@@ -98,7 +98,7 @@ try {
             .join(new MathematicalText("b").setSuperscript("2"));
     mathParagraph.add(mathBlock);
 
-    pres.save("math.pptx", SaveFormat.Pptx);
+    $pres->save("math.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

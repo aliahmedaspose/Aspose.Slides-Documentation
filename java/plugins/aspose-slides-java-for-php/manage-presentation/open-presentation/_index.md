@@ -60,10 +60,10 @@ Presentation pres = new Presentation("veryLargePresentation.pptx", loadOptions);
 try {
     // the huge presentation is loaded and ready to use, but the memory consumption is still low.
     // make any changes to the presentation.
-    pres.getSlides().get_Item(0).setName("Very large presentation");
+    $pres->getSlides().get_Item(0).setName("Very large presentation");
 
     // presentation will be saved to the other file, the memory consumptions still low during saving.
-    pres.save("veryLargePresentation-copy.pptx", SaveFormat.Pptx);
+    $pres->save("veryLargePresentation-copy.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

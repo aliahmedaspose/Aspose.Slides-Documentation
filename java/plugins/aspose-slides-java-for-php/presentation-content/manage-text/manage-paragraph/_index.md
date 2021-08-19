@@ -27,7 +27,7 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Add an AutoShape of Rectangle type
     IAutoShape ashp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 50, 150, 300, 150);
@@ -81,7 +81,7 @@ try {
     }
 
     //Write PPTX to Disk
-    pres.save("multiParaPort_out.pptx", SaveFormat.Pptx);
+    $pres->save("multiParaPort_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -105,7 +105,7 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
     
     // Add a Rectangle Shape
     IAutoShape rect = sld.getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 500, 150);
@@ -146,7 +146,7 @@ try {
     para3.getParagraphFormat().setIndent(50);
     
     //Write the Presentation to disk
-    pres.save("InOutDent_out.pptx", SaveFormat.Pptx);
+    $pres->save("InOutDent_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -184,7 +184,7 @@ try {
     shape.getTextFrame().getParagraphs().add(para1);
     shape.getTextFrame().getParagraphs().add(para2);
 
-    pres.save(resourcesOutputPath+"pres.pptx", SaveFormat.Pptx);
+    $pres->save(resourcesOutputPath+"pres.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -210,7 +210,7 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Acesss the default first slide of presentation
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Adding the AutoShape to accomodate the HTML content
     IAutoShape ashape = slide.getShapes().addAutoShape(ShapeType.Rectangle, 10, 10,
@@ -231,7 +231,7 @@ try {
     ashape.getTextFrame().getParagraphs().addFromHtml(tr.readToEnd());
 
     // Saving Presentation
-    pres.save("output_out.pptx", SaveFormat.Pptx);
+    $pres->save("output_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -254,7 +254,7 @@ The implementation of the above steps is given below.
 Presentation pres = new Presentation("ExportingHTMLText.pptx");
 try {
     // Acesss the default first slide of presentation
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Desired index
     int index = 0;

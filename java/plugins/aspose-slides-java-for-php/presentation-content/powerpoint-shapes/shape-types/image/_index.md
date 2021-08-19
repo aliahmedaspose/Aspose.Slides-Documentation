@@ -17,17 +17,17 @@ This sample code shows you how to add an EMZ image to the images collection:
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     byte[] imageFile = Files.readAllBytes(Paths.get("image.emz"));
 
-    IPPImage image = pres.getImages().addImage(imageFile);
+    IPPImage image = $pres->getImages().addImage(imageFile);
 
     slide.getShapes().addPictureFrame(ShapeType.Rectangle, 0, 0,
-            (float) pres.getSlideSize().getSize().getWidth(), 
-			(float) pres.getSlideSize().getSize().getHeight(), 
+            (float) $pres->getSlideSize().getSize().getWidth(), 
+			(float) $pres->getSlideSize().getSize().getHeight(), 
 			image);
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -50,10 +50,10 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     String svgContent = new String(Files.readAllBytes(Paths.get("image.svg")));
     ISvgImage svgImage = new SvgImage(svgContent);
-    IPPImage ppImage = pres.getImages().addImage(svgImage);
-    pres.getSlides().get_Item(0).getShapes().addPictureFrame(ShapeType.Rectangle, 0, 0, 
+    IPPImage ppImage = $pres->getImages().addImage(svgImage);
+    $pres->getSlides().get_Item(0).getShapes().addPictureFrame(ShapeType.Rectangle, 0, 0, 
 			ppImage.getWidth(), ppImage.getHeight(), ppImage);
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -111,7 +111,7 @@ options.setImageType(ImageType.EMF);
 SheetRender sr = new SheetRender(sheet, options);
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    pres.getSlides().removeAt(0);
+    $pres->getSlides().removeAt(0);
     
     String EmfSheetName = "";
     for (int j = 0; j < sr.getPageCount(); j++)
@@ -121,15 +121,15 @@ try {
         sr.toImage(j, EmfSheetName);
     
         byte[] bytes = Files.readAllBytes(Paths.get(EmfSheetName));
-        IPPImage emfImage = pres.getImages().addImage(bytes);
-        ISlide slide = pres.getSlides().addEmptySlide(pres.getLayoutSlides().getByType(SlideLayoutType.Blank));
+        IPPImage emfImage = $pres->getImages().addImage(bytes);
+        ISlide slide = $pres->getSlides().addEmptySlide(pres.getLayoutSlides().getByType(SlideLayoutType.Blank));
         IShape m = slide.getShapes().addPictureFrame(ShapeType.Rectangle, 0, 0,
 					(float)pres.getSlideSize().getSize().getWidth(), 
 					(float)pres.getSlideSize().getSize().getHeight(), 
 					emfImage);
     }
     
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();

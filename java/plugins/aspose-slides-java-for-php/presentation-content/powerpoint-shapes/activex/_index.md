@@ -28,13 +28,13 @@ This sample code, based on the steps above, shows to how to add Media Player Act
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Adding the Media Player ActiveX control
-    pres.getSlides().get_Item(0).getControls().addControl(ControlType.WindowsMediaPlayer, 100, 100, 400, 400);
+    $pres->getSlides().get_Item(0).getControls().addControl(ControlType.WindowsMediaPlayer, 100, 100, 400, 400);
 
     // Access the Media Player ActiveX control and set the video path
-    pres.getSlides().get_Item(0).getControls().get_Item(0).getProperties().set_Item("URL", "Wildlife.wmv");
+    $pres->getSlides().get_Item(0).getControls().get_Item(0).getProperties().set_Item("URL", "Wildlife.wmv");
 
     // Save the Presentation
-    pres.save("Output.pptx", SaveFormat.Pptx);
+    $pres->save("Output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -66,7 +66,7 @@ This sample code, based on the steps above, shows how to manage a simple ActiveX
 Presentation pres = new Presentation("ActiveX.pptm");
 try {
     // Accessing the first slide in presentation
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // changing TextBox text
     IControl control = slide.getControls().get_Item(0);
@@ -110,7 +110,7 @@ try {
     }
     
     // Changing Button caption
-    control = pres.getSlides().get_Item(0).getControls().get_Item(1);
+    control = $pres->getSlides().get_Item(0).getControls().get_Item(1);
     
     if (control.getName().equalsIgnoreCase("CommandButton1") && control.getProperties() != null) {
         String newCaption = "Show MessageBox";
@@ -149,16 +149,16 @@ try {
     }
     
     // moving 100 points down
-    for (IControl ctl : pres.getSlides().get_Item(0).getControls()) {
+    for (IControl ctl : $pres->getSlides().get_Item(0).getControls()) {
         IShapeFrame frame = ctl.getFrame();
         ctl.setFrame(new ShapeFrame(frame.getX(), frame.getY() + 100,
                 frame.getWidth(), frame.getHeight(), frame.getFlipH(), frame.getFlipV(), frame.getRotation()));
     }
-    pres.save("withActiveX-edited_java.pptm", SaveFormat.Pptm);
+    $pres->save("withActiveX-edited_java.pptm", SaveFormat.Pptm);
     
     // removing controls
-    pres.getSlides().get_Item(0).getControls().clear();
-    pres.save("withActiveX-cleared_java.pptm", SaveFormat.Pptm);
+    $pres->getSlides().get_Item(0).getControls().clear();
+    $pres->save("withActiveX-cleared_java.pptm", SaveFormat.Pptm);
 } finally {
     if ($pres != null) $pres->dispose();
 }

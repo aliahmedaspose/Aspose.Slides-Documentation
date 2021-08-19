@@ -24,7 +24,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Define columns with widths and rows with heights
     double[] dblCols = {50, 50, 50};
@@ -64,7 +64,7 @@ try {
     tbl.getRows().get_Item(0).get_Item(0).getTextFrame().setText("Merged Cells");
 
     // Save PPTX to Disk
-    pres.save("table.pptx", SaveFormat.Pptx);
+    $pres->save("table.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -86,7 +86,7 @@ Presentation pres = new Presentation("UpdateExistingTable.pptx");
 try {
 
     // Access the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Initialize null TableEx
     ITable tbl = null;
@@ -103,7 +103,7 @@ try {
     }
     
     //Write the PPTX to Disk
-    pres.save("table1_out.pptx", SaveFormat.Pptx);
+    $pres->save("table1_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -125,7 +125,7 @@ Aspose.Slides for Java has provided the simplest API to work with tables in an e
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide 
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Define columns with widths and rows with heights
     double[] dblCols = { 120, 120, 120, 120 };
@@ -155,7 +155,7 @@ try {
     cell.setTextVerticalType(TextVerticalType.Vertical270);
     
     // Save Presentation
-    pres.save("Vertical_Align_Text_out.pptx", SaveFormat.Pptx);
+    $pres->save("Vertical_Align_Text_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -177,7 +177,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 Presentation pres = new Presentation("simpletable.pptx");
 try {
     // the first shape on the first slide is a table
-    ITable someTable = (ITable) pres.getSlides().get_Item(0).getShapes().get_Item(0);
+    ITable someTable = (ITable) $pres->getSlides().get_Item(0).getShapes().get_Item(0);
     
     // setting table cells' font height
     PortionFormat portionFormat = new PortionFormat();
@@ -195,7 +195,7 @@ try {
     textFrameFormat.setTextVerticalType(TextVerticalType.Vertical);
     someTable.setTextFormat(textFrameFormat);
     
-    pres.save("result.pptx", SaveFormat.Pptx);
+    $pres->save("result.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -215,7 +215,7 @@ In a standard table numeration of cells is straightforward and zero-based. The f
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Define columns with widths and rows with heights
     double[] dblCols = { 70, 70, 70, 70 };
@@ -248,7 +248,7 @@ try {
     }
 
     //Write PPTX to Disk
-    pres.save("StandardTables_out.pptx", SaveFormat.Pptx);
+    $pres->save("StandardTables_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -267,7 +267,7 @@ try {
 
     System.out.println("Lock aspect ratio set: " + table.getGraphicalObjectLock().getAspectRatioLocked());
 
-    pres.save("pres-out.pptx", SaveFormat.Pptx);
+    $pres->save("pres-out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

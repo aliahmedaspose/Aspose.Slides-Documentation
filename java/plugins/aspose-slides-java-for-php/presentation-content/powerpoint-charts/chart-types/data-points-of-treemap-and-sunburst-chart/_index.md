@@ -18,7 +18,7 @@ Let’s start with adding a new Sunburst chart to the presentation:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Sunburst, 100, 100, 450, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Sunburst, 100, 100, 450, 400);
 
     // ...
 } finally {
@@ -77,7 +77,7 @@ Change color of "Steam 4" branch:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Sunburst, 100, 100, 450, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Sunburst, 100, 100, 450, 400);
 
     IChartDataPointCollection dataPoints = chart.getChartData().getSeries().get_Item(0).getDataPoints();
 
@@ -86,7 +86,7 @@ try {
     stem4branch.getFormat().getFill().setFillType(FillType.Solid);
     stem4branch.getFormat().getFill().getSolidFillColor().setColor(Color.RED);
 
-    pres.save("pres.pptx", SaveFormat.Pptx);
+    $pres->save("pres.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

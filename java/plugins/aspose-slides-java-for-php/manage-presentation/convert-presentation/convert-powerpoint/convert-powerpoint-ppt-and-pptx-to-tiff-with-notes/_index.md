@@ -18,7 +18,7 @@ try {
     opts.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomFull);
     
     //Saving the presentation to TIFF notes
-    pres.save("Tiff-Notes.tiff", SaveFormat.Tiff,opts);
+    $pres->save("Tiff-Notes.tiff", SaveFormat.Tiff,opts);
 } finally {
     if ($pres != null) $pres->dispose();
 }

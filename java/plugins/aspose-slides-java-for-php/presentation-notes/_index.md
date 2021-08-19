@@ -28,11 +28,11 @@ Notes of some specific slide could be removed as shown in example below:
 Presentation pres = new Presentation("presWithNotes.pptx");
 try {
     // Removing notes of first slide
-    INotesSlideManager mgr = pres.getSlides().get_Item(0).getNotesSlideManager();
+    INotesSlideManager mgr = $pres->getSlides().get_Item(0).getNotesSlideManager();
     mgr.removeNotesSlide();
 
     // Saving presentation to disk
-    pres.save("test.pptx", SaveFormat.Pptx);
+    $pres->save("test.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -47,13 +47,13 @@ Presentation pres = new Presentation("presWithNotes.pptx");
 try {
     // Removing notes of all slides
     INotesSlideManager mgr = null;
-    for (int i = 0; i < pres.getSlides().size(); i++) {
-        mgr = pres.getSlides().get_Item(i).getNotesSlideManager();
+    for (int i = 0; i < $pres->getSlides().size(); i++) {
+        mgr = $pres->getSlides().get_Item(i).getNotesSlideManager();
         mgr.removeNotesSlide();
     }
     
     // Saving presentation to disk
-    pres.save("test.pptx", SaveFormat.Pptx);
+    $pres->save("test.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -66,7 +66,7 @@ try {
 // Instantiate a Presentation object that represents a presentation file
 Presentation pres = new Presentation("demo.pptx");
 try {
-    IMasterNotesSlide notesMaster = pres.getMasterNotesSlideManager().getMasterNotesSlide();
+    IMasterNotesSlide notesMaster = $pres->getMasterNotesSlideManager().getMasterNotesSlide();
     
     if (notesMaster != null)
     {
@@ -77,7 +77,7 @@ try {
         IParagraphFormat paragraphFormat = notesStyle.getLevel(0);
         paragraphFormat.getBullet().setType(BulletType.Symbol);
     }
-    pres.save("NotesSlideWithNotesStyle.pptx", SaveFormat.Pptx);
+    $pres->save("NotesSlideWithNotesStyle.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

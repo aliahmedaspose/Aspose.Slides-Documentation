@@ -11,7 +11,7 @@ Now TextFrame method has been added to [ISmartArtShape](https://apireference.asp
 ```java
 Presentation pres = new Presentation("Presentation.pptx");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     ISmartArt smartArt = (ISmartArt)slide.getShapes().get_Item(0);
 
     ISmartArtNodeCollection smartArtNodes = smartArt.getAllNodes();
@@ -42,13 +42,13 @@ In order to change the layout type of [SmartArt](https://apireference.aspose.com
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add SmartArt BasicProcess
-    ISmartArt smart = pres.getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.BasicBlockList);
+    ISmartArt smart = $pres->getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.BasicBlockList);
 
     // Change LayoutType to BasicProcess
     smart.setLayout(SmartArtLayoutType.BasicProcess);
 
     // Saving Presentation
-    pres.save("ChangeSmartArtLayout_out.pptx", SaveFormat.Pptx);
+    $pres->save("ChangeSmartArtLayout_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -69,7 +69,7 @@ In the example given below, we have added a connector between two shapes.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add SmartArt BasicProcess 
-    ISmartArt smart = pres.getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.RadialCycle);
+    ISmartArt smart = $pres->getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.RadialCycle);
 
     // Add node on SmartArt 
     ISmartArtNode node = smart.getAllNodes().addNode();
@@ -82,7 +82,7 @@ try {
         // Do some actions or notifications
     }
     // Saving Presentation
-    pres.save("CheckSmartArtHiddenProperty_out.pptx", SaveFormat.Pptx);
+    $pres->save("CheckSmartArtHiddenProperty_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -101,13 +101,13 @@ Methods [ISmartArtNode.getOrganizationChartLayout()](https://apireference.aspose
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add SmartArt BasicProcess
-    ISmartArt smart = pres.getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.OrganizationChart);
+    ISmartArt smart = $pres->getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.OrganizationChart);
 
     // Get or Set the organization chart type
     smart.getNodes().get_Item(0).setOrganizationChartLayout(OrganizationChartLayoutType.LeftHanging);
 
     // Saving Presentation
-    pres.save("OrganizeChartLayoutType_out.pptx", SaveFormat.Pptx);
+    $pres->save("OrganizeChartLayoutType_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -126,8 +126,8 @@ The following code is used to create a chart.
 ```java
 Presentation pres = new Presentation("test.pptx");
 try {
-    ISmartArt smartArt = pres.getSlides().get_Item(0).getShapes().addSmartArt(0, 0, 400, 400, SmartArtLayoutType.PictureOrganizationChart);
-    pres.save("OrganizationChart.pptx", SaveFormat.Pptx);
+    ISmartArt smartArt = $pres->getSlides().get_Item(0).getShapes().addSmartArt(0, 0, 400, 400, SmartArtLayoutType.PictureOrganizationChart);
+    $pres->save("OrganizationChart.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -148,14 +148,14 @@ The following code is used to create a chart.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add SmartArt BasicProcess
-    ISmartArt smart = pres.getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.BasicProcess);
+    ISmartArt smart = $pres->getSlides().get_Item(0).getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.BasicProcess);
     
     // Get or Set the state of SmartArt Diagram
     smart.setReversed(true);
     boolean flag = smart.isReversed();
     
     // Saving Presentation
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

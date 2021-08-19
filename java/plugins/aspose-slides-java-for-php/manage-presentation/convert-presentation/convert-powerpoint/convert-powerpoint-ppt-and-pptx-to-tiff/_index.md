@@ -24,7 +24,7 @@ The following example shows how to convert a presentation into a [TIFF](https://
 Presentation pres = new Presentation("presentation.pptx");
 try {
     // Saving the presentation to TIFF document
-    pres.save("tiff-image.tiff", SaveFormat.Tiff);
+    $pres->save("tiff-image.tiff", SaveFormat.Tiff);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -62,7 +62,7 @@ try {
     INotesCommentsLayoutingOptions options = opts.getNotesCommentsLayouting();
     options.setNotesPosition(NotesPositions.BottomFull);
     // Save the presentation to TIFF with specified image size
-    pres.save("tiff-ImageSize.tiff", SaveFormat.Tiff, opts);
+    $pres->save("tiff-ImageSize.tiff", SaveFormat.Tiff, opts);
 } finally {
     if ($pres != null) $pres->dispose();
 }    
@@ -88,7 +88,7 @@ try {
      */
     
     // Save the presentation to TIFF with specified image size
-    pres.save("Tiff-PixelFormat.tiff", SaveFormat.Tiff, options);
+    $pres->save("Tiff-PixelFormat.tiff", SaveFormat.Tiff, options);
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -45,7 +45,7 @@ Sample code is given below.
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     IChart chart = slide.getShapes().addChart(ChartType.ClusteredColumn, 20, 100, 600, 400);
     chart.getPlotArea().setX(0.2f);
     chart.getPlotArea().setY(0.2f);
@@ -53,7 +53,7 @@ try {
     chart.getPlotArea().setHeight(0.7f);
     chart.getPlotArea().setLayoutTargetType(LayoutTargetType.Inner);
 
-    pres.save("SetLayoutMode_outer.pptx", SaveFormat.Pptx);
+    $pres->save("SetLayoutMode_outer.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

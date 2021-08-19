@@ -16,7 +16,7 @@ try {
     ImageIO.write(pres.getSlides().get_Item(0).getThumbnail(new Dimension(960, 720)),
             "PNG", new File("picture1_out.png"));
 
-    IFontsManager fontsManager = pres.getFontsManager();
+    IFontsManager fontsManager = $pres->getFontsManager();
 
     // get all embedded fonts
     IFontData[] embeddedFonts = fontsManager.getEmbeddedFonts();
@@ -39,7 +39,7 @@ try {
             "PNG", new File("picture2_out.png"));
 
     // save the presentation without embedded "Calibri" font
-    pres.save("WithoutManageEmbeddedFonts_out.ppt", SaveFormat.Ppt);
+    $pres->save("WithoutManageEmbeddedFonts_out.ppt", SaveFormat.Ppt);
 } catch(IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -53,8 +53,8 @@ A new property of embedding fonts has been added. To allow embedding fonts into
 // Load presentation
 Presentation pres = new Presentation("Fonts.pptx");
 try {
-    IFontData[] allFonts = pres.getFontsManager().getFonts();
-    IFontData[] embeddedFonts = pres.getFontsManager().getEmbeddedFonts();
+    IFontData[] allFonts = $pres->getFontsManager().getFonts();
+    IFontData[] embeddedFonts = $pres->getFontsManager().getEmbeddedFonts();
 
     for (IFontData font : allFonts)
     {
@@ -65,12 +65,12 @@ try {
         }
         if (!embeddedFontsContainsFont)
         {
-            pres.getFontsManager().addEmbeddedFont(font, EmbedFontCharacters.All);
+            $pres->getFontsManager().addEmbeddedFont(font, EmbedFontCharacters.All);
         }
     }
 
     // Save the presentation
-    pres.save("AddEmbeddedFont_out.pptx", SaveFormat.Pptx);
+    $pres->save("AddEmbeddedFont_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

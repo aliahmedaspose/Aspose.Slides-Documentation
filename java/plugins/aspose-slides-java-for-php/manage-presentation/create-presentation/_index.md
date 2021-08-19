@@ -20,11 +20,11 @@ In the example given below, we have added a line to the first slide of the prese
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Add an autoshape of type line
     slide.getShapes().addAutoShape(ShapeType.Line, 50, 150, 300, 0);
-    pres.save("NewPresentation_out.pptx", SaveFormat.Pptx);
+    $pres->save("NewPresentation_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

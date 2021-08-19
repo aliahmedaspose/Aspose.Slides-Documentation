@@ -54,7 +54,7 @@ All the other logic is the same as in adding watermark into a single slide - cre
 // Open presentation
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IMasterSlide master = pres.getMasters().get_Item(0);
+    IMasterSlide master = $pres->getMasters().get_Item(0);
 
     IAutoShape watermarkShape = master.getShapes().addAutoShape(ShapeType.Triangle, 0, 0, 0, 0);
 
@@ -102,7 +102,7 @@ It is possible to center watermark on a slide and for that you can do the follow
 
 
 ```java
-Point2D.Float center = new Point2D.Float((float)  pres.getSlideSize().getSize().getWidth() / 2, (float) pres.getSlideSize().getSize().getHeight() / 2);
+Point2D.Float center = new Point2D.Float((float)  $pres->getSlideSize().getSize().getWidth() / 2, (float) $pres->getSlideSize().getSize().getHeight() / 2);
 
 float width = 300;
 
@@ -125,7 +125,7 @@ IAutoShape watermarkShape = slide.getShapes().addAutoShape(ShapeType.Triangle, x
 To add image watermark into all presentation slides, you may do the following:
 
 ```java
-IPPImage image = pres.getImages().addImage(Files.readAllBytes(Paths.get("watermark.png")));
+IPPImage image = $pres->getImages().addImage(Files.readAllBytes(Paths.get("watermark.png")));
 
 
 // ...
@@ -174,9 +174,9 @@ slide.getShapes().reorder(slide.getShapes().size() - 1, watermarkShape);
 Here is an example how to set the rotation of watermark (and its parent shape):
 
 ```java
-float h = (float) pres.getSlideSize().getSize().getHeight();
+float h = (float) $pres->getSlideSize().getSize().getHeight();
 
-float w = (float) pres.getSlideSize().getSize().getWidth();
+float w = (float) $pres->getSlideSize().getSize().getWidth();
 
 watermarkShape.setX((w - watermarkShape.getWidth()) / 2);
 

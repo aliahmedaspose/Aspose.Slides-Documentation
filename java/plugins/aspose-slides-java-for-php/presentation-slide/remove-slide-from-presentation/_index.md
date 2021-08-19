@@ -31,15 +31,15 @@ To remove a slide using its reference, please follow the steps below:
 Presentation pres = new Presentation("demo.pptx");
 try {
     // Accessing a slide using its index in the slides collection
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Removing a slide using its reference
-    pres.getSlides().remove(slide);
+    $pres->getSlides().remove(slide);
     
     // Writing the presentation file
-    pres.save("modified.pptx", SaveFormat.Pptx);
+    $pres->save("modified.pptx", SaveFormat.Pptx);
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 
@@ -55,11 +55,11 @@ To remove a slide using its index position in the slides collection of the prese
 Presentation pres = new Presentation("demo.pptx");
 try {
     // Removing a slide using its slide index
-    pres.getSlides().removeAt(0);
+    $pres->getSlides().removeAt(0);
     
     // Writing the presentation file
-    pres.save("modified.pptx", SaveFormat.Pptx);
+    $pres->save("modified.pptx", SaveFormat.Pptx);
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```

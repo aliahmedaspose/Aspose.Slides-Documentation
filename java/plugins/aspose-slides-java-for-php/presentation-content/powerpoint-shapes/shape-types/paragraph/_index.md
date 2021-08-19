@@ -26,7 +26,7 @@ Using [**getRect()**](https://apireference.aspose.com/slides/java/com.aspose.sli
 ```java
 Presentation pres = new Presentation("HelloWorld.pptx");
 try {
-    IAutoShape shape = (IAutoShape) pres.getSlides().get_Item(0).getShapes().get_Item(0);
+    IAutoShape shape = (IAutoShape) $pres->getSlides().get_Item(0).getShapes().get_Item(0);
     ITextFrame textFrame = shape.getTextFrame();
     Rectangle2D.Float rect = textFrame.getParagraphs().get_Item(0).getRect();
     System.out.println("X: " + rect.x + " Y: " + rect.y + " Width: " + rect.width + " Height: " + rect.height);
@@ -57,7 +57,7 @@ try {
 
         Rectangle2D.Float rect = para.getRect();
         IAutoShape shape =
-                pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle,
+                $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle,
                         (float)rect.getX() + (float)x, (float)rect.getY() + (float)y, (float)rect.getWidth(), (float)rect.getHeight());
 
         shape.getFillFormat().setFillType(FillType.NoFill);
@@ -70,7 +70,7 @@ try {
             {
                 rect = portion.getRect();
                 shape =
-                        pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle,
+                        $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle,
                                 (float)rect.getX() + (float)x, (float)rect.getY() + (float)y, (float)rect.getWidth(), (float)rect.getHeight());
 
                 shape.getFillFormat().setFillType(FillType.NoFill);

@@ -17,7 +17,7 @@ Aspose.Slides for Java provides a simple API for setting these properties. This 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Add chart with default data
     IChart chart = slide.getShapes().addChart(ChartType.StackedColumn3D, 0, 0, 500, 500);
@@ -58,7 +58,7 @@ try {
     series.getParentSeriesGroup().setOverlap((byte)100);
     
     // Write presentation to disk
-    pres.save("Rotation3D_out.pptx", SaveFormat.Pptx);
+    $pres->save("Rotation3D_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

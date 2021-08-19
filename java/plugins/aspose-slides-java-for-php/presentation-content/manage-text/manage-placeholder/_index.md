@@ -28,7 +28,7 @@ Presentation pres = new Presentation("ReplacingText.pptx");
 try {
 
     // Access first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Iterate through shapes to find the placeholder
     for (IShape shp : sld.getShapes()) 
@@ -40,7 +40,7 @@ try {
     }
 
     // Save the PPTX to Disk
-    pres.save("output_out.pptx", SaveFormat.Pptx);
+    $pres->save("output_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -54,7 +54,7 @@ The code snippet below shows how to use this feature:
 ```java
 Presentation pres = new Presentation("Presentation.pptx");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     for (IShape shape : slide.getSlide().getShapes()) // iterate through the slide
     {
         if (shape.getPlaceholder() != null && shape instanceof AutoShape)
@@ -74,7 +74,7 @@ try {
         }
     }
 
-    pres.save("Placeholders_PromptText.pptx", SaveFormat.Pptx);
+    $pres->save("Placeholders_PromptText.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

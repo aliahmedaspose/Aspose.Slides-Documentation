@@ -40,7 +40,7 @@ try {
     PdfOptions pdfOptions = new PdfOptions();
     pdfOptions.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomFull);
 
-    pres.save(resourcesOutputPath+"PDF-Notes.pdf", SaveFormat.Pdf, pdfOptions);
+    $pres->save(resourcesOutputPath+"PDF-Notes.pdf", SaveFormat.Pdf, pdfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }

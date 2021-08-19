@@ -19,13 +19,13 @@ Aspose.Slides for Java has provided an API to create SmartArt shapes. To create 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Add Smart Art Shape
     ISmartArt smart = slide.getShapes().addSmartArt(0, 0, 400, 400, SmartArtLayoutType.BasicBlockList);
     
     // Saving presentation
-    pres.save("SimpleSmartArt.pptx", SaveFormat.Pptx);
+    $pres->save("SimpleSmartArt.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -43,7 +43,7 @@ The following code will be used to access the SmartArt shapes added in presentat
 Presentation pres = new Presentation("AccessSmartArtShape.pptx");
 try {
     // Traverse through every shape inside first slide
-    for (IShape shape : pres.getSlides().get_Item(0).getShapes())
+    for (IShape shape : $pres->getSlides().get_Item(0).getShapes())
     {
         // Check if shape is of SmartArt type
         if (shape instanceof ISmartArt)
@@ -71,7 +71,7 @@ The following sample code will help to access the [SmartArt](https://apireferenc
 Presentation pres = new Presentation("AccessSmartArtShape.pptx");
 try {
     // Traverse through every shape inside first slide
-    for (IShape shape : pres.getSlides().get_Item(0).getShapes())
+    for (IShape shape : $pres->getSlides().get_Item(0).getShapes())
     {
         // Check if shape is of SmartArt type
         if (shape instanceof ISmartArt)
@@ -107,7 +107,7 @@ In this example, we will learn to change the quick style for any SmartArt shape.
 Presentation pres = new Presentation("SimpleSmartArt.pptx");
 try {
     // Get first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Traverse through every shape inside first slide
     for (IShape shape : slide.getShapes()) 
@@ -126,9 +126,9 @@ try {
         }
     }
     // Saving presentation
-    pres.save("ChangeSmartArtStyle.pptx", SaveFormat.Pptx);
+    $pres->save("ChangeSmartArtStyle.pptx", SaveFormat.Pptx);
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 
@@ -152,7 +152,7 @@ In this example, we will learn to change the color style for any SmartArt shape.
 Presentation pres = new Presentation("SimpleSmartArt.pptx");
 try {
     // Get first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Traverse through every shape inside first slide
     for (IShape shape : slide.getShapes()) 
@@ -171,9 +171,9 @@ try {
         }
     }
     // Saving presentation
-    pres.save("ChangeSmartArtColorStyle.pptx", SaveFormat.Pptx);
+    $pres->save("ChangeSmartArtColorStyle.pptx", SaveFormat.Pptx);
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 

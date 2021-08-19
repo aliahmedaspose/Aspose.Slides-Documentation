@@ -19,7 +19,7 @@ Upon execution, the Slide method scans the entire text from the slide passed as
 //Instatiate Presentation class that represents a PPTX file
 Presentation pres = new Presentation("demo.pptx");
 try {
-    for (ISlide slide : pres.getSlides()) 
+    for (ISlide slide : $pres->getSlides()) 
     {
         //Get an Array of ITextFrame objects from all slides in the PPTX
         ITextFrame[] textFramesPPTX = SlideUtil.getAllTextBoxes(slide);
@@ -44,7 +44,7 @@ try {
         }
     }
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 
@@ -85,7 +85,7 @@ try {
         }
     }
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 

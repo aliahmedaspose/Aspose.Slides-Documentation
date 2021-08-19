@@ -89,7 +89,7 @@ Method [IGeometryPath.getPathData](https://apireference.aspose.com/slides/java/c
 ``` java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) pres.getSlides().get_Item(0).
+    GeometryShape shape = (GeometryShape) $pres->getSlides().get_Item(0).
             getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 200, 100);
     IGeometryPath geometryPath = shape.getGeometryPaths()[0];
 
@@ -113,7 +113,7 @@ try {
 ``` java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) pres.getSlides().get_Item(0).
+    GeometryShape shape = (GeometryShape) $pres->getSlides().get_Item(0).
             getShapes().addAutoShape(ShapeType.Heart, 100, 100, 300, 300);
 
     IGeometryPath path = shape.getGeometryPaths()[0];
@@ -164,7 +164,7 @@ starPath.closeFigure();
 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) pres.getSlides().get_Item(0).
+    GeometryShape shape = (GeometryShape) $pres->getSlides().get_Item(0).
             getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, R * 2, R * 2);
 
     shape.setGeometryPath(starPath);
@@ -186,7 +186,7 @@ try {
 ``` java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) pres.getSlides().get_Item(0).
+    GeometryShape shape = (GeometryShape) $pres->getSlides().get_Item(0).
             getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 200, 100);
 
     GeometryPath geometryPath0 = new GeometryPath();
@@ -252,7 +252,7 @@ try {
     shape.setGeometryPaths(new IGeometryPath[] { originalPath, textPath });
 
     // Save the presentation
-    pres.save(resultPath, SaveFormat.Pptx);
+    $pres->save(resultPath, SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

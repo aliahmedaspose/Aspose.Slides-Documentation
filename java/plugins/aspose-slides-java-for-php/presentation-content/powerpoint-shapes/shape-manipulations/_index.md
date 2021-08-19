@@ -15,7 +15,7 @@ After setting the alternative text of any desired shape, you can then open that 
 Presentation pres = new Presentation("FindingShapeInSlide.pptx");
 try {
 
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     // Alternative text of the shape to be found
     IShape shape = findShape(slide, "Shape1");
     if (shape != null)
@@ -58,16 +58,16 @@ The example below adds a group shape to a slide.
 // Instantiate Presentation class
 Presentation pres = new Presentation("Source Frame.pptx");
 try {
-    IShapeCollection sourceShapes = pres.getSlides().get_Item(0).getShapes();
-    ILayoutSlide blankLayout = pres.getMasters().get_Item(0).getLayoutSlides().getByType(SlideLayoutType.Blank);
-    ISlide destSlide = pres.getSlides().addEmptySlide(blankLayout);
+    IShapeCollection sourceShapes = $pres->getSlides().get_Item(0).getShapes();
+    ILayoutSlide blankLayout = $pres->getMasters().get_Item(0).getLayoutSlides().getByType(SlideLayoutType.Blank);
+    ISlide destSlide = $pres->getSlides().addEmptySlide(blankLayout);
     IShapeCollection destShapes = destSlide.getShapes();
     destShapes.addClone(sourceShapes.get_Item(1), 50, 150 + sourceShapes.get_Item(0).getHeight());
     destShapes.addClone(sourceShapes.get_Item(2));
     destShapes.insertClone(0, sourceShapes.get_Item(0), 50, 150);
 
     // Write the PPTX file to disk
-    pres.save("CloneShape_out.pptx", SaveFormat.Pptx);
+    $pres->save("CloneShape_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -87,7 +87,7 @@ Aspose.Slides for Java allows developers to remove any shape. To remove the shap
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Add autoshape of rectangle type
     sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 40, 150, 50);
@@ -105,7 +105,7 @@ try {
     }
 
     // Save presentation to disk
-    pres.save("RemoveShape_out.pptx", SaveFormat.Pptx);
+    $pres->save("RemoveShape_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -125,7 +125,7 @@ Aspose.Slides for Java allows developers to hide any shape. To hide the shape fr
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Add autoshape of rectangle type
     sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 40, 150, 50);
@@ -143,7 +143,7 @@ try {
     }
 
     // Save presentation to disk
-    pres.save("Hiding_Shapes_out.pptx", SaveFormat.Pptx);
+    $pres->save("Hiding_Shapes_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -163,7 +163,7 @@ Aspose.Slides for Java allows developers to reorder the shapes. Reordering the s
 ```java
 Presentation pres = new Presentation("ChangeShapeOrder.pptx");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     IAutoShape shp3 = slide.getShapes().addAutoShape(ShapeType.Rectangle, 200, 365, 400, 150);
     shp3.getFillFormat().setFillType(FillType.NoFill);
     shp3.addTextFrame(" ");
@@ -176,7 +176,7 @@ try {
 
     slide.getShapes().reorder(2, shp3);
 
-    pres.save("Reshape_out.pptx", SaveFormat.Pptx);
+    $pres->save("Reshape_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -189,7 +189,7 @@ Aspose.Slides for Java allows developers to get a unique shape identifier in sli
 Presentation pres = new Presentation("Presentation.pptx");
 try {
     // Getting unique shape identifier in slide scope
-    long officeInteropShapeId = pres.getSlides().get_Item(0).getShapes().get_Item(0).getOfficeInteropShapeId();
+    long officeInteropShapeId = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getOfficeInteropShapeId();
 
 } finally {
     if ($pres != null) $pres->dispose();
@@ -217,7 +217,7 @@ To set the AlternateText of a shape, please follow the steps below:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Add autoshape of rectangle type
     IShape shp1 = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 40, 150, 50);
@@ -235,7 +235,7 @@ try {
     }
 
     // Save presentation to disk
-    pres.save("Set_AlternativeText_out.pptx", SaveFormat.Pptx);
+    $pres->save("Set_AlternativeText_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -249,7 +249,7 @@ Below sample code is given.
 ```java
 Presentation pres = new Presentation("pres.pptx");
 try {
-    for (ILayoutSlide layoutSlide : pres.getLayoutSlides())
+    for (ILayoutSlide layoutSlide : $pres->getLayoutSlides())
     {
         for (IShape shape : layoutSlide.getShapes())
         {
@@ -270,7 +270,7 @@ Presentation pres = new Presentation("TestExportShapeToSvg.pptx");
 try {
     $stream = new Java("java.io.FileOutputStream", "SingleShape.svg");
     try {
-        pres.getSlides().get_Item(0).getShapes().get_Item(0).writeAsSvg(stream);
+        $pres->getSlides().get_Item(0).getShapes().get_Item(0).writeAsSvg(stream);
     } finally {
         if (stream != null) stream.close();
     }
@@ -290,11 +290,11 @@ Source code below aligns shapes with indices 1,2 and 4 along the top border of t
 ```java
 Presentation pres = new Presentation("example.pptx");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     IShape shape1 = slide.getShapes().get_Item(1);
     IShape shape2 = slide.getShapes().get_Item(2);
     IShape shape3 = slide.getShapes().get_Item(4);
-    SlideUtil.alignShapes(ShapesAlignmentType.AlignTop, true, pres.getSlides().get_Item(0), new int[]
+    SlideUtil.alignShapes(ShapesAlignmentType.AlignTop, true, $pres->getSlides().get_Item(0), new int[]
     {
         slide.getShapes().indexOf(shape1),
         slide.getShapes().indexOf(shape2),
@@ -313,7 +313,7 @@ The example below shows how to align the entire collection of shapes relative to
 ```java
 Presentation pres = new Presentation("example.pptx");
 try {
-    SlideUtil.alignShapes(ShapesAlignmentType.AlignBottom, false, pres.getSlides().get_Item(0));
+    SlideUtil.alignShapes(ShapesAlignmentType.AlignBottom, false, $pres->getSlides().get_Item(0));
 } finally {
     if ($pres != null) $pres->dispose();
 }

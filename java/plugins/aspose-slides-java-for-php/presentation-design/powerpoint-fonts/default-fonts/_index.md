@@ -28,14 +28,14 @@ loadOptions.setDefaultAsianFont("Wingdings");
 Presentation pres = new Presentation("DefaultFonts.pptx", loadOptions);
 try {
     // Generate slide thumbnail
-    BufferedImage image = pres.getSlides().get_Item(0).getThumbnail(1, 1);
+    BufferedImage image = $pres->getSlides().get_Item(0).getThumbnail(1, 1);
     ImageIO.write(image, "png", new File("output.png"));
 
     // Generate PDF
-    pres.save("output_out.pdf", SaveFormat.Pdf);
+    $pres->save("output_out.pdf", SaveFormat.Pdf);
 
     // Generate XPS
-    pres.save("output_out.xps", SaveFormat.Xps);
+    $pres->save("output_out.xps", SaveFormat.Xps);
 } catch (IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();

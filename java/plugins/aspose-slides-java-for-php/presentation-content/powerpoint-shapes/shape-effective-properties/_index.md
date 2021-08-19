@@ -38,7 +38,7 @@ This sample code sample shows you how to get effective properties for the camera
 ```java
 Presentation pres = new Presentation("Presentation1.pptx");
 try {
-    IThreeDFormatEffectiveData threeDEffectiveData = pres.getSlides().get_Item(0).getShapes().get_Item(0).getThreeDFormat().getEffective();
+    IThreeDFormatEffectiveData threeDEffectiveData = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getThreeDFormat().getEffective();
 
     System.out.println("= Effective camera properties =");
     System.out.println("Type: " + threeDEffectiveData.getCamera().getCameraType());
@@ -57,7 +57,7 @@ This sample code sample shows you how to get effective properties of Light Rig:
 ```java
 Presentation pres = new Presentation("Presentation1.pptx");
 try {
-    IThreeDFormatEffectiveData threeDEffectiveData = pres.getSlides().get_Item(0).getShapes().get_Item(0).getThreeDFormat().getEffective();
+    IThreeDFormatEffectiveData threeDEffectiveData = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getThreeDFormat().getEffective();
 
     System.out.println("= Effective light rig properties =");
     System.out.println("Type: " + threeDEffectiveData.getLightRig().getLightType());
@@ -75,7 +75,7 @@ This sample code sample shows you how to get effective properties for the Bevel 
 ```java
 Presentation pres = new Presentation("Presentation1.pptx");
 try {
-    IThreeDFormatEffectiveData threeDEffectiveData = pres.getSlides().get_Item(0).getShapes().get_Item(0).getThreeDFormat().getEffective();
+    IThreeDFormatEffectiveData threeDEffectiveData = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getThreeDFormat().getEffective();
 
     System.out.println("= Effective shape's top face relief properties =");
     System.out.println("Type: " + threeDEffectiveData.getBevelTop().getBevelType());
@@ -142,7 +142,7 @@ Using Aspose.Slides for Java, you can get effective properties of Font Height. H
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IAutoShape newShape = pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 400, 75, false);
+    IAutoShape newShape = $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 400, 75, false);
     newShape.addTextFrame("");
     newShape.getTextFrame().getParagraphs().get_Item(0).getPortions().clear();
 
@@ -156,7 +156,7 @@ try {
     System.out.println("Portion #0: " + portion0.getPortionFormat().getEffective().getFontHeight());
     System.out.println("Portion #1: " + portion1.getPortionFormat().getEffective().getFontHeight());
 
-    pres.getDefaultTextStyle().getLevel(0).getDefaultPortionFormat().setFontHeight(24);
+    $pres->getDefaultTextStyle().getLevel(0).getDefaultPortionFormat().setFontHeight(24);
     System.out.println("Effective font height after setting entire presentation default font height:");
     System.out.println("Portion #0: " + portion0.getPortionFormat().getEffective().getFontHeight());
     System.out.println("Portion #1: " + portion1.getPortionFormat().getEffective().getFontHeight());
@@ -176,7 +176,7 @@ try {
     System.out.println("Portion #0: " + portion0.getPortionFormat().getEffective().getFontHeight());
     System.out.println("Portion #1: " + portion1.getPortionFormat().getEffective().getFontHeight());
 
-    pres.save("SetLocalFontHeightValues.pptx",SaveFormat.Pptx);
+    $pres->save("SetLocalFontHeightValues.pptx",SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -75,7 +75,7 @@ try {
     }
 
     // Write PPTX to Disk
-    pres.save("table_out.pptx", SaveFormat.Pptx);
+    $pres->save("table_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -89,7 +89,7 @@ If we merge 2 pairs of cells (1, 1) x (2, 1) and (1, 2) x (2, 2) then table will
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Define columns with widths and rows with heights
     double[] dblCols = { 70, 70, 70, 70 };
@@ -127,7 +127,7 @@ try {
     // Merging cells (1, 2) x (2, 2)
     tbl.mergeCells(tbl.get_Item(1, 2), tbl.get_Item(2, 2), false);
 
-    pres.save("MergeCells_out.pptx", SaveFormat.Pptx);
+    $pres->save("MergeCells_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -140,7 +140,7 @@ Let's continue merging cells. Now we merge (1, 1) and (1, 2). As a result we hav
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Define columns with widths and rows with heights
     double[] dblCols = { 70, 70, 70, 70 };
@@ -181,7 +181,7 @@ try {
     // Merging cells (1, 1) x (1, 2)
     tbl.mergeCells(tbl.get_Item(1, 1), tbl.get_Item(1, 2), true);
 
-    pres.save("MergeCells_out.pptx", SaveFormat.Pptx);
+    $pres->save("MergeCells_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -195,7 +195,7 @@ We could see in previous example when table cells are merged then numeration of 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Define columns with widths and rows with heights
     double[] dblCols = { 70, 70, 70, 70 };
@@ -236,7 +236,7 @@ try {
     // Spliting cell (1, 1)
     tbl.get_Item(1, 1).splitByWidth(tbl.get_Item(2, 1).getWidth() / 2);
 
-    pres.save("SplitCells_out.pptx", SaveFormat.Pptx);
+    $pres->save("SplitCells_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -261,7 +261,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide islide = pres.getSlides().get_Item(0);
+    ISlide islide = $pres->getSlides().get_Item(0);
 
     // Define columns with widths and rows with heights
     double[] dblCols = {150, 150, 150, 150};
@@ -274,7 +274,7 @@ try {
     BufferedImage image = ImageIO.read(new File("image.jpg"));
 
     // Create an IPPImage object using the bitmap object
-    IPPImage imgx1 = pres.getImages().addImage(image);
+    IPPImage imgx1 = $pres->getImages().addImage(image);
 
     // Add image to first table cell
     ICellFormat cellFormat = tbl.get_Item(0, 0).getCellFormat();
@@ -283,7 +283,7 @@ try {
     cellFormat.getFillFormat().getPictureFillFormat().getPicture().setImage(imgx1);
 
     // Save PPTX to Disk
-    pres.save("Image_In_TableCell_out.pptx", SaveFormat.Pptx);
+    $pres->save("Image_In_TableCell_out.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();

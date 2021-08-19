@@ -36,10 +36,10 @@ try {
     fontSubstRuleCollection.add(fontSubstRule);
     
     // Add font rule collection to rule list
-    pres.getFontsManager().setFontSubstRuleList(fontSubstRuleCollection);
+    $pres->getFontsManager().setFontSubstRuleList(fontSubstRuleCollection);
     
     // Arial font will be used instead of SomeRareFont when inaccessible
-    BufferedImage image = pres.getSlides().get_Item(0).getThumbnail(1f, 1f);
+    BufferedImage image = $pres->getSlides().get_Item(0).getThumbnail(1f, 1f);
     
     // Save the image to disk in JPEG format
     ImageIO.write(image, "PNG", new File("Thumbnail_out.jpg"));

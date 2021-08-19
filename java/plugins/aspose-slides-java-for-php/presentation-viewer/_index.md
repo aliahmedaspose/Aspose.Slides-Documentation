@@ -33,7 +33,7 @@ To generate an SVG image from any desired slide with Aspose.Slides for Java, ple
 Presentation pres = new Presentation("CreateSlidesSVGImage.pptx");
 try {
     // Access the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Create a memory stream object
     $svgStream = new Java("java.io.FileOutputStream", "Aspose_out.svg");
@@ -44,7 +44,7 @@ try {
     svgStream.close();
 } catch (IOException e) {
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 
@@ -59,13 +59,13 @@ try {
         SVGOptions svgOptions = new SVGOptions();
         svgOptions.setShapeFormattingController(new CustomSvgShapeFormattingController());
 
-        pres.getSlides().get_Item(0).writeAsSvg(stream, svgOptions);
+        $pres->getSlides().get_Item(0).writeAsSvg(stream, svgOptions);
     } finally {
         if (stream != null) stream.close();
     }
 } catch (IOException e) {
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 ```java
@@ -103,7 +103,7 @@ Aspose.Slides for Java help you generate thumbnail images of the slides. To gene
 Presentation pres = new Presentation("ThumbnailFromSlide.pptx");
 try {
     // Access the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Create a full scale image
     BufferedImage bmp = sld.getThumbnail(1f, 1f);
@@ -112,7 +112,7 @@ try {
     ImageIO.write(bmp, "PNG", new java.io.File("Thumbnail_out.png"));
 } catch (IOException e) {
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 
@@ -128,15 +128,15 @@ try {
 Presentation pres = new Presentation("ThumbnailWithUserDefinedDimensions.pptx");
 try {
     // Access the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // User defined dimension
     int desiredX = 1200;
     int desiredY = 800;
 
     // Getting scaled value  of X and Y
-    float ScaleX = (float)(1.0 / pres.getSlideSize().getSize().getWidth()) * desiredX;
-    float ScaleY = (float)(1.0 / pres.getSlideSize().getSize().getHeight()) * desiredY;
+    float ScaleX = (float)(1.0 / $pres->getSlideSize().getSize().getWidth()) * desiredX;
+    float ScaleY = (float)(1.0 / $pres->getSlideSize().getSize().getHeight()) * desiredY;
     
     // Create a full scale image
     BufferedImage bmp = sld.getThumbnail(ScaleX, ScaleY);
@@ -145,7 +145,7 @@ try {
     ImageIO.write(bmp, "PNG", new java.io.File("Thumbnail_out.png"));
 } catch (IOException e) {
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 
@@ -164,15 +164,15 @@ The code snippet below produces a thumbnail of the first slide of a presentation
 Presentation pres = new Presentation("ThumbnailWithUserDefinedDimensions.pptx");
 try {
     // Access the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // User defined dimension
     int desiredX = 1200;
     int desiredY = 800;
 
     // Getting scaled value  of X and Y
-    float ScaleX = (float)(1.0 / pres.getSlideSize().getSize().getWidth()) * desiredX;
-    float ScaleY = (float)(1.0 / pres.getSlideSize().getSize().getHeight()) * desiredY;
+    float ScaleX = (float)(1.0 / $pres->getSlideSize().getSize().getWidth()) * desiredX;
+    float ScaleY = (float)(1.0 / $pres->getSlideSize().getSize().getHeight()) * desiredY;
 
     RenderingOptions opts = new RenderingOptions();
     opts.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomTruncated);
@@ -184,6 +184,6 @@ try {
     ImageIO.write(bmp, "PNG", new java.io.File("Thumbnail_out.png"));
 } catch (IOException e) {
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```

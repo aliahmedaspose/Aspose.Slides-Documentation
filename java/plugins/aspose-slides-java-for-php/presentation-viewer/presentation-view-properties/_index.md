@@ -42,17 +42,17 @@ An example is given below shows how can you access [**ViewProperties.getNormalVi
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    pres.getViewProperties().getNormalViewProperties().setHorizontalBarState(SplitterBarStateType.Restored);
-    pres.getViewProperties().getNormalViewProperties().setVerticalBarState(SplitterBarStateType.Maximized);
+    $pres->getViewProperties().getNormalViewProperties().setHorizontalBarState(SplitterBarStateType.Restored);
+    $pres->getViewProperties().getNormalViewProperties().setVerticalBarState(SplitterBarStateType.Maximized);
     
     // Restore View Properties of Presentation
-    pres.getViewProperties().getNormalViewProperties().getRestoredTop().setAutoAdjust(true);
-    pres.getViewProperties().getNormalViewProperties().getRestoredTop().setDimensionSize(80);
-    pres.getViewProperties().getNormalViewProperties().setShowOutlineIcons(true);
+    $pres->getViewProperties().getNormalViewProperties().getRestoredTop().setAutoAdjust(true);
+    $pres->getViewProperties().getNormalViewProperties().getRestoredTop().setDimensionSize(80);
+    $pres->getViewProperties().getNormalViewProperties().setShowOutlineIcons(true);
 
-    pres.save("presentation_normal_view_state.pptx", SaveFormat.Pptx);
+    $pres->save("presentation_normal_view_state.pptx", SaveFormat.Pptx);
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 

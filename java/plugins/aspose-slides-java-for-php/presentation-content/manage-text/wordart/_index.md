@@ -34,7 +34,7 @@ First, we create a simple text using this Java code:
 ``` java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     IAutoShape autoShape = slide.getShapes().addAutoShape(ShapeType.Rectangle, 200, 200, 400, 200);
     ITextFrame textFrame = autoShape.getTextFrame();
 
@@ -294,7 +294,7 @@ This sample code in Java—an implementation of the steps above—shows you how 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Add an AutoShape of Rectangle type
     IAutoShape ashp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 150, 75, 150, 50);
@@ -315,7 +315,7 @@ try {
     shadow.getShadowColor().setPresetColor(PresetColor.Black);
 
     //Write the presentation to disk
-    pres.save("pres_out.pptx", SaveFormat.Pptx);
+    $pres->save("pres_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -339,7 +339,7 @@ This sample code (based on the steps above) shows you how to add a connector bet
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Add an AutoShape of Rectangle type
     IAutoShape ashp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 150, 75, 400, 300);
@@ -368,7 +368,7 @@ try {
     ef.getInnerShadowEffect().getShadowColor().setSchemeColor(SchemeColor.Accent1);
 
     // Save Presentation
-    pres.save("WordArt_out.pptx", SaveFormat.Pptx);
+    $pres->save("WordArt_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

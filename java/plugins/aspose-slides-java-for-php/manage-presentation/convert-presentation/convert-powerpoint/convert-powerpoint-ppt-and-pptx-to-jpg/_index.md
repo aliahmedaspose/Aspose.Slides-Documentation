@@ -36,7 +36,7 @@ Here are the steps to convert PPT/PPTX to JPG:
 ```java
 Presentation pres = new Presentation("PowerPoint-Presentation.pptx");
 try {
-    for (ISlide sld : pres.getSlides()) {
+    for (ISlide sld : $pres->getSlides()) {
         // Create a full scale image
         BufferedImage bmp = sld.getThumbnail(1f, 1f);
 
@@ -59,10 +59,10 @@ try {
     int desiredX = 1200;
     int desiredY = 800;
     // Get scaled values of X and Y
-    float ScaleX = (float) (1.0 / pres.getSlideSize().getSize().getWidth()) * desiredX;
-    float ScaleY = (float) (1.0 / pres.getSlideSize().getSize().getHeight()) * desiredY;
+    float ScaleX = (float) (1.0 / $pres->getSlideSize().getSize().getWidth()) * desiredX;
+    float ScaleY = (float) (1.0 / $pres->getSlideSize().getSize().getHeight()) * desiredY;
 
-    for (ISlide sld : pres.getSlides())
+    for (ISlide sld : $pres->getSlides())
     {
         // Create a full scale image
         BufferedImage bmp = sld.getThumbnail(ScaleX, ScaleY);
@@ -85,12 +85,12 @@ try {
     IRenderingOptions opts = new RenderingOptions();
     opts.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomTruncated);
 
-    for (ISlide sld : pres.getSlides()) {
+    for (ISlide sld : $pres->getSlides()) {
         BufferedImage image = new BufferedImage(740, 960, BufferedImage.TYPE_INT_ARGB);
         java.awt.Graphics graphics = image.createGraphics();
         try {
 
-            pres.getSlides().get_Item(0).renderToGraphics(opts, (Graphics2D) graphics);
+            $pres->getSlides().get_Item(0).renderToGraphics(opts, (Graphics2D) graphics);
         } finally {
             if (graphics != null) graphics.dispose();
         }

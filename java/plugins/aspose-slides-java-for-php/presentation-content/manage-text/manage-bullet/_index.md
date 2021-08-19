@@ -31,7 +31,7 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Adding and accessing Autoshape
     IAutoShape aShp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 200, 200, 400, 200);
@@ -69,9 +69,9 @@ try {
     txtFrm.getParagraphs().add(para);
     
     // saving the presentation as a PPTX file
-    pres.save("Bullet.pptx", SaveFormat.Pptx);
+    $pres->save("Bullet.pptx", SaveFormat.Pptx);
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 
@@ -100,11 +100,11 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing the first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Instantiate the image for bullets
     BufferedImage img = ImageIO.read(new File("asp1.jpg"));
-    IPPImage imgx = pres.getImages().addImage(img);
+    IPPImage imgx = $pres->getImages().addImage(img);
 
     // Adding and accessing Autoshape
     IAutoShape aShp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 200, 200, 400, 200);
@@ -129,7 +129,7 @@ try {
     txtFrm.getParagraphs().add(para);
 
     // Writing the presentation as a PPTX file
-    pres.save("Bullet.pptx", SaveFormat.Pptx);
+    $pres->save("Bullet.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -158,7 +158,7 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Adding and accessing Autoshape
     IAutoShape aShp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 200, 200, 400, 200);
@@ -220,7 +220,7 @@ try {
     txtFrm.getParagraphs().add(para4);
     
     // saving the presentation as a PPTX file
-    pres.save("MultilevelBullet.pptx", SaveFormat.Pptx);
+    $pres->save("MultilevelBullet.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -247,7 +247,7 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Adding and accessing Autoshape
     IAutoShape aShp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 200, 200, 400, 200);
@@ -281,7 +281,7 @@ try {
     paragraph5.getParagraphFormat().getBullet().setType(BulletType.Numbered);
     txtFrm.getParagraphs().add(paragraph5);
 
-    pres.save(resourcesOutputPath + "SetCustomBulletsNumber-slides.pptx.pptx", SaveFormat.Pptx);
+    $pres->save(resourcesOutputPath + "SetCustomBulletsNumber-slides.pptx.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -51,7 +51,7 @@ These properties as exposed by [IDocumentProperties](https://apireference.aspose
 Presentation pres = new Presentation("Presentation.pptx");
 try {
     // Create a reference to IDocumentProperties object associated with Presentation
-    IDocumentProperties dp = pres.getDocumentProperties();
+    IDocumentProperties dp = $pres->getDocumentProperties();
     
     // Display the built-in properties
     System.out.println("Category : " + dp.getCategory());
@@ -80,7 +80,7 @@ Modifying the built-in properties of presentation files is as easy as that of ac
 Presentation pres = new Presentation("Presentation.pptx");
 try {
     // Create a reference to IDocumentProperties object associated with Presentation
-    IDocumentProperties dp = pres.getDocumentProperties();
+    IDocumentProperties dp = $pres->getDocumentProperties();
     
     // Set the built-in properties
     dp.setAuthor("Aspose.Slides for Java");
@@ -90,7 +90,7 @@ try {
     dp.setManager("Aspose Manager");
     
     // Save your presentation to a file
-    pres.save("DocProps.pptx", SaveFormat.Pptx);
+    $pres->save("DocProps.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -109,7 +109,7 @@ Aspose.Slides for Java also allows developers to add the custom the values for p
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Getting Document Properties
-    IDocumentProperties dProps = pres.getDocumentProperties();
+    IDocumentProperties dProps = $pres->getDocumentProperties();
     
     // Adding Custom properties
     dProps.set_Item("New Custom", 12);
@@ -123,7 +123,7 @@ try {
     dProps.removeCustomProperty(getPropertyName);
     
     // Saving presentation
-    pres.save("CustomDemo.pptx", SaveFormat.Pptx);
+    $pres->save("CustomDemo.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -140,7 +140,7 @@ Aspose.Slides for Java also allows developers to access the values of custom pro
 Presentation pres = new Presentation("Presentation.pptx");
 try {
     // Create a reference to DocumentProperties object associated with Presentation
-    IDocumentProperties dp = pres.getDocumentProperties();
+    IDocumentProperties dp = $pres->getDocumentProperties();
     
     // Access and modify custom properties
     for (int i = 0; i < dp.getCountOfCustomProperties(); i++) {
@@ -153,7 +153,7 @@ try {
     }
     
     // Save your presentation to a file
-    pres.save("CustomDemoModified.pptx", SaveFormat.Pptx);
+    $pres->save("CustomDemoModified.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

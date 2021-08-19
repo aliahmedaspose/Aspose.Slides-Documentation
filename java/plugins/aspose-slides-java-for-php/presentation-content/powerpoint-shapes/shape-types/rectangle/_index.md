@@ -26,13 +26,13 @@ In the example given below, we have added a simple rectangle to the first slide 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Add AutoShape of ellipse type
     IShape shp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 150, 150, 50);
 
     // Write the PPTX file to disk
-    pres.save("RecShp1.pptx", SaveFormat.Pptx);
+    $pres->save("RecShp1.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -57,7 +57,7 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Add AutoShape of ellipse type
     IShape shp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 150, 150, 50);
@@ -72,7 +72,7 @@ try {
     shp.getLineFormat().setWidth(5);
 
     // Write the PPTX file to disk
-    pres.save("RecShp2.pptx", SaveFormat.Pptx);
+    $pres->save("RecShp2.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

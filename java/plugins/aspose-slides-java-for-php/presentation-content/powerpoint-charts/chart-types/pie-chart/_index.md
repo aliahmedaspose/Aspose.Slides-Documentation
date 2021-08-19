@@ -19,7 +19,7 @@ In the example given below, we have set different properties of Pie of Pie chart
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add chart on slide
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.PieOfPie, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.PieOfPie, 50, 50, 500, 400);
     
     // Set different properties
     chart.getChartData().getSeries().get_Item(0).getLabels().getDefaultDataLabelFormat().setShowValue(true);
@@ -28,7 +28,7 @@ try {
     chart.getChartData().getSeries().get_Item(0).getParentSeriesGroup().setPieSplitPosition(53);
     
     // Write presentation to disk
-    pres.save("SecondPlotOptionsforCharts_out.pptx", SaveFormat.Pptx);
+    $pres->save("SecondPlotOptionsforCharts_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -55,7 +55,7 @@ Write the modified presentation to a PPTX file.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add chart with default data
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 100, 100, 400, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 100, 100, 400, 400);
 
     // Setting chart Title
     chart.getChartTitle().addTextFrameForOverriding("Sample Title");
@@ -90,7 +90,7 @@ try {
     series.getDataPoints().addDataPointForPieSeries(fact.getCell(defaultWorksheetIndex, 3, 1, 30));
 
     series.getParentSeriesGroup().setColorVaried(true);
-    pres.save("Pie.pptx", SaveFormat.Pptx);
+    $pres->save("Pie.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

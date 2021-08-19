@@ -22,7 +22,7 @@ In the example given below, we have added an Embedded Audio Frame into the slide
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Load the wav sound file to stram
     FileInputStream fstr = new FileInputStream(new File("audio.wav"));
@@ -35,7 +35,7 @@ try {
     af.setVolume(AudioVolumeMode.Loud);
 
     //Write the PPTX file to disk
-    pres.save("AudioFrameEmbed_out.pptx", SaveFormat.Pptx);
+    $pres->save("AudioFrameEmbed_out.pptx", SaveFormat.Pptx);
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -55,7 +55,7 @@ Aspose.Slides for Java allows developers to extract the sound that is used in sl
 Presentation pres = new Presentation("AudioSlide.pptx");
 try {
     // Access the desired slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Get the slideshow transition effects for slide
     ISlideShowTransition transition = slide.getSlideShowTransition();

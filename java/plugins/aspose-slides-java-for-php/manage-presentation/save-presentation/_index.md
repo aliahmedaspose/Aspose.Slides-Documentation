@@ -26,7 +26,7 @@ try {
     // ...do some work here...
     
     // Save your presentation to a file
-    pres.save("demoPass.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+    $pres->save("demoPass.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -46,7 +46,7 @@ try {
 
     $os = new Java("java.io.FileOutputStream", "Save_As_Stream_out.pptx");
 
-    pres.save(os, Java("com.aspose.slides.SaveFormat")->Pptx);
+    $pres->save(os, Java("com.aspose.slides.SaveFormat")->Pptx);
 
     os.close();
 } catch (IOException e) {
@@ -63,10 +63,10 @@ Aspose.Slides for Java provides a facility to set the view type for the generate
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Setting view type
-    pres.getViewProperties().setLastView((byte) ViewType.SlideMasterView);
+    $pres->getViewProperties().setLastView((byte) ViewType.SlideMasterView);
     
     // Saving presentation
-    pres.save("newDemo.pptx", SaveFormat.Pptx);
+    $pres->save("newDemo.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -82,7 +82,7 @@ The following sample code creates a presentation and saves it in the Strict Open
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Add an autoshape of type line
     slide.getShapes().addAutoShape(ShapeType.Line, 50, 150, 300, 0);
@@ -92,7 +92,7 @@ try {
     options.setConformance(Conformance.Iso29500_2008_Strict);
     
     // Save your presentation to a file
-    pres.save("demoPass.pptx", SaveFormat.Pptx, options);
+    $pres->save("demoPass.pptx", SaveFormat.Pptx, options);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -110,9 +110,9 @@ Presentation pres = new Presentation("ConvertToPDF.pptx");
 try {
     ISaveOptions saveOptions = new PdfOptions();
     saveOptions.setProgressCallback((IProgressCallback) new ExportProgressHandler());
-    pres.save("ConvertToPDF.pdf", SaveFormat.Pdf, saveOptions);
+    $pres->save("ConvertToPDF.pdf", SaveFormat.Pdf, saveOptions);
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 ```java

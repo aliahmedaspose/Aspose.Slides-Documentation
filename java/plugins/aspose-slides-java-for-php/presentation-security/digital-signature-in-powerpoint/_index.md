@@ -38,12 +38,12 @@ try {
     signature.setComments("Aspose.Slides digital signing test.");
 
     // Add digital signature to presentation
-    pres.getDigitalSignatures().add(signature);
+    $pres->getDigitalSignatures().add(signature);
 
     // Save presentation
-    pres.save("SomePresentationSigned.pptx", SaveFormat.Pptx);
+    $pres->save("SomePresentationSigned.pptx", SaveFormat.Pptx);
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 
@@ -60,7 +60,7 @@ try {
         System.out.println("Signatures used to sign the presentation: ");
 
         // Check if all digital signatures are valid
-        for (IDigitalSignature signature : pres.getDigitalSignatures())
+        for (IDigitalSignature signature : $pres->getDigitalSignatures())
         {
             System.out.println(signature.getComments() + ", "
                     + signature.getSignTime().toString() + " -- " + (signature.isValid() ? "VALID" : "INVALID"));

@@ -13,7 +13,7 @@ url: /java/portion/
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Reshaping the context of presentation
-    IAutoShape shape = (IAutoShape) pres.getSlides().get_Item(0).getShapes().get_Item(0);
+    IAutoShape shape = (IAutoShape) $pres->getSlides().get_Item(0).getShapes().get_Item(0);
     
     ITextFrame textFrame = (ITextFrame) shape.getTextFrame();
     

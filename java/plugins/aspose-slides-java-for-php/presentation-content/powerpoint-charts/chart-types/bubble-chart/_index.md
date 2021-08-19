@@ -10,11 +10,11 @@ Aspose.Slides for Java provides support for Bubble chart size scaling. In Aspose
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Bubble, 100, 100, 400, 300);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Bubble, 100, 100, 400, 300);
 
     chart.getChartData().getSeriesGroups().get_Item(0).setBubbleSizeScale(150);
 
-    pres.save("Result.pptx", SaveFormat.Pptx);
+    $pres->save("Result.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -26,11 +26,11 @@ Methods [**setBubbleSizeRepresentation**](https://apireference.aspose.com/slide
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Bubble, 50, 50, 600, 400, true);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Bubble, 50, 50, 600, 400, true);
 
     chart.getChartData().getSeriesGroups().get_Item(0).setBubbleSizeRepresentation(BubbleSizeRepresentationType.Width);
 
-    pres.save("Presentation_BubbleSizeRepresentation.pptx", SaveFormat.Pptx);
+    $pres->save("Presentation_BubbleSizeRepresentation.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

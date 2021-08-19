@@ -45,7 +45,7 @@ Aspose.Slides for Java provides a simple API for managing different chart entiti
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing the first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Adding the sample chart
     IChart chart = slide.getShapes().addChart(ChartType.LineWithMarkers, 50, 50, 500, 400);
@@ -192,7 +192,7 @@ try {
     chart.getPlotArea().getFormat().getFill().getSolidFillColor().setColor(new Color(PresetColor.LightCyan));
 
     // Save Presentation
-    pres.save("FormattedChart.pptx", SaveFormat.Pptx);
+    $pres->save("FormattedChart.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -212,12 +212,12 @@ Below sample example is given.
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 400);
     
     chart.getTextFormat().getPortionFormat().setFontHeight(20);
     chart.getChartData().getSeries().get_Item(0).getLabels().getDefaultDataLabelFormat().setShowValue(true);
     
-    pres.save("FontPropertiesForChart.pptx", SaveFormat.Pptx);
+    $pres->save("FontPropertiesForChart.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -241,7 +241,7 @@ Aspose.Slides for Java provides a simple API for managing chart data format:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access the first presentation slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Adding a default clustered column chart
     IChart chart = slide.getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 500, 400);
@@ -261,7 +261,7 @@ try {
     }
 
     // Saving presentation
-    pres.save("PresetNumberFormat.pptx", SaveFormat.Pptx);
+    $pres->save("PresetNumberFormat.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -323,14 +323,14 @@ Below sample example is given. 
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     IChart chart = slide.getShapes().addChart(ChartType.ClusteredColumn, 20, 100, 600, 400);
     chart.getLineFormat().getFillFormat().setFillType(FillType.Solid);
     chart.getLineFormat().setStyle(LineStyle.Single);
     chart.setRoundedCorners(true);
 
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

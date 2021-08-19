@@ -21,7 +21,7 @@ The example below adds a group shape to a slide.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Accessing the shape collection of slides
     IShapeCollection slideShapes = sld.getShapes();
@@ -39,7 +39,7 @@ try {
     groupShape.setFrame(new ShapeFrame(100, 300, 500, 40, NullableBool.False, NullableBool.False, 0));
 
     // Write the PPTX file to disk
-    pres.save("GroupShape.pptx", SaveFormat.Pptx);
+    $pres->save("GroupShape.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -61,7 +61,7 @@ The example below accesses alternative text of group shape.
 Presentation pres = new Presentation("AltText.pptx");
 try {
     // Get the first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
     
     for (int i = 0; i < sld.getShapes().size(); i++)
     {

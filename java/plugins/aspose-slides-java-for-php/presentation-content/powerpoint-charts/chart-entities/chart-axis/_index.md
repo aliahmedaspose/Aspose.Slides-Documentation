@@ -39,13 +39,13 @@ A new property has been added which Swap the data over the axis. Data being cha
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 400, 300);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 400, 300);
 
     //Switching rows and columns
     chart.getChartData().switchRowColumn();
 
     // Saving presentation
-    pres.save("SwitchChartRowColumns_out.pptx", SaveFormat.Pptx);
+    $pres->save("SwitchChartRowColumns_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -57,14 +57,14 @@ try {
 ```java
 Presentation pres = new Presentation("ExistingChart.pptx");
 try {
-    IChart chart = (IChart) pres.getSlides().get_Item(0).getShapes().get_Item(0);
+    IChart chart = (IChart) $pres->getSlides().get_Item(0).getShapes().get_Item(0);
     
     chart.getAxes().getHorizontalAxis().setCategoryAxisType(CategoryAxisType.Date);
     chart.getAxes().getHorizontalAxis().setAutomaticMajorUnit(false);
     chart.getAxes().getHorizontalAxis().setMajorUnit(1);
     chart.getAxes().getHorizontalAxis().setMajorUnitScale(TimeUnitType.Months);
     
-    pres.save("ChangeChartCategoryAxis_out.pptx", SaveFormat.Pptx);
+    $pres->save("ChangeChartCategoryAxis_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -76,7 +76,7 @@ Aspose.Slides for Java provides a simple API for setting date format for categor
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Area, 50, 50, 450, 300);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Area, 50, 50, 450, 300);
 
     IChartDataWorkbook wb = chart.getChartData().getChartDataWorkbook();
     wb.clear(0);
@@ -97,7 +97,7 @@ try {
     chart.getAxes().getHorizontalAxis().setNumberFormatLinkedToSource(false);
     chart.getAxes().getHorizontalAxis().setNumberFormat("yyyy");
 	
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -120,12 +120,12 @@ Aspose.Slides for Java provides a simple API for setting rotation angle for char
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
     
     chart.getAxes().getVerticalAxis().setTitle(true);
     chart.getAxes().getVerticalAxis().getTitle().getTextFormat().getTextBlockFormat().setRotationAngle(90);
 
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -138,11 +138,11 @@ Aspose.Slides for Java provides a simple API for setting Position axis in catego
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
     
     chart.getAxes().getHorizontalAxis().setAxisBetweenCategories(true);
 
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -154,11 +154,11 @@ Aspose.Slides for Java provides support for showing Display unit label on chart 
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
 
     chart.getAxes().getVerticalAxis().setDisplayUnit(DisplayUnitType.Millions);
     
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

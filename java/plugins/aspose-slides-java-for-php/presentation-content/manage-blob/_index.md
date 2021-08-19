@@ -16,18 +16,18 @@ try {
     try {
         // let's add the video to the presentation - we choose KeepLocked behavior, because we not
         // have an intent to access the "veryLargeVideo.avi" file.
-        IVideo video = pres.getVideos().addVideo(fileStream, LoadingStreamBehavior.KeepLocked);
-        pres.getSlides().get_Item(0).getShapes().addVideoFrame(0, 0, 480, 270, video);
+        IVideo video = $pres->getVideos().addVideo(fileStream, LoadingStreamBehavior.KeepLocked);
+        $pres->getSlides().get_Item(0).getShapes().addVideoFrame(0, 0, 480, 270, video);
 
         // save the presentation. Despite that the output presentation will be very large, the memory
         // consumption will be low the whole lifetime of the pres object
-        pres.save("presentationWithLargeVideo.pptx", SaveFormat.Pptx);
+        $pres->save("presentationWithLargeVideo.pptx", SaveFormat.Pptx);
     } finally {
         fileStream.close();
     }
 } catch (IOException e) {
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 
@@ -47,8 +47,8 @@ try {
     byte[] buffer = new byte[8 * 1024];
 
     // iterate through the videos
-    for (int index = 0; index < pres.getVideos().size(); index++) {
-        IVideo video = pres.getVideos().get_Item(index);
+    for (int index = 0; index < $pres->getVideos().size(); index++) {
+        IVideo video = $pres->getVideos().get_Item(index);
 
         // open the presentation video stream. Please note that we intentionally avoid accessing properties
         // like video.BinaryData - this property returns a byte array containing full video, and that means
@@ -73,7 +73,7 @@ try {
     // do the same for audios if needed.
 } catch (IOException e) {
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 
@@ -90,18 +90,18 @@ try {
     try {
         // let's add the image to the presentation - we choose KeepLocked behavior, because we not
         // have an intent to access the "largeImage.png" file.
-        IPPImage img = pres.getImages().addImage(fip, LoadingStreamBehavior.KeepLocked);
-        pres.getSlides().get_Item(0).getShapes().addPictureFrame(ShapeType.Rectangle, 0, 0, 300, 200, img);
+        IPPImage img = $pres->getImages().addImage(fip, LoadingStreamBehavior.KeepLocked);
+        $pres->getSlides().get_Item(0).getShapes().addPictureFrame(ShapeType.Rectangle, 0, 0, 300, 200, img);
 
         // save the presentation. Despite that the output presentation will be
         // large, the memory consumption will be low the whole lifetime of the pres object
-        pres.save("presentationWithLargeImage.pptx", SaveFormat.Pptx);
+        $pres->save("presentationWithLargeImage.pptx", SaveFormat.Pptx);
     } finally {
         fip.close();
     }
 } catch (IOException e) {
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 

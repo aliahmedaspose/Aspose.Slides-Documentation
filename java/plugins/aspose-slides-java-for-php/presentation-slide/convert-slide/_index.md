@@ -26,7 +26,7 @@ The code example below shows how to convert the first slide of presentation to a
 Presentation pres = new Presentation("Presentation.pptx");
 try {
     // Convert the first slide of the presentation to a Bitmap object
-    BufferedImage bmp = pres.getSlides().get_Item(0).getThumbnail();
+    BufferedImage bmp = $pres->getSlides().get_Item(0).getThumbnail();
     {
         // Save the image in PNG format
         ImageIO.write(bmp, "PNG", new File("Slide_0.png"));
@@ -46,7 +46,7 @@ The following example demonstrates this capability using one of the
 Presentation pres = new Presentation("Presentation.pptx");
 try {
     // Convert the first slide of the presentation to a Bitmap with the specified size
-    BufferedImage bmp = pres.getSlides().get_Item(0).getThumbnail(new Dimension(1820, 1040));
+    BufferedImage bmp = $pres->getSlides().get_Item(0).getThumbnail(new Dimension(1820, 1040));
     {
         // Save the image in JPEG format
         ImageIO.write(bmp, "PNG", new File("Slide_0.jpg"));
@@ -91,7 +91,7 @@ try {
     options.getNotesCommentsLayouting().setCommentsAreaColor(Color.LIGHT_GRAY);
 
     // Convert the first slide of the presentation to a Bitmap object
-    BufferedImage bmp = pres.getSlides().get_Item(0).getThumbnail(options, 2f, 2f);
+    BufferedImage bmp = $pres->getSlides().get_Item(0).getThumbnail(options, 2f, 2f);
 
     // Save the image in GIF format
     ImageIO.write(bmp, "GIF", new File("Slide_Notes_Comments_0.gif"));
@@ -113,7 +113,7 @@ and 2160x2880 size:
 Presentation pres = new Presentation("PresentationNotesComments.pptx");
 try {
     // Get a slide by its index
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Create TiffOptions object
     TiffOptions options = new TiffOptions();
@@ -130,7 +130,7 @@ try {
     options.setDpiY(300);
 
     // Convert slide to a Tiff image
-    pres.save("Slide_Notes_Comments_0.tiff", SaveFormat.Tiff, options);
+    $pres->save("Slide_Notes_Comments_0.tiff", SaveFormat.Tiff, options);
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -146,14 +146,14 @@ the same as PowerPoint allows. The following example demonstrates this possibili
 Presentation pres = new Presentation("Presentation.pptx");
 try {
     // Render presentation to images array slide by slide
-    for (int i = 0 ; i < pres.getSlides().size(); i++)
+    for (int i = 0 ; i < $pres->getSlides().size(); i++)
     {
         // Control hidden slides (do not render hidden slides)
         if (pres.getSlides().get_Item(i).getHidden())
             continue;
 
         // Convert slide to a Bitmap object
-        BufferedImage bmp = pres.getSlides().get_Item(i).getThumbnail(2f, 2f);
+        BufferedImage bmp = $pres->getSlides().get_Item(i).getThumbnail(2f, 2f);
 		
         // Create file name for an image
         String outputFilePath = outputDir + "Slide_" + i + ".jpg";

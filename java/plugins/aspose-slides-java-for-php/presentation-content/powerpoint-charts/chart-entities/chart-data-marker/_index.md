@@ -21,7 +21,7 @@ In the example given below, we have set the chart marker options on data points 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Creating the default chart
     IChart chart = slide.getShapes().addChart(ChartType.LineWithMarkers, 0, 0, 400, 400);
@@ -39,10 +39,10 @@ try {
     chart.getChartData().getSeries().add(fact.getCell(defaultWorksheetIndex, 1, 1, "Series 1"), chart.getType());
 
     // Load the picture 1
-    IPPImage imgx1 = pres.getImages().addImage(new FileInputStream(new File("Desert.jpg")));
+    IPPImage imgx1 = $pres->getImages().addImage(new FileInputStream(new File("Desert.jpg")));
     
     // Load the picture 2
-    IPPImage imgx2 = pres.getImages().addImage(new FileInputStream(new File("Tulips.jpg")));
+    IPPImage imgx2 = $pres->getImages().addImage(new FileInputStream(new File("Tulips.jpg")));
     
     // Take first chart series
     IChartSeries series = chart.getChartData().getSeries().get_Item(0);
@@ -68,7 +68,7 @@ try {
     series.getMarker().setSize(15);
     
     // Save presentation with chart
-    pres.save("ScatterChart.pptx", SaveFormat.Pptx);
+    $pres->save("ScatterChart.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
     if ($pres != null) $pres->dispose();

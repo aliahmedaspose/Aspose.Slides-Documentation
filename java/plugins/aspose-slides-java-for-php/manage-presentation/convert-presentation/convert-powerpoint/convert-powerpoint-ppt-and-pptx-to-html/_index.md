@@ -56,7 +56,7 @@ try {
     htmlOpt.setHtmlFormatter(HtmlFormatter.createDocumentFormatter("", false));
 
     // Saving the presentation to HTML
-    pres.save("ConvertWholePresentationToHTML_out.html", SaveFormat.Html, htmlOpt);
+    $pres->save("ConvertWholePresentationToHTML_out.html", SaveFormat.Html, htmlOpt);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -75,7 +75,7 @@ try {
     htmlOptions.setHtmlFormatter(HtmlFormatter.createCustomFormatter(controller));
 
     // Saving the presentation to HTML
-    pres.save("ConvertPresentationToResponsiveHTML_out.html", SaveFormat.Html, htmlOptions);
+    $pres->save("ConvertPresentationToResponsiveHTML_out.html", SaveFormat.Html, htmlOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -92,7 +92,7 @@ try {
     options.setNotesPosition(NotesPositions.BottomFull);
 
     // Saving notes pages
-    pres.save("Output.html", SaveFormat.Html, opt);
+    $pres->save("Output.html", SaveFormat.Html, opt);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -112,7 +112,7 @@ try {
     HtmlOptions htmlOptionsEmbed = new HtmlOptions();
     htmlOptionsEmbed.setHtmlFormatter(HtmlFormatter.createCustomFormatter(embedFontsController));
 
-    pres.save("input-PFDinDisplayPro-Regular-installed.html", SaveFormat.Html, htmlOptionsEmbed);
+    $pres->save("input-PFDinDisplayPro-Regular-installed.html", SaveFormat.Html, htmlOptionsEmbed);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -129,8 +129,8 @@ try {
     htmlOptions.setHtmlFormatter(HtmlFormatter.createCustomFormatter(new CustomFormattingController()));
 
     // Saving File
-    for (int i = 0; i < pres.getSlides().size(); i++)
-        pres.save("Individual Slide" + (i + 1) + "_out.html", new int[]{i + 1},SaveFormat.Html, htmlOptions);
+    for (int i = 0; i < $pres->getSlides().size(); i++)
+        $pres->save("Individual Slide" + (i + 1) + "_out.html", new int[]{i + 1},SaveFormat.Html, htmlOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -177,7 +177,7 @@ try {
     HtmlOptions options = new HtmlOptions();
     options.setHtmlFormatter(HtmlFormatter.createCustomFormatter(htmlController));
 
-    pres.save("pres.html", SaveFormat.Html, options);
+    $pres->save("pres.html", SaveFormat.Html, options);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -232,7 +232,7 @@ try
     HtmlOptions htmlOptionsEmbed = new HtmlOptions();
     htmlOptionsEmbed.setHtmlFormatter(HtmlFormatter.createCustomFormatter((IHtmlFormattingController) linkcont));
 
-    pres.save("pres.html", SaveFormat.Html, htmlOptionsEmbed);
+    $pres->save("pres.html", SaveFormat.Html, htmlOptionsEmbed);
 }
 finally {
     if ($pres != null) $pres->dispose();
@@ -286,7 +286,7 @@ Presentation pres = new Presentation("SomePresentation.pptx");
 try {
     HtmlOptions saveOptions = new HtmlOptions();
     saveOptions.setSvgResponsiveLayout(true);
-    pres.save("SomePresentation-out.html", SaveFormat.Html, saveOptions);
+    $pres->save("SomePresentation-out.html", SaveFormat.Html, saveOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -320,7 +320,7 @@ try {
     htmlOptions.setSlideImageFormat(SlideImageFormat.svg(svgOptions));
 
     // Saving the file
-    pres.save(fileName, SaveFormat.Html, htmlOptions);
+    $pres->save(fileName, SaveFormat.Html, htmlOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }

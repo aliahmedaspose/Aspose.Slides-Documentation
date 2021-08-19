@@ -104,9 +104,9 @@ With Aspose.Slides its possible to access Slide Master this way:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // access to the Presentation's master slide
-    IMasterSlide masterSlide = pres.getMasters().get_Item(0);
+    IMasterSlide masterSlide = $pres->getMasters().get_Item(0);
 } finally {
-    pres.dispose();
+    $pres->dispose();
 }
 ```
 
@@ -123,10 +123,10 @@ The same can be achieved with Aspose.Slides for Java:
 
 ```java
 // add images to the presentation
-IPPImage logo = pres.getImages().addImage(Files.readAllBytes(Paths.get("logo.png")));
-IPPImage image1 = pres.getImages().addImage(Files.readAllBytes(Paths.get("slides.png")));
-IPPImage image2 = pres.getImages().addImage(Files.readAllBytes(Paths.get("cells.png")));
-IPPImage image3 = pres.getImages().addImage(Files.readAllBytes(Paths.get("words.png")));
+IPPImage logo = $pres->getImages().addImage(Files.readAllBytes(Paths.get("logo.png")));
+IPPImage image1 = $pres->getImages().addImage(Files.readAllBytes(Paths.get("slides.png")));
+IPPImage image2 = $pres->getImages().addImage(Files.readAllBytes(Paths.get("cells.png")));
+IPPImage image3 = $pres->getImages().addImage(Files.readAllBytes(Paths.get("words.png")));
 
 // add these added images to the master slide
 masterSlide.getShapes().addPictureFrame(ShapeType.Rectangle, 10, 10, 25, 25, logo);
@@ -199,7 +199,7 @@ To clone Slide Master to another presentation, [**addClone**](https://apirefere
 
 ```java
 // add new master slide form another presentation
-IMasterSlide pres1MasterSlide = pres.getMasters().addClone(pres1MasterSlide);
+IMasterSlide pres1MasterSlide = $pres->getMasters().addClone(pres1MasterSlide);
 ```
 
 ## **Add Multiple Slide Masters to Presentation**
@@ -213,7 +213,7 @@ With Aspose.Slides you can add new Slide Master by calling Presentation.Masters.
 
 ```java
 // add new master slide
-IMasterSlide secondMasterSlide = pres.getMasters().addClone(masterSlide);
+IMasterSlide secondMasterSlide = $pres->getMasters().addClone(masterSlide);
 ```
 
 ## **Compare Slide Masters**

@@ -32,7 +32,7 @@ Sample code used to create a normal chart:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
     
     // Add chart with default data
     IChart chart = sld.getShapes().addChart(ChartType.ClusteredColumn, 0, 0, 500, 500);
@@ -106,7 +106,7 @@ try {
     lbl.getDataLabelFormat().setSeparator("/");
     
     // Save presentation with chart
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -120,7 +120,7 @@ Sample code used to create a scatter chart with different series of markers:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
 
     // Creating the default chart
     IChart chart = slide.getShapes().addChart(ChartType.ScatterWithSmoothLines, 0, 0, 400, 400);
@@ -173,7 +173,7 @@ try {
     series.getMarker().setSize(10);
     series.getMarker().setSymbol(MarkerStyleType.Circle);
     
-    pres.save("AsposeChart_out.pptx", SaveFormat.Pptx);
+    $pres->save("AsposeChart_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -200,7 +200,7 @@ Sample code used to create a pie chart:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide slides = pres.getSlides().get_Item(0);
+    ISlide slides = $pres->getSlides().get_Item(0);
     
     // Add chart with default data
     IChart chart = slides.getShapes().addChart(ChartType.Pie, 100, 100, 400, 400);
@@ -297,7 +297,7 @@ try {
     chart.getChartData().getSeriesGroups().get_Item(0).setFirstSliceAngle(180);
     
     // Save presentation with chart
-    pres.save("PieChart_out.pptx", SaveFormat.Pptx);
+    $pres->save("PieChart_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -318,7 +318,7 @@ Sample code used to create a chart:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Treemap, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Treemap, 50, 50, 500, 400);
     chart.getChartData().getCategories().clear();
     chart.getChartData().getSeries().clear();
 
@@ -362,7 +362,7 @@ try {
 
     series.setParentLabelLayout(ParentLabelLayoutType.Overlapping);
 
-    pres.save("Treemap.pptx", SaveFormat.Pptx);
+    $pres->save("Treemap.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -384,7 +384,7 @@ Sample code used to create a chart:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.OpenHighLowClose, 50, 50, 600, 400, false);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.OpenHighLowClose, 50, 50, 600, 400, false);
 
     chart.getChartData().getSeries().clear();
     chart.getChartData().getCategories().clear();
@@ -429,7 +429,7 @@ try {
         ser.getFormat().getLine().getFillFormat().setFillType(FillType.NoFill);
     }
 
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -450,7 +450,7 @@ The following code is used to create a chart.
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.BoxAndWhisker, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.BoxAndWhisker, 50, 50, 500, 400);
     chart.getChartData().getCategories().clear();
     chart.getChartData().getSeries().clear();
 
@@ -479,7 +479,7 @@ try {
     series.getDataPoints().addDataPointForBoxAndWhiskerSeries(wb.getCell(0, "B5", 23));
     series.getDataPoints().addDataPointForBoxAndWhiskerSeries(wb.getCell(0, "B6", 16));
 
-    pres.save("BoxAndWhisker.pptx", SaveFormat.Pptx);
+    $pres->save("BoxAndWhisker.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -496,7 +496,7 @@ The following code is used to create a chart.
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Funnel, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Funnel, 50, 50, 500, 400);
     chart.getChartData().getCategories().clear();
     chart.getChartData().getSeries().clear();
 
@@ -520,7 +520,7 @@ try {
     series.getDataPoints().addDataPointForFunnelSeries(wb.getCell(0, "B5", 400));
     series.getDataPoints().addDataPointForFunnelSeries(wb.getCell(0, "B6", 500));
 
-    pres.save("Funnel.pptx", SaveFormat.Pptx);
+    $pres->save("Funnel.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -537,7 +537,7 @@ The following code is used to create a chart.
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Sunburst, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Sunburst, 50, 50, 500, 400);
     chart.getChartData().getCategories().clear();
     chart.getChartData().getSeries().clear();
 
@@ -579,7 +579,7 @@ try {
     series.getDataPoints().addDataPointForSunburstSeries(wb.getCell(0, "D7", 4));
     series.getDataPoints().addDataPointForSunburstSeries(wb.getCell(0, "D8", 3));
     
-    pres.save("Sunburst.pptx", SaveFormat.Pptx);
+    $pres->save("Sunburst.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -599,7 +599,7 @@ The following code is used to create a chart.
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Histogram, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Histogram, 50, 50, 500, 400);
     chart.getChartData().getCategories().clear();
     chart.getChartData().getSeries().clear();
 
@@ -616,7 +616,7 @@ try {
 
     chart.getAxes().getHorizontalAxis().setAggregationType(AxisAggregationType.Automatic;)
 
-    pres.save("Histogram.pptx", SaveFormat.Pptx);
+    $pres->save("Histogram.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -637,7 +637,7 @@ The following code is used to create a chart.
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart ch = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 600, 450);
+    IChart ch = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 600, 450);
     ch.getChartData().getSeries().clear();
     ch.getChartData().getCategories().clear();
     
@@ -675,7 +675,7 @@ try {
     series.getDataPoints().addDataPointForBarSeries(fact.getCell(defaultWorksheetIndex, "D9", 80));
     
     // Save presentation with chart
-    pres.save("AsposeChart_out.pptx", SaveFormat.Pptx);
+    $pres->save("AsposeChart_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -698,7 +698,7 @@ Code sample used to update a chart:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slideMarker
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
 
     // Get chart with default data
     IChart chart = (IChart)sld.getShapes().get_Item(0);
@@ -745,7 +745,7 @@ try {
     chart.setType(ChartType.ClusteredCylinder);
 
     // Save presentation with chart
-    pres.save("AsposeChartModified_out.pptx", SaveFormat.Pptx);
+    $pres->save("AsposeChartModified_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -766,12 +766,12 @@ Code sample used to set data range for a chart:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     IChart chart = (IChart)slide.getShapes().get_Item(0);
     
     chart.getChartData().setRange("Sheet1!A1:B4");
     
-    pres.save("SetDataRange_out.pptx", SaveFormat.Pptx);
+    $pres->save("SetDataRange_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -785,7 +785,7 @@ Code sample used to set a chart series marker automatically:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     IChart chart = slide.getShapes().addChart(ChartType.LineWithMarkers, 10, 10, 400, 400);
 
     chart.getChartData().getSeries().clear();
@@ -817,7 +817,7 @@ try {
     chart.setLegend(true);
     chart.getLegend().setOverlay(false);
 
-    pres.save("DefaultMarkersInChart.pptx", SaveFormat.Pptx);
+    $pres->save("DefaultMarkersInChart.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

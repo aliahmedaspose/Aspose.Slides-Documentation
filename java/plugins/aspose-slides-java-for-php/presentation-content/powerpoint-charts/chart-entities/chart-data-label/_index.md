@@ -10,12 +10,12 @@ Aspose.Slides for Java provides a simple API for setting precision of data in ch
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Line, 50, 50, 450, 300);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Line, 50, 50, 450, 300);
     
     chart.setDataTable(true);
     chart.getChartData().getSeries().get_Item(0).setNumberFormatOfValues("#,##0.00");
 
-    pres.save("output.pptx",SaveFormat.Pptx);
+    $pres->save("output.pptx",SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -38,7 +38,7 @@ In the example given below, we have set the percentage as label.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     IChart chart = slide.getShapes().addChart(ChartType.StackedColumn, 20, 20, 400, 400);
     IChartSeries series;
@@ -76,7 +76,7 @@ try {
     }
     
     // Save presentation with chart
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -100,7 +100,7 @@ In order to set the percentage sign with chart data labels. Please follow the st
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
-    ISlide slide = pres.getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides().get_Item(0);
     
     // Add PercentsStackedColumn chart on a slide
     IChart chart = slide.getShapes().addChart(ChartType.PercentsStackedColumn, 20, 20, 500, 400);
@@ -153,7 +153,7 @@ try {
     series2.getLabels().getDefaultDataLabelFormat().getTextFormat().getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.WHITE);
     
     // Write presentation to disk
-    pres.save("SetDataLabelsPercentageSign_out.pptx", SaveFormat.Pptx);
+    $pres->save("SetDataLabelsPercentageSign_out.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -175,7 +175,7 @@ In the example given below, we have set the label distance from category axis.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
-    ISlide sld = pres.getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides().get_Item(0);
     
     // Adding a chart on slide
     IChart ch = sld.getShapes().addChart(ChartType.ClusteredColumn, 20, 20, 500, 300);
@@ -184,7 +184,7 @@ try {
     ch.getAxes().getHorizontalAxis().setLabelOffset(500);
     
     // Write the presentation to disk
-    pres.save("output.pptx", SaveFormat.Pptx);
+    $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

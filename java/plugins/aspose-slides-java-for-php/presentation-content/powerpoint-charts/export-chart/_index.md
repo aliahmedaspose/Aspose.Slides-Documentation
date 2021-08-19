@@ -11,7 +11,7 @@ Aspose.Slides for .NET provides support for extracting image of specific chart.Â
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = pres.getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
+    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
 
     BufferedImage img = chart.getThumbnail();
     

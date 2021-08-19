@@ -23,18 +23,18 @@ Notes of some specific slide could be removed as shown in example below:
 Presentation pres = new Presentation("headerTest.pptx");
 try {
     // Setting Footer
-    pres.getHeaderFooterManager().setAllFootersText("My Footer text");
-    pres.getHeaderFooterManager().setAllFootersVisibility(true);
+    $pres->getHeaderFooterManager().setAllFootersText("My Footer text");
+    $pres->getHeaderFooterManager().setAllFootersVisibility(true);
 
     // Access and Update Header
-    IMasterNotesSlide masterNotesSlide = pres.getMasterNotesSlideManager().getMasterNotesSlide();
+    IMasterNotesSlide masterNotesSlide = $pres->getMasterNotesSlideManager().getMasterNotesSlide();
     if (null != masterNotesSlide)
     {
         updateHeaderFooterText(masterNotesSlide);
     }
 
     // Save presentation
-    pres.save("HeaderFooterJava.pptx", SaveFormat.Pptx);
+    $pres->save("HeaderFooterJava.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -75,7 +75,7 @@ Code Snippet provided in below Example.
 Presentation pres = new Presentation("presentation.pptx");
 try {
     // Change Header and Footer settings for notes master and all notes slides
-    IMasterNotesSlide masterNotesSlide = pres.getMasterNotesSlideManager().getMasterNotesSlide();
+    IMasterNotesSlide masterNotesSlide = $pres->getMasterNotesSlideManager().getMasterNotesSlide();
     if (masterNotesSlide != null)
     {
         IMasterNotesSlideHeaderFooterManager headerFooterManager = masterNotesSlide.getHeaderFooterManager();
@@ -91,7 +91,7 @@ try {
     }
 
     // Change Header and Footer settings for first notes slide only
-    INotesSlide notesSlide = pres.getSlides().get_Item(0).getNotesSlideManager().getNotesSlide();
+    INotesSlide notesSlide = $pres->getSlides().get_Item(0).getNotesSlideManager().getNotesSlide();
     if (notesSlide != null)
     {
         INotesSlideHeaderFooterManager headerFooterManager = notesSlide.getHeaderFooterManager();
@@ -111,7 +111,7 @@ try {
         headerFooterManager.setFooterText("New footer text"); // set text to notes slide Footer placeholder
         headerFooterManager.setDateTimeText("New date and time text"); // set text to notes slide Date-time placeholder
     }
-    pres.save("testresult.pptx",SaveFormat.Pptx);
+    $pres->save("testresult.pptx",SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

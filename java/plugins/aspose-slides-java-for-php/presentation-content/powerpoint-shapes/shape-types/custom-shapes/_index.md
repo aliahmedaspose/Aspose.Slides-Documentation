@@ -15,10 +15,10 @@ Customization of the shape geometry assumes editing points of an existing shape.
 
 To provide the mentioned functionality [GeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryPath) class and [IGeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath) interface have been added. [GeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryPath) instance represents a geometry path of the [IGeometryShape](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryShape) object. 
 
-To retrieve [GeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryPath) from the [IGeometryShape](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryShape) instance [IGeometryShape.getGeometryPaths](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryShape#getGeometryPaths--) method has been added. Shapes may be built from a few smaller shapes (e.g. an "equal" sign) so this method returns an array of [GeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryPath) objects. 
+To retrieve [GeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryPath) from the [IGeometryShape](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryShape) instance [IGeometryShape->getGeometryPaths](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryShape#getGeometryPaths--) method has been added. Shapes may be built from a few smaller shapes (e.g. an "equal" sign) so this method returns an array of [GeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryPath) objects. 
 
 To set [GeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryPath) to the shape two methods have been added: 
-[IGeometryShape.setGeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryShape#setGeometryPath-com.aspose.slides.IGeometryPath-) for solid shapes and [IGeometryShape.setGeometryPaths](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryShape#setGeometryPaths-com.aspose.slides.IGeometryPath:A-) for composite shapes.
+[IGeometryShape->setGeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryShape#setGeometryPath-com.aspose.slides.IGeometryPath-) for solid shapes and [IGeometryShape->setGeometryPaths](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryShape#setGeometryPaths-com.aspose.slides.IGeometryPath:A-) for composite shapes.
 
 [IGeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath) provides methods for adding segments of various types:
 
@@ -69,9 +69,9 @@ public void moveTo(float x, float y);
 ``` java
 public void removeAt(int index);
 ```
-Methods [IGeometryPath.getStroke](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath#getStroke--), [IGeometryPath.getStroke](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath#setStroke-boolean-), [IGeometryPath.getFillMode](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath#getFillMode--) and [IGeometryPath.setFillMode](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath#setFillMode-byte-) set an appearance of the geometry path.
+Methods [IGeometryPath->getStroke](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath#getStroke--), [IGeometryPath->getStroke](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath#setStroke-boolean-), [IGeometryPath->getFillMode](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath#getFillMode--) and [IGeometryPath->setFillMode](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath#setFillMode-byte-) set an appearance of the geometry path.
 
-Method [IGeometryPath.getPathData](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath#getPathData--) returns the geometry path of [GeometryShape](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryShape) as an array of path segments.
+Method [IGeometryPath->getPathData](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath#getPathData--) returns the geometry path of [GeometryShape](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryShape) as an array of path segments.
 
 
 *To provide more options of shape geometry customization [ShapeUtil](https://apireference.aspose.com/slides/java/com.aspose.slides/ShapeUtil) class has been added. Methods of this class allow to convert [GeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryPath) to [GraphicsPath](https://docs.microsoft.com/en-us/dotnet/api/system.drawing.drawing2d?view=dotnet-plat-ext-5.0) back and forth.*
@@ -91,11 +91,11 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0).
             getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 200, 100);
-    IGeometryPath geometryPath = shape.getGeometryPaths()[0];
+    IGeometryPath geometryPath = shape->getGeometryPaths()[0];
 
     geometryPath.lineTo(100, 50, 1);
     geometryPath.lineTo(100, 50, 4);
-    shape.setGeometryPath(geometryPath);
+    shape->setGeometryPath(geometryPath);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -116,9 +116,9 @@ try {
     GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0).
             getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Heart, 100, 100, 300, 300);
 
-    IGeometryPath path = shape.getGeometryPaths()[0];
+    IGeometryPath path = shape->getGeometryPaths()[0];
     path.removeAt(2);
-    shape.setGeometryPath(path);
+    shape->setGeometryPath(path);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -153,11 +153,11 @@ for (int angle = -90; angle < 270; angle += step)
 }
 
 GeometryPath starPath = new GeometryPath();
-starPath.moveTo(points.get(0));
+starPath.moveTo(points->get(0));
 
 for (int i = 1; i < points.size(); i++)
 {
-    starPath.lineTo(points.get(i));
+    starPath.lineTo(points->get(i));
 }
 
 starPath.closeFigure();
@@ -167,7 +167,7 @@ try {
     GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0).
             getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, R * 2, R * 2);
 
-    shape.setGeometryPath(starPath);
+    shape->setGeometryPath(starPath);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -191,19 +191,19 @@ try {
 
     GeometryPath geometryPath0 = new GeometryPath();
     geometryPath0.moveTo(0, 0);
-    geometryPath0.lineTo(shape.getWidth(), 0);
-    geometryPath0.lineTo(shape.getWidth(), shape.getHeight()/3);
-    geometryPath0.lineTo(0, shape.getHeight() / 3);
+    geometryPath0.lineTo(shape->getWidth(), 0);
+    geometryPath0.lineTo(shape->getWidth(), shape->getHeight()/3);
+    geometryPath0.lineTo(0, shape->getHeight() / 3);
     geometryPath0.closeFigure();
 
     GeometryPath geometryPath1 = new GeometryPath();
-    geometryPath1.moveTo(0, shape.getHeight()/3 * 2);
-    geometryPath1.lineTo(shape.getWidth(), shape.getHeight() / 3 * 2);
-    geometryPath1.lineTo(shape.getWidth(), shape.getHeight());
-    geometryPath1.lineTo(0, shape.getHeight());
+    geometryPath1.moveTo(0, shape->getHeight()/3 * 2);
+    geometryPath1.lineTo(shape->getWidth(), shape->getHeight() / 3 * 2);
+    geometryPath1.lineTo(shape->getWidth(), shape->getHeight());
+    geometryPath1.lineTo(0, shape->getHeight());
     geometryPath1.closeFigure();
 
-    shape.setGeometryPaths(new GeometryPath[] { geometryPath0, geometryPath1});
+    shape->setGeometryPaths(new GeometryPath[] { geometryPath0, geometryPath1});
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -221,12 +221,12 @@ try {
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Create new shape
-    GeometryShape shape = (GeometryShape)pres.getSlides()->get_Item(0).
+    GeometryShape shape = (GeometryShape)pres->getSlides()->get_Item(0).
             getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 300, 100);
 
     // Get geometry path of the shape
-    IGeometryPath originalPath = shape.getGeometryPaths()[0];
-    originalPath.setFillMode(PathFillModeType.None);
+    IGeometryPath originalPath = shape->getGeometryPaths()[0];
+    originalPath->setFillMode(PathFillModeType.None);
 
     // Create new graphics path with text
     Shape graphicsPath;
@@ -237,8 +237,8 @@ try {
 
     try
     {
-        GlyphVector glyphVector = font.createGlyphVector(g2.getFontRenderContext(), text);
-        graphicsPath = glyphVector.getOutline(20f, ((float) -glyphVector.getVisualBounds().getY()) + 10);
+        GlyphVector glyphVector = font.createGlyphVector(g2->getFontRenderContext(), text);
+        graphicsPath = glyphVector->getOutline(20f, ((float) -glyphVector->getVisualBounds()->getY()) + 10);
     }
     finally {
         g2.dispose();
@@ -246,10 +246,10 @@ try {
 
     // Convert graphics path to geometry path
     IGeometryPath textPath = ShapeUtil.graphicsPathToGeometryPath(graphicsPath);
-    textPath.setFillMode(PathFillModeType.Normal);
+    textPath->setFillMode(PathFillModeType.Normal);
 
     // Set combination of new geometry path and origin geometry path to the shape
-    shape.setGeometryPaths(new IGeometryPath[] { originalPath, textPath });
+    shape->setGeometryPaths(new IGeometryPath[] { originalPath, textPath });
 
     // Save the presentation
     $pres->save(resultPath, SaveFormat.Pptx);

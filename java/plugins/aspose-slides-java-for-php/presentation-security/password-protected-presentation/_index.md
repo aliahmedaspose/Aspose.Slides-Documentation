@@ -83,8 +83,8 @@ This sample code shows you how to encrypt a presentation:
 ```java
 Presentation presentation = new Presentation("pres.pptx");
 try {
-    presentation.getProtectionManager().encrypt("123123");
-    presentation.save("encrypted-pres.pptx", SaveFormat.Pptx);
+    presentation->getProtectionManager().encrypt("123123");
+    presentation->save("encrypted-pres.pptx", SaveFormat.Pptx);
 } finally {
     if ($presentation != null) $presentation->dispose();
 }
@@ -101,8 +101,8 @@ To set a write protection, you have to use the [setWriteProtection](https://apir
 ```java
 Presentation presentation = new Presentation("pres.pptx");
 try {
-    presentation.getProtectionManager().setWriteProtection("123123");
-    presentation.save("write-protected-pres.pptx", SaveFormat.Pptx);
+    presentation->getProtectionManager()->setWriteProtection("123123");
+    presentation->save("write-protected-pres.pptx", SaveFormat.Pptx);
 } finally {
     if ($presentation != null) $presentation->dispose();
 }
@@ -116,7 +116,7 @@ This sample code shows you how to decrypt a presentation:
 
 ```java
 LoadOptions loadOptions = new LoadOptions();
-loadOptions.setPassword("123123");
+loadOptions->setPassword("123123");
 Presentation presentation = new Presentation("pres.pptx", loadOptions);
 try {
     // work with decrypted presentation
@@ -134,11 +134,11 @@ To remove encryption or password protection, you have to call the [removeEncrypt
 
 ```java
 LoadOptions loadOptions = new LoadOptions();
-loadOptions.setPassword("123123");
+loadOptions->setPassword("123123");
 Presentation presentation = new Presentation("pres.pptx", loadOptions);
 try {
-    presentation.getProtectionManager().removeEncryption();
-    presentation.save("encryption-removed.pptx", SaveFormat.Pptx);
+    presentation->getProtectionManager().removeEncryption();
+    presentation->save("encryption-removed.pptx", SaveFormat.Pptx);
 } finally {
     if ($presentation != null) $presentation->dispose();
 }
@@ -153,8 +153,8 @@ You can remove the write protection from a presentation by using the [removeWrit
 ```java
 Presentation presentation = new Presentation("pres.pptx");
 try {
-    presentation.getProtectionManager().removeWriteProtection();
-    presentation.save("write-protection-removed.pptx", SaveFormat.Pptx);
+    presentation->getProtectionManager().removeWriteProtection();
+    presentation->save("write-protection-removed.pptx", SaveFormat.Pptx);
 } finally {
     if ($presentation != null) $presentation->dispose();
 }
@@ -171,8 +171,8 @@ If you want users to retain the ability to access the properties of a presentati
 ```java
 Presentation presentation = new Presentation("pres.pptx");
 try {
-    presentation.getProtectionManager().setEncryptDocumentProperties(true);
-    presentation.getProtectionManager().encrypt("123123");
+    presentation->getProtectionManager()->setEncryptDocumentProperties(true);
+    presentation->getProtectionManager().encrypt("123123");
 } finally {
     if ($presentation != null) $presentation->dispose();
 }
@@ -187,7 +187,7 @@ This sample code shows you how to check whether a presentation is encrypted:
 ```java
 Presentation presentation = new Presentation("pres.pptx");
 try {
-    boolean isEncrypted = presentation.getProtectionManager().isEncrypted();
+    boolean isEncrypted = presentation->getProtectionManager().isEncrypted();
 } finally {
     if ($presentation != null) $presentation->dispose();
 }
@@ -202,7 +202,7 @@ This sample code shows you how to check whether a presentation is write-protecte
 ```java
 Presentation presentation = new Presentation("pres.pptx");
 try {
-    boolean isEncrypted = presentation.getProtectionManager().isWriteProtected();
+    boolean isEncrypted = presentation->getProtectionManager().isWriteProtected();
 } finally {
     if ($presentation != null) $presentation->dispose();
 }
@@ -218,7 +218,7 @@ This sample code shows you how to validate a password:
 Presentation presentation = new Presentation("pres.pptx");
 try {
     // check if "pass" is matched with
-    boolean isWriteProtected = presentation.getProtectionManager().checkWriteProtection("my_password");
+    boolean isWriteProtected = presentation->getProtectionManager().checkWriteProtection("my_password");
 } finally {
     if ($presentation != null) $presentation->dispose();
 }

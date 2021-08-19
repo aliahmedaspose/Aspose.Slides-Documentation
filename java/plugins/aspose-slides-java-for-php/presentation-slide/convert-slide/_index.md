@@ -26,7 +26,7 @@ The code example below shows how to convert the first slide of presentation to a
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Convert the first slide of the presentation to a Bitmap object
-    BufferedImage bmp = $pres->getSlides()->get_Item(0).getThumbnail();
+    BufferedImage bmp = $pres->getSlides()->get_Item(0)->getThumbnail();
     {
         // Save the image in PNG format
         ImageIO.write(bmp, "PNG", new File("Slide_0.png"));
@@ -46,7 +46,7 @@ The following example demonstrates this capability using one of the
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Convert the first slide of the presentation to a Bitmap with the specified size
-    BufferedImage bmp = $pres->getSlides()->get_Item(0).getThumbnail(new Dimension(1820, 1040));
+    BufferedImage bmp = $pres->getSlides()->get_Item(0)->getThumbnail(new Dimension(1820, 1040));
     {
         // Save the image in JPEG format
         ImageIO.write(bmp, "PNG", new File("Slide_0.jpg"));
@@ -79,19 +79,19 @@ try {
     IRenderingOptions options = new RenderingOptions();
 
     // Set the position of the notes on the page
-    options.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomTruncated);
+    options->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomTruncated);
 
     // Set the position of the comments on the page
-    options.getNotesCommentsLayouting().setCommentsPosition(CommentsPositions.Right);
+    options->getNotesCommentsLayouting()->setCommentsPosition(CommentsPositions.Right);
 
     // Set the width of the comment output area
-    options.getNotesCommentsLayouting().setCommentsAreaWidth(500);
+    options->getNotesCommentsLayouting()->setCommentsAreaWidth(500);
 
     // Set the color of comments area
-    options.getNotesCommentsLayouting().setCommentsAreaColor(Color.LIGHT_GRAY);
+    options->getNotesCommentsLayouting()->setCommentsAreaColor(Color.LIGHT_GRAY);
 
     // Convert the first slide of the presentation to a Bitmap object
-    BufferedImage bmp = $pres->getSlides()->get_Item(0).getThumbnail(options, 2f, 2f);
+    BufferedImage bmp = $pres->getSlides()->get_Item(0)->getThumbnail(options, 2f, 2f);
 
     // Save the image in GIF format
     ImageIO.write(bmp, "GIF", new File("Slide_Notes_Comments_0.gif"));
@@ -117,17 +117,17 @@ try {
 
     // Create TiffOptions object
     TiffOptions options = new TiffOptions();
-    options.setImageSize(new Dimension(2160, 2880));
+    options->setImageSize(new Dimension(2160, 2880));
 
     // Set font used in case source font is not found
-    options.setDefaultRegularFont("Arial Black");
+    options->setDefaultRegularFont("Arial Black");
 
     // Set the position of the notes on the page
-    options.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomTruncated);
+    options->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomTruncated);
 
     // Set resolution
-    options.setDpiX(300);
-    options.setDpiY(300);
+    options->setDpiX(300);
+    options->setDpiY(300);
 
     // Convert slide to a Tiff image
     $pres->save("Slide_Notes_Comments_0.tiff", SaveFormat.Tiff, options);
@@ -149,11 +149,11 @@ try {
     for (int i = 0 ; i < $pres->getSlides().size(); i++)
     {
         // Control hidden slides (do not render hidden slides)
-        if ($pres->getSlides()->get_Item(i).getHidden())
+        if ($pres->getSlides()->get_Item(i)->getHidden())
             continue;
 
         // Convert slide to a Bitmap object
-        BufferedImage bmp = $pres->getSlides()->get_Item(i).getThumbnail(2f, 2f);
+        BufferedImage bmp = $pres->getSlides()->get_Item(i)->getThumbnail(2f, 2f);
 		
         // Create file name for an image
         String outputFilePath = outputDir + "Slide_" + i + ".jpg";

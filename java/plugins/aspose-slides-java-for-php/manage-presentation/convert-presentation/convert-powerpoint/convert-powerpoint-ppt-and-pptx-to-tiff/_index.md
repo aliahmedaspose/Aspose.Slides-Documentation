@@ -48,19 +48,19 @@ try {
     // CCITT4
     // LZW
     // RLE
-    opts.setCompressionType(TiffCompressionTypes.Default);
+    opts->setCompressionType(TiffCompressionTypes.Default);
     
     // Depth – depends on the compression type and cannot be set manually.
     
     // Setting image DPI
-    opts.setDpiX(200);
-    opts.setDpiY(100);
+    opts->setDpiX(200);
+    opts->setDpiY(100);
     
     // Set Image Size
-    opts.setImageSize(new java.awt.Dimension(1728, 1078));
+    opts->setImageSize(new java.awt.Dimension(1728, 1078));
     
-    INotesCommentsLayoutingOptions options = opts.getNotesCommentsLayouting();
-    options.setNotesPosition(NotesPositions.BottomFull);
+    INotesCommentsLayoutingOptions options = opts->getNotesCommentsLayouting();
+    options->setNotesPosition(NotesPositions.BottomFull);
     // Save the presentation to TIFF with specified image size
     $pres->save("tiff-ImageSize.tiff", SaveFormat.Tiff, opts);
 } finally {
@@ -76,7 +76,7 @@ The following example shows how to convert a presentation into a TIFF document w
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
     TiffOptions options = new TiffOptions();
-    options.setPixelFormat(ImagePixelFormat.Format8bppIndexed);
+    options->setPixelFormat(ImagePixelFormat.Format8bppIndexed);
     
     /*
      * ImagePixelFormat contains the following values (as could be seen from documentation):

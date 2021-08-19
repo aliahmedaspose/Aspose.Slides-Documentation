@@ -20,14 +20,14 @@ Aspose.Slides for Java provides a simple API for getting value of vertical axis.
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    Chart chart = (Chart)pres.getSlides()->get_Item(0)->getShapes().addChart(ChartType.Area, 100, 100, 500, 350);
+    Chart chart = (Chart)pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Area, 100, 100, 500, 350);
     chart.validateChartLayout();
 
-    double maxValue = chart.getAxes().getVerticalAxis().getActualMaxValue();
-    double minValue = chart.getAxes().getVerticalAxis().getActualMinValue();
+    double maxValue = chart->getAxes()->getVerticalAxis()->getActualMaxValue();
+    double minValue = chart->getAxes()->getVerticalAxis()->getActualMinValue();
 
-    double majorUnit = chart.getAxes().getHorizontalAxis().getActualMajorUnit();
-    double minorUnit = chart.getAxes().getHorizontalAxis().getActualMinorUnit();
+    double majorUnit = chart->getAxes()->getHorizontalAxis()->getActualMajorUnit();
+    double minorUnit = chart->getAxes()->getHorizontalAxis()->getActualMinorUnit();
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -42,7 +42,7 @@ try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 400, 300);
 
     //Switching rows and columns
-    chart.getChartData().switchRowColumn();
+    chart->getChartData().switchRowColumn();
 
     // Saving presentation
     $pres->save("SwitchChartRowColumns_out.pptx", SaveFormat.Pptx);
@@ -59,10 +59,10 @@ $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
     IChart chart = (IChart) $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     
-    chart.getAxes().getHorizontalAxis().setCategoryAxisType(CategoryAxisType.Date);
-    chart.getAxes().getHorizontalAxis().setAutomaticMajorUnit(false);
-    chart.getAxes().getHorizontalAxis().setMajorUnit(1);
-    chart.getAxes().getHorizontalAxis().setMajorUnitScale(TimeUnitType.Months);
+    chart->getAxes()->getHorizontalAxis()->setCategoryAxisType(CategoryAxisType.Date);
+    chart->getAxes()->getHorizontalAxis()->setAutomaticMajorUnit(false);
+    chart->getAxes()->getHorizontalAxis()->setMajorUnit(1);
+    chart->getAxes()->getHorizontalAxis()->setMajorUnitScale(TimeUnitType.Months);
     
     $pres->save("ChangeChartCategoryAxis_out.pptx", SaveFormat.Pptx);
 } finally {
@@ -78,24 +78,24 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Area, 50, 50, 450, 300);
 
-    IChartDataWorkbook wb = chart.getChartData().getChartDataWorkbook();
+    IChartDataWorkbook wb = chart->getChartData()->getChartDataWorkbook();
     wb.clear(0);
 
-    chart.getChartData().getCategories().clear();
-    chart.getChartData().getSeries().clear();
-    chart.getChartData().getCategories().add(wb.getCell(0, "A2", convertToOADate(new GregorianCalendar(2015, 1, 1))));
-    chart.getChartData().getCategories().add(wb.getCell(0, "A3", convertToOADate(new GregorianCalendar(2016, 1, 1))));
-    chart.getChartData().getCategories().add(wb.getCell(0, "A4", convertToOADate(new GregorianCalendar(2017, 1, 1))));
-    chart.getChartData().getCategories().add(wb.getCell(0, "A5", convertToOADate(new GregorianCalendar(2018, 1, 1))));
+    chart->getChartData()->getCategories().clear();
+    chart->getChartData()->getSeries().clear();
+    chart->getChartData()->getCategories().add(wb->getCell(0, "A2", convertToOADate(new GregorianCalendar(2015, 1, 1))));
+    chart->getChartData()->getCategories().add(wb->getCell(0, "A3", convertToOADate(new GregorianCalendar(2016, 1, 1))));
+    chart->getChartData()->getCategories().add(wb->getCell(0, "A4", convertToOADate(new GregorianCalendar(2017, 1, 1))));
+    chart->getChartData()->getCategories().add(wb->getCell(0, "A5", convertToOADate(new GregorianCalendar(2018, 1, 1))));
 
-    IChartSeries series = chart.getChartData().getSeries().add(ChartType.Line);
-    series.getDataPoints().addDataPointForLineSeries(wb.getCell(0, "B2", 1));
-    series.getDataPoints().addDataPointForLineSeries(wb.getCell(0, "B3", 2));
-    series.getDataPoints().addDataPointForLineSeries(wb.getCell(0, "B4", 3));
-    series.getDataPoints().addDataPointForLineSeries(wb.getCell(0, "B5", 4));
-    chart.getAxes().getHorizontalAxis().setCategoryAxisType(CategoryAxisType.Date);
-    chart.getAxes().getHorizontalAxis().setNumberFormatLinkedToSource(false);
-    chart.getAxes().getHorizontalAxis().setNumberFormat("yyyy");
+    IChartSeries series = chart->getChartData()->getSeries().add(ChartType.Line);
+    series->getDataPoints().addDataPointForLineSeries(wb->getCell(0, "B2", 1));
+    series->getDataPoints().addDataPointForLineSeries(wb->getCell(0, "B3", 2));
+    series->getDataPoints().addDataPointForLineSeries(wb->getCell(0, "B4", 3));
+    series->getDataPoints().addDataPointForLineSeries(wb->getCell(0, "B5", 4));
+    chart->getAxes()->getHorizontalAxis()->setCategoryAxisType(CategoryAxisType.Date);
+    chart->getAxes()->getHorizontalAxis()->setNumberFormatLinkedToSource(false);
+    chart->getAxes()->getHorizontalAxis()->setNumberFormat("yyyy");
 	
     $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
@@ -108,8 +108,8 @@ public static String convertToOADate(GregorianCalendar date) throws ParseExcepti
     double oaDate;
     SimpleDateFormat myFormat = new SimpleDateFormat("dd MM yyyy");
     java.util.Date baseDate = myFormat.parse("30 12 1899");
-    Long days = TimeUnit.DAYS.convert(date.getTimeInMillis() - baseDate.getTime(), TimeUnit.MILLISECONDS);
-    oaDate = (double) days + ((double) date.get(Calendar.HOUR_OF_DAY) / 24) + ((double) date.get(Calendar.MINUTE) / (60 * 24)) + ((double) date.get(Calendar.SECOND) / (60 * 24 * 60));
+    Long days = TimeUnit.DAYS.convert(date->getTimeInMillis() - baseDate->getTime(), TimeUnit.MILLISECONDS);
+    oaDate = (double) days + ((double) date->get(Calendar.HOUR_OF_DAY) / 24) + ((double) date->get(Calendar.MINUTE) / (60 * 24)) + ((double) date->get(Calendar.SECOND) / (60 * 24 * 60));
     return String.valueOf(oaDate);
 }
 ```
@@ -122,8 +122,8 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
     
-    chart.getAxes().getVerticalAxis().setTitle(true);
-    chart.getAxes().getVerticalAxis().getTitle().getTextFormat().getTextBlockFormat().setRotationAngle(90);
+    chart->getAxes()->getVerticalAxis()->setTitle(true);
+    chart->getAxes()->getVerticalAxis()->getTitle()->getTextFormat()->getTextBlockFormat()->setRotationAngle(90);
 
     $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
@@ -140,7 +140,7 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
     
-    chart.getAxes().getHorizontalAxis().setAxisBetweenCategories(true);
+    chart->getAxes()->getHorizontalAxis()->setAxisBetweenCategories(true);
 
     $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
@@ -156,7 +156,7 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
 
-    chart.getAxes().getVerticalAxis().setDisplayUnit(DisplayUnitType.Millions);
+    chart->getAxes()->getVerticalAxis()->setDisplayUnit(DisplayUnitType.Millions);
     
     $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {

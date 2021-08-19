@@ -32,22 +32,22 @@ try {
     IChart chart = (IChart) shapes->get_Item(0);
 
     // Animate the series
-    slide.getTimeline().getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None,
+    slide->getTimeline()->getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None,
             EffectTriggerType.AfterPrevious);
 
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart,
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart,
             EffectChartMajorGroupingType.BySeries, 0,
             EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart,
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart,
             EffectChartMajorGroupingType.BySeries, 1,
             EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart,
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart,
             EffectChartMajorGroupingType.BySeries, 2,
             EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart,
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart,
             EffectChartMajorGroupingType.BySeries, 3,
             EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
@@ -76,22 +76,22 @@ try {
     IShapeCollection shapes = $slide->getShapes();
     IChart chart = (IChart) shapes->get_Item(0);
 
-    slide.getTimeline().getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None,
+    slide->getTimeline()->getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None,
             EffectTriggerType.AfterPrevious);
 
-    ((Sequence) slide.getTimeline().getMainSequence()).addEffect(chart,
+    ((Sequence) slide->getTimeline()->getMainSequence()).addEffect(chart,
             EffectChartMajorGroupingType.ByCategory, 0, 
             EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
     
-    ((Sequence) slide.getTimeline().getMainSequence()).addEffect(chart, 
+    ((Sequence) slide->getTimeline()->getMainSequence()).addEffect(chart, 
             EffectChartMajorGroupingType.ByCategory, 1, 
             EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
     
-    ((Sequence) slide.getTimeline().getMainSequence()).addEffect(chart, 
+    ((Sequence) slide->getTimeline()->getMainSequence()).addEffect(chart, 
             EffectChartMajorGroupingType.ByCategory, 2, 
             EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
     
-    ((Sequence) slide.getTimeline().getMainSequence()).addEffect(chart, 
+    ((Sequence) slide->getTimeline()->getMainSequence()).addEffect(chart, 
             EffectChartMajorGroupingType.ByCategory, 3, 
             EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
@@ -121,33 +121,33 @@ try {
     IChart chart = (IChart) shapes->get_Item(0);
 
     // Animate series elements
-    slide.getTimeline().getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+    slide->getTimeline()->getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
             0, 0, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
             0, 1, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
             0, 2, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
             0, 3, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
             1, 0, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
             1, 1, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
             1, 2, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
             1, 3, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
             2, 0, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
             2, 1, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
             2, 2, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
             2, 3, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
     // Write the presentation file to disk 
@@ -177,32 +177,32 @@ try {
     IChart chart = (IChart) shapes->get_Item(0);
 
     // Animate categories' elements
-    slide.getTimeline().getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+    slide->getTimeline()->getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
             0, 0, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
             0, 1, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
             0, 2, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
             0, 3, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
             1, 0, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
             1, 1, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
             1, 2, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
             1, 3, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
             2, 0, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
             2, 1, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
             2, 2, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide.getTimeline().getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
             2, 3, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
     // Write the presentation file to disk

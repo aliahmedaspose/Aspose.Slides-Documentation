@@ -34,8 +34,8 @@ try {
     IConnector connector = shapes.addConnector(Java("com.aspose.slides.ShapeType")->BentConnector2, 0, 0, 10, 10);
     
     // Joining Shapes to connectors
-    connector.setStartShapeConnectedTo(ellipse);
-    connector.setEndShapeConnectedTo(rectangle);
+    connector->setStartShapeConnectedTo(ellipse);
+    connector->setEndShapeConnectedTo(rectangle);
     
     // Call reroute to set the automatic shortest path between shapes
     connector.reroute();
@@ -83,18 +83,18 @@ try {
     IConnector connector = shapes.addConnector(Java("com.aspose.slides.ShapeType")->BentConnector2, 0, 0, 10, 10);
 
     // Joining Shapes to connectors
-    connector.setStartShapeConnectedTo(ellipse);
-    connector.setEndShapeConnectedTo(rectangle);
+    connector->setStartShapeConnectedTo(ellipse);
+    connector->setEndShapeConnectedTo(rectangle);
 
     // Setting the desired connection site index of Ellipse shape for
     // connector to get connected
     int wantedIndex = 6;
 
     // Checking if desired index is less than maximum site index count
-    if (ellipse.getConnectionSiteCount() > wantedIndex) 
+    if (ellipse->getConnectionSiteCount() > wantedIndex) 
     {
         // Setting the desired connection site for connector on Ellipse
-        connector.setStartShapeConnectionSiteIndex(wantedIndex);
+        connector->setStartShapeConnectionSiteIndex(wantedIndex);
     }
 
     // Saving presentation
@@ -118,7 +118,7 @@ In the example given below, we have calculated the angle for connector line shap
 // Instantiate Presentation class that represents the PPTX file
 $pres = new Java("com.aspose.slides.Presentation", "ConnectorLineAngle.pptx");
 try {
-    Slide slide = (Slide)pres.getSlides()->get_Item(0);
+    Slide slide = (Slide)pres->getSlides()->get_Item(0);
     
     for (int i = 0; i < slide->getShapes().size(); i++)
     {
@@ -127,17 +127,17 @@ try {
         if (shape instanceof AutoShape)
         {
             AutoShape ashp = (AutoShape)shape;
-            if (ashp.getShapeType() == Java("com.aspose.slides.ShapeType")->Line)
+            if (ashp->getShapeType() == Java("com.aspose.slides.ShapeType")->Line)
             {
-                dir = getDirection(ashp.getWidth(), ashp.getHeight(),
-                        ashp.getFrame().getFlipH() > 0, ashp.getFrame().getFlipV() > 0);
+                dir = getDirection(ashp->getWidth(), ashp->getHeight(),
+                        ashp->getFrame()->getFlipH() > 0, ashp->getFrame()->getFlipV() > 0);
             }
         }
         else if (shape instanceof Connector)
         {
             Connector ashp = (Connector)shape;
-            dir = getDirection(ashp.getWidth(), ashp.getHeight(),
-                    ashp.getFrame().getFlipH() > 0, ashp.getFrame().getFlipV() > 0);
+            dir = getDirection(ashp->getWidth(), ashp->getHeight(),
+                    ashp->getFrame()->getFlipH() > 0, ashp->getFrame()->getFlipV() > 0);
         }
 
         System.out.println(dir);

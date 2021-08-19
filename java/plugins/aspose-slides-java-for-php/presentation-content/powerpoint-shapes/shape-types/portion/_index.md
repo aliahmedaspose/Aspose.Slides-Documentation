@@ -15,13 +15,13 @@ try {
     // Reshaping the context of presentation
     IAutoShape shape = (IAutoShape) $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     
-    ITextFrame textFrame = (ITextFrame) shape.getTextFrame();
+    ITextFrame textFrame = (ITextFrame) shape->getTextFrame();
     
-    for (IParagraph paragraph : textFrame.getParagraphs()) 
+    for (IParagraph paragraph : textFrame->getParagraphs()) 
     {
-        for (IPortion portion : paragraph.getPortions()) 
+        for (IPortion portion : paragraph->getPortions()) 
         {
-            Point2D.Float point = portion.getCoordinates();
+            Point2D.Float point = portion->getCoordinates();
             System.out.println("X: " + point.x + " Y: " + point.y);
         }
     }

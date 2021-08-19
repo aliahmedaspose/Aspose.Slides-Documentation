@@ -15,14 +15,14 @@ We added the [**addEffect()**](https://apireference.aspose.com/slides/java/com.a
 Presentation presentation = new Presentation("Presentation.pptx");
 try {
     // select paragraph to add effect
-    IAutoShape autoShape = (IAutoShape)presentation.getSlides()->get_Item(0)->getShapes()->get_Item(0);
-    IParagraph paragraph = autoShape.getTextFrame().getParagraphs()->get_Item(0);
+    IAutoShape autoShape = (IAutoShape)presentation->getSlides()->get_Item(0)->getShapes()->get_Item(0);
+    IParagraph paragraph = autoShape->getTextFrame()->getParagraphs()->get_Item(0);
 
     // add Fly animation effect to selected paragraph
-    IEffect effect = presentation.getSlides()->get_Item(0).getTimeline().getMainSequence().
+    IEffect effect = presentation->getSlides()->get_Item(0)->getTimeline()->getMainSequence().
             addEffect(paragraph, EffectType.Fly, EffectSubtype.Left, EffectTriggerType.OnClick);
 
-    presentation.save("AnimationEffectinParagraph.pptx", SaveFormat.Pptx);
+    presentation->save("AnimationEffectinParagraph.pptx", SaveFormat.Pptx);
 } finally {
     if ($presentation != null) $presentation->dispose();
 }
@@ -37,15 +37,15 @@ Aspose.Slides for Java allows you to get all the animation effects applied to pa
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
-    ISequence sequence = $pres->getSlides()->get_Item(0).getTimeline().getMainSequence();
-    IAutoShape autoShape = (IAutoShape)pres.getSlides()->get_Item(0)->getShapes()->get_Item(0);
+    ISequence sequence = $pres->getSlides()->get_Item(0)->getTimeline()->getMainSequence();
+    IAutoShape autoShape = (IAutoShape)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
 
-    for (IParagraph paragraph : autoShape.getTextFrame().getParagraphs())
+    for (IParagraph paragraph : autoShape->getTextFrame()->getParagraphs())
     {
-        IEffect[] effects = sequence.getEffectsByParagraph(paragraph);
+        IEffect[] effects = sequence->getEffectsByParagraph(paragraph);
 
         if (effects.length > 0)
-            System.out.println("Paragraph \"" + paragraph.getText() + "\" has " + effects[0].getType() + " effect.");
+            System.out.println("Paragraph \"" + paragraph->getText() + "\" has " + effects[0]->getType() + " effect.");
     }
 } finally {
     $pres->dispose();

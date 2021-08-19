@@ -36,19 +36,19 @@ Method [**getDimensionSize**](https://apireference.aspose.com/slides/java/com.as
 
 Method [**getAutoAdjust**](https://apireference.aspose.com/slides/java/com.aspose.slides/INormalViewRestoredProperties#getAutoAdjust--) specifies whether the size of the side content region should compensate for the new size when resizing the window containing the view within the application
 
-An example is given below shows how can you access [**ViewProperties.getNormalViewProperties**](https://apireference.aspose.com/slides/java/com.aspose.slides/ViewProperties#getNormalViewProperties--) properties for a presentation.
+An example is given below shows how can you access [**ViewProperties->getNormalViewProperties**](https://apireference.aspose.com/slides/java/com.aspose.slides/ViewProperties#getNormalViewProperties--) properties for a presentation.
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    $pres->getViewProperties().getNormalViewProperties().setHorizontalBarState(SplitterBarStateType.Restored);
-    $pres->getViewProperties().getNormalViewProperties().setVerticalBarState(SplitterBarStateType.Maximized);
+    $pres->getViewProperties()->getNormalViewProperties()->setHorizontalBarState(SplitterBarStateType.Restored);
+    $pres->getViewProperties()->getNormalViewProperties()->setVerticalBarState(SplitterBarStateType.Maximized);
     
     // Restore View Properties of Presentation
-    $pres->getViewProperties().getNormalViewProperties().getRestoredTop().setAutoAdjust(true);
-    $pres->getViewProperties().getNormalViewProperties().getRestoredTop().setDimensionSize(80);
-    $pres->getViewProperties().getNormalViewProperties().setShowOutlineIcons(true);
+    $pres->getViewProperties()->getNormalViewProperties()->getRestoredTop()->setAutoAdjust(true);
+    $pres->getViewProperties()->getNormalViewProperties()->getRestoredTop()->setDimensionSize(80);
+    $pres->getViewProperties()->getNormalViewProperties()->setShowOutlineIcons(true);
 
     $pres->save("presentation_normal_view_state.pptx", SaveFormat.Pptx);
 } finally {
@@ -75,10 +75,10 @@ In order to set the view properties. Please follow the steps below:
 $presentation = new Java("com.aspose.slides.Presentation");
 try {
     // Setting View Properties of Presentation
-    presentation.getViewProperties().getSlideViewProperties().setScale(100); // Zoom value in percentages for slide view
-    presentation.getViewProperties().getNotesViewProperties().setScale(100); // Zoom value in percentages for notes view 
+    presentation->getViewProperties()->getSlideViewProperties()->setScale(100); // Zoom value in percentages for slide view
+    presentation->getViewProperties()->getNotesViewProperties()->setScale(100); // Zoom value in percentages for notes view 
 
-    presentation.save("Zoom_out.pptx", SaveFormat.Pptx);
+    presentation->save("Zoom_out.pptx", SaveFormat.Pptx);
 } finally {
     presentation.dispose();
 }

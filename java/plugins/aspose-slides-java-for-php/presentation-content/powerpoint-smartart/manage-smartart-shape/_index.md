@@ -50,7 +50,7 @@ try {
         {
             // Typecast shape to SmartArtEx
             ISmartArt smart = (ISmartArt)shape;
-            System.out.println("Shape Name:" + smart.getName());
+            System.out.println("Shape Name:" + smart->getName());
         }
     }
 } finally {
@@ -80,7 +80,7 @@ try {
             ISmartArt smart = (ISmartArt) shape;
 
             // Checking SmartArt Layout
-            if (smart.getLayout() == SmartArtLayoutType.BasicBlockList)
+            if (smart->getLayout() == SmartArtLayoutType.BasicBlockList)
             {
                 System.out.println("Do some thing here....");
             }
@@ -119,9 +119,9 @@ try {
             ISmartArt smart = (ISmartArt) shape;
     
             // Checking SmartArt style
-            if (smart.getQuickStyle() == SmartArtQuickStyleType.SimpleFill) {
+            if (smart->getQuickStyle() == SmartArtQuickStyleType.SimpleFill) {
                 // Changing SmartArt Style
-                smart.setQuickStyle(SmartArtQuickStyleType.Cartoon);
+                smart->setQuickStyle(SmartArtQuickStyleType.Cartoon);
             }
         }
     }
@@ -164,9 +164,9 @@ try {
             ISmartArt smart = (ISmartArt) shape;
     
             // Checking SmartArt color type
-            if (smart.getColorStyle() == SmartArtColorType.ColoredFillAccent1) {
+            if (smart->getColorStyle() == SmartArtColorType.ColoredFillAccent1) {
                 // Changing SmartArt color type
-                smart.setColorStyle(SmartArtColorType.ColorfulAccentColors);
+                smart->setColorStyle(SmartArtColorType.ColorfulAccentColors);
             }
         }
     }

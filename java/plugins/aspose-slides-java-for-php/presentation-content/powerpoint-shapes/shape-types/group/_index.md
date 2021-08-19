@@ -36,7 +36,7 @@ try {
     groupShape->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 500, 300, 100, 100);
 
     // Adding group shape frame
-    groupShape.setFrame(new ShapeFrame(100, 300, 500, 40, NullableBool.False, NullableBool.False, 0));
+    groupShape->setFrame(new ShapeFrame(100, 300, 500, 40, NullableBool.False, NullableBool.False, 0));
 
     // Write the PPTX file to disk
     $pres->save("GroupShape.pptx", SaveFormat.Pptx);
@@ -77,7 +77,7 @@ try {
                 IShape shape2 = grphShape->getShapes()->get_Item(j);
                 
                 // Accessing the AltText property
-                System.out.println(shape2.getAlternativeText());
+                System.out.println(shape2->getAlternativeText());
             }
         }
     }

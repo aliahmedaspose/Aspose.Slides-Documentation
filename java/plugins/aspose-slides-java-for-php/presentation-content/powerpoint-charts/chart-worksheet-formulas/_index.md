@@ -21,10 +21,10 @@ Usually, the chart represents complicated data (e.g. financial analysts, scienti
 **Chart spreadsheet formula** in presentation is an expression to automatically calculate and update chart spreadsheet data. Spreadsheet formula defines the data calculation logic for a certain cell or a set of cells. Spreadsheet formula is a math formula or a logical formula, which is using: cell references, math functions, logical operators, arithmetic operators, conversion functions, string constants, etc. The definition of the formula is written into a cell, and this cell does not contain a simple value. Spreadsheet formula calculates the value and returns it back, then this value is assigned to the cell. Chart spreadsheet formulas in presentations are actually the same as excel formulas, and there are supported the same default functions, operators and constants for their implementation.
 
 In [**Aspose.Slides**](https://products.aspose.com/slides/java) chart spreadsheet is represented with 
-[**Chart.getChartData.getChartDataWorkbook**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartData#getChartDataWorkbook--) method of the
+[**Chart->getChartData->getChartDataWorkbook**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartData#getChartDataWorkbook--) method of the
 [**IChartDataWorkbook**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataWorkbook) type. 
 Spreadsheet formula can be assigned and changed with 
-[**IChartDataCell.setFormula**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataCell#setFormula-java.lang.String-) method. 
+[**IChartDataCell->setFormula**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataCell#setFormula-java.lang.String-) method. 
 The following functionality is supported for formulas in Aspose.Slides:
 
 - Logical constants
@@ -38,13 +38,13 @@ The following functionality is supported for formulas in Aspose.Slides:
 - Predefined functions
 
 
-Typically, spreadsheets store the last calculated formula values. If after presentation loading, the chart data were not changed - [**IChartDataCell.getValue**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataCell#getValue--) method it returns those values while reading. But, if spreadsheet data had been changed, while reading **ChartDataCell.Value** property it throws the [**CellUnsupportedDataException**](https://apireference.aspose.com/slides/java/com.aspose.slides/CellUnsupportedDataException) for the unsupported formulas. This is because when formulas are successfully parsed, the cell dependencies are determined and the correctness of the last values is determined. But, if the formula can not be parsed, the correctness of cell value cannot be guaranteed.
+Typically, spreadsheets store the last calculated formula values. If after presentation loading, the chart data were not changed - [**IChartDataCell->getValue**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataCell#getValue--) method it returns those values while reading. But, if spreadsheet data had been changed, while reading **ChartDataCell.Value** property it throws the [**CellUnsupportedDataException**](https://apireference.aspose.com/slides/java/com.aspose.slides/CellUnsupportedDataException) for the unsupported formulas. This is because when formulas are successfully parsed, the cell dependencies are determined and the correctness of the last values is determined. But, if the formula can not be parsed, the correctness of cell value cannot be guaranteed.
 
 ## **Add Chart Spreadsheet Formula to Presentation**
 First, add a chart to the first slide of a new presentation with 
-[IShapeCollection.getShapes.addChart](https://apireference.aspose.com/slides/java/com.aspose.slides/IShapeCollection#addChart-int-float-float-float-float-). 
+[IShapeCollection->getShapes.addChart](https://apireference.aspose.com/slides/java/com.aspose.slides/IShapeCollection#addChart-int-float-float-float-float-). 
 The worksheet of the chart is automatically created and can be accessed with 
-[**Chart.getChartData.getChartDataWorkbook**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartData#getChartDataWorkbook--) method:
+[**Chart->getChartData->getChartDataWorkbook**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartData#getChartDataWorkbook--) method:
 
 
 
@@ -53,7 +53,7 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 150, 150, 500, 300);
 
-    IChartDataWorkbook workbook = chart.getChartData().getChartDataWorkbook();
+    IChartDataWorkbook workbook = chart->getChartData()->getChartDataWorkbook();
 
     // ...
 } finally {
@@ -62,56 +62,56 @@ try {
 ``` 
 
 Let's write some values in cells with 
-[**IChartDataCell.setValue**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataCell#setValue-java.lang.Object-) property 
+[**IChartDataCell->setValue**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataCell#setValue-java.lang.Object-) property 
 of the **Object** type, which means you can set any value to the property:
 
 ```java
-workbook.getCell(0, "F2").setValue(-2.5);
+workbook->getCell(0, "F2")->setValue(-2.5);
 
-workbook.getCell(0, "G3").setValue(6.3);
+workbook->getCell(0, "G3")->setValue(6.3);
 
-workbook.getCell(0, "H4").setValue(3);
+workbook->getCell(0, "H4")->setValue(3);
 ``` 
 
 Now to write formula to the cell, you can use the 
-[**IChartDataCell.setFormula**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataCell#setFormula-java.lang.String-) method:
+[**IChartDataCell->setFormula**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataCell#setFormula-java.lang.String-) method:
 
-*Note*: [**IChartDataCell.setFormula**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataCell#setFormula-java.lang.String-) method is used to set A1-style cell references. 
+*Note*: [**IChartDataCell->setFormula**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataCell#setFormula-java.lang.String-) method is used to set A1-style cell references. 
 
-To set the [R1C1Formula](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataCell#getR1C1Formula--) cell reference, you can use the [**IChartDataCell.setR1C1Formula**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataCell#setR1C1Formula-java.lang.String-) method:
+To set the [R1C1Formula](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataCell#getR1C1Formula--) cell reference, you can use the [**IChartDataCell->setR1C1Formula**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataCell#setR1C1Formula-java.lang.String-) method:
 
 Then if you try to read the values from the cells B2 and C2, they will be calculated:
 
 ```java
-Object value1 = cell1.getValue(); // 7.8
+Object value1 = cell1->getValue(); // 7.8
 
-Object value2 = cell2.getValue(); // 2.1
+Object value2 = cell2->getValue(); // 2.1
 ``` 
 
 ## **Logical Constants**
 You can use logical constants such as *FALSE* and *TRUE* in cell formulas:
 
 ```java
-workbook.getCell(0, "A2").setValue(false);
-IChartDataCell cell = workbook.getCell(0, "B2");
-cell.setFormula("A2 = TRUE");
-Object value = cell.getValue(); // the value contains boolean "false"
+workbook->getCell(0, "A2")->setValue(false);
+IChartDataCell cell = workbook->getCell(0, "B2");
+cell->setFormula("A2 = TRUE");
+Object value = cell->getValue(); // the value contains boolean "false"
 ```
 
 ## **Numerical Constants**
 Numbers can be used in common or scientific notations to create chart spreadsheet formula:
 
 ```java
-workbook.getCell(0, "A2").setFormula("1 + 0.5");
-workbook.getCell(0, "B2").setFormula(".3 * 1E-2");
+workbook->getCell(0, "A2")->setFormula("1 + 0.5");
+workbook->getCell(0, "B2")->setFormula(".3 * 1E-2");
 ```
 
 ## **String Constants**
 String (or literal) constant is a specific value that is used as it is and does not change. String constants may be: dates, texts, numbers, etc.:
 
 ```java
-workbook.getCell(0, "A2").setFormula("\"abc\"");
-workbook.getCell(0, "B2").setFormula("\"2/3/2020 12:00\"");
+workbook->getCell(0, "A2")->setFormula("\"abc\"");
+workbook->getCell(0, "B2")->setFormula("\"2/3/2020 12:00\"");
 ```
 
 ## **Error Constants**
@@ -127,9 +127,9 @@ Sometimes its not possible to calculate the result by the formula. In that case,
 - #VALUE! - unexpected value type. For example, string value set to numeric cell.
 
 ```java
-IChartDataCell cell = workbook.getCell(0, "A2");
-cell.setFormula("2 / 0");
-Object value = cell.getValue(); // the value contains the string "#DIV/0!"
+IChartDataCell cell = workbook->getCell(0, "A2");
+cell->setFormula("2 / 0");
+Object value = cell->getValue(); // the value contains the string "#DIV/0!"
 ```
 
 ## **Arithmetic Operators**
@@ -173,7 +173,7 @@ You can compare the values of cells with the comparison operators. When two valu
 Here is an example how to use A1-style cell reference in formula:
 
 ```java
-workbook.getCell(0, "A2").setFormula("C3 + SUM(F2:H5)");
+workbook->getCell(0, "A2")->setFormula("C3 + SUM(F2:H5)");
 ```
 
 ## **R1C1-style Cell References**
@@ -191,7 +191,7 @@ workbook.getCell(0, "A2").setFormula("C3 + SUM(F2:H5)");
 Here is an example how to use A1-style cell reference in formula:
 
 ```java
-workbook.getCell(0, "A2").setR1C1Formula("R2C4 + SUM(R5C6:R7C9)");
+workbook->getCell(0, "A2")->setR1C1Formula("R2C4 + SUM(R5C6:R7C9)");
 ```
 
 ## **Predefined Functions**

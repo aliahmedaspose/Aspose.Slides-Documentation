@@ -31,8 +31,8 @@ try {
     IAudioFrame af = sld->getShapes().addAudioFrameEmbedded(50, 150, 100, 100, fstr);
 
     // Set Play Mode and Volume of the Audio
-    af.setPlayMode(AudioPlayModePreset.Auto);
-    af.setVolume(AudioVolumeMode.Loud);
+    af->setPlayMode(AudioPlayModePreset.Auto);
+    af->setVolume(AudioVolumeMode.Loud);
 
     //Write the PPTX file to disk
     $pres->save("AudioFrameEmbed_out.pptx", SaveFormat.Pptx);
@@ -58,10 +58,10 @@ try {
     ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Get the slideshow transition effects for slide
-    ISlideShowTransition transition = slide.getSlideShowTransition();
+    ISlideShowTransition transition = slide->getSlideShowTransition();
     
     //Extract sound in byte array
-    byte[] audio = transition.getSound().getBinaryData();
+    byte[] audio = transition->getSound()->getBinaryData();
     System.out.println("Length: " + audio.length);
 } finally {
     if ($pres != null) $pres->dispose();

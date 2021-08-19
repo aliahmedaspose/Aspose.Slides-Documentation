@@ -52,8 +52,8 @@ Convert PPT or PPTX presentation to HTML file using Aspose.Slides. For that, sav
 $pres = new Java("com.aspose.slides.Presentation", "Convert_HTML.pptx");
 try {
     HtmlOptions htmlOpt = new HtmlOptions();
-    htmlOpt.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomFull);
-    htmlOpt.setHtmlFormatter(HtmlFormatter.createDocumentFormatter("", false));
+    htmlOpt->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomFull);
+    htmlOpt->setHtmlFormatter(HtmlFormatter.createDocumentFormatter("", false));
 
     // Saving the presentation to HTML
     $pres->save("ConvertWholePresentationToHTML_out.html", SaveFormat.Html, htmlOpt);
@@ -72,7 +72,7 @@ $pres = new Java("com.aspose.slides.Presentation", "Convert_HTML.pptx");
 try {
     ResponsiveHtmlController controller = new ResponsiveHtmlController();
     HtmlOptions htmlOptions = new HtmlOptions();
-    htmlOptions.setHtmlFormatter(HtmlFormatter.createCustomFormatter(controller));
+    htmlOptions->setHtmlFormatter(HtmlFormatter.createCustomFormatter(controller));
 
     // Saving the presentation to HTML
     $pres->save("ConvertPresentationToResponsiveHTML_out.html", SaveFormat.Html, htmlOptions);
@@ -88,8 +88,8 @@ The following example shows how to convert PPT(X) presentation to HTML with the 
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     HtmlOptions opt = new HtmlOptions();
-    INotesCommentsLayoutingOptions options = opt.getNotesCommentsLayouting();
-    options.setNotesPosition(NotesPositions.BottomFull);
+    INotesCommentsLayoutingOptions options = opt->getNotesCommentsLayouting();
+    options->setNotesPosition(NotesPositions.BottomFull);
 
     // Saving notes pages
     $pres->save("Output.html", SaveFormat.Html, opt);
@@ -110,7 +110,7 @@ try {
     EmbedAllFontsHtmlController embedFontsController = new EmbedAllFontsHtmlController(fontNameExcludeList);
 
     HtmlOptions htmlOptionsEmbed = new HtmlOptions();
-    htmlOptionsEmbed.setHtmlFormatter(HtmlFormatter.createCustomFormatter(embedFontsController));
+    htmlOptionsEmbed->setHtmlFormatter(HtmlFormatter.createCustomFormatter(embedFontsController));
 
     $pres->save("input-PFDinDisplayPro-Regular-installed.html", SaveFormat.Html, htmlOptionsEmbed);
 } finally {
@@ -125,8 +125,8 @@ Convert a separate presentation slide to HTML. Fo that use the same [**Save**](
 $pres = new Java("com.aspose.slides.Presentation", "Individual-Slide.pptx");
 try {
     HtmlOptions htmlOptions = new HtmlOptions();
-    htmlOptions.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomFull);
-    htmlOptions.setHtmlFormatter(HtmlFormatter.createCustomFormatter(new CustomFormattingController()));
+    htmlOptions->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomFull);
+    htmlOptions->setHtmlFormatter(HtmlFormatter.createCustomFormatter(new CustomFormattingController()));
 
     // Saving File
     for (int i = 0; i < $pres->getSlides().size(); i++)
@@ -147,7 +147,7 @@ public class CustomFormattingController implements IHtmlFormattingController
     @Override
     public void writeSlideStart(IHtmlGenerator generator, ISlide slide) 
 	{
-        generator.addHtml(String.format(SlideHeader, generator.getSlideIndex() + 1));
+        generator.addHtml(String.format(SlideHeader, generator->getSlideIndex() + 1));
     }
 
     @Override
@@ -175,7 +175,7 @@ $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     CustomHeaderAndFontsController htmlController = new CustomHeaderAndFontsController("styles.css");
     HtmlOptions options = new HtmlOptions();
-    options.setHtmlFormatter(HtmlFormatter.createCustomFormatter(htmlController));
+    options->setHtmlFormatter(HtmlFormatter.createCustomFormatter(htmlController));
 
     $pres->save("pres.html", SaveFormat.Html, options);
 } finally {
@@ -230,7 +230,7 @@ try
     LinkAllFontsHtmlController linkcont = new LinkAllFontsHtmlController(fontNameExcludeList,"C:/Windows/Fonts/");
 
     HtmlOptions htmlOptionsEmbed = new HtmlOptions();
-    htmlOptionsEmbed.setHtmlFormatter(HtmlFormatter.createCustomFormatter((IHtmlFormattingController) linkcont));
+    htmlOptionsEmbed->setHtmlFormatter(HtmlFormatter.createCustomFormatter((IHtmlFormattingController) linkcont));
 
     $pres->save("pres.html", SaveFormat.Html, htmlOptionsEmbed);
 }
@@ -260,7 +260,7 @@ public class LinkAllFontsHtmlController extends EmbedAllFontsHtmlController
             byte[] fontData)
     {
         try {
-            String fontName = substitutedFont == null ? originalFont.getFontName() : substitutedFont.getFontName();
+            String fontName = substitutedFont == null ? originalFont->getFontName() : substitutedFont->getFontName();
             String path = fontName + ".woff"; // some path sanitaze may be needed
             Files.write(new File(m_basePath + path).toPath(), fontData, StandardOpenOption.CREATE);
 
@@ -285,7 +285,7 @@ The code sample below shows how to export a PPT(X) presentation to HTML with the
 $pres = new Java("com.aspose.slides.Presentation", "SomePresentation.pptx");
 try {
     HtmlOptions saveOptions = new HtmlOptions();
-    saveOptions.setSvgResponsiveLayout(true);
+    saveOptions->setSvgResponsiveLayout(true);
     $pres->save("SomePresentation-out.html", SaveFormat.Html, saveOptions);
 } finally {
     if ($pres != null) $pres->dispose();
@@ -316,8 +316,8 @@ try {
     HtmlOptions htmlOptions = new HtmlOptions(controller);
     SVGOptions svgOptions = new SVGOptions(controller);
 
-    htmlOptions.setHtmlFormatter(HtmlFormatter.createCustomFormatter(controller));
-    htmlOptions.setSlideImageFormat(SlideImageFormat.svg(svgOptions));
+    htmlOptions->setHtmlFormatter(HtmlFormatter.createCustomFormatter(controller));
+    htmlOptions->setSlideImageFormat(SlideImageFormat.svg(svgOptions));
 
     // Saving the file
     $pres->save(fileName, SaveFormat.Html, htmlOptions);

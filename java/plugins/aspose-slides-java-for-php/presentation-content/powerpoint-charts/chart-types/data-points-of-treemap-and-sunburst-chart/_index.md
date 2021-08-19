@@ -35,7 +35,7 @@ If there is a need to format data points of the chart, we should use the followi
 
 [**IChartDataPointLevelsManager**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataPointLevelsManager), 
 [IChartDataPointLevel](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataPointLevel) classes 
-and [**IChartDataPoint.getDataPointLevels**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataPoint#getDataPointLevels--) method 
+and [**IChartDataPoint->getDataPointLevels**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataPoint#getDataPointLevels--) method 
 provide access to format data points of Treemap and Sunburst charts. 
 [**IChartDataPointLevelsManager**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataPointLevelsManager) 
 is used for accessing multi-level categories - it represents the container of 
@@ -51,8 +51,8 @@ provide access to corresponding settings.
 Show value of "Leaf 4" data point:
 
 ```java
-IChartDataPointCollection dataPoints = chart.getChartData().getSeries()->get_Item(0).getDataPoints();
-dataPoints->get_Item(3).getDataPointLevels()->get_Item(0).getLabel().getDataLabelFormat().setShowValue(true);
+IChartDataPointCollection dataPoints = chart->getChartData()->getSeries()->get_Item(0)->getDataPoints();
+dataPoints->get_Item(3)->getDataPointLevels()->get_Item(0)->getLabel()->getDataLabelFormat()->setShowValue(true);
 ```
 
 ![todo:image_alt_text](https://lh6.googleusercontent.com/bKHMf5Bj37ZkMwUE1OfXjw7_CRmDhafhQOUuVWDmitwbtdkwD68ibWluY6Q1HQz_z2Q-BR_SBrBPZ_gID5bGH0PUqI5w37S22RT-ZZal6k7qIDstKntYi5QXS8z-SgpnsI78WGiu)
@@ -61,12 +61,12 @@ dataPoints->get_Item(3).getDataPointLevels()->get_Item(0).getLabel().getDataLabe
 Set "Branch 1" data label to show series name ("Series1") instead of category name. Then set text color to yellow:
 
 ```java
-IDataLabel branch1Label = dataPoints->get_Item(0).getDataPointLevels()->get_Item(0).getLabel();
-branch1Label.getDataLabelFormat().setShowCategoryName(false);
-branch1Label.getDataLabelFormat().setShowSeriesName(true);
+IDataLabel branch1Label = dataPoints->get_Item(0)->getDataPointLevels()->get_Item(0)->getLabel();
+branch1Label->getDataLabelFormat()->setShowCategoryName(false);
+branch1Label->getDataLabelFormat()->setShowSeriesName(true);
 
-branch1Label.getDataLabelFormat().getTextFormat().getPortionFormat().getFillFormat().setFillType(FillType.Solid);
-branch1Label.getDataLabelFormat().getTextFormat().getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.YELLOW);
+branch1Label->getDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+branch1Label->getDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.YELLOW);
 ```
 
 ![todo:image_alt_text](https://lh6.googleusercontent.com/I9g0kewJnxkhUVlfSWRN39Ng-wzjWyRwF3yTbOD9HhLTLBt_sMJiEfDe7vOfqRNx89o9AVZsYTW3Vv_TIuj4EgM4_UEEi7zQ3jdvaO8FoG2JcsOqNRgbiE5HQZNz8xx_q9qdj8JQ)
@@ -79,12 +79,12 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Sunburst, 100, 100, 450, 400);
 
-    IChartDataPointCollection dataPoints = chart.getChartData().getSeries()->get_Item(0).getDataPoints();
+    IChartDataPointCollection dataPoints = chart->getChartData()->getSeries()->get_Item(0)->getDataPoints();
 
-    IChartDataPointLevel stem4branch = dataPoints->get_Item(9).getDataPointLevels()->get_Item(1);
+    IChartDataPointLevel stem4branch = dataPoints->get_Item(9)->getDataPointLevels()->get_Item(1);
 
-    stem4branch.getFormat().getFill().setFillType(FillType.Solid);
-    stem4branch.getFormat().getFill().getSolidFillColor().setColor(Color.RED);
+    stem4branch->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    stem4branch->getFormat()->getFill()->getSolidFillColor()->setColor(Color.RED);
 
     $pres->save("pres.pptx", SaveFormat.Pptx);
 } finally {

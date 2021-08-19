@@ -53,7 +53,7 @@ try {
 After creating, the shape will already contain one paragraph with a mathematical portion by default. The [**MathPortion**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathPortion) class is a portion that contains a mathematical text inside. To access mathematical content inside [**MathPortion**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathPortion), refer to the [**MathParagraph** ](https://apireference.aspose.com/slides/java/com.aspose.slides/MathParagraph)variable:
 
 ```java
-IMathParagraph mathParagraph = ((MathPortion)mathShape.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0)).getMathParagraph();
+IMathParagraph mathParagraph = ((MathPortion)mathShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0))->getMathParagraph();
 ``` 
 
 The [**MathParagraph**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathParagraph) class allows to read, add, edit and delete math blocks ([**MathBlock**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathBlock)), that consist of a combination of mathematical elements. For example, create a fraction and place it in the presentation:
@@ -68,11 +68,11 @@ Each mathematical element is represented by some class that implements the [**I
 
 ```java
 IMathBlock mathBlock = new MathematicalText("c")
-        .setSuperscript("2")
+        ->setSuperscript("2")
         .join("=")
-        .join(new MathematicalText("a").setSuperscript("2"))
+        .join(new MathematicalText("a")->setSuperscript("2"))
         .join("+")
-        .join(new MathematicalText("b").setSuperscript("2"));
+        .join(new MathematicalText("b")->setSuperscript("2"));
 ``` 
 
 Operations of the interface [**IMathElement**](https://apireference.aspose.com/slides/java/com.aspose.slides/IMathElement) are implemented in any type of element, including the [**MathBlock**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathBlock).
@@ -84,18 +84,18 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape mathShape = $pres->getSlides()->get_Item(0)->getShapes().addMathShape(0, 0, 720, 150);
 
-    IMathParagraph mathParagraph = ((MathPortion)mathShape.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0)).getMathParagraph();
+    IMathParagraph mathParagraph = ((MathPortion)mathShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0))->getMathParagraph();
     
     IMathFraction fraction = new MathematicalText("x").divide("y");
 
     mathParagraph.add(new MathBlock(fraction));
 
     IMathBlock mathBlock = new MathematicalText("c")
-            .setSuperscript("2")
+            ->setSuperscript("2")
             .join("=")
-            .join(new MathematicalText("a").setSuperscript("2"))
+            .join(new MathematicalText("a")->setSuperscript("2"))
             .join("+")
-            .join(new MathematicalText("b").setSuperscript("2"));
+            .join(new MathematicalText("b")->setSuperscript("2"));
     mathParagraph.add(mathBlock);
 
     $pres->save("math.pptx", SaveFormat.Pptx);
@@ -332,7 +332,7 @@ Sets subscript and superscript. You can set subscript and superscript at the sam
 Example:
 
 ```java
-IMathLeftSubSuperscriptElement script = new MathematicalText("y").setSubSuperscriptOnTheLeft("2x", "3z");
+IMathLeftSubSuperscriptElement script = new MathematicalText("y")->setSubSuperscriptOnTheLeft("2x", "3z");
 ``` 
 
 ### **Radical method**
@@ -362,7 +362,7 @@ Let's consider an expression: 
 Such expressions can be created through a combination of classes [MathFunction](https://apireference.aspose.com/slides/java/com.aspose.slides/MathFunction) and [MathLimit](https://apireference.aspose.com/slides/java/com.aspose.slides/MathLimit), and operations of the [IMathElement](https://apireference.aspose.com/slides/java/com.aspose.slides/IMathElement) as follows:
 
 ```java
-IMathFunction mathExpression = new MathematicalText("lim").setLowerLimit("x→∞").function("x");
+IMathFunction mathExpression = new MathematicalText("lim")->setLowerLimit("x→∞").function("x");
 ``` 
 
 ### **Nary and Integral methods**

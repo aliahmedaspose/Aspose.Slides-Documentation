@@ -39,10 +39,10 @@ It is possible to save a presentation to a stream by passing an output stream to
 // Instantiate a Presentation object that represents a PPT file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    $shape = $pres.getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 200, 200, 200);
+    $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 200, 200, 200);
 
     // Add text to shape
-    shape.getTextFrame().setText("This demo shows how to Create PowerPoint file and save it to Stream.");
+    shape->getTextFrame()->setText("This demo shows how to Create PowerPoint file and save it to Stream.");
 
     $os = new Java("java.io.FileOutputStream", "Save_As_Stream_out.pptx");
 
@@ -63,7 +63,7 @@ Aspose.Slides for Java provides a facility to set the view type for the generate
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Setting view type
-    $pres->getViewProperties().setLastView((byte) ViewType.SlideMasterView);
+    $pres->getViewProperties()->setLastView((byte) ViewType.SlideMasterView);
     
     // Saving presentation
     $pres->save("newDemo.pptx", SaveFormat.Pptx);
@@ -89,7 +89,7 @@ try {
     
     //Setting strick XML save options
     PptxOptions options = new PptxOptions();
-    options.setConformance(Conformance.Iso29500_2008_Strict);
+    options->setConformance(Conformance.Iso29500_2008_Strict);
     
     // Save your presentation to a file
     $pres->save("demoPass.pptx", SaveFormat.Pptx, options);
@@ -109,7 +109,7 @@ The following code snippets below show how to use [IProgressCallback](https://ap
 $pres = new Java("com.aspose.slides.Presentation", "ConvertToPDF.pptx");
 try {
     ISaveOptions saveOptions = new PdfOptions();
-    saveOptions.setProgressCallback((IProgressCallback) new ExportProgressHandler());
+    saveOptions->setProgressCallback((IProgressCallback) new ExportProgressHandler());
     $pres->save("ConvertToPDF.pdf", SaveFormat.Pdf, saveOptions);
 } finally {
     $pres->dispose();

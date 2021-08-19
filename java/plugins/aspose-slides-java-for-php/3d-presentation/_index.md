@@ -14,8 +14,8 @@ PowerPoint 3D models can be created from 2D shapes, by applying such effects on 
 The list of 3D features applied to the shapes can be found in **[ThreeDFormat](https://apireference.aspose.com/slides/java/com.aspose.slides/ThreeDFormat)** class. 
 The instance of the class can be get by:
  
-- **[Shape.getThreeDFormat()](https://apireference.aspose.com/slides/java/com.aspose.slides/Shape#getThreeDFormat--)** method for creating a PowerPoint 3D Model.
-- **[TextFrameFormat.getThreeDFormat()](https://apireference.aspose.com/slides/java/com.aspose.slides/TextFrameFormat#getThreeDFormat--)** method for creating a 3D Text 
+- **[Shape->getThreeDFormat()](https://apireference.aspose.com/slides/java/com.aspose.slides/Shape#getThreeDFormat--)** method for creating a PowerPoint 3D Model.
+- **[TextFrameFormat->getThreeDFormat()](https://apireference.aspose.com/slides/java/com.aspose.slides/TextFrameFormat#getThreeDFormat--)** method for creating a 3D Text 
 (WordArt).
 
 All effects implemented in **[ThreeDFormat](https://apireference.aspose.com/slides/java/com.aspose.slides/ThreeDFormat)** can be used for both shapes and text. 
@@ -58,7 +58,7 @@ The rotation of 3D model in PowerPoint can be done via menu:
 
 ![todo:image_alt_text](img_02_01.png)
 
-To rotate 3D model with Aspose.Slides API, use **[IThreeDFormat.getCamera()](https://apireference.aspose.com/slides/java/com.aspose.slides/ThreeDFormat#getCamera--)** 
+To rotate 3D model with Aspose.Slides API, use **[IThreeDFormat->getCamera()](https://apireference.aspose.com/slides/java/com.aspose.slides/ThreeDFormat#getCamera--)** 
 method, set the rotation of the camera relatively to 3D shape:
 
 ``` php
@@ -71,8 +71,8 @@ try {
 ```
 
 ## 3D Depth and Extrusion
-**[IThreeDFormat.getExtrusionHeight()](https://apireference.aspose.com/slides/java/com.aspose.slides/ThreeDFormat#getExtrusionHeight--)** 
-and **[IThreeDFormat.getExtrusionColor()](https://apireference.aspose.com/slides/java/com.aspose.slides/ThreeDFormat#getExtrusionColor--)** methods 
+**[IThreeDFormat->getExtrusionHeight()](https://apireference.aspose.com/slides/java/com.aspose.slides/ThreeDFormat#getExtrusionHeight--)** 
+and **[IThreeDFormat->getExtrusionColor()](https://apireference.aspose.com/slides/java/com.aspose.slides/ThreeDFormat#getExtrusionColor--)** methods 
 are used to create extrusion on shape:
 
 ``` php

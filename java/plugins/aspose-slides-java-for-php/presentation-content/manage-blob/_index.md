@@ -37,7 +37,7 @@ Aspose.Slides for Java provides a facility to Export large files (audio and vide
 ```java
 LoadOptions loadOptions = new LoadOptions();
 // lock the source file and don't load it into memory
-loadOptions.getBlobManagementOptions().setPresentationLockingBehavior(PresentationLockingBehavior.KeepLocked);
+loadOptions->getBlobManagementOptions()->setPresentationLockingBehavior(PresentationLockingBehavior.KeepLocked);
 
 // create the Presentation's instance, lock the "hugePresentationWithAudiosAndVideos.pptx" file.
 $pres = new Java("com.aspose.slides.Presentation", "Large_Video_File_Test.pptx", loadOptions);
@@ -54,7 +54,7 @@ try {
         // like video.BinaryData - this property returns a byte array containing full video, and that means
         // this bytes will be loaded into memory. We will use video.GetStream, which will return Stream and
         // that allows us to not load the whole video into memory.
-        InputStream presVideoStream = video.getStream();
+        InputStream presVideoStream = video->getStream();
         try {
             $outputFileStream = new Java("java.io.FileOutputStream", "video" + index + ".avi");
             try {

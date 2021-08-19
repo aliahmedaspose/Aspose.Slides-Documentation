@@ -20,7 +20,7 @@ try {
     IShape shape = findShape(slide, "Shape1");
     if (shape != null)
     {
-        System.out.println("Shape Name: " + shape.getName());
+        System.out.println("Shape Name: " + shape->getName());
     }
 } finally {
     if ($pres != null) $pres->dispose();
@@ -35,7 +35,7 @@ public static IShape findShape(ISlide slide, String alttext)
     {
         // If the alternative text of the slide matches with the required one then
         // Return the shape
-        if (slide->getShapes()->get_Item(i).getAlternativeText().compareTo(alttext) == 0)
+        if (slide->getShapes()->get_Item(i)->getAlternativeText().compareTo(alttext) == 0)
             return slide->getShapes()->get_Item(i);
     }
     return null;
@@ -59,10 +59,10 @@ The example below adds a group shape to a slide.
 $pres = new Java("com.aspose.slides.Presentation", "Source Frame.pptx");
 try {
     IShapeCollection sourceShapes = $pres->getSlides()->get_Item(0)->getShapes();
-    ILayoutSlide blankLayout = $pres->getMasters()->get_Item(0).getLayoutSlides().getByType(SlideLayoutType.Blank);
+    ILayoutSlide blankLayout = $pres->getMasters()->get_Item(0)->getLayoutSlides()->getByType(SlideLayoutType.Blank);
     ISlide destSlide = $pres->getSlides().addEmptySlide(blankLayout);
     IShapeCollection destShapes = destSlide->getShapes();
-    destShapes.addClone(sourceShapes->get_Item(1), 50, 150 + sourceShapes->get_Item(0).getHeight());
+    destShapes.addClone(sourceShapes->get_Item(1), 50, 150 + sourceShapes->get_Item(0)->getHeight());
     destShapes.addClone(sourceShapes->get_Item(2));
     destShapes.insertClone(0, sourceShapes->get_Item(0), 50, 150);
 
@@ -98,7 +98,7 @@ try {
     for (int i = 0; i < iCount; i++)
     {
         AutoShape ashp = (AutoShape)sld->getShapes()->get_Item(0);
-        if (alttext.equals(ashp.getAlternativeText()))
+        if (alttext.equals(ashp->getAlternativeText()))
         {
             sld->getShapes().remove(ashp);
         }
@@ -136,9 +136,9 @@ try {
     for (int i = 0; i < iCount; i++)
     {
         AutoShape ashp = (AutoShape)sld->getShapes()->get_Item(i);
-        if (alttext.equals(ashp.getAlternativeText()))
+        if (alttext.equals(ashp->getAlternativeText()))
         {
-            ashp.setHidden(true);
+            ashp->setHidden(true);
         }
     }
 
@@ -165,12 +165,12 @@ $pres = new Java("com.aspose.slides.Presentation", "ChangeShapeOrder.pptx");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
     IAutoShape shp3 = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 365, 400, 150);
-    shp3.getFillFormat().setFillType(FillType.NoFill);
+    shp3->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
     shp3->addTextFrame(" ");
 
-    IParagraph para = shp3.getTextFrame().getParagraphs()->get_Item(0);
-    IPortion portion = para.getPortions()->get_Item(0);
-    portion.setText("Watermark Text Watermark Text Watermark Text");
+    IParagraph para = shp3->getTextFrame()->getParagraphs()->get_Item(0);
+    IPortion portion = para->getPortions()->get_Item(0);
+    portion->setText("Watermark Text Watermark Text Watermark Text");
 
     shp3 = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Triangle, 200, 365, 400, 150);
 
@@ -189,7 +189,7 @@ Aspose.Slides for Java allows developers to get a unique shape identifier in sli
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Getting unique shape identifier in slide scope
-    long officeInteropShapeId = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0).getOfficeInteropShapeId();
+    long officeInteropShapeId = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getOfficeInteropShapeId();
 
 } finally {
     if ($pres != null) $pres->dispose();
@@ -222,15 +222,15 @@ try {
     // Add autoshape of rectangle type
     IShape shp1 = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 40, 150, 50);
     IShape shp2 = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Moon, 160, 40, 150, 50);
-    shp2.getFillFormat().setFillType(FillType.Solid);
-    shp2.getFillFormat().getSolidFillColor().setColor(Color.GRAY);
+    shp2->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    shp2->getFillFormat()->getSolidFillColor()->setColor(Color.GRAY);
 
     for (int i = 0; i < sld->getShapes().size(); i++)
     {
         AutoShape shape = (AutoShape) sld->getShapes()->get_Item(i);
         if (shape != null)
         {
-            shape.setAlternativeText("User Defined");
+            shape->setAlternativeText("User Defined");
         }
     }
 
@@ -253,8 +253,8 @@ try {
     {
         for (IShape shape : layoutSlide->getShapes())
         {
-            IFillFormat fillFormats = shape.getFillFormat();
-            ILineFormat lineFormats = shape.getLineFormat();
+            IFillFormat fillFormats = shape->getFillFormat();
+            ILineFormat lineFormats = shape->getLineFormat();
         }
     }
 } finally {

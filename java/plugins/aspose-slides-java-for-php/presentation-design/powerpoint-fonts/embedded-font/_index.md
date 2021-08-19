@@ -13,19 +13,19 @@ Now, you can also work with embedded fonts. [FontsManager](https://apireference.
 $pres = new Java("com.aspose.slides.Presentation", "EmbeddedFonts.pptx");
 try {
     // render a slide that contains a text frame that uses embedded "FunSized"
-    ImageIO.write($pres->getSlides()->get_Item(0).getThumbnail(new Dimension(960, 720)),
+    ImageIO.write($pres->getSlides()->get_Item(0)->getThumbnail(new Dimension(960, 720)),
             "PNG", new File("picture1_out.png"));
 
     IFontsManager fontsManager = $pres->getFontsManager();
 
     // get all embedded fonts
-    IFontData[] embeddedFonts = fontsManager.getEmbeddedFonts();
+    IFontData[] embeddedFonts = fontsManager->getEmbeddedFonts();
 
     // find "Calibri" font
     IFontData calibriEmbeddedFont = null;
     for (int i = 0; i < embeddedFonts.length; i++) {
-        System.out.println(""+ embeddedFonts[i].getFontName());
-        if ("Calibri".equals(embeddedFonts[i].getFontName())) {
+        System.out.println(""+ embeddedFonts[i]->getFontName());
+        if ("Calibri".equals(embeddedFonts[i]->getFontName())) {
             calibriEmbeddedFont = embeddedFonts[i];
             break;
         }
@@ -35,7 +35,7 @@ try {
     fontsManager.removeEmbeddedFont(calibriEmbeddedFont);
 
     // render the presentation; removed "Calibri" font is replaced to an existing one
-    ImageIO.write($pres->getSlides()->get_Item(0).getThumbnail(new Dimension(960, 720)),
+    ImageIO.write($pres->getSlides()->get_Item(0)->getThumbnail(new Dimension(960, 720)),
             "PNG", new File("picture2_out.png"));
 
     // save the presentation without embedded "Calibri" font
@@ -53,8 +53,8 @@ A new property of embedding fonts has been added. To allow embedding fonts into
 // Load presentation
 $pres = new Java("com.aspose.slides.Presentation", "Fonts.pptx");
 try {
-    IFontData[] allFonts = $pres->getFontsManager().getFonts();
-    IFontData[] embeddedFonts = $pres->getFontsManager().getEmbeddedFonts();
+    IFontData[] allFonts = $pres->getFontsManager()->getFonts();
+    IFontData[] embeddedFonts = $pres->getFontsManager()->getEmbeddedFonts();
 
     for (IFontData font : allFonts)
     {

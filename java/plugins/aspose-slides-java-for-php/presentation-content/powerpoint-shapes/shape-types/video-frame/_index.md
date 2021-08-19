@@ -31,11 +31,11 @@ try {
     IVideoFrame vf = sld->getShapes().addVideoFrame(50, 150, 300, 350, vid);
 
     // Set video to Video Frame
-    vf.setEmbeddedVideo(vid);
+    vf->setEmbeddedVideo(vid);
 
     // Set Play Mode and Volume of the Video
-    vf.setPlayMode(VideoPlayModePreset.Auto);
-    vf.setVolume(AudioVolumeMode.Loud);
+    vf->setPlayMode(VideoPlayModePreset.Auto);
+    vf->setVolume(AudioVolumeMode.Loud);
 
     // Write the PPTX file to disk
     $pres->save("VideoFrame.pptx", SaveFormat.Pptx);
@@ -74,7 +74,7 @@ private static void addVideoFromYouTube(Presentation pres, String videoID)
     // add videoFrame
     IVideoFrame videoFrame = $pres->getSlides()->get_Item(0)->getShapes().addVideoFrame(
             10, 10, 427, 240, "https://www.youtube.com/embed/" + videoID);
-    videoFrame.setPlayMode(VideoPlayModePreset.Auto);
+    videoFrame->setPlayMode(VideoPlayModePreset.Auto);
 
     // load thumbnail
     String thumbnailUri = "http://img.youtube.com/vi/" + videoID + "/hqdefault.jpg";
@@ -82,7 +82,7 @@ private static void addVideoFromYouTube(Presentation pres, String videoID)
 
     try {
         url = new URL(thumbnailUri);
-        videoFrame.getPictureFormat().getPicture().setImage($pres->getImages().addImage(url.openStream()));
+        videoFrame->getPictureFormat()->getPicture()->setImage($pres->getImages().addImage(url.openStream()));
     } catch (MalformedURLException e) {
         e.printStackTrace();
     } catch (IOException e) {
@@ -116,8 +116,8 @@ try {
     IVideoFrame vf = sld->getShapes().addVideoFrame(50, 150, 300, 150, "Wildlife.mp4");
 
     // Set Play Mode and Volume of the Video
-    vf.setPlayMode(VideoPlayModePreset.Auto);
-    vf.setVolume(AudioVolumeMode.Loud);
+    vf->setPlayMode(VideoPlayModePreset.Auto);
+    vf->setVolume(AudioVolumeMode.Loud);
 
     // Write the PPTX file to disk
     $pres->save("VideoFrame.pptx", SaveFormat.Pptx);
@@ -146,9 +146,9 @@ try {
             if (shape instanceof VideoFrame) 
             {
                 IVideoFrame vf = (IVideoFrame) shape;
-                String type = vf.getEmbeddedVideo().getContentType();
+                String type = vf->getEmbeddedVideo()->getContentType();
                 int ss = type.lastIndexOf('-');
-                byte[] buffer = vf.getEmbeddedVideo().getBinaryData();
+                byte[] buffer = vf->getEmbeddedVideo()->getBinaryData();
 
                 //Get File Extension
                 int charIndex = type.indexOf("/");

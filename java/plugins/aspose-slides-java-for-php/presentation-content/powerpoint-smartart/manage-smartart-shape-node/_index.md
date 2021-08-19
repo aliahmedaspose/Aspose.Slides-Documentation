@@ -30,16 +30,16 @@ try {
             SmartArt smart = (SmartArt) shape;
     
             // Adding a new SmartArt Node
-            SmartArtNode TemNode = (SmartArtNode) smart.getAllNodes().addNode();
+            SmartArtNode TemNode = (SmartArtNode) smart->getAllNodes().addNode();
     
             // Adding text
-            TemNode.getTextFrame().setText("Test");
+            TemNode->getTextFrame()->setText("Test");
     
             // Adding new child node in parent node. It will be added in the end of collection
-            SmartArtNode newNode = (SmartArtNode) TemNode.getChildNodes().addNode();
+            SmartArtNode newNode = (SmartArtNode) TemNode->getChildNodes().addNode();
     
             // Adding text
-            newNode.getTextFrame().setText("New Node Added");
+            newNode->getTextFrame()->setText("New Node Added");
         }
     }
     
@@ -71,13 +71,13 @@ try {
     ISmartArt smart = $slide->getShapes().addSmartArt(0, 0, 400, 400, SmartArtLayoutType.StackedList);
 
     // Accessing the SmartArt node at index 0
-    ISmartArtNode node = smart.getAllNodes()->get_Item(0);
+    ISmartArtNode node = smart->getAllNodes()->get_Item(0);
 
     // Adding new child node at position 2 in parent node
-    SmartArtNode chNode = (SmartArtNode) ((SmartArtNodeCollection) node.getChildNodes()).addNodeByPosition(2);
+    SmartArtNode chNode = (SmartArtNode) ((SmartArtNodeCollection) node->getChildNodes()).addNodeByPosition(2);
 
     // Add Text
-    chNode.getTextFrame().setText("Sample Text Added");
+    chNode->getTextFrame()->setText("Sample Text Added");
 
     // Save Presentation
     $pres->save("AddSmartArtNodeByPosition.pptx", SaveFormat.Pptx);
@@ -113,13 +113,13 @@ try {
             ISmartArt smart = (ISmartArt) shape;
     
             // Traverse through all nodes inside SmartArt
-            for (int i = 0; i < smart.getAllNodes().size(); i++) 
+            for (int i = 0; i < smart->getAllNodes().size(); i++) 
             {
                 // Accessing SmartArt node at index i
-                SmartArtNode node = (SmartArtNode) smart.getAllNodes()->get_Item(i);
+                SmartArtNode node = (SmartArtNode) smart->getAllNodes()->get_Item(i);
     
                 // Printing the SmartArt node parameters
-                System.out.print(node.getTextFrame().getText() + " " + node.getLevel() + " " + node.getPosition());
+                System.out.print(node->getTextFrame()->getText() + " " + node->getLevel() + " " + node->getPosition());
             }
         }
     }
@@ -157,19 +157,19 @@ try {
             ISmartArt smart = (ISmartArt) shape;
     
             // Traverse through all nodes inside SmartArt
-            for (int i = 0; i < smart.getAllNodes().size(); i++) 
+            for (int i = 0; i < smart->getAllNodes().size(); i++) 
             {
                 // Accessing SmartArt node at index i
-                SmartArtNode node0 = (SmartArtNode) smart.getAllNodes()->get_Item(i);
+                SmartArtNode node0 = (SmartArtNode) smart->getAllNodes()->get_Item(i);
                 
                 // Traversing through the child nodes in SmartArt node at index i
-                for (int j = 0; j < node0.getChildNodes().size(); j++) 
+                for (int j = 0; j < node0->getChildNodes().size(); j++) 
                 {
                     // Accessing the child node in SmartArt node
-                    SmartArtNode node = (SmartArtNode) node0.getChildNodes()->get_Item(j);
+                    SmartArtNode node = (SmartArtNode) node0->getChildNodes()->get_Item(j);
     
                     // Printing the SmartArt child node parameters
-                    System.out.print("j = " + j + ", Text = " + node.getTextFrame().getText() + ",  Level = " + node.getLevel() + ", Position = " + node.getPosition());
+                    System.out.print("j = " + j + ", Text = " + node->getTextFrame()->getText() + ",  Level = " + node->getLevel() + ", Position = " + node->getPosition());
                 }
             }
         }
@@ -201,14 +201,14 @@ try {
     ISmartArt smart = $slide->getShapes().addSmartArt(0, 0, 400, 400, SmartArtLayoutType.StackedList);
     
     // Accessing the SmartArt node at index 0
-    ISmartArtNode node = smart.getAllNodes()->get_Item(0);
+    ISmartArtNode node = smart->getAllNodes()->get_Item(0);
     
     // Accessing the child node at position 1 in parent node
     int position = 1;
-    SmartArtNode chNode = (SmartArtNode) ((SmartArtNodeCollection) node.getChildNodes())->get_Item(position);
+    SmartArtNode chNode = (SmartArtNode) ((SmartArtNodeCollection) node->getChildNodes())->get_Item(position);
     
     // Printing the SmartArt child node parameters
-    System.out.print("Text = " + chNode.getTextFrame().getText() + ",  Level = " + chNode.getLevel() + ", Position = " + chNode.getPosition());
+    System.out.print("Text = " + chNode->getTextFrame()->getText() + ",  Level = " + chNode->getLevel() + ", Position = " + chNode->getPosition());
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -239,13 +239,13 @@ try {
             // Typecast shape to SmartArt
             ISmartArt smart = (ISmartArt) shape;
     
-            if (smart.getAllNodes().size() > 0) 
+            if (smart->getAllNodes().size() > 0) 
             {
                 // Accessing SmartArt node at index 0
-                ISmartArtNode node = smart.getAllNodes()->get_Item(0);
+                ISmartArtNode node = smart->getAllNodes()->get_Item(0);
     
                 // Removing the selected node
-                smart.getAllNodes().removeNode(node);
+                smart->getAllNodes().removeNode(node);
             }
         }
     }
@@ -282,15 +282,15 @@ try {
             // Typecast shape to SmartArt
             SmartArt smart = (SmartArt) shape;
     
-            if (smart.getAllNodes().size() > 0) 
+            if (smart->getAllNodes().size() > 0) 
             {
                 // Accessing SmartArt node at index 0
-                ISmartArtNode node = smart.getAllNodes()->get_Item(0);
+                ISmartArtNode node = smart->getAllNodes()->get_Item(0);
     
-                if (node.getChildNodes().size() >= 2) 
+                if (node->getChildNodes().size() >= 2) 
                 {
                     // Removing the child node at position 1
-                    (node.getChildNodes()).removeNode(1);
+                    (node->getChildNodes()).removeNode(1);
                 }
             }
         }
@@ -313,25 +313,25 @@ try{
     ISmartArt smart = $pres->getSlides()->get_Item(0)->getShapes().addSmartArt(20, 20, 600, 500, SmartArtLayoutType.OrganizationChart);
 
     // Move SmartArt shape to new position
-    ISmartArtNode node = smart.getAllNodes()->get_Item(1);
+    ISmartArtNode node = smart->getAllNodes()->get_Item(1);
     ISmartArtShape shape = node->getShapes()->get_Item(1);
-    shape.setX(shape.getX() + shape.getWidth() * 2);
-    shape.setY(shape.getY() - shape.getHeight() * 2);
+    shape->setX(shape->getX() + shape->getWidth() * 2);
+    shape->setY(shape->getY() - shape->getHeight() * 2);
 
     // Change SmartArt shape's widths
-    node = smart.getAllNodes()->get_Item(2);
+    node = smart->getAllNodes()->get_Item(2);
     shape = node->getShapes()->get_Item(1);
-    shape.setWidth(shape.getWidth() + shape.getWidth() * 2);
+    shape->setWidth(shape->getWidth() + shape->getWidth() * 2);
 
     // Change SmartArt shape's height
-    node = smart.getAllNodes()->get_Item(3);
+    node = smart->getAllNodes()->get_Item(3);
     shape = node->getShapes()->get_Item(1);
-    shape.setHeight(shape.getHeight() + shape.getHeight() * 2);
+    shape->setHeight(shape->getHeight() + shape->getHeight() * 2);
 
     // Change SmartArt shape's rotation
-    node = smart.getAllNodes()->get_Item(4);
+    node = smart->getAllNodes()->get_Item(4);
     shape = node->getShapes()->get_Item(1);
-    shape.setRotation(90);
+    shape->setRotation(90);
 
     $pres->save("SmartArt.pptx", SaveFormat.Pptx);
 }finally {
@@ -376,9 +376,9 @@ try {
             ISmartArt smart = (SmartArt) shape;
     
             // Traversing through all nodes of SmartArt shape
-            for (int i = 0; i < smart.getAllNodes().size(); i++) 
+            for (int i = 0; i < smart->getAllNodes().size(); i++) 
             {
-                ISmartArtNode node = smart.getAllNodes()->get_Item(i);
+                ISmartArtNode node = smart->getAllNodes()->get_Item(i);
                 // Check if node is Assistant node
                 if (node.isAssistant()) 
                 {
@@ -420,14 +420,14 @@ try {
     
     // Adding SmartArt shape and nodes
     ISmartArt chevron = $slide->getShapes().addSmartArt(10, 10, 800, 60, SmartArtLayoutType.ClosedChevronProcess);
-    ISmartArtNode node = chevron.getAllNodes().addNode();
-    node.getTextFrame().setText("Some text");
+    ISmartArtNode node = chevron->getAllNodes().addNode();
+    node->getTextFrame()->setText("Some text");
     
     // Setting node fill color
     for (IShape item : node->getShapes()) 
     {
-        item.getFillFormat().setFillType(FillType.Solid);
-        item.getFillFormat().getSolidFillColor().setColor(Color.RED);
+        item->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+        item->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
     }
     
     // Save the presentation
@@ -454,10 +454,10 @@ try {
     ISmartArt smart = $pres->getSlides()->get_Item(0)->getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.BasicCycle);
 
     // Obtain the reference of a node by using its Index  
-    ISmartArtNode node = smart.getNodes()->get_Item(1);
+    ISmartArtNode node = smart->getNodes()->get_Item(1);
 
     // Get thumbnail
-    BufferedImage bmp = node->getShapes()->get_Item(0).getThumbnail();
+    BufferedImage bmp = node->getShapes()->get_Item(0)->getThumbnail();
 
     // Save thumbnail
     ImageIO.write(bmp, "PNG", new File("SmartArt_ChildNote_Thumbnail.png"));

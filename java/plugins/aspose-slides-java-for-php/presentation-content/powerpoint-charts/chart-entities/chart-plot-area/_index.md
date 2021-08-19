@@ -21,13 +21,13 @@ Aspose.Slides for Java provides a simple API for . 
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    Chart chart = (Chart)pres.getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 350);
+    Chart chart = (Chart)pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 350);
     chart.validateChartLayout();
 
-    double x = chart.getPlotArea().getActualX();
-    double y = chart.getPlotArea().getActualY();
-    double w = chart.getPlotArea().getActualWidth();
-    double h = chart.getPlotArea().getActualHeight();
+    double x = chart->getPlotArea()->getActualX();
+    double y = chart->getPlotArea()->getActualY();
+    double w = chart->getPlotArea()->getActualWidth();
+    double h = chart->getPlotArea()->getActualHeight();
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -47,11 +47,11 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
     IChart chart = $slide->getShapes().addChart(ChartType.ClusteredColumn, 20, 100, 600, 400);
-    chart.getPlotArea().setX(0.2f);
-    chart.getPlotArea().setY(0.2f);
-    chart.getPlotArea().setWidth(0.7f);
-    chart.getPlotArea().setHeight(0.7f);
-    chart.getPlotArea().setLayoutTargetType(LayoutTargetType.Inner);
+    chart->getPlotArea()->setX(0.2f);
+    chart->getPlotArea()->setY(0.2f);
+    chart->getPlotArea()->setWidth(0.7f);
+    chart->getPlotArea()->setHeight(0.7f);
+    chart->getPlotArea()->setLayoutTargetType(LayoutTargetType.Inner);
 
     $pres->save("SetLayoutMode_outer.pptx", SaveFormat.Pptx);
 } finally {

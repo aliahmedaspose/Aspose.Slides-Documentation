@@ -54,7 +54,7 @@ All the other logic is the same as in adding watermark into a single slide - cre
 // Open presentation
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IMasterSlide master = $pres->getMasters()->get_Item(0);
+    $master = $pres->getMasters()->get_Item(0);
 
     $watermarkShape = master->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Triangle, 0, 0, 0, 0);
 
@@ -74,11 +74,11 @@ try {
 You can change the font of text watermark:
 
 ```java
-IPortion watermarkPortion = watermarkTextFrame.getParagraphs()->get_Item(0).getPortions()->get_Item(0);
+$watermarkPortion = watermarkTextFrame->getParagraphs()->get_Item(0)->getPortions()->get_Item(0);
 
-watermarkPortion.getPortionFormat().setFontBold(NullableBool.True);
+$watermarkPortion->getPortionFormat()->setFontBold(NullableBool.True);
 
-watermarkPortion.getPortionFormat().setFontHeight(52);
+$watermarkPortion->getPortionFormat()->setFontHeight(52);
 ``` 
 
 
@@ -88,11 +88,11 @@ To set the transparency of text watermark use this code:
 ```java
 int alpha = 150, red = 200, green = 200, blue = 200;
 
-IPortion watermarkPortion = watermarkTextFrame.getParagraphs()->get_Item(0).getPortions()->get_Item(0);
+$watermarkPortion = watermarkTextFrame->getParagraphs()->get_Item(0)->getPortions()->get_Item(0);
 
-watermarkPortion.getPortionFormat().getFillFormat().setFillType(FillType.Solid);
+$watermarkPortion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-watermarkPortion.getPortionFormat().getFillFormat().getSolidFillColor().setColor(new Color(red, green, blue, alpha));
+$watermarkPortion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(new Color(red, green, blue, alpha));
 ``` 
 
 
@@ -102,15 +102,15 @@ It is possible to center watermark on a slide and for that you can do the follow
 
 
 ```java
-Point2D.Float center = new Point2D.Float((float)  $pres->getSlideSize().getSize().getWidth() / 2, (float) $pres->getSlideSize().getSize().getHeight() / 2);
+Point2D.Float center = new Point2D.Float((float)  $pres->getSlideSize()->getSize()->getWidth() / 2, (float) $pres->getSlideSize()->getSize()->getHeight() / 2);
 
 float width = 300;
 
 float height = 300;
 
-float x = (float) center.getX() - width / 2;
+float x = (float) center->getX() - width / 2;
 
-float y = (float) center.getY() - height / 2;
+float y = (float) center->getY() - height / 2;
 
 
 //...
@@ -125,37 +125,37 @@ $watermarkShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.Shap
 To add image watermark into all presentation slides, you may do the following:
 
 ```java
-IPPImage image = $pres->getImages().addImage(Files.readAllBytes(Paths.get("watermark.png")));
+$image = $pres->getImages().addImage(Files.readAllBytes(Paths->get("watermark.png")));
 
 
 // ...
 
 
-watermarkShape.getFillFormat().setFillType(FillType.Picture);
+$watermarkShape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Picture);
 
-watermarkShape.getFillFormat().getPictureFillFormat().getPicture().setImage(image);
+$watermarkShape->getFillFormat()->getPictureFillFormat()->getPicture()->setImage(image);
 
-watermarkShape.getFillFormat().getPictureFillFormat().setPictureFillMode(PictureFillMode.Stretch);
+$watermarkShape->getFillFormat()->getPictureFillFormat()->setPictureFillMode(PictureFillMode.Stretch);
 ``` 
 
 
 
 
 ## **Lock Watermark from Editing**
-If its needed to prevent watermark from editing, use [**AutoShape.getShapeLock**](https://apireference.aspose.com/slides/java/com.aspose.slides/AutoShape#getShapeLock--) method on the shape, that wraps its. With this method you can protect shape from selection, resize, change position, grouping with other elements, lock its text from editing and many others:
+If its needed to prevent watermark from editing, use [**AutoShape->getShapeLock**](https://apireference.aspose.com/slides/java/com.aspose.slides/AutoShape#getShapeLock--) method on the shape, that wraps its. With this method you can protect shape from selection, resize, change position, grouping with other elements, lock its text from editing and many others:
 
 ```java
 // Lock Shapes from modifying
 
-watermarkShape.getShapeLock().setSelectLocked(true);
+$watermarkShape->getShapeLock()->setSelectLocked(true);
 
-watermarkShape.getShapeLock().setSizeLocked(true);
+$watermarkShape->getShapeLock()->setSizeLocked(true);
 
-watermarkShape.getShapeLock().setTextLocked(true);
+$watermarkShape->getShapeLock()->setTextLocked(true);
 
-watermarkShape.getShapeLock().setPositionLocked(true);
+$watermarkShape->getShapeLock()->setPositionLocked(true);
 
-watermarkShape.getShapeLock().setGroupingLocked(true);
+$watermarkShape->getShapeLock()->setGroupingLocked(true);
 ``` 
 
 {{% alert color="primary" title="See also" %}} 
@@ -174,15 +174,15 @@ slide->getShapes().reorder(slide->getShapes().size() - 1, watermarkShape);
 Here is an example how to set the rotation of watermark (and its parent shape):
 
 ```java
-float h = (float) $pres->getSlideSize().getSize().getHeight();
+float h = (float) $pres->getSlideSize()->getSize()->getHeight();
 
-float w = (float) $pres->getSlideSize().getSize().getWidth();
+float w = (float) $pres->getSlideSize()->getSize()->getWidth();
 
-watermarkShape.setX((w - watermarkShape.getWidth()) / 2);
+$watermarkShape->setX((w - $watermarkShape->getWidth()) / 2);
 
-watermarkShape.setY((h - watermarkShape.getHeight()) / 2);
+$watermarkShape->setY((h - $watermarkShape->getHeight()) / 2);
 
-watermarkShape.setRotation(calculateRotation(h, w));
+$watermarkShape->setRotation(calculateRotation(h, w));
 ```
 
 ```java
@@ -200,24 +200,24 @@ private int calculateRotation(float height, float width)
 
 
 ## **Set Name to Watermark**
-Aspose.Slides allows to set the name of shape. By shape name you can access it in future to modify or delete. To set the name of watermark parent shape - set it into [**AutoShape.getName**](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#getName--) method:
+Aspose.Slides allows to set the name of shape. By shape name you can access it in future to modify or delete. To set the name of watermark parent shape - set it into [**AutoShape->getName**](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#getName--) method:
 
 
 
 ```java
-watermarkShape.setName("watermark");
+$watermarkShape->setName("watermark");
 ``` 
 
 
 ## **Remove Watermark**
-To remove watermark shape and its child controls from slide, use [AutoShape.getName](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#getName--) method to find it in slide shapes. Then pass watermark shape into [**ShapeCollection.remove**](https://apireference.aspose.com/slides/java/com.aspose.slides/ShapeCollection#remove-com.aspose.slides.IShape-) method:
+To remove watermark shape and its child controls from slide, use [AutoShape->getName](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#getName--) method to find it in slide shapes. Then pass watermark shape into [**ShapeCollection.remove**](https://apireference.aspose.com/slides/java/com.aspose.slides/ShapeCollection#remove-com.aspose.slides.IShape-) method:
 
 ```java
 for (int i = 0; i < slide->getShapes().size(); i++)
 {
     AutoShape shape = (AutoShape)slide->getShapes()->get_Item(i);
 
-    if ("watermark".equals(shape.getName()))
+    if ("watermark".equals(shape->getName()))
     {
         slide->getShapes().remove(watermarkShape);
     }

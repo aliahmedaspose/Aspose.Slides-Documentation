@@ -15,7 +15,7 @@ The [Save](https://apireference.aspose.com/slides/java/com.aspose.slides/Present
 $pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     TiffOptions opts = new TiffOptions();
-    opts.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomFull);
+    opts->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomFull);
     
     //Saving the presentation to TIFF notes
     $pres->save("Tiff-Notes.tiff", SaveFormat.Tiff,opts);

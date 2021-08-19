@@ -66,16 +66,16 @@ Here is the same theme color set, with all its color names, available in "*Desig
 
 Here is possible to add new colors not defined in presentation theme, or change existing ones. For example, "Hyperlink” and ”Followed Hyperlink” colors were added manually. 
 ## **Change Theme Colors with Aspose.Slides**
-In [**Aspose.Slides**](https://products.aspose.com/slides/java) to choose the appropriate color from the theme color set and set it to the element, use [**IFillFormat.getSolidFillColor.getSchemeColor**](https://apireference.aspose.com/slides/java/com.aspose.slides/IColorFormat#getSchemeColor--) method:
+In [**Aspose.Slides**](https://products.aspose.com/slides/java) to choose the appropriate color from the theme color set and set it to the element, use [**IFillFormat->getSolidFillColor->getSchemeColor**](https://apireference.aspose.com/slides/java/com.aspose.slides/IColorFormat#getSchemeColor--) method:
 
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    $shape = $pres.getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 100, 100);
+    $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 100, 100);
 
-    shape.getFillFormat().setFillType(FillType.Solid);
+    shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-    shape.getFillFormat().getSolidFillColor().setSchemeColor(SchemeColor.Accent4);
+    shape->getFillFormat()->getSolidFillColor()->setSchemeColor(SchemeColor.Accent4);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -84,21 +84,21 @@ try {
 In the example above, we have set a reference on *Accent4* color, taken from the **scheme color** (theme colors). If we want to know the real value of this color, it is necessary to calculate its effective value - the value of the element color, which user sees after all the styles applied to this element:
 
 ```java
-IFillFormatEffectiveData fillEffective = shape.getFillFormat().getEffective();
+IFillFormatEffectiveData fillEffective = shape->getFillFormat()->getEffective();
 
-Color effectiveColor = fillEffective.getSolidFillColor();
+Color effectiveColor = fillEffective->getSolidFillColor();
 
 System.out.println(String.format("Color [A=%d, R=%d, G=%d, B=%d]", 
-        effectiveColor.getAlpha(), effectiveColor.getRed(), effectiveColor.getGreen(), effectiveColor.getBlue()));
+        effectiveColor->getAlpha(), effectiveColor->getRed(), effectiveColor->getGreen(), effectiveColor->getBlue()));
 ``` 
 
 We can check that color matches the one defined as *Accent4* for the presentation theme:
 
 ```java
-Color themeAccent4 = $pres->getMasterTheme().getColorScheme().getAccent4().getColor();
+Color themeAccent4 = $pres->getMasterTheme()->getColorScheme()->getAccent4()->getColor();
 
 System.out.println(String.format("Color [A=%d, R=%d, G=%d, B=%d] - from theme",
-        themeAccent4.getAlpha(), themeAccent4.getRed(), themeAccent4.getGreen(), themeAccent4.getBlue()));
+        themeAccent4->getAlpha(), themeAccent4->getRed(), themeAccent4->getGreen(), themeAccent4->getBlue()));
 ``` 
 
 Lets us create one more element and assign it the same *Accent4* color from the scheme. Then we will change this color in the scheme:
@@ -106,11 +106,11 @@ Lets us create one more element and assign it the same *Accent4* color from t
 ```java
 IAutoShape otherShape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 120, 100, 100);
 
-otherShape.getFillFormat().setFillType(FillType.Solid);
+otherShape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-otherShape.getFillFormat().getSolidFillColor().setSchemeColor(SchemeColor.Accent4);
+otherShape->getFillFormat()->getSolidFillColor()->setSchemeColor(SchemeColor.Accent4);
 
-pres.getMasterTheme().getColorScheme().getAccent4().setColor(Color.RED);
+pres->getMasterTheme()->getColorScheme()->getAccent4()->setColor(Color.RED);
 ``` 
 
 The color will change on both elements after we have changed it in the color theme. 
@@ -132,31 +132,31 @@ In [**Aspose.Slides**](https://products.aspose.com/slides/java) (the same as in 
 Let us create an element with the text, and assign the Latin font from the font scheme to it: 
 
 ```java
-$shape = $pres.getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 100, 100);
+$shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 100, 100);
 
 Paragraph paragraph = new Paragraph();
 
 Portion portion = new Portion("Theme text format");
 
-paragraph.getPortions().add(portion);
+paragraph->getPortions().add(portion);
 
-shape.getTextFrame().getParagraphs().add(paragraph);
+shape->getTextFrame()->getParagraphs().add(paragraph);
 
-portion.getPortionFormat().setLatinFont(new FontData("+mn-lt"));
+portion->getPortionFormat()->setLatinFont(new FontData("+mn-lt"));
 ``` 
 
 Now lets check that the same font is set for Body Latin:
 
 ```java
-System.out.println("Portion Body Latin font is: " + portion.getPortionFormat().getEffective().getLatinFont().getFontName());
+System.out.println("Portion Body Latin font is: " + portion->getPortionFormat()->getEffective()->getLatinFont()->getFontName());
 
-System.out.println("Theme Body Latin font is: " + $pres->getMasterTheme().getFontScheme().getMinor().getLatinFont());
+System.out.println("Theme Body Latin font is: " + $pres->getMasterTheme()->getFontScheme()->getMinor()->getLatinFont());
 ``` 
 
 It is possible to change the presentation theme font, which will be updated for all presentation text accordingly:
 
 ```java
-pres.getMasterTheme().getFontScheme().getMinor().setLatinFont(new FontData("Arial"));
+pres->getMasterTheme()->getFontScheme()->getMinor()->setLatinFont(new FontData("Arial"));
 ``` 
 
 {{% alert color="primary" title="See also" %}} 
@@ -169,14 +169,14 @@ Presentation theme may also contain a set of background styles, which can be cha
 ![todo:image_alt_text](presentation-design_8.png)
 
 ## **Change Theme Background Style with Aspose.Slides**
-In [**Aspose.Slides**](https://products.aspose.com/slides/java) its possible to access Background Style with [**IPresentation.getMasterTheme.getFormatScheme.getBackgroundFillStyles**](https://apireference.aspose.com/slides/java/com.aspose.slides/IFormatScheme#getBackgroundFillStyles--) method. There is a difference in the way Background Style is represented in presentation with Aspose.Slides comparing to PowerPoint. The logic difference affects the slide effects too. We will consider the Background Style logic difference below.
+In [**Aspose.Slides**](https://products.aspose.com/slides/java) its possible to access Background Style with [**IPresentation->getMasterTheme->getFormatScheme->getBackgroundFillStyles**](https://apireference.aspose.com/slides/java/com.aspose.slides/IFormatScheme#getBackgroundFillStyles--) method. There is a difference in the way Background Style is represented in presentation with Aspose.Slides comparing to PowerPoint. The logic difference affects the slide effects too. We will consider the Background Style logic difference below.
 
 On the images above you can see, that to design the Background Style in PowerPoint, there are 12 predefined backgrounds available. However, if we upload the presentation, saved in PowerPoint through Aspose.Slides, then execute the following code - we will see only 3 predefined backgrounds in the resulting presentation:
 
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
-    int numberOfBackgroundFills = $pres->getMasterTheme().getFormatScheme().getBackgroundFillStyles().size();
+    int numberOfBackgroundFills = $pres->getMasterTheme()->getFormatScheme()->getBackgroundFillStyles().size();
 
     System.out.println("Number of background fill styles for theme is " + numberOfBackgroundFills);
 } finally {
@@ -184,12 +184,12 @@ try {
 }
 ``` 
 
-The reason is that,12 predefined backgrounds are used to design Background Style only, but they are not actually saved into the resulting presentation. However, its possible to add additional backgrounds to [IPresentation.getMasterTheme.getFormatScheme.getBackgroundFillStyles](https://apireference.aspose.com/slides/java/com.aspose.slides/IFormatScheme#getBackgroundFillStyles--) method.
+The reason is that,12 predefined backgrounds are used to design Background Style only, but they are not actually saved into the resulting presentation. However, its possible to add additional backgrounds to [IPresentation->getMasterTheme->getFormatScheme->getBackgroundFillStyles](https://apireference.aspose.com/slides/java/com.aspose.slides/IFormatScheme#getBackgroundFillStyles--) method.
 
 To define which background should be used for presentation, set the needed presentation index (**Note**: the index starts from 1, not from 0. 0 is used to define "*no fill*" value):
 
 ```java
-pres.getMasters()->get_Item(0).getBackground().setStyleIndex(2);
+pres->getMasters()->get_Item(0)->getBackground()->setStyleIndex(2);
 ``` 
 
 {{% alert color="primary" title="See also" %}} 
@@ -213,20 +213,20 @@ For example, 3 shapes will look this way after we apply 3 different effects on t
 
 ![todo:image_alt_text](presentation-design_10.png)
 
-In [**Aspose.Slides**](https://products.aspose.com/slides/java) there are no "*Subtle*", "*Moderate*" and "*Intense*” effects. Instead, you can operate the [FormatScheme](https://apireference.aspose.com/slides/java/com.aspose.slides/FormatScheme) style matrix, having 3 elements in each array (FillStyles, LineStyles, EffectStyles) to change the outlook of presentation elements. There is also the [IPresentation.getMasterTheme.getFormatScheme.getBackgroundFillStyles](https://apireference.aspose.com/slides/java/com.aspose.slides/IFormatScheme#getBackgroundFillStyles--) method available, but it can only change the background fill style.
+In [**Aspose.Slides**](https://products.aspose.com/slides/java) there are no "*Subtle*", "*Moderate*" and "*Intense*” effects. Instead, you can operate the [FormatScheme](https://apireference.aspose.com/slides/java/com.aspose.slides/FormatScheme) style matrix, having 3 elements in each array (FillStyles, LineStyles, EffectStyles) to change the outlook of presentation elements. There is also the [IPresentation->getMasterTheme->getFormatScheme->getBackgroundFillStyles](https://apireference.aspose.com/slides/java/com.aspose.slides/IFormatScheme#getBackgroundFillStyles--) method available, but it can only change the background fill style.
 
 So, the effects you can use in PowerPoint are strictly limited. While, in Aspose.Slides it is possible to change them in a flexible way by changing their composite parts. In the following example, we will change the outlook of the abovementioned elements with Aspose.Slides:
 
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "Subtle_Moderate_Intense.pptx");
 try {
-    $pres->getMasterTheme().getFormatScheme().getLineStyles()->get_Item(0).getFillFormat().getSolidFillColor().setColor(Color.RED);
+    $pres->getMasterTheme()->getFormatScheme()->getLineStyles()->get_Item(0)->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
 
-    $pres->getMasterTheme().getFormatScheme().getFillStyles()->get_Item(2).setFillType(FillType.Solid);
+    $pres->getMasterTheme()->getFormatScheme()->getFillStyles()->get_Item(2)->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-    $pres->getMasterTheme().getFormatScheme().getFillStyles()->get_Item(2).getSolidFillColor().setColor(Color.GREEN);
+    $pres->getMasterTheme()->getFormatScheme()->getFillStyles()->get_Item(2)->getSolidFillColor()->setColor(Color.GREEN);
 
-    $pres->getMasterTheme().getFormatScheme().getEffectStyles()->get_Item(2).getEffectFormat().getOuterShadowEffect().setDistance(10f);
+    $pres->getMasterTheme()->getFormatScheme()->getEffectStyles()->get_Item(2)->getEffectFormat()->getOuterShadowEffect()->setDistance(10f);
 
     $pres->save("Design_04_Subtle_Moderate_Intense-out.pptx", SaveFormat.Pptx);
 } finally {

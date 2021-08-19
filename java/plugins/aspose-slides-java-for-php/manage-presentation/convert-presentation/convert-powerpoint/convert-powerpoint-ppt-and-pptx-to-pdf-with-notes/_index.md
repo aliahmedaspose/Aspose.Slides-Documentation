@@ -15,16 +15,16 @@ The following example shows how to convert a presentation to a PDF notes documen
 Presentation presIn = new Presentation("SelectedSlides.pptx");
 Presentation presOut = new Presentation();
 try {
-    ISlide slide = presIn.getSlides()->get_Item(0);
-    presOut.getSlides().insertClone(0, slide);
+    ISlide slide = presIn->getSlides()->get_Item(0);
+    presOut->getSlides().insertClone(0, slide);
     
     // Setting Slide Type and Size
-    presOut.getSlideSize().setSize(612F, 792F,SlideSizeScaleType.EnsureFit);
+    presOut->getSlideSize()->setSize(612F, 792F,SlideSizeScaleType.EnsureFit);
         
     PdfOptions pdfOptions = new PdfOptions();
-    pdfOptions.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomFull);
+    pdfOptions->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomFull);
 
-    presOut.save("PDF-SelectedSlide.pdf", SaveFormat.Pdf, pdfOptions);
+    presOut->save("PDF-SelectedSlide.pdf", SaveFormat.Pdf, pdfOptions);
 } finally {
     if (presIn != null) presIn.dispose();
     if (presOut != null) presOut.dispose();
@@ -38,7 +38,7 @@ The [**Save**](https://apireference.aspose.com/slides/java/com.aspose.slides/Pre
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
     PdfOptions pdfOptions = new PdfOptions();
-    pdfOptions.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomFull);
+    pdfOptions->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomFull);
 
     $pres->save(resourcesOutputPath+"PDF-Notes.pdf", SaveFormat.Pdf, pdfOptions);
 } finally {

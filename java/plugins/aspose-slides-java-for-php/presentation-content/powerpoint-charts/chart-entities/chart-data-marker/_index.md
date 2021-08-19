@@ -30,13 +30,13 @@ try {
     int defaultWorksheetIndex = 0;
     
     // Getting the chart data WorkSheet
-    IChartDataWorkbook fact = chart.getChartData().getChartDataWorkbook();
+    IChartDataWorkbook fact = chart->getChartData()->getChartDataWorkbook();
     
     // Delete demo series
-    chart.getChartData().getSeries().clear();
+    chart->getChartData()->getSeries().clear();
     
     // Add new series
-    chart.getChartData().getSeries().add(fact.getCell(defaultWorksheetIndex, 1, 1, "Series 1"), chart.getType());
+    chart->getChartData()->getSeries().add(fact->getCell(defaultWorksheetIndex, 1, 1, "Series 1"), chart->getType());
 
     // Load the picture 1
     IPPImage imgx1 = $pres->getImages().addImage(new FileInputStream(new File("Desert.jpg")));
@@ -45,27 +45,27 @@ try {
     IPPImage imgx2 = $pres->getImages().addImage(new FileInputStream(new File("Tulips.jpg")));
     
     // Take first chart series
-    IChartSeries series = chart.getChartData().getSeries()->get_Item(0);
+    IChartSeries series = chart->getChartData()->getSeries()->get_Item(0);
     
     // Add new point (1:3) there.
-    IChartDataPoint point = series.getDataPoints().addDataPointForLineSeries(fact.getCell(defaultWorksheetIndex, 1, 1, (double) 4.5));
-    point.getMarker().getFormat().getFill().setFillType(FillType.Picture);
-    point.getMarker().getFormat().getFill().getPictureFillFormat().getPicture().setImage(imgx1);
+    IChartDataPoint point = series->getDataPoints().addDataPointForLineSeries(fact->getCell(defaultWorksheetIndex, 1, 1, (double) 4.5));
+    point->getMarker()->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Picture);
+    point->getMarker()->getFormat()->getFill()->getPictureFillFormat()->getPicture()->setImage(imgx1);
     
-    point = series.getDataPoints().addDataPointForLineSeries(fact.getCell(defaultWorksheetIndex, 2, 1, (double) 2.5));
-    point.getMarker().getFormat().getFill().setFillType(FillType.Picture);
-    point.getMarker().getFormat().getFill().getPictureFillFormat().getPicture().setImage(imgx2);
+    point = series->getDataPoints().addDataPointForLineSeries(fact->getCell(defaultWorksheetIndex, 2, 1, (double) 2.5));
+    point->getMarker()->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Picture);
+    point->getMarker()->getFormat()->getFill()->getPictureFillFormat()->getPicture()->setImage(imgx2);
     
-    point = series.getDataPoints().addDataPointForLineSeries(fact.getCell(defaultWorksheetIndex, 3, 1, (double) 3.5));
-    point.getMarker().getFormat().getFill().setFillType(FillType.Picture);
-    point.getMarker().getFormat().getFill().getPictureFillFormat().getPicture().setImage(imgx1);
+    point = series->getDataPoints().addDataPointForLineSeries(fact->getCell(defaultWorksheetIndex, 3, 1, (double) 3.5));
+    point->getMarker()->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Picture);
+    point->getMarker()->getFormat()->getFill()->getPictureFillFormat()->getPicture()->setImage(imgx1);
     
-    point = series.getDataPoints().addDataPointForLineSeries(fact.getCell(defaultWorksheetIndex, 4, 1, (double) 4.5));
-    point.getMarker().getFormat().getFill().setFillType(FillType.Picture);
-    point.getMarker().getFormat().getFill().getPictureFillFormat().getPicture().setImage(imgx2);
+    point = series->getDataPoints().addDataPointForLineSeries(fact->getCell(defaultWorksheetIndex, 4, 1, (double) 4.5));
+    point->getMarker()->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Picture);
+    point->getMarker()->getFormat()->getFill()->getPictureFillFormat()->getPicture()->setImage(imgx2);
     
     // Changing the chart series marker
-    series.getMarker().setSize(15);
+    series->getMarker()->setSize(15);
     
     // Save presentation with chart
     $pres->save("ScatterChart.pptx", SaveFormat.Pptx);

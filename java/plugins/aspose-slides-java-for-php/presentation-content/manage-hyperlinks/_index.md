@@ -24,9 +24,9 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape shape1 = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 600, 50, false);
     shape1->addTextFrame("Aspose: File Format APIs");
-    shape1.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat().setHyperlinkClick(new Hyperlink("https://www.aspose.com/"));
-    shape1.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat().getHyperlinkClick().setTooltip( "More than 70% Fortune 100 companies trust Aspose APIs");
-    shape1.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat().setFontHeight(32);
+    shape1->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0)->getPortionFormat()->setHyperlinkClick(new Hyperlink("https://www.aspose.com/"));
+    shape1->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0)->getPortionFormat()->getHyperlinkClick()->setTooltip( "More than 70% Fortune 100 companies trust Aspose APIs");
+    shape1->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0)->getPortionFormat()->setFontHeight(32);
 
     $pres->save("presentation-out.pptx", SaveFormat.Pptx);
 } finally {
@@ -38,7 +38,7 @@ try {
 To remove hyperlinks from a presentation on the presentation level:
 
 1. Create an instance of the [Presentation](https://apireference.aspose.com/java/slides/com.aspose.slides/Presentation) class and access the desired presentation.
-1. Remove the hyperlinks in the presentation on the presentation level by accessing [IPresentation.getHyperlinkQueries()](https://apireference.aspose.com/java/slides/com.aspose.slides/IPresentation#getHyperlinkQueries--) and calling the [removeAllHyperlinks()](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlinkQueries#removeAllHyperlinks--) method.
+1. Remove the hyperlinks in the presentation on the presentation level by accessing [IPresentation->getHyperlinkQueries()](https://apireference.aspose.com/java/slides/com.aspose.slides/IPresentation#getHyperlinkQueries--) and calling the [removeAllHyperlinks()](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlinkQueries#removeAllHyperlinks--) method.
 1. Apply a slide transition effect on a slide.
 1. Write the modified presentation as a [PPTX](https://wiki.fileformat.com/presentation/pptx/) file.
 
@@ -68,15 +68,15 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape shape1 = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 450, 50, false);
     shape1->addTextFrame("This is a sample of colored hyperlink.");
-    IPortionFormat portionFormat = shape1.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat();
-    portionFormat.setHyperlinkClick(new Hyperlink("https://www.aspose.com/"));
-    portionFormat.getHyperlinkClick().setColorSource(HyperlinkColorSource.PortionFormat);
-    portionFormat.getFillFormat().setFillType(FillType.Solid);
-    portionFormat.getFillFormat().getSolidFillColor().setColor(java.awt.Color.RED);
+    IPortionFormat portionFormat = shape1->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0)->getPortionFormat();
+    portionFormat->setHyperlinkClick(new Hyperlink("https://www.aspose.com/"));
+    portionFormat->getHyperlinkClick()->setColorSource(HyperlinkColorSource.PortionFormat);
+    portionFormat->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    portionFormat->getFillFormat()->getSolidFillColor()->setColor(java.awt.Color.RED);
 
     IAutoShape shape2 = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 450, 50, false);
     shape2->addTextFrame("This is a sample of usual hyperlink.");
-    shape2.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat().setHyperlinkClick(new Hyperlink("https://www.aspose.com/"));
+    shape2->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0)->getPortionFormat()->setHyperlinkClick(new Hyperlink("https://www.aspose.com/"));
 
     $pres->save("presentation-out.pptx", SaveFormat.Pptx);
 } finally {
@@ -87,11 +87,11 @@ try {
 ## **Mutable Hyperlink**
 Hyperlink class changed to be mutable. Now it is possible to change values of the following properties which were read-only before:
 
-- [IHyperlink.setTargetFrame(String value)](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlink#setTargetFrame-java.lang.String-)
-- [IHyperlink.setTooltip(String value)](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlink#setTooltip-java.lang.String-)
-- [IHyperlink.setHistory(boolean value)](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlink#setHistory-boolean-)
-- [IHyperlink.setHighlightClick(boolean value)](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlink#setHighlightClick-boolean-)
-- [IHyperlink.setStopSoundOnClick(boolean value)](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlink#setStopSoundOnClick-boolean-)
+- [IHyperlink->setTargetFrame(String value)](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlink#setTargetFrame-java.lang.String-)
+- [IHyperlink->setTooltip(String value)](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlink#setTooltip-java.lang.String-)
+- [IHyperlink->setHistory(boolean value)](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlink#setHistory-boolean-)
+- [IHyperlink->setHighlightClick(boolean value)](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlink#setHighlightClick-boolean-)
+- [IHyperlink->setStopSoundOnClick(boolean value)](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlink#setStopSoundOnClick-boolean-)
 
 The code snippet below shows adding a hyperlink to the slide and editing its tooltip later:
 
@@ -100,10 +100,10 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape shape1 = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 600, 50, false);
     shape1->addTextFrame("Aspose: File Format APIs");
-    IPortionFormat portionFormat = shape1.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat();
-    portionFormat.setHyperlinkClick(new Hyperlink("https://www.aspose.com/"));
-    portionFormat.getHyperlinkClick().setTooltip("More than 70% Fortune 100 companies trust Aspose APIs");
-    portionFormat.setFontHeight(32);
+    IPortionFormat portionFormat = shape1->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0)->getPortionFormat();
+    portionFormat->setHyperlinkClick(new Hyperlink("https://www.aspose.com/"));
+    portionFormat->getHyperlinkClick()->setTooltip("More than 70% Fortune 100 companies trust Aspose APIs");
+    portionFormat->setFontHeight(32);
 
     $pres->save("presentation-out.pptx", SaveFormat.Pptx);
 } finally {
@@ -114,15 +114,15 @@ try {
 ## **Supported Methods in IHyperlinkQueries**
 The [IHyperlinkQueries](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlinkQueries) class can be accessed from the presentation, slide and text frame that the hyperlink is defined for.
 
-- [IPresentation.getHyperlinkQueries()](https://apireference.aspose.com/java/slides/com.aspose.slides/IPresentation#getHyperlinkQueries--)
-- [IBaseSlide.getHyperlinkQueries()](https://apireference.aspose.com/java/slides/com.aspose.slides/IBaseSlide#getHyperlinkQueries--)
-- [ITextFrame.getHyperlinkQueries()](https://apireference.aspose.com/java/slides/com.aspose.slides/ITextFrame#getHyperlinkQueries--)
+- [IPresentation->getHyperlinkQueries()](https://apireference.aspose.com/java/slides/com.aspose.slides/IPresentation#getHyperlinkQueries--)
+- [IBaseSlide->getHyperlinkQueries()](https://apireference.aspose.com/java/slides/com.aspose.slides/IBaseSlide#getHyperlinkQueries--)
+- [ITextFrame->getHyperlinkQueries()](https://apireference.aspose.com/java/slides/com.aspose.slides/ITextFrame#getHyperlinkQueries--)
 
 The [IHyperlinkQueries](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlinkQueries) class supports the following methods and properties.
 
-- [IHyperlinkQueries.getHyperlinkClicks()](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlinkQueries#getHyperlinkClicks--)
-- [IHyperlinkQueries.getHyperlinkMouseOvers()](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlinkQueries#getHyperlinkMouseOvers--)
-- [IHyperlinkQueries.getAnyHyperlinks()](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlinkQueries#getAnyHyperlinks--)
+- [IHyperlinkQueries->getHyperlinkClicks()](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlinkQueries#getHyperlinkClicks--)
+- [IHyperlinkQueries->getHyperlinkMouseOvers()](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlinkQueries#getHyperlinkMouseOvers--)
+- [IHyperlinkQueries->getAnyHyperlinks()](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlinkQueries#getAnyHyperlinks--)
 - [IHyperlinkQueries.removeAllHyperlinks()](https://apireference.aspose.com/java/slides/com.aspose.slides/IHyperlinkQueries#removeAllHyperlinks--)
 
 

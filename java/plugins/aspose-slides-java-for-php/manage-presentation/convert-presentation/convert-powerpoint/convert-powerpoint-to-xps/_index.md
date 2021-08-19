@@ -73,7 +73,7 @@ try {
     XpsOptions options = new XpsOptions();
 
     // Save MetaFiles as PNG
-    options.setSaveMetafilesAsPng(true);
+    options->setSaveMetafilesAsPng(true);
 
     // Save the presentation to XPS document
     $pres->save("XPS_Output_With_Options.xps", SaveFormat.Xps, options);

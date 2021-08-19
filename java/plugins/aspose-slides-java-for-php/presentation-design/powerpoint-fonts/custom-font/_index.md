@@ -45,7 +45,7 @@ A new method has been added that returns folders where font files are searched. 
 ```java
 //The following line shall return folders where font files are searched.
 //Those are folders that have been added with LoadExternalFonts method as well as system font folders.
-String[] fontFolders = FontsLoader.getFontFolders();
+String[] fontFolders = FontsLoader->getFontFolders();
 ```
 
 ## **Specify Custom Fonts Used With Presentation**
@@ -56,8 +56,8 @@ byte[] memoryFont1 = Files.readAllBytes("customfonts/CustomFont1.ttf");
 byte[] memoryFont2 = Files.readAllBytes("customfonts/CustomFont2.ttf");
 
 LoadOptions loadOptions = new LoadOptions();
-loadOptions.getDocumentLevelFontSources().setFontFolders(new String[] { "assets/fonts", "global/fonts" });
-loadOptions.getDocumentLevelFontSources().setMemoryFonts(new byte[][] { memoryFont1, memoryFont2 });
+loadOptions->getDocumentLevelFontSources()->setFontFolders(new String[] { "assets/fonts", "global/fonts" });
+loadOptions->getDocumentLevelFontSources()->setMemoryFonts(new byte[][] { memoryFont1, memoryFont2 });
 
 $pres = new Java("com.aspose.slides.Presentation", "MyPresentation.pptx", loadOptions);
 try {

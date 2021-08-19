@@ -14,8 +14,8 @@ The [Save](https://apireference.aspose.com/slides/java/com.aspose.slides/Present
 $pres = new Java("com.aspose.slides.Presentation", "Sample.pptx");
 try {
     SwfOptions swfOptions = new SwfOptions();
-    swfOptions.setViewerIncluded(false);
-    swfOptions.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomFull);
+    swfOptions->setViewerIncluded(false);
+    swfOptions->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomFull);
     
     // Saving presentation
     $pres->save("Sample.swf", SaveFormat.Swf, swfOptions);

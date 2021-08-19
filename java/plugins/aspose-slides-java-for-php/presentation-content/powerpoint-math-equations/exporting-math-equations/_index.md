@@ -24,15 +24,15 @@ This sample code shows you how to export a math equation from a presentation to 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape autoShape = $pres->getSlides()->get_Item(0)->getShapes().addMathShape(0, 0, 500, 50);
-    IMathParagraph mathParagraph = ((MathPortion)autoShape.getTextFrame().getParagraphs()->get_Item(0).
-            getPortions()->get_Item(0)).getMathParagraph();
+    IMathParagraph mathParagraph = ((MathPortion)autoShape->getTextFrame()->getParagraphs()->get_Item(0).
+            getPortions()->get_Item(0))->getMathParagraph();
 
     mathParagraph.add(new MathematicalText("a").
             setSuperscript("2").
             join("+").
-            join(new MathematicalText("b").setSuperscript("2")).
+            join(new MathematicalText("b")->setSuperscript("2")).
             join("=").
-            join(new MathematicalText("c").setSuperscript("2")));
+            join(new MathematicalText("c")->setSuperscript("2")));
 
     $stream = new Java("java.io.FileOutputStream", "mathml.xml");
     mathParagraph.writeAsMathMl(stream);

@@ -56,8 +56,8 @@ try {
 
     // Add an Ole Object Frame shape
     IOleObjectFrame oleObjectFrame = sld->getShapes().addOleObjectFrame(0, 0,
-            (float) $pres->getSlideSize().getSize().getWidth(),
-            (float) $pres->getSlideSize().getSize().getHeight(),
+            (float) $pres->getSlideSize()->getSize()->getWidth(),
+            (float) $pres->getSlideSize()->getSize()->getHeight(),
             dataInfo);
 
     //Write the PPTX to disk
@@ -93,10 +93,10 @@ try {
     // Read the OLE Object and write it to disk
     if (oleObjectFrame != null) {
         // Get embedded file data
-        byte[] data = oleObjectFrame.getEmbeddedData().getEmbeddedFileData();
+        byte[] data = oleObjectFrame->getEmbeddedData()->getEmbeddedFileData();
 
         // Get embedded file extention
-        String fileExtention = oleObjectFrame.getEmbeddedData().getEmbeddedFileExtension();
+        String fileExtention = oleObjectFrame->getEmbeddedData()->getEmbeddedFileExtension();
 
         // Create path for saving the extracted file
         String extractedPath = "excelFromOLE_out" + fileExtention;
@@ -149,7 +149,7 @@ try {
     }
 
     if (ole != null) {
-        ByteArrayInputStream msln = new ByteArrayInputStream(ole.getEmbeddedData().getEmbeddedFileData());
+        ByteArrayInputStream msln = new ByteArrayInputStream(ole->getEmbeddedData()->getEmbeddedFileData());
         try {
             // Reading object data in Workbook
             Workbook Wb = new Workbook(msln);
@@ -157,17 +157,17 @@ try {
             ByteArrayOutputStream msout = new ByteArrayOutputStream();
             try {
                 // Modifying the workbook data
-                Wb.getWorksheets().get(0).getCells().get(0, 4).putValue("E");
-                Wb.getWorksheets().get(0).getCells().get(1, 4).putValue(12);
-                Wb.getWorksheets().get(0).getCells().get(2, 4).putValue(14);
-                Wb.getWorksheets().get(0).getCells().get(3, 4).putValue(15);
+                Wb->getWorksheets()->get(0)->getCells()->get(0, 4).putValue("E");
+                Wb->getWorksheets()->get(0)->getCells()->get(1, 4).putValue(12);
+                Wb->getWorksheets()->get(0)->getCells()->get(2, 4).putValue(14);
+                Wb->getWorksheets()->get(0)->getCells()->get(3, 4).putValue(15);
 
                 OoxmlSaveOptions so1 = new OoxmlSaveOptions(com.aspose.cells.SaveFormat.XLSX);
-                Wb.save(msout, so1);
+                Wb->save(msout, so1);
 
                 // Changing Ole frame object data
-                IOleEmbeddedDataInfo newData = new OleEmbeddedDataInfo(msout.toByteArray(), ole.getEmbeddedData().getEmbeddedFileExtension());
-                ole.setEmbeddedData(newData);
+                IOleEmbeddedDataInfo newData = new OleEmbeddedDataInfo(msout.toByteArray(), ole->getEmbeddedData()->getEmbeddedFileExtension());
+                ole->setEmbeddedData(newData);
             } finally {
                 if (msout != null) msout.close();
             }
@@ -194,15 +194,15 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
 
-    byte[] htmlBytes = Files.readAllBytes(Paths.get("embedOle.html"));
+    byte[] htmlBytes = Files.readAllBytes(Paths->get("embedOle.html"));
     IOleEmbeddedDataInfo dataInfoHtml = new OleEmbeddedDataInfo(htmlBytes, "html");
     IOleObjectFrame oleFrameHtml = $slide->getShapes().addOleObjectFrame(150, 120, 50, 50, dataInfoHtml);
-    oleFrameHtml.setObjectIcon(true);
+    oleFrameHtml->setObjectIcon(true);
 
-    byte[] zipBytes = Files.readAllBytes(Paths.get("embedOle.zip"));
+    byte[] zipBytes = Files.readAllBytes(Paths->get("embedOle.zip"));
     IOleEmbeddedDataInfo dataInfoZip = new OleEmbeddedDataInfo(zipBytes, "zip");
     IOleObjectFrame oleFrameZip = $slide->getShapes().addOleObjectFrame(150, 220, 50, 50, dataInfoZip);
-    oleFrameZip.setObjectIcon(true);
+    oleFrameZip->setObjectIcon(true);
 
     $pres->save("embeddedOle.pptx", SaveFormat.Pptx);
 } catch (Exception e) {
@@ -224,9 +224,9 @@ $pres = new Java("com.aspose.slides.Presentation", "embeddedOle.pptx");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
     IOleObjectFrame oleObjectFrame = (IOleObjectFrame)slide->getShapes()->get_Item(0);
-    System.out.println("Current embedded data extension is: " + oleObjectFrame.getEmbeddedData().getEmbeddedFileExtension());
+    System.out.println("Current embedded data extension is: " + oleObjectFrame->getEmbeddedData()->getEmbeddedFileExtension());
 
-    oleObjectFrame.setEmbeddedData(new OleEmbeddedDataInfo(Files.readAllBytes(Paths.get("embedOle.zip")), "zip"));
+    oleObjectFrame->setEmbeddedData(new OleEmbeddedDataInfo(Files.readAllBytes(Paths->get("embedOle.zip")), "zip"));
 
     $pres->save("embeddedChanged.pptx", SaveFormat.Pptx);
 } catch (Exception e) {
@@ -249,10 +249,10 @@ try {
     ISlide slide = $pres->getSlides()->get_Item(0);
     IOleObjectFrame oleObjectFrame = (IOleObjectFrame) slide->getShapes()->get_Item(0);
 
-    IPPImage oleImage = $pres->getImages().addImage(Files.readAllBytes(Paths.get("image.png")));
-    oleObjectFrame.setSubstitutePictureTitle("My title");
-    oleObjectFrame.getSubstitutePictureFormat().getPicture().setImage(oleImage);
-    oleObjectFrame.setObjectIcon(false);
+    IPPImage oleImage = $pres->getImages().addImage(Files.readAllBytes(Paths->get("image.png")));
+    oleObjectFrame->setSubstitutePictureTitle("My title");
+    oleObjectFrame->getSubstitutePictureFormat()->getPicture()->setImage(oleImage);
+    oleObjectFrame->setObjectIcon(false);
 
     $pres->save("embeddedOle-newImage.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
@@ -283,8 +283,8 @@ try {
 
         if (oleFrame != null) 
 		{
-            byte[] data = oleFrame.getEmbeddedData().getEmbeddedFileData();
-            String extension = oleFrame.getEmbeddedData().getEmbeddedFileExtension();
+            byte[] data = oleFrame->getEmbeddedData()->getEmbeddedFileData();
+            String extension = oleFrame->getEmbeddedData()->getEmbeddedFileExtension();
 
             // Save extracted data
             $fstr = new Java("java.io.FileOutputStream", "oleFrame" + index + extension);

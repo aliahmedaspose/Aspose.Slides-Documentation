@@ -16,36 +16,36 @@ In Aspose.Slides for Java, the presentation slide comment are associated with a 
 $presentation = new Java("com.aspose.slides.Presentation");
 try {
     // Adding Empty slide
-    presentation.getSlides().addEmptySlide(presentation.getLayoutSlides()->get_Item(0));
+    presentation->getSlides().addEmptySlide(presentation->getLayoutSlides()->get_Item(0));
 
     // Adding Author
-    ICommentAuthor author = presentation.getCommentAuthors().addAuthor("Jawad", "MF");
+    ICommentAuthor author = presentation->getCommentAuthors().addAuthor("Jawad", "MF");
 
     // Position of comments
     Point2D.Float point = new Point2D.Float(0.2f, 0.2f);
 
     // Adding slide comment for an author on slide 1
-    author.getComments().addComment("Hello Jawad, this is slide comment", presentation.getSlides()->get_Item(0), point, new Date());
+    author->getComments().addComment("Hello Jawad, this is slide comment", presentation->getSlides()->get_Item(0), point, new Date());
 
     // Adding slide comment for an author on slide 1
-    author.getComments().addComment("Hello Jawad, this is second slide comment", presentation.getSlides()->get_Item(1), point, new Date());
+    author->getComments().addComment("Hello Jawad, this is second slide comment", presentation->getSlides()->get_Item(1), point, new Date());
 
     // Accessing ISlide 1
     $slide = presentation->getSlides()->get_Item(0);
 
     // if null is passed as an argument then it will bring comments from all authors on selected slide
-    IComment[] comments = slide.getSlideComments(author);
+    IComment[] comments = slide->getSlideComments(author);
 
     // Accessin the comment at index 0 for slide 1
-    String str = comments[0].getText();
+    String str = comments[0]->getText();
 
-    presentation.save("Comments_out.pptx", SaveFormat.Pptx);
+    presentation->save("Comments_out.pptx", SaveFormat.Pptx);
 
     if (comments.length > 0)
     {
         // Select comments collection of Author at index 0
-        ICommentCollection commentCollection = comments[0].getAuthor().getComments();
-        String comment = commentCollection->get_Item(0).getText();
+        ICommentCollection commentCollection = comments[0]->getAuthor()->getComments();
+        String comment = commentCollection->get_Item(0)->getText();
     }
 } finally {
     presentation.dispose();
@@ -59,14 +59,14 @@ In the following example, we will learn how to access the existing slide comment
 // Instantiate a Presentation class that represents the presentation file
 Presentation presentation = new Presentation("Comments1.pptx");
 try {
-    for (ICommentAuthor commentAuthor : presentation.getCommentAuthors())
+    for (ICommentAuthor commentAuthor : presentation->getCommentAuthors())
     {
         CommentAuthor author = (CommentAuthor) commentAuthor;
-        for (IComment comment1 : author.getComments())
+        for (IComment comment1 : author->getComments())
         {
             Comment comment = (Comment) comment1;
-            System.out.println("ISlide :" + comment.getSlide().getSlideNumber() + " has comment: " + comment.getText() + 
-                    " with Author: " + comment.getAuthor().getName() + " posted on time :" + comment.getCreatedTime() + "\n");
+            System.out.println("ISlide :" + comment->getSlide()->getSlideNumber() + " has comment: " + comment->getText() + 
+                    " with Author: " + comment->getAuthor()->getName() + " posted on time :" + comment->getCreatedTime() + "\n");
         }
     }
 } finally {
@@ -84,40 +84,40 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add comment
     ICommentAuthor author1 = $pres->getCommentAuthors().addAuthor("Author_1", "A.A.");
-    IComment comment1 = author1.getComments().addComment("comment1", $pres->getSlides()->get_Item(0), new Point2D.Float(10, 10), new Date());
+    IComment comment1 = author1->getComments().addComment("comment1", $pres->getSlides()->get_Item(0), new Point2D.Float(10, 10), new Date());
 
     // Add reply for comment1
     ICommentAuthor author2 = $pres->getCommentAuthors().addAuthor("Autror_2", "B.B.");
-    IComment reply1 = author2.getComments().addComment("reply 1 for comment 1", $pres->getSlides()->get_Item(0), new Point2D.Float(10, 10), new Date());
-    reply1.setParentComment(comment1);
+    IComment reply1 = author2->getComments().addComment("reply 1 for comment 1", $pres->getSlides()->get_Item(0), new Point2D.Float(10, 10), new Date());
+    reply1->setParentComment(comment1);
 
     // Add reply for comment1
-    IComment reply2 = author2.getComments().addComment("reply 2 for comment 1", $pres->getSlides()->get_Item(0),  new Point2D.Float(10, 10), new Date());
-    reply2.setParentComment(comment1);
+    IComment reply2 = author2->getComments().addComment("reply 2 for comment 1", $pres->getSlides()->get_Item(0),  new Point2D.Float(10, 10), new Date());
+    reply2->setParentComment(comment1);
 
     // Add reply to reply
-    IComment subReply = author1.getComments().addComment("subreply 3 for reply 2", $pres->getSlides()->get_Item(0),  new Point2D.Float(10, 10), new Date());
-    subReply.setParentComment(reply2);
+    IComment subReply = author1->getComments().addComment("subreply 3 for reply 2", $pres->getSlides()->get_Item(0),  new Point2D.Float(10, 10), new Date());
+    subReply->setParentComment(reply2);
 
-    IComment comment2 = author2.getComments().addComment("comment 2", $pres->getSlides()->get_Item(0), new Point2D.Float(10, 10), new Date());
-    IComment comment3 = author2.getComments().addComment("comment 3", $pres->getSlides()->get_Item(0), new Point2D.Float(10, 10), new Date());
+    IComment comment2 = author2->getComments().addComment("comment 2", $pres->getSlides()->get_Item(0), new Point2D.Float(10, 10), new Date());
+    IComment comment3 = author2->getComments().addComment("comment 3", $pres->getSlides()->get_Item(0), new Point2D.Float(10, 10), new Date());
 
-    IComment reply3 = author1.getComments().addComment("reply 4 for comment 3", $pres->getSlides()->get_Item(0), new Point2D.Float(10, 10), new Date());
-    reply3.setParentComment(comment3);
+    IComment reply3 = author1->getComments().addComment("reply 4 for comment 3", $pres->getSlides()->get_Item(0), new Point2D.Float(10, 10), new Date());
+    reply3->setParentComment(comment3);
 
     // Display hierarchy on console
     ISlide slide = $pres->getSlides()->get_Item(0);
-    IComment[] comments = slide.getSlideComments(null);
+    IComment[] comments = slide->getSlideComments(null);
     for (int i = 0; i < comments.length; i++)
     {
         IComment comment = comments[i];
-        while (comment.getParentComment() != null)
+        while (comment->getParentComment() != null)
         {
             System.out.print("\t");
-            comment = comment.getParentComment();
+            comment = comment->getParentComment();
         }
 
-        System.out.println(comments[i].getAuthor().getName() +  " : " + comments[i].getText());
+        System.out.println(comments[i]->getAuthor()->getName() +  " : " + comments[i]->getText());
         System.out.println();
     }
     $pres->save("parent_comment.pptx",SaveFormat.Pptx);

@@ -25,7 +25,7 @@ for (IFontFallBackRule fallBackRule : rulesList)
     fallBackRule.remove("Tahoma");
 
     //And to update of rules for specified range
-    if ((fallBackRule.getRangeEndIndex() >= 0x4000) && (fallBackRule.getRangeStartIndex() < 0x5000))
+    if ((fallBackRule->getRangeEndIndex() >= 0x4000) && (fallBackRule->getRangeStartIndex() < 0x5000))
         fallBackRule.addFallBackFonts("Verdana");
 }
 
@@ -36,10 +36,10 @@ if (rulesList.size() > 0)
 $pres = new Java("com.aspose.slides.Presentation", "input.pptx");
 try {
     //Assigning a prepared rules list for using
-    $pres->getFontsManager().setFontFallBackRulesCollection(rulesList);
+    $pres->getFontsManager()->setFontFallBackRulesCollection(rulesList);
 
     // Rendering of thumbnail with using of initialized rules collection and saving to PNG
-    ImageIO.write($pres->getSlides()->get_Item(0).getThumbnail(1f, 1f), 
+    ImageIO.write($pres->getSlides()->get_Item(0)->getThumbnail(1f, 1f), 
             "PNG", new File("Slide_0.png"));
 } catch (IOException e) {
 } finally {

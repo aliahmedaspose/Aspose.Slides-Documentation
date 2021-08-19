@@ -20,7 +20,7 @@ Presentation may contain more than one digital signatures. After the digital sig
 
 
 
-To sign presentation or check the authenticity of presentation signatures, **Aspose.Slides API** provides [**IDigitalSignature**](https://apireference.aspose.com/slides/java/com.aspose.slides/IDigitalSignature) interface, [**IDigitalSignatureCollection**](https://apireference.aspose.com/slides/java/com.aspose.slides/IDigitalSignatureCollection) interface and [**IPresentation.getDigitalSignatures**](https://apireference.aspose.com/slides/java/com.aspose.slides/IPresentation#getDigitalSignatures--) method. Currently, digital signatures are supported for PPTX format only.
+To sign presentation or check the authenticity of presentation signatures, **Aspose.Slides API** provides [**IDigitalSignature**](https://apireference.aspose.com/slides/java/com.aspose.slides/IDigitalSignature) interface, [**IDigitalSignatureCollection**](https://apireference.aspose.com/slides/java/com.aspose.slides/IDigitalSignatureCollection) interface and [**IPresentation->getDigitalSignatures**](https://apireference.aspose.com/slides/java/com.aspose.slides/IPresentation#getDigitalSignatures--) method. Currently, digital signatures are supported for PPTX format only.
 ## **Add Digital Signature from PFX Certificate**
 The code sample below demonstrates how to add digital signature from a PFX certificate:
 
@@ -35,7 +35,7 @@ try {
     DigitalSignature signature = new DigitalSignature("testsignature1.pfx", "testpass1");
 
     // Comment new digital signature
-    signature.setComments("Aspose.Slides digital signing test.");
+    signature->setComments("Aspose.Slides digital signing test.");
 
     // Add digital signature to presentation
     $pres->getDigitalSignatures().add(signature);
@@ -62,8 +62,8 @@ try {
         // Check if all digital signatures are valid
         for (IDigitalSignature signature : $pres->getDigitalSignatures())
         {
-            System.out.println(signature.getComments() + ", "
-                    + signature.getSignTime().toString() + " -- " + (signature.isValid() ? "VALID" : "INVALID"));
+            System.out.println(signature->getComments() + ", "
+                    + signature->getSignTime().toString() + " -- " + (signature.isValid() ? "VALID" : "INVALID"));
             allSignaturesAreValid &= signature.isValid();
         }
 

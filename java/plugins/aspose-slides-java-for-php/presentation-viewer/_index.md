@@ -57,7 +57,7 @@ try {
     $stream = new Java("java.io.FileOutputStream", "Aspose_out.svg");
     try {
         SVGOptions svgOptions = new SVGOptions();
-        svgOptions.setShapeFormattingController(new CustomSvgShapeFormattingController());
+        svgOptions->setShapeFormattingController(new CustomSvgShapeFormattingController());
 
         $pres->getSlides()->get_Item(0).writeAsSvg(stream, svgOptions);
     } finally {
@@ -85,7 +85,7 @@ class CustomSvgShapeFormattingController implements ISvgShapeFormattingControlle
 
     public void formatShape(ISvgShape svgShape, IShape shape)
     {
-        svgShape.setId(String.format("shape-%d", m_shapeIndex++));
+        svgShape->setId(String.format("shape-%d", m_shapeIndex++));
     }
 }
 ```
@@ -106,7 +106,7 @@ try {
     ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Create a full scale image
-    BufferedImage bmp = sld.getThumbnail(1f, 1f);
+    BufferedImage bmp = sld->getThumbnail(1f, 1f);
 
     // Save the image to disk in JPEG format
     ImageIO.write(bmp, "PNG", new java.io.File("Thumbnail_out.png"));
@@ -135,11 +135,11 @@ try {
     int desiredY = 800;
 
     // Getting scaled value  of X and Y
-    float ScaleX = (float)(1.0 / $pres->getSlideSize().getSize().getWidth()) * desiredX;
-    float ScaleY = (float)(1.0 / $pres->getSlideSize().getSize().getHeight()) * desiredY;
+    float ScaleX = (float)(1.0 / $pres->getSlideSize()->getSize()->getWidth()) * desiredX;
+    float ScaleY = (float)(1.0 / $pres->getSlideSize()->getSize()->getHeight()) * desiredY;
     
     // Create a full scale image
-    BufferedImage bmp = sld.getThumbnail(ScaleX, ScaleY);
+    BufferedImage bmp = sld->getThumbnail(ScaleX, ScaleY);
 
     // Save the image to disk in JPEG format
     ImageIO.write(bmp, "PNG", new java.io.File("Thumbnail_out.png"));
@@ -171,14 +171,14 @@ try {
     int desiredY = 800;
 
     // Getting scaled value  of X and Y
-    float ScaleX = (float)(1.0 / $pres->getSlideSize().getSize().getWidth()) * desiredX;
-    float ScaleY = (float)(1.0 / $pres->getSlideSize().getSize().getHeight()) * desiredY;
+    float ScaleX = (float)(1.0 / $pres->getSlideSize()->getSize()->getWidth()) * desiredX;
+    float ScaleY = (float)(1.0 / $pres->getSlideSize()->getSize()->getHeight()) * desiredY;
 
     RenderingOptions opts = new RenderingOptions();
-    opts.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomTruncated);
+    opts->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomTruncated);
     
     // Create a full scale image
-    BufferedImage bmp = sld.getThumbnail(opts, ScaleX, ScaleY);
+    BufferedImage bmp = sld->getThumbnail(opts, ScaleX, ScaleY);
 
     // Save the image to disk in JPEG format
     ImageIO.write(bmp, "PNG", new java.io.File("Thumbnail_out.png"));

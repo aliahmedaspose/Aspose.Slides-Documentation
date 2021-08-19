@@ -64,13 +64,13 @@ try {
     IShape shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 50, 150, 150, 50);
 
     // Apply some formatting to ellipse shape
-    shp.getFillFormat().setFillType(FillType.Solid);
-    shp.getFillFormat().getSolidFillColor().setColor(new Color(PresetColor.Chocolate));
+    shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    shp->getFillFormat()->getSolidFillColor()->setColor(new Color(PresetColor.Chocolate));
 
     // Apply some formatting to the line of Ellipse
-    shp.getLineFormat().getFillFormat().setFillType(FillType.Solid);
-    shp.getLineFormat().getFillFormat().getSolidFillColor().setColor(Color.BLACK);
-    shp.getLineFormat().setWidth(5);
+    shp->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+    shp->getLineFormat()->setWidth(5);
 
     // Write the PPTX file to disk
     $pres->save("EllipseShp1.pptx", SaveFormat.Pptx);

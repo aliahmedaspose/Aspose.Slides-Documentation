@@ -5,14 +5,14 @@ url: /java/bubble-chart/
 ---
 
 ## **Bubble Chart Size Scaling**
-Aspose.Slides for Java provides support for Bubble chart size scaling. In Aspose.Slides for Java [**IChartSeries.getBubbleSizeScale**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartSeries#getBubbleSizeScale--), [**IChartSeriesGroup.getBubbleSizeScale**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartSeriesGroup#getBubbleSizeScale--) and [**IChartSeriesGroup.setBubbleSizeScale**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartSeriesGroup#setBubbleSizeScale-int-) methods have been added. Below sample example is given. 
+Aspose.Slides for Java provides support for Bubble chart size scaling. In Aspose.Slides for Java [**IChartSeries->getBubbleSizeScale**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartSeries#getBubbleSizeScale--), [**IChartSeriesGroup->getBubbleSizeScale**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartSeriesGroup#getBubbleSizeScale--) and [**IChartSeriesGroup->setBubbleSizeScale**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartSeriesGroup#setBubbleSizeScale-int-) methods have been added. Below sample example is given. 
 
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Bubble, 100, 100, 400, 300);
 
-    chart.getChartData().getSeriesGroups()->get_Item(0).setBubbleSizeScale(150);
+    chart->getChartData()->getSeriesGroups()->get_Item(0)->setBubbleSizeScale(150);
 
     $pres->save("Result.pptx", SaveFormat.Pptx);
 } finally {
@@ -28,7 +28,7 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Bubble, 50, 50, 600, 400, true);
 
-    chart.getChartData().getSeriesGroups()->get_Item(0).setBubbleSizeRepresentation(BubbleSizeRepresentationType.Width);
+    chart->getChartData()->getSeriesGroups()->get_Item(0)->setBubbleSizeRepresentation(BubbleSizeRepresentationType.Width);
 
     $pres->save("Presentation_BubbleSizeRepresentation.pptx", SaveFormat.Pptx);
 } finally {

@@ -34,34 +34,34 @@ try {
     ITable tbl = sld->getShapes().addTable(100, 50, dblCols, dblRows);
 
     // Set border format for each cell
-    for (int row = 0; row < tbl.getRows().size(); row++)
+    for (int row = 0; row < tbl->getRows().size(); row++)
     {
-        for (int cell = 0; cell < tbl.getRows()->get_Item(row).size(); cell++)
+        for (int cell = 0; cell < tbl->getRows()->get_Item(row).size(); cell++)
         {
-            ICellFormat cellFormat = tbl.getRows()->get_Item(row)->get_Item(cell).getCellFormat();
+            ICellFormat cellFormat = tbl->getRows()->get_Item(row)->get_Item(cell)->getCellFormat();
             
-            cellFormat.getBorderTop().getFillFormat().setFillType(FillType.Solid);
-            cellFormat.getBorderTop().getFillFormat().getSolidFillColor().setColor(Color.RED);
-            cellFormat.getBorderTop().setWidth(5);
+            cellFormat->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+            cellFormat->getBorderTop()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cellFormat->getBorderTop()->setWidth(5);
 
-            cellFormat.getBorderBottom().getFillFormat().setFillType(FillType.Solid);
-            cellFormat.getBorderBottom().getFillFormat().getSolidFillColor().setColor(Color.RED);
-            cellFormat.getBorderBottom().setWidth(5);
+            cellFormat->getBorderBottom()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+            cellFormat->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cellFormat->getBorderBottom()->setWidth(5);
 
-            cellFormat.getBorderLeft().getFillFormat().setFillType(FillType.Solid);
-            cellFormat.getBorderLeft().getFillFormat().getSolidFillColor().setColor(Color.RED);
-            cellFormat.getBorderLeft().setWidth(5);
+            cellFormat->getBorderLeft()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+            cellFormat->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cellFormat->getBorderLeft()->setWidth(5);
 
-            cellFormat.getBorderRight().getFillFormat().setFillType(FillType.Solid);
-            cellFormat.getBorderRight().getFillFormat().getSolidFillColor().setColor(Color.RED);
-            cellFormat.getBorderRight().setWidth(5);
+            cellFormat->getBorderRight()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+            cellFormat->getBorderRight()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cellFormat->getBorderRight()->setWidth(5);
         }
     }
     // Merge cells 1 & 2 of row 1
-    tbl.mergeCells(tbl.getRows()->get_Item(0)->get_Item(0), tbl.getRows()->get_Item(1)->get_Item(1), false);
+    tbl.mergeCells(tbl->getRows()->get_Item(0)->get_Item(0), tbl->getRows()->get_Item(1)->get_Item(1), false);
 
     // Add text to the merged cell
-    tbl.getRows()->get_Item(0)->get_Item(0).getTextFrame().setText("Merged Cells");
+    tbl->getRows()->get_Item(0)->get_Item(0)->getTextFrame()->setText("Merged Cells");
 
     // Save PPTX to Disk
     $pres->save("table.pptx", SaveFormat.Pptx);
@@ -98,7 +98,7 @@ try {
         {
             tbl = (ITable) shp;
             // Set the text of the first column of second row
-            tbl->get_Item(0, 1).getTextFrame().setText("New");
+            tbl->get_Item(0, 1)->getTextFrame()->setText("New");
         }
     }
     
@@ -133,26 +133,26 @@ try {
     
     // Add table shape to slide
     ITable tbl = $slide->getShapes().addTable(100, 50, dblCols, dblRows);
-    tbl->get_Item(1, 0).getTextFrame().setText("10");
-    tbl->get_Item(2, 0).getTextFrame().setText("20");
-    tbl->get_Item(3, 0).getTextFrame().setText("30");
+    tbl->get_Item(1, 0)->getTextFrame()->setText("10");
+    tbl->get_Item(2, 0)->getTextFrame()->setText("20");
+    tbl->get_Item(3, 0)->getTextFrame()->setText("30");
     
     // Accessing the text frame
-    ITextFrame txtFrame = tbl->get_Item(0, 0).getTextFrame();
+    ITextFrame txtFrame = tbl->get_Item(0, 0)->getTextFrame();
     
     // Create the Paragraph object for text frame
-    IParagraph paragraph = txtFrame.getParagraphs()->get_Item(0);
+    IParagraph paragraph = txtFrame->getParagraphs()->get_Item(0);
     
     // Create Portion object for paragraph
-    IPortion portion = paragraph.getPortions()->get_Item(0);
-    portion.setText("Text here");
-    portion.getPortionFormat().getFillFormat().setFillType(FillType.Solid);
-    portion.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.BLACK);
+    IPortion portion = paragraph->getPortions()->get_Item(0);
+    portion->setText("Text here");
+    portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
     
     // Aligning the text vertically
     ICell cell = tbl->get_Item(0, 0);
-    cell.setTextAnchorType(TextAnchorType.Center);
-    cell.setTextVerticalType(TextVerticalType.Vertical270);
+    cell->setTextAnchorType(TextAnchorType.Center);
+    cell->setTextVerticalType(TextVerticalType.Vertical270);
     
     // Save Presentation
     $pres->save("Vertical_Align_Text_out.pptx", SaveFormat.Pptx);
@@ -181,19 +181,19 @@ try {
     
     // setting table cells' font height
     PortionFormat portionFormat = new PortionFormat();
-    portionFormat.setFontHeight(25);
-    someTable.setTextFormat(portionFormat);
+    portionFormat->setFontHeight(25);
+    someTable->setTextFormat(portionFormat);
     
     // setting table cells' text alignment and right margin in one call
     ParagraphFormat paragraphFormat = new ParagraphFormat();
-    paragraphFormat.setAlignment(TextAlignment.Right);
-    paragraphFormat.setMarginRight(20);
-    someTable.setTextFormat(paragraphFormat);
+    paragraphFormat->setAlignment(TextAlignment.Right);
+    paragraphFormat->setMarginRight(20);
+    someTable->setTextFormat(paragraphFormat);
     
     // setting table cells' text vertical type
     TextFrameFormat textFrameFormat = new TextFrameFormat();
-    textFrameFormat.setTextVerticalType(TextVerticalType.Vertical);
-    someTable.setTextFormat(textFrameFormat);
+    textFrameFormat->setTextVerticalType(TextVerticalType.Vertical);
+    someTable->setTextFormat(textFrameFormat);
     
     $pres->save("result.pptx", SaveFormat.Pptx);
 } finally {
@@ -225,25 +225,25 @@ try {
     ITable tbl = sld->getShapes().addTable(100, 50, dblCols, dblRows);
 
     // Set border format for each cell
-    for (IRow row : tbl.getRows())
+    for (IRow row : tbl->getRows())
     {
         for (ICell cell : row)
         {
-            cell.getCellFormat().getBorderTop().getFillFormat().setFillType(FillType.Solid);
-            cell.getCellFormat().getBorderTop().getFillFormat().getSolidFillColor().setColor(Color.RED);
-            cell.getCellFormat().getBorderTop().setWidth(5);
+            cell->getCellFormat()->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+            cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderTop()->setWidth(5);
 
-            cell.getCellFormat().getBorderBottom().getFillFormat().setFillType(FillType.Solid);
-            cell.getCellFormat().getBorderBottom().getFillFormat().getSolidFillColor().setColor(Color.RED);
-            cell.getCellFormat().getBorderBottom().setWidth(5);
+            cell->getCellFormat()->getBorderBottom()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+            cell->getCellFormat()->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderBottom()->setWidth(5);
 
-            cell.getCellFormat().getBorderLeft().getFillFormat().setFillType(FillType.Solid);
-            cell.getCellFormat().getBorderLeft().getFillFormat().getSolidFillColor().setColor(Color.RED);
-            cell.getCellFormat().getBorderLeft().setWidth(5);
+            cell->getCellFormat()->getBorderLeft()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+            cell->getCellFormat()->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderLeft()->setWidth(5);
 
-            cell.getCellFormat().getBorderRight().getFillFormat().setFillType(FillType.Solid);
-            cell.getCellFormat().getBorderRight().getFillFormat().getSolidFillColor().setColor(Color.RED);
-            cell.getCellFormat().getBorderRight().setWidth(5);
+            cell->getCellFormat()->getBorderRight()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+            cell->getCellFormat()->getBorderRight()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderRight()->setWidth(5);
         }
     }
 
@@ -260,12 +260,12 @@ The aspect ratio of a geometric shape is the ratio of its sizes in different dim
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
-    ITable table = (ITable)pres.getSlides()->get_Item(0)->getShapes()->get_Item(0);
-    System.out.println("Lock aspect ratio set: " + table.getGraphicalObjectLock().getAspectRatioLocked());
+    ITable table = (ITable)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
+    System.out.println("Lock aspect ratio set: " + table->getGraphicalObjectLock()->getAspectRatioLocked());
 
-    table.getGraphicalObjectLock().setAspectRatioLocked(!table.getGraphicalObjectLock().getAspectRatioLocked()); // invert
+    table->getGraphicalObjectLock()->setAspectRatioLocked(!table->getGraphicalObjectLock()->getAspectRatioLocked()); // invert
 
-    System.out.println("Lock aspect ratio set: " + table.getGraphicalObjectLock().getAspectRatioLocked());
+    System.out.println("Lock aspect ratio set: " + table->getGraphicalObjectLock()->getAspectRatioLocked());
 
     $pres->save("pres-out.pptx", SaveFormat.Pptx);
 } finally {

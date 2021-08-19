@@ -23,11 +23,11 @@ Notes of some specific slide could be removed as shown in example below:
 $pres = new Java("com.aspose.slides.Presentation", "headerTest.pptx");
 try {
     // Setting Footer
-    $pres->getHeaderFooterManager().setAllFootersText("My Footer text");
-    $pres->getHeaderFooterManager().setAllFootersVisibility(true);
+    $pres->getHeaderFooterManager()->setAllFootersText("My Footer text");
+    $pres->getHeaderFooterManager()->setAllFootersVisibility(true);
 
     // Access and Update Header
-    IMasterNotesSlide masterNotesSlide = $pres->getMasterNotesSlideManager().getMasterNotesSlide();
+    IMasterNotesSlide masterNotesSlide = $pres->getMasterNotesSlideManager()->getMasterNotesSlide();
     if (null != masterNotesSlide)
     {
         updateHeaderFooterText(masterNotesSlide);
@@ -75,41 +75,41 @@ Code Snippet provided in below Example.
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
     // Change Header and Footer settings for notes master and all notes slides
-    IMasterNotesSlide masterNotesSlide = $pres->getMasterNotesSlideManager().getMasterNotesSlide();
+    IMasterNotesSlide masterNotesSlide = $pres->getMasterNotesSlideManager()->getMasterNotesSlide();
     if (masterNotesSlide != null)
     {
-        IMasterNotesSlideHeaderFooterManager headerFooterManager = masterNotesSlide.getHeaderFooterManager();
+        IMasterNotesSlideHeaderFooterManager headerFooterManager = masterNotesSlide->getHeaderFooterManager();
 
-        headerFooterManager.setHeaderAndChildHeadersVisibility(true); // make the master notes slide and all child Footer placeholders visible
-        headerFooterManager.setFooterAndChildFootersVisibility(true); // make the master notes slide and all child Header placeholders visible
-        headerFooterManager.setSlideNumberAndChildSlideNumbersVisibility(true); // make the master notes slide and all child SlideNumber placeholders visible
-        headerFooterManager.setDateTimeAndChildDateTimesVisibility(true); // make the master notes slide and all child Date and time placeholders visible
+        headerFooterManager->setHeaderAndChildHeadersVisibility(true); // make the master notes slide and all child Footer placeholders visible
+        headerFooterManager->setFooterAndChildFootersVisibility(true); // make the master notes slide and all child Header placeholders visible
+        headerFooterManager->setSlideNumberAndChildSlideNumbersVisibility(true); // make the master notes slide and all child SlideNumber placeholders visible
+        headerFooterManager->setDateTimeAndChildDateTimesVisibility(true); // make the master notes slide and all child Date and time placeholders visible
 
-        headerFooterManager.setHeaderAndChildHeadersText("Header text"); // set text to master notes slide and all child Header placeholders
-        headerFooterManager.setFooterAndChildFootersText("Footer text"); // set text to master notes slide and all child Footer placeholders
-        headerFooterManager.setDateTimeAndChildDateTimesText("Date and time text"); // set text to master notes slide and all child Date and time placeholders
+        headerFooterManager->setHeaderAndChildHeadersText("Header text"); // set text to master notes slide and all child Header placeholders
+        headerFooterManager->setFooterAndChildFootersText("Footer text"); // set text to master notes slide and all child Footer placeholders
+        headerFooterManager->setDateTimeAndChildDateTimesText("Date and time text"); // set text to master notes slide and all child Date and time placeholders
     }
 
     // Change Header and Footer settings for first notes slide only
-    INotesSlide notesSlide = $pres->getSlides()->get_Item(0).getNotesSlideManager().getNotesSlide();
+    INotesSlide notesSlide = $pres->getSlides()->get_Item(0)->getNotesSlideManager()->getNotesSlide();
     if (notesSlide != null)
     {
-        INotesSlideHeaderFooterManager headerFooterManager = notesSlide.getHeaderFooterManager();
+        INotesSlideHeaderFooterManager headerFooterManager = notesSlide->getHeaderFooterManager();
         if (!headerFooterManager.isHeaderVisible())
-            headerFooterManager.setHeaderVisibility(true); // make this notes slide Header placeholder visible
+            headerFooterManager->setHeaderVisibility(true); // make this notes slide Header placeholder visible
 
         if (!headerFooterManager.isFooterVisible())
-            headerFooterManager.setFooterVisibility(true); // make this notes slide Footer placeholder visible
+            headerFooterManager->setFooterVisibility(true); // make this notes slide Footer placeholder visible
 
         if (!headerFooterManager.isSlideNumberVisible())
-            headerFooterManager.setSlideNumberVisibility(true); // make this notes slide SlideNumber placeholder visible
+            headerFooterManager->setSlideNumberVisibility(true); // make this notes slide SlideNumber placeholder visible
 
         if (!headerFooterManager.isDateTimeVisible())
-            headerFooterManager.setDateTimeVisibility(true); // make this notes slide Date-time placeholder visible
+            headerFooterManager->setDateTimeVisibility(true); // make this notes slide Date-time placeholder visible
 
-        headerFooterManager.setHeaderText("New header text"); // set text to notes slide Header placeholder
-        headerFooterManager.setFooterText("New footer text"); // set text to notes slide Footer placeholder
-        headerFooterManager.setDateTimeText("New date and time text"); // set text to notes slide Date-time placeholder
+        headerFooterManager->setHeaderText("New header text"); // set text to notes slide Header placeholder
+        headerFooterManager->setFooterText("New footer text"); // set text to notes slide Footer placeholder
+        headerFooterManager->setDateTimeText("New date and time text"); // set text to notes slide Date-time placeholder
     }
     $pres->save("testresult.pptx",SaveFormat.Pptx);
 } finally {

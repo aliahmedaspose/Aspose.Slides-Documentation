@@ -22,23 +22,23 @@ try {
     for (ISlide slide : $pres->getSlides()) 
     {
         //Get an Array of ITextFrame objects from all slides in the PPTX
-        ITextFrame[] textFramesPPTX = SlideUtil.getAllTextBoxes(slide);
+        ITextFrame[] textFramesPPTX = SlideUtil->getAllTextBoxes(slide);
 
         //Loop through the Array of TextFrames
         for (int i = 0; i < textFramesPPTX.length; i++) {
             //Loop through paragraphs in current ITextFrame
-            for (IParagraph para : textFramesPPTX[i].getParagraphs()) {
+            for (IParagraph para : textFramesPPTX[i]->getParagraphs()) {
                 //Loop through portions in the current IParagraph
-                for (IPortion port : para.getPortions()) {
+                for (IPortion port : para->getPortions()) {
                     //Display text in the current portion
-                    System.out.println(port.getText());
+                    System.out.println(port->getText());
 
                     //Display font height of the text
-                    System.out.println(port.getPortionFormat().getFontHeight());
+                    System.out.println(port->getPortionFormat()->getFontHeight());
 
                     //Display font name of the text
-                    if (port.getPortionFormat().getLatinFont() != null)
-                        System.out.println(port.getPortionFormat().getLatinFont().getFontName());
+                    if (port->getPortionFormat()->getLatinFont() != null)
+                        System.out.println(port->getPortionFormat()->getLatinFont()->getFontName());
                 }
             }
         }
@@ -61,26 +61,26 @@ To scan the text from the whole presentation, use the
 $pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     //Get an Array of ITextFrame objects from all slides in the PPTX
-    ITextFrame[] textFramesPPTX = SlideUtil.getAllTextFrames(pres, true);
+    ITextFrame[] textFramesPPTX = SlideUtil->getAllTextFrames(pres, true);
 
     //Loop through the Array of TextFrames
     for (int i = 0; i < textFramesPPTX.length; i++) 
     {
         //Loop through paragraphs in current ITextFrame
-        for (IParagraph para : textFramesPPTX[i].getParagraphs())
+        for (IParagraph para : textFramesPPTX[i]->getParagraphs())
         {
             //Loop through portions in the current IParagraph
-            for (IPortion port : para.getPortions())
+            for (IPortion port : para->getPortions())
             {
                 //Display text in the current portion
-                System.out.println(port.getText());
+                System.out.println(port->getText());
 
                 //Display font height of the text
-                System.out.println(port.getPortionFormat().getFontHeight());
+                System.out.println(port->getPortionFormat()->getFontHeight());
 
                 //Display font name of the text
-                if (port.getPortionFormat().getLatinFont() != null)
-                    System.out.println(port.getPortionFormat().getLatinFont().getFontName());
+                if (port->getPortionFormat()->getLatinFont() != null)
+                    System.out.println(port->getPortionFormat()->getLatinFont()->getFontName());
             }
         }
     }
@@ -106,21 +106,21 @@ The [TextExtractionArrangingMode](https://apireference.aspose.com/slides/java/co
 
 [IPresentationText](https://apireference.aspose.com/slides/java/com.aspose.slides/IPresentationText) represents the raw text extracted from the presentation. It contains a [getSlidesText](https://apireference.aspose.com/slides/java/com.aspose.slides/IPresentationText#getSlidesText--) method which returns an array of [ISlideText](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideText) objects. Every object represent the text on the corresponding slide. [ISlideText](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideText) object have the following methods:
 
-- [ISlideText.getText](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideText#getText--) - The text on the slide's shapes
-- [ISlideText.getMasterText](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideText#getMasterText--) - The text on the master page's shapes for this slide
-- [ISlideText.getLayoutText](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideText#getLayoutText--) - The text on the layout page's shapes for this slide
-- [ISlideText.getNotesText](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideText#getNotesText--) - The text on the notes page's shapes for this slide
+- [ISlideText->getText](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideText#getText--) - The text on the slide's shapes
+- [ISlideText->getMasterText](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideText#getMasterText--) - The text on the master page's shapes for this slide
+- [ISlideText->getLayoutText](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideText#getLayoutText--) - The text on the layout page's shapes for this slide
+- [ISlideText->getNotesText](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideText#getNotesText--) - The text on the notes page's shapes for this slide
 
 There is also a [SlideText](https://apireference.aspose.com/slides/java/com.aspose.slides/SlideText) class which implements the [ISlideText](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideText) interface.
 
 The new API can be used like this:
 
 ```java
-IPresentationText text1 = PresentationFactory.getInstance().getPresentationText("presentation.pptx", TextExtractionArrangingMode.Unarranged);
-System.out.println(text1.getSlidesText()[0].getText());
-System.out.println(text1.getSlidesText()[0].getLayoutText());
-System.out.println(text1.getSlidesText()[0].getMasterText());
-System.out.println(text1.getSlidesText()[0].getNotesText());
+IPresentationText text1 = PresentationFactory->getInstance()->getPresentationText("presentation.pptx", TextExtractionArrangingMode.Unarranged);
+System.out.println(text1->getSlidesText()[0]->getText());
+System.out.println(text1->getSlidesText()[0]->getLayoutText());
+System.out.println(text1->getSlidesText()[0]->getMasterText());
+System.out.println(text1->getSlidesText()[0]->getNotesText());
 ```
 
 

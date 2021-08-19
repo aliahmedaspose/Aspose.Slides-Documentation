@@ -57,7 +57,7 @@ This sample code shows you how to change the name of a section in a presentation
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     ISection section = $pres->getSections()->get_Item(0);
-    section.setName("My section");
+    section->setName("My section");
 } finally {
     if ($pres != null) $pres->dispose();
 }

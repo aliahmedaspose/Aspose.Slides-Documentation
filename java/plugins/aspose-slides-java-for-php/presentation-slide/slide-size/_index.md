@@ -37,7 +37,7 @@ If you prefer to use a special slide size for your presentations, we strongly re
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "pres-4x3-aspect-ratio.pptx");
 try {
-    $pres->getSlideSize().setSize(SlideSizeType.OnScreen16x9, SlideSizeScaleType.DoNotScale);
+    $pres->getSlideSize()->setSize(SlideSizeType.OnScreen16x9, SlideSizeScaleType.DoNotScale);
     $pres->save("pres-4x3-aspect-ratio.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
@@ -53,7 +53,7 @@ This sample code shows you how to use Aspose.Slides for Java to specify a custom
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
-    $pres->getSlideSize().setSize(780, 540, SlideSizeScaleType.DoNotScale); // A4 paper size
+    $pres->getSlideSize()->setSize(780, 540, SlideSizeScaleType.DoNotScale); // A4 paper size
     $pres->save("pres-a4-slide-size.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
@@ -83,7 +83,7 @@ This sample code shows you how to use the `Maximize` setting when changing the s
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
-    $pres->getSlideSize().setSize(SlideSizeType.Ledger, SlideSizeScaleType.Maximize);
+    $pres->getSlideSize()->setSize(SlideSizeType.Ledger, SlideSizeScaleType.Maximize);
 } finally {
     if ($pres != null) $pres->dispose();
 }

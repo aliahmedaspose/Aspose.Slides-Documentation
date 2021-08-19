@@ -6,7 +6,7 @@ url: /java/chart-series/
 
 
 ## **Set Chart Series Overlap**
-Aspose.Slides for Java provides a simple API interface to set chart series overlap. The [**IChartSeries.getOverlap**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartSeries#getOverlap--) method specifies how much bars and columns should overlap on 2D charts (in a range from -100 to 100). This method is not only for the referred series but for all series of the parent series group: this is projection of the appropriate group property. Therefore, this property is read-only. Use the [**getParentSeriesGroup**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartSeries#getParentSeriesGroup--) method to access the parent series group, and then access the [**ParentSeriesGroup.getOverlap**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartSeriesGroup#getOverlap--) or [**ParentSeriesGroup.setOverlap**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartSeriesGroup#setOverlap-byte-) method to change or read the value.
+Aspose.Slides for Java provides a simple API interface to set chart series overlap. The [**IChartSeries->getOverlap**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartSeries#getOverlap--) method specifies how much bars and columns should overlap on 2D charts (in a range from -100 to 100). This method is not only for the referred series but for all series of the parent series group: this is projection of the appropriate group property. Therefore, this property is read-only. Use the [**getParentSeriesGroup**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartSeries#getParentSeriesGroup--) method to access the parent series group, and then access the [**ParentSeriesGroup->getOverlap**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartSeriesGroup#getOverlap--) or [**ParentSeriesGroup->setOverlap**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartSeriesGroup#setOverlap-byte-) method to change or read the value.
 
 1. Create an instance of the [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class.
 1. Add a clustered column chart on a slide.
@@ -21,11 +21,11 @@ try {
     // Adding chart
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400, true);
 
-    IChartSeriesCollection series = chart.getChartData().getSeries();
+    IChartSeriesCollection series = chart->getChartData()->getSeries();
     
-    if (series->get_Item(0).getOverlap() == 0) {
+    if (series->get_Item(0)->getOverlap() == 0) {
         // Setting series overlap
-        series->get_Item(0).getParentSeriesGroup().setOverlap((byte) -30);
+        series->get_Item(0)->getParentSeriesGroup()->setOverlap((byte) -30);
     }
 
     // Saving presentation
@@ -52,11 +52,11 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Pie, 50, 50, 600, 400);
 
-    IChartDataPoint point = chart.getChartData().getSeries()->get_Item(0).getDataPoints()->get_Item(1);
+    IChartDataPoint point = chart->getChartData()->getSeries()->get_Item(0)->getDataPoints()->get_Item(1);
 
-    point.setExplosion(30);
-    point.getFormat().getFill().setFillType(FillType.Solid);
-    point.getFormat().getFill().getSolidFillColor().setColor(Color.BLUE);
+    point->setExplosion(30);
+    point->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    point->getFormat()->getFill()->getSolidFillColor()->setColor(Color.BLUE);
     
     $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
@@ -81,11 +81,11 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
 
-    IChartDataPoint point = chart.getChartData().getSeries()->get_Item(0).getDataPoints()->get_Item(0);
+    IChartDataPoint point = chart->getChartData()->getSeries()->get_Item(0)->getDataPoints()->get_Item(0);
 
-    point.getFormat().getFill().setFillType(FillType.Solid);
+    point->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-    point.getFormat().getFill().getSolidFillColor().setColor(Color.BLUE);
+    point->getFormat()->getFill()->getSolidFillColor()->setColor(Color.BLUE);
     $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
@@ -109,8 +109,8 @@ try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 50, 600, 400);
 
     // Setting series fill format to automatic
-    for (int i = 0; i < chart.getChartData().getSeries().size(); i++) {
-        chart.getChartData().getSeries()->get_Item(i).getAutomaticSeriesColor();
+    for (int i = 0; i < chart->getChartData()->getSeries().size(); i++) {
+        chart->getChartData()->getSeries()->get_Item(i)->getAutomaticSeriesColor();
     }
 
     // Saving presentation
@@ -134,29 +134,29 @@ Aspose.Slides for Java provides a simple API for setting invert fill color for c
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 400, 300);
-    IChartDataWorkbook workBook = chart.getChartData().getChartDataWorkbook();
+    IChartDataWorkbook workBook = chart->getChartData()->getChartDataWorkbook();
 
-    chart.getChartData().getSeries().clear();
-    chart.getChartData().getCategories().clear();
+    chart->getChartData()->getSeries().clear();
+    chart->getChartData()->getCategories().clear();
 
     // Adding new series and categories
-    chart.getChartData().getSeries().add(workBook.getCell(0, 0, 1, "Series 1"), chart.getType());
-    chart.getChartData().getCategories().add(workBook.getCell(0, 1, 0, "Category 1"));
-    chart.getChartData().getCategories().add(workBook.getCell(0, 2, 0, "Category 2"));
-    chart.getChartData().getCategories().add(workBook.getCell(0, 3, 0, "Category 3"));
+    chart->getChartData()->getSeries().add(workBook->getCell(0, 0, 1, "Series 1"), chart->getType());
+    chart->getChartData()->getCategories().add(workBook->getCell(0, 1, 0, "Category 1"));
+    chart->getChartData()->getCategories().add(workBook->getCell(0, 2, 0, "Category 2"));
+    chart->getChartData()->getCategories().add(workBook->getCell(0, 3, 0, "Category 3"));
 
     // Take first chart series and populating series data.
-    IChartSeries series = chart.getChartData().getSeries()->get_Item(0);
-    series.getDataPoints().addDataPointForBarSeries(workBook.getCell(0, 1, 1, -20));
-    series.getDataPoints().addDataPointForBarSeries(workBook.getCell(0, 2, 1, 50));
-    series.getDataPoints().addDataPointForBarSeries(workBook.getCell(0, 3, 1, -30));
+    IChartSeries series = chart->getChartData()->getSeries()->get_Item(0);
+    series->getDataPoints().addDataPointForBarSeries(workBook->getCell(0, 1, 1, -20));
+    series->getDataPoints().addDataPointForBarSeries(workBook->getCell(0, 2, 1, 50));
+    series->getDataPoints().addDataPointForBarSeries(workBook->getCell(0, 3, 1, -30));
     
-    Color seriesColor = series.getAutomaticSeriesColor();
+    Color seriesColor = series->getAutomaticSeriesColor();
     
-    series.setInvertIfNegative(true);
-    series.getFormat().getFill().setFillType(FillType.Solid);
-    series.getFormat().getFill().getSolidFillColor().setColor(seriesColor);
-    series.getInvertedSolidFillColor().setColor(Color.RED);
+    series->setInvertIfNegative(true);
+    series->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    series->getFormat()->getFill()->getSolidFillColor()->setColor(seriesColor);
+    series->getInvertedSolidFillColor()->setColor(Color.RED);
     
     $pres->save("SetInvertFillColorChart_out.pptx", SaveFormat.Pptx);
 } finally {
@@ -171,18 +171,18 @@ The Aspose.Slides for Java lets developers allow to set inverts. Methods [**set
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400, true);
-    IChartSeriesCollection series = chart.getChartData().getSeries();
-    chart.getChartData().getSeries().clear();
+    IChartSeriesCollection series = chart->getChartData()->getSeries();
+    chart->getChartData()->getSeries().clear();
 
-    series.add(chart.getChartData().getChartDataWorkbook().getCell(0, "B1"), chart.getType());
-    series->get_Item(0).getDataPoints().addDataPointForBarSeries(chart.getChartData().getChartDataWorkbook().getCell(0, "B2",-5));
-    series->get_Item(0).getDataPoints().addDataPointForBarSeries(chart.getChartData().getChartDataWorkbook().getCell(0, "B3",3));
-    series->get_Item(0).getDataPoints().addDataPointForBarSeries(chart.getChartData().getChartDataWorkbook().getCell(0, "B4",-2));
-    series->get_Item(0).getDataPoints().addDataPointForBarSeries(chart.getChartData().getChartDataWorkbook().getCell(0, "B5",1));
+    series.add(chart->getChartData()->getChartDataWorkbook()->getCell(0, "B1"), chart->getType());
+    series->get_Item(0)->getDataPoints().addDataPointForBarSeries(chart->getChartData()->getChartDataWorkbook()->getCell(0, "B2",-5));
+    series->get_Item(0)->getDataPoints().addDataPointForBarSeries(chart->getChartData()->getChartDataWorkbook()->getCell(0, "B3",3));
+    series->get_Item(0)->getDataPoints().addDataPointForBarSeries(chart->getChartData()->getChartDataWorkbook()->getCell(0, "B4",-2));
+    series->get_Item(0)->getDataPoints().addDataPointForBarSeries(chart->getChartData()->getChartDataWorkbook()->getCell(0, "B5",1));
 
-    series->get_Item(0).setInvertIfNegative(false);
-    series->get_Item(0).getInvertIfNegative();
-    series->get_Item(0).getDataPoints()->get_Item(2).setInvertIfNegative(true);
+    series->get_Item(0)->setInvertIfNegative(false);
+    series->get_Item(0)->getInvertIfNegative();
+    series->get_Item(0)->getDataPoints()->get_Item(2)->setInvertIfNegative(true);
 
     $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
@@ -211,13 +211,13 @@ try {
 
     IChart chart = (IChart)slide->getShapes()->get_Item(0);
 
-    for (IChartDataPoint dataPoint : chart.getChartData().getSeries()->get_Item(0).getDataPoints()) {
+    for (IChartDataPoint dataPoint : chart->getChartData()->getSeries()->get_Item(0)->getDataPoints()) {
 
-        dataPoint.getXValue().getAsCell().setValue(null);
-        dataPoint.getYValue().getAsCell().setValue(null);
+        dataPoint->getXValue()->getAsCell()->setValue(null);
+        dataPoint->getYValue()->getAsCell()->setValue(null);
     }
 
-    chart.getChartData().getSeries()->get_Item(0).getDataPoints().clear();
+    chart->getChartData()->getSeries()->get_Item(0)->getDataPoints().clear();
 
     $pres->save("ClearSpecificChartSeriesDataPointsData.pptx", SaveFormat.Pptx);
 } finally {
@@ -249,30 +249,30 @@ try {
     int defaultWorksheetIndex = 0;
     
     // Getting the chart data worksheet
-    IChartDataWorkbook fact = chart.getChartData().getChartDataWorkbook();
+    IChartDataWorkbook fact = chart->getChartData()->getChartDataWorkbook();
     
     // Add series
-    chart.getChartData().getSeries().add(fact.getCell(defaultWorksheetIndex, 0, 1, "Series 1"), chart.getType());
-    chart.getChartData().getSeries().add(fact.getCell(defaultWorksheetIndex, 0, 2, "Series 2"), chart.getType());
+    chart->getChartData()->getSeries().add(fact->getCell(defaultWorksheetIndex, 0, 1, "Series 1"), chart->getType());
+    chart->getChartData()->getSeries().add(fact->getCell(defaultWorksheetIndex, 0, 2, "Series 2"), chart->getType());
     
     // Add Catrgories
-    chart.getChartData().getCategories().add(fact.getCell(defaultWorksheetIndex, 1, 0, "Caetegoty 1"));
-    chart.getChartData().getCategories().add(fact.getCell(defaultWorksheetIndex, 2, 0, "Caetegoty 2"));
-    chart.getChartData().getCategories().add(fact.getCell(defaultWorksheetIndex, 3, 0, "Caetegoty 3"));
+    chart->getChartData()->getCategories().add(fact->getCell(defaultWorksheetIndex, 1, 0, "Caetegoty 1"));
+    chart->getChartData()->getCategories().add(fact->getCell(defaultWorksheetIndex, 2, 0, "Caetegoty 2"));
+    chart->getChartData()->getCategories().add(fact->getCell(defaultWorksheetIndex, 3, 0, "Caetegoty 3"));
     
     // Take second chart series
-    IChartSeries series = chart.getChartData().getSeries()->get_Item(1);
+    IChartSeries series = chart->getChartData()->getSeries()->get_Item(1);
     
     // Now populating series data
-    series.getDataPoints().addDataPointForBarSeries(fact.getCell(defaultWorksheetIndex, 1, 1, 20));
-    series.getDataPoints().addDataPointForBarSeries(fact.getCell(defaultWorksheetIndex, 2, 1, 50));
-    series.getDataPoints().addDataPointForBarSeries(fact.getCell(defaultWorksheetIndex, 3, 1, 30));
-    series.getDataPoints().addDataPointForBarSeries(fact.getCell(defaultWorksheetIndex, 1, 2, 30));
-    series.getDataPoints().addDataPointForBarSeries(fact.getCell(defaultWorksheetIndex, 2, 2, 10));
-    series.getDataPoints().addDataPointForBarSeries(fact.getCell(defaultWorksheetIndex, 3, 2, 60));
+    series->getDataPoints().addDataPointForBarSeries(fact->getCell(defaultWorksheetIndex, 1, 1, 20));
+    series->getDataPoints().addDataPointForBarSeries(fact->getCell(defaultWorksheetIndex, 2, 1, 50));
+    series->getDataPoints().addDataPointForBarSeries(fact->getCell(defaultWorksheetIndex, 3, 1, 30));
+    series->getDataPoints().addDataPointForBarSeries(fact->getCell(defaultWorksheetIndex, 1, 2, 30));
+    series->getDataPoints().addDataPointForBarSeries(fact->getCell(defaultWorksheetIndex, 2, 2, 10));
+    series->getDataPoints().addDataPointForBarSeries(fact->getCell(defaultWorksheetIndex, 3, 2, 60));
     
     // Set GapWidth value
-    series.getParentSeriesGroup().setGapWidth(50);
+    series->getParentSeriesGroup()->setGapWidth(50);
     
     // Save presentation with chart
     $pres->save("GapWidth_out.pptx", SaveFormat.Pptx);

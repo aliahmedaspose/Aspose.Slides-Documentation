@@ -30,26 +30,26 @@ This sample code shows you how to create a zoom frame in a slide:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     //Add new slides to the presentation
-    ISlide slide2 = $pres->getSlides().addEmptySlide($pres->getSlides()->get_Item(0).getLayoutSlide());
-    ISlide slide3 = $pres->getSlides().addEmptySlide($pres->getSlides()->get_Item(0).getLayoutSlide());
+    ISlide slide2 = $pres->getSlides().addEmptySlide($pres->getSlides()->get_Item(0)->getLayoutSlide());
+    ISlide slide3 = $pres->getSlides().addEmptySlide($pres->getSlides()->get_Item(0)->getLayoutSlide());
 
     // Create a background for the second slide
-    slide2.getBackground().setType(BackgroundType.OwnBackground);
-    slide2.getBackground().getFillFormat().setFillType(FillType.Solid);
-    slide2.getBackground().getFillFormat().getSolidFillColor().setColor(Color.CYAN);
+    slide2->getBackground()->setType(BackgroundType.OwnBackground);
+    slide2->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    slide2->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Color.CYAN);
 
     // Create a text box for the second slide
     IAutoShape autoshape = slide2->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
-    autoshape.getTextFrame().setText("Second Slide");
+    autoshape->getTextFrame()->setText("Second Slide");
 
     // Create a background for the third slide
-    slide3.getBackground().setType(BackgroundType.OwnBackground);
-    slide3.getBackground().getFillFormat().setFillType(FillType.Solid);
-    slide3.getBackground().getFillFormat().getSolidFillColor().setColor(Color.DARK_GRAY);
+    slide3->getBackground()->setType(BackgroundType.OwnBackground);
+    slide3->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    slide3->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Color.DARK_GRAY);
 
     // Create a text box for the third slide
     autoshape = slide3->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
-    autoshape.getTextFrame().setText("Trird Slide");
+    autoshape->getTextFrame()->setText("Trird Slide");
 
     //Add ZoomFrame objects
     $pres->getSlides()->get_Item(0)->getShapes().addZoomFrame(20, 20, 250, 200, slide2);
@@ -76,20 +76,20 @@ This sample code shows you how to create a zoom frame with a different image:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     //Add a new slide to the presentation
-    ISlide slide = $pres->getSlides().addEmptySlide($pres->getSlides()->get_Item(0).getLayoutSlide());
+    ISlide slide = $pres->getSlides().addEmptySlide($pres->getSlides()->get_Item(0)->getLayoutSlide());
 
     // Create a background for the second slide
-    slide.getBackground().setType(BackgroundType.OwnBackground);
-    slide.getBackground().getFillFormat().setFillType(FillType.Solid);
-    slide.getBackground().getFillFormat().getSolidFillColor().setColor(Color.CYAN);
+    slide->getBackground()->setType(BackgroundType.OwnBackground);
+    slide->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    slide->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Color.CYAN);
 
     // Create a text box for the third slide
     IAutoShape autoshape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
-    autoshape.getTextFrame().setText("Second Slide");
+    autoshape->getTextFrame()->setText("Second Slide");
 
     // Create a new image for the zoom object
-    byte[] imageBytes = Files.readAllBytes(Paths.get("image.png"));
-    IPPImage image = $pres->getImages().addImage(imageBytes);
+    byte[] imageBytes = Files.readAllBytes(Paths->get("image.png"));
+    $image = $pres->getImages().addImage(imageBytes);
 
     //Add the ZoomFrame object
     $pres->getSlides()->get_Item(0)->getShapes().addZoomFrame(20, 20, 300, 200, slide, image);
@@ -123,46 +123,46 @@ This sample code shows you how to change the formatting of a zoom frame:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     //Add new slides to presentation
-    ISlide slide2 = $pres->getSlides().addEmptySlide($pres->getSlides()->get_Item(0).getLayoutSlide());
-    ISlide slide3 = $pres->getSlides().addEmptySlide($pres->getSlides()->get_Item(0).getLayoutSlide());
+    ISlide slide2 = $pres->getSlides().addEmptySlide($pres->getSlides()->get_Item(0)->getLayoutSlide());
+    ISlide slide3 = $pres->getSlides().addEmptySlide($pres->getSlides()->get_Item(0)->getLayoutSlide());
 
     // Create a background for the second slide
-    slide2.getBackground().setType(BackgroundType.OwnBackground);
-    slide2.getBackground().getFillFormat().setFillType(FillType.Solid);
-    slide2.getBackground().getFillFormat().getSolidFillColor().setColor(Color.CYAN);
+    slide2->getBackground()->setType(BackgroundType.OwnBackground);
+    slide2->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    slide2->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Color.CYAN);
 
     // Create a text box for the second slide
     IAutoShape autoshape = slide2->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
-    autoshape.getTextFrame().setText("Second Slide");
+    autoshape->getTextFrame()->setText("Second Slide");
 
     // Create a background for the third slide
-    slide3.getBackground().setType(BackgroundType.OwnBackground);
-    slide3.getBackground().getFillFormat().setFillType(FillType.Solid);
-    slide3.getBackground().getFillFormat().getSolidFillColor().setColor(Color.DARK_GRAY);
+    slide3->getBackground()->setType(BackgroundType.OwnBackground);
+    slide3->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    slide3->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Color.DARK_GRAY);
 
     // Create a text box for the third slide
     autoshape = slide3->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
-    autoshape.getTextFrame().setText("Trird Slide");
+    autoshape->getTextFrame()->setText("Trird Slide");
 
     //Add ZoomFrame objects
     IZoomFrame zoomFrame1 = $pres->getSlides()->get_Item(0)->getShapes().addZoomFrame(20, 20, 250, 200, slide2);
     IZoomFrame zoomFrame2 = $pres->getSlides()->get_Item(0)->getShapes().addZoomFrame(200, 250, 250, 200, slide3);
 
     // Create a new image for the zoom object
-    byte[] imageBytes = Files.readAllBytes(Paths.get("image.png")); 
-    IPPImage image = $pres->getImages().addImage(imageBytes);
+    byte[] imageBytes = Files.readAllBytes(Paths->get("image.png")); 
+    $image = $pres->getImages().addImage(imageBytes);
 	
     // Set custom image for zoomFrame1 object
-    zoomFrame1.setImage(image);
+    zoomFrame1->setImage(image);
 
     // Set a zoom frame format for the zoomFrame2 object
-    zoomFrame2.getLineFormat().setWidth(5);
-    zoomFrame2.getLineFormat().getFillFormat().setFillType(FillType.Solid);
-    zoomFrame2.getLineFormat().getFillFormat().getSolidFillColor().setColor(Color.MAGENTA);
-    zoomFrame2.getLineFormat().setDashStyle(LineDashStyle.DashDot);
+    zoomFrame2->getLineFormat()->setWidth(5);
+    zoomFrame2->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    zoomFrame2->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.MAGENTA);
+    zoomFrame2->getLineFormat()->setDashStyle(LineDashStyle.DashDot);
 
     // Do not show background for zoomFrame2 object
-    zoomFrame2.setShowBackground(false);
+    zoomFrame2->setShowBackground(false);
 
     // Save the presentation
     $pres->save("presentation.pptx", SaveFormat.Pptx);
@@ -198,16 +198,16 @@ try {
     for (int slideNumber = 0; slideNumber < 5; slideNumber++)
     {
         //Add new slides to presentation
-        ISlide slide = $pres->getSlides().addEmptySlide($pres->getSlides()->get_Item(0).getLayoutSlide());
+        ISlide slide = $pres->getSlides().addEmptySlide($pres->getSlides()->get_Item(0)->getLayoutSlide());
 
         // Create a background for the slide
-        slide.getBackground().setType(BackgroundType.OwnBackground);
-        slide.getBackground().getFillFormat().setFillType(FillType.Solid);
-        slide.getBackground().getFillFormat().getSolidFillColor().setColor(Color.DARK_GRAY);
+        slide->getBackground()->setType(BackgroundType.OwnBackground);
+        slide->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+        slide->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Color.DARK_GRAY);
 
         // Create a text box for the slide
         IAutoShape autoshape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
-        autoshape.getTextFrame().setText(String.format("Slide - %d", slideNumber + 2));
+        autoshape->getTextFrame()->setText(String.format("Slide - %d", slideNumber + 2));
     }
 
     // Create zoom objects for all slides in the first slide
@@ -218,7 +218,7 @@ try {
         IZoomFrame zoomFrame = $pres->getSlides()->get_Item(0)->getShapes().addZoomFrame(x, y, 150, 120, $pres->getSlides()->get_Item(slideNumber));
 
         // Set the ReturnToParent property to return to the first slide
-        zoomFrame.setReturnToParent(true);
+        zoomFrame->setReturnToParent(true);
     }
 
     // Save the presentation

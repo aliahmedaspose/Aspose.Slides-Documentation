@@ -21,14 +21,14 @@ The implementation of the above is given below.
 ```java
 // Use load options to define the default regualr and asian fonts
 LoadOptions loadOptions = new LoadOptions(LoadFormat.Auto);
-loadOptions.setDefaultRegularFont("Wingdings");
-loadOptions.setDefaultAsianFont("Wingdings");
+loadOptions->setDefaultRegularFont("Wingdings");
+loadOptions->setDefaultAsianFont("Wingdings");
 
 // Load the presentation
 $pres = new Java("com.aspose.slides.Presentation", "DefaultFonts.pptx", loadOptions);
 try {
     // Generate slide thumbnail
-    BufferedImage image = $pres->getSlides()->get_Item(0).getThumbnail(1, 1);
+    BufferedImage image = $pres->getSlides()->get_Item(0)->getThumbnail(1, 1);
     ImageIO.write(image, "png", new File("output.png"));
 
     // Generate PDF

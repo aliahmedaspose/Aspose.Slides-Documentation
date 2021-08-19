@@ -22,12 +22,12 @@ Tags are essentially string-key pair values.
 
 ## Getting the Values for Tags
 
-In slides, a tag corresponds to the [IDocumentProperties.getKeywords()](https://apireference.aspose.com/slides/java/com.aspose.slides/IDocumentProperties#getKeywords--) and [IDocumentProperties.setKeywords()](https://apireference.aspose.com/slides/java/com.aspose.slides/IDocumentProperties#setKeywords-java.lang.String-) methods. This sample code shows you how to get a tag’s value with Aspose.Slides for Java for [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation):
+In slides, a tag corresponds to the [IDocumentProperties->getKeywords()](https://apireference.aspose.com/slides/java/com.aspose.slides/IDocumentProperties#getKeywords--) and [IDocumentProperties->setKeywords()](https://apireference.aspose.com/slides/java/com.aspose.slides/IDocumentProperties#setKeywords-java.lang.String-) methods. This sample code shows you how to get a tag’s value with Aspose.Slides for Java for [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation):
 
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try{
-    String keywords = $pres->getDocumentProperties().getKeywords();
+    String keywords = $pres->getDocumentProperties()->getKeywords();
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -47,8 +47,8 @@ This sample code shows you how to add a tag to a [Presentation](https://apirefer
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
-    ITagCollection tags = $pres->getCustomData().getTags();
-    $pres->getCustomData().getTags().set_Item("MyTag", "My Tag Value");
+    ITagCollection tags = $pres->getCustomData()->getTags();
+    $pres->getCustomData()->getTags()->set_Item("MyTag", "My Tag Value");
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -60,7 +60,7 @@ Tags also can be set for [Slide](https://apireference.aspose.com/slides/java/com
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
-    slide.getCustomData().getTags().set_Item("tag", "value");
+    slide->getCustomData()->getTags()->set_Item("tag", "value");
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -73,8 +73,8 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
     IAutoShape shape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 100, 50);
-    shape.getTextFrame().setText("My text");
-    shape.getCustomData().getTags().set_Item("tag", "value");
+    shape->getTextFrame()->setText("My text");
+    shape->getCustomData()->getTags()->set_Item("tag", "value");
 } finally {
     if ($pres != null) $pres->dispose();
 }

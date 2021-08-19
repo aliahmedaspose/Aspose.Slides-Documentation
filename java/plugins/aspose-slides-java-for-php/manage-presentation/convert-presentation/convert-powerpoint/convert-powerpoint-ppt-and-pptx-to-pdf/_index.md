@@ -53,13 +53,13 @@ $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     PdfOptions pdfOptions = new PdfOptions();
     
-    pdfOptions.setCompliance(PdfCompliance.PdfA1a);
+    pdfOptions->setCompliance(PdfCompliance.PdfA1a);
     $pres->save("pres-a1a-compliance.pdf", SaveFormat.Pdf, pdfOptions);
 
-    pdfOptions.setCompliance(PdfCompliance.PdfA1b);
+    pdfOptions->setCompliance(PdfCompliance.PdfA1b);
     $pres->save("pres-a1b-compliance.pdf", SaveFormat.Pdf, pdfOptions);
 
-    pdfOptions.setCompliance(PdfCompliance.PdfUa);
+    pdfOptions->setCompliance(PdfCompliance.PdfUa);
     $pres->save("pres-ua-compliance.pdf", SaveFormat.Pdf, pdfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
@@ -123,16 +123,16 @@ try {
     PdfOptions pdfOptions = new PdfOptions();
     
     // Set Jpeg quality
-    pdfOptions.setJpegQuality((byte)90);
+    pdfOptions->setJpegQuality((byte)90);
     
     // Set behavior for metafiles
-    pdfOptions.setSaveMetafilesAsPng(true);
+    pdfOptions->setSaveMetafilesAsPng(true);
     
     // Set text compression level
-    pdfOptions.setTextCompression(PdfTextCompression.Flate);
+    pdfOptions->setTextCompression(PdfTextCompression.Flate);
     
     // Define the PDF standard
-    pdfOptions.setCompliance(PdfCompliance.Pdf15);
+    pdfOptions->setCompliance(PdfCompliance.Pdf15);
     
     // Save the presentation as PDF
     $pres->save("PowerPoint-to-PDF.pdf", SaveFormat.Pdf, pdfOptions);
@@ -158,7 +158,7 @@ try {
     PdfOptions pdfOptions = new PdfOptions();
     
     // Include hidden slides
-    pdfOptions.setShowHiddenSlides(true);
+    pdfOptions->setShowHiddenSlides(true);
     
     // Save the presentation as PDF
     $pres->save("PowerPoint-to-PDF.pdf", SaveFormat.Pdf, pdfOptions);
@@ -178,8 +178,8 @@ try {
     PdfOptions pdfOptions = new PdfOptions();
     
     // Setting PDF password and access permissions
-    pdfOptions.setPassword("password");
-    pdfOptions.setAccessPermissions(PdfAccessPermissions.PrintDocument | PdfAccessPermissions.HighQualityPrint);
+    pdfOptions->setPassword("password");
+    pdfOptions->setAccessPermissions(PdfAccessPermissions.PrintDocument | PdfAccessPermissions.HighQualityPrint);
     
     // Save the presentation as PDF
     $pres->save("PPTX-to-PDF.pdf", SaveFormat.Pdf, pdfOptions);
@@ -216,16 +216,16 @@ try {
     try {
         ISlide slide = $pres->getSlides()->get_Item(0);
 
-        outPres.getSlides().insertClone(0, slide);
+        outPres->getSlides().insertClone(0, slide);
         
         // Setting Slide Type and Size
-        outPres.getSlideSize().setSize(612F, 792F, SlideSizeScaleType.EnsureFit);
+        outPres->getSlideSize()->setSize(612F, 792F, SlideSizeScaleType.EnsureFit);
         
         PdfOptions pdfOptions = new PdfOptions();
-        INotesCommentsLayoutingOptions options = pdfOptions.getNotesCommentsLayouting();
-        options.setNotesPosition(NotesPositions.BottomFull);
+        INotesCommentsLayoutingOptions options = pdfOptions->getNotesCommentsLayouting();
+        options->setNotesPosition(NotesPositions.BottomFull);
 
-        outPres.save("PDFnotes_out.pdf", SaveFormat.Pdf, pdfOptions);
+        outPres->save("PDFnotes_out.pdf", SaveFormat.Pdf, pdfOptions);
     } finally {
         if ($pres != null) $pres->dispose();
     }
@@ -242,8 +242,8 @@ The following example shows you how to convert a presentation to a PDF notes doc
 $pres = new Java("com.aspose.slides.Presentation", "SelectedSlides.pptx");
 try {
     PdfOptions pdfOptions = new PdfOptions();
-    INotesCommentsLayoutingOptions options = pdfOptions.getNotesCommentsLayouting();
-    options.setNotesPosition(NotesPositions.BottomFull);
+    INotesCommentsLayoutingOptions options = pdfOptions->getNotesCommentsLayouting();
+    options->setNotesPosition(NotesPositions.BottomFull);
 
     $pres->save("Pdf_With_Notes.pdf", SaveFormat.Pdf, pdfOptions);
 } finally {

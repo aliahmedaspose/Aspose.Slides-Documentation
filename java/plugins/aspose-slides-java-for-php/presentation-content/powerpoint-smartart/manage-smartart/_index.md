@@ -14,13 +14,13 @@ try {
     ISlide slide = $pres->getSlides()->get_Item(0);
     ISmartArt smartArt = (ISmartArt)slide->getShapes()->get_Item(0);
 
-    ISmartArtNodeCollection smartArtNodes = smartArt.getAllNodes();
+    ISmartArtNodeCollection smartArtNodes = smartArt->getAllNodes();
     for (ISmartArtNode smartArtNode : smartArtNodes)
     {
         for (ISmartArtShape nodeShape : smartArtNode->getShapes())
         {
-            if (nodeShape.getTextFrame() != null)
-                System.out.println(nodeShape.getTextFrame().getText());
+            if (nodeShape->getTextFrame() != null)
+                System.out.println(nodeShape->getTextFrame()->getText());
         }
     }
 } finally {
@@ -45,7 +45,7 @@ try {
     ISmartArt smart = $pres->getSlides()->get_Item(0)->getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.BasicBlockList);
 
     // Change LayoutType to BasicProcess
-    smart.setLayout(SmartArtLayoutType.BasicProcess);
+    smart->setLayout(SmartArtLayoutType.BasicProcess);
 
     // Saving Presentation
     $pres->save("ChangeSmartArtLayout_out.pptx", SaveFormat.Pptx);
@@ -72,7 +72,7 @@ try {
     ISmartArt smart = $pres->getSlides()->get_Item(0)->getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.RadialCycle);
 
     // Add node on SmartArt 
-    ISmartArtNode node = smart.getAllNodes().addNode();
+    ISmartArtNode node = smart->getAllNodes().addNode();
 
     // Check isHidden property
     boolean hidden = node.isHidden(); // Returns true
@@ -89,7 +89,7 @@ try {
 ```
 
 ## **Get or Set Organization Chart Type**
-Methods [ISmartArtNode.getOrganizationChartLayout()](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArtNode#getOrganizationChartLayout--), [setOrganizationChartLayout(int)](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArtNode#setOrganizationChartLayout-int-) allow get or sets organization chart type associated with current node. In order to get or set organization chart type. Please follow the steps below:
+Methods [ISmartArtNode->getOrganizationChartLayout()](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArtNode#getOrganizationChartLayout--), [setOrganizationChartLayout(int)](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArtNode#setOrganizationChartLayout-int-) allow get or sets organization chart type associated with current node. In order to get or set organization chart type. Please follow the steps below:
 
 - Create an instance of [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class.
 - Add [SmartArt](https://apireference.aspose.com/slides/java/com.aspose.slides/IShapeCollection#addSmartArt-float-float-float-float-int-) on slide.
@@ -104,7 +104,7 @@ try {
     ISmartArt smart = $pres->getSlides()->get_Item(0)->getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.OrganizationChart);
 
     // Get or Set the organization chart type
-    smart.getNodes()->get_Item(0).setOrganizationChartLayout(OrganizationChartLayoutType.LeftHanging);
+    smart->getNodes()->get_Item(0)->setOrganizationChartLayout(OrganizationChartLayoutType.LeftHanging);
 
     // Saving Presentation
     $pres->save("OrganizeChartLayoutType_out.pptx", SaveFormat.Pptx);
@@ -151,7 +151,7 @@ try {
     ISmartArt smart = $pres->getSlides()->get_Item(0)->getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.BasicProcess);
     
     // Get or Set the state of SmartArt Diagram
-    smart.setReversed(true);
+    smart->setReversed(true);
     boolean flag = smart.isReversed();
     
     // Saving Presentation

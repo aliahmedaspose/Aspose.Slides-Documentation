@@ -89,12 +89,12 @@ try {
     Presentation destPres = new Presentation();
     try {
         // Clone the desired slide from the source presentation to the end of the collection of slides in destination presentation
-        ISlideCollection slds = destPres.getSlides();
+        ISlideCollection slds = destPres->getSlides();
 
-        slds.addClone(srcPres.getSlides()->get_Item(0));
+        slds.addClone(srcPres->getSlides()->get_Item(0));
 
         // Write the destination presentation to disk
-        destPres.save("Aspose2_out.pptx", SaveFormat.Pptx);
+        destPres->save("Aspose2_out.pptx", SaveFormat.Pptx);
     } finally {
         destPres.dispose();
     }
@@ -122,12 +122,12 @@ try {
     Presentation destPres = new Presentation();
     try {
         // Clone the desired slide from the source presentation to the end of the collection of slides in destination presentation
-        ISlideCollection slds = destPres.getSlides();
+        ISlideCollection slds = destPres->getSlides();
 
-        slds.insertClone(2, srcPres.getSlides()->get_Item(0));
+        slds.insertClone(2, srcPres->getSlides()->get_Item(0));
 
         // Write the destination presentation to disk
-        destPres.save("Aspose2_out.pptx", SaveFormat.Pptx);
+        destPres->save("Aspose2_out.pptx", SaveFormat.Pptx);
     } finally {
         destPres.dispose();
     }
@@ -159,13 +159,13 @@ try {
     try {
         // Instantiate ISlide from the collection of slides in source presentation along with
         // Master slide
-        ISlide SourceSlide = srcPres.getSlides()->get_Item(0);
-        IMasterSlide SourceMaster = SourceSlide.getLayoutSlide().getMasterSlide();
+        ISlide SourceSlide = srcPres->getSlides()->get_Item(0);
+        IMasterSlide SourceMaster = SourceSlide->getLayoutSlide()->getMasterSlide();
 
         // Clone the desired master slide from the source presentation to the collection of masters in the
         // Destination presentation
-        IMasterSlideCollection masters = destPres.getMasters();
-        IMasterSlide DestMaster = SourceSlide.getLayoutSlide().getMasterSlide();
+        IMasterSlideCollection masters = destPres->getMasters();
+        IMasterSlide DestMaster = SourceSlide->getLayoutSlide()->getMasterSlide();
 
         // Clone the desired master slide from the source presentation to the collection of masters in the
         // Destination presentation
@@ -173,11 +173,11 @@ try {
 
         // Clone the desired slide from the source presentation with the desired master to the end of the
         // Collection of slides in the destination presentation
-        ISlideCollection slds = destPres.getSlides();
+        ISlideCollection slds = destPres->getSlides();
         slds.addClone(SourceSlide, iSlide, true);
 
         // Save the destination presentation to disk
-        destPres.save("CloneToAnotherPresentationWithMaster_out.pptx", SaveFormat.Pptx);
+        destPres->save("CloneToAnotherPresentationWithMaster_out.pptx", SaveFormat.Pptx);
     } finally {
         destPres.dispose();
     }
@@ -194,14 +194,14 @@ The following code snippet shows you how to clone a slide and insert the cloned 
 ```java
 I$presentation = new Java("com.aspose.slides.Presentation");
 try {
-    presentation.getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 50, 300, 100);
-    presentation.getSections().addSection("Section 1", presentation.getSlides()->get_Item(0));
+    presentation->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 50, 300, 100);
+    presentation->getSections().addSection("Section 1", presentation->getSlides()->get_Item(0));
 
-    ISection section2 = presentation.getSections().appendEmptySection("Section 2");
-    presentation.getSlides().addClone(presentation.getSlides()->get_Item(0), section2);
+    ISection section2 = presentation->getSections().appendEmptySection("Section 2");
+    presentation->getSlides().addClone(presentation->getSlides()->get_Item(0), section2);
     
 	// Save the destination presentation to disk
-    presentation.save(dataDir + "CloneSlideIntoSpecifiedSection.pptx", SaveFormat.Pptx);
+    presentation->save(dataDir + "CloneSlideIntoSpecifiedSection.pptx", SaveFormat.Pptx);
 } finally {
     if ($presentation != null) $presentation->dispose();
 }

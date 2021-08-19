@@ -22,17 +22,17 @@ try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Bubble, 50, 50, 400, 300, true);
 
     // Adding Error bars and setting its format
-    IErrorBarsFormat errBarX = chart.getChartData().getSeries()->get_Item(0).getErrorBarsXFormat();
-    IErrorBarsFormat errBarY = chart.getChartData().getSeries()->get_Item(0).getErrorBarsYFormat();
+    IErrorBarsFormat errBarX = chart->getChartData()->getSeries()->get_Item(0)->getErrorBarsXFormat();
+    IErrorBarsFormat errBarY = chart->getChartData()->getSeries()->get_Item(0)->getErrorBarsYFormat();
 
     errBarX.isVisible();
     errBarY.isVisible();
-    errBarX.setValueType((byte) ErrorBarValueType.Fixed);
-    errBarX.setValue(0.1f);
-    errBarY.setValueType((byte) ErrorBarValueType.Percentage);
-    errBarY.setValue(5);
-    errBarX.setType((byte) ErrorBarType.Plus);
-    errBarY.getFormat().getLine().setWidth(2.0f);
+    errBarX->setValueType((byte) ErrorBarValueType.Fixed);
+    errBarX->setValue(0.1f);
+    errBarY->setValueType((byte) ErrorBarValueType.Percentage);
+    errBarY->setValue(5);
+    errBarX->setType((byte) ErrorBarType.Plus);
+    errBarY->getFormat()->getLine()->setWidth(2.0f);
     errBarX.hasEndCap();
 
     // Saving presentation
@@ -61,28 +61,28 @@ try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Bubble, 50, 50, 400, 300, true);
 
     // Adding custom Error bars and setting its format
-    IChartSeries series = chart.getChartData().getSeries()->get_Item(0);
-    IErrorBarsFormat errBarX = series.getErrorBarsXFormat();
-    IErrorBarsFormat errBarY = series.getErrorBarsYFormat();
+    IChartSeries series = chart->getChartData()->getSeries()->get_Item(0);
+    IErrorBarsFormat errBarX = series->getErrorBarsXFormat();
+    IErrorBarsFormat errBarY = series->getErrorBarsYFormat();
     errBarX.isVisible();
     errBarY.isVisible();
-    errBarX.setValueType((byte) ErrorBarValueType.Custom);
-    errBarY.setValueType((byte) ErrorBarValueType.Custom);
+    errBarX->setValueType((byte) ErrorBarValueType.Custom);
+    errBarY->setValueType((byte) ErrorBarValueType.Custom);
 
     // Accessing chart series data point and setting error bars values for
     // individual point
-    IChartDataPointCollection points = series.getDataPoints();
-    points.getDataSourceTypeForErrorBarsCustomValues().setDataSourceTypeForXPlusValues((byte) DataSourceType.DoubleLiterals);
-    points.getDataSourceTypeForErrorBarsCustomValues().setDataSourceTypeForXMinusValues((byte) DataSourceType.DoubleLiterals);
-    points.getDataSourceTypeForErrorBarsCustomValues().setDataSourceTypeForYPlusValues((byte) DataSourceType.DoubleLiterals);
-    points.getDataSourceTypeForErrorBarsCustomValues().setDataSourceTypeForYMinusValues((byte) DataSourceType.DoubleLiterals);
+    IChartDataPointCollection points = series->getDataPoints();
+    points->getDataSourceTypeForErrorBarsCustomValues()->setDataSourceTypeForXPlusValues((byte) DataSourceType.DoubleLiterals);
+    points->getDataSourceTypeForErrorBarsCustomValues()->setDataSourceTypeForXMinusValues((byte) DataSourceType.DoubleLiterals);
+    points->getDataSourceTypeForErrorBarsCustomValues()->setDataSourceTypeForYPlusValues((byte) DataSourceType.DoubleLiterals);
+    points->getDataSourceTypeForErrorBarsCustomValues()->setDataSourceTypeForYMinusValues((byte) DataSourceType.DoubleLiterals);
 
     // Setting error bars for chart series points
     for (int i = 0; i < points.size(); i++) {
-        points->get_Item(i).getErrorBarsCustomValues().getXMinus().setAsLiteralDouble(i + 1);
-        points->get_Item(i).getErrorBarsCustomValues().getXPlus().setAsLiteralDouble(i + 1);
-        points->get_Item(i).getErrorBarsCustomValues().getYMinus().setAsLiteralDouble(i + 1);
-        points->get_Item(i).getErrorBarsCustomValues().getYPlus().setAsLiteralDouble(i + 1);
+        points->get_Item(i)->getErrorBarsCustomValues()->getXMinus()->setAsLiteralDouble(i + 1);
+        points->get_Item(i)->getErrorBarsCustomValues()->getXPlus()->setAsLiteralDouble(i + 1);
+        points->get_Item(i)->getErrorBarsCustomValues()->getYMinus()->setAsLiteralDouble(i + 1);
+        points->get_Item(i)->getErrorBarsCustomValues()->getYPlus()->setAsLiteralDouble(i + 1);
     }
 
     // Saving presentation

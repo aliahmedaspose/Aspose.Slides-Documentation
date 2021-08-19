@@ -34,7 +34,7 @@ Aspose.Slides for Java provides a facility to open password-protected presentati
 LoadOptions loadOptions = new LoadOptions();
 
 // Setting the access password
-loadOptions.setPassword("pass");
+loadOptions->setPassword("pass");
 
 // Opening the presentation file by passing the file path and load
 // options to the constructor of Presentation class
@@ -52,15 +52,15 @@ Aspose.Slides for Java provides a facility to open very large presentations usin
 
 ```java
 LoadOptions loadOptions = new LoadOptions();
-loadOptions.getBlobManagementOptions().setPresentationLockingBehavior(PresentationLockingBehavior.KeepLocked);
-loadOptions.getBlobManagementOptions().setTemporaryFilesAllowed(true);
-loadOptions.getBlobManagementOptions().setMaxBlobsBytesInMemory(0L);
+loadOptions->getBlobManagementOptions()->setPresentationLockingBehavior(PresentationLockingBehavior.KeepLocked);
+loadOptions->getBlobManagementOptions()->setTemporaryFilesAllowed(true);
+loadOptions->getBlobManagementOptions()->setMaxBlobsBytesInMemory(0L);
 
 $pres = new Java("com.aspose.slides.Presentation", "veryLargePresentation.pptx", loadOptions);
 try {
     // the huge presentation is loaded and ready to use, but the memory consumption is still low.
     // make any changes to the presentation.
-    $pres->getSlides()->get_Item(0).setName("Very large presentation");
+    $pres->getSlides()->get_Item(0)->setName("Very large presentation");
 
     // presentation will be saved to the other file, the memory consumptions still low during saving.
     $pres->save("veryLargePresentation-copy.pptx", SaveFormat.Pptx);
@@ -77,7 +77,7 @@ The code snippet below shows how to use IResourceLoadingCallback interface:
 
 ```java
 LoadOptions opts = new LoadOptions();
-opts.setResourceLoadingCallback(new ImageLoadingHandler());
+opts->setResourceLoadingCallback(new ImageLoadingHandler());
 
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx", opts);
 ```
@@ -86,21 +86,21 @@ class ImageLoadingHandler implements IResourceLoadingCallback
 {
     public int resourceLoading(IResourceLoadingArgs args) 
     {
-        if (args.getOriginalUri().endsWith(".jpg")) 
+        if (args->getOriginalUri().endsWith(".jpg")) 
         {
             try // load substitute image
             {
                 byte[] imageBytes = Files.readAllBytes(new File("aspose-logo.jpg").toPath());
-                args.setData(imageBytes);
+                args->setData(imageBytes);
                 return ResourceLoadingAction.UserProvided;
             } catch (RuntimeException ex) {
                 return ResourceLoadingAction.Skip;
             }  catch (IOException ex) {
                 ex.printStackTrace();
             }
-        } else if (args.getOriginalUri().endsWith(".png")) {
+        } else if (args->getOriginalUri().endsWith(".png")) {
             // set substitute url
-            args.setUri("http://www.google.com/images/logos/ps_logo2.png");
+            args->setUri("http://www.google.com/images/logos/ps_logo2.png");
             return ResourceLoadingAction.Default;
         }
         // skip all other images

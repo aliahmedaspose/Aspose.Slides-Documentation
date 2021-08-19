@@ -28,10 +28,10 @@ This sample code, based on the steps above, shows to how to add Media Player Act
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Adding the Media Player ActiveX control
-    $pres->getSlides().get_Item(0).getControls().addControl(ControlType.WindowsMediaPlayer, 100, 100, 400, 400);
+    $pres->getSlides()->get_Item(0).getControls().addControl(ControlType.WindowsMediaPlayer, 100, 100, 400, 400);
 
     // Access the Media Player ActiveX control and set the video path
-    $pres->getSlides().get_Item(0).getControls().get_Item(0).getProperties().set_Item("URL", "Wildlife.wmv");
+    $pres->getSlides()->get_Item(0).getControls()->get_Item(0).getProperties().set_Item("URL", "Wildlife.wmv");
 
     // Save the Presentation
     $pres->save("Output.pptx", SaveFormat.Pptx);
@@ -66,10 +66,10 @@ This sample code, based on the steps above, shows how to manage a simple ActiveX
 $pres = new Java("com.aspose.slides.Presentation", "ActiveX.pptm");
 try {
     // Accessing the first slide in presentation
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // changing TextBox text
-    IControl control = slide.getControls().get_Item(0);
+    IControl control = slide.getControls()->get_Item(0);
     
     if (control.getName() == "TextBox1" && control.getProperties() != null) {
         String newText = "Changed text";
@@ -84,7 +84,7 @@ try {
         graphics.setColor(SystemColor.window);
         graphics.fillRect(0, 0, image.getWidth(), image.getHeight());
     
-        java.awt.Font font = new java.awt.Font(control.getProperties().get_Item("FontName"), java.awt.Font.PLAIN, 16);
+        java.awt.Font font = new java.awt.Font(control.getProperties()->get_Item("FontName"), java.awt.Font.PLAIN, 16);
         graphics.setColor(SystemColor.windowText);
         graphics.setFont(font);
         graphics.drawString(newText, 10, 20);
@@ -106,11 +106,11 @@ try {
         graphics.drawLine(image.getWidth(), image.getHeight(), image.getWidth(), 0);
     
         graphics.dispose();
-        control.getSubstitutePictureFormat().getPicture().setImage(pres.getImages().addImage(image));
+        control.getSubstitutePictureFormat().getPicture().setImage($pres->getImages().addImage(image));
     }
     
     // Changing Button caption
-    control = $pres->getSlides().get_Item(0).getControls().get_Item(1);
+    control = $pres->getSlides()->get_Item(0).getControls()->get_Item(1);
     
     if (control.getName().equalsIgnoreCase("CommandButton1") && control.getProperties() != null) {
         String newCaption = "Show MessageBox";
@@ -122,7 +122,7 @@ try {
         graphics.setColor(SystemColor.control);
         graphics.fillRect(0, 0, image.getWidth(), image.getHeight());
     
-        java.awt.Font font = new java.awt.Font(control.getProperties().get_Item("FontName"), java.awt.Font.PLAIN, 16);
+        java.awt.Font font = new java.awt.Font(control.getProperties()->get_Item("FontName"), java.awt.Font.PLAIN, 16);
         graphics.setColor(SystemColor.windowText);
         graphics.setFont(font);
         FontMetrics metrics = graphics.getFontMetrics(font);
@@ -145,11 +145,11 @@ try {
         graphics.drawLine(image.getWidth(), image.getHeight(), image.getWidth(), 0);
     
         graphics.dispose();
-        control.getSubstitutePictureFormat().getPicture().setImage(pres.getImages().addImage(image));
+        control.getSubstitutePictureFormat().getPicture().setImage($pres->getImages().addImage(image));
     }
     
     // moving 100 points down
-    for (IControl ctl : $pres->getSlides().get_Item(0).getControls()) {
+    for (IControl ctl : $pres->getSlides()->get_Item(0).getControls()) {
         IShapeFrame frame = ctl.getFrame();
         ctl.setFrame(new ShapeFrame(frame.getX(), frame.getY() + 100,
                 frame.getWidth(), frame.getHeight(), frame.getFlipH(), frame.getFlipV(), frame.getRotation()));
@@ -157,7 +157,7 @@ try {
     $pres->save("withActiveX-edited_java.pptm", SaveFormat.Pptm);
     
     // removing controls
-    $pres->getSlides().get_Item(0).getControls().clear();
+    $pres->getSlides()->get_Item(0).getControls().clear();
     $pres->save("withActiveX-cleared_java.pptm", SaveFormat.Pptm);
 } finally {
     if ($pres != null) $pres->dispose();

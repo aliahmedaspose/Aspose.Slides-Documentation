@@ -25,10 +25,10 @@ In the example given below, we have selected an AutoShape of Rectangle type whos
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
     
     // Add AutoShape of rectangle type
-    IShape shp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 150, 150, 75);
+    IShape shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 150, 75);
     
     // Set the fill color of the rectangle shape
     shp.getFillFormat().setFillType(FillType.Solid);
@@ -64,12 +64,12 @@ In the example given below, we will create three rectangles with each of the Joi
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
     
     // Add three AutoShapes of rectangle type
-    IShape shp1 = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 100, 150, 75);
-    IShape shp2 = sld.getShapes().addAutoShape(ShapeType.Rectangle, 300, 100, 150, 75);
-    IShape shp3 = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 250, 150, 75);
+    IShape shp1 = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 100, 150, 75);
+    IShape shp2 = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 300, 100, 150, 75);
+    IShape shp3 = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 250, 150, 75);
     
     // Set the fill color of the rectangle shape
     shp1.getFillFormat().setFillType(FillType.Solid);
@@ -126,10 +126,10 @@ In the example given below, we have selected the ellipse shape for the demonstra
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
     
     // Add AutoShape of ellipse type
-    IShape shp = sld.getShapes().addAutoShape(ShapeType.Ellipse, 50, 150, 75, 150);
+    IShape shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 50, 150, 75, 150);
     
     // Apply some Gradient formatting to ellipse shape
     shp.getFillFormat().setFillType(FillType.Gradient);
@@ -168,10 +168,10 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
     
     // Add AutoShape of rectangle type
-    IShape shp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 150, 75, 150);
+    IShape shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 75, 150);
     
     // Set the fill type to Pattern
     shp.getFillFormat().setFillType(FillType.Pattern);
@@ -209,10 +209,10 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
     
     // Add AutoShape of rectangle type
-    IShape shp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 150, 75, 150);
+    IShape shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 75, 150);
     
     // Set the fill type to Picture
     shp.getFillFormat().setFillType(FillType.Picture);
@@ -249,10 +249,10 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Add AutoShape of rectangle type
-    IShape shp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 150, 75, 150);
+    IShape shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 75, 150);
 
     // Set the fill type to Solid
     shp.getFillFormat().setFillType(FillType.Solid);
@@ -283,10 +283,10 @@ In the example given below, we have rotated a rectangle shape to 90 degrees for 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Add autoshape of rectangle type
-    IShape shp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 150, 75, 150);
+    IShape shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 75, 150);
 
     // Rotate the shape to 90 degree
     shp.setRotation(90);
@@ -312,10 +312,10 @@ In the example given below, we have applied 3D bevel effects on a shape.
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Add a shape on slide
-    IAutoShape shape = slide.getShapes().addAutoShape(ShapeType.Ellipse, 30, 30, 100, 100);
+    IAutoShape shape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 30, 30, 100, 100);
     shape.getFillFormat().setFillType(FillType.Solid);
     shape.getFillFormat().getSolidFillColor().setColor(Color.GREEN);
     ILineFillFormat format = shape.getLineFormat().getFillFormat();
@@ -353,14 +353,14 @@ In the example given below, we have applied 3D Rotation effects on a shape.
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IShape autoShape = $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 30, 30, 200, 200);
+    IShape autoShape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 30, 30, 200, 200);
     
     autoShape.getThreeDFormat().setDepth(6);
     autoShape.getThreeDFormat().getCamera().setRotation(40, 35, 20);
     autoShape.getThreeDFormat().getCamera().setCameraType(CameraPresetType.IsometricLeftUp);
     autoShape.getThreeDFormat().getLightRig().setLightType(LightRigPresetType.Balanced);
     
-    autoShape = $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Line, 30, 300, 200, 200);
+    autoShape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 30, 300, 200, 200);
     autoShape.getThreeDFormat().setDepth(6);
     autoShape.getThreeDFormat().getCamera().setRotation(0, 35, 20);
     autoShape.getThreeDFormat().getCamera().setCameraType(CameraPresetType.IsometricLeftUp);

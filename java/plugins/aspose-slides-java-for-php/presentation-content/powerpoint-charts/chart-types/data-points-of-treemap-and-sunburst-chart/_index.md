@@ -18,7 +18,7 @@ Let’s start with adding a new Sunburst chart to the presentation:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Sunburst, 100, 100, 450, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Sunburst, 100, 100, 450, 400);
 
     // ...
 } finally {
@@ -51,8 +51,8 @@ provide access to corresponding settings.
 Show value of "Leaf 4" data point:
 
 ```java
-IChartDataPointCollection dataPoints = chart.getChartData().getSeries().get_Item(0).getDataPoints();
-dataPoints.get_Item(3).getDataPointLevels().get_Item(0).getLabel().getDataLabelFormat().setShowValue(true);
+IChartDataPointCollection dataPoints = chart.getChartData().getSeries()->get_Item(0).getDataPoints();
+dataPoints->get_Item(3).getDataPointLevels()->get_Item(0).getLabel().getDataLabelFormat().setShowValue(true);
 ```
 
 ![todo:image_alt_text](https://lh6.googleusercontent.com/bKHMf5Bj37ZkMwUE1OfXjw7_CRmDhafhQOUuVWDmitwbtdkwD68ibWluY6Q1HQz_z2Q-BR_SBrBPZ_gID5bGH0PUqI5w37S22RT-ZZal6k7qIDstKntYi5QXS8z-SgpnsI78WGiu)
@@ -61,7 +61,7 @@ dataPoints.get_Item(3).getDataPointLevels().get_Item(0).getLabel().getDataLabelF
 Set "Branch 1" data label to show series name ("Series1") instead of category name. Then set text color to yellow:
 
 ```java
-IDataLabel branch1Label = dataPoints.get_Item(0).getDataPointLevels().get_Item(0).getLabel();
+IDataLabel branch1Label = dataPoints->get_Item(0).getDataPointLevels()->get_Item(0).getLabel();
 branch1Label.getDataLabelFormat().setShowCategoryName(false);
 branch1Label.getDataLabelFormat().setShowSeriesName(true);
 
@@ -77,11 +77,11 @@ Change color of "Steam 4" branch:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Sunburst, 100, 100, 450, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Sunburst, 100, 100, 450, 400);
 
-    IChartDataPointCollection dataPoints = chart.getChartData().getSeries().get_Item(0).getDataPoints();
+    IChartDataPointCollection dataPoints = chart.getChartData().getSeries()->get_Item(0).getDataPoints();
 
-    IChartDataPointLevel stem4branch = dataPoints.get_Item(9).getDataPointLevels().get_Item(1);
+    IChartDataPointLevel stem4branch = dataPoints->get_Item(9).getDataPointLevels()->get_Item(1);
 
     stem4branch.getFormat().getFill().setFillType(FillType.Solid);
     stem4branch.getFormat().getFill().getSolidFillColor().setColor(Color.RED);

@@ -23,7 +23,7 @@ In the example given below, we have added Layout Slides to Presentation.
 $pres = new Java("com.aspose.slides.Presentation", "AccessSlides.pptx");
 try {
     // Try to search by layout slide type
-    IMasterLayoutSlideCollection layoutSlides = $pres->getMasters().get_Item(0).getLayoutSlides();
+    IMasterLayoutSlideCollection layoutSlides = $pres->getMasters()->get_Item(0).getLayoutSlides();
     ILayoutSlide layoutSlide = null;
 
     if (layoutSlides.getByType(SlideLayoutType.TitleAndObject) != null)
@@ -85,7 +85,7 @@ try {
         auxPresentation.getSlideSize().setSize(SlideSizeType.A4Paper, SlideSizeScaleType.Maximize);
         
         // Clone required slide
-        auxPresentation.getSlides().addClone(presentation.getSlides().get_Item(0));
+        auxPresentation.getSlides().addClone(presentation.getSlides()->get_Item(0));
         auxPresentation.getSlides().removeAt(0);
         
         // Save Presentation to disk
@@ -110,7 +110,7 @@ To set footer in a slide using its index position in the slides collection of th
 ```java
 Presentation presentation = new Presentation("presentation.ppt");
 try {
-    IBaseSlideHeaderFooterManager headerFooterManager = presentation.getSlides().get_Item(0).getHeaderFooterManager();
+    IBaseSlideHeaderFooterManager headerFooterManager = presentation.getSlides()->get_Item(0).getHeaderFooterManager();
     if (!headerFooterManager.isFooterVisible()) // Method isFooterVisible is used for indicating that a slide footer placeholder is not present.
     {
         headerFooterManager.setFooterVisibility(true); // Method setFooterVisibility is used for making a slide footer placeholder visible.
@@ -143,7 +143,7 @@ To set footer and child footer a slide using its index position in the slides co
 ```java
 Presentation presentation = new Presentation("presentation.ppt");
 try {
-    IMasterSlideHeaderFooterManager headerFooterManager = presentation.getMasters().get_Item(0).getHeaderFooterManager();
+    IMasterSlideHeaderFooterManager headerFooterManager = presentation.getMasters()->get_Item(0).getHeaderFooterManager();
     headerFooterManager.setFooterAndChildFootersVisibility(true); // Method setFooterAndChildFootersVisibility is used for making a master slide and all child footer placeholders visible.
     headerFooterManager.setSlideNumberAndChildSlideNumbersVisibility(true); // Method setSlideNumberAndChildSlideNumbersVisibility is used for making a master slide and all child page number placeholders visible.
     headerFooterManager.setDateTimeAndChildDateTimesVisibility(true); // Method setDateTimeAndChildDateTimesVisibility is used for making a master slide and all child date-time placeholders visible.
@@ -178,7 +178,7 @@ Slides in presentation could be set as different paper sizes. The [SlideSize.get
 
 ```java
 // Instantiate a Presentation object that represents a presentation file 
-Presentation presentation = new Presentation();
+$presentation = new Java("com.aspose.slides.Presentation");
 try {
     // Set SlideSize.Type Property 
     presentation.getSlideSize().setSize(SlideSizeType.A4Paper,SlideSizeScaleType.EnsureFit);

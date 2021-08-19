@@ -20,10 +20,10 @@ In the example given below, we have set the position and size for Chart legend.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Add a clustered column chart on the slide
-    IChart chart = slide.getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 500, 500);
+    IChart chart = $slide->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 500, 500);
     
     // Set Legend Properties
     chart.getLegend().setX(50 / chart.getWidth());
@@ -52,7 +52,7 @@ The Aspose.Slides for Java lets developers allow to set font size of legend. Pl
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
 
     chart.getLegend().getTextFormat().getPortionFormat().setFontHeight(20);
 
@@ -82,9 +82,9 @@ The Aspose.Slides for Java lets developers allow to set font size of individual 
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
 
-    IChartTextFormat tf = chart.getLegend().getEntries().get_Item(1).getTextFormat();
+    IChartTextFormat tf = chart.getLegend().getEntries()->get_Item(1).getTextFormat();
 
     tf.getPortionFormat().setFontBold(NullableBool.True);
     tf.getPortionFormat().setFontHeight(20);

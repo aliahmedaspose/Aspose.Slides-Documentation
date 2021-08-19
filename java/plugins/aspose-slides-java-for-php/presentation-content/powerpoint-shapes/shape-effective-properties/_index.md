@@ -18,12 +18,12 @@ This sample code shows you how to get effective values:
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
-    IAutoShape shape = (IAutoShape)pres.getSlides().get_Item(0).getShapes().get_Item(0);
+    IAutoShape shape = (IAutoShape)pres.getSlides()->get_Item(0)->getShapes()->get_Item(0);
 
     ITextFrameFormat localTextFrameFormat = shape.getTextFrame().getTextFrameFormat();
     ITextFrameFormatEffectiveData effectiveTextFrameFormat = localTextFrameFormat.getEffective();
 
-    IPortionFormat localPortionFormat = shape.getTextFrame().getParagraphs().get_Item(0).getPortions().get_Item(0).getPortionFormat();
+    IPortionFormat localPortionFormat = shape.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat();
     IPortionFormatEffectiveData effectivePortionFormat = localPortionFormat.getEffective();
 } finally {
     if ($pres != null) $pres->dispose();
@@ -38,7 +38,7 @@ This sample code sample shows you how to get effective properties for the camera
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
-    IThreeDFormatEffectiveData threeDEffectiveData = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getThreeDFormat().getEffective();
+    IThreeDFormatEffectiveData threeDEffectiveData = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0).getThreeDFormat().getEffective();
 
     System.out.println("= Effective camera properties =");
     System.out.println("Type: " + threeDEffectiveData.getCamera().getCameraType());
@@ -57,7 +57,7 @@ This sample code sample shows you how to get effective properties of Light Rig:
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
-    IThreeDFormatEffectiveData threeDEffectiveData = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getThreeDFormat().getEffective();
+    IThreeDFormatEffectiveData threeDEffectiveData = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0).getThreeDFormat().getEffective();
 
     System.out.println("= Effective light rig properties =");
     System.out.println("Type: " + threeDEffectiveData.getLightRig().getLightType());
@@ -75,7 +75,7 @@ This sample code sample shows you how to get effective properties for the Bevel 
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
-    IThreeDFormatEffectiveData threeDEffectiveData = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getThreeDFormat().getEffective();
+    IThreeDFormatEffectiveData threeDEffectiveData = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0).getThreeDFormat().getEffective();
 
     System.out.println("= Effective shape's top face relief properties =");
     System.out.println("Type: " + threeDEffectiveData.getBevelTop().getBevelType());
@@ -94,7 +94,7 @@ This sample code shows you how to get effective text frame formatting properties
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
-    IAutoShape shape = (IAutoShape)pres.getSlides().get_Item(0).getShapes().get_Item(0);
+    IAutoShape shape = (IAutoShape)pres.getSlides()->get_Item(0)->getShapes()->get_Item(0);
     ITextFrameFormatEffectiveData effectiveTextFrameFormat = shape.getTextFrame().getTextFrameFormat().getEffective();
 
     System.out.println("Anchoring type: " + effectiveTextFrameFormat.getAnchoringType());
@@ -118,7 +118,7 @@ This sample code sample shows you how to get effective text style properties:
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
-    IAutoShape shape = (IAutoShape)pres.getSlides().get_Item(0).getShapes().get_Item(0);
+    IAutoShape shape = (IAutoShape)pres.getSlides()->get_Item(0)->getShapes()->get_Item(0);
     ITextStyleEffectiveData effectiveTextStyle = shape.getTextFrame().getTextFrameFormat().getTextStyle().getEffective();
 
     for (int i = 0; i <= 8; i++)
@@ -142,15 +142,15 @@ Using Aspose.Slides for Java, you can get effective properties of Font Height. H
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IAutoShape newShape = $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 400, 75, false);
-    newShape.addTextFrame("");
-    newShape.getTextFrame().getParagraphs().get_Item(0).getPortions().clear();
+    IAutoShape newShape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 400, 75, false);
+    newShape->addTextFrame("");
+    newShape.getTextFrame().getParagraphs()->get_Item(0).getPortions().clear();
 
     IPortion portion0 = new Portion("Sample text with first portion");
     IPortion portion1 = new Portion(" and second portion.");
 
-    newShape.getTextFrame().getParagraphs().get_Item(0).getPortions().add(portion0);
-    newShape.getTextFrame().getParagraphs().get_Item(0).getPortions().add(portion1);
+    newShape.getTextFrame().getParagraphs()->get_Item(0).getPortions().add(portion0);
+    newShape.getTextFrame().getParagraphs()->get_Item(0).getPortions().add(portion1);
 
     System.out.println("Effective font height just after creation:");
     System.out.println("Portion #0: " + portion0.getPortionFormat().getEffective().getFontHeight());
@@ -161,17 +161,17 @@ try {
     System.out.println("Portion #0: " + portion0.getPortionFormat().getEffective().getFontHeight());
     System.out.println("Portion #1: " + portion1.getPortionFormat().getEffective().getFontHeight());
 
-    newShape.getTextFrame().getParagraphs().get_Item(0).getParagraphFormat().getDefaultPortionFormat().setFontHeight(40);
+    newShape.getTextFrame().getParagraphs()->get_Item(0).getParagraphFormat().getDefaultPortionFormat().setFontHeight(40);
     System.out.println("Effective font height after setting paragraph default font height:");
     System.out.println("Portion #0: " + portion0.getPortionFormat().getEffective().getFontHeight());
     System.out.println("Portion #1: " + portion1.getPortionFormat().getEffective().getFontHeight());
 
-    newShape.getTextFrame().getParagraphs().get_Item(0).getPortions().get_Item(0).getPortionFormat().setFontHeight(55);
+    newShape.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat().setFontHeight(55);
     System.out.println("Effective font height after setting portion #0 font height:");
     System.out.println("Portion #0: " + portion0.getPortionFormat().getEffective().getFontHeight());
     System.out.println("Portion #1: " + portion1.getPortionFormat().getEffective().getFontHeight());
 
-    newShape.getTextFrame().getParagraphs().get_Item(0).getPortions().get_Item(1).getPortionFormat().setFontHeight(18);
+    newShape.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(1).getPortionFormat().setFontHeight(18);
     System.out.println("Effective font height after setting portion #1 font height:");
     System.out.println("Portion #0: " + portion0.getPortionFormat().getEffective().getFontHeight());
     System.out.println("Portion #1: " + portion1.getPortionFormat().getEffective().getFontHeight());
@@ -188,11 +188,11 @@ Using Aspose.Slides for Java, you can get effective fill formatting for differen
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
-    ITable tbl = (ITable)pres.getSlides().get_Item(0).getShapes().get_Item(0);
+    ITable tbl = (ITable)pres.getSlides()->get_Item(0)->getShapes()->get_Item(0);
     ITableFormatEffectiveData tableFormatEffective = tbl.getTableFormat().getEffective();
-    IRowFormatEffectiveData rowFormatEffective = tbl.getRows().get_Item(0).getRowFormat().getEffective();
-    IColumnFormatEffectiveData columnFormatEffective = tbl.getColumns().get_Item(0).getColumnFormat().getEffective();
-    ICellFormatEffectiveData cellFormatEffective = tbl.get_Item(0, 0).getCellFormat().getEffective();
+    IRowFormatEffectiveData rowFormatEffective = tbl.getRows()->get_Item(0).getRowFormat().getEffective();
+    IColumnFormatEffectiveData columnFormatEffective = tbl.getColumns()->get_Item(0).getColumnFormat().getEffective();
+    ICellFormatEffectiveData cellFormatEffective = tbl->get_Item(0, 0).getCellFormat().getEffective();
 
     IFillFormatEffectiveData tableFillFormatEffective = tableFormatEffective.getFillFormat();
     IFillFormatEffectiveData rowFillFormatEffective = rowFormatEffective.getFillFormat();

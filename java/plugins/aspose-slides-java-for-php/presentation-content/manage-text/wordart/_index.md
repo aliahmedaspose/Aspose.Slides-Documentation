@@ -34,11 +34,11 @@ First, we create a simple text using this Java code:
 ``` java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = $pres->getSlides().get_Item(0);
-    IAutoShape autoShape = slide.getShapes().addAutoShape(ShapeType.Rectangle, 200, 200, 400, 200);
+    ISlide slide = $pres->getSlides()->get_Item(0);
+    IAutoShape autoShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 200, 400, 200);
     ITextFrame textFrame = autoShape.getTextFrame();
 
-    Portion portion = (Portion)textFrame.getParagraphs().get_Item(0).getPortions().get_Item(0);
+    Portion portion = (Portion)textFrame.getParagraphs()->get_Item(0).getPortions()->get_Item(0);
     portion.setText("Aspose.Slides");
 } finally {
     if ($pres != null) $pres->dispose();
@@ -171,7 +171,7 @@ You can change the parameters for shadow, display, and glow. The effects’ prop
 
 We use the Transform property (inherent in the entire block of text) through this code:
 ``` java 
-textFrame.getTextFrameFormat().setTransform(TextShapeType.ArchUpPour);
+textFrame.getTextFrameFormat().setTransform(TextJava("com.aspose.slides.ShapeType")->ArchUpPour);
 ```
 
 The result:
@@ -294,13 +294,13 @@ This sample code in Java—an implementation of the steps above—shows you how 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Add an AutoShape of Rectangle type
-    IAutoShape ashp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 150, 75, 150, 50);
+    IAutoShape ashp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 75, 150, 50);
 
     // Add TextFrame to the Rectangle
-    ashp.addTextFrame("Aspose TextBox");
+    ashp->addTextFrame("Aspose TextBox");
 
     // Disable shape fill in case we want to get shadow of text
     ashp.getFillFormat().setFillType(FillType.NoFill);
@@ -339,15 +339,15 @@ This sample code (based on the steps above) shows you how to add a connector bet
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     // Add an AutoShape of Rectangle type
-    IAutoShape ashp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 150, 75, 400, 300);
+    IAutoShape ashp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 75, 400, 300);
     ashp.getFillFormat().setFillType(FillType.NoFill);
 
     // Add TextFrame to the Rectangle
-    ashp.addTextFrame("Aspose TextBox");
-    IPortion port = ashp.getTextFrame().getParagraphs().get_Item(0).getPortions().get_Item(0);
+    ashp->addTextFrame("Aspose TextBox");
+    IPortion port = ashp.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0);
     IPortionFormat pf = port.getPortionFormat();
     pf.setFontHeight(50);
 

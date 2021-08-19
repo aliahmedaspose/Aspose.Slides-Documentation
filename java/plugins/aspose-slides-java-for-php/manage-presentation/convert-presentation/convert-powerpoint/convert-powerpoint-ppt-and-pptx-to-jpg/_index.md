@@ -90,7 +90,7 @@ try {
         java.awt.Graphics graphics = image.createGraphics();
         try {
 
-            $pres->getSlides().get_Item(0).renderToGraphics(opts, (Graphics2D) graphics);
+            $pres->getSlides()->get_Item(0).renderToGraphics(opts, (Graphics2D) graphics);
         } finally {
             if (graphics != null) graphics.dispose();
         }

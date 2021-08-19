@@ -17,13 +17,13 @@ This sample code shows you how to add an EMZ image to the images collection:
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     byte[] imageFile = Files.readAllBytes(Paths.get("image.emz"));
 
     IPPImage image = $pres->getImages().addImage(imageFile);
 
-    slide.getShapes().addPictureFrame(ShapeType.Rectangle, 0, 0,
+    slide->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0,
             (float) $pres->getSlideSize().getSize().getWidth(), 
 			(float) $pres->getSlideSize().getSize().getHeight(), 
 			image);
@@ -51,7 +51,7 @@ try {
     String svgContent = new String(Files.readAllBytes(Paths.get("image.svg")));
     ISvgImage svgImage = new SvgImage(svgContent);
     IPPImage ppImage = $pres->getImages().addImage(svgImage);
-    $pres->getSlides().get_Item(0).getShapes().addPictureFrame(ShapeType.Rectangle, 0, 0, 
+    $pres->getSlides()->get_Item(0)->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0, 
 			ppImage.getWidth(), ppImage.getHeight(), ppImage);
     $pres->save("output.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
@@ -71,7 +71,7 @@ This sample code shows you how to use the described method to convert an SVG fil
 
 ```java 
 // Create new presentation
-IPresentation presentation = new Presentation();
+I$presentation = new Java("com.aspose.slides.Presentation");
 try {
     // Read SVG file content
     byte[] svgContent = Files.readAllBytes(Paths.get("image.svg"));
@@ -83,14 +83,14 @@ try {
     Dimension2D slideSize = presentation.getSlideSize().getSize();
 
     // Convert SVG image to group of shapes scaling it to slide size
-    presentation.getSlides().get_Item(0).getShapes().
+    presentation.getSlides()->get_Item(0)->getShapes().
             addGroupShape(svgImage, 0f, 0f, (float)slideSize.getWidth(), (float)slideSize.getHeight());
 
     // Save presentation in PPTX format
     presentation.save("output.pptx", SaveFormat.Pptx);
 } catch (IOException e) {
 } finally {
-    if (presentation != null) presentation.dispose();
+    if ($presentation != null) $presentation->dispose();
 }
 ```
 
@@ -122,8 +122,8 @@ try {
     
         byte[] bytes = Files.readAllBytes(Paths.get(EmfSheetName));
         IPPImage emfImage = $pres->getImages().addImage(bytes);
-        ISlide slide = $pres->getSlides().addEmptySlide(pres.getLayoutSlides().getByType(SlideLayoutType.Blank));
-        IShape m = slide.getShapes().addPictureFrame(ShapeType.Rectangle, 0, 0,
+        ISlide slide = $pres->getSlides().addEmptySlide($pres->getLayoutSlides().getByType(SlideLayoutType.Blank));
+        IShape m = $slide->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0,
 					(float)pres.getSlideSize().getSize().getWidth(), 
 					(float)pres.getSlideSize().getSize().getHeight(), 
 					emfImage);

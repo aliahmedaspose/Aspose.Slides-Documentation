@@ -10,7 +10,7 @@ url: /java/paragraph/
 Using Aspose.Slides for Java, developers can now get the rectangular coordinates for Paragraph inside paragraphs collection of TextFrame. It also allows you to get [the coordinates of portion](https://apireference.aspose.com/slides/java/com.aspose.slides/IPortion#getCoordinates--) inside portion collection of a paragraph. In this topic, we are going to demonstrate with the help of an example that how to get the rectangular coordinates for paragraph along with position of portion inside a paragraph.
 
 ``` java
-AutoShape shape = (AutoShape)pres.getSlides().get_Item(0).getShapes().get_Item(0);
+AutoShape shape = (AutoShape)pres.getSlides()->get_Item(0)->getShapes()->get_Item(0);
 TextFrame textFrame = (TextFrame)shape.getTextFrame();
 for (IParagraph paragraph : textFrame.getParagraphs()){
   for (IPortion portion : paragraph.getPortions()){
@@ -26,9 +26,9 @@ Using [**getRect()**](https://apireference.aspose.com/slides/java/com.aspose.sli
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "HelloWorld.pptx");
 try {
-    IAutoShape shape = (IAutoShape) $pres->getSlides().get_Item(0).getShapes().get_Item(0);
+    IAutoShape shape = (IAutoShape) $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     ITextFrame textFrame = shape.getTextFrame();
-    Rectangle2D.Float rect = textFrame.getParagraphs().get_Item(0).getRect();
+    Rectangle2D.Float rect = textFrame.getParagraphs()->get_Item(0).getRect();
     System.out.println("X: " + rect.x + " Y: " + rect.y + " Width: " + rect.width + " Height: " + rect.height);
 } finally {
     if ($pres != null) $pres->dispose();
@@ -44,11 +44,11 @@ This sample code demonstrates the described operation:
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "source.pptx");
 try {
-    Table tbl = (Table)pres.getSlides().get_Item(0).getShapes().get_Item(0);
-    ICell cell = tbl.getRows().get_Item(1).get_Item(1);
+    Table tbl = (Table)pres.getSlides()->get_Item(0)->getShapes()->get_Item(0);
+    ICell cell = tbl.getRows()->get_Item(1)->get_Item(1);
 
-    double x = tbl.getX() + tbl.getRows().get_Item(1).get_Item(1).getOffsetX();
-    double y = tbl.getY() + tbl.getRows().get_Item(1).get_Item(1).getOffsetY();
+    double x = tbl.getX() + tbl.getRows()->get_Item(1)->get_Item(1).getOffsetX();
+    double y = tbl.getY() + tbl.getRows()->get_Item(1)->get_Item(1).getOffsetY();
 
     for (IParagraph para : cell.getTextFrame().getParagraphs())
     {
@@ -57,7 +57,7 @@ try {
 
         Rectangle2D.Float rect = para.getRect();
         IAutoShape shape =
-                $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle,
+                $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle,
                         (float)rect.getX() + (float)x, (float)rect.getY() + (float)y, (float)rect.getWidth(), (float)rect.getHeight());
 
         shape.getFillFormat().setFillType(FillType.NoFill);
@@ -70,7 +70,7 @@ try {
             {
                 rect = portion.getRect();
                 shape =
-                        $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle,
+                        $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle,
                                 (float)rect.getX() + (float)x, (float)rect.getY() + (float)y, (float)rect.getWidth(), (float)rect.getHeight());
 
                 shape.getFillFormat().setFillType(FillType.NoFill);

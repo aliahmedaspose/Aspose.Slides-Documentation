@@ -86,7 +86,7 @@ try {
     presentation.getProtectionManager().encrypt("123123");
     presentation.save("encrypted-pres.pptx", SaveFormat.Pptx);
 } finally {
-    if (presentation != null) presentation.dispose();
+    if ($presentation != null) $presentation->dispose();
 }
 ```
 
@@ -104,7 +104,7 @@ try {
     presentation.getProtectionManager().setWriteProtection("123123");
     presentation.save("write-protected-pres.pptx", SaveFormat.Pptx);
 } finally {
-    if (presentation != null) presentation.dispose();
+    if ($presentation != null) $presentation->dispose();
 }
 ```
 
@@ -121,7 +121,7 @@ Presentation presentation = new Presentation("pres.pptx", loadOptions);
 try {
     // work with decrypted presentation
 } finally {
-    if (presentation != null) presentation.dispose();
+    if ($presentation != null) $presentation->dispose();
 }
 }
 ```
@@ -140,7 +140,7 @@ try {
     presentation.getProtectionManager().removeEncryption();
     presentation.save("encryption-removed.pptx", SaveFormat.Pptx);
 } finally {
-    if (presentation != null) presentation.dispose();
+    if ($presentation != null) $presentation->dispose();
 }
 ```
 
@@ -156,7 +156,7 @@ try {
     presentation.getProtectionManager().removeWriteProtection();
     presentation.save("write-protection-removed.pptx", SaveFormat.Pptx);
 } finally {
-    if (presentation != null) presentation.dispose();
+    if ($presentation != null) $presentation->dispose();
 }
 ```
 
@@ -174,7 +174,7 @@ try {
     presentation.getProtectionManager().setEncryptDocumentProperties(true);
     presentation.getProtectionManager().encrypt("123123");
 } finally {
-    if (presentation != null) presentation.dispose();
+    if ($presentation != null) $presentation->dispose();
 }
 ```
 
@@ -189,7 +189,7 @@ Presentation presentation = new Presentation("pres.pptx");
 try {
     boolean isEncrypted = presentation.getProtectionManager().isEncrypted();
 } finally {
-    if (presentation != null) presentation.dispose();
+    if ($presentation != null) $presentation->dispose();
 }
 ```
 
@@ -204,7 +204,7 @@ Presentation presentation = new Presentation("pres.pptx");
 try {
     boolean isEncrypted = presentation.getProtectionManager().isWriteProtected();
 } finally {
-    if (presentation != null) presentation.dispose();
+    if ($presentation != null) $presentation->dispose();
 }
 ```
 
@@ -220,7 +220,7 @@ try {
     // check if "pass" is matched with
     boolean isWriteProtected = presentation.getProtectionManager().checkWriteProtection("my_password");
 } finally {
-    if (presentation != null) presentation.dispose();
+    if ($presentation != null) $presentation->dispose();
 }
 ```
 

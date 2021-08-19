@@ -29,7 +29,7 @@ try {
 
     for (int i = 0; i < $pres->getLayoutSlides().size(); i++) {
         // Add an empty slide to the Slides collection
-        slds.addEmptySlide(pres.getLayoutSlides().get_Item(i));
+        slds.addEmptySlide($pres->getLayoutSlides()->get_Item(i));
     }
     // Do some work on the newly added slide
 

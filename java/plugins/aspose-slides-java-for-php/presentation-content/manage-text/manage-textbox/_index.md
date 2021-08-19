@@ -22,22 +22,22 @@ The implementation of the above steps is demonstrated below in an example.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Add an AutoShape of Rectangle type
-    IAutoShape ashp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 150, 75, 150, 50);
+    IAutoShape ashp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 75, 150, 50);
 
     // Add TextFrame to the Rectangle
-    ashp.addTextFrame("");
+    ashp->addTextFrame("");
 
     // Accessing the text frame
     ITextFrame txtFrame = ashp.getTextFrame();
 
     // Create the Paragraph object for text frame
-    IParagraph para = txtFrame.getParagraphs().get_Item(0);
+    IParagraph para = txtFrame.getParagraphs()->get_Item(0);
 
     // Create Portion object for paragraph
-    IPortion portion = para.getPortions().get_Item(0);
+    IPortion portion = para.getPortions()->get_Item(0);
 
     // Set Text
     portion.setText("Aspose TextBox");
@@ -58,13 +58,13 @@ The implementation is demonstrated below in an example.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide of presentation
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Add an AutoShape of Rectangle type
-    IAutoShape aShape = slide.getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 300, 300);
+    IAutoShape aShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 300, 300);
     
     // Add TextFrame to the Rectangle
-    aShape.addTextFrame("All these columns are limited to be within a single text container -- " +
+    aShape->addTextFrame("All these columns are limited to be within a single text container -- " +
             "you can add or delete text and the new or remaining text automatically adjusts " +
             "itself to flow within the container. You cannot have text flow from one container " +
             "to other though -- we told you PowerPoint's column options for text are limited!");
@@ -93,7 +93,7 @@ The implementation is demonstrated below in an example.
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IAutoShape shape1 = $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 300, 300);
+    IAutoShape shape1 = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 300, 300);
     TextFrameFormat format = (TextFrameFormat)shape1.getTextFrame().getTextFrameFormat();
 
     format.setColumnCount(2);
@@ -105,8 +105,8 @@ try {
 
     Presentation test1 = new Presentation("output_column1.pptx");
     try {
-        Assert.assertEquals(2, ((AutoShape)test1.getSlides().get_Item(0).getShapes().get_Item(0)).getTextFrame().getTextFrameFormat().getColumnCount());
-        Assert.assertEquals(Double.NaN, ((AutoShape)test1.getSlides().get_Item(0).getShapes().get_Item(0)).getTextFrame().getTextFrameFormat().getColumnSpacing());
+        Assert.assertEquals(2, ((AutoShape)test1.getSlides()->get_Item(0)->getShapes()->get_Item(0)).getTextFrame().getTextFrameFormat().getColumnCount());
+        Assert.assertEquals(Double.NaN, ((AutoShape)test1.getSlides()->get_Item(0)->getShapes()->get_Item(0)).getTextFrame().getTextFrameFormat().getColumnSpacing());
     } finally {
         if (test1 != null) test1.dispose();
     }
@@ -116,8 +116,8 @@ try {
 
     Presentation test2 = new Presentation("output_column2.pptx");
     try {
-        Assert.assertEquals(2, ((AutoShape)test2.getSlides().get_Item(0).getShapes().get_Item(0)).getTextFrame().getTextFrameFormat().getColumnCount());
-        Assert.assertEquals(20, ((AutoShape)test2.getSlides().get_Item(0).getShapes().get_Item(0)).getTextFrame().getTextFrameFormat().getColumnSpacing());
+        Assert.assertEquals(2, ((AutoShape)test2.getSlides()->get_Item(0)->getShapes()->get_Item(0)).getTextFrame().getTextFrameFormat().getColumnCount());
+        Assert.assertEquals(20, ((AutoShape)test2.getSlides()->get_Item(0)->getShapes()->get_Item(0)).getTextFrame().getTextFrameFormat().getColumnSpacing());
     } finally {
         if (test2 != null) test2.dispose();
     }
@@ -128,8 +128,8 @@ try {
 
     Presentation test3 = new Presentation("output_column3.pptx");
     try {
-        Assert.assertEquals(3, ((AutoShape)test3.getSlides().get_Item(0).getShapes().get_Item(0)).getTextFrame().getTextFrameFormat().getColumnCount());
-        Assert.assertEquals(15, ((AutoShape)test3.getSlides().get_Item(0).getShapes().get_Item(0)).getTextFrame().getTextFrameFormat().getColumnSpacing());
+        Assert.assertEquals(3, ((AutoShape)test3.getSlides()->get_Item(0)->getShapes()->get_Item(0)).getTextFrame().getTextFrameFormat().getColumnCount());
+        Assert.assertEquals(15, ((AutoShape)test3.getSlides()->get_Item(0)->getShapes()->get_Item(0)).getTextFrame().getTextFrameFormat().getColumnSpacing());
     } finally {
         if (test3 != null) test3.dispose();
     }
@@ -156,24 +156,24 @@ The implementation of the above steps is demonstrated below in an example.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Add an AutoShape of Rectangle Type
-    IShape pptxShape = slide.getShapes().addAutoShape(ShapeType.Rectangle, 150, 150, 150, 50);
+    IShape pptxShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 150, 150, 50);
     
     // Cast the shape to AutoShape
     IAutoShape pptxAutoShape = (IAutoShape)pptxShape;
     
     // Access ITextFrame associated with the AutoShape
-    pptxAutoShape.addTextFrame("");
+    pptxAutoShape->addTextFrame("");
     
     ITextFrame ITextFrame = pptxAutoShape.getTextFrame();
     
     // Add some text to the frame
-    ITextFrame.getParagraphs().get_Item(0).getPortions().get_Item(0).setText("Aspose.Slides");
+    ITextFrame.getParagraphs()->get_Item(0).getPortions()->get_Item(0).setText("Aspose.Slides");
     
     // Set Hyperlink for the portion text
-    IHyperlinkManager HypMan = ITextFrame.getParagraphs().get_Item(0).getPortions().get_Item(0).getPortionFormat().getHyperlinkManager();
+    IHyperlinkManager HypMan = ITextFrame.getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat().getHyperlinkManager();
     HypMan.setExternalHyperlinkClick("http://www.aspose.com");
     // Save the PPTX Presentation
     $pres->save("hLinkPPTX_out.pptx", SaveFormat.Pptx);

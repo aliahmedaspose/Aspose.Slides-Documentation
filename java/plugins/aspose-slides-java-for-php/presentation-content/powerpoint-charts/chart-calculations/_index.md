@@ -11,7 +11,7 @@ Aspose.Slides for Java provides a simple API for getting these properties. Prope
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    Chart chart = (Chart)pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Area, 100, 100, 500, 350);
+    Chart chart = (Chart)pres.getSlides()->get_Item(0)->getShapes().addChart(ChartType.Area, 100, 100, 500, 350);
     chart.validateChartLayout();
     
     double maxValue = chart.getAxes().getVerticalAxis().getActualMaxValue();
@@ -30,7 +30,7 @@ Aspose.Slides for Java provides a simple API for getting these properties. Prop
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    Chart chart = (Chart) $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 350);
+    Chart chart = (Chart) $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 350);
     chart.validateChartLayout();
 
     double x = chart.getPlotArea().getActualX();
@@ -48,8 +48,8 @@ This topic helps you to understand how to hide information from chart. Using Asp
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = $pres->getSlides().get_Item(0);
-    IChart chart = slide.getShapes().addChart(ChartType.LineWithMarkers, 140, 118, 320, 370);
+    ISlide slide = $pres->getSlides()->get_Item(0);
+    IChart chart = $slide->getShapes().addChart(ChartType.LineWithMarkers, 140, 118, 320, 370);
 
     //Hiding chart Title
     chart.setTitle(false);
@@ -71,7 +71,7 @@ try {
         chart.getChartData().getSeries().removeAt(i);
     }
 
-    IChartSeries series = chart.getChartData().getSeries().get_Item(0);
+    IChartSeries series = chart.getChartData().getSeries()->get_Item(0);
 
     series.getMarker().setSymbol(MarkerStyleType.Circle);
     series.getLabels().getDefaultDataLabelFormat().setShowValue(true);

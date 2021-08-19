@@ -51,7 +51,7 @@ The worksheet of the chart is automatically created and can be accessed with 
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 150, 150, 500, 300);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 150, 150, 500, 300);
 
     IChartDataWorkbook workbook = chart.getChartData().getChartDataWorkbook();
 

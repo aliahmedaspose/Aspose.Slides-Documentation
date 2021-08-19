@@ -25,9 +25,9 @@ We know that Aspose.Slides for Java may contain two types of slides: Master Slid
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Set the background color of the Master ISlide to Green
-    $pres->getMasters().get_Item(0).getBackground().setType(BackgroundType.OwnBackground);
-    $pres->getMasters().get_Item(0).getBackground().getFillFormat().setFillType(FillType.Solid);
-    $pres->getMasters().get_Item(0).getBackground().getFillFormat().getSolidFillColor().setColor(Color.GREEN);
+    $pres->getMasters()->get_Item(0).getBackground().setType(BackgroundType.OwnBackground);
+    $pres->getMasters()->get_Item(0).getBackground().getFillFormat().setFillType(FillType.Solid);
+    $pres->getMasters()->get_Item(0).getBackground().getFillFormat().getSolidFillColor().setColor(Color.GREEN);
     
     // Write the presentation to disk
     $pres->save("MasterBG.pptx", SaveFormat.Pptx);
@@ -50,9 +50,9 @@ A Normal Slide is the one which inherits its format settings from the master sli
 $pres = new Java("com.aspose.slides.Presentation", "MasterBG.pptx");
 try {
     // Set the background color of the first ISlide to Blue
-    $pres->getSlides().get_Item(0).getBackground().setType(BackgroundType.OwnBackground);
-    $pres->getSlides().get_Item(0).getBackground().getFillFormat().setFillType(FillType.Solid);
-    $pres->getSlides().get_Item(0).getBackground().getFillFormat().getSolidFillColor().setColor(Color.BLUE);
+    $pres->getSlides()->get_Item(0).getBackground().setType(BackgroundType.OwnBackground);
+    $pres->getSlides()->get_Item(0).getBackground().getFillFormat().setFillType(FillType.Solid);
+    $pres->getSlides()->get_Item(0).getBackground().getFillFormat().getSolidFillColor().setColor(Color.BLUE);
     
     $pres->save("ContentBG.pptx", SaveFormat.Pptx);
 } finally {
@@ -76,9 +76,9 @@ To apply the simple gradient effect on the background of a slide using Aspose.Sl
 $pres = new Java("com.aspose.slides.Presentation", "MasterBG.pptx");
 try {
     // Apply Gradient effect to the Background
-    $pres->getSlides().get_Item(0).getBackground().setType(BackgroundType.OwnBackground);
-    $pres->getSlides().get_Item(0).getBackground().getFillFormat().setFillType(FillType.Gradient);
-    $pres->getSlides().get_Item(0).getBackground().getFillFormat().getGradientFormat().setTileFlip(TileFlip.FlipBoth);
+    $pres->getSlides()->get_Item(0).getBackground().setType(BackgroundType.OwnBackground);
+    $pres->getSlides()->get_Item(0).getBackground().getFillFormat().setFillType(FillType.Gradient);
+    $pres->getSlides()->get_Item(0).getBackground().getFillFormat().getGradientFormat().setTileFlip(TileFlip.FlipBoth);
     
     // Write the presentation to disk
     $pres->save("ContentBG_Grad.pptx", SaveFormat.Pptx);
@@ -104,16 +104,16 @@ To use an image as the background of a slide using Aspose.Slides for Java, pleas
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Set the background with Image
-    $pres->getSlides().get_Item(0).getBackground().setType(BackgroundType.OwnBackground);
-    $pres->getSlides().get_Item(0).getBackground().getFillFormat().setFillType(FillType.Picture);
-    $pres->getSlides().get_Item(0).getBackground().getFillFormat().getPictureFillFormat()
+    $pres->getSlides()->get_Item(0).getBackground().setType(BackgroundType.OwnBackground);
+    $pres->getSlides()->get_Item(0).getBackground().getFillFormat().setFillType(FillType.Picture);
+    $pres->getSlides()->get_Item(0).getBackground().getFillFormat().getPictureFillFormat()
             .setPictureFillMode(PictureFillMode.Stretch);
     
     // Set the picture
     IPPImage imgx = $pres->getImages().addImage(Files.readAllBytes(Paths.get("Desert.jpg")));
     
     // Add image to presentation's images collection
-    $pres->getSlides().get_Item(0).getBackground().getFillFormat().getPictureFillFormat().getPicture().setImage(imgx);
+    $pres->getSlides()->get_Item(0).getBackground().getFillFormat().getPictureFillFormat().getPicture().setImage(imgx);
     
     // Write the presentation to disk
     $pres->save("ContentBG_Img.pptx", SaveFormat.Pptx);
@@ -134,7 +134,7 @@ The following code snippet shows how to get effective background values of slid
 // Instantiate the Presentation class that represents the presentation file
 $pres = new Java("com.aspose.slides.Presentation", "SamplePresentation.pptx");
 try {
-    IBackgroundEffectiveData effBackground = $pres->getSlides().get_Item(0).getBackground().getEffective();
+    IBackgroundEffectiveData effBackground = $pres->getSlides()->get_Item(0).getBackground().getEffective();
     
     if (effBackground.getFillFormat().getFillType() == FillType.Solid)
         System.out.println("Fill color: " + effBackground.getFillFormat().getSolidFillColor());

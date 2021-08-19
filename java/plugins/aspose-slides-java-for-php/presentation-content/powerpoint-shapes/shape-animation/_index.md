@@ -24,27 +24,27 @@ This sample code, based on the steps above, shows you how to apply the PathFootb
 // Instantiate PrseetationEx class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Now create effect "PathFootball" for existing shape from scratch.
-    IAutoShape ashp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 150, 150, 250, 25);
-    ashp.addTextFrame("Animated TextBox");
+    IAutoShape ashp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 150, 250, 25);
+    ashp->addTextFrame("Animated TextBox");
 
     // Add PathFootBall animation effect
-    $pres->getSlides().get_Item(0).getTimeline().getMainSequence().addEffect(ashp, EffectType.PathFootball,
+    $pres->getSlides()->get_Item(0).getTimeline().getMainSequence().addEffect(ashp, EffectType.PathFootball,
             EffectSubtype.None, EffectTriggerType.AfterPrevious);
 
     // Create some kind of "button".
-    IShape shapeTrigger = $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Bevel, 10, 10, 20, 20);
+    IShape shapeTrigger = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Bevel, 10, 10, 20, 20);
 
     // Create sequence of effects for this button.
-    ISequence seqInter = $pres->getSlides().get_Item(0).getTimeline().getInteractiveSequences().add(shapeTrigger);
+    ISequence seqInter = $pres->getSlides()->get_Item(0).getTimeline().getInteractiveSequences().add(shapeTrigger);
 
     // Create custom user path. Our object will be moved only after "button" click.
     IEffect fxUserPath = seqInter.addEffect(ashp, EffectType.PathUser, EffectSubtype.None, EffectTriggerType.OnClick);
 
     // Created path is empty so we should add commands for moving.
-    IMotionEffect motionBhv = ((IMotionEffect)fxUserPath.getBehaviors().get_Item(0));
+    IMotionEffect motionBhv = ((IMotionEffect)fxUserPath.getBehaviors()->get_Item(0));
 
     Point2D.Float[] pts = new Point2D.Float[1];
     pts[0] = new Point2D.Float(0.076f, 0.59f);

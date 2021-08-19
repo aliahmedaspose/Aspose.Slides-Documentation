@@ -214,7 +214,7 @@ $pres = new Java("com.aspose.slides.Presentation", "SelectedSlides.pptx");
 try {
     Presentation outPres = new Presentation();
     try {
-        ISlide slide = $pres->getSlides().get_Item(0);
+        ISlide slide = $pres->getSlides()->get_Item(0);
 
         outPres.getSlides().insertClone(0, slide);
         

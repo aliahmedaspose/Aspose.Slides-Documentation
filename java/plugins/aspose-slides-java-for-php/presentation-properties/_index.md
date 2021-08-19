@@ -146,7 +146,7 @@ try {
     for (int i = 0; i < dp.getCountOfCustomProperties(); i++) {
         // Display names and values of custom properties
         System.out.println("Custom Property Name : " + dp.getCustomPropertyName(i));
-        System.out.println("Custom Property Value : " + dp.get_Item(dp.getCustomPropertyName(i)));
+        System.out.println("Custom Property Value : " + dp->get_Item(dp.getCustomPropertyName(i)));
     
         // Modify values of custom properties
         dp.set_Item(dp.getCustomPropertyName(i), "New Value " + (i + 1));

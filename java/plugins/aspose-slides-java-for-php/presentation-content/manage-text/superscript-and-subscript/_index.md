@@ -32,10 +32,10 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     // Create text box
-    IAutoShape shape = slide.getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 200, 100);
+    IAutoShape shape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 200, 100);
     ITextFrame textFrame = shape.getTextFrame();
     textFrame.getParagraphs().clear();
 

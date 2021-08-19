@@ -36,13 +36,13 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
     
     // Instantiate the Image class
     IPPImage imgx = $pres->getImages().addImage(new FileInputStream(new File("asp1.jpg")));
     
     // Add Picture Frame with height and width equivalent of Picture
-    sld.getShapes().addPictureFrame(ShapeType.Rectangle, 50, 150, imgx.getWidth(), imgx.getHeight(), imgx);
+    sld->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, imgx.getWidth(), imgx.getHeight(), imgx);
     
     // Write the PPTX file to disk
     $pres->save("RectPicFrame.pptx", SaveFormat.Pptx);
@@ -69,14 +69,14 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
     
     // Instantiate the Image class
     IPPImage imgx = $pres->getImages().addImage(new FileInputStream(new File("asp1.jpg")));
     
     
     // Add Picture Frame with height and width equivalent of Picture
-    IPictureFrame pf = sld.getShapes().addPictureFrame(ShapeType.Rectangle, 50, 150, imgx.getWidth(), imgx.getHeight(), imgx);
+    IPictureFrame pf = sld->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, imgx.getWidth(), imgx.getHeight(), imgx);
     
     // Setting relative scale width and height
     pf.setRelativeScaleHeight(0.8f);
@@ -113,13 +113,13 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
     
     // Instantiate the Image class
     IPPImage imgx = $pres->getImages().addImage(new FileInputStream(new File("asp1.jpg")));
     
     // Add Picture Frame with height and width equivalent of Picture
-    IPictureFrame pf = sld.getShapes().addPictureFrame(ShapeType.Rectangle, 50, 150, imgx.getWidth(), imgx.getHeight(), imgx);
+    IPictureFrame pf = sld->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, imgx.getWidth(), imgx.getHeight(), imgx);
     
     // Apply some formatting to PictureFrameEx
     pf.getLineFormat().getFillFormat().setFillType(FillType.Solid);
@@ -155,14 +155,14 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     // Instantiate the ImageEx class
     BufferedImage img = ImageIO.read(new File("aspose-logo.jpg"));
     IPPImage imgEx = $pres->getImages().addImage(img);
 
     // Add an AutoShape of Rectangle type
-    IAutoShape aShape = slide.getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 300, 300);
+    IAutoShape aShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 300, 300);
 
     // Set shape's fill type
     aShape.getFillFormat().setFillType(FillType.Picture);

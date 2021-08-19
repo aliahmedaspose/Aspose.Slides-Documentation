@@ -20,7 +20,7 @@ Aspose.Slides for Java provides [Presentation](https://apireference.aspose.com/j
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Printing the total number of slides present in the presentation
-    System.out.println(pres.getSlides().size());
+    System.out.println($pres->getSlides().size());
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -41,7 +41,7 @@ loadOptions.setPassword("pass");
 $pres = new Java("com.aspose.slides.Presentation", "demoPassDocument.pptx", loadOptions);
 try {
     // Printing the total number of slides present in the presentation
-    System.out.println(pres.getSlides().size());
+    System.out.println($pres->getSlides().size());
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -60,7 +60,7 @@ $pres = new Java("com.aspose.slides.Presentation", "veryLargePresentation.pptx",
 try {
     // the huge presentation is loaded and ready to use, but the memory consumption is still low.
     // make any changes to the presentation.
-    $pres->getSlides().get_Item(0).setName("Very large presentation");
+    $pres->getSlides()->get_Item(0).setName("Very large presentation");
 
     // presentation will be saved to the other file, the memory consumptions still low during saving.
     $pres->save("veryLargePresentation-copy.pptx", SaveFormat.Pptx);

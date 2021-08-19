@@ -27,9 +27,9 @@ In the example given below, we animated chart series.
 $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
     // Get reference of the chart object
-    ISlide slide = $pres->getSlides().get_Item(0);
-    IShapeCollection shapes = slide.getShapes();
-    IChart chart = (IChart) shapes.get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
+    IShapeCollection shapes = $slide->getShapes();
+    IChart chart = (IChart) shapes->get_Item(0);
 
     // Animate the series
     slide.getTimeline().getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None,
@@ -72,9 +72,9 @@ In the example given below, we animated chart category.
 // Instantiate Presentation class that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
-    ISlide slide = $pres->getSlides().get_Item(0);
-    IShapeCollection shapes = slide.getShapes();
-    IChart chart = (IChart) shapes.get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
+    IShapeCollection shapes = $slide->getShapes();
+    IChart chart = (IChart) shapes->get_Item(0);
 
     slide.getTimeline().getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None,
             EffectTriggerType.AfterPrevious);
@@ -116,9 +116,9 @@ In the example given below, we have animated series' elements.
 $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
     // Get reference of the chart object
-    ISlide slide = $pres->getSlides().get_Item(0);
-    IShapeCollection shapes = slide.getShapes();
-    IChart chart = (IChart) shapes.get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
+    IShapeCollection shapes = $slide->getShapes();
+    IChart chart = (IChart) shapes->get_Item(0);
 
     // Animate series elements
     slide.getTimeline().getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None, EffectTriggerType.AfterPrevious);
@@ -172,9 +172,9 @@ In the example given below, we have animated categories elements.
 $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
     // Get reference of the chart object
-    ISlide slide = $pres->getSlides().get_Item(0);
-    IShapeCollection shapes = slide.getShapes();
-    IChart chart = (IChart) shapes.get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
+    IShapeCollection shapes = $slide->getShapes();
+    IChart chart = (IChart) shapes->get_Item(0);
 
     // Animate categories' elements
     slide.getTimeline().getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None, EffectTriggerType.AfterPrevious);

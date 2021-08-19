@@ -91,7 +91,7 @@ try {
     }
 
     // Change Header and Footer settings for first notes slide only
-    INotesSlide notesSlide = $pres->getSlides().get_Item(0).getNotesSlideManager().getNotesSlide();
+    INotesSlide notesSlide = $pres->getSlides()->get_Item(0).getNotesSlideManager().getNotesSlide();
     if (notesSlide != null)
     {
         INotesSlideHeaderFooterManager headerFooterManager = notesSlide.getHeaderFooterManager();

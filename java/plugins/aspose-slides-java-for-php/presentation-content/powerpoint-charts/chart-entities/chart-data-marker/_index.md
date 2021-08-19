@@ -21,10 +21,10 @@ In the example given below, we have set the chart marker options on data points 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Creating the default chart
-    IChart chart = slide.getShapes().addChart(ChartType.LineWithMarkers, 0, 0, 400, 400);
+    IChart chart = $slide->getShapes().addChart(ChartType.LineWithMarkers, 0, 0, 400, 400);
     
     // Getting the default chart data WorkSheet index
     int defaultWorksheetIndex = 0;
@@ -45,7 +45,7 @@ try {
     IPPImage imgx2 = $pres->getImages().addImage(new FileInputStream(new File("Tulips.jpg")));
     
     // Take first chart series
-    IChartSeries series = chart.getChartData().getSeries().get_Item(0);
+    IChartSeries series = chart.getChartData().getSeries()->get_Item(0);
     
     // Add new point (1:3) there.
     IChartDataPoint point = series.getDataPoints().addDataPointForLineSeries(fact.getCell(defaultWorksheetIndex, 1, 1, (double) 4.5));

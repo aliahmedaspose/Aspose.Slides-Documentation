@@ -22,13 +22,13 @@ In the example below, we added a Video Frame to the slide.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
     
     // Embed video inside presentation
     IVideo vid = $pres->getVideos().addVideo(new FileInputStream(new File("Wildlife.mp4")));
 
     // Add Video Frame
-    IVideoFrame vf = sld.getShapes().addVideoFrame(50, 150, 300, 350, vid);
+    IVideoFrame vf = sld->getShapes().addVideoFrame(50, 150, 300, 350, vid);
 
     // Set video to Video Frame
     vf.setEmbeddedVideo(vid);
@@ -72,7 +72,7 @@ try {
 private static void addVideoFromYouTube(Presentation pres, String videoID)
 {
     // add videoFrame
-    IVideoFrame videoFrame = $pres->getSlides().get_Item(0).getShapes().addVideoFrame(
+    IVideoFrame videoFrame = $pres->getSlides()->get_Item(0)->getShapes().addVideoFrame(
             10, 10, 427, 240, "https://www.youtube.com/embed/" + videoID);
     videoFrame.setPlayMode(VideoPlayModePreset.Auto);
 
@@ -82,7 +82,7 @@ private static void addVideoFromYouTube(Presentation pres, String videoID)
 
     try {
         url = new URL(thumbnailUri);
-        videoFrame.getPictureFormat().getPicture().setImage(pres.getImages().addImage(url.openStream()));
+        videoFrame.getPictureFormat().getPicture().setImage($pres->getImages().addImage(url.openStream()));
     } catch (MalformedURLException e) {
         e.printStackTrace();
     } catch (IOException e) {
@@ -110,10 +110,10 @@ In the example below, we added a Video Frame to the slide.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Add Video Frame
-    IVideoFrame vf = sld.getShapes().addVideoFrame(50, 150, 300, 150, "Wildlife.mp4");
+    IVideoFrame vf = sld->getShapes().addVideoFrame(50, 150, 300, 150, "Wildlife.mp4");
 
     // Set Play Mode and Volume of the Video
     vf.setPlayMode(VideoPlayModePreset.Auto);
@@ -141,7 +141,7 @@ $pres = new Java("com.aspose.slides.Presentation", "VideoSample.pptx");
 try {
     for (ISlide slide : $pres->getSlides()) 
     {
-        for (IShape shape : slide.getShapes()) 
+        for (IShape shape : slide->getShapes()) 
         {
             if (shape instanceof VideoFrame) 
             {

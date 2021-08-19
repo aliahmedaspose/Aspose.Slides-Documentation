@@ -19,8 +19,8 @@ try {
     TextHighlightingOptions textHighlightingOptions = new TextHighlightingOptions();
     textHighlightingOptions.setWholeWordsOnly(true);
     
-    ((AutoShape)pres.getSlides().get_Item(0).getShapes().get_Item(0)).getTextFrame().highlightText("title", Color.BLUE); // highlighting all words 'important'
-    ((AutoShape)pres.getSlides().get_Item(0).getShapes().get_Item(0)).getTextFrame().highlightText("to", Color.MAGENTA, textHighlightingOptions);// highlighting all separate 'the' occurrences
+    ((AutoShape)pres.getSlides()->get_Item(0)->getShapes()->get_Item(0)).getTextFrame().highlightText("title", Color.BLUE); // highlighting all words 'important'
+    ((AutoShape)pres.getSlides()->get_Item(0)->getShapes()->get_Item(0)).getTextFrame().highlightText("to", Color.MAGENTA, textHighlightingOptions);// highlighting all separate 'the' occurrences
     
     $pres->save("OutputPresentation-highlight.pptx", SaveFormat.Pptx);
 } finally {
@@ -40,7 +40,7 @@ $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     TextHighlightingOptions options = new TextHighlightingOptions();
     
-    ((AutoShape) $pres->getSlides().get_Item(0).getShapes().get_Item(0)).getTextFrame().highlightRegex("\\b[^\\s]{4}\\b", java.awt.Color.YELLOW, options); // highlighting all words with 10 symbols or longer
+    ((AutoShape) $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)).getTextFrame().highlightRegex("\\b[^\\s]{4}\\b", java.awt.Color.YELLOW, options); // highlighting all words with 10 symbols or longer
     
     $pres->save("OutputPresentation-highlight.pptx", SaveFormat.Pptx);
 } finally {
@@ -65,19 +65,19 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation", "ParagraphsAlignment.pptx");
 try {
     // Accessing first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     // Accessing the first and second placeholder in the slide and typecasting it as AutoShape
-    ITextFrame tf1 = ((IAutoShape)slide.getShapes().get_Item(0)).getTextFrame();
-    ITextFrame tf2 = ((IAutoShape)slide.getShapes().get_Item(1)).getTextFrame();
+    ITextFrame tf1 = ((IAutoShape)slide->getShapes()->get_Item(0)).getTextFrame();
+    ITextFrame tf2 = ((IAutoShape)slide->getShapes()->get_Item(1)).getTextFrame();
 
     // Change the text in both placeholders
     tf1.setText("Center Align by Aspose");
     tf2.setText("Center Align by Aspose");
 
     // Getting the first paragraph of the placeholders
-    IParagraph para1 = tf1.getParagraphs().get_Item(0);
-    IParagraph para2 = tf2.getParagraphs().get_Item(0);
+    IParagraph para1 = tf1.getParagraphs()->get_Item(0);
+    IParagraph para2 = tf2.getParagraphs()->get_Item(0);
 
     // Aligning the text paragraph to center
     para1.getParagraphFormat().setAlignment(TextAlignment.Center);
@@ -103,8 +103,8 @@ The implementation of the above steps is given below.
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "transparency.pptx");
 try {
-    IAutoShape shape = (IAutoShape)pres.getSlides().get_Item(0).getShapes().get_Item(0);
-    IEffectFormat effects = shape.getTextFrame().getParagraphs().get_Item(0).getPortions().get_Item(0).getPortionFormat().getEffectFormat();
+    IAutoShape shape = (IAutoShape)pres.getSlides()->get_Item(0)->getShapes()->get_Item(0);
+    IEffectFormat effects = shape.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat().getEffectFormat();
 
     IOuterShadow outerShadowEffect = effects.getOuterShadowEffect();
 
@@ -142,19 +142,19 @@ The implementation of the above steps is given below. It takes an unadorned pres
 $pres = new Java("com.aspose.slides.Presentation", "FontProperties.pptx");
 try {
     // Accessing a slide using its slide position
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     // Accessing the first and second placeholder in the slide and typecasting it as AutoShape
-    ITextFrame tf1 = ((IAutoShape)slide.getShapes().get_Item(0)).getTextFrame();
-    ITextFrame tf2 = ((IAutoShape)slide.getShapes().get_Item(1)).getTextFrame();
+    ITextFrame tf1 = ((IAutoShape)slide->getShapes()->get_Item(0)).getTextFrame();
+    ITextFrame tf2 = ((IAutoShape)slide->getShapes()->get_Item(1)).getTextFrame();
 
     // Accessing the first Paragraph
-    IParagraph para1 = tf1.getParagraphs().get_Item(0);
-    IParagraph para2 = tf2.getParagraphs().get_Item(0);
+    IParagraph para1 = tf1.getParagraphs()->get_Item(0);
+    IParagraph para2 = tf2.getParagraphs()->get_Item(0);
 
     // Accessing the first portion
-    IPortion port1 = para1.getPortions().get_Item(0);
-    IPortion port2 = para2.getPortions().get_Item(0);
+    IPortion port1 = para1.getPortions()->get_Item(0);
+    IPortion port2 = para2.getPortions()->get_Item(0);
 
     // Define new fonts
     FontData fd1 = new FontData("Elephant");
@@ -207,10 +207,10 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
 
     // Get first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Add an AutoShape of Rectangle type
-    IAutoShape ashp = sld.getShapes().addAutoShape(ShapeType.Rectangle, 50, 50, 200, 50);
+    IAutoShape ashp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 50, 200, 50);
 
     // Remove any fill style associated with the AutoShape
     ashp.getFillFormat().setFillType(FillType.NoFill);
@@ -220,7 +220,7 @@ try {
     tf.setText("Aspose TextBox");
 
     // Access the Portion associated with the TextFrame
-    IPortion port = tf.getParagraphs().get_Item(0).getPortions().get_Item(0);
+    IPortion port = tf.getParagraphs()->get_Item(0).getPortions()->get_Item(0);
 
     // Set the Font for the Portion
     port.getPortionFormat().setLatinFont(new FontData("Times New Roman"));
@@ -264,13 +264,13 @@ Aspose.Slides for Java allows developers to rotate the text. Text could be set t
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide 
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Add an AutoShape of Rectangle type
-    IAutoShape ashp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 150, 75, 350, 350);
+    IAutoShape ashp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 75, 350, 350);
     
     // Add TextFrame to the Rectangle
-    ashp.addTextFrame("");
+    ashp->addTextFrame("");
     ashp.getFillFormat().setFillType(FillType.NoFill);
     
     // Accessing the text frame
@@ -278,10 +278,10 @@ try {
     txtFrame.getTextFrameFormat().setTextVerticalType(TextVerticalType.Vertical270);
     
     // Create the Paragraph object for text frame
-    IParagraph para = txtFrame.getParagraphs().get_Item(0);
+    IParagraph para = txtFrame.getParagraphs()->get_Item(0);
     
     // Create Portion object for paragraph
-    IPortion portion = para.getPortions().get_Item(0);
+    IPortion portion = para.getPortions()->get_Item(0);
     portion.setText("A quick brown fox jumps over the lazy dog. A quick brown fox jumps over the lazy dog.");
     portion.getPortionFormat().getFillFormat().setFillType(FillType.Solid);
     portion.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.BLACK);
@@ -308,13 +308,13 @@ In the example given below, we set the RotationAngle property.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     // Add an AutoShape of Rectangle type
-    IAutoShape ashp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 150, 75, 350, 350);
+    IAutoShape ashp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 75, 350, 350);
 
     // Add TextFrame to the Rectangle
-    ashp.addTextFrame("");
+    ashp->addTextFrame("");
     ashp.getFillFormat().setFillType(FillType.NoFill);
 
     // Accessing the text frame
@@ -322,10 +322,10 @@ try {
     txtFrame.getTextFrameFormat().setRotationAngle(25);
 
     // Create the Paragraph object for text frame
-    IParagraph para = txtFrame.getParagraphs().get_Item(0);
+    IParagraph para = txtFrame.getParagraphs()->get_Item(0);
 
     // Create Portion object for paragraph
-    IPortion portion = para.getPortions().get_Item(0);
+    IPortion portion = para.getPortions()->get_Item(0);
     portion.setText("Text rotation example.");
     portion.getPortionFormat().getFillFormat().setFillType(FillType.Solid);
     portion.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.BLACK);
@@ -352,13 +352,13 @@ Aspose.Slides for Java lets developers to set the properties of ParagraphFormat 
 $pres = new Java("com.aspose.slides.Presentation", "Fonts.pptx");
 try {
     // Obtain a slide's reference by its index
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
     
     // Access the TextFrame
-    ITextFrame tf1 = ((IAutoShape)sld.getShapes().get_Item(0)).getTextFrame();
+    ITextFrame tf1 = ((IAutoShape)sld->getShapes()->get_Item(0)).getTextFrame();
     
     // Access the Paragraph
-    IParagraph para = tf1.getParagraphs().get_Item(0);
+    IParagraph para = tf1.getParagraphs()->get_Item(0);
     
     // Set properties of Paragraph
     para.getParagraphFormat().setSpaceWithin(80);
@@ -387,13 +387,13 @@ In this topic, we will explore the different formatting properties of text frame
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access the first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     // Add an AutoShape of Rectangle type
-    IAutoShape ashp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 150, 75, 350, 150);
+    IAutoShape ashp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 75, 350, 150);
 
     // Add TextFrame to the Rectangle
-    ashp.addTextFrame("");
+    ashp->addTextFrame("");
     ashp.getFillFormat().setFillType(FillType.NoFill);
 
     // Accessing the text frame
@@ -401,10 +401,10 @@ try {
     txtFrame.getTextFrameFormat().setAutofitType(TextAutofitType.Shape);
 
     // Create the Paragraph object for text frame
-    IParagraph para = txtFrame.getParagraphs().get_Item(0);
+    IParagraph para = txtFrame.getParagraphs()->get_Item(0);
 
     // Create Portion object for paragraph
-    IPortion portion = para.getPortions().get_Item(0);
+    IPortion portion = para.getPortions()->get_Item(0);
     portion.setText("A quick brown fox jumps over the lazy dog. A quick brown fox jumps over the lazy dog.");
     portion.getPortionFormat().getFillFormat().setFillType(FillType.Solid);
     portion.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.BLACK);
@@ -431,13 +431,13 @@ Aspose.Slides for Java allows developers to Anchor of any TextFrame. TextAnchorT
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide 
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Add an AutoShape of Rectangle type
-    IAutoShape ashp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 150, 75, 350, 350);
+    IAutoShape ashp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 75, 350, 350);
     
     // Add TextFrame to the Rectangle
-    ashp.addTextFrame("");
+    ashp->addTextFrame("");
     ashp.getFillFormat().setFillType(FillType.NoFill);
     
     // Accessing the text frame
@@ -445,10 +445,10 @@ try {
     txtFrame.getTextFrameFormat().setAnchoringType(TextAnchorType.Bottom);
     
     // Create the Paragraph object for text frame
-    IParagraph para = txtFrame.getParagraphs().get_Item(0);
+    IParagraph para = txtFrame.getParagraphs()->get_Item(0);
     
     // Create Portion object for paragraph
-    IPortion portion = para.getPortions().get_Item(0);
+    IPortion portion = para.getPortions()->get_Item(0);
     portion.setText("A quick brown fox jumps over the lazy dog. A quick brown fox jumps over the lazy dog.");
     portion.getPortionFormat().getFillFormat().setFillType(FillType.Solid);
     portion.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.BLACK);

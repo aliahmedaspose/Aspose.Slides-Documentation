@@ -31,10 +31,10 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Adding and accessing Autoshape
-    IAutoShape aShp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 200, 200, 400, 200);
+    IAutoShape aShp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 200, 400, 200);
     
     // Accessing the text frame of created autoshape
     ITextFrame txtFrm = aShp.getTextFrame();
@@ -100,14 +100,14 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing the first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     // Instantiate the image for bullets
     BufferedImage img = ImageIO.read(new File("asp1.jpg"));
     IPPImage imgx = $pres->getImages().addImage(img);
 
     // Adding and accessing Autoshape
-    IAutoShape aShp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 200, 200, 400, 200);
+    IAutoShape aShp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 200, 400, 200);
 
     // Accessing the text frame of created autoshape
     ITextFrame txtFrm = aShp.getTextFrame();
@@ -158,13 +158,13 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Adding and accessing Autoshape
-    IAutoShape aShp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 200, 200, 400, 200);
+    IAutoShape aShp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 200, 400, 200);
     
     // Accessing the text frame of created autoshape
-    ITextFrame txtFrm = aShp.addTextFrame("");
+    ITextFrame txtFrm = aShp->addTextFrame("");
     
     // Removing the default exisiting paragraph
     txtFrm.getParagraphs().clear();
@@ -247,13 +247,13 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     // Adding and accessing Autoshape
-    IAutoShape aShp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 200, 200, 400, 200);
+    IAutoShape aShp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 200, 400, 200);
 
     // Accessing the text frame of created autoshape
-    ITextFrame txtFrm = aShp.addTextFrame("");
+    ITextFrame txtFrm = aShp->addTextFrame("");
 
     // Removing the default exisiting paragraph
     txtFrm.getParagraphs().clear();

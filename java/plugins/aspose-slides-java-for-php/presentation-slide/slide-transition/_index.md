@@ -29,10 +29,10 @@ To create a simple slide transition effect, follow the steps below:
 Presentation presentation = new Presentation("AccessSlides.pptx");
 try {
     // Apply circle type transition on slide 1
-    presentation.getSlides().get_Item(0).getSlideShowTransition().setType(TransitionType.Circle);
+    presentation.getSlides()->get_Item(0).getSlideShowTransition().setType(TransitionType.Circle);
 
     // Apply comb type transition on slide 2
-    presentation.getSlides().get_Item(1).getSlideShowTransition().setType(TransitionType.Comb);
+    presentation.getSlides()->get_Item(1).getSlideShowTransition().setType(TransitionType.Comb);
 
     // Write the presentation to disk
     presentation.save("SampleTransition_out.pptx", SaveFormat.Pptx);
@@ -55,25 +55,25 @@ In the above section, we just applied a simple transition effect on the slide. N
 $pres = new Java("com.aspose.slides.Presentation", "BetterSlideTransitions.pptx");
 try {
     // Apply circle type transition on slide 1
-    $pres->getSlides().get_Item(0).getSlideShowTransition().setType(TransitionType.Circle);
+    $pres->getSlides()->get_Item(0).getSlideShowTransition().setType(TransitionType.Circle);
 
     // Set the transition time of 3 seconds
-    $pres->getSlides().get_Item(0).getSlideShowTransition().setAdvanceOnClick(true);
-    $pres->getSlides().get_Item(0).getSlideShowTransition().setAdvanceAfterTime(3000);
+    $pres->getSlides()->get_Item(0).getSlideShowTransition().setAdvanceOnClick(true);
+    $pres->getSlides()->get_Item(0).getSlideShowTransition().setAdvanceAfterTime(3000);
 
     // Apply comb type transition on slide 2
-    $pres->getSlides().get_Item(1).getSlideShowTransition().setType(TransitionType.Comb);
+    $pres->getSlides()->get_Item(1).getSlideShowTransition().setType(TransitionType.Comb);
     
     // Set the transition time of 5 seconds
-    $pres->getSlides().get_Item(1).getSlideShowTransition().setAdvanceOnClick(true);
-    $pres->getSlides().get_Item(1).getSlideShowTransition().setAdvanceAfterTime(5000);
+    $pres->getSlides()->get_Item(1).getSlideShowTransition().setAdvanceOnClick(true);
+    $pres->getSlides()->get_Item(1).getSlideShowTransition().setAdvanceAfterTime(5000);
 
     // Apply zoom type transition on slide 3
-    $pres->getSlides().get_Item(2).getSlideShowTransition().setType(TransitionType.Zoom);
+    $pres->getSlides()->get_Item(2).getSlideShowTransition().setType(TransitionType.Zoom);
     
     // Set the transition time of 7 seconds
-    $pres->getSlides().get_Item(2).getSlideShowTransition().setAdvanceOnClick(true);
-    $pres->getSlides().get_Item(2).getSlideShowTransition().setAdvanceAfterTime(7000);
+    $pres->getSlides()->get_Item(2).getSlideShowTransition().setAdvanceOnClick(true);
+    $pres->getSlides()->get_Item(2).getSlideShowTransition().setAdvanceAfterTime(7000);
 
     // Write the presentation to disk
     $pres->save("SampleTransition_out.pptx", SaveFormat.Pptx);
@@ -94,20 +94,20 @@ The Morph transition allows you to animate smooth movement from one slide to the
 The following code snippet shows you how to add a clone of the slide with some text to the presentation and set a transition of [morph type](https://apireference.aspose.com/slides/java/com.aspose.slides/TransitionType) to the second slide.
 
 ```java
-Presentation presentation = new Presentation();
+$presentation = new Java("com.aspose.slides.Presentation");
 try {
-    AutoShape autoshape = (AutoShape)presentation.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 400, 100);
+    AutoShape autoshape = (AutoShape)presentation.getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 400, 100);
     autoshape.getTextFrame().setText("Morph Transition in PowerPoint Presentations");
 
-    presentation.getSlides().addClone(presentation.getSlides().get_Item(0));
+    presentation.getSlides().addClone(presentation.getSlides()->get_Item(0));
 
-    IShape shape = presentation.getSlides().get_Item(1).getShapes().get_Item(0);
+    IShape shape = presentation.getSlides()->get_Item(1)->getShapes()->get_Item(0);
     shape.setX(shape.getX() + 100);
     shape.setY(shape.getY() + 50);
     shape.setWidth(shape.getWidth() - 200);
     shape.setHeight(shape.getHeight() - 10);
 
-    presentation.getSlides().get_Item(1).getSlideShowTransition().setType(com.aspose.slides.TransitionType.Morph);
+    presentation.getSlides()->get_Item(1).getSlideShowTransition().setType(com.aspose.slides.TransitionType.Morph);
 
     presentation.save("presentation-out.pptx", SaveFormat.Pptx);
 }
@@ -130,8 +130,8 @@ The following code snippet shows you how to set morph transition to slide and ch
 ```java
 Presentation presentation = new Presentation("presentation.pptx");
 try {
-    presentation.getSlides().get_Item(0).getSlideShowTransition().setType(TransitionType.Morph);
-    ((IMorphTransition)presentation.getSlides().get_Item(0).getSlideShowTransition().getValue()).setMorphType(TransitionMorphType.ByWord);
+    presentation.getSlides()->get_Item(0).getSlideShowTransition().setType(TransitionType.Morph);
+    ((IMorphTransition)presentation.getSlides()->get_Item(0).getSlideShowTransition().getValue()).setMorphType(TransitionMorphType.ByWord);
     presentation.save("presentation-out.pptx", SaveFormat.Pptx);
 } finally {
     presentation.dispose();
@@ -153,8 +153,8 @@ In the example given below, we have set the transition effects.
 Presentation presentation = new Presentation("AccessSlides.pptx");
 try {
     // Set effect
-    presentation.getSlides().get_Item(0).getSlideShowTransition().setType(TransitionType.Cut);
-    ((OptionalBlackTransition)presentation.getSlides().get_Item(0).getSlideShowTransition().getValue()).setFromBlack(true);
+    presentation.getSlides()->get_Item(0).getSlideShowTransition().setType(TransitionType.Cut);
+    ((OptionalBlackTransition)presentation.getSlides()->get_Item(0).getSlideShowTransition().getValue()).setFromBlack(true);
     
     // Write the presentation to disk
     presentation.save("SetTransitionEffects_out.pptx", SaveFormat.Pptx);

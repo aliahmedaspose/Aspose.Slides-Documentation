@@ -17,10 +17,10 @@ Aspose.Slides for Java provides a simple API for setting these properties. This 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Add chart with default data
-    IChart chart = slide.getShapes().addChart(ChartType.StackedColumn3D, 0, 0, 500, 500);
+    IChart chart = $slide->getShapes().addChart(ChartType.StackedColumn3D, 0, 0, 500, 500);
     
     // Setting the index of chart data sheet
     int defaultWorksheetIndex = 0;
@@ -44,7 +44,7 @@ try {
     chart.getRotation3D().setDepthPercents(150);
     
     // Take second chart series
-    IChartSeries series = chart.getChartData().getSeries().get_Item(1);
+    IChartSeries series = chart.getChartData().getSeries()->get_Item(1);
     
     // Now populating series data
     series.getDataPoints().addDataPointForBarSeries(fact.getCell(defaultWorksheetIndex, 1, 1, 20));

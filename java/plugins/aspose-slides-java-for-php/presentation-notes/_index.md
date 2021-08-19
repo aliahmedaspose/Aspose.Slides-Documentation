@@ -28,7 +28,7 @@ Notes of some specific slide could be removed as shown in example below:
 $pres = new Java("com.aspose.slides.Presentation", "presWithNotes.pptx");
 try {
     // Removing notes of first slide
-    INotesSlideManager mgr = $pres->getSlides().get_Item(0).getNotesSlideManager();
+    INotesSlideManager mgr = $pres->getSlides()->get_Item(0).getNotesSlideManager();
     mgr.removeNotesSlide();
 
     // Saving presentation to disk
@@ -48,7 +48,7 @@ try {
     // Removing notes of all slides
     INotesSlideManager mgr = null;
     for (int i = 0; i < $pres->getSlides().size(); i++) {
-        mgr = $pres->getSlides().get_Item(i).getNotesSlideManager();
+        mgr = $pres->getSlides()->get_Item(i).getNotesSlideManager();
         mgr.removeNotesSlide();
     }
     

@@ -10,11 +10,11 @@ New methods [**getShowLabelAsDataCallout()**](https://apireference.aspose.com/sl
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Pie, 50, 50, 500, 400);
     
-    chart.getChartData().getSeries().get_Item(0).getLabels().getDefaultDataLabelFormat().setShowValue(true);
-    chart.getChartData().getSeries().get_Item(0).getLabels().getDefaultDataLabelFormat().setShowLabelAsDataCallout(true);
-    chart.getChartData().getSeries().get_Item(0).getLabels().get_Item(2).getDataLabelFormat().setShowLabelAsDataCallout(false);
+    chart.getChartData().getSeries()->get_Item(0).getLabels().getDefaultDataLabelFormat().setShowValue(true);
+    chart.getChartData().getSeries()->get_Item(0).getLabels().getDefaultDataLabelFormat().setShowLabelAsDataCallout(true);
+    chart.getChartData().getSeries()->get_Item(0).getLabels()->get_Item(2).getDataLabelFormat().setShowLabelAsDataCallout(false);
     
     $pres->save("DisplayCharts.pptx", SaveFormat.Pptx);
 } finally {
@@ -28,8 +28,8 @@ Aspose.Slides for Java provides support for setting series data label callout s
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = $pres->getSlides().get_Item(0);
-    IChart chart = slide.getShapes().addChart(ChartType.Doughnut, 10, 10, 500, 500, false);
+    ISlide slide = $pres->getSlides()->get_Item(0);
+    IChart chart = $slide->getShapes().addChart(ChartType.Doughnut, 10, 10, 500, 500, false);
     IChartDataWorkbook workBook = chart.getChartData().getChartDataWorkbook();
     chart.getChartData().getSeries().clear();
     chart.getChartData().getCategories().clear();
@@ -50,7 +50,7 @@ try {
         int i = 0;
         while (i < chart.getChartData().getSeries().size())
         {
-            IChartSeries iCS = chart.getChartData().getSeries().get_Item(i);
+            IChartSeries iCS = chart.getChartData().getSeries()->get_Item(i);
             IChartDataPoint dataPoint = iCS.getDataPoints().addDataPointForDoughnutSeries(workBook.getCell(0, categoryIndex + 1, i + 1, 1));
             dataPoint.getFormat().getFill().setFillType(FillType.Solid);
             dataPoint.getFormat().getLine().getFillFormat().setFillType(FillType.Solid);

@@ -20,7 +20,7 @@ Aspose.Slides for Java provides a simple API for getting value of vertical axis.
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    Chart chart = (Chart)pres.getSlides().get_Item(0).getShapes().addChart(ChartType.Area, 100, 100, 500, 350);
+    Chart chart = (Chart)pres.getSlides()->get_Item(0)->getShapes().addChart(ChartType.Area, 100, 100, 500, 350);
     chart.validateChartLayout();
 
     double maxValue = chart.getAxes().getVerticalAxis().getActualMaxValue();
@@ -39,7 +39,7 @@ A new property has been added which Swap the data over the axis. Data being cha
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 400, 300);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 400, 300);
 
     //Switching rows and columns
     chart.getChartData().switchRowColumn();
@@ -57,7 +57,7 @@ try {
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
-    IChart chart = (IChart) $pres->getSlides().get_Item(0).getShapes().get_Item(0);
+    IChart chart = (IChart) $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     
     chart.getAxes().getHorizontalAxis().setCategoryAxisType(CategoryAxisType.Date);
     chart.getAxes().getHorizontalAxis().setAutomaticMajorUnit(false);
@@ -76,7 +76,7 @@ Aspose.Slides for Java provides a simple API for setting date format for categor
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Area, 50, 50, 450, 300);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Area, 50, 50, 450, 300);
 
     IChartDataWorkbook wb = chart.getChartData().getChartDataWorkbook();
     wb.clear(0);
@@ -120,7 +120,7 @@ Aspose.Slides for Java provides a simple API for setting rotation angle for char
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
     
     chart.getAxes().getVerticalAxis().setTitle(true);
     chart.getAxes().getVerticalAxis().getTitle().getTextFormat().getTextBlockFormat().setRotationAngle(90);
@@ -138,7 +138,7 @@ Aspose.Slides for Java provides a simple API for setting Position axis in catego
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
     
     chart.getAxes().getHorizontalAxis().setAxisBetweenCategories(true);
 
@@ -154,7 +154,7 @@ Aspose.Slides for Java provides support for showing Display unit label on chart 
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
 
     chart.getAxes().getVerticalAxis().setDisplayUnit(DisplayUnitType.Millions);
     

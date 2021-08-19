@@ -80,7 +80,7 @@ Method [IGeometryPath.getPathData](https://apireference.aspose.com/slides/java/c
 
 ## Add Custom Points to Shape
 
-- Create an instance of the [GeometryShape](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryShape) class of type [ShapeType.Rectangle](https://apireference.aspose.com/slides/java/com.aspose.slides/ShapeType#Rectangle)
+- Create an instance of the [GeometryShape](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryShape) class of type [Java("com.aspose.slides.ShapeType")->Rectangle](https://apireference.aspose.com/slides/java/com.aspose.slides/ShapeType#Rectangle)
 - Retrieve an instance of the [GeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryPath) class from the shape.
 - Add a new point between two top points of the path.
 - Add a new point between two bottom points of the path.
@@ -89,8 +89,8 @@ Method [IGeometryPath.getPathData](https://apireference.aspose.com/slides/java/c
 ``` java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) $pres->getSlides().get_Item(0).
-            getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 200, 100);
+    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0).
+            getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 200, 100);
     IGeometryPath geometryPath = shape.getGeometryPaths()[0];
 
     geometryPath.lineTo(100, 50, 1);
@@ -105,7 +105,7 @@ try {
 
 ##  Remove Points from Shape
 
-- Create an instance of [GeometryShape](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryShape) class of type [ShapeType.Heart](https://apireference.aspose.com/slides/java/com.aspose.slides/ShapeType#Heart).
+- Create an instance of [GeometryShape](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryShape) class of type [Java("com.aspose.slides.ShapeType")->Heart](https://apireference.aspose.com/slides/java/com.aspose.slides/ShapeType#Heart).
 - Retrieve an instance of the [GeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryPath) class from the shape.
 - Remove segment of the path.
 - Apply the path to the shape.
@@ -113,8 +113,8 @@ try {
 ``` java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) $pres->getSlides().get_Item(0).
-            getShapes().addAutoShape(ShapeType.Heart, 100, 100, 300, 300);
+    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0).
+            getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Heart, 100, 100, 300, 300);
 
     IGeometryPath path = shape.getGeometryPaths()[0];
     path.removeAt(2);
@@ -164,8 +164,8 @@ starPath.closeFigure();
 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) $pres->getSlides().get_Item(0).
-            getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, R * 2, R * 2);
+    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0).
+            getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, R * 2, R * 2);
 
     shape.setGeometryPath(starPath);
 } finally {
@@ -186,8 +186,8 @@ try {
 ``` java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) $pres->getSlides().get_Item(0).
-            getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 200, 100);
+    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0).
+            getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 200, 100);
 
     GeometryPath geometryPath0 = new GeometryPath();
     geometryPath0.moveTo(0, 0);
@@ -221,8 +221,8 @@ try {
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Create new shape
-    GeometryShape shape = (GeometryShape)pres.getSlides().get_Item(0).
-            getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 300, 100);
+    GeometryShape shape = (GeometryShape)pres.getSlides()->get_Item(0).
+            getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 300, 100);
 
     // Get geometry path of the shape
     IGeometryPath originalPath = shape.getGeometryPaths()[0];

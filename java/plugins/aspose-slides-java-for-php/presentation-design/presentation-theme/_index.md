@@ -71,7 +71,7 @@ In [**Aspose.Slides**](https://products.aspose.com/slides/java) to choose the ap
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    $shape = $pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 10, 10, 100, 100);
+    $shape = $pres.getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 100, 100);
 
     shape.getFillFormat().setFillType(FillType.Solid);
 
@@ -104,7 +104,7 @@ System.out.println(String.format("Color [A=%d, R=%d, G=%d, B=%d] - from theme",
 Lets us create one more element and assign it the same *Accent4* color from the scheme. Then we will change this color in the scheme:
 
 ```java
-IAutoShape otherShape = $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 10, 120, 100, 100);
+IAutoShape otherShape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 120, 100, 100);
 
 otherShape.getFillFormat().setFillType(FillType.Solid);
 
@@ -132,7 +132,7 @@ In [**Aspose.Slides**](https://products.aspose.com/slides/java) (the same as in 
 Let us create an element with the text, and assign the Latin font from the font scheme to it: 
 
 ```java
-$shape = $pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 10, 10, 100, 100);
+$shape = $pres.getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 100, 100);
 
 Paragraph paragraph = new Paragraph();
 
@@ -189,7 +189,7 @@ The reason is that,12 predefined backgrounds are used to design Background Style
 To define which background should be used for presentation, set the needed presentation index (**Note**: the index starts from 1, not from 0. 0 is used to define "*no fill*" value):
 
 ```java
-pres.getMasters().get_Item(0).getBackground().setStyleIndex(2);
+pres.getMasters()->get_Item(0).getBackground().setStyleIndex(2);
 ``` 
 
 {{% alert color="primary" title="See also" %}} 
@@ -220,13 +220,13 @@ So, the effects you can use in PowerPoint are strictly limited. While, in Aspos
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "Subtle_Moderate_Intense.pptx");
 try {
-    $pres->getMasterTheme().getFormatScheme().getLineStyles().get_Item(0).getFillFormat().getSolidFillColor().setColor(Color.RED);
+    $pres->getMasterTheme().getFormatScheme().getLineStyles()->get_Item(0).getFillFormat().getSolidFillColor().setColor(Color.RED);
 
-    $pres->getMasterTheme().getFormatScheme().getFillStyles().get_Item(2).setFillType(FillType.Solid);
+    $pres->getMasterTheme().getFormatScheme().getFillStyles()->get_Item(2).setFillType(FillType.Solid);
 
-    $pres->getMasterTheme().getFormatScheme().getFillStyles().get_Item(2).getSolidFillColor().setColor(Color.GREEN);
+    $pres->getMasterTheme().getFormatScheme().getFillStyles()->get_Item(2).getSolidFillColor().setColor(Color.GREEN);
 
-    $pres->getMasterTheme().getFormatScheme().getEffectStyles().get_Item(2).getEffectFormat().getOuterShadowEffect().setDistance(10f);
+    $pres->getMasterTheme().getFormatScheme().getEffectStyles()->get_Item(2).getEffectFormat().getOuterShadowEffect().setDistance(10f);
 
     $pres->save("Design_04_Subtle_Moderate_Intense-out.pptx", SaveFormat.Pptx);
 } finally {

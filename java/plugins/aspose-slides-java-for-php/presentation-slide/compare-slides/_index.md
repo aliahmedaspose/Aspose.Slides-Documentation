@@ -19,7 +19,7 @@ try {
         {
             for (int j = 0; j < presentation2.getMasters().size(); j++)
             {
-                if (presentation1.getMasters().get_Item(i).equals(presentation2.getMasters().get_Item(j)))
+                if (presentation1.getMasters()->get_Item(i).equals(presentation2.getMasters()->get_Item(j)))
                     System.out.println(String.format("SomePresentation1 MasterSlide#%d is equal to SomePresentation2 MasterSlide#%d", i, j));
             }
         }

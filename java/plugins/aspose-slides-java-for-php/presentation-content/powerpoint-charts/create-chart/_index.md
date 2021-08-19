@@ -32,10 +32,10 @@ Sample code used to create a normal chart:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
     
     // Add chart with default data
-    IChart chart = sld.getShapes().addChart(ChartType.ClusteredColumn, 0, 0, 500, 500);
+    IChart chart = sld->getShapes().addChart(ChartType.ClusteredColumn, 0, 0, 500, 500);
     
     // Setting chart Title
     chart.getChartTitle().addTextFrameForOverriding("Sample Title");
@@ -44,7 +44,7 @@ try {
     chart.hasTitle();
     
     // Set first series to Show Values
-    chart.getChartData().getSeries().get_Item(0).getLabels().getDefaultDataLabelFormat().setShowValue(true);
+    chart.getChartData().getSeries()->get_Item(0).getLabels().getDefaultDataLabelFormat().setShowValue(true);
     
     // Setting the index of chart data sheet
     int defaultWorksheetIndex = 0;
@@ -68,7 +68,7 @@ try {
     chart.getChartData().getCategories().add(fact.getCell(defaultWorksheetIndex, 3, 0, "Caetegoty 3"));
     
     // Take first chart series
-    IChartSeries series = chart.getChartData().getSeries().get_Item(0);
+    IChartSeries series = chart.getChartData().getSeries()->get_Item(0);
     
     // Now populating series data
     series.getDataPoints().addDataPointForBarSeries(fact.getCell(defaultWorksheetIndex, 1, 1, 20));
@@ -80,7 +80,7 @@ try {
     series.getFormat().getFill().getSolidFillColor().setColor(Color.RED);
     
     // Take second chart series
-    series = chart.getChartData().getSeries().get_Item(1);
+    series = chart.getChartData().getSeries()->get_Item(1);
     
     // Now populating series data
     series.getDataPoints().addDataPointForBarSeries(fact.getCell(defaultWorksheetIndex, 1, 2, 30));
@@ -93,14 +93,14 @@ try {
     
     // create custom labels for each of categories for new series
     // first label will be show Category name
-    IDataLabel lbl = series.getDataPoints().get_Item(0).getLabel();
+    IDataLabel lbl = series.getDataPoints()->get_Item(0).getLabel();
     lbl.getDataLabelFormat().setShowCategoryName(true);
     
-    lbl = series.getDataPoints().get_Item(1).getLabel();
+    lbl = series.getDataPoints()->get_Item(1).getLabel();
     lbl.getDataLabelFormat().setShowSeriesName(true);
     
     // Show value for third label
-    lbl = series.getDataPoints().get_Item(2).getLabel();
+    lbl = series.getDataPoints()->get_Item(2).getLabel();
     lbl.getDataLabelFormat().setShowValue(true);
     lbl.getDataLabelFormat().setShowSeriesName(true);
     lbl.getDataLabelFormat().setSeparator("/");
@@ -120,10 +120,10 @@ Sample code used to create a scatter chart with different series of markers:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     // Creating the default chart
-    IChart chart = slide.getShapes().addChart(ChartType.ScatterWithSmoothLines, 0, 0, 400, 400);
+    IChart chart = $slide->getShapes().addChart(ChartType.ScatterWithSmoothLines, 0, 0, 400, 400);
     
     // Getting the default chart data worksheet index
     int defaultWorksheetIndex = 0;
@@ -139,7 +139,7 @@ try {
     chart.getChartData().getSeries().add(fact.getCell(defaultWorksheetIndex, 1, 3, "Series 2"), chart.getType());
     
     // Take first chart series
-    IChartSeries series = chart.getChartData().getSeries().get_Item(0);
+    IChartSeries series = chart.getChartData().getSeries()->get_Item(0);
     
     // Add new point (1:3) there.
     series.getDataPoints().addDataPointForScatterSeries(fact.getCell(defaultWorksheetIndex, 2, 1, 1), fact.getCell(defaultWorksheetIndex, 2, 2, 3));
@@ -155,7 +155,7 @@ try {
     series.getMarker().setSymbol(MarkerStyleType.Star);
     
     // Take second chart series
-    series = chart.getChartData().getSeries().get_Item(1);
+    series = chart.getChartData().getSeries()->get_Item(1);
     
     // Add new point (5:2) there.
     series.getDataPoints().addDataPointForScatterSeries(fact.getCell(defaultWorksheetIndex, 2, 3, 5), fact.getCell(defaultWorksheetIndex, 2, 4, 2));
@@ -200,10 +200,10 @@ Sample code used to create a pie chart:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide slides = $pres->getSlides().get_Item(0);
+    ISlide slides = $pres->getSlides()->get_Item(0);
     
     // Add chart with default data
-    IChart chart = slides.getShapes().addChart(ChartType.Pie, 100, 100, 400, 400);
+    IChart chart = slides->getShapes().addChart(ChartType.Pie, 100, 100, 400, 400);
     
     // Setting chart Title
     chart.getChartTitle().addTextFrameForOverriding("Sample Title");
@@ -212,7 +212,7 @@ try {
     chart.setTitle(true);
     
     // Set first series to Show Values
-    chart.getChartData().getSeries().get_Item(0).getLabels().getDefaultDataLabelFormat().setShowValue(true);
+    chart.getChartData().getSeries()->get_Item(0).getLabels().getDefaultDataLabelFormat().setShowValue(true);
     
     // Setting the index of chart data sheet
     int defaultWorksheetIndex = 0;
@@ -240,9 +240,9 @@ try {
     // Not working in new version
     // Adding new points and setting sector color
     // series.IsColorVaried = true;
-    chart.getChartData().getSeriesGroups().get_Item(0).setColorVaried(true);
+    chart.getChartData().getSeriesGroups()->get_Item(0).setColorVaried(true);
     
-    IChartDataPoint point = series.getDataPoints().get_Item(0);
+    IChartDataPoint point = series.getDataPoints()->get_Item(0);
     point.getFormat().getFill().setFillType(FillType.Solid);
     point.getFormat().getFill().getSolidFillColor().setColor(Color.CYAN);
 	
@@ -253,7 +253,7 @@ try {
     point.getFormat().getLine().setStyle(LineStyle.ThinThick);
     point.getFormat().getLine().setDashStyle(LineDashStyle.DashDot);
     
-    IChartDataPoint point1 = series.getDataPoints().get_Item(1);
+    IChartDataPoint point1 = series.getDataPoints()->get_Item(1);
     point1.getFormat().getFill().setFillType(FillType.Solid);
     point1.getFormat().getFill().getSolidFillColor().setColor(Color.ORANGE);
     
@@ -264,7 +264,7 @@ try {
     point1.getFormat().getLine().setStyle(LineStyle.Single);
     point1.getFormat().getLine().setDashStyle(LineDashStyle.LargeDashDot);
     
-    IChartDataPoint point2 = series.getDataPoints().get_Item(2);
+    IChartDataPoint point2 = series.getDataPoints()->get_Item(2);
     point2.getFormat().getFill().setFillType(FillType.Solid);
     point2.getFormat().getFill().getSolidFillColor().setColor(Color.YELLOW);
     
@@ -276,17 +276,17 @@ try {
     point2.getFormat().getLine().setDashStyle(LineDashStyle.LargeDashDotDot);
     
     // Create custom labels for each of categories for new series
-    IDataLabel lbl1 = series.getDataPoints().get_Item(0).getLabel();
+    IDataLabel lbl1 = series.getDataPoints()->get_Item(0).getLabel();
     
     // lbl.ShowCategoryName = true;
     lbl1.getDataLabelFormat().setShowValue(true);
     
-    IDataLabel lbl2 = series.getDataPoints().get_Item(1).getLabel();
+    IDataLabel lbl2 = series.getDataPoints()->get_Item(1).getLabel();
     lbl2.getDataLabelFormat().setShowValue(true);
     lbl2.getDataLabelFormat().setShowLegendKey(true);
     lbl2.getDataLabelFormat().setShowPercentage(true);
     
-    IDataLabel lbl3 = series.getDataPoints().get_Item(2).getLabel();
+    IDataLabel lbl3 = series.getDataPoints()->get_Item(2).getLabel();
     lbl3.getDataLabelFormat().setShowSeriesName(true);
     lbl3.getDataLabelFormat().setShowPercentage(true);
     
@@ -294,7 +294,7 @@ try {
     series.getLabels().getDefaultDataLabelFormat().setShowLeaderLines(true);
     
     // Setting Rotation Angle for Pie Chart Sectors
-    chart.getChartData().getSeriesGroups().get_Item(0).setFirstSliceAngle(180);
+    chart.getChartData().getSeriesGroups()->get_Item(0).setFirstSliceAngle(180);
     
     // Save presentation with chart
     $pres->save("PieChart_out.pptx", SaveFormat.Pptx);
@@ -318,7 +318,7 @@ Sample code used to create a chart:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Treemap, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Treemap, 50, 50, 500, 400);
     chart.getChartData().getCategories().clear();
     chart.getChartData().getSeries().clear();
 
@@ -384,7 +384,7 @@ Sample code used to create a chart:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.OpenHighLowClose, 50, 50, 600, 400, false);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.OpenHighLowClose, 50, 50, 600, 400, false);
 
     chart.getChartData().getSeries().clear();
     chart.getChartData().getCategories().clear();
@@ -400,29 +400,29 @@ try {
     chart.getChartData().getSeries().add(wb.getCell(0, 0, 3, "Low"), chart.getType());
     chart.getChartData().getSeries().add(wb.getCell(0, 0, 4, "Close"), chart.getType());
 
-    IChartSeries series = chart.getChartData().getSeries().get_Item(0);
+    IChartSeries series = chart.getChartData().getSeries()->get_Item(0);
 
     series.getDataPoints().addDataPointForStockSeries(wb.getCell(0, 1, 1, 72));
     series.getDataPoints().addDataPointForStockSeries(wb.getCell(0, 2, 1, 25));
     series.getDataPoints().addDataPointForStockSeries(wb.getCell(0, 3, 1, 38));
 
-    series = chart.getChartData().getSeries().get_Item(1);
+    series = chart.getChartData().getSeries()->get_Item(1);
     series.getDataPoints().addDataPointForStockSeries(wb.getCell(0, 1, 2, 172));
     series.getDataPoints().addDataPointForStockSeries(wb.getCell(0, 2, 2, 57));
     series.getDataPoints().addDataPointForStockSeries(wb.getCell(0, 3, 2, 57));
 
-    series = chart.getChartData().getSeries().get_Item(2);
+    series = chart.getChartData().getSeries()->get_Item(2);
     series.getDataPoints().addDataPointForStockSeries(wb.getCell(0, 1, 3, 12));
     series.getDataPoints().addDataPointForStockSeries(wb.getCell(0, 2, 3, 12));
     series.getDataPoints().addDataPointForStockSeries(wb.getCell(0, 3, 3, 13));
 
-    series = chart.getChartData().getSeries().get_Item(3);
+    series = chart.getChartData().getSeries()->get_Item(3);
     series.getDataPoints().addDataPointForStockSeries(wb.getCell(0, 1, 4, 25));
     series.getDataPoints().addDataPointForStockSeries(wb.getCell(0, 2, 4, 38));
     series.getDataPoints().addDataPointForStockSeries(wb.getCell(0, 3, 4, 50));
 
-    chart.getChartData().getSeriesGroups().get_Item(0).getUpDownBars().setUpDownBars(true);
-    chart.getChartData().getSeriesGroups().get_Item(0).getHiLowLinesFormat().getLine().getFillFormat().setFillType(FillType.Solid);
+    chart.getChartData().getSeriesGroups()->get_Item(0).getUpDownBars().setUpDownBars(true);
+    chart.getChartData().getSeriesGroups()->get_Item(0).getHiLowLinesFormat().getLine().getFillFormat().setFillType(FillType.Solid);
 
     for (IChartSeries ser : chart.getChartData().getSeries())
     {
@@ -450,7 +450,7 @@ The following code is used to create a chart.
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.BoxAndWhisker, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.BoxAndWhisker, 50, 50, 500, 400);
     chart.getChartData().getCategories().clear();
     chart.getChartData().getSeries().clear();
 
@@ -496,7 +496,7 @@ The following code is used to create a chart.
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Funnel, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Funnel, 50, 50, 500, 400);
     chart.getChartData().getCategories().clear();
     chart.getChartData().getSeries().clear();
 
@@ -537,7 +537,7 @@ The following code is used to create a chart.
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Sunburst, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Sunburst, 50, 50, 500, 400);
     chart.getChartData().getCategories().clear();
     chart.getChartData().getSeries().clear();
 
@@ -599,7 +599,7 @@ The following code is used to create a chart.
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Histogram, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Histogram, 50, 50, 500, 400);
     chart.getChartData().getCategories().clear();
     chart.getChartData().getSeries().clear();
 
@@ -637,7 +637,7 @@ The following code is used to create a chart.
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart ch = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 600, 450);
+    IChart ch = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 600, 450);
     ch.getChartData().getSeries().clear();
     ch.getChartData().getCategories().clear();
     
@@ -698,10 +698,10 @@ Code sample used to update a chart:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slideMarker
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Get chart with default data
-    IChart chart = (IChart)sld.getShapes().get_Item(0);
+    IChart chart = (IChart)sld->getShapes()->get_Item(0);
 
     // Setting the index of chart data sheet
     int defaultWorksheetIndex = 0;
@@ -714,28 +714,28 @@ try {
     fact.getCell(defaultWorksheetIndex, 2, 0, "Modified Category 2");
 
     // Take first chart series
-    IChartSeries series = chart.getChartData().getSeries().get_Item(0);
+    IChartSeries series = chart.getChartData().getSeries()->get_Item(0);
 
     // Now updating series data
     fact.getCell(defaultWorksheetIndex, 0, 1, "New_Series1");// Modifying series name
-    series.getDataPoints().get_Item(0).getValue().setData(90);
-    series.getDataPoints().get_Item(1).getValue().setData(123);
-    series.getDataPoints().get_Item(2).getValue().setData(44);
+    series.getDataPoints()->get_Item(0).getValue().setData(90);
+    series.getDataPoints()->get_Item(1).getValue().setData(123);
+    series.getDataPoints()->get_Item(2).getValue().setData(44);
 
     // Take Second chart series
-    series = chart.getChartData().getSeries().get_Item(1);
+    series = chart.getChartData().getSeries()->get_Item(1);
 
     // Now updating series data
     fact.getCell(defaultWorksheetIndex, 0, 2, "New_Series2");// Modifying series name
-    series.getDataPoints().get_Item(0).getValue().setData(23);
-    series.getDataPoints().get_Item(1).getValue().setData(67);
-    series.getDataPoints().get_Item(2).getValue().setData(99);
+    series.getDataPoints()->get_Item(0).getValue().setData(23);
+    series.getDataPoints()->get_Item(1).getValue().setData(67);
+    series.getDataPoints()->get_Item(2).getValue().setData(99);
 
     // Now, Adding a new series
     chart.getChartData().getSeries().add(fact.getCell(defaultWorksheetIndex, 0, 3, "Series 3"), chart.getType());
 
     // Take 3rd chart series
-    series = chart.getChartData().getSeries().get_Item(2);
+    series = chart.getChartData().getSeries()->get_Item(2);
 
     // Now populating series data
     series.getDataPoints().addDataPointForBarSeries(fact.getCell(defaultWorksheetIndex, 1, 3, 20));
@@ -766,8 +766,8 @@ Code sample used to set data range for a chart:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = $pres->getSlides().get_Item(0);
-    IChart chart = (IChart)slide.getShapes().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
+    IChart chart = (IChart)slide->getShapes()->get_Item(0);
     
     chart.getChartData().setRange("Sheet1!A1:B4");
     
@@ -785,15 +785,15 @@ Code sample used to set a chart series marker automatically:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = $pres->getSlides().get_Item(0);
-    IChart chart = slide.getShapes().addChart(ChartType.LineWithMarkers, 10, 10, 400, 400);
+    ISlide slide = $pres->getSlides()->get_Item(0);
+    IChart chart = $slide->getShapes().addChart(ChartType.LineWithMarkers, 10, 10, 400, 400);
 
     chart.getChartData().getSeries().clear();
     chart.getChartData().getCategories().clear();
 
     IChartDataWorkbook fact = chart.getChartData().getChartDataWorkbook();
     chart.getChartData().getSeries().add(fact.getCell(0, 0, 1, "Series 1"), chart.getType());
-    IChartSeries series = chart.getChartData().getSeries().get_Item(0);
+    IChartSeries series = chart.getChartData().getSeries()->get_Item(0);
 
     chart.getChartData().getCategories().add(fact.getCell(0, 1, 0, "C1"));
     series.getDataPoints().addDataPointForLineSeries(fact.getCell(0, 1, 1, 24));
@@ -806,7 +806,7 @@ try {
 
     chart.getChartData().getSeries().add(fact.getCell(0, 0, 2, "Series 2"), chart.getType());
     //Take second chart series
-    IChartSeries series2 = chart.getChartData().getSeries().get_Item(1);
+    IChartSeries series2 = chart.getChartData().getSeries()->get_Item(1);
 
     //Now populating series data
     series2.getDataPoints().addDataPointForLineSeries(fact.getCell(0, 1, 2, 30));

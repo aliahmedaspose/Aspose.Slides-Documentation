@@ -24,21 +24,21 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Define columns with widths and rows with heights
     double[] dblCols = {50, 50, 50};
     double[] dblRows = {50, 30, 30, 30, 30};
 
     // Add table shape to slide
-    ITable tbl = sld.getShapes().addTable(100, 50, dblCols, dblRows);
+    ITable tbl = sld->getShapes().addTable(100, 50, dblCols, dblRows);
 
     // Set border format for each cell
     for (int row = 0; row < tbl.getRows().size(); row++)
     {
-        for (int cell = 0; cell < tbl.getRows().get_Item(row).size(); cell++)
+        for (int cell = 0; cell < tbl.getRows()->get_Item(row).size(); cell++)
         {
-            ICellFormat cellFormat = tbl.getRows().get_Item(row).get_Item(cell).getCellFormat();
+            ICellFormat cellFormat = tbl.getRows()->get_Item(row)->get_Item(cell).getCellFormat();
             
             cellFormat.getBorderTop().getFillFormat().setFillType(FillType.Solid);
             cellFormat.getBorderTop().getFillFormat().getSolidFillColor().setColor(Color.RED);
@@ -58,10 +58,10 @@ try {
         }
     }
     // Merge cells 1 & 2 of row 1
-    tbl.mergeCells(tbl.getRows().get_Item(0).get_Item(0), tbl.getRows().get_Item(1).get_Item(1), false);
+    tbl.mergeCells(tbl.getRows()->get_Item(0)->get_Item(0), tbl.getRows()->get_Item(1)->get_Item(1), false);
 
     // Add text to the merged cell
-    tbl.getRows().get_Item(0).get_Item(0).getTextFrame().setText("Merged Cells");
+    tbl.getRows()->get_Item(0)->get_Item(0).getTextFrame().setText("Merged Cells");
 
     // Save PPTX to Disk
     $pres->save("table.pptx", SaveFormat.Pptx);
@@ -86,19 +86,19 @@ $pres = new Java("com.aspose.slides.Presentation", "UpdateExistingTable.pptx");
 try {
 
     // Access the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Initialize null TableEx
     ITable tbl = null;
 
     // Iterate through the shapes and set a reference to the table found
-    for (IShape shp : sld.getShapes()) 
+    for (IShape shp : sld->getShapes()) 
     {
         if (shp instanceof ITable) 
         {
             tbl = (ITable) shp;
             // Set the text of the first column of second row
-            tbl.get_Item(0, 1).getTextFrame().setText("New");
+            tbl->get_Item(0, 1).getTextFrame().setText("New");
         }
     }
     
@@ -125,32 +125,32 @@ Aspose.Slides for Java has provided the simplest API to work with tables in an e
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide 
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Define columns with widths and rows with heights
     double[] dblCols = { 120, 120, 120, 120 };
     double[] dblRows = { 100, 100, 100, 100 };
     
     // Add table shape to slide
-    ITable tbl = slide.getShapes().addTable(100, 50, dblCols, dblRows);
-    tbl.get_Item(1, 0).getTextFrame().setText("10");
-    tbl.get_Item(2, 0).getTextFrame().setText("20");
-    tbl.get_Item(3, 0).getTextFrame().setText("30");
+    ITable tbl = $slide->getShapes().addTable(100, 50, dblCols, dblRows);
+    tbl->get_Item(1, 0).getTextFrame().setText("10");
+    tbl->get_Item(2, 0).getTextFrame().setText("20");
+    tbl->get_Item(3, 0).getTextFrame().setText("30");
     
     // Accessing the text frame
-    ITextFrame txtFrame = tbl.get_Item(0, 0).getTextFrame();
+    ITextFrame txtFrame = tbl->get_Item(0, 0).getTextFrame();
     
     // Create the Paragraph object for text frame
-    IParagraph paragraph = txtFrame.getParagraphs().get_Item(0);
+    IParagraph paragraph = txtFrame.getParagraphs()->get_Item(0);
     
     // Create Portion object for paragraph
-    IPortion portion = paragraph.getPortions().get_Item(0);
+    IPortion portion = paragraph.getPortions()->get_Item(0);
     portion.setText("Text here");
     portion.getPortionFormat().getFillFormat().setFillType(FillType.Solid);
     portion.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.BLACK);
     
     // Aligning the text vertically
-    ICell cell = tbl.get_Item(0, 0);
+    ICell cell = tbl->get_Item(0, 0);
     cell.setTextAnchorType(TextAnchorType.Center);
     cell.setTextVerticalType(TextVerticalType.Vertical270);
     
@@ -177,7 +177,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 $pres = new Java("com.aspose.slides.Presentation", "simpletable.pptx");
 try {
     // the first shape on the first slide is a table
-    ITable someTable = (ITable) $pres->getSlides().get_Item(0).getShapes().get_Item(0);
+    ITable someTable = (ITable) $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     
     // setting table cells' font height
     PortionFormat portionFormat = new PortionFormat();
@@ -215,14 +215,14 @@ In a standard table numeration of cells is straightforward and zero-based. The f
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Define columns with widths and rows with heights
     double[] dblCols = { 70, 70, 70, 70 };
     double[] dblRows = { 70, 70, 70, 70 };
 
     // Add table shape to slide
-    ITable tbl = sld.getShapes().addTable(100, 50, dblCols, dblRows);
+    ITable tbl = sld->getShapes().addTable(100, 50, dblCols, dblRows);
 
     // Set border format for each cell
     for (IRow row : tbl.getRows())
@@ -260,7 +260,7 @@ The aspect ratio of a geometric shape is the ratio of its sizes in different dim
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
-    ITable table = (ITable)pres.getSlides().get_Item(0).getShapes().get_Item(0);
+    ITable table = (ITable)pres.getSlides()->get_Item(0)->getShapes()->get_Item(0);
     System.out.println("Lock aspect ratio set: " + table.getGraphicalObjectLock().getAspectRatioLocked());
 
     table.getGraphicalObjectLock().setAspectRatioLocked(!table.getGraphicalObjectLock().getAspectRatioLocked()); // invert

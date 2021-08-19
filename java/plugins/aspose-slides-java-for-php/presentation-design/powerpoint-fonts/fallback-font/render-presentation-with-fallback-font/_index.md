@@ -31,7 +31,7 @@ for (IFontFallBackRule fallBackRule : rulesList)
 
 //Also we can remove any existing rules from list
 if (rulesList.size() > 0)
-    rulesList.remove(rulesList.get_Item(0));
+    rulesList.remove(rulesList->get_Item(0));
 
 $pres = new Java("com.aspose.slides.Presentation", "input.pptx");
 try {
@@ -39,7 +39,7 @@ try {
     $pres->getFontsManager().setFontFallBackRulesCollection(rulesList);
 
     // Rendering of thumbnail with using of initialized rules collection and saving to PNG
-    ImageIO.write(pres.getSlides().get_Item(0).getThumbnail(1f, 1f), 
+    ImageIO.write($pres->getSlides()->get_Item(0).getThumbnail(1f, 1f), 
             "PNG", new File("Slide_0.png"));
 } catch (IOException e) {
 } finally {

@@ -27,16 +27,16 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     // Add an AutoShape of Rectangle type
-    IAutoShape ashp = slide.getShapes().addAutoShape(ShapeType.Rectangle, 50, 150, 300, 150);
+    IAutoShape ashp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 300, 150);
 
     // Access TextFrame of the AutoShape
     ITextFrame tf = ashp.getTextFrame();
 
     // Create Paragraphs and Portions with different text formats
-    IParagraph para0 = tf.getParagraphs().get_Item(0);
+    IParagraph para0 = tf.getParagraphs()->get_Item(0);
     IPortion port01 = new Portion();
     IPortion port02 = new Portion();
     para0.getPortions().add(port01);
@@ -64,7 +64,7 @@ try {
     {
         for (int j = 0; j < 3; j++) 
         {
-            IPortion portion = tf.getParagraphs().get_Item(i).getPortions().get_Item(j); 
+            IPortion portion = tf.getParagraphs()->get_Item(i).getPortions()->get_Item(j); 
             portion.setText("Portion0" + j);
             if (j == 0) {
                 portion.getPortionFormat().getFillFormat().setFillType(FillType.Solid);
@@ -105,13 +105,13 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
     
     // Add a Rectangle Shape
-    IAutoShape rect = sld.getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 500, 150);
+    IAutoShape rect = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 500, 150);
     
     // Add TextFrame to the Rectangle
-    ITextFrame tf = rect.addTextFrame("This is first line \rThis is second line \rThis is third line");
+    ITextFrame tf = rect->addTextFrame("This is first line \rThis is second line \rThis is third line");
     
     // Set the text to fit the shape
     tf.getTextFrameFormat().setAutofitType(TextAutofitType.Shape);
@@ -120,7 +120,7 @@ try {
     rect.getLineFormat().getFillFormat().setFillType(FillType.Solid);
     
     // Get first Paragraph in the TextFrame and set its Indent
-    IParagraph para1 = tf.getParagraphs().get_Item(0);
+    IParagraph para1 = tf.getParagraphs()->get_Item(0);
     // Setting paragraph bullet style and symbol
     para1.getParagraphFormat().getBullet().setType(BulletType.Symbol);
     para1.getParagraphFormat().getBullet().setChar((char)8226);
@@ -130,7 +130,7 @@ try {
     para1.getParagraphFormat().setIndent(30);
     
     // Get second Paragraph in the TextFrame and set its Indent
-    IParagraph para2 = tf.getParagraphs().get_Item(1);
+    IParagraph para2 = tf.getParagraphs()->get_Item(1);
     para2.getParagraphFormat().getBullet().setType(BulletType.Symbol);
     para2.getParagraphFormat().getBullet().setChar((char)8226);
     para2.getParagraphFormat().setAlignment(TextAlignment.Left);
@@ -138,7 +138,7 @@ try {
     para2.getParagraphFormat().setIndent(40);
     
     // Get third Paragraph in the TextFrame and set its Indent
-    IParagraph para3 = tf.getParagraphs().get_Item(2);
+    IParagraph para3 = tf.getParagraphs()->get_Item(2);
     para3.getParagraphFormat().getBullet().setType(BulletType.Symbol);
     para3.getParagraphFormat().getBullet().setChar((char)8226);
     para3.getParagraphFormat().setAlignment(TextAlignment.Left);
@@ -168,7 +168,7 @@ The implementation of the above steps is given below.
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    $shape = $pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 10, 10, 200, 250);
+    $shape = $pres.getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 200, 250);
 
     Paragraph para1 = new Paragraph();
     para1.getPortions().add(new Portion("Sample text"));
@@ -210,16 +210,16 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Acesss the default first slide of presentation
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     // Adding the AutoShape to accomodate the HTML content
-    IAutoShape ashape = slide.getShapes().addAutoShape(ShapeType.Rectangle, 10, 10,
+    IAutoShape ashape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10,
             (float)pres.getSlideSize().getSize().getWidth() - 20, (float)pres.getSlideSize().getSize().getHeight() - 10);
 
     ashape.getFillFormat().setFillType(FillType.NoFill);
 
     // Adding text frame to the shape
-    ashape.addTextFrame("");
+    ashape->addTextFrame("");
 
     // Clearing all paragraphs in added text frame
     ashape.getTextFrame().getParagraphs().clear();
@@ -254,13 +254,13 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation", "ExportingHTMLText.pptx");
 try {
     // Acesss the default first slide of presentation
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     // Desired index
     int index = 0;
 
     // Accessing the added shape
-    IAutoShape ashape = (IAutoShape) slide.getShapes().get_Item(index);
+    IAutoShape ashape = (IAutoShape) slide->getShapes()->get_Item(index);
 
     // Creating output HTML file
     $os = new Java("java.io.FileOutputStream", "output.html");

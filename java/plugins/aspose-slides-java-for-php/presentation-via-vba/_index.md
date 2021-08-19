@@ -78,7 +78,7 @@ The implementation of the above steps is demonstrated in the example below.
 $pres = new Java("com.aspose.slides.Presentation", "VBA.pptm");
 try {
     // Access the Vba module and remove
-    $pres->getVbaProject().getModules().remove(pres.getVbaProject().getModules().get_Item(0));
+    $pres->getVbaProject().getModules().remove($pres->getVbaProject().getModules()->get_Item(0));
     
     // Save Presentation
     $pres->save("test.pptm", SaveFormat.Pptm);
@@ -100,7 +100,7 @@ The implementation of the above steps is demonstrated in the example below.
 // Load Presentation
 $pres = new Java("com.aspose.slides.Presentation", "VBA.pptm");
 try {
-    if (pres.getVbaProject() != null) // check if Presentation contains VBA Project
+    if ($pres->getVbaProject() != null) // check if Presentation contains VBA Project
     {
         for (IVbaModule module : $pres->getVbaProject().getModules())
         {

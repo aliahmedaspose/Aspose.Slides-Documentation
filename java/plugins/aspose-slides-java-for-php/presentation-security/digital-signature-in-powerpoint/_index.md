@@ -53,7 +53,7 @@ Now its possible to check if the presentation was digitally signed and has not 
 // Open presentation
 $pres = new Java("com.aspose.slides.Presentation", "SomePresentationSigned.pptx");
 try {
-    if (pres.getDigitalSignatures().size() > 0)
+    if ($pres->getDigitalSignatures().size() > 0)
     {
         boolean allSignaturesAreValid = true;
 

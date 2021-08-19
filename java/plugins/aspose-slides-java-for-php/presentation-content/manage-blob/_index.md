@@ -17,7 +17,7 @@ try {
         // let's add the video to the presentation - we choose KeepLocked behavior, because we not
         // have an intent to access the "veryLargeVideo.avi" file.
         IVideo video = $pres->getVideos().addVideo(fileStream, LoadingStreamBehavior.KeepLocked);
-        $pres->getSlides().get_Item(0).getShapes().addVideoFrame(0, 0, 480, 270, video);
+        $pres->getSlides()->get_Item(0)->getShapes().addVideoFrame(0, 0, 480, 270, video);
 
         // save the presentation. Despite that the output presentation will be very large, the memory
         // consumption will be low the whole lifetime of the pres object
@@ -48,7 +48,7 @@ try {
 
     // iterate through the videos
     for (int index = 0; index < $pres->getVideos().size(); index++) {
-        IVideo video = $pres->getVideos().get_Item(index);
+        IVideo video = $pres->getVideos()->get_Item(index);
 
         // open the presentation video stream. Please note that we intentionally avoid accessing properties
         // like video.BinaryData - this property returns a byte array containing full video, and that means
@@ -91,7 +91,7 @@ try {
         // let's add the image to the presentation - we choose KeepLocked behavior, because we not
         // have an intent to access the "largeImage.png" file.
         IPPImage img = $pres->getImages().addImage(fip, LoadingStreamBehavior.KeepLocked);
-        $pres->getSlides().get_Item(0).getShapes().addPictureFrame(ShapeType.Rectangle, 0, 0, 300, 200, img);
+        $pres->getSlides()->get_Item(0)->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0, 300, 200, img);
 
         // save the presentation. Despite that the output presentation will be
         // large, the memory consumption will be low the whole lifetime of the pres object

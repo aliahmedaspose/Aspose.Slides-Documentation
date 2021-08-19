@@ -13,7 +13,7 @@ Now, you can also work with embedded fonts. [FontsManager](https://apireference.
 $pres = new Java("com.aspose.slides.Presentation", "EmbeddedFonts.pptx");
 try {
     // render a slide that contains a text frame that uses embedded "FunSized"
-    ImageIO.write(pres.getSlides().get_Item(0).getThumbnail(new Dimension(960, 720)),
+    ImageIO.write($pres->getSlides()->get_Item(0).getThumbnail(new Dimension(960, 720)),
             "PNG", new File("picture1_out.png"));
 
     IFontsManager fontsManager = $pres->getFontsManager();
@@ -35,7 +35,7 @@ try {
     fontsManager.removeEmbeddedFont(calibriEmbeddedFont);
 
     // render the presentation; removed "Calibri" font is replaced to an existing one
-    ImageIO.write(pres.getSlides().get_Item(0).getThumbnail(new Dimension(960, 720)),
+    ImageIO.write($pres->getSlides()->get_Item(0).getThumbnail(new Dimension(960, 720)),
             "PNG", new File("picture2_out.png"));
 
     // save the presentation without embedded "Calibri" font

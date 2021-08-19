@@ -35,7 +35,7 @@ In the example below, we added a chart from an Excel file to a slide as an OLE O
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Load an cel file to stream
     FileInputStream fs = new FileInputStream("book1.xlsx");
@@ -55,7 +55,7 @@ try {
     mstream.close();
 
     // Add an Ole Object Frame shape
-    IOleObjectFrame oleObjectFrame = sld.getShapes().addOleObjectFrame(0, 0,
+    IOleObjectFrame oleObjectFrame = sld->getShapes().addOleObjectFrame(0, 0,
             (float) $pres->getSlideSize().getSize().getWidth(),
             (float) $pres->getSlideSize().getSize().getHeight(),
             dataInfo);
@@ -85,10 +85,10 @@ In the example below, an OLE Object Frame (an Excel chart object embedded in a s
 $pres = new Java("com.aspose.slides.Presentation", "AccessingOLEObjectFrame.pptx");
 try {
     // Access the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Cast the shape to OleObjectFrame
-    OleObjectFrame oleObjectFrame = (OleObjectFrame) sld.getShapes().get_Item(0);
+    OleObjectFrame oleObjectFrame = (OleObjectFrame) sld->getShapes()->get_Item(0);
 
     // Read the OLE Object and write it to disk
     if (oleObjectFrame != null) {
@@ -135,12 +135,12 @@ In the example below, an OLE Object Frame (an Excel chart object embedded in a s
 ``` java 
 $pres = new Java("com.aspose.slides.Presentation", "ChangeOLEObjectData.pptx");
 try {
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 	
     OleObjectFrame ole = null;
 
     // Traversing all shapes for Ole frame
-    for (IShape shape : slide.getShapes()) 
+    for (IShape shape : slide->getShapes()) 
     {
         if (shape instanceof OleObjectFrame) 
         {
@@ -192,16 +192,16 @@ This sample code shows you how to embed HTML and ZIP in a slide:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     byte[] htmlBytes = Files.readAllBytes(Paths.get("embedOle.html"));
     IOleEmbeddedDataInfo dataInfoHtml = new OleEmbeddedDataInfo(htmlBytes, "html");
-    IOleObjectFrame oleFrameHtml = slide.getShapes().addOleObjectFrame(150, 120, 50, 50, dataInfoHtml);
+    IOleObjectFrame oleFrameHtml = $slide->getShapes().addOleObjectFrame(150, 120, 50, 50, dataInfoHtml);
     oleFrameHtml.setObjectIcon(true);
 
     byte[] zipBytes = Files.readAllBytes(Paths.get("embedOle.zip"));
     IOleEmbeddedDataInfo dataInfoZip = new OleEmbeddedDataInfo(zipBytes, "zip");
-    IOleObjectFrame oleFrameZip = slide.getShapes().addOleObjectFrame(150, 220, 50, 50, dataInfoZip);
+    IOleObjectFrame oleFrameZip = $slide->getShapes().addOleObjectFrame(150, 220, 50, 50, dataInfoZip);
     oleFrameZip.setObjectIcon(true);
 
     $pres->save("embeddedOle.pptx", SaveFormat.Pptx);
@@ -222,8 +222,8 @@ This sample code shows you how to set the file type for an embedded OLE object:
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "embeddedOle.pptx");
 try {
-    ISlide slide = $pres->getSlides().get_Item(0);
-    IOleObjectFrame oleObjectFrame = (IOleObjectFrame)slide.getShapes().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
+    IOleObjectFrame oleObjectFrame = (IOleObjectFrame)slide->getShapes()->get_Item(0);
     System.out.println("Current embedded data extension is: " + oleObjectFrame.getEmbeddedData().getEmbeddedFileExtension());
 
     oleObjectFrame.setEmbeddedData(new OleEmbeddedDataInfo(Files.readAllBytes(Paths.get("embedOle.zip")), "zip"));
@@ -246,8 +246,8 @@ This Java code shows you how to set the icon image and title for an embedded obj
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = $pres->getSlides().get_Item(0);
-    IOleObjectFrame oleObjectFrame = (IOleObjectFrame) slide.getShapes().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
+    IOleObjectFrame oleObjectFrame = (IOleObjectFrame) slide->getShapes()->get_Item(0);
 
     IPPImage oleImage = $pres->getImages().addImage(Files.readAllBytes(Paths.get("image.png")));
     oleObjectFrame.setSubstitutePictureTitle("My title");
@@ -274,11 +274,11 @@ This sample code shows you how to extract a file embedded in a slide as an OLE o
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "embeddedOle.pptx");
 try {
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
-    for (int index = 0; index < slide.getShapes().size(); index++)
+    for (int index = 0; index < slide->getShapes().size(); index++)
     {
-        IShape shape = slide.getShapes().get_Item(index);
+        IShape shape = $slide->getShapes()->get_Item(index);
         IOleObjectFrame oleFrame = (IOleObjectFrame)shape;
 
         if (oleFrame != null) 

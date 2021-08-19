@@ -33,7 +33,7 @@ To generate an SVG image from any desired slide with Aspose.Slides for Java, ple
 $pres = new Java("com.aspose.slides.Presentation", "CreateSlidesSVGImage.pptx");
 try {
     // Access the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Create a memory stream object
     $svgStream = new Java("java.io.FileOutputStream", "Aspose_out.svg");
@@ -59,7 +59,7 @@ try {
         SVGOptions svgOptions = new SVGOptions();
         svgOptions.setShapeFormattingController(new CustomSvgShapeFormattingController());
 
-        $pres->getSlides().get_Item(0).writeAsSvg(stream, svgOptions);
+        $pres->getSlides()->get_Item(0).writeAsSvg(stream, svgOptions);
     } finally {
         if (stream != null) stream.close();
     }
@@ -103,7 +103,7 @@ Aspose.Slides for Java help you generate thumbnail images of the slides. To gene
 $pres = new Java("com.aspose.slides.Presentation", "ThumbnailFromSlide.pptx");
 try {
     // Access the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Create a full scale image
     BufferedImage bmp = sld.getThumbnail(1f, 1f);
@@ -128,7 +128,7 @@ try {
 $pres = new Java("com.aspose.slides.Presentation", "ThumbnailWithUserDefinedDimensions.pptx");
 try {
     // Access the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // User defined dimension
     int desiredX = 1200;
@@ -164,7 +164,7 @@ The code snippet below produces a thumbnail of the first slide of a presentation
 $pres = new Java("com.aspose.slides.Presentation", "ThumbnailWithUserDefinedDimensions.pptx");
 try {
     // Access the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // User defined dimension
     int desiredX = 1200;

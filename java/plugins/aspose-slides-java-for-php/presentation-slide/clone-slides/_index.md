@@ -34,7 +34,7 @@ try {
     // Clone the desired slide to the end of the collection of slides in the same presentation
     ISlideCollection slds = $pres->getSlides();
 
-    slds.addClone(pres.getSlides().get_Item(0));
+    slds.addClone($pres->getSlides()->get_Item(0));
 
     // Write the modified presentation to disk
     $pres->save("Aspose_CloneWithinSamePresentationToEnd_out.pptx", SaveFormat.Pptx);
@@ -61,7 +61,7 @@ try {
     ISlideCollection slds = $pres->getSlides();
 
     // Clone the desired slide to the specified index in the same presentation
-    slds.insertClone(2, $pres->getSlides().get_Item(1));
+    slds.insertClone(2, $pres->getSlides()->get_Item(1));
 
     // Write the modified presentation to disk
     $pres->save("Aspose_CloneWithInSamePresentation_out.pptx", SaveFormat.Pptx);
@@ -91,7 +91,7 @@ try {
         // Clone the desired slide from the source presentation to the end of the collection of slides in destination presentation
         ISlideCollection slds = destPres.getSlides();
 
-        slds.addClone(srcPres.getSlides().get_Item(0));
+        slds.addClone(srcPres.getSlides()->get_Item(0));
 
         // Write the destination presentation to disk
         destPres.save("Aspose2_out.pptx", SaveFormat.Pptx);
@@ -124,7 +124,7 @@ try {
         // Clone the desired slide from the source presentation to the end of the collection of slides in destination presentation
         ISlideCollection slds = destPres.getSlides();
 
-        slds.insertClone(2, srcPres.getSlides().get_Item(0));
+        slds.insertClone(2, srcPres.getSlides()->get_Item(0));
 
         // Write the destination presentation to disk
         destPres.save("Aspose2_out.pptx", SaveFormat.Pptx);
@@ -159,7 +159,7 @@ try {
     try {
         // Instantiate ISlide from the collection of slides in source presentation along with
         // Master slide
-        ISlide SourceSlide = srcPres.getSlides().get_Item(0);
+        ISlide SourceSlide = srcPres.getSlides()->get_Item(0);
         IMasterSlide SourceMaster = SourceSlide.getLayoutSlide().getMasterSlide();
 
         // Clone the desired master slide from the source presentation to the collection of masters in the
@@ -192,17 +192,17 @@ If you want to clone a slide and then use it within the same presentation file b
 The following code snippet shows you how to clone a slide and insert the cloned slide into a specified section.
 
 ```java
-IPresentation presentation = new Presentation();
+I$presentation = new Java("com.aspose.slides.Presentation");
 try {
-    presentation.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 200, 50, 300, 100);
-    presentation.getSections().addSection("Section 1", presentation.getSlides().get_Item(0));
+    presentation.getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 50, 300, 100);
+    presentation.getSections().addSection("Section 1", presentation.getSlides()->get_Item(0));
 
     ISection section2 = presentation.getSections().appendEmptySection("Section 2");
-    presentation.getSlides().addClone(presentation.getSlides().get_Item(0), section2);
+    presentation.getSlides().addClone(presentation.getSlides()->get_Item(0), section2);
     
 	// Save the destination presentation to disk
     presentation.save(dataDir + "CloneSlideIntoSpecifiedSection.pptx", SaveFormat.Pptx);
 } finally {
-    if (presentation != null) presentation.dispose();
+    if ($presentation != null) $presentation->dispose();
 }
 ```

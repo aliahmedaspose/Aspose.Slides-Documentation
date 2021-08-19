@@ -26,16 +26,16 @@ To add text watermark in PPT, PPTX or ODP you can first add a shape into the sli
 
 ```java
 // Open presentation
-Presentation presentation = new Presentation();
+$presentation = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = presentation.getSlides().get_Item(0);
+    $slide = presentation->getSlides()->get_Item(0);
 
-    IAutoShape watermarkShape = slide.getShapes().addAutoShape(ShapeType.Triangle, 0, 0, 0, 0);
+    $watermarkShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Triangle, 0, 0, 0, 0);
 
-    ITextFrame watermarkTextFrame = watermarkShape.addTextFrame("Watermark");
+    $watermarkTextFrame = $watermarkShape->addTextFrame("Watermark");
     
 } finally {
-    if (presentation != null) presentation.dispose();
+    if ($presentation != null) $presentation->dispose();
 }
 ``` 
 
@@ -54,11 +54,11 @@ All the other logic is the same as in adding watermark into a single slide - cre
 // Open presentation
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IMasterSlide master = $pres->getMasters().get_Item(0);
+    IMasterSlide master = $pres->getMasters()->get_Item(0);
 
-    IAutoShape watermarkShape = master.getShapes().addAutoShape(ShapeType.Triangle, 0, 0, 0, 0);
+    $watermarkShape = master->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Triangle, 0, 0, 0, 0);
 
-    ITextFrame watermarkTextFrame = watermarkShape.addTextFrame("Watermark");
+    $watermarkTextFrame = $watermarkShape->addTextFrame("Watermark");
 
 } finally {
     if ($pres != null) $pres->dispose();
@@ -74,7 +74,7 @@ try {
 You can change the font of text watermark:
 
 ```java
-IPortion watermarkPortion = watermarkTextFrame.getParagraphs().get_Item(0).getPortions().get_Item(0);
+IPortion watermarkPortion = watermarkTextFrame.getParagraphs()->get_Item(0).getPortions()->get_Item(0);
 
 watermarkPortion.getPortionFormat().setFontBold(NullableBool.True);
 
@@ -88,7 +88,7 @@ To set the transparency of text watermark use this code:
 ```java
 int alpha = 150, red = 200, green = 200, blue = 200;
 
-IPortion watermarkPortion = watermarkTextFrame.getParagraphs().get_Item(0).getPortions().get_Item(0);
+IPortion watermarkPortion = watermarkTextFrame.getParagraphs()->get_Item(0).getPortions()->get_Item(0);
 
 watermarkPortion.getPortionFormat().getFillFormat().setFillType(FillType.Solid);
 
@@ -116,7 +116,7 @@ float y = (float) center.getY() - height / 2;
 //...
 
 
-IAutoShape watermarkShape = slide.getShapes().addAutoShape(ShapeType.Triangle, x, y, width, height);
+$watermarkShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Triangle, x, y, width, height);
 ``` 
 
 
@@ -166,7 +166,7 @@ watermarkShape.getShapeLock().setGroupingLocked(true);
 In Aspose.Slides the Z-Order of shapes can be set via [**SlideCollection.reorder**](https://apireference.aspose.com/slides/java/com.aspose.slides/SlideCollection#reorder-int-com.aspose.slides.ISlide...-) method. For that, you need to call this method from presentation slides list and pass shape reference and its order number into the method. This way its possible to put shape to the front or back of the slide. This feature is especially useful if you need to place watermark on front of presentation:
 
 ```java
-slide.getShapes().reorder(slide.getShapes().size() - 1, watermarkShape);
+slide->getShapes().reorder(slide->getShapes().size() - 1, watermarkShape);
 ``` 
 
 
@@ -213,13 +213,13 @@ watermarkShape.setName("watermark");
 To remove watermark shape and its child controls from slide, use [AutoShape.getName](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#getName--) method to find it in slide shapes. Then pass watermark shape into [**ShapeCollection.remove**](https://apireference.aspose.com/slides/java/com.aspose.slides/ShapeCollection#remove-com.aspose.slides.IShape-) method:
 
 ```java
-for (int i = 0; i < slide.getShapes().size(); i++)
+for (int i = 0; i < slide->getShapes().size(); i++)
 {
-    AutoShape shape = (AutoShape)slide.getShapes().get_Item(i);
+    AutoShape shape = (AutoShape)slide->getShapes()->get_Item(i);
 
     if ("watermark".equals(shape.getName()))
     {
-        slide.getShapes().remove(watermarkShape);
+        slide->getShapes().remove(watermarkShape);
     }
 }
 ``` 

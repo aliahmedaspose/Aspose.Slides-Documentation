@@ -28,10 +28,10 @@ In the example given below, we have added a line to the first slide of the prese
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
     
     // Add an AutoShape of type line
-    sld.getShapes().addAutoShape(ShapeType.Line, 50, 150, 300, 0);
+    sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 50, 150, 300, 0);
     
     // Write the PPTX to Disk
     $pres->save("LineShape.pptx", SaveFormat.Pptx);
@@ -59,10 +59,10 @@ Aspose.Slides for Java also allows developers to configure some properties of th
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Add an AutoShape of type line
-    IAutoShape shp = sld.getShapes().addAutoShape(ShapeType.Line, 50, 150, 300, 0);
+    IAutoShape shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 50, 150, 300, 0);
 
     // Apply some formatting on the line
     shp.getLineFormat().setStyle(LineStyle.ThickBetweenThin);

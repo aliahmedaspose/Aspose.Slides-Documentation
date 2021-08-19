@@ -22,11 +22,11 @@ To add a hyperlink in a presentation on the presentation level:
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IAutoShape shape1 = $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 600, 50, false);
-    shape1.addTextFrame("Aspose: File Format APIs");
-    shape1.getTextFrame().getParagraphs().get_Item(0).getPortions().get_Item(0).getPortionFormat().setHyperlinkClick(new Hyperlink("https://www.aspose.com/"));
-    shape1.getTextFrame().getParagraphs().get_Item(0).getPortions().get_Item(0).getPortionFormat().getHyperlinkClick().setTooltip( "More than 70% Fortune 100 companies trust Aspose APIs");
-    shape1.getTextFrame().getParagraphs().get_Item(0).getPortions().get_Item(0).getPortionFormat().setFontHeight(32);
+    IAutoShape shape1 = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 600, 50, false);
+    shape1->addTextFrame("Aspose: File Format APIs");
+    shape1.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat().setHyperlinkClick(new Hyperlink("https://www.aspose.com/"));
+    shape1.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat().getHyperlinkClick().setTooltip( "More than 70% Fortune 100 companies trust Aspose APIs");
+    shape1.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat().setFontHeight(32);
 
     $pres->save("presentation-out.pptx", SaveFormat.Pptx);
 } finally {
@@ -66,17 +66,17 @@ The code snippet below shows a sample of adding two hyperlinks with different co
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IAutoShape shape1 = $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 450, 50, false);
-    shape1.addTextFrame("This is a sample of colored hyperlink.");
-    IPortionFormat portionFormat = shape1.getTextFrame().getParagraphs().get_Item(0).getPortions().get_Item(0).getPortionFormat();
+    IAutoShape shape1 = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 450, 50, false);
+    shape1->addTextFrame("This is a sample of colored hyperlink.");
+    IPortionFormat portionFormat = shape1.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat();
     portionFormat.setHyperlinkClick(new Hyperlink("https://www.aspose.com/"));
     portionFormat.getHyperlinkClick().setColorSource(HyperlinkColorSource.PortionFormat);
     portionFormat.getFillFormat().setFillType(FillType.Solid);
     portionFormat.getFillFormat().getSolidFillColor().setColor(java.awt.Color.RED);
 
-    IAutoShape shape2 = $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 200, 450, 50, false);
-    shape2.addTextFrame("This is a sample of usual hyperlink.");
-    shape2.getTextFrame().getParagraphs().get_Item(0).getPortions().get_Item(0).getPortionFormat().setHyperlinkClick(new Hyperlink("https://www.aspose.com/"));
+    IAutoShape shape2 = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 450, 50, false);
+    shape2->addTextFrame("This is a sample of usual hyperlink.");
+    shape2.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat().setHyperlinkClick(new Hyperlink("https://www.aspose.com/"));
 
     $pres->save("presentation-out.pptx", SaveFormat.Pptx);
 } finally {
@@ -98,9 +98,9 @@ The code snippet below shows adding a hyperlink to the slide and editing its too
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IAutoShape shape1 = $pres->getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 100, 100, 600, 50, false);
-    shape1.addTextFrame("Aspose: File Format APIs");
-    IPortionFormat portionFormat = shape1.getTextFrame().getParagraphs().get_Item(0).getPortions().get_Item(0).getPortionFormat();
+    IAutoShape shape1 = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 600, 50, false);
+    shape1->addTextFrame("Aspose: File Format APIs");
+    IPortionFormat portionFormat = shape1.getTextFrame().getParagraphs()->get_Item(0).getPortions()->get_Item(0).getPortionFormat();
     portionFormat.setHyperlinkClick(new Hyperlink("https://www.aspose.com/"));
     portionFormat.getHyperlinkClick().setTooltip("More than 70% Fortune 100 companies trust Aspose APIs");
     portionFormat.setFontHeight(32);

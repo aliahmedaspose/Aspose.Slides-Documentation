@@ -19,10 +19,10 @@ Aspose.Slides for Java has provided an API to create SmartArt shapes. To create 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Add Smart Art Shape
-    ISmartArt smart = slide.getShapes().addSmartArt(0, 0, 400, 400, SmartArtLayoutType.BasicBlockList);
+    ISmartArt smart = $slide->getShapes().addSmartArt(0, 0, 400, 400, SmartArtLayoutType.BasicBlockList);
     
     // Saving presentation
     $pres->save("SimpleSmartArt.pptx", SaveFormat.Pptx);
@@ -43,7 +43,7 @@ The following code will be used to access the SmartArt shapes added in presentat
 $pres = new Java("com.aspose.slides.Presentation", "AccessSmartArtShape.pptx");
 try {
     // Traverse through every shape inside first slide
-    for (IShape shape : $pres->getSlides().get_Item(0).getShapes())
+    for (IShape shape : $pres->getSlides()->get_Item(0)->getShapes())
     {
         // Check if shape is of SmartArt type
         if (shape instanceof ISmartArt)
@@ -71,7 +71,7 @@ The following sample code will help to access the [SmartArt](https://apireferenc
 $pres = new Java("com.aspose.slides.Presentation", "AccessSmartArtShape.pptx");
 try {
     // Traverse through every shape inside first slide
-    for (IShape shape : $pres->getSlides().get_Item(0).getShapes())
+    for (IShape shape : $pres->getSlides()->get_Item(0)->getShapes())
     {
         // Check if shape is of SmartArt type
         if (shape instanceof ISmartArt)
@@ -107,10 +107,10 @@ In this example, we will learn to change the quick style for any SmartArt shape.
 $pres = new Java("com.aspose.slides.Presentation", "SimpleSmartArt.pptx");
 try {
     // Get first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Traverse through every shape inside first slide
-    for (IShape shape : slide.getShapes()) 
+    for (IShape shape : slide->getShapes()) 
     {
         // Check if shape is of SmartArt type
         if (shape instanceof ISmartArt) 
@@ -152,10 +152,10 @@ In this example, we will learn to change the color style for any SmartArt shape.
 $pres = new Java("com.aspose.slides.Presentation", "SimpleSmartArt.pptx");
 try {
     // Get first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Traverse through every shape inside first slide
-    for (IShape shape : slide.getShapes()) 
+    for (IShape shape : slide->getShapes()) 
     {
         // Check if shape is of SmartArt type
         if (shape instanceof ISmartArt) 

@@ -13,7 +13,7 @@ A new property has been added to set chart data from workbook. Now Aspose.Slide
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Pie, 50, 50, 500, 400);
     chart.getChartData().getChartDataWorkbook().clear(0);
 
     Workbook workbook = new Workbook("a1.xlsx");
@@ -24,7 +24,7 @@ try {
     chart.getChartData().writeWorkbookStream(mem.toByteArray());
 
     chart.getChartData().setRange("Sheet1!$A$1:$B$9");
-    IChartSeries series = chart.getChartData().getSeries().get_Item(0);
+    IChartSeries series = chart.getChartData().getSeries()->get_Item(0);
     series.getParentSeriesGroup().setColorVaried(true);
     $pres->save("response2.pptx", SaveFormat.Pptx);
 } catch (Exception ex) {
@@ -48,17 +48,17 @@ Aspose.Slides for Java provides a simple API for getting value from WorkBook Cel
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Bubble, 50, 50, 600, 400, true);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Bubble, 50, 50, 600, 400, true);
 
-    IChartSeries series = chart.getChartData().getSeries().get_Item(0);
+    IChartSeries series = chart.getChartData().getSeries()->get_Item(0);
 
     series.getLabels().getDefaultDataLabelFormat().setShowLabelValueFromCell(true);
 
     IChartDataWorkbook wb = chart.getChartData().getChartDataWorkbook();
 
-    series.getLabels().get_Item(0).setValueFromCell(wb.getCell(0, "A10", "Label 0 cell value"));
-    series.getLabels().get_Item(1).setValueFromCell(wb.getCell(0, "A11", "Label 1 cell value"));
-    series.getLabels().get_Item(2).setValueFromCell(wb.getCell(0, "A12", "Label 2 cell value"));
+    series.getLabels()->get_Item(0).setValueFromCell(wb.getCell(0, "A10", "Label 0 cell value"));
+    series.getLabels()->get_Item(1).setValueFromCell(wb.getCell(0, "A11", "Label 1 cell value"));
+    series.getLabels()->get_Item(2).setValueFromCell(wb.getCell(0, "A12", "Label 2 cell value"));
 
     $pres->save("resultchart.pptx", SaveFormat.Pptx);
 } finally {
@@ -79,8 +79,8 @@ Aspose.Slides for Java provides a simple API for getting value from WorkBook Cel
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
-    ISlide slide = $pres->getSlides().get_Item(1);
-    IChart chart = (IChart)slide.getShapes().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(1);
+    IChart chart = (IChart)slide->getShapes()->get_Item(0);
     int sourceType = chart.getChartData().getDataSourceType();
     
     if (sourceType == ChartDataSourceType.ExternalWorkbook)
@@ -108,7 +108,7 @@ $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
     String externalWbPath = dataPath + "externalWorkbook1.xlsx";
     
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 400, 600);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Pie, 50, 50, 400, 600);
 
     java.io.File file = new File(externalWbPath);
     if (file.exists())
@@ -139,15 +139,15 @@ The implementation is demonstrated below in an example.
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 400, 600, false);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Pie, 50, 50, 400, 600, false);
     IChartData chartData = chart.getChartData();
 
     chartData.setExternalWorkbook(dataPath +"externalWorkbook.xlsx");
 
     chartData.getSeries().add(chartData.getChartDataWorkbook().getCell(0, "B1"), ChartType.Pie);
-    chartData.getSeries().get_Item(0).getDataPoints().addDataPointForPieSeries(chartData.getChartDataWorkbook().getCell(0, "B2"));
-    chartData.getSeries().get_Item(0).getDataPoints().addDataPointForPieSeries(chartData.getChartDataWorkbook().getCell(0, "B3"));
-    chartData.getSeries().get_Item(0).getDataPoints().addDataPointForPieSeries(chartData.getChartDataWorkbook().getCell(0, "B4"));
+    chartData.getSeries()->get_Item(0).getDataPoints().addDataPointForPieSeries(chartData.getChartDataWorkbook().getCell(0, "B2"));
+    chartData.getSeries()->get_Item(0).getDataPoints().addDataPointForPieSeries(chartData.getChartDataWorkbook().getCell(0, "B3"));
+    chartData.getSeries()->get_Item(0).getDataPoints().addDataPointForPieSeries(chartData.getChartDataWorkbook().getCell(0, "B4"));
 
     chartData.getCategories().add(chartData.getChartDataWorkbook().getCell(0, "A2"));
     chartData.getCategories().add(chartData.getChartDataWorkbook().getCell(0, "A3"));
@@ -167,7 +167,7 @@ The **updateChartData** parameter defines whether an excel workbook will be loa
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 400, 600, true);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Pie, 50, 50, 400, 600, true);
     IChartData chartData = chart.getChartData();
 
     ((ChartData)chartData).setExternalWorkbook("http://path/doesnt/exists", false);
@@ -187,10 +187,10 @@ The implementation is demonstrated below in an example.
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
-    IChart chart = (IChart)pres.getSlides().get_Item(0).getShapes().get_Item(0);
+    IChart chart = (IChart)pres.getSlides()->get_Item(0)->getShapes()->get_Item(0);
     ChartData chartData = (ChartData)chart.getChartData();
     
-    chartData.getSeries().get_Item(0).getDataPoints().get_Item(0).getValue().getAsCell().setValue(100);
+    chartData.getSeries()->get_Item(0).getDataPoints()->get_Item(0).getValue().getAsCell().setValue(100);
     
     $pres->save("presentation_out.pptx", SaveFormat.Pptx);
 } finally {

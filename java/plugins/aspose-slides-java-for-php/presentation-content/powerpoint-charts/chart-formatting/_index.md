@@ -45,15 +45,15 @@ Aspose.Slides for Java provides a simple API for managing different chart entiti
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing the first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     // Adding the sample chart
-    IChart chart = slide.getShapes().addChart(ChartType.LineWithMarkers, 50, 50, 500, 400);
+    IChart chart = $slide->getShapes().addChart(ChartType.LineWithMarkers, 50, 50, 500, 400);
 
     // Setting Chart Title
     chart.hasTitle();
     chart.getChartTitle().addTextFrameForOverriding("");
-    IPortion chartTitle = chart.getChartTitle().getTextFrameForOverriding().getParagraphs().get_Item(0).getPortions().get_Item(0);
+    IPortion chartTitle = chart.getChartTitle().getTextFrameForOverriding().getParagraphs()->get_Item(0).getPortions()->get_Item(0);
     chartTitle.setText("Sample Chart");
     chartTitle.getPortionFormat().getFillFormat().setFillType(FillType.Solid);
     chartTitle.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.GRAY);
@@ -100,7 +100,7 @@ try {
     // Setting value axis title
     chart.getAxes().getVerticalAxis().hasTitle();
     chart.getAxes().getVerticalAxis().getTitle().addTextFrameForOverriding("");
-    IPortion valtitle = chart.getAxes().getVerticalAxis().getTitle().getTextFrameForOverriding().getParagraphs().get_Item(0).getPortions().get_Item(0);
+    IPortion valtitle = chart.getAxes().getVerticalAxis().getTitle().getTextFrameForOverriding().getParagraphs()->get_Item(0).getPortions()->get_Item(0);
     valtitle.setText("Primary Axis");
     valtitle.getPortionFormat().getFillFormat().setFillType(FillType.Solid);
     valtitle.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.GRAY);
@@ -131,7 +131,7 @@ try {
     chart.getAxes().getHorizontalAxis().hasTitle();
     chart.getAxes().getHorizontalAxis().getTitle().addTextFrameForOverriding("");
 
-    IPortion catTitle = chart.getAxes().getHorizontalAxis().getTitle().getTextFrameForOverriding().getParagraphs().get_Item(0).getPortions().get_Item(0);
+    IPortion catTitle = chart.getAxes().getHorizontalAxis().getTitle().getTextFrameForOverriding().getParagraphs()->get_Item(0).getPortions()->get_Item(0);
     catTitle.setText("Sample Category");
     catTitle.getPortionFormat().getFillFormat().setFillType(FillType.Solid);
     catTitle.getPortionFormat().getFillFormat().getSolidFillColor().setColor(Color.GRAY);
@@ -158,7 +158,7 @@ try {
     chart.getLegend().setOverlay(true);
     // chart.ChartData.Series[0].PlotOnSecondAxis=true;
 
-    chart.getChartData().getSeries().get_Item(0).setPlotOnSecondAxis(true);
+    chart.getChartData().getSeries()->get_Item(0).setPlotOnSecondAxis(true);
     // Setting secondary value axis
     chart.getAxes().getSecondaryVerticalAxis().isVisible();
     chart.getAxes().getSecondaryVerticalAxis().getFormat().getLine().setStyle(LineStyle.ThickBetweenThin);
@@ -212,10 +212,10 @@ Below sample example is given.
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 400);
     
     chart.getTextFormat().getPortionFormat().setFontHeight(20);
-    chart.getChartData().getSeries().get_Item(0).getLabels().getDefaultDataLabelFormat().setShowValue(true);
+    chart.getChartData().getSeries()->get_Item(0).getLabels().getDefaultDataLabelFormat().setShowValue(true);
     
     $pres->save("FontPropertiesForChart.pptx", SaveFormat.Pptx);
 } finally {
@@ -241,10 +241,10 @@ Aspose.Slides for Java provides a simple API for managing chart data format:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access the first presentation slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
     // Adding a default clustered column chart
-    IChart chart = slide.getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 500, 400);
+    IChart chart = $slide->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 500, 400);
 
     // Accessing the chart series collection
     IChartSeriesCollection series = chart.getChartData().getSeries();
@@ -323,9 +323,9 @@ Below sample example is given. 
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
-    IChart chart = slide.getShapes().addChart(ChartType.ClusteredColumn, 20, 100, 600, 400);
+    IChart chart = $slide->getShapes().addChart(ChartType.ClusteredColumn, 20, 100, 600, 400);
     chart.getLineFormat().getFillFormat().setFillType(FillType.Solid);
     chart.getLineFormat().setStyle(LineStyle.Single);
     chart.setRoundedCorners(true);

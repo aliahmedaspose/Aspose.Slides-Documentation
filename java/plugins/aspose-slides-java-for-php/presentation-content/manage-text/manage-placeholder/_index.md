@@ -28,10 +28,10 @@ $pres = new Java("com.aspose.slides.Presentation", "ReplacingText.pptx");
 try {
 
     // Access first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Iterate through shapes to find the placeholder
-    for (IShape shp : sld.getShapes()) 
+    for (IShape shp : sld->getShapes()) 
     {
         if (shp.getPlaceholder() != null) {
             // Change the text of each placeholder
@@ -54,8 +54,8 @@ The code snippet below shows how to use this feature:
 ```java
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
-    ISlide slide = $pres->getSlides().get_Item(0);
-    for (IShape shape : slide.getSlide().getShapes()) // iterate through the slide
+    ISlide slide = $pres->getSlides()->get_Item(0);
+    for (IShape shape : slide.getSlide()->getShapes()) // iterate through the slide
     {
         if (shape.getPlaceholder() != null && shape instanceof AutoShape)
         {

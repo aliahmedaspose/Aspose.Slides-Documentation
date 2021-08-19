@@ -63,21 +63,21 @@ To merge a specific slide of presentation, you just need to choose it by the sli
 index from source presentation and pass into [**addClone (ISlide)**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideCollection#addClone-com.aspose.slides.ISlide-) method:
 
 ```java
-mergedPresentation.getSlides().addClone(presentation3.getSlides().get_Item(0));
+mergedPresentation.getSlides().addClone(presentation3.getSlides()->get_Item(0));
 ``` 
 
 ## **Merge Presentation with Slide Layout**
 To merge presentation sides, applying a new slide layout to them - you should use [**addClone (ISlide, ILayoutSlide)**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideCollection#addClone-com.aspose.slides.ISlide-com.aspose.slides.ILayoutSlide-) method:
 
 ```java
-mergedPresentation.getSlides().addClone(presentation3.getSlides().get_Item(0), layoutSlide);
+mergedPresentation.getSlides().addClone(presentation3.getSlides()->get_Item(0), layoutSlide);
 ``` 
 
 ## **Merge Slide to Presentation Section**
 To merge presentation slide into a presentation section, it is possible to use [**addClone (ISlide, ISection)**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideCollection#addClone-com.aspose.slides.ISlide-com.aspose.slides.ISection-). You need to pass slide object and the section to which you want to clone this slide. The slide will be added to the end of the section:
 
 ```java
- mergedPresentation.getSlides().addClone(presentation3.getSlides().get_Item(0), section);
+ mergedPresentation.getSlides().addClone(presentation3.getSlides()->get_Item(0), section);
 ``` 
 
 It is possible to ask questions, share ideas in the [**Aspose.Slides forum**](https://forum.aspose.com/c/slides).

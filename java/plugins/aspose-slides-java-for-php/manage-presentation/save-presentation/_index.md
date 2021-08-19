@@ -39,7 +39,7 @@ It is possible to save a presentation to a stream by passing an output stream to
 // Instantiate a Presentation object that represents a PPT file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    $shape = $pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 200, 200, 200, 200);
+    $shape = $pres.getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 200, 200, 200);
 
     // Add text to shape
     shape.getTextFrame().setText("This demo shows how to Create PowerPoint file and save it to Stream.");
@@ -82,10 +82,10 @@ The following sample code creates a presentation and saves it in the Strict Open
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Add an autoshape of type line
-    slide.getShapes().addAutoShape(ShapeType.Line, 50, 150, 300, 0);
+    slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 50, 150, 300, 0);
     
     //Setting strick XML save options
     PptxOptions options = new PptxOptions();

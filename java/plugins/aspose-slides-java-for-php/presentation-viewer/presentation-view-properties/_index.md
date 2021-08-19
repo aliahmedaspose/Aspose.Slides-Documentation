@@ -72,7 +72,7 @@ In order to set the view properties. Please follow the steps below:
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-Presentation presentation = new Presentation();
+$presentation = new Java("com.aspose.slides.Presentation");
 try {
     // Setting View Properties of Presentation
     presentation.getViewProperties().getSlideViewProperties().setScale(100); // Zoom value in percentages for slide view

@@ -27,10 +27,10 @@ In the example given below, we have added an ellipse to the first slide
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
     
     // Add AutoShape of ellipse type
-    sld.getShapes().addAutoShape(ShapeType.Ellipse, 50, 150, 150, 50);
+    sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 50, 150, 150, 50);
     
     // Write the PPTX file to disk
     $pres->save("EllipseShp1.pptx", SaveFormat.Pptx);
@@ -58,10 +58,10 @@ In the example given below, we have added a formatted ellipse to the first slide
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Add AutoShape of ellipse type
-    IShape shp = sld.getShapes().addAutoShape(ShapeType.Ellipse, 50, 150, 150, 50);
+    IShape shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 50, 150, 150, 50);
 
     // Apply some formatting to ellipse shape
     shp.getFillFormat().setFillType(FillType.Solid);

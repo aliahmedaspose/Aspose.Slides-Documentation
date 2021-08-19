@@ -22,16 +22,16 @@ In order to add a connector shape for joining two shapes. Please follow the step
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing shapes collection for selected slide
-    IShapeCollection shapes = $pres->getSlides().get_Item(0).getShapes();
+    IShapeCollection shapes = $pres->getSlides()->get_Item(0)->getShapes();
     
     // Add Autoshape Ellipse
-    IAutoShape ellipse = shapes.addAutoShape(ShapeType.Ellipse, 0, 100, 100, 100);
+    IAutoShape ellipse = shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 0, 100, 100, 100);
     
     // Add Autoshape Rectangle
-    IAutoShape rectangle = shapes.addAutoShape(ShapeType.Rectangle, 100, 300, 100, 100);
+    IAutoShape rectangle = shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 300, 100, 100);
     
     // Adding connector shape to slide shape collection
-    IConnector connector = shapes.addConnector(ShapeType.BentConnector2, 0, 0, 10, 10);
+    IConnector connector = shapes.addConnector(Java("com.aspose.slides.ShapeType")->BentConnector2, 0, 0, 10, 10);
     
     // Joining Shapes to connectors
     connector.setStartShapeConnectedTo(ellipse);
@@ -71,16 +71,16 @@ In the example given below, we have added a connector between two shapes.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing shapes collection for selected slide
-    IShapeCollection shapes = $pres->getSlides().get_Item(0).getShapes();
+    IShapeCollection shapes = $pres->getSlides()->get_Item(0)->getShapes();
 
     // Add Autoshape Ellipse
-    IAutoShape ellipse = shapes.addAutoShape(ShapeType.Ellipse, 0, 100, 100, 100);
+    IAutoShape ellipse = shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 0, 100, 100, 100);
 
     // Add Autoshape Rectangle
-    IAutoShape rectangle = shapes.addAutoShape(ShapeType.Rectangle, 100, 300, 100, 100);
+    IAutoShape rectangle = shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 300, 100, 100);
 
     // Adding connector shape to slide shape collection
-    IConnector connector = shapes.addConnector(ShapeType.BentConnector2, 0, 0, 10, 10);
+    IConnector connector = shapes.addConnector(Java("com.aspose.slides.ShapeType")->BentConnector2, 0, 0, 10, 10);
 
     // Joining Shapes to connectors
     connector.setStartShapeConnectedTo(ellipse);
@@ -118,16 +118,16 @@ In the example given below, we have calculated the angle for connector line shap
 // Instantiate Presentation class that represents the PPTX file
 $pres = new Java("com.aspose.slides.Presentation", "ConnectorLineAngle.pptx");
 try {
-    Slide slide = (Slide)pres.getSlides().get_Item(0);
+    Slide slide = (Slide)pres.getSlides()->get_Item(0);
     
-    for (int i = 0; i < slide.getShapes().size(); i++)
+    for (int i = 0; i < slide->getShapes().size(); i++)
     {
         double dir = 0.0;
-        Shape shape = (Shape)slide.getShapes().get_Item(i);
+        Shape shape = (Shape)slide->getShapes()->get_Item(i);
         if (shape instanceof AutoShape)
         {
             AutoShape ashp = (AutoShape)shape;
-            if (ashp.getShapeType() == ShapeType.Line)
+            if (ashp.getShapeType() == Java("com.aspose.slides.ShapeType")->Line)
             {
                 dir = getDirection(ashp.getWidth(), ashp.getHeight(),
                         ashp.getFrame().getFlipH() > 0, ashp.getFrame().getFlipV() > 0);

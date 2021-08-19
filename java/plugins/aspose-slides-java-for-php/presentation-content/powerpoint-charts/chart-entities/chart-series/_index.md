@@ -19,13 +19,13 @@ Aspose.Slides for Java provides a simple API interface to set chart series overl
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Adding chart
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400, true);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400, true);
 
     IChartSeriesCollection series = chart.getChartData().getSeries();
     
-    if (series.get_Item(0).getOverlap() == 0) {
+    if (series->get_Item(0).getOverlap() == 0) {
         // Setting series overlap
-        series.get_Item(0).getParentSeriesGroup().setOverlap((byte) -30);
+        series->get_Item(0).getParentSeriesGroup().setOverlap((byte) -30);
     }
 
     // Saving presentation
@@ -50,9 +50,9 @@ Below sample example is given. 
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 600, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Pie, 50, 50, 600, 400);
 
-    IChartDataPoint point = chart.getChartData().getSeries().get_Item(0).getDataPoints().get_Item(1);
+    IChartDataPoint point = chart.getChartData().getSeries()->get_Item(0).getDataPoints()->get_Item(1);
 
     point.setExplosion(30);
     point.getFormat().getFill().setFillType(FillType.Solid);
@@ -79,9 +79,9 @@ Below sample example is given. 
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
 
-    IChartDataPoint point = chart.getChartData().getSeries().get_Item(0).getDataPoints().get_Item(0);
+    IChartDataPoint point = chart.getChartData().getSeries()->get_Item(0).getDataPoints()->get_Item(0);
 
     point.getFormat().getFill().setFillType(FillType.Solid);
 
@@ -106,11 +106,11 @@ Aspose.Slides for Java provides a simple API for setting automatic fill color fo
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Creating a clustered column chart
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 50, 600, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 50, 600, 400);
 
     // Setting series fill format to automatic
     for (int i = 0; i < chart.getChartData().getSeries().size(); i++) {
-        chart.getChartData().getSeries().get_Item(i).getAutomaticSeriesColor();
+        chart.getChartData().getSeries()->get_Item(i).getAutomaticSeriesColor();
     }
 
     // Saving presentation
@@ -133,7 +133,7 @@ Aspose.Slides for Java provides a simple API for setting invert fill color for c
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 400, 300);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 400, 300);
     IChartDataWorkbook workBook = chart.getChartData().getChartDataWorkbook();
 
     chart.getChartData().getSeries().clear();
@@ -146,7 +146,7 @@ try {
     chart.getChartData().getCategories().add(workBook.getCell(0, 3, 0, "Category 3"));
 
     // Take first chart series and populating series data.
-    IChartSeries series = chart.getChartData().getSeries().get_Item(0);
+    IChartSeries series = chart.getChartData().getSeries()->get_Item(0);
     series.getDataPoints().addDataPointForBarSeries(workBook.getCell(0, 1, 1, -20));
     series.getDataPoints().addDataPointForBarSeries(workBook.getCell(0, 2, 1, 50));
     series.getDataPoints().addDataPointForBarSeries(workBook.getCell(0, 3, 1, -30));
@@ -170,19 +170,19 @@ The Aspose.Slides for Java lets developers allow to set inverts. Methods [**set
 ```java
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400, true);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400, true);
     IChartSeriesCollection series = chart.getChartData().getSeries();
     chart.getChartData().getSeries().clear();
 
     series.add(chart.getChartData().getChartDataWorkbook().getCell(0, "B1"), chart.getType());
-    series.get_Item(0).getDataPoints().addDataPointForBarSeries(chart.getChartData().getChartDataWorkbook().getCell(0, "B2",-5));
-    series.get_Item(0).getDataPoints().addDataPointForBarSeries(chart.getChartData().getChartDataWorkbook().getCell(0, "B3",3));
-    series.get_Item(0).getDataPoints().addDataPointForBarSeries(chart.getChartData().getChartDataWorkbook().getCell(0, "B4",-2));
-    series.get_Item(0).getDataPoints().addDataPointForBarSeries(chart.getChartData().getChartDataWorkbook().getCell(0, "B5",1));
+    series->get_Item(0).getDataPoints().addDataPointForBarSeries(chart.getChartData().getChartDataWorkbook().getCell(0, "B2",-5));
+    series->get_Item(0).getDataPoints().addDataPointForBarSeries(chart.getChartData().getChartDataWorkbook().getCell(0, "B3",3));
+    series->get_Item(0).getDataPoints().addDataPointForBarSeries(chart.getChartData().getChartDataWorkbook().getCell(0, "B4",-2));
+    series->get_Item(0).getDataPoints().addDataPointForBarSeries(chart.getChartData().getChartDataWorkbook().getCell(0, "B5",1));
 
-    series.get_Item(0).setInvertIfNegative(false);
-    series.get_Item(0).getInvertIfNegative();
-    series.get_Item(0).getDataPoints().get_Item(2).setInvertIfNegative(true);
+    series->get_Item(0).setInvertIfNegative(false);
+    series->get_Item(0).getInvertIfNegative();
+    series->get_Item(0).getDataPoints()->get_Item(2).setInvertIfNegative(true);
 
     $pres->save("output.pptx", SaveFormat.Pptx);
 } finally {
@@ -207,17 +207,17 @@ Sample code is given below.
 $pres = new Java("com.aspose.slides.Presentation", "Chart.pptx");
 try {
     // Accessing the first slide in presentation
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 
-    IChart chart = (IChart)slide.getShapes().get_Item(0);
+    IChart chart = (IChart)slide->getShapes()->get_Item(0);
 
-    for (IChartDataPoint dataPoint : chart.getChartData().getSeries().get_Item(0).getDataPoints()) {
+    for (IChartDataPoint dataPoint : chart.getChartData().getSeries()->get_Item(0).getDataPoints()) {
 
         dataPoint.getXValue().getAsCell().setValue(null);
         dataPoint.getYValue().getAsCell().setValue(null);
     }
 
-    chart.getChartData().getSeries().get_Item(0).getDataPoints().clear();
+    chart.getChartData().getSeries()->get_Item(0).getDataPoints().clear();
 
     $pres->save("ClearSpecificChartSeriesDataPointsData.pptx", SaveFormat.Pptx);
 } finally {
@@ -240,10 +240,10 @@ Aspose.Slides for Java provides a simple API for setting [**gapWidth**](https://
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
 
     // Add chart with default data
-    IChart chart = sld.getShapes().addChart(ChartType.StackedColumn, 0, 0, 500, 500);
+    IChart chart = sld->getShapes().addChart(ChartType.StackedColumn, 0, 0, 500, 500);
 
     // Setting the index of chart data sheet
     int defaultWorksheetIndex = 0;
@@ -261,7 +261,7 @@ try {
     chart.getChartData().getCategories().add(fact.getCell(defaultWorksheetIndex, 3, 0, "Caetegoty 3"));
     
     // Take second chart series
-    IChartSeries series = chart.getChartData().getSeries().get_Item(1);
+    IChartSeries series = chart.getChartData().getSeries()->get_Item(1);
     
     // Now populating series data
     series.getDataPoints().addDataPointForBarSeries(fact.getCell(defaultWorksheetIndex, 1, 1, 20));

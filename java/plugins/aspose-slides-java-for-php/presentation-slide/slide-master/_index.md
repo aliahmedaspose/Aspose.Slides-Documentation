@@ -104,7 +104,7 @@ With Aspose.Slides its possible to access Slide Master this way:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // access to the Presentation's master slide
-    IMasterSlide masterSlide = $pres->getMasters().get_Item(0);
+    IMasterSlide masterSlide = $pres->getMasters()->get_Item(0);
 } finally {
     $pres->dispose();
 }
@@ -129,14 +129,14 @@ IPPImage image2 = $pres->getImages().addImage(Files.readAllBytes(Paths.get("cell
 IPPImage image3 = $pres->getImages().addImage(Files.readAllBytes(Paths.get("words.png")));
 
 // add these added images to the master slide
-masterSlide.getShapes().addPictureFrame(ShapeType.Rectangle, 10, 10, 25, 25, logo);
-masterSlide.getShapes().addPictureFrame(ShapeType.Rectangle, 10, 40, 25, 25, image1);
-masterSlide.getShapes().addPictureFrame(ShapeType.Rectangle, 10, 75, 25, 25, image2);
-masterSlide.getShapes().addPictureFrame(ShapeType.Rectangle, 10, 110, 25, 25, image3);
+masterSlide->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 25, 25, logo);
+masterSlide->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 40, 25, 25, image1);
+masterSlide->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 75, 25, 25, image2);
+masterSlide->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 110, 25, 25, image3);
 
 // add new slides with same master slide template
-pres.getSlides().addEmptySlide(masterSlide.getLayoutSlides().get_Item(0));
-pres.getSlides().addEmptySlide(masterSlide.getLayoutSlides().get_Item(1));
+pres.getSlides().addEmptySlide(masterSlide.getLayoutSlides()->get_Item(0));
+pres.getSlides().addEmptySlide(masterSlide.getLayoutSlides()->get_Item(1));
 ```
 
 First, we add images into the image collection of presentation. Now these images can be used in shapes, so we create a picture frame on Slide Master with [addPictureFrame](https://apireference.aspose.com/slides/java/com.aspose.slides/IShapeCollection#addPictureFrame-int-float-float-float-float-com.aspose.slides.IPPImage-) method. After that, we add new slides, which are based on this Slide Master with [addEmptySlide](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideCollection#addEmptySlide-com.aspose.slides.ILayoutSlide-) method. Info AddEmptySlide method we pass the layout of the Slide Master, so the new slides will be created with same master slide template.
@@ -164,7 +164,7 @@ With Aspose.Slides to change the formatting of title placeholder, we first retri
 
 ```java
 // get the reference to the master's title placeholder
-IShape titlePlaceholder = masterSlide.getShapes().get_Item(0);
+IShape titlePlaceholder = masterSlide->getShapes()->get_Item(0);
 
 // format fill as gradient fill
 titlePlaceholder.getFillFormat().setFillType(FillType.Gradient);
@@ -228,7 +228,7 @@ Its possible to set Slide Master as a default view, when you open the Aspose.Sli
 
 ```java
 // Instantiate Presentation class that represents the presentation file
-Presentation presentation = new Presentation();
+$presentation = new Java("com.aspose.slides.Presentation");
 try {
     // Set Default View as SlideMasterView
     presentation.getViewProperties().setLastView(ViewType.SlideMasterView);

@@ -25,7 +25,7 @@ Aspose.Slides for Java provides [Presentation](https://apireference.aspose.com/j
 $pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     // Accessing a slide using its slide index
-    ISlide slide = $pres->getSlides().get_Item(0);
+    ISlide slide = $pres->getSlides()->get_Item(0);
 } finally {
     $pres->dispose();
 }
@@ -39,7 +39,7 @@ Every slide in the presentation has a unique ID associated with it. The [Present
 $pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     // Getting Slide ID
-    int id = (int) $pres->getSlides().get_Item(0).getSlideId();
+    int id = (int) $pres->getSlides()->get_Item(0).getSlideId();
     
     // Accessing Slide by ID
     IBaseSlide slide = $pres->getSlideById(id);
@@ -69,7 +69,7 @@ In the example given below, we have changed the position of a slide (lying at th
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Get the slide whose position is to be changed
-    ISlide sld = $pres->getSlides().get_Item(0);
+    ISlide sld = $pres->getSlides()->get_Item(0);
     
     // Set the new position for the slide
     sld.setSlideNumber(2);

@@ -15,7 +15,7 @@ Aspose.Slides for Java has provided the simplest API to identify merge table cel
 - Print Message if cells are merged.
 
 ```java
-Presentation pres = new Presentation("SomePresentationWithTable.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "SomePresentationWithTable.pptx");
 try {
     ITable table = (ITable)pres.getSlides().get_Item(0).getShapes().get_Item(0); // assuming that Slide#0.Shape#0 is a table
     for (int i = 0; i < table.getRows().size(); i++)

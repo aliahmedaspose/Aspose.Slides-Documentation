@@ -24,7 +24,7 @@ for (IParagraph paragraph : textFrame.getParagraphs()){
 Using [**getRect()**](https://apireference.aspose.com/slides/java/com.aspose.slides/IParagraph#getRect--) method developers can get paragraph bounds rectangle.
 
 ```java
-Presentation pres = new Presentation("HelloWorld.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "HelloWorld.pptx");
 try {
     IAutoShape shape = (IAutoShape) $pres->getSlides().get_Item(0).getShapes().get_Item(0);
     ITextFrame textFrame = shape.getTextFrame();
@@ -42,7 +42,7 @@ To get the [Portion](https://apireference.aspose.com/slides/java/com.aspose.slid
 This sample code demonstrates the described operation:
 
 ```java
-Presentation pres = new Presentation("source.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "source.pptx");
 try {
     Table tbl = (Table)pres.getSlides().get_Item(0).getShapes().get_Item(0);
     ICell cell = tbl.getRows().get_Item(1).get_Item(1);

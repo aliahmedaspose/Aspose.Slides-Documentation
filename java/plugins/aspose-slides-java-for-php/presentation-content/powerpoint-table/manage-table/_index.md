@@ -82,7 +82,7 @@ To access a table that already exists in a slide, please follow the steps below:
 
 ```java
 // Instantiate Presentation class that represents PPTX// Instantiate Presentation class that represents PPTX
-Presentation pres = new Presentation("UpdateExistingTable.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "UpdateExistingTable.pptx");
 try {
 
     // Access the first slide
@@ -174,7 +174,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation("simpletable.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "simpletable.pptx");
 try {
     // the first shape on the first slide is a table
     ITable someTable = (ITable) $pres->getSlides().get_Item(0).getShapes().get_Item(0);
@@ -258,7 +258,7 @@ try {
 The aspect ratio of a geometric shape is the ratio of its sizes in different dimensions. You can lock aspect ratio of table using [**setAspectRatioLocked**](https://apireference.aspose.com/slides/java/com.aspose.slides/GraphicalObjectLock#setAspectRatioLocked-boolean-) method. Below code example shows how to use this method.
 
 ```java
-Presentation pres = new Presentation("pres.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     ITable table = (ITable)pres.getSlides().get_Item(0).getShapes().get_Item(0);
     System.out.println("Lock aspect ratio set: " + table.getGraphicalObjectLock().getAspectRatioLocked());

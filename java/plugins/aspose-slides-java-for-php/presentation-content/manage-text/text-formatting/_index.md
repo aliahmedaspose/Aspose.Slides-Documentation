@@ -14,7 +14,7 @@ It allows to highlight text part with background color using text sample, simila
 The code snippet below shows how to use this feature:
 
 ```java
-Presentation pres = new Presentation("Presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     TextHighlightingOptions textHighlightingOptions = new TextHighlightingOptions();
     textHighlightingOptions.setWholeWordsOnly(true);
@@ -36,7 +36,7 @@ It allows to highlight text part with background color using regex, similar to T
 The code snippet below shows how to use this feature:
 
 ```java
-Presentation pres = new Presentation("Presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     TextHighlightingOptions options = new TextHighlightingOptions();
     
@@ -62,7 +62,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Instantiate a Presentation object that represents a PPTX file
-Presentation pres = new Presentation("ParagraphsAlignment.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "ParagraphsAlignment.pptx");
 try {
     // Accessing first slide
     ISlide slide = $pres->getSlides().get_Item(0);
@@ -101,7 +101,7 @@ This article demonstrates how to set transparency property to any text shape us
 The implementation of the above steps is given below.
 
 ```java
-Presentation pres = new Presentation("transparency.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "transparency.pptx");
 try {
     IAutoShape shape = (IAutoShape)pres.getSlides().get_Item(0).getShapes().get_Item(0);
     IEffectFormat effects = shape.getTextFrame().getParagraphs().get_Item(0).getPortions().get_Item(0).getPortionFormat().getEffectFormat();
@@ -139,7 +139,7 @@ The implementation of the above steps is given below. It takes an unadorned pres
 
 ```java
 // Instantiate a Presentation object that represents a PPTX file
-Presentation pres = new Presentation("FontProperties.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "FontProperties.pptx");
 try {
     // Accessing a slide using its slide position
     ISlide slide = $pres->getSlides().get_Item(0);
@@ -349,7 +349,7 @@ Aspose.Slides for Java lets developers to set the properties of ParagraphFormat 
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation("Fonts.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Fonts.pptx");
 try {
     // Obtain a slide's reference by its index
     ISlide sld = $pres->getSlides().get_Item(0);

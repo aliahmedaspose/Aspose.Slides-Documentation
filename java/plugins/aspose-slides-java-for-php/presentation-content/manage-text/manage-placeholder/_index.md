@@ -24,7 +24,7 @@ To replace the text of a Placeholder, please follow the steps below:
 
 ```java
 // Instantiate Presentation class that represents PPTX
-Presentation pres = new Presentation("ReplacingText.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "ReplacingText.pptx");
 try {
 
     // Access first slide
@@ -52,7 +52,7 @@ As we know that Standard and pre-built layouts contain placeholders with default
 The code snippet below shows how to use this feature:
 
 ```java
-Presentation pres = new Presentation("Presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     ISlide slide = $pres->getSlides().get_Item(0);
     for (IShape shape : slide.getSlide().getShapes()) // iterate through the slide

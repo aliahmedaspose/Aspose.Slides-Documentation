@@ -21,7 +21,7 @@ The following example shows how to convert a presentation into a [TIFF](https://
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-Presentation pres = new Presentation("presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
     // Saving the presentation to TIFF document
     $pres->save("tiff-image.tiff", SaveFormat.Tiff);
@@ -35,7 +35,7 @@ The following example shows how to convert a presentation into TIFF document wit
 
 ```java
 // Instantiate a Presentation object that represents a Presentation file
-Presentation pres = new Presentation("presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
     // Instantiate the TiffOptions class
     TiffOptions opts = new TiffOptions();
@@ -73,7 +73,7 @@ The following example shows how to convert a presentation into a TIFF document w
 
 ```java
 // Instantiate a Presentation object that represents a Presentation file
-Presentation pres = new Presentation("presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
     TiffOptions options = new TiffOptions();
     options.setPixelFormat(ImagePixelFormat.Format8bppIndexed);

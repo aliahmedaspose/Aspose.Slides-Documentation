@@ -44,7 +44,7 @@ To remove hyperlinks from a presentation on the presentation level:
 
 ```java
 //Instantiate a Presentation object that represents a PPTX file
-Presentation pres = new Presentation("PresentationWithHyperlinks.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "PresentationWithHyperlinks.pptx");
 try {
     //Removing the Hyperlinks from presentation
     $pres->getHyperlinkQueries().removeAllHyperlinks();

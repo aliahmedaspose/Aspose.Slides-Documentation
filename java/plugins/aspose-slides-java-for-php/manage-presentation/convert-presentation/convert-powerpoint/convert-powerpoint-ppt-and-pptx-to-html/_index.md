@@ -49,7 +49,7 @@ Convert PPT or PPTX presentation to HTML file using Aspose.Slides. For that, sav
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-Presentation pres = new Presentation("Convert_HTML.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Convert_HTML.pptx");
 try {
     HtmlOptions htmlOpt = new HtmlOptions();
     htmlOpt.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomFull);
@@ -68,7 +68,7 @@ Convert PPT(X) presentation to Responsive HTML, which will ensure the generated 
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-Presentation pres = new Presentation("Convert_HTML.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Convert_HTML.pptx");
 try {
     ResponsiveHtmlController controller = new ResponsiveHtmlController();
     HtmlOptions htmlOptions = new HtmlOptions();
@@ -85,7 +85,7 @@ try {
 The following example shows how to convert PPT(X) presentation to HTML with the rendered speaker notes. Using the options of [**HtmlOptions**](https://apireference.aspose.com/slides/java/com.aspose.slides/HtmlOptions) class and [**INotesCommentsLayoutingOptions**](https://apireference.aspose.com/slides/java/com.aspose.slides/INotesCommentsLayoutingOptions) interface you can render speaker notes to HTML:
 
 ```java
-Presentation pres = new Presentation("Presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     HtmlOptions opt = new HtmlOptions();
     INotesCommentsLayoutingOptions options = opt.getNotesCommentsLayouting();
@@ -102,7 +102,7 @@ try {
 Preserve original fonts that are used in presentation while converting PPT(X) to HTML. [**EmbedAllFontsHtmlController**](https://apireference.aspose.com/slides/java/com.aspose.slides/EmbedAllFontsHtmlController) class preserves the original fonts in generated HTML:
 
 ```java
-Presentation pres = new Presentation("input.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "input.pptx");
 try {
     // exclude default presentation fonts
     String[] fontNameExcludeList = { "Calibri", "Arial" };
@@ -122,7 +122,7 @@ try {
 Convert a separate presentation slide to HTML. Fo that use the same [**Save**](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation#save-java.lang.String-int-com.aspose.slides.ISaveOptions-) method exposed by the [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class that is used to convert the whole PPT(X) presentation into a HTML document. The [**HtmlOptions**](https://apireference.aspose.com/slides/java/com.aspose.slides/HtmlOptions) class can be also used to set the additional conversion options:
 
 ```java
-Presentation pres = new Presentation("Individual-Slide.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Individual-Slide.pptx");
 try {
     HtmlOptions htmlOptions = new HtmlOptions();
     htmlOptions.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomFull);
@@ -171,7 +171,7 @@ public class CustomFormattingController implements IHtmlFormattingController
 Use new CSS styles file to change the resulting styles of the HTML file while PPT(X) to HTML conversion with Aspose.Slides. Please review the example below how to use overridable methods to create a custom HTML document with a link to CSS file:
 
 ```java
-Presentation pres = new Presentation("pres.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     CustomHeaderAndFontsController htmlController = new CustomHeaderAndFontsController("styles.css");
     HtmlOptions options = new HtmlOptions();
@@ -221,7 +221,7 @@ public class CustomHeaderAndFontsController extends EmbedAllFontsHtmlController
 Convert PPT(X) presentation to HTML with all its embedded fonts. [**EmbedAllFontsHtmlController**](https://apireference.aspose.com/slides/java/com.aspose.slides/EmbedAllFontsHtmlController) class is used to embed all presentation fonts into HTML document. [**EmbedAllFontsHtmlController**](https://apireference.aspose.com/slides/java/com.aspose.slides/EmbedAllFontsHtmlController) has a parameterized constructor where an array of font names can be passed to prevent them from embedding. Some fonts, like Calibri or Arial, used in the presentation are not needed to be embedded (which leads the resulting HTML document to become larger) because almost every system already has them installed. The [**EmbedAllFontsHtmlController**](https://apireference.aspose.com/slides/java/com.aspose.slides/EmbedAllFontsHtmlController) also supports inheritance and WriteFont method that is intended to be overridden:
 
 ```java
-Presentation pres = new Presentation("pres.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try
 {
     //Exclude default presentation fonts
@@ -282,7 +282,7 @@ public class LinkAllFontsHtmlController extends EmbedAllFontsHtmlController
 The code sample below shows how to export a PPT(X) presentation to HTML with the responsive layout:
 
 ```java
-Presentation pres = new Presentation("SomePresentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "SomePresentation.pptx");
 try {
     HtmlOptions saveOptions = new HtmlOptions();
     saveOptions.setSvgResponsiveLayout(true);
@@ -304,7 +304,7 @@ In the example given below, we have exported the media files to HTML.
 
 ```java
 // Loading a presentation
-Presentation pres = new Presentation("Media File.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Media File.pptx");
 try {
     String path = ".";
     final String fileName = "ExportMediaFiles_out.html";

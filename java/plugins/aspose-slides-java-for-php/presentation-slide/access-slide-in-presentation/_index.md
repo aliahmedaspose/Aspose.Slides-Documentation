@@ -22,7 +22,7 @@ Aspose.Slides for Java provides [Presentation](https://apireference.aspose.com/j
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-Presentation pres = new Presentation("demo.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     // Accessing a slide using its slide index
     ISlide slide = $pres->getSlides().get_Item(0);
@@ -36,7 +36,7 @@ Every slide in the presentation has a unique ID associated with it. The [Present
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-Presentation pres = new Presentation("demo.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     // Getting Slide ID
     int id = (int) $pres->getSlides().get_Item(0).getSlideId();
@@ -66,7 +66,7 @@ In the example given below, we have changed the position of a slide (lying at th
 
 ```java
 // Instantiate Presentation class to load the source presentation file
-Presentation pres = new Presentation("Presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Get the slide whose position is to be changed
     ISlide sld = $pres->getSlides().get_Item(0);
@@ -100,7 +100,7 @@ The new methods added to [Presentation](https://apireference.aspose.com/java/sli
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-Presentation pres = new Presentation("HelloWorld.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "HelloWorld.pptx");
 try {
     // Get the slide number
     int firstSlideNumber = $pres->getFirstSlideNumber();

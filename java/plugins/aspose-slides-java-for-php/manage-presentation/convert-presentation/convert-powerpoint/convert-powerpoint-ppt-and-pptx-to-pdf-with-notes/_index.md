@@ -35,7 +35,7 @@ try {
 The [**Save**](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation#save-java.lang.String-int-) method exposed by [**Presentation**](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class can be used to convert the whole presentation in Notes Slide view to PDF. The code snippets below update the sample presentation to PDF in Notes Slide view.
 
 ```java
-Presentation pres = new Presentation("presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
     PdfOptions pdfOptions = new PdfOptions();
     pdfOptions.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomFull);

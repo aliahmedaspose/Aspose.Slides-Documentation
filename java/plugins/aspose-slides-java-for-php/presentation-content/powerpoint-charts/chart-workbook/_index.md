@@ -46,7 +46,7 @@ Aspose.Slides for Java provides a simple API for getting value from WorkBook Cel
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation("chart.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
     IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Bubble, 50, 50, 600, 400, true);
 
@@ -77,7 +77,7 @@ Aspose.Slides for Java provides a simple API for getting value from WorkBook Cel
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation("chart.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
     ISlide slide = $pres->getSlides().get_Item(1);
     IChart chart = (IChart)slide.getShapes().get_Item(0);
@@ -104,7 +104,7 @@ The implementation is demonstrated below in an example.
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation("chart.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
     String externalWbPath = dataPath + "externalWorkbook1.xlsx";
     
@@ -137,7 +137,7 @@ The implementation is demonstrated below in an example.
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation("chart.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
     IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 400, 600, false);
     IChartData chartData = chart.getChartData();
@@ -165,7 +165,7 @@ The **updateChartData** parameter defines whether an excel workbook will be loa
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation("chart.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
     IChart chart = $pres->getSlides().get_Item(0).getShapes().addChart(ChartType.Pie, 50, 50, 400, 600, true);
     IChartData chartData = chart.getChartData();
@@ -185,7 +185,7 @@ The implementation is demonstrated below in an example.
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation("chart.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
     IChart chart = (IChart)pres.getSlides().get_Item(0).getShapes().get_Item(0);
     ChartData chartData = (ChartData)chart.getChartData();

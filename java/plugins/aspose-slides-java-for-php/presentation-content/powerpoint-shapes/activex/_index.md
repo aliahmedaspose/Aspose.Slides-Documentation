@@ -63,7 +63,7 @@ This sample code, based on the steps above, shows how to manage a simple ActiveX
 
 ```java
 // Accessing the presentation with ActiveX controls
-Presentation pres = new Presentation("ActiveX.pptm");
+$pres = new Java("com.aspose.slides.Presentation", "ActiveX.pptm");
 try {
     // Accessing the first slide in presentation
     ISlide slide = $pres->getSlides().get_Item(0);

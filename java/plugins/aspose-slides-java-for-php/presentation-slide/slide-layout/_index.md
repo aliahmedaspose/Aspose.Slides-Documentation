@@ -20,7 +20,7 @@ In the example given below, we have added Layout Slides to Presentation.
 
 ```java
 // Instantiate Presentation class that represents the presentation file
-Presentation pres = new Presentation("AccessSlides.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "AccessSlides.pptx");
 try {
     // Try to search by layout slide type
     IMasterLayoutSlideCollection layoutSlides = $pres->getMasters().get_Item(0).getLayoutSlides();

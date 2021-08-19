@@ -12,7 +12,7 @@ The [Save](https://apireference.aspose.com/slides/java/com.aspose.slides/Present
 
 ```java
 //Instantiate a Presentation object that represents a presentation file
-Presentation pres = new Presentation("demo.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     TiffOptions opts = new TiffOptions();
     opts.getNotesCommentsLayouting().setNotesPosition(NotesPositions.BottomFull);

@@ -48,7 +48,7 @@ These properties as exposed by [IDocumentProperties](https://apireference.aspose
 
 ```java
 // Instantiate the Presentation class that represents the presentation
-Presentation pres = new Presentation("Presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Create a reference to IDocumentProperties object associated with Presentation
     IDocumentProperties dp = $pres->getDocumentProperties();
@@ -77,7 +77,7 @@ try {
 Modifying the built-in properties of presentation files is as easy as that of accessing them. You can simply assign a string value to any desired property and the property value would be modified. In the example given below, we have demonstrated how we can modify the built-in document properties of the presentation file using Aspose.Slides for Java.
 
 ```java
-Presentation pres = new Presentation("Presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Create a reference to IDocumentProperties object associated with Presentation
     IDocumentProperties dp = $pres->getDocumentProperties();
@@ -137,7 +137,7 @@ try {
 Aspose.Slides for Java also allows developers to access the values of custom properties. An example is given below that shows how can you access and modify all of these custom properties for a presentation.
 
 ```java
-Presentation pres = new Presentation("Presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Create a reference to DocumentProperties object associated with Presentation
     IDocumentProperties dp = $pres->getDocumentProperties();

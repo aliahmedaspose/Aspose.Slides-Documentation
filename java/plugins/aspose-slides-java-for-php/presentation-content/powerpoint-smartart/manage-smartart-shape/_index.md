@@ -40,7 +40,7 @@ The following code will be used to access the SmartArt shapes added in presentat
 
 ```java
 // Load the desired the presentation
-Presentation pres = new Presentation("AccessSmartArtShape.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "AccessSmartArtShape.pptx");
 try {
     // Traverse through every shape inside first slide
     for (IShape shape : $pres->getSlides().get_Item(0).getShapes())
@@ -68,7 +68,7 @@ The following sample code will help to access the [SmartArt](https://apireferenc
 1. Check the SmartArt shape with particular LayoutType and perform what is required to be done afterwards.
 
 ```java
-Presentation pres = new Presentation("AccessSmartArtShape.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "AccessSmartArtShape.pptx");
 try {
     // Traverse through every shape inside first slide
     for (IShape shape : $pres->getSlides().get_Item(0).getShapes())
@@ -104,7 +104,7 @@ In this example, we will learn to change the quick style for any SmartArt shape.
 
 ```java
 // Instantiate Presentation Class
-Presentation pres = new Presentation("SimpleSmartArt.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "SimpleSmartArt.pptx");
 try {
     // Get first slide
     ISlide slide = $pres->getSlides().get_Item(0);
@@ -149,7 +149,7 @@ In this example, we will learn to change the color style for any SmartArt shape.
 
 ```java
 // Instantiate Presentation Class
-Presentation pres = new Presentation("SimpleSmartArt.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "SimpleSmartArt.pptx");
 try {
     // Get first slide
     ISlide slide = $pres->getSlides().get_Item(0);

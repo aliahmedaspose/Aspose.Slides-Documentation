@@ -18,7 +18,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Load presentation
-Presentation pres = new Presentation("Fonts.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Fonts.pptx");
 try {
     // Load source font to be replaced
     IFontData sourceFont = new FontData("Arial");

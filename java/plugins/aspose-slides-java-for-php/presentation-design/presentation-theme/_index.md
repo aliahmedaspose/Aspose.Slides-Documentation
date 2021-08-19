@@ -174,7 +174,7 @@ In [**Aspose.Slides**](https://products.aspose.com/slides/java) its possible to 
 On the images above you can see, that to design the Background Style in PowerPoint, there are 12 predefined backgrounds available. However, if we upload the presentation, saved in PowerPoint through Aspose.Slides, then execute the following code - we will see only 3 predefined backgrounds in the resulting presentation:
 
 ```java
-Presentation pres = new Presentation("pres.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     int numberOfBackgroundFills = $pres->getMasterTheme().getFormatScheme().getBackgroundFillStyles().size();
 
@@ -218,7 +218,7 @@ In [**Aspose.Slides**](https://products.aspose.com/slides/java) there are no "*
 So, the effects you can use in PowerPoint are strictly limited. While, in Aspose.Slides it is possible to change them in a flexible way by changing their composite parts. In the following example, we will change the outlook of the abovementioned elements with Aspose.Slides:
 
 ```java
-Presentation pres = new Presentation("Subtle_Moderate_Intense.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Subtle_Moderate_Intense.pptx");
 try {
     $pres->getMasterTheme().getFormatScheme().getLineStyles().get_Item(0).getFillFormat().getSolidFillColor().setColor(Color.RED);
 

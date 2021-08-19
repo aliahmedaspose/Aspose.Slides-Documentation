@@ -23,7 +23,7 @@ These interfaces and their properties are described below in the specialized sec
 The code example below shows how to convert the first slide of presentation to a PNG image.
 
 ``` java 
-Presentation pres = new Presentation("Presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Convert the first slide of the presentation to a Bitmap object
     BufferedImage bmp = $pres->getSlides().get_Item(0).getThumbnail();
@@ -43,7 +43,7 @@ The following example demonstrates this capability using one of the
 [getThumbnail](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlide#getThumbnail-java.awt.Dimension-) method overloads:
 
 ``` java 
-Presentation pres = new Presentation("Presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Convert the first slide of the presentation to a Bitmap with the specified size
     BufferedImage bmp = $pres->getSlides().get_Item(0).getThumbnail(new Dimension(1820, 1040));
@@ -73,7 +73,7 @@ This is since the text of the note can be quite large and it cannot physically f
 {{% /alert %}} 
 
 ``` java 
-Presentation pres = new Presentation("PresentationNotesComments.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "PresentationNotesComments.pptx");
 try {
     // Create rendering options
     IRenderingOptions options = new RenderingOptions();
@@ -110,7 +110,7 @@ Below is an example of using the ITiffOptions interface to get an image with 300
 and 2160x2880 size:
 
 ``` java 
-Presentation pres = new Presentation("PresentationNotesComments.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "PresentationNotesComments.pptx");
 try {
     // Get a slide by its index
     ISlide slide = $pres->getSlides().get_Item(0);
@@ -143,7 +143,7 @@ In some cases, it is necessary to convert the entire presentation into a set of 
 the same as PowerPoint allows. The following example demonstrates this possibility:
 
 ``` java 
-Presentation pres = new Presentation("Presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Render presentation to images array slide by slide
     for (int i = 0 ; i < $pres->getSlides().size(); i++)

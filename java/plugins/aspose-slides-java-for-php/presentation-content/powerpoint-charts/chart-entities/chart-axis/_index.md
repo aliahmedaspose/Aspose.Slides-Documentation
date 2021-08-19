@@ -55,7 +55,7 @@ try {
 **CategoryAxisType** can be changed to [Date](https://apireference.aspose.com/slides/java/com.aspose.slides/CategoryAxisType#Date) or [Text](https://apireference.aspose.com/slides/java/com.aspose.slides/CategoryAxisType#Text). However, **CategoryAxisType.Auto** is not supported at the moment. New methods [**getCategoryAxisType**](https://apireference.aspose.com/slides/java/com.aspose.slides/IAxis#getCategoryAxisType--) and [**setCategoryAxisType**](https://apireference.aspose.com/slides/java/com.aspose.slides/IAxis#setCategoryAxisType-int-) have been added to [**IAxis**](https://apireference.aspose.com/slides/java/com.aspose.slides/IAxis) interface and [Axis](https://apireference.aspose.com/slides/java/com.aspose.slides/Axis) class which specifies type of category axis.
 
 ```java
-Presentation pres = new Presentation("ExistingChart.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
     IChart chart = (IChart) $pres->getSlides().get_Item(0).getShapes().get_Item(0);
     

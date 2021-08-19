@@ -251,7 +251,7 @@ The implementation of the above steps is given below.
 
 ```java
 // Load the presentation file
-Presentation pres = new Presentation("ExportingHTMLText.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "ExportingHTMLText.pptx");
 try {
     // Acesss the default first slide of presentation
     ISlide slide = $pres->getSlides().get_Item(0);

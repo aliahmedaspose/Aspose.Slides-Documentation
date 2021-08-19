@@ -20,7 +20,7 @@ Notes of some specific slide could be removed as shown in example below:
 
 ```java
 // Load Presentation
-Presentation pres = new Presentation("headerTest.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "headerTest.pptx");
 try {
     // Setting Footer
     $pres->getHeaderFooterManager().setAllFootersText("My Footer text");
@@ -72,7 +72,7 @@ Aspose.Slides for Java supports Header and Footer in Handout and notes slides. P
 Code Snippet provided in below Example.
 
 ```java
-Presentation pres = new Presentation("presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
     // Change Header and Footer settings for notes master and all notes slides
     IMasterNotesSlide masterNotesSlide = $pres->getMasterNotesSlideManager().getMasterNotesSlide();

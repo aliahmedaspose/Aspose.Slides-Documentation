@@ -31,7 +31,7 @@ This sample code shows you how to generate a shape thumbnail from a slide:
 
 ```java
 // Instantiate a Presentation class that represents the presentation file
-Presentation pres = new Presentation("Thumbnail.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Thumbnail.pptx");
 try {
     // Create a full scale image
     BufferedImage image = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getThumbnail();
@@ -56,7 +56,7 @@ This sample code shows you how to generate a shape thumbnail based on a defined 
 
 ```java
 // Instantiate a Presentation class that represents the presentation file
-Presentation pres = new Presentation("Thumbnail.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Thumbnail.pptx");
 try {
     // Create a full scale image
     BufferedImage image = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getThumbnail(ShapeThumbnailBounds.Shape, 1, 1);
@@ -81,7 +81,7 @@ This sample code is based on the steps above:
 
 ```java
 // Instantiate a Presentation class that represents the presentation file
-Presentation pres = new Presentation("Thumbnail.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Thumbnail.pptx");
 try {
     // Create a full scale image
     BufferedImage image = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getThumbnail(ShapeThumbnailBounds.Appearance, 1, 1);

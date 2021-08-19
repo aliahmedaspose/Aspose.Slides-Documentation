@@ -49,7 +49,7 @@ When converting a PPT document to PDF, Aspose.Slides allows you to export a PPT 
 This sample code shows you how to specify your preferred PDF compliance standard when converting PPT to PDF:
 
 ```java
-Presentation pres = new Presentation("pres.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     PdfOptions pdfOptions = new PdfOptions();
     
@@ -103,7 +103,7 @@ The following example shows you how to convert a PowerPoint PPT, PPTX, and OpenO
 
 ```java
 // Instantiate a Presentation object that represents a PPT file
-Presentation pres = new Presentation("PowerPoint.ppt");
+$pres = new Java("com.aspose.slides.Presentation", "PowerPoint.ppt");
 try {
     // Save the presentation as PDF
     $pres->save("PPT-to-PDF.pdf", SaveFormat.Pdf);
@@ -117,7 +117,7 @@ The following example shows you how to convert PowerPoint PPT, PPTX and OpenOff
 
 ```java
 // Instantiate a Presentation object that represents a PPTX file
-Presentation pres = new Presentation("PowerPoint.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "PowerPoint.pptx");
 try {
     // Instantiate the PdfOptions class
     PdfOptions pdfOptions = new PdfOptions();
@@ -152,7 +152,7 @@ Default value is **"false"**.
 
 ```java
 // Instantiate a Presentation object that represents a PPTX file
-Presentation pres = new Presentation("PowerPoint.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "PowerPoint.pptx");
 try {
     // Instantiate the PdfOptions class
     PdfOptions pdfOptions = new PdfOptions();
@@ -172,7 +172,7 @@ The following example shows you how to convert a presentation to a password-prot
 
 ```java
 // Instantiate a Presentation object that represents a PPTX file
-Presentation pres = new Presentation("PowerPoint.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "PowerPoint.pptx");
 try {
     /// Instantiate the PdfOptions class
     PdfOptions pdfOptions = new PdfOptions();
@@ -193,7 +193,7 @@ The following example shows you how to convert a specific presentation slide to 
 
 ```java
 // Instantiate a Presentation object that represents a PPTX file
-Presentation pres = new Presentation("PowerPoint.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "PowerPoint.pptx");
 try {
     // Setting array of slides positions
     int[] slides = { 1, 3 };
@@ -210,7 +210,7 @@ The following example shows you how to convert a presentation to a PDF notes doc
 
 ```java
 // Instantiate a Presentation object that represents a presentation file 
-Presentation pres = new Presentation("SelectedSlides.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "SelectedSlides.pptx");
 try {
     Presentation outPres = new Presentation();
     try {
@@ -239,7 +239,7 @@ The following example shows you how to convert a presentation to a PDF notes doc
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-Presentation pres = new Presentation("SelectedSlides.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "SelectedSlides.pptx");
 try {
     PdfOptions pdfOptions = new PdfOptions();
     INotesCommentsLayoutingOptions options = pdfOptions.getNotesCommentsLayouting();

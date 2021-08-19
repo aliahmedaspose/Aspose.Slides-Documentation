@@ -204,7 +204,7 @@ Sample code is given below.
 
 ```java
 // Create an instance of Presentation class
-Presentation pres = new Presentation("Chart.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Chart.pptx");
 try {
     // Accessing the first slide in presentation
     ISlide slide = $pres->getSlides().get_Item(0);

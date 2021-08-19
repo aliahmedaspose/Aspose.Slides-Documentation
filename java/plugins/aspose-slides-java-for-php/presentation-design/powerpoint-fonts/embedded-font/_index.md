@@ -10,7 +10,7 @@ Now, you can also work with embedded fonts. [FontsManager](https://apireference.
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-Presentation pres = new Presentation("EmbeddedFonts.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "EmbeddedFonts.pptx");
 try {
     // render a slide that contains a text frame that uses embedded "FunSized"
     ImageIO.write(pres.getSlides().get_Item(0).getThumbnail(new Dimension(960, 720)),
@@ -51,7 +51,7 @@ A new property of embedding fonts has been added. To allow embedding fonts into
 
 ```java
 // Load presentation
-Presentation pres = new Presentation("Fonts.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Fonts.pptx");
 try {
     IFontData[] allFonts = $pres->getFontsManager().getFonts();
     IFontData[] embeddedFonts = $pres->getFontsManager().getEmbeddedFonts();

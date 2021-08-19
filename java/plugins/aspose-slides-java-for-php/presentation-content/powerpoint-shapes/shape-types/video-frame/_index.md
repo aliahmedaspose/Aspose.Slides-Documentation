@@ -137,7 +137,7 @@ Aspose.Slides for Java supports extraction of videos from slides. To extract a v
 In the example given below, we saved the video file from a slide.
 
 ```java
-Presentation pres = new Presentation("VideoSample.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "VideoSample.pptx");
 try {
     for (ISlide slide : $pres->getSlides()) 
     {

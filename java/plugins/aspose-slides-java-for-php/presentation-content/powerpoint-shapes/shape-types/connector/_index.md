@@ -116,7 +116,7 @@ In the example given below, we have calculated the angle for connector line shap
 
 ```java
 // Instantiate Presentation class that represents the PPTX file
-Presentation pres = new Presentation("ConnectorLineAngle.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "ConnectorLineAngle.pptx");
 try {
     Slide slide = (Slide)pres.getSlides().get_Item(0);
     

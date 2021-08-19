@@ -9,7 +9,7 @@ url: /java/manage-smartart/
 Now TextFrame method has been added to [ISmartArtShape](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArtShape) interface and [SmartArtShape](https://apireference.aspose.com/slides/java/com.aspose.slides/SmartArtShape) class respectively. This property allows you to get all text from [SmartArt](https://apireference.aspose.com/slides/java/com.aspose.slides/SmartArt) if it has not only nodes text. The following sample code will help you to get text from SmartArt node.
 
 ```java
-Presentation pres = new Presentation("Presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     ISlide slide = $pres->getSlides().get_Item(0);
     ISmartArt smartArt = (ISmartArt)slide.getShapes().get_Item(0);
@@ -124,7 +124,7 @@ Aspose.Slides for Java provides a simple API for creating and PictureOrganizati
 The following code is used to create a chart.
 
 ```java
-Presentation pres = new Presentation("test.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "test.pptx");
 try {
     ISmartArt smartArt = $pres->getSlides().get_Item(0).getShapes().addSmartArt(0, 0, 400, 400, SmartArtLayoutType.PictureOrganizationChart);
     $pres->save("OrganizationChart.pptx", SaveFormat.Pptx);

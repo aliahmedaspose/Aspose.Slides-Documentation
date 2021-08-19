@@ -82,7 +82,7 @@ In the example below, an OLE Object Frame (an Excel chart object embedded in a s
 
 ``` java 
 // Load the PPTX to Presentation object
-Presentation pres = new Presentation("AccessingOLEObjectFrame.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "AccessingOLEObjectFrame.pptx");
 try {
     // Access the first slide
     ISlide sld = $pres->getSlides().get_Item(0);
@@ -133,7 +133,7 @@ If an OLE object is already embedded in a slide, you can easily access that obje
 In the example below, an OLE Object Frame (an Excel chart object embedded in a slide) is accessed—and then its file data is modified to change the chart data.
 
 ``` java 
-Presentation pres = new Presentation("ChangeOLEObjectData.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "ChangeOLEObjectData.pptx");
 try {
     ISlide slide = $pres->getSlides().get_Item(0);
 	
@@ -220,7 +220,7 @@ Aspose.Slides for Java allows you to set the file type for an embedded object. T
 This sample code shows you how to set the file type for an embedded OLE object:
 
 ```java
-Presentation pres = new Presentation("embeddedOle.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "embeddedOle.pptx");
 try {
     ISlide slide = $pres->getSlides().get_Item(0);
     IOleObjectFrame oleObjectFrame = (IOleObjectFrame)slide.getShapes().get_Item(0);
@@ -272,7 +272,7 @@ Aspose.Slides for Java allows you to extract the files embedded in slides as OLE
 This sample code shows you how to extract a file embedded in a slide as an OLE object:
 
 ```java
-Presentation pres = new Presentation("embeddedOle.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "embeddedOle.pptx");
 try {
     ISlide slide = $pres->getSlides().get_Item(0);
 

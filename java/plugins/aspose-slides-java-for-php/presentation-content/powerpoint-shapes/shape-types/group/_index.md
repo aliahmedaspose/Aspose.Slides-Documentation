@@ -58,7 +58,7 @@ The example below accesses alternative text of group shape.
 
 ```java
 // Instantiate Presentation class that represents PPTX file
-Presentation pres = new Presentation("AltText.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "AltText.pptx");
 try {
     // Get the first slide
     ISlide sld = $pres->getSlides().get_Item(0);

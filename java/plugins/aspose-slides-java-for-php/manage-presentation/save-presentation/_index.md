@@ -106,7 +106,7 @@ The following code snippets below show how to use [IProgressCallback](https://ap
 
 ```java
 // Opening the presentation file
-Presentation pres = new Presentation("ConvertToPDF.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "ConvertToPDF.pptx");
 try {
     ISaveOptions saveOptions = new PdfOptions();
     saveOptions.setProgressCallback((IProgressCallback) new ExportProgressHandler());

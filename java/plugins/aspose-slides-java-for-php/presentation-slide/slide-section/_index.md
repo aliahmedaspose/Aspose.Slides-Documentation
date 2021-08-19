@@ -54,7 +54,7 @@ After you create a section in a PowerPoint presentation, you may decide to chang
 This sample code shows you how to change the name of a section in a presentation in Java using Aspose.Slides:
 
 ```java
-Presentation pres = new Presentation("pres.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     ISection section = $pres->getSections().get_Item(0);
     section.setName("My section");

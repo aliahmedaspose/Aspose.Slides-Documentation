@@ -40,7 +40,7 @@ LoadOptions loadOptions = new LoadOptions();
 loadOptions.getBlobManagementOptions().setPresentationLockingBehavior(PresentationLockingBehavior.KeepLocked);
 
 // create the Presentation's instance, lock the "hugePresentationWithAudiosAndVideos.pptx" file.
-Presentation pres = new Presentation("Large_Video_File_Test.pptx", loadOptions);
+$pres = new Java("com.aspose.slides.Presentation", "Large_Video_File_Test.pptx", loadOptions);
 try {
     // let's save each video to a file. to prevent memory usage we need a buffer which will be used
     // to exchange tha data from the presentation's video stream to a stream for newly created video file.

@@ -33,7 +33,7 @@ for (IFontFallBackRule fallBackRule : rulesList)
 if (rulesList.size() > 0)
     rulesList.remove(rulesList.get_Item(0));
 
-Presentation pres = new Presentation("input.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "input.pptx");
 try {
     //Assigning a prepared rules list for using
     $pres->getFontsManager().setFontFallBackRulesCollection(rulesList);

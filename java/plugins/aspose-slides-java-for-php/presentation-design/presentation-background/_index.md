@@ -47,7 +47,7 @@ A Normal Slide is the one which inherits its format settings from the master sli
 
 ```java
 // Instantiate the PFresentation class that represents the presentation file
-Presentation pres = new Presentation("MasterBG.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "MasterBG.pptx");
 try {
     // Set the background color of the first ISlide to Blue
     $pres->getSlides().get_Item(0).getBackground().setType(BackgroundType.OwnBackground);
@@ -73,7 +73,7 @@ To apply the simple gradient effect on the background of a slide using Aspose.Sl
 
 ```java
 // Instantiate the Presentation class that represents the presentation file
-Presentation pres = new Presentation("MasterBG.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "MasterBG.pptx");
 try {
     // Apply Gradient effect to the Background
     $pres->getSlides().get_Item(0).getBackground().setType(BackgroundType.OwnBackground);
@@ -132,7 +132,7 @@ The following code snippet shows how to get effective background values of slid
 
 ```java
 // Instantiate the Presentation class that represents the presentation file
-Presentation pres = new Presentation("SamplePresentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "SamplePresentation.pptx");
 try {
     IBackgroundEffectiveData effBackground = $pres->getSlides().get_Item(0).getBackground().getEffective();
     

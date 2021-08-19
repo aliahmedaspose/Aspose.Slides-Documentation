@@ -30,7 +30,7 @@ To generate an SVG image from any desired slide with Aspose.Slides for Java, ple
 
 ```java
 // Instantiate a Presentation class that represents the presentation file
-Presentation pres = new Presentation("CreateSlidesSVGImage.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "CreateSlidesSVGImage.pptx");
 try {
     // Access the first slide
     ISlide sld = $pres->getSlides().get_Item(0);
@@ -52,7 +52,7 @@ try {
 Aspose.Slides for Java can be used to generate [SVG](https://wiki.fileformat.com/page-description-language/svg/) from slide with custom shape ID. For that, use ID property from [ISvgShape](https://apireference.aspose.com/slides/java/com.aspose.slides/ISvgShape), which represents custom ID of shapes in generated SVG. CustomSvgShapeFormattingController can be used to set shape ID.
 
 ```java
-Presentation pres = new Presentation("pptxFileName.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "pptxFileName.pptx");
 try {
     $stream = new Java("java.io.FileOutputStream", "Aspose_out.svg");
     try {
@@ -100,7 +100,7 @@ Aspose.Slides for Java help you generate thumbnail images of the slides. To gene
 
 ```java
 // Instantiate a Presentation class that represents the presentation file
-Presentation pres = new Presentation("ThumbnailFromSlide.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "ThumbnailFromSlide.pptx");
 try {
     // Access the first slide
     ISlide sld = $pres->getSlides().get_Item(0);
@@ -125,7 +125,7 @@ try {
 
 ```java
 // Instantiate a Presentation class that represents the presentation file
-Presentation pres = new Presentation("ThumbnailWithUserDefinedDimensions.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "ThumbnailWithUserDefinedDimensions.pptx");
 try {
     // Access the first slide
     ISlide sld = $pres->getSlides().get_Item(0);
@@ -161,7 +161,7 @@ The code snippet below produces a thumbnail of the first slide of a presentation
 
 ```java
 // Instantiate a Presentation class that represents the presentation file
-Presentation pres = new Presentation("ThumbnailWithUserDefinedDimensions.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "ThumbnailWithUserDefinedDimensions.pptx");
 try {
     // Access the first slide
     ISlide sld = $pres->getSlides().get_Item(0);

@@ -75,7 +75,7 @@ The implementation of the above steps is demonstrated in the example below.
 
 ```java
 // Load Presentation
-Presentation pres = new Presentation("VBA.pptm");
+$pres = new Java("com.aspose.slides.Presentation", "VBA.pptm");
 try {
     // Access the Vba module and remove
     $pres->getVbaProject().getModules().remove(pres.getVbaProject().getModules().get_Item(0));
@@ -98,7 +98,7 @@ The implementation of the above steps is demonstrated in the example below.
 
 ```java
 // Load Presentation
-Presentation pres = new Presentation("VBA.pptm");
+$pres = new Java("com.aspose.slides.Presentation", "VBA.pptm");
 try {
     if (pres.getVbaProject() != null) // check if Presentation contains VBA Project
     {

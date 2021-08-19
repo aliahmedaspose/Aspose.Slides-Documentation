@@ -25,7 +25,7 @@ Tags are essentially string-key pair values.
 In slides, a tag corresponds to the [IDocumentProperties.getKeywords()](https://apireference.aspose.com/slides/java/com.aspose.slides/IDocumentProperties#getKeywords--) and [IDocumentProperties.setKeywords()](https://apireference.aspose.com/slides/java/com.aspose.slides/IDocumentProperties#setKeywords-java.lang.String-) methods. This sample code shows you how to get a tag’s value with Aspose.Slides for Java for [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation):
 
 ```java
-Presentation pres = new Presentation("pres.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try{
     String keywords = $pres->getDocumentProperties().getKeywords();
 } finally {
@@ -45,7 +45,7 @@ If you need to classify some presentations based on a specific rule or property,
 This sample code shows you how to add a tag to a [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) using Aspose.Slides for Java:
 
 ```java
-Presentation pres = new Presentation("pres.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     ITagCollection tags = $pres->getCustomData().getTags();
     $pres->getCustomData().getTags().set_Item("MyTag", "My Tag Value");

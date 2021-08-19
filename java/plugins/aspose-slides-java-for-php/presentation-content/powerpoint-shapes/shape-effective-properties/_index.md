@@ -16,7 +16,7 @@ those values are called **local** values. At any level, **local** values could b
 This sample code shows you how to get effective values:
 
 ```java
-Presentation pres = new Presentation("Presentation1.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     IAutoShape shape = (IAutoShape)pres.getSlides().get_Item(0).getShapes().get_Item(0);
 
@@ -36,7 +36,7 @@ Aspose.Slides for Java allows developers to get effective properties of the cam
 This sample code sample shows you how to get effective properties for the camera:
 
 ```java
-Presentation pres = new Presentation("Presentation1.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     IThreeDFormatEffectiveData threeDEffectiveData = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getThreeDFormat().getEffective();
 
@@ -55,7 +55,7 @@ Aspose.Slides for Java allows developers to get effective properties of Light R
 This sample code sample shows you how to get effective properties of Light Rig:
 
 ```java
-Presentation pres = new Presentation("Presentation1.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     IThreeDFormatEffectiveData threeDEffectiveData = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getThreeDFormat().getEffective();
 
@@ -73,7 +73,7 @@ Aspose.Slides for Java allows developers to get effective properties of Bevel S
 This sample code sample shows you how to get effective properties for the Bevel Shape:
 
 ```java
-Presentation pres = new Presentation("Presentation1.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     IThreeDFormatEffectiveData threeDEffectiveData = $pres->getSlides().get_Item(0).getShapes().get_Item(0).getThreeDFormat().getEffective();
 
@@ -92,7 +92,7 @@ Using Aspose.Slides for Java, you can get effective properties of a Text Frame.�
 This sample code shows you how to get effective text frame formatting properties:
 
 ```java
-Presentation pres = new Presentation("Presentation1.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     IAutoShape shape = (IAutoShape)pres.getSlides().get_Item(0).getShapes().get_Item(0);
     ITextFrameFormatEffectiveData effectiveTextFrameFormat = shape.getTextFrame().getTextFrameFormat().getEffective();
@@ -116,7 +116,7 @@ Using Aspose.Slides for Java, you can get effective properties of Text Style. F
 This sample code sample shows you how to get effective text style properties:
 
 ```java
-Presentation pres = new Presentation("Presentation1.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     IAutoShape shape = (IAutoShape)pres.getSlides().get_Item(0).getShapes().get_Item(0);
     ITextStyleEffectiveData effectiveTextStyle = shape.getTextFrame().getTextFrameFormat().getTextStyle().getEffective();
@@ -186,7 +186,7 @@ try {
 Using Aspose.Slides for Java, you can get effective fill formatting for different table logic parts. For this purpose, the [**ICellFormatEffectiveData**](https://apireference.aspose.com/slides/java/com.aspose.slides/ICellFormatEffectiveData) interface was added in Aspose.Slides. It contains effective fill formatting properties. Please note this: cell formatting always gets priority over row formatting; row gets priority over column; and column gets priority over the whole table. 
 
 ```java
-Presentation pres = new Presentation("Presentation1.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     ITable tbl = (ITable)pres.getSlides().get_Item(0).getShapes().get_Item(0);
     ITableFormatEffectiveData tableFormatEffective = tbl.getTableFormat().getEffective();

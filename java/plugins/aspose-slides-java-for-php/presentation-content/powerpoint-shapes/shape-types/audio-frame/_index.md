@@ -52,7 +52,7 @@ Aspose.Slides for Java allows developers to extract the sound that is used in sl
 
 ```java
 // Instantiate Presentation class that represents the presentation file
-Presentation pres = new Presentation("AudioSlide.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "AudioSlide.pptx");
 try {
     // Access the desired slide
     ISlide slide = $pres->getSlides().get_Item(0);

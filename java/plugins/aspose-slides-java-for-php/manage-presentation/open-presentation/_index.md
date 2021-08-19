@@ -17,7 +17,7 @@ Aspose.Slides for Java provides [Presentation](https://apireference.aspose.com/j
 
 ```java
 // Opening the presentation file by passing the file path to the constructor of Presentation class
-Presentation pres = new Presentation("Presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Printing the total number of slides present in the presentation
     System.out.println(pres.getSlides().size());
@@ -38,7 +38,7 @@ loadOptions.setPassword("pass");
 
 // Opening the presentation file by passing the file path and load
 // options to the constructor of Presentation class
-Presentation pres = new Presentation("demoPassDocument.pptx", loadOptions);
+$pres = new Java("com.aspose.slides.Presentation", "demoPassDocument.pptx", loadOptions);
 try {
     // Printing the total number of slides present in the presentation
     System.out.println(pres.getSlides().size());
@@ -56,7 +56,7 @@ loadOptions.getBlobManagementOptions().setPresentationLockingBehavior(Presentati
 loadOptions.getBlobManagementOptions().setTemporaryFilesAllowed(true);
 loadOptions.getBlobManagementOptions().setMaxBlobsBytesInMemory(0L);
 
-Presentation pres = new Presentation("veryLargePresentation.pptx", loadOptions);
+$pres = new Java("com.aspose.slides.Presentation", "veryLargePresentation.pptx", loadOptions);
 try {
     // the huge presentation is loaded and ready to use, but the memory consumption is still low.
     // make any changes to the presentation.
@@ -79,7 +79,7 @@ The code snippet below shows how to use IResourceLoadingCallback interface:
 LoadOptions opts = new LoadOptions();
 opts.setResourceLoadingCallback(new ImageLoadingHandler());
 
-Presentation pres = new Presentation("presentation.pptx", opts);
+$pres = new Java("com.aspose.slides.Presentation", "presentation.pptx", opts);
 ```
 ```java
 class ImageLoadingHandler implements IResourceLoadingCallback 

@@ -29,7 +29,7 @@ In the example given below, we have cloned a slide (lying at the first position 
 
 ```java
 // Instantiate Presentation class that represents a presentation file
-Presentation pres = new Presentation("CloneWithinSamePresentationToEnd.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "CloneWithinSamePresentationToEnd.pptx");
 try {
     // Clone the desired slide to the end of the collection of slides in the same presentation
     ISlideCollection slds = $pres->getSlides();
@@ -55,7 +55,7 @@ In the example given below, we have cloned a slide (lying at the zero index – 
 
 ```java
 // Instantiate Presentation class that represents a presentation file
-Presentation pres = new Presentation("CloneWithInSamePresentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "CloneWithInSamePresentation.pptx");
 try {
     // Clone the desired slide to the end of the collection of slides in the same presentation
     ISlideCollection slds = $pres->getSlides();

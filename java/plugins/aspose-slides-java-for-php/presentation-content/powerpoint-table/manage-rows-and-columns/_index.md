@@ -10,7 +10,7 @@ Aspose.Slides for Java provides the feature to set the first row as header using
 
 ```java
 // Instantiate Presentation class that represents PPTX
-Presentation pres = new Presentation("table.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "table.pptx");
 try {
     // Access the first slide
     ISlide sld = $pres->getSlides().get_Item(0);
@@ -51,7 +51,7 @@ Aspose.Slides for Java has provided the simplest API to work with tables in an e
 
 ```java
 // Instantiate presentation class
-Presentation pres = new Presentation("Test.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Test.pptx");
 try {
     // Access first slide
     ISlide sld = $pres->getSlides().get_Item(0);

@@ -52,7 +52,7 @@ In the above section, we just applied a simple transition effect on the slide. N
 
 ```java
 // Instantiate Presentation class that represents a presentation file
-Presentation pres = new Presentation("BetterSlideTransitions.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "BetterSlideTransitions.pptx");
 try {
     // Apply circle type transition on slide 1
     $pres->getSlides().get_Item(0).getSlideShowTransition().setType(TransitionType.Circle);

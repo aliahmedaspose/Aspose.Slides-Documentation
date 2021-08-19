@@ -28,7 +28,7 @@ String[] folders = new String[] { externalFontsDir };
 FontsLoader.loadExternalFonts(folders);
 
 // Do Some work and perform presentation/slides rendering
-Presentation pres = new Presentation("DefaultFonts.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "DefaultFonts.pptx");
 try {
     $pres->save("NewFonts_out.pptx", SaveFormat.Pptx);
 } finally {
@@ -59,7 +59,7 @@ LoadOptions loadOptions = new LoadOptions();
 loadOptions.getDocumentLevelFontSources().setFontFolders(new String[] { "assets/fonts", "global/fonts" });
 loadOptions.getDocumentLevelFontSources().setMemoryFonts(new byte[][] { memoryFont1, memoryFont2 });
 
-Presentation pres = new Presentation("MyPresentation.pptx", loadOptions);
+$pres = new Java("com.aspose.slides.Presentation", "MyPresentation.pptx", loadOptions);
 try {
     //work with the presentation
     //CustomFont1, CustomFont2 as well as fonts from assets\fonts & global\fonts folders and their subfolders are available to the presentation

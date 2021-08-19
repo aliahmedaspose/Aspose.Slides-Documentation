@@ -16,7 +16,7 @@ url: /java/presentation-localization/
 The implementation of the above steps is demonstrated below in an example.
 
 ```java
-Presentation pres = new Presentation("test.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "test.pptx");
 try {
     $shape = $pres.getSlides().get_Item(0).getShapes().addAutoShape(ShapeType.Rectangle, 50, 50, 200, 50);
     shape.addTextFrame("Text to apply spellcheck language");

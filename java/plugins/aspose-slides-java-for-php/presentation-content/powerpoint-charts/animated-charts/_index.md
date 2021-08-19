@@ -24,7 +24,7 @@ In the example given below, we animated chart series.
 
 ```java
 // Instantiate Presentation class that represents a presentation file
-Presentation pres = new Presentation("ExistingChart.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
     // Get reference of the chart object
     ISlide slide = $pres->getSlides().get_Item(0);
@@ -70,7 +70,7 @@ In the example given below, we animated chart category.
 
 ```java
 // Instantiate Presentation class that represents a presentation file
-Presentation pres = new Presentation("ExistingChart.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
     ISlide slide = $pres->getSlides().get_Item(0);
     IShapeCollection shapes = slide.getShapes();
@@ -113,7 +113,7 @@ In the example given below, we have animated series' elements.
 
 ```java
 // Instantiate Presentation class that represents a presentation file
-Presentation pres = new Presentation("ExistingChart.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
     // Get reference of the chart object
     ISlide slide = $pres->getSlides().get_Item(0);
@@ -169,7 +169,7 @@ In the example given below, we have animated categories elements.
 
 ```java
 // Instantiate Presentation class that represents a presentation file
-Presentation pres = new Presentation("ExistingChart.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
     // Get reference of the chart object
     ISlide slide = $pres->getSlides().get_Item(0);

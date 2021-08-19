@@ -25,7 +25,7 @@ Notes of some specific slide could be removed as shown in example below:
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-Presentation pres = new Presentation("presWithNotes.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "presWithNotes.pptx");
 try {
     // Removing notes of first slide
     INotesSlideManager mgr = $pres->getSlides().get_Item(0).getNotesSlideManager();
@@ -43,7 +43,7 @@ Notes of all the slides of a presentation could be removed as shown in example b
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-Presentation pres = new Presentation("presWithNotes.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "presWithNotes.pptx");
 try {
     // Removing notes of all slides
     INotesSlideManager mgr = null;
@@ -64,7 +64,7 @@ try {
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-Presentation pres = new Presentation("demo.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     IMasterNotesSlide notesMaster = $pres->getMasterNotesSlideManager().getMasterNotesSlide();
     

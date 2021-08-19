@@ -35,7 +35,7 @@ You may decide to find out the animation effects added to a paragraph—for exam
 Aspose.Slides for Java allows you to get all the animation effects applied to paragraphs contained in a text frame (shape). This sample code shows you how to get the animation effects in a paragraph:
 
 ```java
-Presentation pres = new Presentation("Presentation.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     ISequence sequence = $pres->getSlides().get_Item(0).getTimeline().getMainSequence();
     IAutoShape autoShape = (IAutoShape)pres.getSlides().get_Item(0).getShapes().get_Item(0);

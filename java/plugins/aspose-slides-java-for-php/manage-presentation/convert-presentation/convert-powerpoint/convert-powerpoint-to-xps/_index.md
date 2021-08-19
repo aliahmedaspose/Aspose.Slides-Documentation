@@ -52,7 +52,7 @@ This sample code in Java shows you how to convert a presentation to an XPS docum
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-Presentation pres = new Presentation("Convert_XPS.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Convert_XPS.pptx");
 try {
     // Saving the presentation to XPS document
     $pres->save("XPS_Output_Without_XPSOption.xps", SaveFormat.Xps);
@@ -67,7 +67,7 @@ This sample code shows you how to convert a presentation to an XPS document usin
 
 ```java
 // Instantiate a Presentation object that represents a presentation file
-Presentation pres = new Presentation("Convert_XPS_Options.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "Convert_XPS_Options.pptx");
 try {
     // Instantiate the TiffOptions class
     XpsOptions options = new XpsOptions();

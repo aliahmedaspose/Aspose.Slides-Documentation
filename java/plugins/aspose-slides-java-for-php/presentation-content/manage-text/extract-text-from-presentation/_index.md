@@ -17,7 +17,7 @@ Upon execution, the Slide method scans the entire text from the slide passed as
 
 ```java
 //Instatiate Presentation class that represents a PPTX file
-Presentation pres = new Presentation("demo.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     for (ISlide slide : $pres->getSlides()) 
     {
@@ -58,7 +58,7 @@ To scan the text from the whole presentation, use the
 
 ```java
 //Instatiate Presentation class that represents a PPTX file
-Presentation pres = new Presentation("demo.pptx");
+$pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     //Get an Array of ITextFrame objects from all slides in the PPTX
     ITextFrame[] textFramesPPTX = SlideUtil.getAllTextFrames(pres, true);

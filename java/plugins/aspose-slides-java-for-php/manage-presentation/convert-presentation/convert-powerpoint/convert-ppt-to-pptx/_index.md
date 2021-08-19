@@ -36,7 +36,7 @@ Aspose.Slides for Java offers [Presentation](https://apireference.aspose.com/jav
 
 ```java
 // Instantiate a Presentation object that represents a PPTX file
-Presentation pres = new Presentation("Aspose.ppt");
+$pres = new Java("com.aspose.slides.Presentation", "Aspose.ppt");
 try {
 // Saving the PPTX presentation to PPTX format
     $pres->save("ConvertedAspose.pptx", SaveFormat.Pptx);

@@ -25,7 +25,7 @@ loadOptions.setDefaultRegularFont("Wingdings");
 loadOptions.setDefaultAsianFont("Wingdings");
 
 // Load the presentation
-Presentation pres = new Presentation("DefaultFonts.pptx", loadOptions);
+$pres = new Java("com.aspose.slides.Presentation", "DefaultFonts.pptx", loadOptions);
 try {
     // Generate slide thumbnail
     BufferedImage image = $pres->getSlides().get_Item(0).getThumbnail(1, 1);

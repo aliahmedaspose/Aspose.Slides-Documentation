@@ -17,7 +17,7 @@ Aspose.Slides for Java provides a simple API for getting value of vertical axis.
 1. Get actual major unit scale of the axis.
 1. Get actual minor unit scale of the axis.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     Chart chart = (Chart)pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Area, 100, 100, 500, 350);
@@ -36,7 +36,7 @@ try {
 ## **Switch Data Over Axis**
 A new property has been added which Swap the data over the axis. Data being charted on the X axis will move to the Y axis and vice versa. Below sample example is given.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 400, 300);
@@ -54,7 +54,7 @@ try {
 ## **Change Category Axis**
 **CategoryAxisType** can be changed to [Date](https://apireference.aspose.com/slides/java/com.aspose.slides/CategoryAxisType#Date) or [Text](https://apireference.aspose.com/slides/java/com.aspose.slides/CategoryAxisType#Text). However, **CategoryAxisType.Auto** is not supported at the moment. New methods [**getCategoryAxisType**](https://apireference.aspose.com/slides/java/com.aspose.slides/IAxis#getCategoryAxisType--) and [**setCategoryAxisType**](https://apireference.aspose.com/slides/java/com.aspose.slides/IAxis#setCategoryAxisType-int-) have been added to [**IAxis**](https://apireference.aspose.com/slides/java/com.aspose.slides/IAxis) interface and [Axis](https://apireference.aspose.com/slides/java/com.aspose.slides/Axis) class which specifies type of category axis.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
     IChart chart = (IChart) $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
@@ -73,7 +73,7 @@ try {
 ## **Set Date Format for Category Axis Value**
 Aspose.Slides for Java provides a simple API for setting date format for category axis value. Below sample example is given. 
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Area, 50, 50, 450, 300);
@@ -102,7 +102,7 @@ try {
     if ($pres != null) $pres->dispose();
 }
 ```
-```java
+```php
 public static String convertToOADate(GregorianCalendar date) throws ParseException
 {
     $double oaDate;
@@ -117,7 +117,7 @@ public static String convertToOADate(GregorianCalendar date) throws ParseExcepti
 ## **Set Rotation Angle for Chart Axis Title**
 Aspose.Slides for Java provides a simple API for setting rotation angle for chart axis title. Below sample example is given. 
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
@@ -135,7 +135,7 @@ try {
 ## **Set Position Axis in Category or Value Axis**
 Aspose.Slides for Java provides a simple API for setting Position axis in category or Value axis. Below sample example is given. 
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
@@ -151,7 +151,7 @@ try {
 ## **Show Display Unit label on Chart Value Axis**
 Aspose.Slides for Java provides support for showing Display unit label on chart value axis. Below sample example is given. 
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);

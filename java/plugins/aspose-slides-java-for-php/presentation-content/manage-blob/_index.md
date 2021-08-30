@@ -8,7 +8,7 @@ url: /java/manage-blob/
 ## **Add Blob in Presentations**
 Aspose.Slides for Java provides a facility to add large files (video file in that case) and prevent a high memory consumption. An example is given below that shows how to add Blob in presentations using Java.
 
-```java
+```php
 // create a new presentation which will contain this video
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -34,13 +34,13 @@ try {
 ## **Export Blob from Presentations**
 Aspose.Slides for Java provides a facility to Export large files (audio and video file in that case). We want to extract these files from the presentation and do not want to load this presentation into memory to keep our memory consumption low. Here is an example is given below how we can export Blob from presentations in Java.
 
-```java
-LoadOptions loadOptions = new LoadOptions();
+```php
+$loadOptions = new LoadOptions();
 // lock the source file and don't load it into memory
-loadOptions->getBlobManagementOptions()->setPresentationLockingBehavior(PresentationLockingBehavior.KeepLocked);
+$loadOptions->getBlobManagementOptions()->setPresentationLockingBehavior(PresentationLockingBehavior.KeepLocked);
 
 // create the Presentation's instance, lock the "hugePresentationWithAudiosAndVideos.pptx" file.
-$pres = new Java("com.aspose.slides.Presentation", "Large_Video_File_Test.pptx", loadOptions);
+$pres = new Java("com.aspose.slides.Presentation", "Large_Video_File_Test.pptx", $loadOptions);
 try {
     // let's save each video to a file. to prevent memory usage we need a buffer which will be used
     // to exchange tha data from the presentation's video stream to a stream for newly created video file.
@@ -82,7 +82,7 @@ Aspose.Slides for Java added a new method to [**IImageCollection**](https://apir
 
 This example demonstrates how to include the large Blob (image) and prevent a high memory consumption.
 
-```java
+```php
 // create a new presentation which will contain this image
 $pres = new Java("com.aspose.slides.Presentation");
 try {

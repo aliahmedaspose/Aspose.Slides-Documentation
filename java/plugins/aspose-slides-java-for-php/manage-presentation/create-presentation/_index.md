@@ -15,7 +15,7 @@ To add a simple plain line to a selected slide of the presentation, please follo
 
 In the example given below, we have added a line to the first slide of the presentation.
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation");
 try {

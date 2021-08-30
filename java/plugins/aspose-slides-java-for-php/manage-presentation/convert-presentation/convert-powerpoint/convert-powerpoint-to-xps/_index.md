@@ -50,7 +50,7 @@ When converting a presentation to XPS, you have to save the presentation using e
 
 This sample code in Java shows you how to convert a presentation to an XPS document using standard settings:
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "Convert_XPS.pptx");
 try {
@@ -65,7 +65,7 @@ try {
 ### **Converting Presentations to XPS Using Custom Settings**
 This sample code shows you how to convert a presentation to an XPS document using custom settings in Java:
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "Convert_XPS_Options.pptx");
 try {

@@ -23,7 +23,7 @@ To add an ActiveX Media Player control, do this:
 
 This sample code, based on the steps above, shows to how to add Media Player ActiveX Control to a slide:
 
-```java
+```php
 // Create empty presentation instance
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -61,7 +61,7 @@ To manage a simple ActiveX control like a text box and simple command button on 
 
 This sample code, based on the steps above, shows how to manage a simple ActiveX control: 
 
-```java
+```php
 // Accessing the presentation with ActiveX controls
 $pres = new Java("com.aspose.slides.Presentation", "ActiveX.pptm");
 try {

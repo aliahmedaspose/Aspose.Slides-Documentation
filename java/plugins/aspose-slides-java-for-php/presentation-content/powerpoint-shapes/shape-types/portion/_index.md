@@ -8,7 +8,7 @@ url: /java/portion/
 ## **Get Position Coordinates of Portion**
 [**getCoordinates()**](https://apireference.aspose.com/slides/java/com.aspose.slides/IPortion#getCoordinates--) method has been added to [IPortion](http://www.aspose.com/api/java/slides/com.aspose.slides/interfaces/IPortion) and [Portion](http://www.aspose.com/api/java/slides/com.aspose.slides/classes/Portion) class which allows retrieving the coordinates of the beginning of the portion.
 
-```java
+```php
 // Instantiate Prseetation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -22,7 +22,7 @@ try {
         for (IPortion portion : paragraph->getPortions()) 
         {
             Point2D.Float point = portion->getCoordinates();
-            System.out.println("X: " + point.x + " Y: " + point.y);
+            echo("X: " + point.x + " Y: " + point.y);
         }
     }
 } finally {

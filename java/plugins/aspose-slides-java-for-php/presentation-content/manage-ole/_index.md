@@ -30,7 +30,7 @@ Assuming you already created a chart in Microsoft Excel and want to embed that c
 In the example below, we added a chart from an Excel file to a slide as an OLE Object Frame using Aspose.Slides for Java.  
 **Note** that the [IOleEmbeddedDataInfo](https://apireference.aspose.com/slides/java/com.aspose.slides/IOleEmbeddedDataInfo) constructor takes an embeddable object extension as a second parameter. This extension allows PowerPoint to correctly interpret the file type and choose the right application to open this OLE object.
 
-``` java 
+```php 
 // Instantiate Prseetation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -80,7 +80,7 @@ If an OLE object is already embedded in a slide, you can find or access that obj
 
 In the example below, an OLE Object Frame (an Excel chart object embedded in a slide) is accessed—and then its file data gets written to an Excel file.
 
-``` java 
+```php 
 // Load the PPTX to Presentation object
 $pres = new Java("com.aspose.slides.Presentation", "AccessingOLEObjectFrame.pptx");
 try {
@@ -132,7 +132,7 @@ If an OLE object is already embedded in a slide, you can easily access that obje
 
 In the example below, an OLE Object Frame (an Excel chart object embedded in a slide) is accessed—and then its file data is modified to change the chart data.
 
-``` java 
+```php 
 $pres = new Java("com.aspose.slides.Presentation", "ChangeOLEObjectData.pptx");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
@@ -189,7 +189,7 @@ Besides Excel charts, Aspose.Slides for Java allows you to embed other types of 
 
 This sample code shows you how to embed HTML and ZIP in a slide:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
@@ -219,12 +219,12 @@ Aspose.Slides for Java allows you to set the file type for an embedded object. T
 
 This sample code shows you how to set the file type for an embedded OLE object:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "embeddedOle.pptx");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
     IOleObjectFrame oleObjectFrame = (IOleObjectFrame)slide->getShapes()->get_Item(0);
-    System.out.println("Current embedded data extension is: " + oleObjectFrame->getEmbeddedData()->getEmbeddedFileExtension());
+    echo("Current embedded data extension is: " + oleObjectFrame->getEmbeddedData()->getEmbeddedFileExtension());
 
     oleObjectFrame->setEmbeddedData(new OleEmbeddedDataInfo(Files.readAllBytes(Paths->get("embedOle.zip")), "zip"));
 
@@ -243,7 +243,7 @@ If you want to use a specific image and text as elements in the preview, you can
 
 This Java code shows you how to set the icon image and title for an embedded object: 
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
@@ -271,7 +271,7 @@ Aspose.Slides for Java allows you to extract the files embedded in slides as OLE
 
 This sample code shows you how to extract a file embedded in a slide as an OLE object:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "embeddedOle.pptx");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);

@@ -28,7 +28,7 @@ To generate an SVG image from any desired slide with Aspose.Slides for Java, ple
 - Get the SVG image in a memory stream.
 - Save the memory stream to file.
 
-```java
+```php
 // Instantiate a Presentation class that represents the presentation file
 $pres = new Java("com.aspose.slides.Presentation", "CreateSlidesSVGImage.pptx");
 try {
@@ -51,7 +51,7 @@ try {
 ## **Generate SVG with Custom Shape IDS**
 Aspose.Slides for Java can be used to generate [SVG](https://wiki.fileformat.com/page-description-language/svg/) from slide with custom shape ID. For that, use ID property from [ISvgShape](https://apireference.aspose.com/slides/java/com.aspose.slides/ISvgShape), which represents custom ID of shapes in generated SVG. CustomSvgShapeFormattingController can be used to set shape ID.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "pptxFileName.pptx");
 try {
     $stream = new Java("java.io.FileOutputStream", "Aspose_out.svg");
@@ -68,7 +68,7 @@ try {
     $pres->dispose();
 }
 ```
-```java
+```php
 class CustomSvgShapeFormattingController implements ISvgShapeFormattingController
 {
     private int m_shapeIndex;
@@ -98,7 +98,7 @@ Aspose.Slides for Java help you generate thumbnail images of the slides. To gene
 1. Get the thumbnail image of the referenced slide on a specified scale.
 1. Save the thumbnail image in any desired image format.
 
-```java
+```php
 // Instantiate a Presentation class that represents the presentation file
 $pres = new Java("com.aspose.slides.Presentation", "ThumbnailFromSlide.pptx");
 try {
@@ -123,7 +123,7 @@ try {
 1. Get the thumbnail image of the referenced slide on a specified scale.
 1. Save the thumbnail image in any desired image format.
 
-```java
+```php
 // Instantiate a Presentation class that represents the presentation file
 $pres = new Java("com.aspose.slides.Presentation", "ThumbnailWithUserDefinedDimensions.pptx");
 try {
@@ -159,7 +159,7 @@ To generate the thumbnail of any desired slide in Notes Slide View using Aspose.
 
 The code snippet below produces a thumbnail of the first slide of a presentation in Notes Slide View.
 
-```java
+```php
 // Instantiate a Presentation class that represents the presentation file
 $pres = new Java("com.aspose.slides.Presentation", "ThumbnailWithUserDefinedDimensions.pptx");
 try {

@@ -17,7 +17,7 @@ To add a Video Frame in a slide using Aspose.Slides for Java, do this:
 
 In the example below, we added a Video Frame to the slide.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -58,7 +58,7 @@ To add video from YouTube with Aspose.Slides, do this:
 
 This sample code shows you how to add a video from YouTube to a slide:
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -68,7 +68,7 @@ try {
     if ($pres != null) $pres->dispose();
 }
 ```
-```java
+```php
 private static void addVideoFromYouTube(Presentation pres, String videoID)
 {
     // add videoFrame
@@ -105,7 +105,7 @@ To add an Embedded Video Frame in a slide using Aspose.Slides for Java, do this:
 
 In the example below, we added a Video Frame to the slide.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -136,7 +136,7 @@ Aspose.Slides for Java supports extraction of videos from slides. To extract a v
 
 In the example given below, we saved the video file from a slide.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "VideoSample.pptx");
 try {
     for (ISlide slide : $pres->getSlides()) 

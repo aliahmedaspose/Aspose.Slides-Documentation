@@ -17,7 +17,7 @@ In order to add a connector shape for joining two shapes. Please follow the step
 1. Write the [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) as a PPTX file.
    In the example given below, we have added a connector between two shapes.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -66,7 +66,7 @@ In order to add a connector shape for joining two shapes. Please follow the step
 
 In the example given below, we have added a connector between two shapes.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -114,7 +114,7 @@ In order to calculate the angle for connector line, please follow the steps belo
 
 In the example given below, we have calculated the angle for connector line shape in slide.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX file
 $pres = new Java("com.aspose.slides.Presentation", "ConnectorLineAngle.pptx");
 try {
@@ -140,13 +140,13 @@ try {
                     ashp->getFrame()->getFlipH() > 0, ashp->getFrame()->getFlipV() > 0);
         }
 
-        System.out.println(dir);
+        echo(dir);
     }
 } finally {
     if ($pres != null) $pres->dispose();
 }
 ```
-```java
+```php
 public static double getDirection(float w, float h, boolean flipH, boolean flipV)
 {
     float endLineX = w * (flipH ? -1 : 1);

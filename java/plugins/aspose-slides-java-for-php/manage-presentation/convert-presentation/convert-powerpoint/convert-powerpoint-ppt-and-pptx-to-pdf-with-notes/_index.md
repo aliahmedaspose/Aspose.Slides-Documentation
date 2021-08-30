@@ -10,7 +10,7 @@ description: "Convert PowerPoint to PDF notes in Java"
 ## **Convert PowerPoint to PDF with Custom Slide Size**
 The following example shows how to convert a presentation to a PDF notes document with custom slide size. Where each inch equals 72.
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file
 Presentation presIn = new Presentation("SelectedSlides.pptx");
 Presentation presOut = new Presentation();
@@ -34,7 +34,7 @@ try {
 ## **Convert PowerPoint to PDF in Notes Slide View**
 The [**Save**](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation#save-java.lang.String-int-) method exposed by [**Presentation**](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class can be used to convert the whole presentation in Notes Slide view to PDF. The code snippets below update the sample presentation to PDF in Notes Slide view.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
     PdfOptions pdfOptions = new PdfOptions();

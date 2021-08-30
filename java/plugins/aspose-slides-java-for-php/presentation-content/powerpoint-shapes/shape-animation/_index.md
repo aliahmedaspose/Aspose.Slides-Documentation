@@ -20,7 +20,7 @@ Here we will apply the PathFootball effect (one of more than 150 available effec
 
 This sample code, based on the steps above, shows you how to apply the PathFootball effect to a TextBox activated when the bevel shape gets clicked:
 
-```java
+```php
 // Instantiate PrseetationEx class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {

@@ -13,7 +13,7 @@ EMZ files are compressed image files commonly used in Microsoft Office programs.
 
 This sample code shows you how to add an EMZ image to the images collection:
 
-```java 
+```php 
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -44,7 +44,7 @@ To create an image object based on SVG image, you can do it this way:
 3. Create PictureFrame object using IPPImage interface
 
 This sample code shows you how to implement the steps above to add an SVG image into a presentation:
-```java 
+```php 
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -69,7 +69,7 @@ The functionality is provided by one of the overloads of the [addGroupShape](htt
 
 This sample code shows you how to use the described method to convert an SVG file to a set of shapes:
 
-```java 
+```php 
 // Create new presentation
 I$presentation = new Java("com.aspose.slides.Presentation");
 try {
@@ -99,7 +99,7 @@ Aspose.Slides for Java allows you to generate EMF images from excel sheets and a
 
 This sample code shows you how to perform the described task:
 
-```java 
+```php 
 Workbook book = new Workbook("chart.xlsx");
 Worksheet sheet = book->getWorksheets()->get(0);
 ImageOrPrintOptions options = new ImageOrPrintOptions();
@@ -111,7 +111,7 @@ options->setImageType(ImageType.EMF);
 SheetRender sr = new SheetRender(sheet, options);
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    $pres->getSlides().removeAt(0);
+    $pres->getSlides()->removeAt(0);
     
     String EmfSheetName = "";
     for (int j = 0; j < sr->getPageCount(); j++)

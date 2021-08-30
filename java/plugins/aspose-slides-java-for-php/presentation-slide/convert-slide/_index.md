@@ -22,7 +22,7 @@ These interfaces and their properties are described below in the specialized sec
 
 The code example below shows how to convert the first slide of presentation to a PNG image.
 
-``` java 
+```php 
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Convert the first slide of the presentation to a Bitmap object
@@ -42,7 +42,7 @@ Sometimes you need to get an image of a slide of a certain size.
 The following example demonstrates this capability using one of the 
 [getThumbnail](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlide#getThumbnail-java.awt.Dimension-) method overloads:
 
-``` java 
+```php 
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Convert the first slide of the presentation to a Bitmap with the specified size
@@ -72,7 +72,7 @@ This is since the text of the note can be quite large and it cannot physically f
 
 {{% /alert %}} 
 
-``` java 
+```php 
 $pres = new Java("com.aspose.slides.Presentation", "PresentationNotesComments.pptx");
 try {
     // Create rendering options
@@ -88,7 +88,7 @@ try {
     options->getNotesCommentsLayouting()->setCommentsAreaWidth(500);
 
     // Set the color of comments area
-    options->getNotesCommentsLayouting()->setCommentsAreaColor(Color.LIGHT_GRAY);
+    options->getNotesCommentsLayouting()->setCommentsAreaColorJava("java.awt.Color")->.LIGHT_GRAY);
 
     // Convert the first slide of the presentation to a Bitmap object
     BufferedImage bmp = $pres->getSlides()->get_Item(0)->getThumbnail(options, 2f, 2f);
@@ -109,7 +109,7 @@ Using this interface, you can specify the size, resolution, color palette of the
 Below is an example of using the ITiffOptions interface to get an image with 300dpi resolution 
 and 2160x2880 size:
 
-``` java 
+```php 
 $pres = new Java("com.aspose.slides.Presentation", "PresentationNotesComments.pptx");
 try {
     // Get a slide by its index
@@ -142,7 +142,7 @@ try {
 In some cases, it is necessary to convert the entire presentation into a set of images, 
 the same as PowerPoint allows. The following example demonstrates this possibility:
 
-``` java 
+```php 
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Render presentation to images array slide by slide

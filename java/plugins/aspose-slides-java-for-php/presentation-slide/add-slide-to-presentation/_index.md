@@ -20,7 +20,7 @@ Aspose.Slides for Java allows developers to add empty slides to their presentati
 - Do some work with the newly added empty slide.
 - Finally, write the presentation file using the [Presentation](https://apireference.aspose.com/java/slides/com.aspose.slides/presentation) object.
 
-```java
+```php
 // Instantiate Presentation class that represents the presentation file
 $pres = new Java("com.aspose.slides.Presentation");
 try {

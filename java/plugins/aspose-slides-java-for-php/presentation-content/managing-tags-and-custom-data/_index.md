@@ -24,7 +24,7 @@ Tags are essentially string-key pair values.
 
 In slides, a tag corresponds to the [IDocumentProperties->getKeywords()](https://apireference.aspose.com/slides/java/com.aspose.slides/IDocumentProperties#getKeywords--) and [IDocumentProperties->setKeywords()](https://apireference.aspose.com/slides/java/com.aspose.slides/IDocumentProperties#setKeywords-java.lang.String-) methods. This sample code shows you how to get a tag’s value with Aspose.Slides for Java for [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation):
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try{
     String keywords = $pres->getDocumentProperties()->getKeywords();
@@ -44,7 +44,7 @@ If you need to classify some presentations based on a specific rule or property,
 
 This sample code shows you how to add a tag to a [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) using Aspose.Slides for Java:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     ITagCollection tags = $pres->getCustomData()->getTags();
@@ -56,7 +56,7 @@ try {
 
 Tags also can be set for [Slide](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlide):
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
@@ -68,7 +68,7 @@ try {
 
 Or any individual [Shape](https://apireference.aspose.com/slides/java/com.aspose.slides/IAutoShape):
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);

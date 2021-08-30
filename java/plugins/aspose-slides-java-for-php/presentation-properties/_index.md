@@ -46,28 +46,28 @@ Developers can use **IDocumentProperties** property exposed by [Presentation](ht
 ## **Access Built-in Properties**
 These properties as exposed by [IDocumentProperties](https://apireference.aspose.com/java/slides/com.aspose.slides/idocumentproperties) object include: **Creator** (Author), **Description**, **Keywords** **Created** (Creation Date), **Modified** Modification Date, **Printed** Last Print Date, **LastModifiedBy**, **Keywords**, **SharedDoc** (Is shared between different producers?), **PresentationFormat**, **Subject** and **Title**
 
-```java
+```php
 // Instantiate the Presentation class that represents the presentation
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Create a reference to IDocumentProperties object associated with Presentation
-    IDocumentProperties dp = $pres->getDocumentProperties();
+    $dp = $pres->getDocumentProperties();
     
     // Display the built-in properties
-    System.out.println("Category : " + dp->getCategory());
-    System.out.println("Current Status : " + dp->getContentStatus());
-    System.out.println("Creation Date : " + dp->getCreatedTime());
-    System.out.println("Author : " + dp->getAuthor());
-    System.out.println("Description : " + dp->getComments());
-    System.out.println("KeyWords : " + dp->getKeywords());
-    System.out.println("Last Modified By : " + dp->getLastSavedBy());
-    System.out.println("Supervisor : " + dp->getManager());
-    System.out.println("Modified Date : " + dp->getLastSavedTime());
-    System.out.println("Presentation Format : " + dp->getPresentationFormat());
-    System.out.println("Last Print Date : " + dp->getLastPrinted());
-    System.out.println("Is Shared between producers : " + dp->getSharedDoc());
-    System.out.println("Subject : " + dp->getSubject());
-    System.out.println("Title : " + dp->getTitle());
+    echo("Category : " + $dp->getCategory());
+    echo("Current Status : " + $dp->getContentStatus());
+    echo("Creation Date : " + $dp->getCreatedTime());
+    echo("Author : " + $dp->getAuthor());
+    echo("Description : " + $dp->getComments());
+    echo("KeyWords : " + $dp->getKeywords());
+    echo("Last Modified By : " + $dp->getLastSavedBy());
+    echo("Supervisor : " + $dp->getManager());
+    echo("Modified Date : " + $dp->getLastSavedTime());
+    echo("Presentation Format : " + $dp->getPresentationFormat());
+    echo("Last Print Date : " + $dp->getLastPrinted());
+    echo("Is Shared between producers : " + $dp->getSharedDoc());
+    echo("Subject : " + $dp->getSubject());
+    echo("Title : " + $dp->getTitle());
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -76,18 +76,18 @@ try {
 ## **Modify Built-in Properties**
 Modifying the built-in properties of presentation files is as easy as that of accessing them. You can simply assign a string value to any desired property and the property value would be modified. In the example given below, we have demonstrated how we can modify the built-in document properties of the presentation file using Aspose.Slides for Java.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Create a reference to IDocumentProperties object associated with Presentation
-    IDocumentProperties dp = $pres->getDocumentProperties();
+    $dp = $pres->getDocumentProperties();
     
     // Set the built-in properties
-    dp->setAuthor("Aspose.Slides for Java");
-    dp->setTitle("Modifying Presentation Properties");
-    dp->setSubject("Aspose Subject");
-    dp->setComments("Aspose Description");
-    dp->setManager("Aspose Manager");
+    $dp->setAuthor("Aspose.Slides for Java");
+    $dp->setTitle("Modifying Presentation Properties");
+    $dp->setSubject("Aspose Subject");
+    $dp->setComments("Aspose Description");
+    $dp->setManager("Aspose Manager");
     
     // Save your presentation to a file
     $pres->save("DocProps.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -105,22 +105,22 @@ This example modifies the built-in properties of the presentation that can be vi
 ## **Add Custom Document Properties**
 Aspose.Slides for Java also allows developers to add the custom the values for presentation Document properties. An example is given below that shows how to set the custom properties for a presentation.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Getting Document Properties
-    IDocumentProperties dProps = $pres->getDocumentProperties();
+    $dProps = $pres->getDocumentProperties();
     
     // Adding Custom properties
-    dProps->set_Item("New Custom", 12);
-    dProps->set_Item("My Name", "Mudassir");
-    dProps->set_Item("Custom", 124);
+    $dProps->set_Item("New Custom", 12);
+    $dProps->set_Item("My Name", "Mudassir");
+    $dProps->set_Item("Custom", 124);
     
     // Getting property name at particular index
-    String getPropertyName = dProps->getCustomPropertyName(2);
+    $getPropertyName = $dProps->getCustomPropertyName(2);
     
     // Removing selected property
-    dProps.removeCustomProperty(getPropertyName);
+    $dProps->removeCustomProperty($getPropertyName);
     
     // Saving presentation
     $pres->save("CustomDemo.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -136,20 +136,20 @@ try {
 ## **Access and Modify Custom Properties**
 Aspose.Slides for Java also allows developers to access the values of custom properties. An example is given below that shows how can you access and modify all of these custom properties for a presentation.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Create a reference to DocumentProperties object associated with Presentation
-    IDocumentProperties dp = $pres->getDocumentProperties();
+    $dp = $pres->getDocumentProperties();
     
     // Access and modify custom properties
-    for (int i = 0; i < dp->getCountOfCustomProperties(); i++) {
+    for (int i = 0; i < $dp->getCountOfCustomProperties(); i++) {
         // Display names and values of custom properties
-        System.out.println("Custom Property Name : " + dp->getCustomPropertyName(i));
-        System.out.println("Custom Property Value : " + dp->get_Item(dp->getCustomPropertyName(i)));
+        echo("Custom Property Name : " + $dp->getCustomPropertyName(i));
+        echo("Custom Property Value : " + $dp->get_Item($dp->getCustomPropertyName(i)));
     
         // Modify values of custom properties
-        dp->set_Item(dp->getCustomPropertyName(i), "New Value " + (i + 1));
+        $dp->set_Item($dp->getCustomPropertyName(i), "New Value " + (i + 1));
     }
     
     // Save your presentation to a file
@@ -181,90 +181,90 @@ The two new methods [ReadDocumentProperties](https://apireference.aspose.com/jav
 
 The typical scenario load the properties, change some value and update the document can be implemented in the following way:
 
-```java
+```php
 // read the info of presentation
-IPresentationInfo info = PresentationFactory->getInstance()->getPresentationInfo("presentation.pptx");
+$info = Java("com.aspose.slides.PresentationFactory")->getInstance()->getPresentationInfo("presentation.pptx");
 
 // obtain the current properties
-IDocumentProperties props = info.readDocumentProperties();
+$props = $info->readDocumentProperties();
 
 // set the new values of Author and Title fields
-props->setAuthor("New Author");
-props->setTitle("New Title");
+$props->setAuthor("New Author");
+$props->setTitle("New Title");
 
 // update the presentation with a new values
-info.updateDocumentProperties(props);
-info.writeBindedPresentation("presentation.pptx");
+$info->updateDocumentProperties($props);
+$info->writeBindedPresentation("presentation.pptx");
 ```
 
 There is another way to use properties of a particular presentation as a template to update properties in other presentations:
 
-```java
-IPresentationInfo info = PresentationFactory->getInstance()->getPresentationInfo("template.pptx");
-DocumentProperties template = (DocumentProperties) info.readDocumentProperties();
+```php
+$info = Java("com.aspose.slides.PresentationFactory")->getInstance()->getPresentationInfo("template.pptx");
+$template = (DocumentProperties) $info->readDocumentProperties();
 
-template->setAuthor("Template Author");
-template->setTitle("Template Title");
-template->setCategory("Template Category");
-template->setKeywords("Keyword1, Keyword2, Keyword3");
-template->setCompany("Our Company");
-template->setComments("Created from template");
-template->setContentType("Template Content");
-template->setSubject("Template Subject");
+$template->setAuthor("Template Author");
+$template->setTitle("Template Title");
+$template->setCategory("Template Category");
+$template->setKeywords("Keyword1, Keyword2, Keyword3");
+$template->setCompany("Our Company");
+$template->setComments("Created from template");
+$template->setContentType("Template Content");
+$template->setSubject("Template Subject");
 
-updateByTemplate("doc1.pptx", template);
-updateByTemplate("doc2.odp", template);
-updateByTemplate("doc3.ppt", template);
+updateByTemplate("doc1.pptx", $template);
+updateByTemplate("doc2.odp", $template);
+updateByTemplate("doc3.ppt", $template);
 ```
 
-```java
-private static void updateByTemplate(String path, IDocumentProperties template) 
+```php
+private static void updateByTemplate($path, $template ) 
 {
-    IPresentationInfo toUpdate = PresentationFactory->getInstance()->getPresentationInfo(path);
-    toUpdate.updateDocumentProperties(template);
-    toUpdate.writeBindedPresentation(path);
+    $toUpdate = Java("com.aspose.slides.PresentationFactory")->getInstance()->getPresentationInfo($path);
+    $toUpdate->updateDocumentProperties($template);
+    $toUpdate->writeBindedPresentation($path);
 }
 ```
 
 A new template can be created from scratch and then used to update multiple presentations:
 
-```java
-DocumentProperties template = new DocumentProperties();\
+```php
+$template = new DocumentProperties();\
 
-template->setAuthor("Template Author");
-template->setTitle("Template Title");
-template->setCategory("Template Category");
-template->setKeywords("Keyword1, Keyword2, Keyword3");
-template->setCompany("Our Company");
-template->setComments("Created from template");
-template->setContentType("Template Content");
-template->setSubject("Template Subject");
+$template->setAuthor("Template Author");
+$template->setTitle("Template Title");
+$template->setCategory("Template Category");
+$template->setKeywords("Keyword1, Keyword2, Keyword3");
+$template->setCompany("Our Company");
+$template->setComments("Created from template");
+$template->setContentType("Template Content");
+$template->setSubject("Template Subject");
 
-updateByTemplate("doc1.pptx", template);
-updateByTemplate("doc2.odp", template);
-updateByTemplate("doc3.ppt", template);
+updateByTemplate("doc1.pptx", $template);
+updateByTemplate("doc2.odp", $template);
+updateByTemplate("doc3.ppt", $template);
 ```
 
-```java
-private static void updateByTemplate(String path, IDocumentProperties template) 
+```php
+private static void updateByTemplate($path, $template ) 
 {
-    IPresentationInfo toUpdate = PresentationFactory->getInstance()->getPresentationInfo(path);
-    toUpdate.updateDocumentProperties(template);
-    toUpdate.writeBindedPresentation(path);
+    $toUpdate = Java("com.aspose.slides.PresentationFactory")->getInstance()->getPresentationInfo($path);
+    $toUpdate->updateDocumentProperties($template);
+    $toUpdate->writeBindedPresentation($path);
 }
 ```
 
 ## **Check if Presentation is Modified or Created**
 Aspose.Slides for Java provides the facility to check if a presentation is modified or created. An example is given below that shows how to check if the presentation is created or modified.
 
-```java
-IPresentationInfo info=PresentationFactory->getInstance()->getPresentationInfo("props.pptx");
+```php
+$info=Java("com.aspose.slides.PresentationFactory")->getInstance()->getPresentationInfo("props.pptx");
 
-IDocumentProperties props = info.readDocumentProperties();
-String app = props->getNameOfApplication();
-String ver = props->getAppVersion();
+$props = $info->readDocumentProperties();
+$app = $props->getNameOfApplication();
+$ver = $props->getAppVersion();
 
-System.out.println("Application Name: " + app);
-System.out.println("Application Version: " + ver);
+echo("Application Name: " + $app);
+echo("Application Version: " + $ver);
 ```
 

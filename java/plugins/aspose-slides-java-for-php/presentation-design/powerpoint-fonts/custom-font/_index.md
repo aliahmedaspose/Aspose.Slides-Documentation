@@ -20,7 +20,7 @@ Please follow the steps below to loading Fonts from external directories by usin
 
 The implementation of the above is given below.
 
-```java
+```php
 // folders to seek fonts
 String[] folders = new String[] { externalFontsDir };
 
@@ -42,7 +42,7 @@ try {
 ## **Get Custom Fonts Folder**
 A new method has been added that returns folders where font files are searched. Those are folders that have been added with [loadExternalFonts](https://apireference.aspose.com/slides/java/com.aspose.slides/FontsLoader#loadExternalFonts-java.lang.String:A-) method as well as system font folders.
 
-```java
+```php
 //The following line shall return folders where font files are searched.
 //Those are folders that have been added with LoadExternalFonts method as well as system font folders.
 String[] fontFolders = FontsLoader->getFontFolders();
@@ -51,15 +51,15 @@ String[] fontFolders = FontsLoader->getFontFolders();
 ## **Specify Custom Fonts Used With Presentation**
 A new [getDocumentLevelFontSources](https://apireference.aspose.com/slides/java/com.aspose.slides/ILoadOptions#getDocumentLevelFontSources--) method has been added to [ILoadOptions](https://apireference.aspose.com/slides/java/com.aspose.slides/ILoadOptions) interface. It allows to specify external fonts that are used with the presentation.
 
-```java
+```php
 byte[] memoryFont1 = Files.readAllBytes("customfonts/CustomFont1.ttf");
 byte[] memoryFont2 = Files.readAllBytes("customfonts/CustomFont2.ttf");
 
-LoadOptions loadOptions = new LoadOptions();
-loadOptions->getDocumentLevelFontSources()->setFontFolders(new String[] { "assets/fonts", "global/fonts" });
-loadOptions->getDocumentLevelFontSources()->setMemoryFonts(new byte[][] { memoryFont1, memoryFont2 });
+$loadOptions = new LoadOptions();
+$loadOptions->getDocumentLevelFontSources()->setFontFolders(new String[] { "assets/fonts", "global/fonts" });
+$loadOptions->getDocumentLevelFontSources()->setMemoryFonts(new byte[][] { memoryFont1, memoryFont2 });
 
-$pres = new Java("com.aspose.slides.Presentation", "MyPresentation.pptx", loadOptions);
+$pres = new Java("com.aspose.slides.Presentation", "MyPresentation.pptx", $loadOptions);
 try {
     //work with the presentation
     //CustomFont1, CustomFont2 as well as fonts from assets\fonts & global\fonts folders and their subfolders are available to the presentation

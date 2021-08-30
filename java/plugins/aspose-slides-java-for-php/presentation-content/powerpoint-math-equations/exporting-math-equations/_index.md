@@ -20,7 +20,7 @@ While humans easily write the code for some equation formats like LaTeX, they st
 
 This sample code shows you how to export a math equation from a presentation to MathML:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape autoShape = $pres->getSlides()->get_Item(0)->getShapes().addMathShape(0, 0, 500, 50);

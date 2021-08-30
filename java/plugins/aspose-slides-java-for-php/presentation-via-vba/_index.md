@@ -28,7 +28,7 @@ The following example shows how to create a simple VBA project. It contains one 
 
 The implementation of the above steps is demonstrated in the example below.
 
-```java
+```php
 // Instantiate Presentation
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -73,12 +73,12 @@ The [Presentation](http://www.aspose.com/api/java/slides/com.aspose.slides/class
 
 The implementation of the above steps is demonstrated in the example below.
 
-```java
+```php
 // Load Presentation
 $pres = new Java("com.aspose.slides.Presentation", "VBA.pptm");
 try {
     // Access the Vba module and remove
-    $pres->getVbaProject()->getModules().remove($pres->getVbaProject()->getModules()->get_Item(0));
+    $pres->getVbaProject()->getModules()->remove($pres->getVbaProject()->getModules()->get_Item(0));
     
     // Save Presentation
     $pres->save("test.pptm", Java("com.aspose.slides.SaveFormat")->Pptm);
@@ -96,7 +96,7 @@ Aspose.Slides for Java supports extracting VBA Macros from the slide. In order t
 
 The implementation of the above steps is demonstrated in the example below.
 
-```java
+```php
 // Load Presentation
 $pres = new Java("com.aspose.slides.Presentation", "VBA.pptm");
 try {
@@ -104,8 +104,8 @@ try {
     {
         for (IVbaModule module : $pres->getVbaProject()->getModules())
         {
-            System.out.println(module->getName());
-            System.out.println(module->getSourceCode());
+            echo(module->getName());
+            echo(module->getSourceCode());
         }
     }
 } finally {

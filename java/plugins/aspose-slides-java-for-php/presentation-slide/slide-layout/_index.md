@@ -18,7 +18,7 @@ Aspose.Slides also offer to add Layout slides in presentation. There are cases w
 
 In the example given below, we have added Layout Slides to Presentation.
 
-```java
+```php
 // Instantiate Presentation class that represents the presentation file
 $pres = new Java("com.aspose.slides.Presentation", "AccessSlides.pptx");
 try {
@@ -73,7 +73,7 @@ try {
 ## **Set Size and Type of Slide**
 [SlideSize->getType](https://apireference.aspose.com/slides/java/com.aspose.slides/SlideSize#getType--) and [SlideSize->setSize](https://apireference.aspose.com/slides/java/com.aspose.slides/SlideSize#setSize-float-float-int-) are the properties of presentation class which could be set or get as shown below in the example.
 
-```java
+```php
 // Instantiate Presentation objects that represent presentation files
 $presentation = new Java("com.aspose.slides.Presentation"), "demo.pptx");
 try {
@@ -86,7 +86,7 @@ try {
         
         // Clone required slide
         auxPresentation->getSlides().addClone(presentation->getSlides()->get_Item(0));
-        auxPresentation->getSlides().removeAt(0);
+        auxPresentation->getSlides()->removeAt(0);
         
         // Save Presentation to disk
         auxPresentation->save("size.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -107,7 +107,7 @@ To set footer in a slide using its index position in the slides collection of th
 1. Set date-time placeholder visible by using the [setDateTimeText](https://apireference.aspose.com/slides/java/com.aspose.slides/IBaseSlideHeaderFooterManager#setDateTimeText-java.lang.String-) method.
 1. Write the modified presentation file.
 
-```java
+```php
 $presentation = new Java("com.aspose.slides.Presentation"), "presentation.ppt");
 try {
     IBaseSlideHeaderFooterManager headerFooterManager = $presentation->getSlides()->get_Item(0)->getHeaderFooterManager();
@@ -140,7 +140,7 @@ To set footer and child footer a slide using its index position in the slides co
 1. Set text to master slide and all child date-time placeholder by using [setDateTimeAndChildDateTimesText](https://apireference.aspose.com/slides/java/com.aspose.slides/IMasterSlideHeaderFooterManager#setDateTimeAndChildDateTimesText-java.lang.String-) method.
 1. Write the modified presentation file.
 
-```java
+```php
 $presentation = new Java("com.aspose.slides.Presentation"), "presentation.ppt");
 try {
     IMasterSlideHeaderFooterManager headerFooterManager = $presentation->getMasters()->get_Item(0)->getHeaderFooterManager();
@@ -158,7 +158,7 @@ try {
 ## **Set Slide Size with Respect to Content Scaling**
 You can also set the slide size by using it with different ways of content scaling. [SlideSize->getType](https://apireference.aspose.com/slides/java/com.aspose.slides/SlideSize#getType--) and [SlideSize->setSize](https://apireference.aspose.com/slides/java/com.aspose.slides/SlideSize#setSize-int-int-) are the methods of presentation class which could be set or get as shown below in the example.
 
-```java
+```php
 // Instantiate Presentation objects that represent presentation files
 $presentation = new Java("com.aspose.slides.Presentation"), "demo.pptx");
 try {
@@ -176,7 +176,7 @@ try {
 ## **Set Page Size when Generating PDF**
 Slides in presentation could be set as different paper sizes. The [SlideSize->getType](https://apireference.aspose.com/slides/java/com.aspose.slides/SlideSize#getType--) method can be used to set the slide size. Developers can set the size of a slide as shown below in the example.
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file 
 $presentation = new Java("com.aspose.slides.Presentation");
 try {

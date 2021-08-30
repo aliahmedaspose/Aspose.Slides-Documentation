@@ -20,7 +20,7 @@ Aspose.Slides for Java provides [Presentation](https://apireference.aspose.com/j
 ### **Access Slide by Index**
 [Presentation](https://apireference.aspose.com/java/slides/com.aspose.slides/presentation) class represents a presentation file and exposes all slides in it as a [ISlideCollection](https://apireference.aspose.com/java/slides/com.aspose.slides/ISlideCollection) collection (that is a collection of [ISlide](https://apireference.aspose.com/java/slides/com.aspose.slides/ISlide) objects). All of these slides can be accessed from this [**Slides**](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation#getSlides--) collection using a slide index as shown below in the example.
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
@@ -34,7 +34,7 @@ try {
 ### **Access Slide by ID**
 Every slide in the presentation has a unique ID associated with it. The [Presentation](https://apireference.aspose.com/java/slides/com.aspose.slides/presentation) class exposes the [**getSlideById(id)**](https://apireference.aspose.com/java/slides/com.aspose.slides/Presentation#getSlideById-long-) method that can be used to access the slide by ID. All you need to do is to provide the valid slide ID and access that slide using [**getSlideById(id)**](https://apireference.aspose.com/java/slides/com.aspose.slides/Presentation#getSlideById-long-) method as shown below in the example.
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
@@ -64,7 +64,7 @@ It's very simple to change the position of a slide in the presentation. Just fol
 
 In the example given below, we have changed the position of a slide (lying at the zero index position 1) of the presentation) to index 1 (Position 2).
 
-```java
+```php
 // Instantiate Presentation class to load the source presentation file
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
@@ -98,7 +98,7 @@ The new methods added to [Presentation](https://apireference.aspose.com/java/sli
 1. Write the presentation as a PPTX file
    In the example given below, we have get and set the slide number.
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "HelloWorld.pptx");
 try {

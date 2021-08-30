@@ -22,7 +22,7 @@ To replace the text of a Placeholder, please follow the steps below:
 - Typecast the Placeholder shape to [AutoShape](https://apireference.aspose.com/slides/java/com.aspose.slides/AutoShape) and change the text using the [TextFrame](https://apireference.aspose.com/slides/java/com.aspose.slides/TextFrame) associated with [AutoShape](https://apireference.aspose.com/slides/java/com.aspose.slides/IAutoShape).
 - Write the modified presentation as a PPTX file.
 
-```java
+```php
 // Instantiate Presentation class that represents PPTX
 $pres = new Java("com.aspose.slides.Presentation", "ReplacingText.pptx");
 try {
@@ -51,7 +51,7 @@ As we know that Standard and pre-built layouts contain placeholders with default
 
 The code snippet below shows how to use this feature:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
@@ -70,7 +70,7 @@ try {
             }
 
             ((IAutoShape)shape)->getTextFrame()->setText(text);
-            System.out.println("Placeholder with text: " + text);
+            echo("Placeholder with text: " + text);
         }
     }
 

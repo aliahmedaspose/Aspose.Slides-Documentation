@@ -19,7 +19,7 @@ To add a hyperlink in a presentation on the presentation level:
 1. Add hyperlink.
 1. Save the presentation as a [PPTX ](https://wiki.fileformat.com/presentation/pptx/)file.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape shape1 = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 600, 50, false);
@@ -42,12 +42,12 @@ To remove hyperlinks from a presentation on the presentation level:
 1. Apply a slide transition effect on a slide.
 1. Write the modified presentation as a [PPTX](https://wiki.fileformat.com/presentation/pptx/) file.
 
-```java
+```php
 //Instantiate a Presentation object that represents a PPTX file
 $pres = new Java("com.aspose.slides.Presentation", "PresentationWithHyperlinks.pptx");
 try {
     //Removing the Hyperlinks from presentation
-    $pres->getHyperlinkQueries().removeAllHyperlinks();
+    $pres->getHyperlinkQueries()->removeAllHyperlinks();
     
     //Writing the presentation as a PPTX file
     $pres->save("TestSaved.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -63,7 +63,7 @@ It allows to get or set the source of hyperlink color, which could be obtained e
 
 The code snippet below shows a sample of adding two hyperlinks with different colors to the same slide:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape shape1 = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 450, 50, false);
@@ -95,7 +95,7 @@ Hyperlink class changed to be mutable. Now it is possible to change values of th
 
 The code snippet below shows adding a hyperlink to the slide and editing its tooltip later:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape shape1 = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 600, 50, false);

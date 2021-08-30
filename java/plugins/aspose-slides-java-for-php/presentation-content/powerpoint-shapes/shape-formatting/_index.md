@@ -20,7 +20,7 @@ Using Aspose.Slides for Java developers can add different kinds of shapes to the
 
 In the example given below, we have selected an AutoShape of Rectangle type whose lines are formatted using Aspose.Slides for Java .
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -32,7 +32,7 @@ try {
     
     // Set the fill color of the rectangle shape
     shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp->getFillFormat()->getSolidFillColor()->setColor(Color.WHITE);
+    shp->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.WHITE);
     
     // Apply some formatting on the line of the rectangle
     shp->getLineFormat()->setStyle(LineStyle.ThickThin);
@@ -41,7 +41,7 @@ try {
     
     // set the color of the line of rectangle
     shp->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLUE);
+    shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
     
     // Write the PPTX file to disk
     $pres->save("RectShpLn.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -59,7 +59,7 @@ try {
 
 In the example given below, we will create three rectangles with each of the Join Style mentioned above and show the resulting output of the code.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -73,11 +73,11 @@ try {
     
     // Set the fill color of the rectangle shape
     shp1->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp1->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+    shp1->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
     shp2->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp2->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+    shp2->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
     shp3->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp3->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+    shp3->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
     
     // Set the line width
     shp1->getLineFormat()->setWidth(15);
@@ -86,11 +86,11 @@ try {
     
     // Set the color of the line of rectangle
     shp1->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp1->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLUE);
+    shp1->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
     shp2->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp2->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLUE);
+    shp2->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
     shp3->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp3->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLUE);
+    shp3->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
     
     // Set the Join Style
     shp1->getLineFormat()->setJoinStyle(LineJoinStyle.Miter);
@@ -121,7 +121,7 @@ Aspose.Slides for Java supports different features while filling shapes in slide
 
 In the example given below, we have selected the ellipse shape for the demonstration purpose.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -163,7 +163,7 @@ This topic covers about patterns that can also be used by developers to fill the
 
 The above steps are implemented in the example given below.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -180,8 +180,8 @@ try {
     shp->getFillFormat()->getPatternFormat()->setPatternStyle(PatternStyle.Trellis);
     
     // Set the pattern back and fore colors
-    shp->getFillFormat()->getPatternFormat()->getBackColor()->setColor(Color.LIGHT_GRAY);
-    shp->getFillFormat()->getPatternFormat()->getForeColor()->setColor(Color.YELLOW);
+    shp->getFillFormat()->getPatternFormat()->getBackColor()->setColorJava("java.awt.Color")->.LIGHT_GRAY);
+    shp->getFillFormat()->getPatternFormat()->getForeColor()->setColorJava("java.awt.Color")->.YELLOW);
     
     // Write the PPTX file to disk
     $pres->save("RectShpPatt.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -204,7 +204,7 @@ In our previous topics, we have discussed about using pre-defined gradient and p
 
 The above steps are implemented in the example given below.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -244,7 +244,7 @@ In this topic, we will discuss that how can developers fill their shapes with so
 
 The above steps are implemented in the example given below.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -258,7 +258,7 @@ try {
     shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
     // Set the color of the rectangle
-    shp->getFillFormat()->getSolidFillColor()->setColor(Color.YELLOW);
+    shp->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.YELLOW);
 
     // Write the PPTX file to disk
     $pres->save("RectShpSolid.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -278,7 +278,7 @@ Aspose.Slides for Java allows developers to you rotate shapes as well in this to
 
 In the example given below, we have rotated a rectangle shape to 90 degrees for the demonstration purpose.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -308,7 +308,7 @@ Aspose.Slides for Java now supports adding 3D bevel effects to a shape. This cou
    
 In the example given below, we have applied 3D bevel effects on a shape.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -317,10 +317,10 @@ try {
     // Add a shape on slide
     IAutoShape shape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 30, 30, 100, 100);
     shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shape->getFillFormat()->getSolidFillColor()->setColor(Color.GREEN);
+    shape->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.GREEN);
     ILineFillFormat format = shape->getLineFormat()->getFillFormat();
     format->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    format->getSolidFillColor()->setColor(Color.ORANGE);
+    format->getSolidFillColor()->setColorJava("java.awt.Color")->.ORANGE);
     shape->getLineFormat()->setWidth(2.0);
     
     // Set ThreeDFormat properties of shape
@@ -349,7 +349,7 @@ Aspose.Slides for Java now supports adding 3D Rotation effects to a shape. This 
 
 In the example given below, we have applied 3D Rotation effects on a shape.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {

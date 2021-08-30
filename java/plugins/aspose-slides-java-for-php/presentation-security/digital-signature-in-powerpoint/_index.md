@@ -27,18 +27,18 @@ The code sample below demonstrates how to add digital signature from a PFX cer
 1. Open PFX file and pass PFX password to [**DigitalSignature**](https://apireference.aspose.com/slides/java/com.aspose.slides/DigitalSignature) object.
 1. Add created signature to the presentation object.
 
-```java
+```php
 // Opening the presentation file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Create DigitalSignature object with PFX file and PFX password 
-    DigitalSignature signature = new DigitalSignature("testsignature1.pfx", "testpass1");
+    $signature = new Java("com.aspose.slides.DigitalSignature", "testsignature1.pfx", "testpass1");
 
     // Comment new digital signature
-    signature->setComments("Aspose.Slides digital signing test.");
+    $signature->setComments("Aspose.Slides digital signing test.");
 
     // Add digital signature to presentation
-    $pres->getDigitalSignatures().add(signature);
+    $pres->getDigitalSignatures().add($signature);
 
     // Save presentation
     $pres->save("SomePresentationSigned.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -49,28 +49,28 @@ try {
 
 Now its possible to check if the presentation was digitally signed and has not been modified:
 
-```java
+```php
 // Open presentation
 $pres = new Java("com.aspose.slides.Presentation", "SomePresentationSigned.pptx");
 try {
     if ($pres->getDigitalSignatures()->size() > 0)
     {
-        boolean allSignaturesAreValid = true;
+        $allSignaturesAreValid = true;
 
-        System.out.println("Signatures used to sign the presentation: ");
+        echo("Signatures used to sign the presentation: ");
 
         // Check if all digital signatures are valid
-        for (IDigitalSignature signature : $pres->getDigitalSignatures())
+        for ($signature : $pres->getDigitalSignatures())
         {
-            System.out.println(signature->getComments() + ", "
-                    + signature->getSignTime().toString() + " -- " + (signature.isValid() ? "VALID" : "INVALID"));
-            allSignaturesAreValid &= signature.isValid();
+            echo($signature->getComments() + ", "
+                    + $signature->getSignTime().toString() + " -- " + ($signature.isValid() ? "VALID" : "INVALID"));
+            $allSignaturesAreValid &= $signature->isValid();
         }
 
-        if (allSignaturesAreValid)
-            System.out.println("Presentation is genuine, all signatures are valid.");
+        if ($allSignaturesAreValid)
+            echo("Presentation is genuine, all signatures are valid.");
         else
-            System.out.println("Presentation has been modified since signing.");
+            echo("Presentation has been modified since signing.");
     }
 } finally {
     if ($pres != null) $pres->dispose();

@@ -19,7 +19,7 @@ The [**Save**](https://apireference.aspose.com/slides/java/com.aspose.slides/Pre
 ## **Convert PPT(X) to TIFF with Default Size**
 The following example shows how to convert a presentation into a [TIFF](https://wiki.fileformat.com/image/tiff/) document with default options.
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
@@ -33,7 +33,7 @@ try {
 ## **Convert PPT(X) to TIFF with Custom Size**
 The following example shows how to convert a presentation into TIFF document with customized image size using [TiffOptions](https://apireference.aspose.com/java/slides/com.aspose.slides/TiffOptions) class.
 
-```java
+```php
 // Instantiate a Presentation object that represents a Presentation file
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
@@ -71,7 +71,7 @@ try {
 ## **Convert PPT(X) to TIFF with Custom Image Pixel Format**
 The following example shows how to convert a presentation into a TIFF document with customized Image Pixel Format using [TiffOptions](https://apireference.aspose.com/java/slides/com.aspose.slides/TiffOptions) class. You can also include comments in generated TIFF by using [**TiffOptions**](https://apireference.aspose.com/java/slides/com.aspose.slides/TiffOptions) class.
 
-```java
+```php
 // Instantiate a Presentation object that represents a Presentation file
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {

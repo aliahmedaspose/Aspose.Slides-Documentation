@@ -13,7 +13,7 @@ It allows to highlight text part with background color using text sample, simila
 
 The code snippet below shows how to use this feature:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     TextHighlightingOptions textHighlightingOptions = new TextHighlightingOptions();
@@ -35,7 +35,7 @@ It allows to highlight text part with background color using regex, similar to T
 
 The code snippet below shows how to use this feature:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     TextHighlightingOptions options = new TextHighlightingOptions();
@@ -60,7 +60,7 @@ Text formatting is one of the key elements while creating any kind of documents 
 
 The implementation of the above steps is given below.
 
-```java
+```php
 // Instantiate a Presentation object that represents a PPTX file
 $pres = new Java("com.aspose.slides.Presentation", "ParagraphsAlignment.pptx");
 try {
@@ -100,7 +100,7 @@ This article demonstrates how to set transparency property to any text shape us
 
 The implementation of the above steps is given below.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "transparency.pptx");
 try {
     IAutoShape shape = (IAutoShape)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
@@ -109,10 +109,10 @@ try {
     IOuterShadow outerShadowEffect = effects->getOuterShadowEffect();
 
     Color shadowColor = outerShadowEffect->getShadowColor()->getColor();
-    System.out.println(shadowColor.toString() + " - transparency is: "+ (shadowColor->getAlpha() / 255f) * 100);
+    echo(shadowColor.toString() + " - transparency is: "+ (shadowColor->getAlpha() / 255f) * 100);
 
     // set transparency to zero percent
-    outerShadowEffect->getShadowColor()->setColor(new Color(shadowColor->getRed(), shadowColor->getGreen(), shadowColor->getBlue(), 255));
+    outerShadowEffect->getShadowColor()->setColor(new Java("java.awt.Color", shadowColor->getRed(), shadowColor->getGreen(), shadowColor->getBlue(), 255));
 
     $pres->save("transparency-2.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -137,7 +137,7 @@ Presentations usually contain both text and images. The text can be formatted in
 
 The implementation of the above steps is given below. It takes an unadorned presentation and formats the fonts on one of the slides.
 
-```java
+```php
 // Instantiate a Presentation object that represents a PPTX file
 $pres = new Java("com.aspose.slides.Presentation", "FontProperties.pptx");
 try {
@@ -174,9 +174,9 @@ try {
 
     // Set font color
     port1->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    port1->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.MAGENTA);
+    port1->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.MAGENTA);
     port2->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    port2->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.ORANGE);
+    port2->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.ORANGE);
 
     //Write the PPTX to disk
     $pres->save("WelcomeFont_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -201,7 +201,7 @@ As mentioned in Managing Font Related Properties a Portion is used to hold text 
 
 The implementation of the above steps is given below.
 
-```java
+```php
 // Instantiate Presentation
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -239,7 +239,7 @@ try {
 
     // Set the color of the Font
     port->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    port->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLUE);
+    port->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
 
     // Write the PPTX to disk 
     $pres->save("SetTextFontProperties_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -259,7 +259,7 @@ Aspose.Slides for Java allows developers to rotate the text. Text could be set t
 - [Rotate the text](https://apireference.aspose.com/slides/java/com.aspose.slides/ITextFrameFormat#setTextVerticalType-byte-).
 - Save file to disk.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -284,7 +284,7 @@ try {
     IPortion portion = para->getPortions()->get_Item(0);
     portion->setText("A quick brown fox jumps over the lazy dog. A quick brown fox jumps over the lazy dog.");
     portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+    portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
     
     // Save Presentation
     $pres->save("RotateText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -303,7 +303,7 @@ Aspose.Slides for Java now supports, Setting custom rotation angle for textframe
 
 In the example given below, we set the RotationAngle property.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -328,7 +328,7 @@ try {
     IPortion portion = para->getPortions()->get_Item(0);
     portion->setText("Text rotation example.");
     portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+    portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
 
     // Save Presentation
     $pres->save(resourcesOutputPath+"RotateText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -347,7 +347,7 @@ Aspose.Slides for Java lets developers to set the properties of ParagraphFormat 
 - Set properties of [Paragraph](https://apireference.aspose.com/slides/java/com.aspose.slides/IParagraph).
 - Save the presentation to disk.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "Fonts.pptx");
 try {
@@ -382,7 +382,7 @@ In this topic, we will explore the different formatting properties of text frame
 - [Set the AutofitType](https://apireference.aspose.com/slides/java/com.aspose.slides/ITextFrameFormat#setAutofitType-byte-) of the TextFrame.
 - Save file to disk.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -407,7 +407,7 @@ try {
     IPortion portion = para->getPortions()->get_Item(0);
     portion->setText("A quick brown fox jumps over the lazy dog. A quick brown fox jumps over the lazy dog.");
     portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+    portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
 
     // Save Presentation
     $pres->save(resourcesOutputPath + "formatText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -426,7 +426,7 @@ Aspose.Slides for Java allows developers to Anchor of any TextFrame. TextAnchorT
 - [Set TextAnchorType](https://apireference.aspose.com/slides/java/com.aspose.slides/ITextFrameFormat#setAnchoringType-byte-) of the TextFrame.
 - Save file to disk.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -451,7 +451,7 @@ try {
     IPortion portion = para->getPortions()->get_Item(0);
     portion->setText("A quick brown fox jumps over the lazy dog. A quick brown fox jumps over the lazy dog.");
     portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+    portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
     
     // Save Presentation
     $pres->save("AnchorText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

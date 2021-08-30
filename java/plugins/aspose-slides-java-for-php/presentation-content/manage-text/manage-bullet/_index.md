@@ -26,7 +26,7 @@ This topic is also the part of the topic series of managing text paragraphs. Thi
 
 The implementation of the above steps is given below.
 
-```java
+```php
 // Instantiate a Presentation class that represents a PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -40,7 +40,7 @@ try {
     ITextFrame txtFrm = aShp->getTextFrame();
     
     // Removing the default exisiting paragraph
-    txtFrm->getParagraphs().removeAt(0);
+    txtFrm->getParagraphs()->removeAt(0);
     
     // Creating a paragraph
     Paragraph para = new Paragraph();
@@ -56,11 +56,11 @@ try {
     para->getParagraphFormat()->setIndent(25);
     
     // Setting bullet color
-    para->getParagraphFormat()->getBullet()->getColor()->setColorType(ColorType.RGB);
-    para->getParagraphFormat()->getBullet()->getColor()->setColor(Color.BLACK);
+    para->getParagraphFormat()->getBullet()->getColor()->setColorTypeJava("java.awt.Color")->Type.RGB);
+    para->getParagraphFormat()->getBullet()->getColor()->setColorJava("java.awt.Color")->.BLACK);
     
     // set IsBulletHardColor to true to use own bullet color
-    para->getParagraphFormat()->getBullet().isBulletHardColor();
+    para->getParagraphFormat()->getBullet()->isBulletHardColor();
     
     // Setting Bullet Height
     para->getParagraphFormat()->getBullet()->setHeight(100);
@@ -96,7 +96,7 @@ This topic is also the part of the topic series of managing text in paragraphs. 
 
 The implementation of the above steps is given below.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing the first slide
@@ -112,7 +112,7 @@ try {
     // Accessing the text frame of created autoshape
     ITextFrame txtFrm = aShp->getTextFrame();
     // Removing the default exisiting paragraph
-    txtFrm->getParagraphs().removeAt(0);
+    txtFrm->getParagraphs()->removeAt(0);
 
     // Creating new paragraph
     Paragraph para = new Paragraph();
@@ -153,7 +153,7 @@ This topic is also the part of the topic series of managing text in paragraphs. 
 
 The implementation of the above steps is given below.
 
-```java
+```php
 // Instantiate a Presentation class that represents a PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -176,7 +176,7 @@ try {
     para1->getParagraphFormat()->getBullet()->setType(BulletType.Symbol);
     para1->getParagraphFormat()->getBullet()->setChar((char) 8226);
     para1->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
-    para1->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+    para1->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
     //Setting bullet level
     para1->getParagraphFormat()->setDepth ((short)0);
     
@@ -187,7 +187,7 @@ try {
     para2->getParagraphFormat()->getBullet()->setType(BulletType.Symbol);
     para2->getParagraphFormat()->getBullet()->setChar('-');
     para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
-    para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+    para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
     //Setting bullet level
     para2->getParagraphFormat()->setDepth ((short)1);
     
@@ -198,7 +198,7 @@ try {
     para3->getParagraphFormat()->getBullet()->setType(BulletType.Symbol);
     para3->getParagraphFormat()->getBullet()->setChar((char) 8226);
     para3->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
-    para3->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+    para3->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
     //Setting bullet level
     para3->getParagraphFormat()->setDepth ((short)2);
     
@@ -209,7 +209,7 @@ try {
     para4->getParagraphFormat()->getBullet()->setType(BulletType.Symbol);
     para4->getParagraphFormat()->getBullet()->setChar('-');
     para4->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
-    para4->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+    para4->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
     //Setting bullet level
     para4->getParagraphFormat()->setDepth ((short)3);
     
@@ -242,7 +242,7 @@ Aspose.Slides for Java provides a simple API to manage paragraphs with custom nu
 
 The implementation of the above steps is given below.
 
-```java
+```php
 // Instantiate a Presentation class that represents a PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {

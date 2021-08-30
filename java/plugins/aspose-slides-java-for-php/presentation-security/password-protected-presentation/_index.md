@@ -80,10 +80,10 @@ To encrypt or password protect a presentation, you have to use the encrypt metho
 
 This sample code shows you how to encrypt a presentation:
 
-```java
+```php
 $presentation = new Java("com.aspose.slides.Presentation"), "pres.pptx");
 try {
-    $presentation->getProtectionManager().encrypt("123123");
+    $presentation->getProtectionManager()->encrypt("123123");
     $presentation->save("encrypted-pres.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($presentation != null) $presentation->dispose();
@@ -98,7 +98,7 @@ You can add a mark stating “Do not modify” to a presentation. This way, you 
 
 To set a write protection, you have to use the [setWriteProtection](https://apireference.aspose.com/slides/java/com.aspose.slides/IProtectionManager#setWriteProtection-java.lang.String-) method. This sample code shows you how to set a write protection to a presentation:
 
-```java
+```php
 $presentation = new Java("com.aspose.slides.Presentation"), "pres.pptx");
 try {
     $presentation->getProtectionManager()->setWriteProtection("123123");
@@ -114,10 +114,10 @@ Aspose.Slides allow you to load an encrypted file by passing its password. To de
 
 This sample code shows you how to decrypt a presentation: 
 
-```java
-LoadOptions loadOptions = new LoadOptions();
-loadOptions->setPassword("123123");
-$presentation = new Java("com.aspose.slides.Presentation"), "pres.pptx", loadOptions);
+```php
+$loadOptions = new LoadOptions();
+$loadOptions->setPassword("123123");
+$presentation = new Java("com.aspose.slides.Presentation"), "pres.pptx", $loadOptions);
 try {
     // work with decrypted presentation
 } finally {
@@ -132,12 +132,12 @@ You can remove the encryption or password protection on a presentation. This way
 
 To remove encryption or password protection, you have to call the [removeEncryption](https://apireference.aspose.com/slides/java/com.aspose.slides/IProtectionManager#removeEncryption--) method. This sample code shows you to remove encryption from a presentation:
 
-```java
-LoadOptions loadOptions = new LoadOptions();
-loadOptions->setPassword("123123");
-$presentation = new Java("com.aspose.slides.Presentation"), "pres.pptx", loadOptions);
+```php
+$loadOptions = new LoadOptions();
+$loadOptions->setPassword("123123");
+$presentation = new Java("com.aspose.slides.Presentation"), "pres.pptx", $loadOptions);
 try {
-    $presentation->getProtectionManager().removeEncryption();
+    $presentation->getProtectionManager()->removeEncryption();
     $presentation->save("encryption-removed.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($presentation != null) $presentation->dispose();
@@ -150,10 +150,10 @@ You can use Aspose.Slides to remove the write protection used on a presentation 
 
 You can remove the write protection from a presentation by using the [removeWriteProtection](https://apireference.aspose.com/slides/java/com.aspose.slides/IProtectionManager#removeWriteProtection--) method. This sample code shows you to remove the write protection from a presentation:
 
-```java
+```php
 $presentation = new Java("com.aspose.slides.Presentation"), "pres.pptx");
 try {
-    $presentation->getProtectionManager().removeWriteProtection();
+    $presentation->getProtectionManager()->removeWriteProtection();
     $presentation->save("write-protection-removed.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($presentation != null) $presentation->dispose();
@@ -168,11 +168,11 @@ Typically, users struggle to get the document properties of an encrypted or pass
 
 If you want users to retain the ability to access the properties of a presentation you encrypted, you can set the [encryptDocumentProperties](https://apireference.aspose.com/slides/java/com.aspose.slides/IProtectionManager#getEncryptDocumentProperties--) property to `true`. This sample code shows you how to encrypt a presentation while providing the means for users to access its document properties:
 
-```java
+```php
 $presentation = new Java("com.aspose.slides.Presentation"), "pres.pptx");
 try {
     $presentation->getProtectionManager()->setEncryptDocumentProperties(true);
-    $presentation->getProtectionManager().encrypt("123123");
+    $presentation->getProtectionManager()->encrypt("123123");
 } finally {
     if ($presentation != null) $presentation->dispose();
 }
@@ -184,10 +184,10 @@ Aspose.Slides allows you to check whether a presentation is encrypted. To perfor
 
 This sample code shows you how to check whether a presentation is encrypted:
 
-```java
+```php
 $presentation = new Java("com.aspose.slides.Presentation"), "pres.pptx");
 try {
-    boolean isEncrypted = $presentation->getProtectionManager().isEncrypted();
+    $isEncrypted = $presentation->getProtectionManager()->isEncrypted();
 } finally {
     if ($presentation != null) $presentation->dispose();
 }
@@ -199,10 +199,10 @@ Aspose.Slides allows you to check whether a presentation is write-protected. To 
 
 This sample code shows you how to check whether a presentation is write-protected:
 
-```java
+```php
 $presentation = new Java("com.aspose.slides.Presentation"), "pres.pptx");
 try {
-    boolean isEncrypted = $presentation->getProtectionManager().isWriteProtected();
+    $isEncrypted = $presentation->getProtectionManager()->isWriteProtected();
 } finally {
     if ($presentation != null) $presentation->dispose();
 }
@@ -214,11 +214,11 @@ You may want to check and confirm that a specific password has been used to prot
 
 This sample code shows you how to validate a password:
 
-```java
+```php
 $presentation = new Java("com.aspose.slides.Presentation"), "pres.pptx");
 try {
     // check if "pass" is matched with
-    boolean isWriteProtected = $presentation->getProtectionManager().checkWriteProtection("my_password");
+    $isWriteProtected = $presentation->getProtectionManager()->checkWriteProtection("my_password");
 } finally {
     if ($presentation != null) $presentation->dispose();
 }

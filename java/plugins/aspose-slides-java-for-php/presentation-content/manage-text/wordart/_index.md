@@ -31,7 +31,7 @@ With Aspose.Slides for Java, you can easily create your own WordArt template (on
 
 First, we create a simple text using this Java code: 
 
-``` java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
@@ -46,7 +46,7 @@ try {
 ```
 Now, we set the text’s font height to a bigger value to make the effect more noticeable through this code:
 
-``` java 
+```php 
 FontData fontData = new FontData("Arial Black");
 portion->getPortionFormat()->setLatinFont(fontData);
 portion->getPortionFormat()->setFontHeight(36);
@@ -68,14 +68,14 @@ These are some of the available parameters or options:
 
 Here, we apply the [SmallGrid](https://apireference.aspose.com/slides/java/com.aspose.slides/PatternStyle#SmallGrid) pattern color to the text and add a 1-width black text border using this code:
 
-``` java 
+```php 
 portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Pattern);
-portion->getPortionFormat()->getFillFormat()->getPatternFormat()->getForeColor()->setColor(Color.ORANGE);
-portion->getPortionFormat()->getFillFormat()->getPatternFormat()->getBackColor()->setColor(Color.WHITE);
+portion->getPortionFormat()->getFillFormat()->getPatternFormat()->getForeColor()->setColorJava("java.awt.Color")->.ORANGE);
+portion->getPortionFormat()->getFillFormat()->getPatternFormat()->getBackColor()->setColorJava("java.awt.Color")->.WHITE);
 portion->getPortionFormat()->getFillFormat()->getPatternFormat()->setPatternStyle(PatternStyle.SmallGrid);
 
 portion->getPortionFormat()->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-portion->getPortionFormat()->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+portion->getPortionFormat()->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
 ```
 
 The resulting text:
@@ -96,9 +96,9 @@ For example, Shadow, Reflection, and Glow effects can be applied to a text; 3D F
 
 Here, we intend to set the properties relating to a text only. We apply the shadow effect to a text using this code in Java:
 
-``` java
+```php
 portion->getPortionFormat()->getEffectFormat().enableOuterShadowEffect();
-portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->getShadowColor()->setColor(Color.BLACK);
+portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->getShadowColor()->setColorJava("java.awt.Color")->.BLACK);
 portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->setScaleHorizontal(100);
 portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->setScaleVertical(65);
 portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->setBlurRadius(4.73);
@@ -106,7 +106,7 @@ portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->setDirec
 portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->setDistance(2);
 portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->setSkewHorizontal(30);
 portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->setSkewVertical(0);
-portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->getShadowColor()->getColorTransform().add(ColorTransformOperation.SetAlpha, 0.32f);
+portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->getShadowColor()->getColorTransform().addJava("java.awt.Color")->TransformOperation.SetAlpha, 0.32f);
 ```
 
 Aspose.Slides API supports three types of shadows: OuterShadow, InnerShadow, and PresetShadow. 
@@ -132,7 +132,7 @@ Aspose.Slides actually allows you to apply two types of shadows at once: InnerSh
 
 We add display to the text through this code sample in Java:
 
-``` java
+```php
 portion->getPortionFormat()->getEffectFormat().enableReflectionEffect();
 portion->getPortionFormat()->getEffectFormat()->getReflectionEffect()->setBlurRadius(0.5);
 portion->getPortionFormat()->getEffectFormat()->getReflectionEffect()->setDistance(4.72);
@@ -150,10 +150,10 @@ portion->getPortionFormat()->getEffectFormat()->getReflectionEffect()->setRectan
 
 We apply the glow effect to the text to make it shine or stand out using this code:
 
-``` java
+```php
 portion->getPortionFormat()->getEffectFormat().enableGlowEffect();
 portion->getPortionFormat()->getEffectFormat()->getGlowEffect()->getColor()->setR((byte)255);
-portion->getPortionFormat()->getEffectFormat()->getGlowEffect()->getColor()->getColorTransform().add(ColorTransformOperation.SetAlpha, 0.54f);
+portion->getPortionFormat()->getEffectFormat()->getGlowEffect()->getColor()->getColorTransform().addJava("java.awt.Color")->TransformOperation.SetAlpha, 0.54f);
 portion->getPortionFormat()->getEffectFormat()->getGlowEffect()->setRadius(7);
 ```
 
@@ -170,7 +170,7 @@ You can change the parameters for shadow, display, and glow. The effects’ prop
 ### Using Transformations in WordArt
 
 We use the Transform property (inherent in the entire block of text) through this code:
-``` java 
+```php 
 textFrame->getTextFrameFormat()->setTransform(TextJava("com.aspose.slides.ShapeType")->ArchUpPour);
 ```
 
@@ -196,7 +196,7 @@ To select a transformation type, use the TextShapeType enum.
 
 We set a 3D effect to a text shape using this sample code:
 
-``` java
+```php
 autoShape->getThreeDFormat()->getBevelBottom()->setBevelType(BevelPresetType.Circle);
 autoShape->getThreeDFormat()->getBevelBottom()->setHeight(10.5);
 autoShape->getThreeDFormat()->getBevelBottom()->setWidth(10.5);
@@ -205,10 +205,10 @@ autoShape->getThreeDFormat()->getBevelTop()->setBevelType(BevelPresetType.Circle
 autoShape->getThreeDFormat()->getBevelTop()->setHeight(12.5);
 autoShape->getThreeDFormat()->getBevelTop()->setWidth(11);
 
-autoShape->getThreeDFormat()->getExtrusionColor()->setColor(Color.ORANGE);
+autoShape->getThreeDFormat()->getExtrusionColor()->setColorJava("java.awt.Color")->.ORANGE);
 autoShape->getThreeDFormat()->setExtrusionHeight(6);
 
-autoShape->getThreeDFormat()->getContourColor()->setColor(Color.RED);
+autoShape->getThreeDFormat()->getContourColor()->setColorJava("java.awt.Color")->.RED);
 autoShape->getThreeDFormat()->setContourWidth(1.5);
 
 autoShape->getThreeDFormat()->setDepth(3);
@@ -228,7 +228,7 @@ The resulting text and its shape:
 
 We apply a 3D effect to the text with this Java code:
 
-``` java
+```php
 textFrame->getTextFrameFormat()->getThreeDFormat()->getBevelBottom()->setBevelType(BevelPresetType.Circle);
 textFrame->getTextFrameFormat()->getThreeDFormat()->getBevelBottom()->setHeight(3.5);
 textFrame->getTextFrameFormat()->getThreeDFormat()->getBevelBottom()->setWidth(3.5);
@@ -237,10 +237,10 @@ textFrame->getTextFrameFormat()->getThreeDFormat()->getBevelTop()->setBevelType(
 textFrame->getTextFrameFormat()->getThreeDFormat()->getBevelTop()->setHeight(4);
 textFrame->getTextFrameFormat()->getThreeDFormat()->getBevelTop()->setWidth(4);
 
-textFrame->getTextFrameFormat()->getThreeDFormat()->getExtrusionColor()->setColor(Color.ORANGE);
+textFrame->getTextFrameFormat()->getThreeDFormat()->getExtrusionColor()->setColorJava("java.awt.Color")->.ORANGE);
 textFrame->getTextFrameFormat()->getThreeDFormat()->setExtrusionHeight(6);
 
-textFrame->getTextFrameFormat()->getThreeDFormat()->getContourColor()->setColor(Color.RED);
+textFrame->getTextFrameFormat()->getThreeDFormat()->getContourColor()->setColorJava("java.awt.Color")->.RED);
 textFrame->getTextFrameFormat()->getThreeDFormat()->setContourWidth(1.5);
 
 textFrame->getTextFrameFormat()->getThreeDFormat()->setDepth(3);
@@ -290,7 +290,7 @@ Aspose.Slides for Java provides the [**IOuterShadow**](http://www.aspose.com/api
 
 This sample code in Java—an implementation of the steps above—shows you how to apply the outer shadow effect to a text:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
@@ -335,7 +335,7 @@ Go through these steps:
 
 This sample code (based on the steps above) shows you how to add a connector between two shapes in Java:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
@@ -362,7 +362,7 @@ try {
     ef->getInnerShadowEffect()->getShadowColor()->setB((byte)189);
 
     // Set ColorType as Scheme
-    ef->getInnerShadowEffect()->getShadowColor()->setColorType(ColorType.Scheme);
+    ef->getInnerShadowEffect()->getShadowColor()->setColorTypeJava("java.awt.Color")->Type.Scheme);
 
     // Set Scheme Color
     ef->getInnerShadowEffect()->getShadowColor()->setSchemeColor(SchemeColor.Accent1);

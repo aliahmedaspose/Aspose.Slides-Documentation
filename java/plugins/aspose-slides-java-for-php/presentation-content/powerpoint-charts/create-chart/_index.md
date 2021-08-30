@@ -27,7 +27,7 @@ Aspose.Slides for Java has simple APIs that allow you to create different types 
 
 Sample code used to create a normal chart:
 
-```java
+```php
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -77,7 +77,7 @@ try {
     
     // Setting fill color for series
     series->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    series->getFormat()->getFill()->getSolidFillColor()->setColor(Color.RED);
+    series->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
     
     // Take second chart series
     series = chart->getChartData()->getSeries()->get_Item(1);
@@ -89,7 +89,7 @@ try {
     
     // Setting fill color for series
     series->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    series->getFormat()->getFill()->getSolidFillColor()->setColor(Color.GREEN);
+    series->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->.GREEN);
     
     // create custom labels for each of categories for new series
     // first label will be show Category name
@@ -115,7 +115,7 @@ try {
 ## **Creating Scattered Charts**
 Sample code used to create a scatter chart with different series of markers:
 
-```java
+```php
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -195,7 +195,7 @@ try {
 
 Sample code used to create a pie chart:
 
-```java
+```php
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -244,33 +244,33 @@ try {
     
     IChartDataPoint point = series->getDataPoints()->get_Item(0);
     point->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    point->getFormat()->getFill()->getSolidFillColor()->setColor(Color.CYAN);
+    point->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->.CYAN);
 	
     // Setting Sector border
     point->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    point->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor(Color.GRAY);
+    point->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.GRAY);
     point->getFormat()->getLine()->setWidth(3.0);
     point->getFormat()->getLine()->setStyle(LineStyle.ThinThick);
     point->getFormat()->getLine()->setDashStyle(LineDashStyle.DashDot);
     
     IChartDataPoint point1 = series->getDataPoints()->get_Item(1);
     point1->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    point1->getFormat()->getFill()->getSolidFillColor()->setColor(Color.ORANGE);
+    point1->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->.ORANGE);
     
     // Setting Sector border
     point1->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    point1->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor(Color.BLUE);
+    point1->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
     point1->getFormat()->getLine()->setWidth(3.0);
     point1->getFormat()->getLine()->setStyle(LineStyle.Single);
     point1->getFormat()->getLine()->setDashStyle(LineDashStyle.LargeDashDot);
     
     IChartDataPoint point2 = series->getDataPoints()->get_Item(2);
     point2->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    point2->getFormat()->getFill()->getSolidFillColor()->setColor(Color.YELLOW);
+    point2->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->.YELLOW);
     
     // Setting Sector border
     point2->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    point2->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+    point2->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
     point2->getFormat()->getLine()->setWidth(2.0);
     point2->getFormat()->getLine()->setStyle(LineStyle.ThinThin);
     point2->getFormat()->getLine()->setDashStyle(LineDashStyle.LargeDashDotDot);
@@ -315,7 +315,7 @@ try {
 
 Sample code used to create a chart:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Treemap, 50, 50, 500, 400);
@@ -381,7 +381,7 @@ try {
 
 Sample code used to create a chart:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.OpenHighLowClose, 50, 50, 600, 400, false);
@@ -447,7 +447,7 @@ try {
 
 The following code is used to create a chart.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.BoxAndWhisker, 50, 50, 500, 400);
@@ -493,7 +493,7 @@ try {
 
 The following code is used to create a chart.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Funnel, 50, 50, 500, 400);
@@ -534,7 +534,7 @@ try {
 
 The following code is used to create a chart.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Sunburst, 50, 50, 500, 400);
@@ -596,7 +596,7 @@ try {
 
 The following code is used to create a chart.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Histogram, 50, 50, 500, 400);
@@ -634,7 +634,7 @@ try {
 
 The following code is used to create a chart.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart ch = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 600, 450);
@@ -694,7 +694,7 @@ To update a chart, do this:
 
 Code sample used to update a chart:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slideMarker
@@ -763,7 +763,7 @@ To set the data range for a chart, do this:
 
 Code sample used to set data range for a chart:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
@@ -782,7 +782,7 @@ Aspose.Slides for Java has a simple API that can help you set the chart series m
 
 Code sample used to set a chart series marker automatically:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);

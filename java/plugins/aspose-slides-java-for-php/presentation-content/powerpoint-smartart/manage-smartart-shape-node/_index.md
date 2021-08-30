@@ -16,7 +16,7 @@ Aspose.Slides for Java has provided the simplest API to manage the SmartArt shap
 1. Now, [Add](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArtNodeCollection#addNode--) a [**Child Node**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArtNode#getChildNodes--) in newly added [SmartArt](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArt) Node and set the text in TextFrame
 1. Save the Presentation.
 
-```java
+```php
 // Load the desired the presentation
 $pres = new Java("com.aspose.slides.Presentation", "SimpleSmartArt.pptx");
 try {
@@ -60,7 +60,7 @@ In the following sample code we have explained how to add the child nodes belong
 1. Now, add the [**Child Node**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArtNode#getChildNodes--) for selected [**Node**](https://apireference.aspose.com/slides/java/com.aspose.slides/SmartArtNode) at position 2 and set its text.
 1. Save the Presentation
 
-```java
+```php
 // Creating a presentation instance
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -96,7 +96,7 @@ The following sample code will help to access nodes inside SmartArt shape. Pleas
 1. Traverse through all [**Nodes**](https://apireference.aspose.com/slides/java/com.aspose.slides/SmartArt#getAllNodes--) inside SmartArt Shape.
 1. Access and display information like SmartArt Node position, level and Text.
 
-```java
+```php
 // Instantiate Presentation Class
 $pres = new Java("com.aspose.slides.Presentation", "SmartArtShape.pptx");
 try {
@@ -140,7 +140,7 @@ The following sample code will help to access the child nodes belonging to respe
 1. For every selected SmartArt shape [**Node**](https://apireference.aspose.com/slides/java/com.aspose.slides/SmartArtNode), traverse through all [**Child Nodes**](https://apireference.aspose.com/slides/java/com.aspose.slides/SmartArtNode#getChildNodes--) inside particular node.
 1. Access and display information like [**Child Node**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArtNode#getChildNodes--) position, level and Text.
 
-```java
+```php
 // Instantiate Presentation Class
 $pres = new Java("com.aspose.slides.Presentation", "AccessChildNodes.pptx");
 try {
@@ -190,7 +190,7 @@ In this example, we will learn to access the child nodes at some particular posi
 1. Now, access the [**Child Node**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArtNode#getChildNodes--) at position 1 for accessed SmartArt node using **get_Item()** method.
 1. Access and display information like [**Child Node**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArtNode#getChildNodes--) position, level and Text.
 
-```java
+```php
 // Instantiate the presentation
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -226,7 +226,7 @@ In this example, we will learn to remove the nodes inside SmartArt shape.
 1. Now, remove the selected node using [**RemoveNode**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArtNodeCollection#removeNode-com.aspose.slides.ISmartArtNode-) method.
 1. Save the Presentation.
 
-```java
+```php
 // Load the desired the presentation
 $pres = new Java("com.aspose.slides.Presentation", "AddSmartArtNode.pptx");
 try {
@@ -245,7 +245,7 @@ try {
                 ISmartArtNode node = smart->getAllNodes()->get_Item(0);
     
                 // Removing the selected node
-                smart->getAllNodes().removeNode(node);
+                smart->getAllNodes()->removeNode(node);
             }
         }
     }
@@ -269,7 +269,7 @@ In this example, we will learn to remove the nodes inside SmartArt shape at part
 1. Now, remove the node at **Position 1** using [**RemoveNode**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArtNodeCollection#removeNode-int-) method.
 1. Save the Presentation.
 
-```java
+```php
 // Load the desired the presentation
 $pres = new Java("com.aspose.slides.Presentation", "AddSmartArtNode.pptx");
 try {
@@ -290,7 +290,7 @@ try {
                 if (node->getChildNodes()->size() >= 2) 
                 {
                     // Removing the child node at position 1
-                    (node->getChildNodes()).removeNode(1);
+                    (node->getChildNodes())->removeNode(1);
                 }
             }
         }
@@ -306,7 +306,7 @@ try {
 ## **Set Custom Position for Child Node in SmartArt**
 Now Aspose.Slides for Java support for setting [SmartArtShape](https://apireference.aspose.com/slides/java/com.aspose.slides/SmartArtShape) [X](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#setX-float-) and [Y](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#setY-float-) properties. The code snippet below shows how to set custom SmartArtShape position, size and rotation also please note that adding new nodes causes a recalculation of the positions and sizes of all nodes. Also with custom position settings, user may set the nodes as per requirements.
 
-```java
+```php
 // Instantiate Presentation Class
 $pres = new Java("com.aspose.slides.Presentation", "SimpleSmartArt.pptx");
 try{
@@ -362,7 +362,7 @@ In the following sample code we will investigate how to identify **Assistant Nod
 1. Change the status of Assistant Node to normal node.
 1. Save the Presentation.
 
-```java
+```php
 // Creating a presentation instance
 $pres = new Java("com.aspose.slides.Presentation", "AddNodes.pptx");
 try {
@@ -411,7 +411,7 @@ Please follow the steps below:
 1. Set the [**FillFormat**](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#getFillFormat--) for the SmartArt shape nodes.
 1. Write the modified presentation as a PPTX file.
 
-```java
+```php
 // Instantiate the presentation
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -427,7 +427,7 @@ try {
     for (IShape item : node->getShapes()) 
     {
         item->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-        item->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+        item->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
     }
     
     // Save the presentation
@@ -446,7 +446,7 @@ Developers can generate a thumbnail of Child node of a SmartArt by following the
 1. Get the thumbnail image.
 1. Save the thumbnail image in any desired image format.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX file 
 $pres = new Java("com.aspose.slides.Presentation");
 try {

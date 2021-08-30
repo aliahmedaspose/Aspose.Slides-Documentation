@@ -7,7 +7,7 @@ url: /java/callout/
 ## **Using Callouts**
 New methods [**getShowLabelAsDataCallout()**](https://apireference.aspose.com/slides/java/com.aspose.slides/IDataLabelFormat#getShowLabelAsDataCallout--) and [**setShowLabelAsDataCallout()**](https://apireference.aspose.com/slides/java/com.aspose.slides/IDataLabelFormat#setShowLabelAsDataCallout-boolean-) have been added to [DataLabelFormat](http://www.aspose.com/api/java/slides/com.aspose.slides/classes/DataLabelFormat) class and [IDataLabelFormat](http://www.aspose.com/api/java/slides/com.aspose.slides/interfaces/IDataLabelFormat) interface. These methods determine either specified chart's data label will be displayed as data callout or as data label.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Pie, 50, 50, 500, 400);
@@ -25,7 +25,7 @@ try {
 ## **Set Callout for Doughnut Chart**
 Aspose.Slides for Java provides support for setting series data label callout shape for a Doughnut chart. Below sample example is given. 
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);

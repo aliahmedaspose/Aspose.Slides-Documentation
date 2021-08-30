@@ -23,7 +23,7 @@ To add a simple plain line to a selected slide of the presentation, please follo
 
 In the example given below, we have added a line to the first slide of the presentation.
 
-```java
+```php
 // Instantiate PresentationEx class that represents the PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -54,7 +54,7 @@ Aspose.Slides for Java also allows developers to configure some properties of th
 - Set the [Arrow Head Style](https://apireference.aspose.com/slides/java/com.aspose.slides/LineArrowheadStyle) and [Length](https://apireference.aspose.com/slides/java/com.aspose.slides/LineArrowheadLength) of the end point of the line.
 - Write the modified presentation as a PPTX file.
 
-```java
+```php
 // Instantiate PresentationEx class that represents the PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -77,7 +77,7 @@ try {
     shp->getLineFormat()->setEndArrowheadStyle(LineArrowheadStyle.Triangle);
 
     shp->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(new Color(PresetColor.Maroon));
+    shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(new Java("java.awt.Color", PresetColor.Maroon));
 
     // Write the PPTX to Disk
     $pres->save("LineShape.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

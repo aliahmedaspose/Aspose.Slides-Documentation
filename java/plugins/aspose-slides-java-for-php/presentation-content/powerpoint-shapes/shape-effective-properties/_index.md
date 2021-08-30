@@ -15,7 +15,7 @@ those values are called **local** values. At any level, **local** values could b
 
 This sample code shows you how to get effective values:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     IAutoShape shape = (IAutoShape)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
@@ -35,15 +35,15 @@ Aspose.Slides for Java allows developers to get effective properties of the cam
 
 This sample code sample shows you how to get effective properties for the camera:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     IThreeDFormatEffectiveData threeDEffectiveData = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getThreeDFormat()->getEffective();
 
-    System.out.println("= Effective camera properties =");
-    System.out.println("Type: " + threeDEffectiveData->getCamera()->getCameraType());
-    System.out.println("Field of view: " + threeDEffectiveData->getCamera()->getFieldOfViewAngle());
-    System.out.println("Zoom: " + threeDEffectiveData->getCamera()->getZoom());
+    echo("= Effective camera properties =");
+    echo("Type: " + threeDEffectiveData->getCamera()->getCameraType());
+    echo("Field of view: " + threeDEffectiveData->getCamera()->getFieldOfViewAngle());
+    echo("Zoom: " + threeDEffectiveData->getCamera()->getZoom());
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -54,14 +54,14 @@ Aspose.Slides for Java allows developers to get effective properties of Light R
 
 This sample code sample shows you how to get effective properties of Light Rig:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     IThreeDFormatEffectiveData threeDEffectiveData = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getThreeDFormat()->getEffective();
 
-    System.out.println("= Effective light rig properties =");
-    System.out.println("Type: " + threeDEffectiveData->getLightRig()->getLightType());
-    System.out.println("Direction: " + threeDEffectiveData->getLightRig()->getDirection());
+    echo("= Effective light rig properties =");
+    echo("Type: " + threeDEffectiveData->getLightRig()->getLightType());
+    echo("Direction: " + threeDEffectiveData->getLightRig()->getDirection());
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -72,15 +72,15 @@ Aspose.Slides for Java allows developers to get effective properties of Bevel S
 
 This sample code sample shows you how to get effective properties for the Bevel Shape:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     IThreeDFormatEffectiveData threeDEffectiveData = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getThreeDFormat()->getEffective();
 
-    System.out.println("= Effective shape's top face relief properties =");
-    System.out.println("Type: " + threeDEffectiveData->getBevelTop()->getBevelType());
-    System.out.println("Width: " + threeDEffectiveData->getBevelTop()->getWidth());
-    System.out.println("Height: " + threeDEffectiveData->getBevelTop()->getHeight());
+    echo("= Effective shape's top face relief properties =");
+    echo("Type: " + threeDEffectiveData->getBevelTop()->getBevelType());
+    echo("Width: " + threeDEffectiveData->getBevelTop()->getWidth());
+    echo("Height: " + threeDEffectiveData->getBevelTop()->getHeight());
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -91,20 +91,20 @@ Using Aspose.Slides for Java, you can get effective properties of a Text Frame.�
 
 This sample code shows you how to get effective text frame formatting properties:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     IAutoShape shape = (IAutoShape)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     ITextFrameFormatEffectiveData effectiveTextFrameFormat = shape->getTextFrame()->getTextFrameFormat()->getEffective();
 
-    System.out.println("Anchoring type: " + effectiveTextFrameFormat->getAnchoringType());
-    System.out.println("Autofit type: " + effectiveTextFrameFormat->getAutofitType());
-    System.out.println("Text vertical type: " + effectiveTextFrameFormat->getTextVerticalType());
-    System.out.println("Margins");
-    System.out.println("   Left: " + effectiveTextFrameFormat->getMarginLeft());
-    System.out.println("   Top: " + effectiveTextFrameFormat->getMarginTop());
-    System.out.println("   Right: " + effectiveTextFrameFormat->getMarginRight());
-    System.out.println("   Bottom: " + effectiveTextFrameFormat->getMarginBottom());
+    echo("Anchoring type: " + effectiveTextFrameFormat->getAnchoringType());
+    echo("Autofit type: " + effectiveTextFrameFormat->getAutofitType());
+    echo("Text vertical type: " + effectiveTextFrameFormat->getTextVerticalType());
+    echo("Margins");
+    echo("   Left: " + effectiveTextFrameFormat->getMarginLeft());
+    echo("   Top: " + effectiveTextFrameFormat->getMarginTop());
+    echo("   Right: " + effectiveTextFrameFormat->getMarginRight());
+    echo("   Bottom: " + effectiveTextFrameFormat->getMarginBottom());
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -115,7 +115,7 @@ Using Aspose.Slides for Java, you can get effective properties of Text Style. F
 
 This sample code sample shows you how to get effective text style properties:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     IAutoShape shape = (IAutoShape)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
@@ -124,12 +124,12 @@ try {
     for (int i = 0; i <= 8; i++)
     {
         IParagraphFormatEffectiveData effectiveStyleLevel = effectiveTextStyle->getLevel(i);
-        System.out.println("= Effective paragraph formatting for style level #" + i + " =");
+        echo("= Effective paragraph formatting for style level #" + i + " =");
 
-        System.out.println("Depth: " + effectiveStyleLevel->getDepth());
-        System.out.println("Indent: " + effectiveStyleLevel->getIndent());
-        System.out.println("Alignment: " + effectiveStyleLevel->getAlignment());
-        System.out.println("Font alignment: " + effectiveStyleLevel->getFontAlignment());
+        echo("Depth: " + effectiveStyleLevel->getDepth());
+        echo("Indent: " + effectiveStyleLevel->getIndent());
+        echo("Alignment: " + effectiveStyleLevel->getAlignment());
+        echo("Font alignment: " + effectiveStyleLevel->getFontAlignment());
     }
 } finally {
     if ($pres != null) $pres->dispose();
@@ -139,7 +139,7 @@ try {
 ## **Getting Effective Font Height Value**
 Using Aspose.Slides for Java, you can get effective properties of Font Height. Here, we are providing a code that shows the portion's effective font height value changing after local font height values are set on different presentation structure levels:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape newShape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 400, 75, false);
@@ -152,29 +152,29 @@ try {
     newShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions().add(portion0);
     newShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions().add(portion1);
 
-    System.out.println("Effective font height just after creation:");
-    System.out.println("Portion #0: " + portion0->getPortionFormat()->getEffective()->getFontHeight());
-    System.out.println("Portion #1: " + portion1->getPortionFormat()->getEffective()->getFontHeight());
+    echo("Effective font height just after creation:");
+    echo("Portion #0: " + portion0->getPortionFormat()->getEffective()->getFontHeight());
+    echo("Portion #1: " + portion1->getPortionFormat()->getEffective()->getFontHeight());
 
     $pres->getDefaultTextStyle()->getLevel(0)->getDefaultPortionFormat()->setFontHeight(24);
-    System.out.println("Effective font height after setting entire presentation default font height:");
-    System.out.println("Portion #0: " + portion0->getPortionFormat()->getEffective()->getFontHeight());
-    System.out.println("Portion #1: " + portion1->getPortionFormat()->getEffective()->getFontHeight());
+    echo("Effective font height after setting entire presentation default font height:");
+    echo("Portion #0: " + portion0->getPortionFormat()->getEffective()->getFontHeight());
+    echo("Portion #1: " + portion1->getPortionFormat()->getEffective()->getFontHeight());
 
     newShape->getTextFrame()->getParagraphs()->get_Item(0)->getParagraphFormat()->getDefaultPortionFormat()->setFontHeight(40);
-    System.out.println("Effective font height after setting paragraph default font height:");
-    System.out.println("Portion #0: " + portion0->getPortionFormat()->getEffective()->getFontHeight());
-    System.out.println("Portion #1: " + portion1->getPortionFormat()->getEffective()->getFontHeight());
+    echo("Effective font height after setting paragraph default font height:");
+    echo("Portion #0: " + portion0->getPortionFormat()->getEffective()->getFontHeight());
+    echo("Portion #1: " + portion1->getPortionFormat()->getEffective()->getFontHeight());
 
     newShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0)->getPortionFormat()->setFontHeight(55);
-    System.out.println("Effective font height after setting portion #0 font height:");
-    System.out.println("Portion #0: " + portion0->getPortionFormat()->getEffective()->getFontHeight());
-    System.out.println("Portion #1: " + portion1->getPortionFormat()->getEffective()->getFontHeight());
+    echo("Effective font height after setting portion #0 font height:");
+    echo("Portion #0: " + portion0->getPortionFormat()->getEffective()->getFontHeight());
+    echo("Portion #1: " + portion1->getPortionFormat()->getEffective()->getFontHeight());
 
     newShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(1)->getPortionFormat()->setFontHeight(18);
-    System.out.println("Effective font height after setting portion #1 font height:");
-    System.out.println("Portion #0: " + portion0->getPortionFormat()->getEffective()->getFontHeight());
-    System.out.println("Portion #1: " + portion1->getPortionFormat()->getEffective()->getFontHeight());
+    echo("Effective font height after setting portion #1 font height:");
+    echo("Portion #0: " + portion0->getPortionFormat()->getEffective()->getFontHeight());
+    echo("Portion #1: " + portion1->getPortionFormat()->getEffective()->getFontHeight());
 
     $pres->save("SetLocalFontHeightValues.pptx",Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -185,7 +185,7 @@ try {
 ## **Getting Effective Fill Format for Table**
 Using Aspose.Slides for Java, you can get effective fill formatting for different table logic parts. For this purpose, the [**ICellFormatEffectiveData**](https://apireference.aspose.com/slides/java/com.aspose.slides/ICellFormatEffectiveData) interface was added in Aspose.Slides. It contains effective fill formatting properties. Please note this: cell formatting always gets priority over row formatting; row gets priority over column; and column gets priority over the whole table. 
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     ITable tbl = (ITable)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);

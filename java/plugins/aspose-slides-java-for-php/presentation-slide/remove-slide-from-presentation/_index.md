@@ -26,7 +26,7 @@ To remove a slide using its reference, please follow the steps below:
 1. Remove the referenced slide from the presentation
 1. Write the modified presentation file
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
@@ -34,7 +34,7 @@ try {
     ISlide slide = $pres->getSlides()->get_Item(0);
     
     // Removing a slide using its reference
-    $pres->getSlides().remove(slide);
+    $pres->getSlides()->remove(slide);
     
     // Writing the presentation file
     $pres->save("modified.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -50,12 +50,12 @@ To remove a slide using its index position in the slides collection of the prese
 1. Remove the slide from the presentation by using its index position
 1. Write the modified presentation file
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     // Removing a slide using its slide index
-    $pres->getSlides().removeAt(0);
+    $pres->getSlides()->removeAt(0);
     
     // Writing the presentation file
     $pres->save("modified.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

@@ -14,7 +14,7 @@ Aspose.Slides for Java has provided the simplest API to identify merge table cel
 - Iterate through row and columns of table to find out merge cells.
 - Print Message if cells are merged.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "SomePresentationWithTable.pptx");
 try {
     ITable table = (ITable)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0); // assuming that Slide#0.Shape#0 is a table
@@ -25,7 +25,7 @@ try {
             ICell currentCell = table->getRows()->get_Item(i)->get_Item(j);
             if (currentCell.isMergedCell())
             {
-                System.out.println(String.format("Cell %d;%d is a part of merged cell with RowSpan=%d and ColSpan=%d starting from Cell %d;%d.",
+                echo(String.format("Cell %d;%d is a part of merged cell with RowSpan=%d and ColSpan=%d starting from Cell %d;%d.",
                         i, j, currentCell->getRowSpan(), currentCell->getColSpan(), currentCell->getFirstRowIndex(), currentCell->getFirstColumnIndex()));
             }
         }
@@ -46,7 +46,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 - Iterate through each Cell to clear the Top, Bottom, Right, Left Borders.
 - Save the modified presentation as a PPTX file.
 
-```java
+```php
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -84,7 +84,7 @@ try {
 ## **Numbering in Merged Cells**
 If we merge 2 pairs of cells (1, 1) x (2, 1) and (1, 2) x (2, 2) then table will be numbered and look like this:
 
-```java
+```php
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -104,19 +104,19 @@ try {
         for (ICell cell : row)
         {
             cell->getCellFormat()->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderTop()->setWidth(5);
 
             cell->getCellFormat()->getBorderBottom()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderBottom()->setWidth(5);
 
             cell->getCellFormat()->getBorderLeft()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderLeft()->setWidth(5);
 
             cell->getCellFormat()->getBorderRight()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderRight()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderRight()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderRight()->setWidth(5);
         }
     }
@@ -135,7 +135,7 @@ try {
 
 Let's continue merging cells. Now we merge (1, 1) and (1, 2). As a result we have table with large merged cell in the middle:
 
-```java
+```php
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -155,19 +155,19 @@ try {
         for (ICell cell : row)
         {
             cell->getCellFormat()->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderTop()->setWidth(5);
 
             cell->getCellFormat()->getBorderBottom()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderBottom()->setWidth(5);
 
             cell->getCellFormat()->getBorderLeft()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderLeft()->setWidth(5);
 
             cell->getCellFormat()->getBorderRight()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderRight()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderRight()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderRight()->setWidth(5);
         }
     }
@@ -190,7 +190,7 @@ try {
 ## **Numbering in Splitted Cell**
 We could see in previous example when table cells are merged then numeration of other cells is not changed.Now let's return to our normal table (without merged cells) and try to split cell (1, 1). The result is strange enough but that is the way MS PowerPoint and Aspose.Slides for Java numerate table cells.
 
-```java
+```php
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -210,19 +210,19 @@ try {
         for (ICell cell : row)
         {
             cell->getCellFormat()->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderTop()->setWidth(5);
 
             cell->getCellFormat()->getBorderBottom()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderBottom()->setWidth(5);
 
             cell->getCellFormat()->getBorderLeft()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderLeft()->setWidth(5);
 
             cell->getCellFormat()->getBorderRight()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderRight()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderRight()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderRight()->setWidth(5);
         }
     }
@@ -256,7 +256,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 - Add the image to the first cell of the table.
 - Save the modified presentation as a PPTX file
 
-```java
+```php
 // Instantiate Presentation class object
 $pres = new Java("com.aspose.slides.Presentation");
 try {

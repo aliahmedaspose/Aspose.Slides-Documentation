@@ -11,7 +11,7 @@ Slide comment is like an annotation in PDF file or a note that one can attach wi
 ## **Add Slide Comment**
 In Aspose.Slides for Java, the presentation slide comment are associated with a particular author. The [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class holds the collection of authors in [**ICommentAuthorCollection**](https://apireference.aspose.com/slides/java/com.aspose.slides/ICommentAuthorCollection) that are responsible for adding slide comments. For each author, there is a collection of comments in [**ICommentCollection**](https://apireference.aspose.com/slides/java/com.aspose.slides/ICommentCollection). The [**IComment**](https://apireference.aspose.com/slides/java/com.aspose.slides/IComment) class includes information like an author who added slide comment, time of creation, slide where a comment is added, the position of slide comment on the selected slide and the comment text. The [**CommentAuthor**](https://apireference.aspose.com/slides/java/com.aspose.slides/CommentAuthor) class includes the author's name, his initials and list of associated comments. In the following example, we have added the code snippet for adding the slide comments.
 
-```java
+```php
 // Instantiate Presentation class
 $presentation = new Java("com.aspose.slides.Presentation");
 try {
@@ -55,7 +55,7 @@ try {
 ## **Access Slide Comments**
 In the following example, we will learn how to access the existing slide comments and can even modify the comments as well.
 
-```java
+```php
 // Instantiate a Presentation class that represents the presentation file
 $presentation = new Java("com.aspose.slides.Presentation"), "Comments1.pptx");
 try {
@@ -65,7 +65,7 @@ try {
         for (IComment comment1 : author->getComments())
         {
             Comment comment = (Comment) comment1;
-            System.out.println("ISlide :" + comment->getSlide()->getSlideNumber() + " has comment: " + comment->getText() + 
+            echo("ISlide :" + comment->getSlide()->getSlideNumber() + " has comment: " + comment->getText() + 
                     " with Author: " + comment->getAuthor()->getName() + " posted on time :" + comment->getCreatedTime() + "\n");
         }
     }
@@ -79,7 +79,7 @@ New methods [**getParentComment**](https://apireference.aspose.com/slides/java/c
 
 The code snippet below shows a sample of adding some comments and some replies to them:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add comment
@@ -117,8 +117,8 @@ try {
             comment = comment->getParentComment();
         }
 
-        System.out.println(comments[i]->getAuthor()->getName() +  " : " + comments[i]->getText());
-        System.out.println();
+        echo(comments[i]->getAuthor()->getName() +  " : " + comments[i]->getText());
+        echo();
     }
     $pres->save("parent_comment.pptx",Java("com.aspose.slides.SaveFormat")->Pptx);
     // Remove comment1 and all its replies

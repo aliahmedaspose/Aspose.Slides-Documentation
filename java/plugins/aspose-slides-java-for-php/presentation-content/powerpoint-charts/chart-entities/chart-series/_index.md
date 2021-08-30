@@ -14,7 +14,7 @@ Aspose.Slides for Java provides a simple API interface to set chart series overl
 1. Access the selected serie's [**getParentSeriesGroup**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartSeries#getParentSeriesGroup--) and set the chart series overlap value.
 1. Write the modified presentation to a PPTX file.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -46,7 +46,7 @@ Aspose.Slides for Java provides support for changing series color. 
 
 Below sample example is given. 
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -56,7 +56,7 @@ try {
 
     point->setExplosion(30);
     point->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    point->getFormat()->getFill()->getSolidFillColor()->setColor(Color.BLUE);
+    point->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
     
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -75,7 +75,7 @@ Aspose.Slides for Java provides support for changing color of categories in a se
 
 Below sample example is given. 
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -85,7 +85,7 @@ try {
 
     point->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-    point->getFormat()->getFill()->getSolidFillColor()->setColor(Color.BLUE);
+    point->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
@@ -101,7 +101,7 @@ Aspose.Slides for Java provides a simple API for setting automatic fill color fo
 1. Accessing the chart series and setting the fill color to Automatic.
 1. Save the presentation to a PPTX file.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -129,7 +129,7 @@ Aspose.Slides for Java provides a simple API for setting invert fill color for c
 1. Accessing the chart series and setting the fill color to invert.
 1. Save the presentation to a PPTX file.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -156,7 +156,7 @@ try {
     series->setInvertIfNegative(true);
     series->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
     series->getFormat()->getFill()->getSolidFillColor()->setColor(seriesColor);
-    series->getInvertedSolidFillColor()->setColor(Color.RED);
+    series->getInvertedSolidFillColor()->setColorJava("java.awt.Color")->.RED);
     
     $pres->save("SetInvertFillColorChart_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -167,7 +167,7 @@ try {
 ## **Set Invert If Negative Property for Individual Series**
 The Aspose.Slides for Java lets developers allow to set inverts. Methods [**setInvertIfNegative**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataPoint#setInvertIfNegative-boolean-) and [**getInvertIfNegative**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataPoint#getInvertIfNegative--) methods have been added to [IChartDataPoint](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartDataPoint) interface and [ChartDataPoint](https://apireference.aspose.com/slides/java/com.aspose.slides/ChartDataPoint) class. This Specifies the data point shall invert its colors if the value is negative. Sample code is given below.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 600, 400, true);
@@ -202,7 +202,7 @@ Aspose.Slides for Java provides a simple API to clear specific chart series [**D
 
 Sample code is given below.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "Chart.pptx");
 try {
@@ -235,7 +235,7 @@ Aspose.Slides for Java provides a simple API for setting [**gapWidth**](https://
 1. Set GapWidth property.
 1. Write the modified presentation to a PPTX file.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {

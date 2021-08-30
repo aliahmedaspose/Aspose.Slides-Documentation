@@ -21,7 +21,7 @@ To add a simple rectangle to a selected slide of the presentation, please follow
 
 In the example given below, we have added a simple rectangle to the first slide of the presentation.
 
-```java
+```php
 // Instantiate Prseetation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -52,7 +52,7 @@ To add a formatted rectangle to a slide, please follow the steps below:
 
 The above steps are implemented in the example given below.
 
-```java
+```php
 // Instantiate Prseetation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -64,11 +64,11 @@ try {
 
     // Apply some formatting to ellipse shape
     shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp->getFillFormat()->getSolidFillColor()->setColor(Color.GRAY);
+    shp->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.GRAY);
 
     // Apply some formatting to the line of Ellipse
     shp->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+    shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
     shp->getLineFormat()->setWidth(5);
 
     // Write the PPTX file to disk

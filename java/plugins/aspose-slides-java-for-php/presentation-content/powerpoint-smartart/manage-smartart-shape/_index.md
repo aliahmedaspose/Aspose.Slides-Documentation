@@ -14,7 +14,7 @@ Aspose.Slides for Java has provided an API to create SmartArt shapes. To create 
 1. [Add a SmartArt shape](https://apireference.aspose.com/slides/java/com.aspose.slides/IShapeCollection#addSmartArt-float-float-float-float-int-) by setting it [LayoutType](https://apireference.aspose.com/slides/java/com.aspose.slides/SmartArtLayoutType).
 1. Save the modified presentation as a PPTX file.
 
-```java
+```php
 // Instantiate Presentation Class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -38,7 +38,7 @@ try {
 ## **Access SmartArt Shape in Slide**
 The following code will be used to access the SmartArt shapes added in presentation slide. In sample code we will traverse through every shape inside the slide and check if it is a [SmartArt](https://apireference.aspose.com/slides/java/com.aspose.slides/SmartArt) shape. If shape is of SmartArt type then we will typecast that to [**SmartArt**](https://apireference.aspose.com/slides/java/com.aspose.slides/SmartArt) instance.
 
-```java
+```php
 // Load the desired the presentation
 $pres = new Java("com.aspose.slides.Presentation", "AccessSmartArtShape.pptx");
 try {
@@ -50,7 +50,7 @@ try {
         {
             // Typecast shape to SmartArtEx
             ISmartArt smart = (ISmartArt)shape;
-            System.out.println("Shape Name:" + smart->getName());
+            echo("Shape Name:" + smart->getName());
         }
     }
 } finally {
@@ -67,7 +67,7 @@ The following sample code will help to access the [SmartArt](https://apireferenc
 1. Check if shape is of [SmartArt](https://apireference.aspose.com/slides/java/com.aspose.slides/SmartArt) type and Typecast selected shape to SmartArt if it is SmartArt.
 1. Check the SmartArt shape with particular LayoutType and perform what is required to be done afterwards.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "AccessSmartArtShape.pptx");
 try {
     // Traverse through every shape inside first slide
@@ -82,7 +82,7 @@ try {
             // Checking SmartArt Layout
             if (smart->getLayout() == SmartArtLayoutType.BasicBlockList)
             {
-                System.out.println("Do some thing here....");
+                echo("Do some thing here....");
             }
         }
     }
@@ -102,7 +102,7 @@ In this example, we will learn to change the quick style for any SmartArt shape.
 1. Set the new Style for the SmartArt shape.
 1. Save the Presentation.
 
-```java
+```php
 // Instantiate Presentation Class
 $pres = new Java("com.aspose.slides.Presentation", "SimpleSmartArt.pptx");
 try {
@@ -147,7 +147,7 @@ In this example, we will learn to change the color style for any SmartArt shape.
 1. Set the new Color Style for the SmartArt shape.
 1. Save the Presentation.
 
-```java
+```php
 // Instantiate Presentation Class
 $pres = new Java("com.aspose.slides.Presentation", "SimpleSmartArt.pptx");
 try {

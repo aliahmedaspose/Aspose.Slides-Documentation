@@ -8,7 +8,7 @@ url: /java/embedded-font/
 ## **Get or Remove Embedded Fonts from Presentation**
 Now, you can also work with embedded fonts. [FontsManager](https://apireference.aspose.com/slides/java/com.aspose.slides/FontsManager) class now offer, [getEmbeddedFonts()](https://apireference.aspose.com/slides/java/com.aspose.slides/FontsManager#getEmbeddedFonts--) method that returns a list of embedded fonts inside the presentation. You can also remove any embedded font inside presentation if that is required by using [removeEmbeddedFont()](https://apireference.aspose.com/slides/java/com.aspose.slides/FontsManager#removeEmbeddedFont-com.aspose.slides.IFontData-) method exposed by [FontsManager](https://apireference.aspose.com/slides/java/com.aspose.slides/FontsManager) class. The implementation of the above steps is given below.
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "EmbeddedFonts.pptx");
 try {
@@ -24,7 +24,7 @@ try {
     // find "Calibri" font
     IFontData calibriEmbeddedFont = null;
     for (int i = 0; i < embeddedFonts.length; i++) {
-        System.out.println(""+ embeddedFonts[i]->getFontName());
+        echo(""+ embeddedFonts[i]->getFontName());
         if ("Calibri".equals(embeddedFonts[i]->getFontName())) {
             calibriEmbeddedFont = embeddedFonts[i];
             break;
@@ -49,7 +49,7 @@ try {
 ## **Add Embedded Fonts to Presentation**
 A new property of embedding fonts has been added. To allow embedding fonts into [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) the new [EmbedFontCharacters](https://apireference.aspose.com/slides/java/com.aspose.slides/EmbedFontCharacters) enum and two overloads of [addEmbeddedFont](https://apireference.aspose.com/slides/java/com.aspose.slides/FontsManager#addEmbeddedFont-com.aspose.slides.IFontData-int-) method have been added. Using these methods and choosing the desired embedding rule (represented by [EmbedFontCharacters](https://apireference.aspose.com/slides/java/com.aspose.slides/EmbedFontCharacters) enum), all fonts used in the [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) can be embedded. The implementation of the above steps is given below.
 
-```java
+```php
 // Load presentation
 $pres = new Java("com.aspose.slides.Presentation", "Fonts.pptx");
 try {
@@ -58,7 +58,7 @@ try {
 
     for (IFontData font : allFonts)
     {
-        boolean embeddedFontsContainsFont = false;
+        $embeddedFontsContainsFont = false;
         for (int i = 0; i < embeddedFonts.length; i++)
         {
             if (embeddedFonts.equals(font)) embeddedFontsContainsFont = true;

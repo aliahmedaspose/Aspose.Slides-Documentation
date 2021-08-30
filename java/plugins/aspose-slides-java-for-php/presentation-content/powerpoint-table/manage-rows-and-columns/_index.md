@@ -8,7 +8,7 @@ url: /java/manage-rows-and-columns/
 ## **Set First Row as Header**
 Aspose.Slides for Java provides the feature to set the first row as header using the following methods of [ITable](https://apireference.aspose.com/slides/java/com.aspose.slides/ITable) interface. Below code example shows how to set the first row as a header.
 
-```java
+```php
 // Instantiate Presentation class that represents PPTX
 $pres = new Java("com.aspose.slides.Presentation", "table.pptx");
 try {
@@ -49,7 +49,7 @@ Aspose.Slides for Java has provided the simplest API to work with tables in an e
 - Clone table column.
 - Save the presentation as a PPTX file.
 
-```java
+```php
 // Instantiate presentation class
 $pres = new Java("com.aspose.slides.Presentation", "Test.pptx");
 try {
@@ -106,7 +106,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 - Remove table column.
 - Write the modified presentation as a PPTX file.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
@@ -115,8 +115,8 @@ try {
     double[] rowHeight = { 30, 50, 30 };
 
     ITable table = $slide->getShapes().addTable(100, 100, colWidth, rowHeight);
-    table->getRows().removeAt(1, false);
-    table->getColumns().removeAt(1, false);
+    table->getRows()->removeAt(1, false);
+    table->getColumns()->removeAt(1, false);
     
     $pres->save("TestTable_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -135,7 +135,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 - Set second row Cells text Vertical Type.
 - Save the modified presentation as a PPTX file.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -178,7 +178,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 - Set second Column Cells text Vertical Type.
 - Save the modified presentation as a PPTX file.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {

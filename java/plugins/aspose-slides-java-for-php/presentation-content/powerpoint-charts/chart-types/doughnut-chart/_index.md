@@ -21,7 +21,7 @@ In order to specify the size of the hole in a doughnut chart, please follow the 
 
 In the example given below, we have set the size of the hole in a doughnut chart.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {

@@ -11,7 +11,7 @@ description: "Animated text in PowerPoint with Java"
 
 We added the [**addEffect()**](https://apireference.aspose.com/slides/java/com.aspose.slides/Sequence#addEffect-com.aspose.slides.IParagraph-int-int-int-) method to the [**Sequence**](https://apireference.aspose.com/slides/java/com.aspose.slides/Sequence) and [**ISequence**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISequence) classes. This method allows you to add animation effects to a single paragraph. This sample code shows you how to add an animation effect to a single paragraph:
 
-```java
+```php
 $presentation = new Java("com.aspose.slides.Presentation"), "Presentation.pptx");
 try {
     // select paragraph to add effect
@@ -34,7 +34,7 @@ You may decide to find out the animation effects added to a paragraph—for exam
 
 Aspose.Slides for Java allows you to get all the animation effects applied to paragraphs contained in a text frame (shape). This sample code shows you how to get the animation effects in a paragraph:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     ISequence sequence = $pres->getSlides()->get_Item(0)->getTimeline()->getMainSequence();
@@ -45,7 +45,7 @@ try {
         IEffect[] effects = sequence->getEffectsByParagraph(paragraph);
 
         if (effects.length > 0)
-            System.out.println("Paragraph \"" + paragraph->getText() + "\" has " + effects[0]->getType() + " effect.");
+            echo("Paragraph \"" + paragraph->getText() + "\" has " + effects[0]->getType() + " effect.");
     }
 } finally {
     $pres->dispose();

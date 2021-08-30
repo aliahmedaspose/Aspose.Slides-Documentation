@@ -38,7 +38,7 @@ Method [**getAutoAdjust**](https://apireference.aspose.com/slides/java/com.aspos
 
 An example is given below shows how can you access [**ViewProperties->getNormalViewProperties**](https://apireference.aspose.com/slides/java/com.aspose.slides/ViewProperties#getNormalViewProperties--) properties for a presentation.
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -70,7 +70,7 @@ In order to set the view properties. Please follow the steps below:
 1. Write the presentation as a [PPTX ](https://wiki.fileformat.com/presentation/pptx/)file.
    In the example given below, we have set the zoom value for slide view as well as notes view.
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file
 $presentation = new Java("com.aspose.slides.Presentation");
 try {

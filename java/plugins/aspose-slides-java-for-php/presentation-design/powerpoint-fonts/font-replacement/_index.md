@@ -16,7 +16,7 @@ To replace the fonts using explicit replacement following steps are used:
 
 The implementation of the above steps is given below.
 
-```java
+```php
 // Load presentation
 $pres = new Java("com.aspose.slides.Presentation", "Fonts.pptx");
 try {

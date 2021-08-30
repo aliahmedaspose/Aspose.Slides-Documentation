@@ -13,7 +13,7 @@ Each [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slide
 
 Here is an examples how to create fallback fonts rules collection and assign in into the [FontsManager](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation#getFontsManager--) of a certain presentation:  
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IFontFallBackRulesCollection userRulesList = new FontFallBackRulesCollection();

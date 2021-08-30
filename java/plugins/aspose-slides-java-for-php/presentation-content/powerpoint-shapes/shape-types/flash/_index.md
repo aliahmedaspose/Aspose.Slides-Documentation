@@ -10,7 +10,7 @@ url: /java/flash/
 Aspose.Slides for Java provides a facility for extracting flash objects from a presentation. 
 You can access the flash control by name and extract it from the presentation and including store SWF object data.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {

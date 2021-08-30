@@ -15,7 +15,7 @@ In order to set the legend properties. Please follow the steps below:
 
 In the example given below, we have set the position and size for Chart legend.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -48,7 +48,7 @@ The Aspose.Slides for Java lets developers allow to set font size of legend. Pl
 - Set maximum axis value.
 - Write presentation to disk.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -78,7 +78,7 @@ The Aspose.Slides for Java lets developers allow to set font size of individual 
 - Set maximum axis value.
 - Write presentation to disk.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -90,7 +90,7 @@ try {
     tf->getPortionFormat()->setFontHeight(20);
     tf->getPortionFormat()->setFontItalic(NullableBool.True);
     tf->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    tf->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLUE);
+    tf->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
     
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

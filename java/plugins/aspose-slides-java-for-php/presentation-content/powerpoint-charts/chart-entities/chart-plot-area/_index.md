@@ -17,7 +17,7 @@ Aspose.Slides for Java provides a simple API for . 
 1. Gets actual width of the chart element.
 1. Gets actual height of the chart element.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -41,7 +41,7 @@ Aspose.Slides for Java provides a simple API to set the layout mode of the chart
 
 Sample code is given below.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {

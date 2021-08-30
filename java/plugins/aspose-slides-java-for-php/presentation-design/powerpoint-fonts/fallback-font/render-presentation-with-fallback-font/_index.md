@@ -12,7 +12,7 @@ The following example includes these steps:
 1. Set rules collection to [getFontsManager](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation#getFontsManager--).[getFontFallBackRulesCollection](https://apireference.aspose.com/slides/java/com.aspose.slides/FontsManager#getFontFallBackRulesCollection--) method.
 1. With [Presentation.save](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation#save-java.lang.String-int-) method we can save presentation in the same format, or save it in another one. After fallback font rules collection is set to [FontsManager](https://apireference.aspose.com/slides/java/com.aspose.slides/FontsManager), these rules are applied during any operations over the presentation: save, render, convert, etc.
 
-```java
+```php
 // Create new instance of a rules collection
 IFontFallBackRulesCollection rulesList = new FontFallBackRulesCollection();
 

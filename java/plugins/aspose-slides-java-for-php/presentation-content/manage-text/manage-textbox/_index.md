@@ -17,7 +17,7 @@ Using Aspose.Slides for Java, developers can create TextBox on a [Slide](https:/
 
 The implementation of the above steps is demonstrated below in an example.
 
-```java
+```php
 // Instantiate Presentation
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -54,7 +54,7 @@ Using Aspose.Slides for Java, developers can add column in text boxes on a [Slid
 
 The implementation is demonstrated below in an example.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide of presentation
@@ -90,7 +90,7 @@ Using Aspose.Slides for Java, developers can add columns in text frames on a [Sl
 
 The implementation is demonstrated below in an example.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IAutoShape shape1 = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 300, 300);
@@ -151,7 +151,7 @@ In this topic, we will create a TextBox with a Hyperlink. You will have to insta
 
 The implementation of the above steps is demonstrated below in an example.
 
-```java
+```php
 // Instantiate a Presentation class that represents a PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {

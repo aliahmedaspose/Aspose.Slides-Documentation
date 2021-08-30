@@ -22,7 +22,7 @@ Please follow the steps below to add TextFrame having 3 paragraphs and 3 portion
 
 The implementation of the above steps is given below.
 
-```java
+```php
 // Instantiate a Presentation class that represents a PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -68,12 +68,12 @@ try {
             portion->setText("Portion0" + j);
             if (j == 0) {
                 portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-                portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+                portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
                 portion->getPortionFormat()->setFontBold(NullableBool.True);
                 portion->getPortionFormat()->setFontHeight(15);
             } else if (j == 1) {
                 portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-                portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLUE);
+                portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
                 portion->getPortionFormat()->setFontItalic(NullableBool.True);
                 portion->getPortionFormat()->setFontHeight(18);
             }
@@ -100,7 +100,7 @@ This page will illustrate how we can manage paragraph indent. We will see how de
 
 The implementation of the above steps is given below.
 
-```java
+```php
 // Instantiate Presentation Class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -165,7 +165,7 @@ This page will illustrate how we can manage end paragraph run properties. We wil
 
 The implementation of the above steps is given below.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 200, 250);
@@ -205,7 +205,7 @@ This topic is also part of a series of topics about managing text paragraphs. As
 
 The implementation of the above steps is given below.
 
-```java
+```php
 // Create Empty presentation instance
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -249,7 +249,7 @@ Please follow the steps below to see how to export the paragraph text to HTML us
   
 The implementation of the above steps is given below.
 
-```java
+```php
 // Load the presentation file
 $pres = new Java("com.aspose.slides.Presentation", "ExportingHTMLText.pptx");
 try {

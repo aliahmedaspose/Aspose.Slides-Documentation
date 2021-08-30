@@ -22,7 +22,7 @@ To add a simple ellipse to a selected slide of the presentation, please follow t
 
 In the example given below, we have added an ellipse to the first slide
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -53,7 +53,7 @@ To add a better formatted ellipse to a slide, please follow the steps below:
 
 In the example given below, we have added a formatted ellipse to the first slide of the presentation.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -65,11 +65,11 @@ try {
 
     // Apply some formatting to ellipse shape
     shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp->getFillFormat()->getSolidFillColor()->setColor(new Color(PresetColor.Chocolate));
+    shp->getFillFormat()->getSolidFillColor()->setColor(new Java("java.awt.Color", PresetColor.Chocolate));
 
     // Apply some formatting to the line of Ellipse
     shp->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+    shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
     shp->getLineFormat()->setWidth(5);
 
     // Write the PPTX file to disk

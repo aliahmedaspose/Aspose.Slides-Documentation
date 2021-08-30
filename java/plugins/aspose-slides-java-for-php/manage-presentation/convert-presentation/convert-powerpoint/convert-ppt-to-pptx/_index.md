@@ -34,7 +34,7 @@ Aspose.Slides for Java now facilitates the developers to access the PPT using [P
 
 Aspose.Slides for Java offers [Presentation](https://apireference.aspose.com/java/slides/com.aspose.slides/presentation) class that represents a **PPTX** presentation file. Presentation class can now also access **PPT** through Presentation when the object is instantiated. The following example shows how to convert a PPT presentation into PPTX Presentation.
 
-```java
+```php
 // Instantiate a Presentation object that represents a PPTX file
 $pres = new Java("com.aspose.slides.Presentation", "Aspose.ppt");
 try {

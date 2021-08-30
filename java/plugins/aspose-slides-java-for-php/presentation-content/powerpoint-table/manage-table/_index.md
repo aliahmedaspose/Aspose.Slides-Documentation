@@ -19,7 +19,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 - Add some text to the Text Frame.
 - Save the modified presentation as a PPTX file.
 
-```java
+```php
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -41,19 +41,19 @@ try {
             ICellFormat cellFormat = tbl->getRows()->get_Item(row)->get_Item(cell)->getCellFormat();
             
             cellFormat->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cellFormat->getBorderTop()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cellFormat->getBorderTop()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cellFormat->getBorderTop()->setWidth(5);
 
             cellFormat->getBorderBottom()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cellFormat->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cellFormat->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cellFormat->getBorderBottom()->setWidth(5);
 
             cellFormat->getBorderLeft()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cellFormat->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cellFormat->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cellFormat->getBorderLeft()->setWidth(5);
 
             cellFormat->getBorderRight()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cellFormat->getBorderRight()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cellFormat->getBorderRight()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cellFormat->getBorderRight()->setWidth(5);
         }
     }
@@ -80,7 +80,7 @@ To access a table that already exists in a slide, please follow the steps below:
 - After the Table is found, you can use [ITable](https://apireference.aspose.com/slides/java/com.aspose.slides/ITable) object to control the table. For example, in our case, we have added a new row in the desired table.
 - Save the modified presentation as a PPT file.
 
-```java
+```php
 // Instantiate Presentation class that represents PPTX// Instantiate Presentation class that represents PPTX
 $pres = new Java("com.aspose.slides.Presentation", "UpdateExistingTable.pptx");
 try {
@@ -120,7 +120,7 @@ Aspose.Slides for Java has provided the simplest API to work with tables in an e
 - Align text vertically.
 - Save the presentation as a PPTX file.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -147,7 +147,7 @@ try {
     IPortion portion = paragraph->getPortions()->get_Item(0);
     portion->setText("Text here");
     portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLACK);
+    portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
     
     // Aligning the text vertically
     ICell cell = tbl->get_Item(0, 0);
@@ -172,7 +172,7 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 - Set Table Cells Vertical Type.
 - Save the modified presentation as a PPTX file.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "simpletable.pptx");
 try {
@@ -210,7 +210,7 @@ In a standard table numeration of cells is straightforward and zero-based. The f
 |(0, 2)|(1, 2)|(2, 2)|(3, 2)|
 |(0, 3)|(1, 3)|(2, 3)|(3, 3)|
 
-```java
+```php
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -230,19 +230,19 @@ try {
         for (ICell cell : row)
         {
             cell->getCellFormat()->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderTop()->setWidth(5);
 
             cell->getCellFormat()->getBorderBottom()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderBottom()->setWidth(5);
 
             cell->getCellFormat()->getBorderLeft()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderLeft()->setWidth(5);
 
             cell->getCellFormat()->getBorderRight()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderRight()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+            cell->getCellFormat()->getBorderRight()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
             cell->getCellFormat()->getBorderRight()->setWidth(5);
         }
     }
@@ -257,15 +257,15 @@ try {
 ## **Lock Aspect Ratio of Table**
 The aspect ratio of a geometric shape is the ratio of its sizes in different dimensions. You can lock aspect ratio of table using [**setAspectRatioLocked**](https://apireference.aspose.com/slides/java/com.aspose.slides/GraphicalObjectLock#setAspectRatioLocked-boolean-) method. Below code example shows how to use this method.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     ITable table = (ITable)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
-    System.out.println("Lock aspect ratio set: " + table->getGraphicalObjectLock()->getAspectRatioLocked());
+    echo("Lock aspect ratio set: " + table->getGraphicalObjectLock()->getAspectRatioLocked());
 
     table->getGraphicalObjectLock()->setAspectRatioLocked(!table->getGraphicalObjectLock()->getAspectRatioLocked()); // invert
 
-    System.out.println("Lock aspect ratio set: " + table->getGraphicalObjectLock()->getAspectRatioLocked());
+    echo("Lock aspect ratio set: " + table->getGraphicalObjectLock()->getAspectRatioLocked());
 
     $pres->save("pres-out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

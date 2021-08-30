@@ -24,7 +24,7 @@ To create a simple slide transition effect, follow the steps below:
 1. Apply a Slide Transition Type on the slide from one of the transition effects offered by Aspose.Slides for Java through TransitionType enum
 1. Write the modified presentation file.
 
-```java
+```php
 // Instantiate Presentation class to load the source presentation file
 $presentation = new Java("com.aspose.slides.Presentation"), "AccessSlides.pptx");
 try {
@@ -50,7 +50,7 @@ In the above section, we just applied a simple transition effect on the slide. N
 1. If the slide transition is enabled to Advance On Click, the transition will only advance when someone will click the mouse. Moreover, if the Advance After Time property is set, the transition will advance automatically after the specified advance time will be passed.
 1. Write the modified presentation as a presentation file.
 
-```java
+```php
 // Instantiate Presentation class that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "BetterSlideTransitions.pptx");
 try {
@@ -93,7 +93,7 @@ The Morph transition allows you to animate smooth movement from one slide to the
 
 The following code snippet shows you how to add a clone of the slide with some text to the presentation and set a transition of [morph type](https://apireference.aspose.com/slides/java/com.aspose.slides/TransitionType) to the second slide.
 
-```java
+```php
 $presentation = new Java("com.aspose.slides.Presentation");
 try {
     AutoShape autoshape = (AutoShape)presentation->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 400, 100);
@@ -127,7 +127,7 @@ TransitionMorphType enum has three members:
 
 The following code snippet shows you how to set morph transition to slide and change morph type:
 
-```java
+```php
 $presentation = new Java("com.aspose.slides.Presentation"), "presentation.pptx");
 try {
     $presentation->getSlides()->get_Item(0)->getSlideShowTransition()->setType(TransitionType.Morph);
@@ -148,7 +148,7 @@ Aspose.Slides for Java supports setting the transition effects like, from black,
 
 In the example given below, we have set the transition effects.
 
-```java
+```php
 // Create an instance of Presentation class
 $presentation = new Java("com.aspose.slides.Presentation"), "AccessSlides.pptx");
 try {

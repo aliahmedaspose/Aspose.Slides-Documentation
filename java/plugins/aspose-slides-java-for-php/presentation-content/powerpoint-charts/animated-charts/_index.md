@@ -22,7 +22,7 @@ If you want to animate a chart series, write the code according to the steps lis
 
 In the example given below, we animated chart series.
 
-```java
+```php
 // Instantiate Presentation class that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
@@ -68,7 +68,7 @@ If you want to animate a chart series, write the code according to the steps lis
 
 In the example given below, we animated chart category.
 
-```java
+```php
 // Instantiate Presentation class that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
@@ -111,7 +111,7 @@ If you want to animate series elements, write the code according to the steps li
 
 In the example given below, we have animated series' elements.
 
-```java
+```php
 // Instantiate Presentation class that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
@@ -167,7 +167,7 @@ If you want to animate categories elements, write the code according to the step
 
 In the example given below, we have animated categories elements.
 
-```java
+```php
 // Instantiate Presentation class that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {

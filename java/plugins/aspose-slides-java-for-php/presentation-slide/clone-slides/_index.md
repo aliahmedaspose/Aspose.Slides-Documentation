@@ -27,7 +27,7 @@ If you want to clone a slide and then use it within the same presentation file a
 
 In the example given below, we have cloned a slide (lying at the first position – zero index – of the presentation) to the end of the presentation.
 
-```java
+```php
 // Instantiate Presentation class that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "CloneWithinSamePresentationToEnd.pptx");
 try {
@@ -53,7 +53,7 @@ If you want to clone a slide and then use it within the same presentation file b
 
 In the example given below, we have cloned a slide (lying at the zero index – position 1 – of the presentation) to index 1 – Position 2 – of the presentation.
 
-```java
+```php
 // Instantiate Presentation class that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "CloneWithInSamePresentation.pptx");
 try {
@@ -81,7 +81,7 @@ If you need to clone a slide from one presentation and use it in another present
 
 In the example given below, we have cloned a slide (from the first index of the source presentation) to the end of the destination presentation.
 
-```java
+```php
 // Instantiate Presentation class to load the source presentation file
 Presentation srcPres = new Presentation("CloneAtEndOfAnother.pptx");
 try {
@@ -114,7 +114,7 @@ If you need to clone a slide from one presentation and use it in another present
 
 In the example given below, we have cloned a slide (from the zero index of the source presentation) to index 1 (position 2) of the destination presentation.
 
-```java
+```php
 // Instantiate Presentation class to load the source presentation file
 Presentation srcPres = new Presentation("CloneAtEndOfAnother.pptx");
 try {
@@ -150,7 +150,7 @@ If you need to clone a slide with a master slide from one presentation from and 
 
 In the example given below, we have cloned a slide with a master (lying at the zero index of the source presentation) to the end of the destination presentation using a master from source slide.
 
-```java
+```php
 // Instantiate Presentation class to load the source presentation file
 Presentation srcPres = new Presentation("CloneToAnotherPresentationWithMaster.pptx");
 try {
@@ -191,7 +191,7 @@ If you want to clone a slide and then use it within the same presentation file b
 
 The following code snippet shows you how to clone a slide and insert the cloned slide into a specified section.
 
-```java
+```php
 I$presentation = new Java("com.aspose.slides.Presentation");
 try {
     $presentation->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 50, 300, 100);

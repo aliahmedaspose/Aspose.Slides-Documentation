@@ -20,7 +20,7 @@ Aspose.Slides for Java provides a simple API for managing different chart Trend 
 
 The following code is used to create a chart with Trend Lines.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -36,7 +36,7 @@ try {
     ITrendline tredLineLin = chart->getChartData()->getSeries()->get_Item(0)->getTrendLines().add(TrendlineType.Linear);
     tredLineLin->setTrendlineType(TrendlineType.Linear);
     tredLineLin->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    tredLineLin->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor(Color.RED);
+    tredLineLin->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
     
     
     // Adding Logarithmic trend line for chart series 2
@@ -80,7 +80,7 @@ Aspose.Slides for Java provides a simple API to add custom lines in a chart. To 
 
 The following code is used to create a chart with Custom Lines.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {

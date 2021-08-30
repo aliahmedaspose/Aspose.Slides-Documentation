@@ -15,7 +15,7 @@ Here is a Sunburst Chart, where data in Series1 column define the leaf nodes, w
 
 Let’s start with adding a new Sunburst chart to the presentation:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Sunburst, 100, 100, 450, 400);
@@ -50,7 +50,7 @@ provide access to corresponding settings.
 ## **Show Data Point Value**
 Show value of "Leaf 4" data point:
 
-```java
+```php
 IChartDataPointCollection dataPoints = chart->getChartData()->getSeries()->get_Item(0)->getDataPoints();
 dataPoints->get_Item(3)->getDataPointLevels()->get_Item(0)->getLabel()->getDataLabelFormat()->setShowValue(true);
 ```
@@ -60,13 +60,13 @@ dataPoints->get_Item(3)->getDataPointLevels()->get_Item(0)->getLabel()->getDataL
 ## **Set Data Point Label and Color**
 Set "Branch 1" data label to show series name ("Series1") instead of category name. Then set text color to yellow:
 
-```java
+```php
 IDataLabel branch1Label = dataPoints->get_Item(0)->getDataPointLevels()->get_Item(0)->getLabel();
 branch1Label->getDataLabelFormat()->setShowCategoryName(false);
 branch1Label->getDataLabelFormat()->setShowSeriesName(true);
 
 branch1Label->getDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-branch1Label->getDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.YELLOW);
+branch1Label->getDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.YELLOW);
 ```
 
 ![todo:image_alt_text](https://lh6.googleusercontent.com/I9g0kewJnxkhUVlfSWRN39Ng-wzjWyRwF3yTbOD9HhLTLBt_sMJiEfDe7vOfqRNx89o9AVZsYTW3Vv_TIuj4EgM4_UEEi7zQ3jdvaO8FoG2JcsOqNRgbiE5HQZNz8xx_q9qdj8JQ)
@@ -74,7 +74,7 @@ branch1Label->getDataLabelFormat()->getTextFormat()->getPortionFormat()->getFill
 ## **Set Data Point Branch Color**
 Change color of "Steam 4" branch:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Sunburst, 100, 100, 450, 400);
@@ -84,7 +84,7 @@ try {
     IChartDataPointLevel stem4branch = dataPoints->get_Item(9)->getDataPointLevels()->get_Item(1);
 
     stem4branch->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    stem4branch->getFormat()->getFill()->getSolidFillColor()->setColor(Color.RED);
+    stem4branch->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
 
     $pres->save("pres.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

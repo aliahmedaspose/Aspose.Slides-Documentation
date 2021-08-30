@@ -18,7 +18,7 @@ description: "PowerPoint header and footer in Java"
 ## **Manage Header and Footer in Presentation**
 Notes of some specific slide could be removed as shown in example below:
 
-```java
+```php
 // Load Presentation
 $pres = new Java("com.aspose.slides.Presentation", "headerTest.pptx");
 try {
@@ -39,7 +39,7 @@ try {
     if ($pres != null) $pres->dispose();
 }
 ```
-```java
+```php
 // Method to set Header/Footer Text
 public static void updateHeaderFooterText(IBaseSlide master)
 {
@@ -71,7 +71,7 @@ Aspose.Slides for Java supports Header and Footer in Handout and notes slides. P
 
 Code Snippet provided in below Example.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
     // Change Header and Footer settings for notes master and all notes slides

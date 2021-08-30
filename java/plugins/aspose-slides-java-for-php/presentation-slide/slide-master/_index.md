@@ -100,7 +100,7 @@ In PowerPoint, Slide Master can be found in "View -> Slide Master" menu:
 
 With Aspose.Slides its possible to access Slide Master this way:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // access to the Presentation's master slide
@@ -121,7 +121,7 @@ Place your company logo and few images to Slide Master, then switch back to slid
 
 The same can be achieved with Aspose.Slides for Java:
 
-```java
+```php
 // add images to the presentation
 IPPImage logo = $pres->getImages().addImage(Files.readAllBytes(Paths->get("logo.png")));
 IPPImage image1 = $pres->getImages().addImage(Files.readAllBytes(Paths->get("slides.png")));
@@ -162,7 +162,7 @@ We are going to change the formatting of Title and Subtitle on Slides Master thi
 
 With Aspose.Slides to change the formatting of title placeholder, we first retrieve it from Slide Master object, and then use [Placeholder->getFillFormat](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#getFillFormat--) field:
 
-```java
+```php
 // get the reference to the master's title placeholder
 IShape titlePlaceholder = masterSlide->getShapes()->get_Item(0);
 
@@ -184,10 +184,10 @@ The style and formatting of the title will change for all slides, based on this 
 ## **Change Background on Slide Master**
 It is possible to change the background of Slide Master and make it apply to all presentation slides this way. If you change the background color of the master slide, all normal slides in the presentation will receive the same background color settings. Follow the steps below to change the background color of the master slide:
 
-```java
+```php
 masterSlide->getBackground()->setType(BackgroundType.OwnBackground);
 masterSlide->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-masterSlide->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Color.GRAY);
+masterSlide->getBackground()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.GRAY);
 ```
 
 {{% alert color="primary" title="See also" %}} 
@@ -197,7 +197,7 @@ masterSlide->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Col
 ## **Clone Slide Master to Another Presentation**
 To clone Slide Master to another presentation, [**addClone**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideCollection#addClone-com.aspose.slides.ISlide-com.aspose.slides.IMasterSlide-boolean-) method is called from destination presentation with a Slide Master passed into it:
 
-```java
+```php
 // add new master slide form another presentation
 IMasterSlide pres1MasterSlide = $pres->getMasters().addClone(pres1MasterSlide);
 ```
@@ -211,7 +211,7 @@ In PowerPoint you can add new Slide Masters and Layouts in "Slide Master menu" t
 
 With Aspose.Slides you can add new Slide Master by calling Presentation.Masters.AddClone method:
 
-```java
+```php
 // add new master slide
 IMasterSlide secondMasterSlide = $pres->getMasters().addClone(masterSlide);
 ```
@@ -226,7 +226,7 @@ Master Slide implements [IBaseSlide](https://apireference.aspose.com/slides/jav
 ## **Set Slide Master as Presentation Default View**
 Its possible to set Slide Master as a default view, when you open the Aspose.Slides generated saved presentation:
 
-```java
+```php
 // Instantiate Presentation class that represents the presentation file
 $presentation = new Java("com.aspose.slides.Presentation");
 try {

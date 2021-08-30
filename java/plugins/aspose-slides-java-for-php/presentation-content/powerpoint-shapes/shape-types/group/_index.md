@@ -16,7 +16,7 @@ Aspose.Slides support working with group shapes on slides. This feature helps de
 
 The example below adds a group shape to a slide.
 
-```java
+```php
 // Instantiate Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -56,7 +56,7 @@ This topic shows simple steps, complete with code examples, for adding a group s
 
 The example below accesses alternative text of group shape.
 
-```java
+```php
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation", "AltText.pptx");
 try {
@@ -77,7 +77,7 @@ try {
                 IShape shape2 = grphShape->getShapes()->get_Item(j);
                 
                 // Accessing the AltText property
-                System.out.println(shape2->getAlternativeText());
+                echo(shape2->getAlternativeText());
             }
         }
     }

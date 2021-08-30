@@ -33,7 +33,7 @@ Here are the steps to convert PPT/PPTX to JPG:
 
 {{% /alert %}} 
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "PowerPoint-Presentation.pptx");
 try {
     for (ISlide sld : $pres->getSlides()) {
@@ -52,7 +52,7 @@ try {
 ## **Convert PowerPoint PPT/PPTX to JPG with Customized Dimensions**
 To change the dimension of the resulting thumbnail and JPG image, you can set the *ScaleX* and *ScaleY* for it. To do that, pass *ScaleX* and *ScaleY* values into [**ISlide->getThumbnail(float scaleX, float scaleY)**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlide#getThumbnail-float-float-) method:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "PowerPoint-Presentation.pptx");
 try {
     // Define dimensions
@@ -79,7 +79,7 @@ try {
 ## **Render Comments when saving Presentation into Image**
 Aspose.Slides for Java provides a facility to render comments of presentations or slide when converting those into images. An example is given below that shows how to render comments of presentation into an image.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
     IRenderingOptions opts = new RenderingOptions();

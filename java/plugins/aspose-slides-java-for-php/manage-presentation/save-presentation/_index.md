@@ -19,7 +19,7 @@ Save a presentation to file by calling the [Presentation](https://apireference.a
 
 The examples that follow show how to save a presentation with Aspose.Slides for Java.
 
-```java
+```php
 // Instantiate a Presentation object that represents a PPT file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -35,7 +35,7 @@ try {
 ## **Save Presentation to Stream**
 It is possible to save a presentation to a stream by passing an output stream to the [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class [**Save**](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation#save-java.io.OutputStream-int-) method. There are many types of streams to which a presentation can be saved. In the below example we have created a new Presentation file, add text in shape and Save the presentation to the stream.
 
-```java
+```php
 // Instantiate a Presentation object that represents a PPT file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -58,7 +58,7 @@ try {
 ## **Save Presentation with Predefined View Type**
 Aspose.Slides for Java provides a facility to set the view type for the generated presentation when it is opened in PowerPoint through the [ViewProperties](https://apireference.aspose.com/slides/java/com.aspose.slides/ViewProperties) class. The [**setLastView**](https://apireference.aspose.com/slides/java/com.aspose.slides/ViewProperties#setLastView-int-) property is used to set the view type by using the [**ViewType**](https://apireference.aspose.com/slides/java/com.aspose.slides/ViewType) enumerator.
 
-```java
+```php
 // Opening the presentation file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -77,7 +77,7 @@ Aspose.Slides allows you to save the presentation in Strict Open XML format. Fo
 
 The following sample code creates a presentation and saves it in the Strict Open XML Format. While calling the [**Save**](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation#save-java.lang.String-int-com.aspose.slides.ISaveOptions-) method for the presentation, the [**PptxOptions**](https://apireference.aspose.com/slides/java/com.aspose.slides/pptxoptions) object is passed into it with the Conformance property set as [**Conformance.Iso29500_2008_Strict**](https://apireference.aspose.com/slides/java/com.aspose.slides/Conformance#Iso29500_2008_Strict).
 
-```java
+```php
 // Instantiate a Presentation object that represents a PPT file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -104,7 +104,7 @@ New [**IProgressCallback**](https://apireference.aspose.com/slides/java/com.aspo
 
 The following code snippets below show how to use [IProgressCallback](https://apireference.aspose.com/slides/java/com.aspose.slides/IProgressCallback) interface:
 
-```java
+```php
 // Opening the presentation file
 $pres = new Java("com.aspose.slides.Presentation", "ConvertToPDF.pptx");
 try {
@@ -115,14 +115,14 @@ try {
     $pres->dispose();
 }
 ```
-```java
+```php
 class ExportProgressHandler implements IProgressCallback 
 {
     public void reporting(double progressValue) 
 	{
         // Use progress percentage value here
         int progress = Double.valueOf(progressValue).intValue();
-        System.out.println(progress + "% file converted");
+        echo(progress + "% file converted");
     }
 }
 ```

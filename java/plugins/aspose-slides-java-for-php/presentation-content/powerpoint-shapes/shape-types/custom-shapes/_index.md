@@ -23,50 +23,50 @@ To set [GeometryPath](https://apireference.aspose.com/slides/java/com.aspose.sli
 [IGeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath) provides methods for adding segments of various types:
 
 **Adds line** to the end of the path
-``` java
+```php
 public void lineTo(java.awt.geom.Point2D.Float point);
 public void lineTo(float x, float y);
 ```
 **Adds line** to the specified place of the path:
-``` java    
+```php    
 public void lineTo(java.awt.geom.Point2D.Float point, long index);
 public void lineTo(float x, float y, long index);
 ```
 **Adds cubic Bezier curve** at the end the path:
-``` java
+```php
 public void cubicBezierTo(java.awt.geom.Point2D.Float point1, java.awt.geom.Point2D.Float point2, java.awt.geom.Point2D.Float point3);
 public void cubicBezierTo(float x1, float y1, float x2, float y2, float x3, float y3);
 ```
 **Adds cubic Bezier curve** to the specified place of the path:
-``` java
+```php
 public void cubicBezierTo(java.awt.geom.Point2D.Float point1, java.awt.geom.Point2D.Float point2, java.awt.geom.Point2D.Float point3, long index);
 public void cubicBezierTo(float x1, float y1, float x2, float y2, float x3, float y3, long index);
 ```
 **Adds quadratic Bezier curve** at the end the path:
-``` java
+```php
 public void quadraticBezierTo(java.awt.geom.Point2D.Float point1, java.awt.geom.Point2D.Float point2);
 public void quadraticBezierTo(float x1, float y1, float x2, float y2);
 ```
 **Adds quadratic Bezier curve** to the specified place of the path:
-``` java
+```php
 public void quadraticBezierTo(java.awt.geom.Point2D.Float point1, java.awt.geom.Point2D.Float point2, long index);
 public void quadraticBezierTo(float x1, float y1, float x2, float y2, long index);
 ```
 **Appends the specified arc** to the path:
-``` java
+```php
 public void arcTo(float width, float heigth, float startAngle, float sweepAngle);
 ```
 **Closes the current figure** of this path:
-``` java
+```php
 public void closeFigure();
 ```
 **Sets next point position**:
-``` java
+```php
 public void moveTo(java.awt.geom.Point2D.Float point);
 public void moveTo(float x, float y);
 ```
 **Removes path segment** at the specified index:
-``` java
+```php
 public void removeAt(int index);
 ```
 Methods [IGeometryPath->getStroke](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath#getStroke--), [IGeometryPath->getStroke](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath#setStroke-boolean-), [IGeometryPath->getFillMode](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath#getFillMode--) and [IGeometryPath->setFillMode](https://apireference.aspose.com/slides/java/com.aspose.slides/IGeometryPath#setFillMode-byte-) set an appearance of the geometry path.
@@ -86,7 +86,7 @@ Method [IGeometryPath->getPathData](https://apireference.aspose.com/slides/java/
 - Add a new point between two bottom points of the path.
 - Apply the path to the shape.
   
-``` java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0).
@@ -110,7 +110,7 @@ try {
 - Remove segment of the path.
 - Apply the path to the shape.
   
-``` java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0).
@@ -118,7 +118,7 @@ try {
 
     IGeometryPath path = shape->getGeometryPaths()[0];
     path.removeAt(2);
-    shape->setGeometryPath(path);
+    shape->setGeometryPath($path);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -133,7 +133,7 @@ try {
 - Create an instance of the [GeometryShape](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryShape) class. 
 - Apply the path to the shape.
 
-``` java
+```php
 List<Point2D.Float> points = new ArrayList<Point2D.Float>();
 
 float R = 100, r = 50;
@@ -183,7 +183,7 @@ try {
   - Create second instance of the [GeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryPath) class.
   - Apply the paths to the shape.
 
-``` java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0).
@@ -217,7 +217,7 @@ try {
 - Convert the [Shape](https://docs.oracle.com/javase/7/docs/api/java/awt/Shape.html) instance to the  [GeometryPath](https://apireference.aspose.com/slides/java/com.aspose.slides/GeometryPath) instance using [ShapeUtil](https://apireference.aspose.com/slides/java/com.aspose.slides/ShapeUtil).
 - Apply the paths to the shape.
   
-``` java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Create new shape

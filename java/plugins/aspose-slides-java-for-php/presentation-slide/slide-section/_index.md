@@ -20,7 +20,7 @@ To add a section that will house slides in a presentation, Aspose.Slides for Jav
 
 This sample code shows you to create a section in a presentation in Java:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     ISlide defaultSlide = $pres->getSlides()->get_Item(0);
@@ -37,7 +37,7 @@ try {
     $pres->getSections().reorderSectionWithSlides(section2, 0);
     $pres->save("pres-sections-moved.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 
-    $pres->getSections().removeSectionWithSlides(section2);
+    $pres->getSections()->removeSectionWithSlides(section2);
 
     $pres->getSections().appendEmptySection("Last empty section");
 
@@ -53,7 +53,7 @@ After you create a section in a PowerPoint presentation, you may decide to chang
 
 This sample code shows you how to change the name of a section in a presentation in Java using Aspose.Slides:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     ISection section = $pres->getSections()->get_Item(0);

@@ -18,7 +18,7 @@ To replace the fonts by setting some rules of replacement following steps are us
 
 The implementation of the above steps is given below.
 
-```java
+```php
 // Load presentation
 $pres = new Java("com.aspose.slides.Presentation", "Fonts.pptx");
 try {

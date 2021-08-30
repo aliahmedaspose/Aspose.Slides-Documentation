@@ -17,7 +17,7 @@ Aspose.Slides for Java allows developers to add audio files in their slides. The
 
 In the example given below, we have added an Embedded Audio Frame into the slide.
 
-```java
+```php
 // Instantiate Prseetation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -50,7 +50,7 @@ Aspose.Slides for Java allows developers to extract the sound that is used in sl
 - Access the [slideshow transitions](https://apireference.aspose.com/slides/java/com.aspose.slides/IBaseSlide#getSlideShowTransition--) for slide
 - Extract the sound in byte data
 
-```java
+```php
 // Instantiate Presentation class that represents the presentation file
 $pres = new Java("com.aspose.slides.Presentation", "AudioSlide.pptx");
 try {
@@ -62,7 +62,7 @@ try {
     
     //Extract sound in byte array
     byte[] audio = transition->getSound()->getBinaryData();
-    System.out.println("Length: " + audio.length);
+    echo("Length: " + audio.length);
 } finally {
     if ($pres != null) $pres->dispose();
 }

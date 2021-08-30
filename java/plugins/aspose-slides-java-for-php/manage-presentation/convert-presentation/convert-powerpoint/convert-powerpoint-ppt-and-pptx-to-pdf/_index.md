@@ -48,7 +48,7 @@ When converting a PPT document to PDF, Aspose.Slides allows you to export a PPT 
 
 This sample code shows you how to specify your preferred PDF compliance standard when converting PPT to PDF:
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     PdfOptions pdfOptions = new PdfOptions();
@@ -101,7 +101,7 @@ Aspose.Slides allows you to convert PPT(X) presentations to PDF document without
 ## **Convert PowerPoint to PDF with Default Options**
 The following example shows you how to convert a PowerPoint PPT, PPTX, and OpenOffice ODP document into a PDF document using the default options. The default options create a PDF document at the maximum quality levels
 
-```java
+```php
 // Instantiate a Presentation object that represents a PPT file
 $pres = new Java("com.aspose.slides.Presentation", "PowerPoint.ppt");
 try {
@@ -115,7 +115,7 @@ try {
 ## Convert PowerPoint to PDF with Custom Options
 The following example shows you how to convert PowerPoint PPT, PPTX and OpenOffice ODP into a PDF document with customized options provided by the [**PdfOptions**](https://apireference.aspose.com/slides/java/com.aspose.slides/PdfOptions) class. It sets the JPEG quality, saves metafiles to PNG, sets text compression level with [**PdfTextCompression**](https://apireference.aspose.com/slides/java/com.aspose.slides/PdfTextCompression) enumeration and sets PDF standard.
 
-```java
+```php
 // Instantiate a Presentation object that represents a PPTX file
 $pres = new Java("com.aspose.slides.Presentation", "PowerPoint.pptx");
 try {
@@ -150,7 +150,7 @@ Methods [**getShowHiddenSlides**](https://apireference.aspose.com/slides/java/co
 This property specifies whether the exported document should include hidden slides or not. 
 Default value is **"false"**.
 
-```java
+```php
 // Instantiate a Presentation object that represents a PPTX file
 $pres = new Java("com.aspose.slides.Presentation", "PowerPoint.pptx");
 try {
@@ -170,7 +170,7 @@ try {
 ## **Convert PowerPoint to Password Protected PDF**
 The following example shows you how to convert a presentation to a password-protected PDF document with customized options provided by the [**PdfOptions**](https://apireference.aspose.com/slides/java/com.aspose.slides/PdfOptions) class.
 
-```java
+```php
 // Instantiate a Presentation object that represents a PPTX file
 $pres = new Java("com.aspose.slides.Presentation", "PowerPoint.pptx");
 try {
@@ -191,7 +191,7 @@ try {
 ## **Convert Selected Slides of PowerPoint to PDF**
 The following example shows you how to convert a specific presentation slide to a PDF document with custom options.
 
-```java
+```php
 // Instantiate a Presentation object that represents a PPTX file
 $pres = new Java("com.aspose.slides.Presentation", "PowerPoint.pptx");
 try {
@@ -208,7 +208,7 @@ try {
 ## **Convert PowerPoint to PDF with Custom Slide Size**
 The following example shows you how to convert a presentation to a PDF notes document with custom slide size. Here, each inch equals 72.
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file 
 $pres = new Java("com.aspose.slides.Presentation", "SelectedSlides.pptx");
 try {
@@ -237,7 +237,7 @@ try {
 ## **Convert PowerPoint to PDF in Notes Slide View**
 The following example shows you how to convert a presentation to a PDF notes document:
 
-```java
+```php
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "SelectedSlides.pptx");
 try {

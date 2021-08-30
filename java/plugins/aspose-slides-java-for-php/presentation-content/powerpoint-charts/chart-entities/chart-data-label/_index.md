@@ -7,7 +7,7 @@ url: /java/chart-data-label/
 ## **Set Precision of Data in Chart Data Labels**
 Aspose.Slides for Java provides a simple API for setting precision of data in chart data label. Below sample example is given. 
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Line, 50, 50, 450, 300);
@@ -33,7 +33,7 @@ Aspose.Slides for Java supports displaying the percentage as labels. In this top
 
 In the example given below, we have set the percentage as label.
 
-```java
+```php
 // Creating empty presentation
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -95,7 +95,7 @@ In order to set the percentage sign with chart data labels. Please follow the st
 - Setting LabelFormat properties.
 - Write the presentation as a PPTX file.
 
-```java
+```php
 // Creating empty presentation
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -124,7 +124,7 @@ try {
     
     // Setting the fill color of series
     series->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    series->getFormat()->getFill()->getSolidFillColor()->setColor(Color.RED);
+    series->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
     
     // Setting LabelFormat properties
     series->getLabels()->getDefaultDataLabelFormat()->setShowValue(true);
@@ -132,7 +132,7 @@ try {
     series->getLabels()->getDefaultDataLabelFormat()->setNumberFormat("0.0%");
     series->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->setFontHeight(10);
     series->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    series->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.WHITE);
+    series->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.WHITE);
     series->getLabels()->getDefaultDataLabelFormat()->setShowValue(true);
     
     // Add new series
@@ -144,13 +144,13 @@ try {
     
     // Setting Fill type and color
     series2->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    series2->getFormat()->getFill()->getSolidFillColor()->setColor(Color.BLUE);
+    series2->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
     series2->getLabels()->getDefaultDataLabelFormat()->setShowValue(true);
     series2->getLabels()->getDefaultDataLabelFormat()->setNumberFormatLinkedToSource(false);
     series2->getLabels()->getDefaultDataLabelFormat()->setNumberFormat("0.0%");
     series2->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->setFontHeight(10);
     series2->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    series2->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.WHITE);
+    series2->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.WHITE);
     
     // Write presentation to disk
     $pres->save("SetDataLabelsPercentageSign_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -170,7 +170,7 @@ In order to set the Label Distance. Please follow the steps below:
 
 In the example given below, we have set the label distance from category axis.
 
-```java
+```php
 // Creating empty presentation
 $pres = new Java("com.aspose.slides.Presentation");
 try {

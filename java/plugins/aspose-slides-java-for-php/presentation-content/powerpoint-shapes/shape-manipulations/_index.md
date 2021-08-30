@@ -10,7 +10,7 @@ This topic will describe a simple technique to make it easier for developers to 
 
 After setting the alternative text of any desired shape, you can then open that presentation using Aspose.Slides for Java and iterate through all shapes added to a slide. During each iteration, you can check the alternative text of the shape and the shape with the matching alternative text would be the shape required by you. To demonstrate this technique in a better way, we have created a method, [findShape](https://apireference.aspose.com/slides/java/com.aspose.slides/SlideUtil#findShape-com.aspose.slides.IBaseSlide-java.lang.String-) that does the trick to find a specific shape in a slide and then simply returns that shape.
 
-```java
+```php
 // Instantiate a Presentation class that represents the presentation file
 $pres = new Java("com.aspose.slides.Presentation", "FindingShapeInSlide.pptx");
 try {
@@ -20,13 +20,13 @@ try {
     IShape shape = findShape(slide, "Shape1");
     if (shape != null)
     {
-        System.out.println("Shape Name: " + shape->getName());
+        echo("Shape Name: " + shape->getName());
     }
 } finally {
     if ($pres != null) $pres->dispose();
 }
 ```
-```java
+```php
 // Method implementation to find a shape in a slide using its alternative text
 public static IShape findShape(ISlide slide, String alttext)
 {
@@ -54,7 +54,7 @@ To clone a shape to a slide using Aspose.Slides for Java:
 
 The example below adds a group shape to a slide.
 
-```java
+```php
 // Instantiate Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "Source Frame.pptx");
 try {
@@ -82,7 +82,7 @@ Aspose.Slides for Java allows developers to remove any shape. To remove the shap
 1. Remove the shape.
 1. Save file to disk.
 
-```java
+```php
 // Create Presentation object
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -100,7 +100,7 @@ try {
         AutoShape ashp = (AutoShape)sld->getShapes()->get_Item(0);
         if (alttext.equals(ashp->getAlternativeText()))
         {
-            sld->getShapes().remove(ashp);
+            sld->getShapes()->remove(ashp);
         }
     }
 
@@ -120,7 +120,7 @@ Aspose.Slides for Java allows developers to hide any shape. To hide the shape fr
 1. Hide the shape.
 1. Save file to disk.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -160,7 +160,7 @@ Aspose.Slides for Java allows developers to reorder the shapes. Reordering the s
 1. Reorder the shapes.
 1. Save file to disk.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "ChangeShapeOrder.pptx");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
@@ -185,7 +185,7 @@ try {
 ## **Get Interop Shape ID**
 Aspose.Slides for Java allows developers to get a unique shape identifier in slide scope in contrast to the [getUniqueId](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#getUniqueId--) method, which allows obtaining a unique identifier in presentation scope. Method [getOfficeInteropShapeId](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#getOfficeInteropShapeId--) was added to [IShape](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape) interfaces and [Shape](https://apireference.aspose.com/slides/java/com.aspose.slides/Shape) class respectively. The value returned by [getOfficeInteropShapeId](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#getOfficeInteropShapeId--) method corresponds to the value of the Id of the Microsoft.Office.Interop.PowerPoint.Shape object. Below is a sample code is given.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Getting unique shape identifier in slide scope
@@ -212,7 +212,7 @@ To set the AlternateText of a shape, please follow the steps below:
 1. Set the AlternativeText.
 1. Save file to disk.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -223,7 +223,7 @@ try {
     IShape shp1 = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 40, 150, 50);
     IShape shp2 = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Moon, 160, 40, 150, 50);
     shp2->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp2->getFillFormat()->getSolidFillColor()->setColor(Color.GRAY);
+    shp2->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.GRAY);
 
     for (int i = 0; i < sld->getShapes()->size(); i++)
     {
@@ -246,7 +246,7 @@ Aspose.Slides for Java provides a simple API to access layout formats for a shap
 
 Below sample code is given.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     for (ILayoutSlide layoutSlide : $pres->getLayoutSlides())
@@ -265,7 +265,7 @@ try {
 ## **Render Shape as SVG**
 Now Aspose.Slides for Java support for rendering a shape as svg. Method [writeAsSvg](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#writeAsSvg-java.io.OutputStream-) (and its overload) has been added to [Shape](https://apireference.aspose.com/slides/java/com.aspose.slides/Shape) class and [IShape](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape) interface. This method allows to save content of the shape as an SVG file. Code snippet below shows how to export slide's shape to an SVG file.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "TestExportShapeToSvg.pptx");
 try {
     $stream = new Java("java.io.FileOutputStream", "SingleShape.svg");
@@ -287,7 +287,7 @@ Aspose.Slides allows to align shapes either relative to the slide margins or rel
 
 Source code below aligns shapes with indices 1,2 and 4 along the top border of the slide.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "example.pptx");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
@@ -310,7 +310,7 @@ try {
 
 The example below shows how to align the entire collection of shapes relative to the very bottom shape in the collection.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "example.pptx");
 try {
     SlideUtil.alignShapes(ShapesAlignmentType.AlignBottom, false, $pres->getSlides()->get_Item(0));

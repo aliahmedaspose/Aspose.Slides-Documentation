@@ -15,7 +15,7 @@ url: /java/presentation-localization/
 
 The implementation of the above steps is demonstrated below in an example.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "test.pptx");
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 50, 200, 50);

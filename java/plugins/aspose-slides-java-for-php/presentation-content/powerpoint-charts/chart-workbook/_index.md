@@ -10,7 +10,7 @@ url: /java/chart-workbook/
 ### **Set Chart Data from Workbook**
 A new property has been added to set chart data from workbook. Now Aspose.Slides does allow [readWorkbookStream()](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartData#readWorkbookStream--) and [wrtiteWorkbookStream()](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartData#writeWorkbookStream-byte:A-) methods to read and write chart data workbooks containing chart data edited using Aspose.Cells. However, the chart data needs to be organized in same way or of similar type as of source type. Below sample example is given.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Pie, 50, 50, 500, 400);
@@ -44,7 +44,7 @@ Aspose.Slides for Java provides a simple API for getting value from WorkBook Cel
 1. Setting Workbook cell as data label.
 1. Save the presentation to a PPTX file.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
@@ -75,7 +75,7 @@ Aspose.Slides for Java provides a simple API for getting value from WorkBook Cel
 1. Create object for source type of ChartDataSourceType which represents data source of the chart.
 1. If Source Type is equal to external workbook the get chart external data source workbook path.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
@@ -85,7 +85,7 @@ try {
     
     if (sourceType == ChartDataSourceType.ExternalWorkbook)
     {
-        String path = chart->getChartData()->getExternalWorkbookPath();
+        $path = chart->getChartData()->getExternalWorkbookPath();
     }
 } finally {
     if ($pres != null) $pres->dispose();
@@ -102,7 +102,7 @@ This article demonstrates how to create an external workbook from scratch using 
 
 The implementation is demonstrated below in an example.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
@@ -135,7 +135,7 @@ The method [**setExternalWorkbook()**](https://apireference.aspose.com/slides/ja
 
 The implementation is demonstrated below in an example.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
@@ -163,7 +163,7 @@ The [**setExternalWorkbook(System workbookPath, boolean updateChartData)**](http
 
 The **updateChartData** parameter defines whether an excel workbook will be loaded or not. If the value is ***false*** only the workbook path will be updated. Chart data will not be loaded and updated from the target workbook. This is useful when the target workbook does not yet exist or is not available. If the value is **true** chart data will be updated from the target workbook as the [**setExternalWorkbook(String)**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartData#setExternalWorkbook-java.lang.String-) method does.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
@@ -183,7 +183,7 @@ Using Aspose.Slides for Java, Chart data in external workbooks can be edited the
 
 The implementation is demonstrated below in an example.
 
-```java
+```php
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {

@@ -8,7 +8,7 @@ url: /java/manage-smartart/
 ## **Get Text from SmartArt**
 Now TextFrame method has been added to [ISmartArtShape](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArtShape) interface and [SmartArtShape](https://apireference.aspose.com/slides/java/com.aspose.slides/SmartArtShape) class respectively. This property allows you to get all text from [SmartArt](https://apireference.aspose.com/slides/java/com.aspose.slides/SmartArt) if it has not only nodes text. The following sample code will help you to get text from SmartArt node.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     ISlide slide = $pres->getSlides()->get_Item(0);
@@ -20,7 +20,7 @@ try {
         for (ISmartArtShape nodeShape : smartArtNode->getShapes())
         {
             if (nodeShape->getTextFrame() != null)
-                System.out.println(nodeShape->getTextFrame()->getText());
+                echo(nodeShape->getTextFrame()->getText());
         }
     }
 } finally {
@@ -38,7 +38,7 @@ In order to change the layout type of [SmartArt](https://apireference.aspose.com
 - Write the presentation as a PPTX file.
   In the example given below, we have added a connector between two shapes.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add SmartArt BasicProcess
@@ -65,7 +65,7 @@ Please note: method [ISmartArtNode.isHidden()]((https://apireference.aspose.com/
 
 In the example given below, we have added a connector between two shapes.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add SmartArt BasicProcess 
@@ -75,7 +75,7 @@ try {
     ISmartArtNode node = smart->getAllNodes().addNode();
 
     // Check isHidden property
-    boolean hidden = node.isHidden(); // Returns true
+    $hidden = node.isHidden(); // Returns true
 
     if (hidden)
     {
@@ -97,7 +97,7 @@ Methods [ISmartArtNode->getOrganizationChartLayout()](https://apireference.aspos
 - Write the presentation as a PPTX file.
   In the example given below, we have added a connector between two shapes.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add SmartArt BasicProcess
@@ -123,7 +123,7 @@ Aspose.Slides for Java provides a simple API for creating and PictureOrganizati
 
 The following code is used to create a chart.
 
-```java
+```php
 $pres = new Java("com.aspose.slides.Presentation", "test.pptx");
 try {
     ISmartArt smartArt = $pres->getSlides()->get_Item(0)->getShapes().addSmartArt(0, 0, 400, 400, SmartArtLayoutType.PictureOrganizationChart);
@@ -143,7 +143,7 @@ In order to change the layout type of [SmartArt](https://apireference.aspose.com
 
 The following code is used to create a chart.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -152,7 +152,7 @@ try {
     
     // Get or Set the state of SmartArt Diagram
     smart->setReversed(true);
-    boolean flag = smart.isReversed();
+    $flag = smart.isReversed();
     
     // Saving Presentation
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

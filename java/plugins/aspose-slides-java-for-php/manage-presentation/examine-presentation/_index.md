@@ -20,27 +20,27 @@ Before working on a presentation, you may want to find out what format (PPT, PPT
 
 You can check a presentation's format without loading the presentation. See this sample code:
 
-```java
-IPresentationInfo info = PresentationFactory->getInstance()->getPresentationInfo("pres.pptx");
-System.out.println(info->getLoadFormat()); // PPTX
+```php
+$info = Java("com.aspose.slides.PresentationFactory")->getInstance()->getPresentationInfo("pres.pptx");
+echo($info->getLoadFormat()); // PPTX
 
-IPresentationInfo info2 = PresentationFactory->getInstance()->getPresentationInfo("pres.ppt");
-System.out.println(info2->getLoadFormat()); // PPT
+$info2 = Java("com.aspose.slides.PresentationFactory")->getInstance()->getPresentationInfo("pres.ppt");
+echo(info2->getLoadFormat()); // PPT
 
-IPresentationInfo info3 = PresentationFactory->getInstance()->getPresentationInfo("pres.odp");
-System.out.println(info3->getLoadFormat()); // ODP
+$info3 = Java("com.aspose.slides.PresentationFactory")->getInstance()->getPresentationInfo("pres.odp");
+echo(info3->getLoadFormat()); // ODP
 ```
 
 ## **Getting the Properties of a Presentation**
 
 This sample code in Java shows you how to get a presentation’s properties (information about the presentation):
 
-```java
-IPresentationInfo info = PresentationFactory->getInstance()->getPresentationInfo("pres.pptx");
-IDocumentProperties props = info.readDocumentProperties();
-System.out.println(props->getCreatedTime());
-System.out.println(props->getSubject());
-System.out.println(props->getTitle());
+```php
+$info = Java("com.aspose.slides.PresentationFactory")->getInstance()->getPresentationInfo("pres.pptx");
+$props = $info->readDocumentProperties();
+echo($props->getCreatedTime());
+echo($props->getSubject());
+echo($props->getTitle());
 // .. 
 ```
 
@@ -50,12 +50,12 @@ Aspose.Slides provides the [PresentationInfo.updateDocumentProperties](https://a
 
 This sample code shows you how to edit the properties for a presentation in Java:
 
-```java
-IPresentationInfo info = PresentationFactory->getInstance()->getPresentationInfo("pres.pptx");
+```php
+$info = Java("com.aspose.slides.PresentationFactory")->getInstance()->getPresentationInfo("pres.pptx");
 
-IDocumentProperties props = info.readDocumentProperties();
-props->setTitle("My title");
-info.updateDocumentProperties(props);
+$props = $info->readDocumentProperties();
+$props->setTitle("My title");
+$info->updateDocumentProperties($props);
 ```
 
 ### **Useful Links**

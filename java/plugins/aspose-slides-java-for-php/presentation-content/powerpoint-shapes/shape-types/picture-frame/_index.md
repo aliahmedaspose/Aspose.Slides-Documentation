@@ -31,7 +31,7 @@ To add a simple picture frame to your slide, please follow the steps below:
 
 The above steps are implemented in the example given below.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -64,7 +64,7 @@ The picture frame that we created in the above section were simple as well as we
 
 The above steps are implemented in the example given below.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -108,7 +108,7 @@ The picture frame that we created in the above section is simple. We can also co
 
 The above steps are implemented in the example given below.
 
-```java
+```php
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
@@ -123,7 +123,7 @@ try {
     
     // Apply some formatting to PictureFrameEx
     pf->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    pf->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Color.BLUE);
+    pf->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
     pf->getLineFormat()->setWidth(20);
     pf->setRotation(45);
     
@@ -150,7 +150,7 @@ The methods [getStretchOffsetLeft](https://apireference.aspose.com/slides/java/
 
 The above steps are implemented in the example given below.
 
-```java
+```php
 // Instantiate Prseetation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {

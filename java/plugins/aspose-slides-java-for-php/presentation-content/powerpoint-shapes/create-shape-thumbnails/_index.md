@@ -34,10 +34,10 @@ This sample code shows you how to generate a shape thumbnail from a slide:
 $pres = new Java("com.aspose.slides.Presentation", "Thumbnail.pptx");
 try {
     // Create a full scale image
-    BufferedImage image = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getThumbnail();
+    $image = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getThumbnail();
     
     // Save the image to disk in PNG format
-    ImageIO.write(image, "jpeg", new File("output.jpg"));
+    Java("javax.imageio.ImageIO")->write($image, "jpeg", new Java("java.io.File", "output.jpg"));
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -59,10 +59,10 @@ This sample code shows you how to generate a shape thumbnail based on a defined 
 $pres = new Java("com.aspose.slides.Presentation", "Thumbnail.pptx");
 try {
     // Create a full scale image
-    BufferedImage image = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getThumbnail(ShapeThumbnailBounds.Shape, 1, 1);
+    $image = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getThumbnail(ShapeThumbnailBounds.Shape, 1, 1);
 
     // Save the image to disk in PNG format
-    ImageIO.write(image, "jpeg", new File("output.jpg"));
+    Java("javax.imageio.ImageIO")->write($image, "jpeg", new Java("java.io.File", "output.jpg"));
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -84,10 +84,10 @@ This sample code is based on the steps above:
 $pres = new Java("com.aspose.slides.Presentation", "Thumbnail.pptx");
 try {
     // Create a full scale image
-    BufferedImage image = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getThumbnail(ShapeThumbnailBounds.Appearance, 1, 1);
+    $image = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getThumbnail(ShapeThumbnailBounds.Appearance, 1, 1);
 
     // Save the image to disk in PNG format
-    ImageIO.write(image, "jpeg", new File("output.jpg"));
+    Java("javax.imageio.ImageIO")->write($image, "jpeg", new Java("java.io.File", "output.jpg"));
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();

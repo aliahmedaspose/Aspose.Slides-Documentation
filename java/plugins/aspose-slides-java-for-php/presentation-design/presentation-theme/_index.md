@@ -73,9 +73,9 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 100, 100);
 
-    shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-    shape->getFillFormat()->getSolidFillColor()->setSchemeColor(SchemeColor.Accent4);
+    $shape->getFillFormat()->getSolidFillColor()->setSchemeColor(SchemeColor.Accent4);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -84,7 +84,7 @@ try {
 In the example above, we have set a reference on *Accent4* color, taken from the **scheme color** (theme colors). If we want to know the real value of this color, it is necessary to calculate its effective value - the value of the element color, which user sees after all the styles applied to this element:
 
 ```php
-IFillFormatEffectiveData fillEffective = shape->getFillFormat()->getEffective();
+$fillEffective = $shape->getFillFormat()->getEffective();
 
 Color effectiveColor = fillEffective->getSolidFillColor();
 
@@ -110,7 +110,7 @@ otherShape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Sol
 
 otherShape->getFillFormat()->getSolidFillColor()->setSchemeColor(SchemeColor.Accent4);
 
-pres->getMasterTheme()->getColorScheme()->getAccent4()->setColorJava("java.awt.Color")->.RED);
+pres->getMasterTheme()->getColorScheme()->getAccent4()->setColorJava("java.awt.Color")->RED);
 ``` 
 
 The color will change on both elements after we have changed it in the color theme. 
@@ -134,21 +134,21 @@ Let us create an element with the text, and assign the Latin font from the font 
 ```php
 $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 100, 100);
 
-Paragraph paragraph = new Paragraph();
+Paragraph paragraph = new Java("com.aspose.slides.Paragraph");
 
-Portion portion = new Portion("Theme text format");
+Portion portion = new Java("com.aspose.slides.Portion"), "Theme text format");
 
-paragraph->getPortions().add(portion);
+paragraph->getPortions()->add(portion);
 
-shape->getTextFrame()->getParagraphs().add(paragraph);
+shape->getTextFrame()->getParagraphs()->add($paragraph);
 
-portion->getPortionFormat()->setLatinFont(new FontData("+mn-lt"));
+portion->getPortionFormat()->setLatinFont(new  Java("com.aspose.slides.FontData"), "+mn-lt"));
 ``` 
 
 Now lets check that the same font is set for Body Latin:
 
 ```php
-echo("Portion Body Latin font is: " + portion->getPortionFormat()->getEffective()->getLatinFont()->getFontName());
+echo("Portion Body Latin font is: " + $portion->getPortionFormat()->getEffective()->getLatinFont()->getFontName());
 
 echo("Theme Body Latin font is: " + $pres->getMasterTheme()->getFontScheme()->getMinor()->getLatinFont());
 ``` 
@@ -156,7 +156,7 @@ echo("Theme Body Latin font is: " + $pres->getMasterTheme()->getFontScheme()->ge
 It is possible to change the presentation theme font, which will be updated for all presentation text accordingly:
 
 ```php
-pres->getMasterTheme()->getFontScheme()->getMinor()->setLatinFont(new FontData("Arial"));
+pres->getMasterTheme()->getFontScheme()->getMinor()->setLatinFont(new  Java("com.aspose.slides.FontData"), "Arial"));
 ``` 
 
 {{% alert color="primary" title="See also" %}} 
@@ -176,7 +176,7 @@ On the images above you can see, that to design the Background Style in PowerPoi
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
-    int numberOfBackgroundFills = $pres->getMasterTheme()->getFormatScheme()->getBackgroundFillStyles()->size();
+    $numberOfBackgroundFills = $pres->getMasterTheme()->getFormatScheme()->getBackgroundFillStyles()->size();
 
     echo("Number of background fill styles for theme is " + numberOfBackgroundFills);
 } finally {
@@ -220,11 +220,11 @@ So, the effects you can use in PowerPoint are strictly limited. While, in Aspos
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "Subtle_Moderate_Intense.pptx");
 try {
-    $pres->getMasterTheme()->getFormatScheme()->getLineStyles()->get_Item(0)->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
+    $pres->getMasterTheme()->getFormatScheme()->getLineStyles()->get_Item(0)->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
 
     $pres->getMasterTheme()->getFormatScheme()->getFillStyles()->get_Item(2)->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-    $pres->getMasterTheme()->getFormatScheme()->getFillStyles()->get_Item(2)->getSolidFillColor()->setColorJava("java.awt.Color")->.GREEN);
+    $pres->getMasterTheme()->getFormatScheme()->getFillStyles()->get_Item(2)->getSolidFillColor()->setColorJava("java.awt.Color")->GREEN);
 
     $pres->getMasterTheme()->getFormatScheme()->getEffectStyles()->get_Item(2)->getEffectFormat()->getOuterShadowEffect()->setDistance(10f);
 

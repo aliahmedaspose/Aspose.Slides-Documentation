@@ -159,7 +159,7 @@ try {
     try {
         // Instantiate ISlide from the collection of slides in source presentation along with
         // Master slide
-        ISlide SourceSlide = srcPres->getSlides()->get_Item(0);
+        $SourceSlide = srcPres->getSlides()->get_Item(0);
         IMasterSlide SourceMaster = SourceSlide->getLayoutSlide()->getMasterSlide();
 
         // Clone the desired master slide from the source presentation to the collection of masters in the
@@ -195,10 +195,10 @@ The following code snippet shows you how to clone a slide and insert the cloned 
 I$presentation = new Java("com.aspose.slides.Presentation");
 try {
     $presentation->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 50, 300, 100);
-    $presentation->getSections().addSection("Section 1", $presentation->getSlides()->get_Item(0));
+    $presentation->getSections()->addSection("Section 1", $presentation->getSlides()->get_Item(0));
 
     ISection section2 = $presentation->getSections().appendEmptySection("Section 2");
-    $presentation->getSlides().addClone(presentation->getSlides()->get_Item(0), section2);
+    $presentation->getSlides()->addClone(presentation->getSlides()->get_Item(0), section2);
     
 	// Save the destination presentation to disk
     $presentation->save(dataDir + "CloneSlideIntoSpecifiedSection.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

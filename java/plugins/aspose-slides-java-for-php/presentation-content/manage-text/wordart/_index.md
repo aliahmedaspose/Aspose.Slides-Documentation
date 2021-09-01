@@ -34,12 +34,12 @@ First, we create a simple text using this Java code:
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = $pres->getSlides()->get_Item(0);
-    IAutoShape autoShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 200, 400, 200);
-    ITextFrame textFrame = autoShape->getTextFrame();
+    $slide = $pres->getSlides()->get_Item(0);
+    $autoShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 200, 400, 200);
+    $textFrame = autoShape->getTextFrame();
 
     Portion portion = (Portion)textFrame->getParagraphs()->get_Item(0)->getPortions()->get_Item(0);
-    portion->setText("Aspose.Slides");
+    $portion->setText("Aspose.Slides");
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -47,7 +47,7 @@ try {
 Now, we set the text’s font height to a bigger value to make the effect more noticeable through this code:
 
 ```php 
-FontData fontData = new FontData("Arial Black");
+FontData fontData = new  Java("com.aspose.slides.FontData"), "Arial Black");
 portion->getPortionFormat()->setLatinFont(fontData);
 portion->getPortionFormat()->setFontHeight(36);
 ```
@@ -70,12 +70,12 @@ Here, we apply the [SmallGrid](https://apireference.aspose.com/slides/java/com.a
 
 ```php 
 portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Pattern);
-portion->getPortionFormat()->getFillFormat()->getPatternFormat()->getForeColor()->setColorJava("java.awt.Color")->.ORANGE);
-portion->getPortionFormat()->getFillFormat()->getPatternFormat()->getBackColor()->setColorJava("java.awt.Color")->.WHITE);
+portion->getPortionFormat()->getFillFormat()->getPatternFormat()->getForeColor()->setColorJava("java.awt.Color")->ORANGE);
+portion->getPortionFormat()->getFillFormat()->getPatternFormat()->getBackColor()->setColorJava("java.awt.Color")->WHITE);
 portion->getPortionFormat()->getFillFormat()->getPatternFormat()->setPatternStyle(PatternStyle.SmallGrid);
 
 portion->getPortionFormat()->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-portion->getPortionFormat()->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
+portion->getPortionFormat()->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLACK);
 ```
 
 The resulting text:
@@ -98,7 +98,7 @@ Here, we intend to set the properties relating to a text only. We apply the shad
 
 ```php
 portion->getPortionFormat()->getEffectFormat().enableOuterShadowEffect();
-portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->getShadowColor()->setColorJava("java.awt.Color")->.BLACK);
+portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->getShadowColor()->setColorJava("java.awt.Color")->BLACK);
 portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->setScaleHorizontal(100);
 portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->setScaleVertical(65);
 portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->setBlurRadius(4.73);
@@ -106,7 +106,7 @@ portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->setDirec
 portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->setDistance(2);
 portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->setSkewHorizontal(30);
 portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->setSkewVertical(0);
-portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->getShadowColor()->getColorTransform().addJava("java.awt.Color")->TransformOperation.SetAlpha, 0.32f);
+portion->getPortionFormat()->getEffectFormat()->getOuterShadowEffect()->getShadowColor()->getColorTransform()->addJava("java.awt.Color")->TransformOperation.SetAlpha, 0.32f);
 ```
 
 Aspose.Slides API supports three types of shadows: OuterShadow, InnerShadow, and PresetShadow. 
@@ -153,7 +153,7 @@ We apply the glow effect to the text to make it shine or stand out using this co
 ```php
 portion->getPortionFormat()->getEffectFormat().enableGlowEffect();
 portion->getPortionFormat()->getEffectFormat()->getGlowEffect()->getColor()->setR((byte)255);
-portion->getPortionFormat()->getEffectFormat()->getGlowEffect()->getColor()->getColorTransform().addJava("java.awt.Color")->TransformOperation.SetAlpha, 0.54f);
+portion->getPortionFormat()->getEffectFormat()->getGlowEffect()->getColor()->getColorTransform()->addJava("java.awt.Color")->TransformOperation.SetAlpha, 0.54f);
 portion->getPortionFormat()->getEffectFormat()->getGlowEffect()->setRadius(7);
 ```
 
@@ -205,10 +205,10 @@ autoShape->getThreeDFormat()->getBevelTop()->setBevelType(BevelPresetType.Circle
 autoShape->getThreeDFormat()->getBevelTop()->setHeight(12.5);
 autoShape->getThreeDFormat()->getBevelTop()->setWidth(11);
 
-autoShape->getThreeDFormat()->getExtrusionColor()->setColorJava("java.awt.Color")->.ORANGE);
+autoShape->getThreeDFormat()->getExtrusionColor()->setColorJava("java.awt.Color")->ORANGE);
 autoShape->getThreeDFormat()->setExtrusionHeight(6);
 
-autoShape->getThreeDFormat()->getContourColor()->setColorJava("java.awt.Color")->.RED);
+autoShape->getThreeDFormat()->getContourColor()->setColorJava("java.awt.Color")->RED);
 autoShape->getThreeDFormat()->setContourWidth(1.5);
 
 autoShape->getThreeDFormat()->setDepth(3);
@@ -237,10 +237,10 @@ textFrame->getTextFrameFormat()->getThreeDFormat()->getBevelTop()->setBevelType(
 textFrame->getTextFrameFormat()->getThreeDFormat()->getBevelTop()->setHeight(4);
 textFrame->getTextFrameFormat()->getThreeDFormat()->getBevelTop()->setWidth(4);
 
-textFrame->getTextFrameFormat()->getThreeDFormat()->getExtrusionColor()->setColorJava("java.awt.Color")->.ORANGE);
+textFrame->getTextFrameFormat()->getThreeDFormat()->getExtrusionColor()->setColorJava("java.awt.Color")->ORANGE);
 textFrame->getTextFrameFormat()->getThreeDFormat()->setExtrusionHeight(6);
 
-textFrame->getTextFrameFormat()->getThreeDFormat()->getContourColor()->setColorJava("java.awt.Color")->.RED);
+textFrame->getTextFrameFormat()->getThreeDFormat()->getContourColor()->setColorJava("java.awt.Color")->RED);
 textFrame->getTextFrameFormat()->getThreeDFormat()->setContourWidth(1.5);
 
 textFrame->getTextFrameFormat()->getThreeDFormat()->setDepth(3);
@@ -294,20 +294,20 @@ This sample code in Java—an implementation of the steps above—shows you how 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
 
     // Add an AutoShape of Rectangle type
-    IAutoShape ashp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 75, 150, 50);
+    $ashp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 75, 150, 50);
 
     // Add TextFrame to the Rectangle
-    ashp->addTextFrame("Aspose TextBox");
+    $ashp->addTextFrame("Aspose TextBox");
 
     // Disable shape fill in case we want to get shadow of text
-    ashp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
+    $ashp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
 
     // Add outer shadow and set all necessary parameters
-    ashp->getEffectFormat().enableOuterShadowEffect();
-    IOuterShadow shadow = ashp->getEffectFormat()->getOuterShadowEffect();
+    $ashp->getEffectFormat().enableOuterShadowEffect();
+    IOuterShadow shadow = $ashp->getEffectFormat()->getOuterShadowEffect();
     shadow->setBlurRadius(4.0);
     shadow->setDirection(45);
     shadow->setDistance(3);
@@ -339,16 +339,16 @@ This sample code (based on the steps above) shows you how to add a connector bet
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
 
     // Add an AutoShape of Rectangle type
-    IAutoShape ashp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 75, 400, 300);
-    ashp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
+    $ashp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 75, 400, 300);
+    $ashp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
 
     // Add TextFrame to the Rectangle
-    ashp->addTextFrame("Aspose TextBox");
-    IPortion port = ashp->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0);
-    IPortionFormat pf = port->getPortionFormat();
+    $ashp->addTextFrame("Aspose TextBox");
+    $port = $ashp->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0);
+    $pf = port->getPortionFormat();
     pf->setFontHeight(50);
 
     // Enable InnerShadowEffect

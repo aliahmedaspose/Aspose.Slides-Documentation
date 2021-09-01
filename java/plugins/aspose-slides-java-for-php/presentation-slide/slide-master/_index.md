@@ -123,20 +123,20 @@ The same can be achieved with Aspose.Slides for Java:
 
 ```php
 // add images to the presentation
-IPPImage logo = $pres->getImages().addImage(Files.readAllBytes(Paths->get("logo.png")));
-IPPImage image1 = $pres->getImages().addImage(Files.readAllBytes(Paths->get("slides.png")));
-IPPImage image2 = $pres->getImages().addImage(Files.readAllBytes(Paths->get("cells.png")));
-IPPImage image3 = $pres->getImages().addImage(Files.readAllBytes(Paths->get("words.png")));
+IPPImage logo = $pres->getImages()->addImage(Files.readAllBytes(Paths->get("logo.png")));
+IPPImage image1 = $pres->getImages()->addImage(Files.readAllBytes(Paths->get("slides.png")));
+IPPImage image2 = $pres->getImages()->addImage(Files.readAllBytes(Paths->get("cells.png")));
+IPPImage image3 = $pres->getImages()->addImage(Files.readAllBytes(Paths->get("words.png")));
 
 // add these added images to the master slide
-masterSlide->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 25, 25, logo);
-masterSlide->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 40, 25, 25, image1);
-masterSlide->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 75, 25, 25, image2);
-masterSlide->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 110, 25, 25, image3);
+masterSlide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 25, 25, logo);
+masterSlide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 40, 25, 25, image1);
+masterSlide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 75, 25, 25, image2);
+masterSlide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 110, 25, 25, image3);
 
 // add new slides with same master slide template
-pres->getSlides().addEmptySlide(masterSlide->getLayoutSlides()->get_Item(0));
-pres->getSlides().addEmptySlide(masterSlide->getLayoutSlides()->get_Item(1));
+pres->getSlides()->addEmptySlide(masterSlide->getLayoutSlides()->get_Item(0));
+pres->getSlides()->addEmptySlide(masterSlide->getLayoutSlides()->get_Item(1));
 ```
 
 First, we add images into the image collection of presentation. Now these images can be used in shapes, so we create a picture frame on Slide Master with [addPictureFrame](https://apireference.aspose.com/slides/java/com.aspose.slides/IShapeCollection#addPictureFrame-int-float-float-float-float-com.aspose.slides.IPPImage-) method. After that, we add new slides, which are based on this Slide Master with [addEmptySlide](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideCollection#addEmptySlide-com.aspose.slides.ILayoutSlide-) method. Info AddEmptySlide method we pass the layout of the Slide Master, so the new slides will be created with same master slide template.
@@ -164,13 +164,13 @@ With Aspose.Slides to change the formatting of title placeholder, we first retri
 
 ```php
 // get the reference to the master's title placeholder
-IShape titlePlaceholder = masterSlide->getShapes()->get_Item(0);
+$titlePlaceholder = masterSlide->getShapes()->get_Item(0);
 
 // format fill as gradient fill
 titlePlaceholder->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Gradient);
-titlePlaceholder->getFillFormat()->getGradientFormat()->getGradientStops().add(0, Color.RED);
-titlePlaceholder->getFillFormat()->getGradientFormat()->getGradientStops().add(50, Color.GREEN);
-titlePlaceholder->getFillFormat()->getGradientFormat()->getGradientStops().add(100, Color.BLUE);
+titlePlaceholder->getFillFormat()->getGradientFormat()->getGradientStops()->add(0, Color.RED);
+titlePlaceholder->getFillFormat()->getGradientFormat()->getGradientStops()->add(50, Color.GREEN);
+titlePlaceholder->getFillFormat()->getGradientFormat()->getGradientStops()->add(100, Color.BLUE);
 ```
 
 The style and formatting of the title will change for all slides, based on this Slide Master:
@@ -187,7 +187,7 @@ It is possible to change the background of Slide Master and make it apply to all
 ```php
 masterSlide->getBackground()->setType(BackgroundType.OwnBackground);
 masterSlide->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-masterSlide->getBackground()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.GRAY);
+masterSlide->getBackground()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->GRAY);
 ```
 
 {{% alert color="primary" title="See also" %}} 
@@ -199,7 +199,7 @@ To clone Slide Master to another presentation, [**addClone**](https://apirefere
 
 ```php
 // add new master slide form another presentation
-IMasterSlide pres1MasterSlide = $pres->getMasters().addClone(pres1MasterSlide);
+IMasterSlide pres1MasterSlide = $pres->getMasters()->addClone(pres1MasterSlide);
 ```
 
 ## **Add Multiple Slide Masters to Presentation**
@@ -213,7 +213,7 @@ With Aspose.Slides you can add new Slide Master by calling Presentation.Masters.
 
 ```php
 // add new master slide
-IMasterSlide secondMasterSlide = $pres->getMasters().addClone(masterSlide);
+IMasterSlide secondMasterSlide = $pres->getMasters()->addClone(masterSlide);
 ```
 
 ## **Compare Slide Masters**
@@ -236,7 +236,7 @@ try {
     // Save presentation
     $presentation->save("PresView.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
-    presentation.dispose();
+    $presentation->dispose();
 }
 ```
 

@@ -28,7 +28,7 @@ This sample code, based on the steps above, shows to how to add Media Player Act
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Adding the Media Player ActiveX control
-    $pres->getSlides()->get_Item(0)->getControls().addControl(ControlType.WindowsMediaPlayer, 100, 100, 400, 400);
+    $pres->getSlides()->get_Item(0)->getControls()->addControl(ControlType.WindowsMediaPlayer, 100, 100, 400, 400);
 
     // Access the Media Player ActiveX control and set the video path
     $pres->getSlides()->get_Item(0)->getControls()->get_Item(0)->getProperties()->set_Item("URL", "Wildlife.wmv");
@@ -66,18 +66,18 @@ This sample code, based on the steps above, shows how to manage a simple ActiveX
 $pres = new Java("com.aspose.slides.Presentation", "ActiveX.pptm");
 try {
     // Accessing the first slide in presentation
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     
     // changing TextBox text
-    IControl control = slide->getControls()->get_Item(0);
+    IControl control = $slide->getControls()->get_Item(0);
     
-    if (control->getName() == "TextBox1" && control->getProperties() != null) {
-        String newText = "Changed text";
+    if ($control->getName() == "TextBox1" && control->getProperties() != null) {
+        $newText = "Changed text";
         control->getProperties()->set_Item("Value", newText);
     
         // Changing substitute image. PowerPoint will replace this image during activeX activation, 
         // so sometime it's OK to leave image unchanged.
-        BufferedImage image = new BufferedImage((int) control->getFrame()->getWidth(), (int) control->getFrame()->getHeight(),
+        $image = new BufferedImage((int) control->getFrame()->getWidth(), (int) control->getFrame()->getHeight(),
                 BufferedImage.TYPE_INT_ARGB);
     
         java.awt.Graphics graphics = image->getGraphics();
@@ -106,17 +106,17 @@ try {
         graphics.drawLine(image->getWidth(), image->getHeight(), image->getWidth(), 0);
     
         graphics.dispose();
-        control->getSubstitutePictureFormat()->getPicture()->setImage($pres->getImages().addImage(image));
+        control->getSubstitutePictureFormat()->getPicture()->setImage($pres->getImages()->addImage($image));
     }
     
     // Changing Button caption
     control = $pres->getSlides()->get_Item(0)->getControls()->get_Item(1);
     
-    if (control->getName().equalsIgnoreCase("CommandButton1") && control->getProperties() != null) {
-        String newCaption = "Show MessageBox";
+    if ($control->getName() == IgnoreCase("CommandButton1") && control->getProperties() != null) {
+        $newCaption = "Show MessageBox";
         control->getProperties()->set_Item("Caption", newCaption);
         // Changing substitute
-        BufferedImage image = new BufferedImage((int) control->getFrame()->getWidth(), (int) control->getFrame()->getHeight(),
+        $image = new BufferedImage((int) control->getFrame()->getWidth(), (int) control->getFrame()->getHeight(),
                 BufferedImage.TYPE_INT_ARGB);
         java.awt.Graphics graphics = image->getGraphics();
         graphics->setColor(SystemColor.control);
@@ -145,7 +145,7 @@ try {
         graphics.drawLine(image->getWidth(), image->getHeight(), image->getWidth(), 0);
     
         graphics.dispose();
-        control->getSubstitutePictureFormat()->getPicture()->setImage($pres->getImages().addImage(image));
+        control->getSubstitutePictureFormat()->getPicture()->setImage($pres->getImages()->addImage($image));
     }
     
     // moving 100 points down
@@ -157,7 +157,7 @@ try {
     $pres->save("withActiveX-edited_java.pptm", Java("com.aspose.slides.SaveFormat")->Pptm);
     
     // removing controls
-    $pres->getSlides()->get_Item(0)->getControls().clear();
+    $pres->getSlides()->get_Item(0)->getControls()->clear();
     $pres->save("withActiveX-cleared_java.pptm", Java("com.aspose.slides.SaveFormat")->Pptm);
 } finally {
     if ($pres != null) $pres->dispose();

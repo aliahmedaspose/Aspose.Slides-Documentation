@@ -130,7 +130,6 @@ You may also create an image gradient:
 $shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Picture);
 $picture = null;
 try {
-	$f = new Java("java.io.File", "image.jpg");
 	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "sample_3d.png"));
 	$picture = $pres->getImages()->addImage(new Java("java.io.FileInputStream", new Java("java.io.File", "sample_3d.png")));
 } catch (JavaException $e) { }

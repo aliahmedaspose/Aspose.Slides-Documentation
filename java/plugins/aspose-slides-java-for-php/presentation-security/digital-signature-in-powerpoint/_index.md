@@ -38,7 +38,7 @@ try {
     $signature->setComments("Aspose.Slides digital signing test.");
 
     // Add digital signature to presentation
-    $pres->getDigitalSignatures().add($signature);
+    $pres->getDigitalSignatures()->add($signature);
 
     // Save presentation
     $pres->save("SomePresentationSigned.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -63,7 +63,7 @@ try {
         for ($signature : $pres->getDigitalSignatures())
         {
             echo($signature->getComments() + ", "
-                    + $signature->getSignTime().toString() + " -- " + ($signature.isValid() ? "VALID" : "INVALID"));
+                    + $signature->getSignTime().toString() + " -- " + ($signature->isValid() ? "VALID" : "INVALID"));
             $allSignaturesAreValid &= $signature->isValid();
         }
 

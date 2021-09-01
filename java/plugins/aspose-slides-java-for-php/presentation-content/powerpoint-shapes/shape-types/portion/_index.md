@@ -13,15 +13,15 @@ url: /java/portion/
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Reshaping the context of presentation
-    IAutoShape shape = (IAutoShape) $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
+    $shape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     
-    ITextFrame textFrame = (ITextFrame) shape->getTextFrame();
+    $textFrame = (ITextFrame) $shape->getTextFrame();
     
-    for (IParagraph paragraph : textFrame->getParagraphs()) 
+    for ($paragraph : textFrame->getParagraphs()) 
     {
-        for (IPortion portion : paragraph->getPortions()) 
+        for ($portion : paragraph->getPortions()) 
         {
-            Point2D.Float point = portion->getCoordinates();
+            $point = $portion->getCoordinates();
             echo("X: " + point.x + " Y: " + point.y);
         }
     }

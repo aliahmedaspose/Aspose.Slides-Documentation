@@ -143,7 +143,7 @@ try {
     $dp = $pres->getDocumentProperties();
     
     // Access and modify custom properties
-    for (int i = 0; i < $dp->getCountOfCustomProperties(); i++) {
+    for ($i = 0; i < $dp->getCountOfCustomProperties(); i++) {
         // Display names and values of custom properties
         echo("Custom Property Name : " + $dp->getCustomPropertyName(i));
         echo("Custom Property Value : " + $dp->get_Item($dp->getCustomPropertyName(i)));

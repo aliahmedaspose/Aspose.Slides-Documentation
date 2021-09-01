@@ -26,10 +26,10 @@ The code example below shows how to convert the first slide of presentation to a
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Convert the first slide of the presentation to a Bitmap object
-    BufferedImage bmp = $pres->getSlides()->get_Item(0)->getThumbnail();
+    $bmp = $pres->getSlides()->get_Item(0)->getThumbnail();
     {
         // Save the image in PNG format
-        ImageIO.write(bmp, "PNG", new File("Slide_0.png"));
+        Java("javax.imageio.ImageIO")->write($bmp, "PNG", new Java("java.io.File", "Slide_0.png"));
     }
 } catch (Exception e) {  
 } finally {
@@ -46,10 +46,10 @@ The following example demonstrates this capability using one of the
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Convert the first slide of the presentation to a Bitmap with the specified size
-    BufferedImage bmp = $pres->getSlides()->get_Item(0)->getThumbnail(new Dimension(1820, 1040));
+    $bmp = $pres->getSlides()->get_Item(0)->getThumbnail(new Dimension(1820, 1040));
     {
         // Save the image in JPEG format
-        ImageIO.write(bmp, "PNG", new File("Slide_0.jpg"));
+        Java("javax.imageio.ImageIO")->write($bmp, "PNG", new Java("java.io.File", "Slide_0.jpg"));
     }
 } catch (Exception e) {
 } finally {
@@ -88,13 +88,13 @@ try {
     options->getNotesCommentsLayouting()->setCommentsAreaWidth(500);
 
     // Set the color of comments area
-    options->getNotesCommentsLayouting()->setCommentsAreaColorJava("java.awt.Color")->.LIGHT_GRAY);
+    options->getNotesCommentsLayouting()->setCommentsAreaColorJava("java.awt.Color")->LIGHT_GRAY);
 
     // Convert the first slide of the presentation to a Bitmap object
-    BufferedImage bmp = $pres->getSlides()->get_Item(0)->getThumbnail(options, 2f, 2f);
+    $bmp = $pres->getSlides()->get_Item(0)->getThumbnail(options, 2f, 2f);
 
     // Save the image in GIF format
-    ImageIO.write(bmp, "GIF", new File("Slide_Notes_Comments_0.gif"));
+    Java("javax.imageio.ImageIO")->write($bmp, "GIF", new Java("java.io.File", "Slide_Notes_Comments_0.gif"));
 } catch (Exception e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -113,7 +113,7 @@ and 2160x2880 size:
 $pres = new Java("com.aspose.slides.Presentation", "PresentationNotesComments.pptx");
 try {
     // Get a slide by its index
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
 
     // Create TiffOptions object
     TiffOptions options = new TiffOptions();
@@ -146,20 +146,20 @@ the same as PowerPoint allows. The following example demonstrates this possibili
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Render presentation to images array slide by slide
-    for (int i = 0 ; i < $pres->getSlides()->size(); i++)
+    for ($i = 0 ; i < $pres->getSlides()->size(); i++)
     {
         // Control hidden slides (do not render hidden slides)
         if ($pres->getSlides()->get_Item(i)->getHidden())
             continue;
 
         // Convert slide to a Bitmap object
-        BufferedImage bmp = $pres->getSlides()->get_Item(i)->getThumbnail(2f, 2f);
+        $bmp = $pres->getSlides()->get_Item(i)->getThumbnail(2f, 2f);
 		
         // Create file name for an image
-        String outputFilePath = outputDir + "Slide_" + i + ".jpg";
+        $outputFilePath = outputDir + "Slide_" + i + ".jpg";
 
         // Save the image in PNG format
-        ImageIO.write(bmp, "PNG", new File(outputFilePath));
+        Java("javax.imageio.ImageIO")->write($bmp, "PNG", new File(outputFilePath));
     }
 } catch (Exception e) {
 } finally {

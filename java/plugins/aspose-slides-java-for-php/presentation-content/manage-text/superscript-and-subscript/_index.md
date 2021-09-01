@@ -32,44 +32,44 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
 
     // Create text box
-    IAutoShape shape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 200, 100);
-    ITextFrame textFrame = shape->getTextFrame();
-    textFrame->getParagraphs().clear();
+    $shape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 200, 100);
+    $textFrame = $shape->getTextFrame();
+    textFrame->getParagraphs()->clear();
 
     // Create paragraph for superscript text
-    IParagraph superPar = new Paragraph();
+    $superPar = new Java("com.aspose.slides.Paragraph");
 
     // Create portion with usual text
-    IPortion portion1 = new Portion();
-    portion1->setText("SlideTitle");
-    superPar->getPortions().add(portion1);
+    $portion1 = new Portion();
+    $portion1->setText("SlideTitle");
+    superPar->getPortions()->add(portion1);
 
     // Create portion with superscript text
-    IPortion superPortion = new Portion();
+    $superPortion = new Portion();
     superPortion->getPortionFormat()->setEscapement(30);
     superPortion->setText("TM");
-    superPar->getPortions().add(superPortion);
+    superPar->getPortions()->add(superPortion);
 
     // Create paragraph for subscript text
-    IParagraph paragraph2 = new Paragraph();
+    $paragraph2 = new Java("com.aspose.slides.Paragraph");
 
     // Create portion with usual text
-    IPortion portion2 = new Portion();
+    $portion2 = new Portion();
     portion2->setText("a");
-    paragraph2->getPortions().add(portion2);
+    $paragraph2->getPortions()->add(portion2);
 
     // Create portion with subscript text
-    IPortion subPortion = new Portion();
+    $subPortion = new Portion();
     subPortion->getPortionFormat()->setEscapement(-25);
     subPortion->setText("i");
-    paragraph2->getPortions().add(subPortion);
+    $paragraph2->getPortions()->add(subPortion);
 
     // Add paragraphs to text box
-    textFrame->getParagraphs().add(superPar);
-    textFrame->getParagraphs().add(paragraph2);
+    textFrame->getParagraphs()->add(superPar);
+    textFrame->getParagraphs()->add($paragraph2);
 
     $pres->save("formatText.pptx",Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

@@ -47,7 +47,7 @@ This can be achieved if you combine several behaviours together into a new custo
 [**Timeline**](https://apireference.aspose.com/slides/java/com.aspose.slides/AnimationTimeLine) is a set of Sequences used in a concrete slide. It is an animation engine represented since PowerPoint 2002. In previous Powerpoint versions, it was challenging to add animation effects to presentation, which could be achieved only with different workarounds. Timeline comes to replace on old AnimationSettings class and provide more clear object model for PowerPoint animation. One slide can have only one animation timeline.
 
 ## **Interactive Animation**
-[**Trigger**](https://apireference.aspose.com/slides/java/com.aspose.slides/EffectTriggerType) allows to define user actions (e.g. button click), that will make a certain animation start. Triggers have been added into the latest PowerPoint version only.
+[**Trigger**](https://apireference.aspose.com/slides/java/com.aspose.slides/Java("com.aspose.slides.EffectSubtype")->) allows to define user actions (e.g. button click), that will make a certain animation start. Triggers have been added into the latest PowerPoint version only.
 
 ## **Shape Animation**
 Aspose.Slides allows to apply animation to shapes, that can be actually text, rectangle, line, frame, OLE Object, etc.

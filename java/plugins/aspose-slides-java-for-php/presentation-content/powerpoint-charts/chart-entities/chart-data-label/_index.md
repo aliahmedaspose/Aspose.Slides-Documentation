@@ -10,7 +10,7 @@ Aspose.Slides for Java provides a simple API for setting precision of data in ch
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Line, 50, 50, 450, 300);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.Line, 50, 50, 450, 300);
     
     chart->setDataTable(true);
     chart->getChartData()->getSeries()->get_Item(0)->setNumberFormatOfValues("#,##0.00");
@@ -38,34 +38,34 @@ In the example given below, we have set the percentage as label.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     
-    IChart chart = $slide->getShapes().addChart(ChartType.StackedColumn, 20, 20, 400, 400);
+    IChart chart = $slide->getShapes()->addChart(ChartType.StackedColumn, 20, 20, 400, 400);
     IChartSeries series;
     double[] total_for_Cat = new double[chart->getChartData()->getCategories()->size()];
-    for (int k = 0; k < chart->getChartData()->getCategories()->size(); k++) {
+    for ($k = 0; k < chart->getChartData()->getCategories()->size(); k++) {
         IChartCategory cat = chart->getChartData()->getCategories()->get_Item(k);
     
-        for (int i = 0; i < chart->getChartData()->getSeries()->size(); i++) {
+        for ($i = 0; i < chart->getChartData()->getSeries()->size(); i++) {
             total_for_Cat[k] = total_for_Cat[k] + (double) (chart->getChartData()->getSeries()->get_Item(i)->getDataPoints()->get_Item(k)->getValue()->getData());
         }
     }
     
     $double dataPontPercent = 0f;
-    for (int x = 0; x < chart->getChartData()->getSeries()->size(); x++) {
+    for ($x = 0; x < chart->getChartData()->getSeries()->size(); x++) {
         series = chart->getChartData()->getSeries()->get_Item(x);
         series->getLabels()->getDefaultDataLabelFormat()->setShowLegendKey(false);
     
-        for (int j = 0; j < series->getDataPoints()->size(); j++) {
+        for ($j = 0; j < series->getDataPoints()->size(); j++) {
             IDataLabel lbl = series->getDataPoints()->get_Item(j)->getLabel();
             dataPontPercent = (double) ((series->getDataPoints()->get_Item(j)->getValue()->getData())) / (double) (total_for_Cat[j]) * 100;
     
-            IPortion port = new Portion();
+            $port = new Portion();
             port->setText(String.format("{0:F2} %.2f", dataPontPercent));
             port->getPortionFormat()->setFontHeight(8f);
             lbl->getTextFrameForOverriding()->setText("");
-            IParagraph para = lbl->getTextFrameForOverriding()->getParagraphs()->get_Item(0);
-            para->getPortions().add(port);
+            $para = lbl->getTextFrameForOverriding()->getParagraphs()->get_Item(0);
+            $para->getPortions()->add(port);
     
             lbl->getDataLabelFormat()->setShowSeriesName(false);
             lbl->getDataLabelFormat()->setShowPercentage(false);
@@ -100,31 +100,31 @@ In order to set the percentage sign with chart data labels. Please follow the st
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     
     // Add PercentsStackedColumn chart on a slide
-    IChart chart = $slide->getShapes().addChart(ChartType.PercentsStackedColumn, 20, 20, 500, 400);
+    IChart chart = $slide->getShapes()->addChart(ChartType.PercentsStackedColumn, 20, 20, 500, 400);
     
     // Set NumberFormatLinkedToSource to false
     chart->getAxes()->getVerticalAxis()->setNumberFormatLinkedToSource(false);
     chart->getAxes()->getVerticalAxis()->setNumberFormat("0.00%");
     
-    chart->getChartData()->getSeries().clear();
-    int defaultWorksheetIndex = 0;
+    chart->getChartData()->getSeries()->clear();
+    $defaultWorksheetIndex = 0;
     
     // Getting the chart data worksheet
     IChartDataWorkbook workbook = chart->getChartData()->getChartDataWorkbook();
     
     // Add new series
-    IChartSeries series = chart->getChartData()->getSeries().add(workbook->getCell(defaultWorksheetIndex, 0, 1, "Reds"), chart->getType());
-    series->getDataPoints().addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 1, 1, 0.30));
-    series->getDataPoints().addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 2, 1, 0.50));
-    series->getDataPoints().addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 3, 1, 0.80));
-    series->getDataPoints().addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 4, 1, 0.65));
+    IChartSeries series = chart->getChartData()->getSeries()->add(workbook->getCell(defaultWorksheetIndex, 0, 1, "Reds"), chart->getType());
+    series->getDataPoints()->addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 1, 1, 0.30));
+    series->getDataPoints()->addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 2, 1, 0.50));
+    series->getDataPoints()->addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 3, 1, 0.80));
+    series->getDataPoints()->addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 4, 1, 0.65));
     
     // Setting the fill color of series
     series->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    series->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
+    series->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
     
     // Setting LabelFormat properties
     series->getLabels()->getDefaultDataLabelFormat()->setShowValue(true);
@@ -132,25 +132,25 @@ try {
     series->getLabels()->getDefaultDataLabelFormat()->setNumberFormat("0.0%");
     series->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->setFontHeight(10);
     series->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    series->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.WHITE);
+    series->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->WHITE);
     series->getLabels()->getDefaultDataLabelFormat()->setShowValue(true);
     
     // Add new series
-    IChartSeries series2 = chart->getChartData()->getSeries().add(workbook->getCell(defaultWorksheetIndex, 0, 2, "Blues"), chart->getType());
-    series2->getDataPoints().addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 1, 2, 0.70));
-    series2->getDataPoints().addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 2, 2, 0.50));
-    series2->getDataPoints().addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 3, 2, 0.20));
-    series2->getDataPoints().addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 4, 2, 0.35));
+    IChartSeries series2 = chart->getChartData()->getSeries()->add(workbook->getCell(defaultWorksheetIndex, 0, 2, "Blues"), chart->getType());
+    series2->getDataPoints()->addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 1, 2, 0.70));
+    series2->getDataPoints()->addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 2, 2, 0.50));
+    series2->getDataPoints()->addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 3, 2, 0.20));
+    series2->getDataPoints()->addDataPointForBarSeries(workbook->getCell(defaultWorksheetIndex, 4, 2, 0.35));
     
     // Setting Fill type and color
     series2->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    series2->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
+    series2->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->BLUE);
     series2->getLabels()->getDefaultDataLabelFormat()->setShowValue(true);
     series2->getLabels()->getDefaultDataLabelFormat()->setNumberFormatLinkedToSource(false);
     series2->getLabels()->getDefaultDataLabelFormat()->setNumberFormat("0.0%");
     series2->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->setFontHeight(10);
     series2->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    series2->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.WHITE);
+    series2->getLabels()->getDefaultDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->WHITE);
     
     // Write presentation to disk
     $pres->save("SetDataLabelsPercentageSign_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -175,10 +175,10 @@ In the example given below, we have set the label distance from category axis.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get reference of the slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
     
     // Adding a chart on slide
-    IChart ch = sld->getShapes().addChart(ChartType.ClusteredColumn, 20, 20, 500, 300);
+    IChart ch = sld->getShapes()->addChart(ChartType.ClusteredColumn, 20, 20, 500, 300);
     
     // Setting the position of label from axis
     ch->getAxes()->getHorizontalAxis()->setLabelOffset(500);

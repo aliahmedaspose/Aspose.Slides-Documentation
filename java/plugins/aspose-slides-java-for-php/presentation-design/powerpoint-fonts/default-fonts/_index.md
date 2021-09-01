@@ -28,8 +28,8 @@ $loadOptions->setDefaultAsianFont("Wingdings");
 $pres = new Java("com.aspose.slides.Presentation", "DefaultFonts.pptx", $loadOptions);
 try {
     // Generate slide thumbnail
-    BufferedImage image = $pres->getSlides()->get_Item(0)->getThumbnail(1, 1);
-    ImageIO.write(image, "png", new File("output.png"));
+    $image = $pres->getSlides()->get_Item(0)->getThumbnail(1, 1);
+    Java("javax.imageio.ImageIO")->write($image, "png", new Java("java.io.File", "output.png"));
 
     // Generate PDF
     $pres->save("output_out.pdf", Java("com.aspose.slides.SaveFormat")->Pdf);

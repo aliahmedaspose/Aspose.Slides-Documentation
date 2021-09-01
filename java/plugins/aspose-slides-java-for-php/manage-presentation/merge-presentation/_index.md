@@ -43,7 +43,7 @@ To merge presentation slides with their own styles, just pass slide object into
 [**AddClone (ISlide)**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideCollection#addClone-com.aspose.slides.ISlide-) method:
 
 ```php
-mergedPresentation->getSlides().addClone(slide);
+mergedPresentation->getSlides()->addClone(slide);
 ``` 
 
 
@@ -53,7 +53,7 @@ To merge presentation slides with a slide template of their styles and layouts -
 Note, that Slide Layout of the Slide Master, that should be applied to slides, is choosed automatically. If there is no appropriate layout will be found, then layout of the source slide will be used. The allowCloneMissingLayout boolean parameter of AddClone method determines if the source layout can be used instead of not found layout. If allowCloneMissingLayout is true - source layout will be used instead of missed layout, otherwise PptxEditException will be thrown.
 
 ```php
-mergedPresentation->getSlides().addClone(slide, masterSlide, true);
+mergedPresentation->getSlides()->addClone(slide, masterSlide, true);
 ``` 
 
 If you want to define other Slide Layout, you should use [**addClone (ISlide, ILayoutSlide)**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideCollection#addClone-com.aspose.slides.ISlide-com.aspose.slides.ILayoutSlide-) method.
@@ -63,21 +63,21 @@ To merge a specific slide of presentation, you just need to choose it by the sli
 index from source presentation and pass into [**addClone (ISlide)**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideCollection#addClone-com.aspose.slides.ISlide-) method:
 
 ```php
-mergedPresentation->getSlides().addClone(presentation3->getSlides()->get_Item(0));
+mergedPresentation->getSlides()->addClone(presentation3->getSlides()->get_Item(0));
 ``` 
 
 ## **Merge Presentation with Slide Layout**
 To merge presentation sides, applying a new slide layout to them - you should use [**addClone (ISlide, ILayoutSlide)**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideCollection#addClone-com.aspose.slides.ISlide-com.aspose.slides.ILayoutSlide-) method:
 
 ```php
-mergedPresentation->getSlides().addClone(presentation3->getSlides()->get_Item(0), layoutSlide);
+mergedPresentation->getSlides()->addClone(presentation3->getSlides()->get_Item(0), layoutSlide);
 ``` 
 
 ## **Merge Slide to Presentation Section**
 To merge presentation slide into a presentation section, it is possible to use [**addClone (ISlide, ISection)**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideCollection#addClone-com.aspose.slides.ISlide-com.aspose.slides.ISection-). You need to pass slide object and the section to which you want to clone this slide. The slide will be added to the end of the section:
 
 ```php
- mergedPresentation->getSlides().addClone(presentation3->getSlides()->get_Item(0), section);
+ mergedPresentation->getSlides()->addClone(presentation3->getSlides()->get_Item(0), section);
 ``` 
 
 It is possible to ask questions, share ideas in the [**Aspose.Slides forum**](https://forum.aspose.com/c/slides).

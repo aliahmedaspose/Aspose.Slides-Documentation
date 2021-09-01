@@ -19,14 +19,14 @@ Aspose.Slides for Java provides a simple API for managing error bar values. The 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Creating a bubble chart
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Bubble, 50, 50, 400, 300, true);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.Bubble, 50, 50, 400, 300, true);
 
     // Adding Error bars and setting its format
     IErrorBarsFormat errBarX = chart->getChartData()->getSeries()->get_Item(0)->getErrorBarsXFormat();
     IErrorBarsFormat errBarY = chart->getChartData()->getSeries()->get_Item(0)->getErrorBarsYFormat();
 
-    errBarX.isVisible();
-    errBarY.isVisible();
+    errBarX->isVisible();
+    errBarY->isVisible();
     errBarX->setValueType((byte) ErrorBarValueType.Fixed);
     errBarX->setValue(0.1f);
     errBarY->setValueType((byte) ErrorBarValueType.Percentage);
@@ -58,14 +58,14 @@ Aspose.Slides for Java provides a simple API for managing custom error bar value
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Creating a bubble chart
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Bubble, 50, 50, 400, 300, true);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.Bubble, 50, 50, 400, 300, true);
 
     // Adding custom Error bars and setting its format
     IChartSeries series = chart->getChartData()->getSeries()->get_Item(0);
     IErrorBarsFormat errBarX = series->getErrorBarsXFormat();
     IErrorBarsFormat errBarY = series->getErrorBarsYFormat();
-    errBarX.isVisible();
-    errBarY.isVisible();
+    errBarX->isVisible();
+    errBarY->isVisible();
     errBarX->setValueType((byte) ErrorBarValueType.Custom);
     errBarY->setValueType((byte) ErrorBarValueType.Custom);
 
@@ -78,7 +78,7 @@ try {
     points->getDataSourceTypeForErrorBarsCustomValues()->setDataSourceTypeForYMinusValues((byte) DataSourceType.DoubleLiterals);
 
     // Setting error bars for chart series points
-    for (int i = 0; i < points->size(); i++) {
+    for ($i = 0; i < points->size(); i++) {
         points->get_Item(i)->getErrorBarsCustomValues()->getXMinus()->setAsLiteralDouble(i + 1);
         points->get_Item(i)->getErrorBarsCustomValues()->getXPlus()->setAsLiteralDouble(i + 1);
         points->get_Item(i)->getErrorBarsCustomValues()->getYMinus()->setAsLiteralDouble(i + 1);

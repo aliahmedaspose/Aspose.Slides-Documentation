@@ -13,7 +13,7 @@ A new property has been added to set chart data from workbook. Now Aspose.Slide
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Pie, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.Pie, 50, 50, 500, 400);
     chart->getChartData()->getChartDataWorkbook().clear(0);
 
     Workbook workbook = new Workbook("a1.xlsx");
@@ -48,7 +48,7 @@ Aspose.Slides for Java provides a simple API for getting value from WorkBook Cel
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Bubble, 50, 50, 600, 400, true);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.Bubble, 50, 50, 600, 400, true);
 
     IChartSeries series = chart->getChartData()->getSeries()->get_Item(0);
 
@@ -79,11 +79,11 @@ Aspose.Slides for Java provides a simple API for getting value from WorkBook Cel
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
-    ISlide slide = $pres->getSlides()->get_Item(1);
+    $slide = $pres->getSlides()->get_Item(1);
     IChart chart = (IChart)slide->getShapes()->get_Item(0);
-    int sourceType = chart->getChartData()->getDataSourceType();
+    $sourceType = chart->getChartData()->getDataSourceType();
     
-    if (sourceType == ChartDataSourceType.ExternalWorkbook)
+    if ($sourceType == ChartDataSourceType.ExternalWorkbook)
     {
         $path = chart->getChartData()->getExternalWorkbookPath();
     }
@@ -106,18 +106,18 @@ The implementation is demonstrated below in an example.
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
-    String externalWbPath = dataPath + "externalWorkbook1.xlsx";
+    $externalWbPath = dataPath + "externalWorkbook1.xlsx";
     
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Pie, 50, 50, 400, 600);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.Pie, 50, 50, 400, 600);
 
     java.io.File file = new File(externalWbPath);
-    if (file.exists())
+    if ($file.exists())
         file.delete();
 
     byte[] worbookData = chart->getChartData().readWorkbookStream();
     $outputStream = new Java("java.io.FileOutputStream", file);
-    outputStream.write(worbookData);
-    outputStream.close();
+    outputStream->write(worbookData);
+    outputStream->close();
 
     chart->getChartData()->setExternalWorkbook(externalWbPath);
 
@@ -139,19 +139,19 @@ The implementation is demonstrated below in an example.
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Pie, 50, 50, 400, 600, false);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.Pie, 50, 50, 400, 600, false);
     IChartData chartData = chart->getChartData();
 
     chartData->setExternalWorkbook(dataPath +"externalWorkbook.xlsx");
 
-    chartData->getSeries().add(chartData->getChartDataWorkbook()->getCell(0, "B1"), ChartType.Pie);
-    chartData->getSeries()->get_Item(0)->getDataPoints().addDataPointForPieSeries(chartData->getChartDataWorkbook()->getCell(0, "B2"));
-    chartData->getSeries()->get_Item(0)->getDataPoints().addDataPointForPieSeries(chartData->getChartDataWorkbook()->getCell(0, "B3"));
-    chartData->getSeries()->get_Item(0)->getDataPoints().addDataPointForPieSeries(chartData->getChartDataWorkbook()->getCell(0, "B4"));
+    chartData->getSeries()->add(chartData->getChartDataWorkbook()->getCell(0, "B1"), ChartType.Pie);
+    chartData->getSeries()->get_Item(0)->getDataPoints()->addDataPointForPieSeries(chartData->getChartDataWorkbook()->getCell(0, "B2"));
+    chartData->getSeries()->get_Item(0)->getDataPoints()->addDataPointForPieSeries(chartData->getChartDataWorkbook()->getCell(0, "B3"));
+    chartData->getSeries()->get_Item(0)->getDataPoints()->addDataPointForPieSeries(chartData->getChartDataWorkbook()->getCell(0, "B4"));
 
-    chartData->getCategories().add(chartData->getChartDataWorkbook()->getCell(0, "A2"));
-    chartData->getCategories().add(chartData->getChartDataWorkbook()->getCell(0, "A3"));
-    chartData->getCategories().add(chartData->getChartDataWorkbook()->getCell(0, "A4"));
+    chartData->getCategories()->add(chartData->getChartDataWorkbook()->getCell(0, "A2"));
+    chartData->getCategories()->add(chartData->getChartDataWorkbook()->getCell(0, "A3"));
+    chartData->getCategories()->add(chartData->getChartDataWorkbook()->getCell(0, "A4"));
     
     $pres->save("Presentation_with_externalWorkbook.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -167,7 +167,7 @@ The **updateChartData** parameter defines whether an excel workbook will be loa
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Pie, 50, 50, 400, 600, true);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.Pie, 50, 50, 400, 600, true);
     IChartData chartData = chart->getChartData();
 
     ((ChartData)chartData)->setExternalWorkbook("http://path/doesnt/exists", false);

@@ -36,7 +36,7 @@ try {
     $pres->setVbaProject(new VbaProject());
     
     // Add empty module to the VBA project
-    IVbaModule module = $pres->getVbaProject()->getModules().addEmptyModule("Module");
+    IVbaModule module = $pres->getVbaProject()->getModules()->addEmptyModule("Module");
     
     // Set module source code
     module->setSourceCode("Sub Test(oShape As Shape)MsgBox Test End Sub");
@@ -49,8 +49,8 @@ try {
             "*\\G{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}#2.0#0#C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE14\\MSO.DLL#Microsoft Office 14.0 Object Library");
     
     // Add references to the VBA project
-    $pres->getVbaProject()->getReferences().add(stdoleReference);
-    $pres->getVbaProject()->getReferences().add(officeReference);
+    $pres->getVbaProject()->getReferences()->add(stdoleReference);
+    $pres->getVbaProject()->getReferences()->add(officeReference);
     
     $pres->save("test.pptm", Java("com.aspose.slides.SaveFormat")->Pptm);
 } finally {

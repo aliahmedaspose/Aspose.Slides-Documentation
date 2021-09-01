@@ -31,7 +31,7 @@ To remove a slide using its reference, please follow the steps below:
 $pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     // Accessing a slide using its index in the slides collection
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     
     // Removing a slide using its reference
     $pres->getSlides()->remove(slide);

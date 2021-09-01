@@ -45,31 +45,31 @@ Aspose.Slides for Java provides a simple API for managing different chart entiti
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing the first slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
 
     // Adding the sample chart
-    IChart chart = $slide->getShapes().addChart(ChartType.LineWithMarkers, 50, 50, 500, 400);
+    IChart chart = $slide->getShapes()->addChart(ChartType.LineWithMarkers, 50, 50, 500, 400);
 
     // Setting Chart Title
     chart.hasTitle();
-    chart->getChartTitle().addTextFrameForOverriding("");
-    IPortion chartTitle = chart->getChartTitle()->getTextFrameForOverriding()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0);
+    chart->getChartTitle()->addTextFrameForOverriding("");
+    $chartTitle = chart->getChartTitle()->getTextFrameForOverriding()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0);
     chartTitle->setText("Sample Chart");
     chartTitle->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    chartTitle->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.GRAY);
+    chartTitle->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->GRAY);
     chartTitle->getPortionFormat()->setFontHeight(20);
     chartTitle->getPortionFormat()->setFontBold(NullableBool.True);
     chartTitle->getPortionFormat()->setFontItalic(NullableBool.True);
 
     // Setting Major grid lines format for value axis
     chart->getAxes()->getVerticalAxis()->getMajorGridLinesFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    chart->getAxes()->getVerticalAxis()->getMajorGridLinesFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
+    chart->getAxes()->getVerticalAxis()->getMajorGridLinesFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLUE);
     chart->getAxes()->getVerticalAxis()->getMajorGridLinesFormat()->getLine()->setWidth(5);
     chart->getAxes()->getVerticalAxis()->getMajorGridLinesFormat()->getLine()->setDashStyle(LineDashStyle.DashDot);
 
     // Setting Minor grid lines format for value axis
     chart->getAxes()->getVerticalAxis()->getMinorGridLinesFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    chart->getAxes()->getVerticalAxis()->getMinorGridLinesFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
+    chart->getAxes()->getVerticalAxis()->getMinorGridLinesFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
     chart->getAxes()->getVerticalAxis()->getMinorGridLinesFormat()->getLine()->setWidth(3);
 
     // Setting value axis number format
@@ -95,27 +95,27 @@ try {
     txtVal->setFontItalic(NullableBool.True);
     txtVal->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
     txtVal->getFillFormat()->getSolidFillColor()->setColor(new Java("java.awt.Color", PresetColor.DarkGreen));
-    txtVal->setLatinFont(new FontData("Times New Roman"));
+    txtVal->setLatinFont(new  Java("com.aspose.slides.FontData"), "Times New Roman"));
 
     // Setting value axis title
     chart->getAxes()->getVerticalAxis().hasTitle();
-    chart->getAxes()->getVerticalAxis()->getTitle().addTextFrameForOverriding("");
-    IPortion valtitle = chart->getAxes()->getVerticalAxis()->getTitle()->getTextFrameForOverriding()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0);
+    chart->getAxes()->getVerticalAxis()->getTitle()->addTextFrameForOverriding("");
+    $valtitle = chart->getAxes()->getVerticalAxis()->getTitle()->getTextFrameForOverriding()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0);
     valtitle->setText("Primary Axis");
     valtitle->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    valtitle->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.GRAY);
+    valtitle->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->GRAY);
     valtitle->getPortionFormat()->setFontHeight(20);
     valtitle->getPortionFormat()->setFontBold(NullableBool.True);
     valtitle->getPortionFormat()->setFontItalic(NullableBool.True);
 
     // Setting Major grid lines format for Category axis
     chart->getAxes()->getHorizontalAxis()->getMajorGridLinesFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    chart->getAxes()->getHorizontalAxis()->getMajorGridLinesFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.GREEN);
+    chart->getAxes()->getHorizontalAxis()->getMajorGridLinesFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->GREEN);
     chart->getAxes()->getHorizontalAxis()->getMajorGridLinesFormat()->getLine()->setWidth(5);
 
     // Setting Minor grid lines format for Category axis
     chart->getAxes()->getHorizontalAxis()->getMinorGridLinesFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    chart->getAxes()->getHorizontalAxis()->getMinorGridLinesFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.YELLOW);
+    chart->getAxes()->getHorizontalAxis()->getMinorGridLinesFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->YELLOW);
     chart->getAxes()->getHorizontalAxis()->getMinorGridLinesFormat()->getLine()->setWidth(3);
 
     // Setting Category Axis Text Properties
@@ -124,17 +124,17 @@ try {
     txtCat->setFontHeight(16);
     txtCat->setFontItalic(NullableBool.True);
     txtCat->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    txtCat->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
-    txtCat->setLatinFont(new FontData("Arial"));
+    txtCat->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLUE);
+    txtCat->setLatinFont(new  Java("com.aspose.slides.FontData"), "Arial"));
 
     // Setting Category Title
     chart->getAxes()->getHorizontalAxis().hasTitle();
-    chart->getAxes()->getHorizontalAxis()->getTitle().addTextFrameForOverriding("");
+    chart->getAxes()->getHorizontalAxis()->getTitle()->addTextFrameForOverriding("");
 
-    IPortion catTitle = chart->getAxes()->getHorizontalAxis()->getTitle()->getTextFrameForOverriding()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0);
+    $catTitle = chart->getAxes()->getHorizontalAxis()->getTitle()->getTextFrameForOverriding()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0);
     catTitle->setText("Sample Category");
     catTitle->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    catTitle->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.GRAY);
+    catTitle->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->GRAY);
     catTitle->getPortionFormat()->setFontHeight(20);
     catTitle->getPortionFormat()->setFontBold(NullableBool.True);
     catTitle->getPortionFormat()->setFontItalic(NullableBool.True);
@@ -183,10 +183,10 @@ try {
     // Setting chart back wall color
     chart->getBackWall()->setThickness(1);
     chart->getBackWall()->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    chart->getBackWall()->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->.ORANGE);
+    chart->getBackWall()->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->ORANGE);
 
     chart->getFloor()->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    chart->getFloor()->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
+    chart->getFloor()->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
     // Setting Plot area color
     chart->getPlotArea()->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
     chart->getPlotArea()->getFormat()->getFill()->getSolidFillColor()->setColor(new Java("java.awt.Color", PresetColor.LightCyan));
@@ -212,7 +212,7 @@ Below sample example is given.
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.ClusteredColumn, 100, 100, 500, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 100, 100, 500, 400);
     
     chart->getTextFormat()->getPortionFormat()->setFontHeight(20);
     chart->getChartData()->getSeries()->get_Item(0)->getLabels()->getDefaultDataLabelFormat()->setShowValue(true);
@@ -241,10 +241,10 @@ Aspose.Slides for Java provides a simple API for managing chart data format:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access the first presentation slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
 
     // Adding a default clustered column chart
-    IChart chart = $slide->getShapes().addChart(ChartType.ClusteredColumn, 50, 50, 500, 400);
+    IChart chart = $slide->getShapes()->addChart(ChartType.ClusteredColumn, 50, 50, 500, 400);
 
     // Accessing the chart series collection
     IChartSeriesCollection series = chart->getChartData()->getSeries();
@@ -323,9 +323,9 @@ Below sample example is given. 
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     
-    IChart chart = $slide->getShapes().addChart(ChartType.ClusteredColumn, 20, 100, 600, 400);
+    IChart chart = $slide->getShapes()->addChart(ChartType.ClusteredColumn, 20, 100, 600, 400);
     chart->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
     chart->getLineFormat()->setStyle(LineStyle.Single);
     chart->setRoundedCorners(true);

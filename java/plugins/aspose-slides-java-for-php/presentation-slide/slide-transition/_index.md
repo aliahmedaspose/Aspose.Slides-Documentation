@@ -37,7 +37,7 @@ try {
     // Write the presentation to disk
     $presentation->save("SampleTransition_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
-    presentation.dispose();
+    $presentation->dispose();
 }
 ```
 
@@ -96,23 +96,23 @@ The following code snippet shows you how to add a clone of the slide with some t
 ```php
 $presentation = new Java("com.aspose.slides.Presentation");
 try {
-    AutoShape autoshape = (AutoShape)presentation->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 400, 100);
+    $autoshape = $presentation->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 400, 100);
     autoshape->getTextFrame()->setText("Morph Transition in PowerPoint Presentations");
 
-    $presentation->getSlides().addClone(presentation->getSlides()->get_Item(0));
+    $presentation->getSlides()->addClone(presentation->getSlides()->get_Item(0));
 
-    IShape shape = $presentation->getSlides()->get_Item(1)->getShapes()->get_Item(0);
-    shape->setX(shape->getX() + 100);
-    shape->setY(shape->getY() + 50);
-    shape->setWidth(shape->getWidth() - 200);
-    shape->setHeight(shape->getHeight() - 10);
+    $shape = $presentation->getSlides()->get_Item(1)->getShapes()->get_Item(0);
+    $shape->setX($shape->getX() + 100);
+    $shape->setY($shape->getY() + 50);
+    $shape->setWidth($shape->getWidth() - 200);
+    $shape->setHeight($shape->getHeight() - 10);
 
     $presentation->getSlides()->get_Item(1)->getSlideShowTransition()->setType(com.aspose.slides.TransitionType.Morph);
 
     $presentation->save("presentation-out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 }
 finally {
-    presentation.dispose();
+    $presentation->dispose();
 }
 ```
 
@@ -134,7 +134,7 @@ try {
     ((IMorphTransition)presentation->getSlides()->get_Item(0)->getSlideShowTransition()->getValue())->setMorphType(TransitionMorphType.ByWord);
     $presentation->save("presentation-out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
-    presentation.dispose();
+    $presentation->dispose();
 }
 ```
 
@@ -159,6 +159,6 @@ try {
     // Write the presentation to disk
     $presentation->save("SetTransitionEffects_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
-    presentation.dispose();
+    $presentation->dispose();
 }
 ```

@@ -42,13 +42,13 @@ try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 200, 200, 200);
 
     // Add text to shape
-    shape->getTextFrame()->setText("This demo shows how to Create PowerPoint file and save it to Stream.");
+    $shape->getTextFrame()->setText("This demo shows how to Create PowerPoint file and save it to Stream.");
 
     $os = new Java("java.io.FileOutputStream", "Save_As_Stream_out.pptx");
 
     $pres->save(os, Java("com.aspose.slides.SaveFormat")->Pptx);
 
-    os.close();
+    os->close();
 } catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
@@ -82,10 +82,10 @@ The following sample code creates a presentation and saves it in the Strict Open
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     
     // Add an autoshape of type line
-    slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 50, 150, 300, 0);
+    $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 50, 150, 300, 0);
     
     //Setting strick XML save options
     PptxOptions options = new PptxOptions();
@@ -121,7 +121,7 @@ class ExportProgressHandler implements IProgressCallback
     public void reporting(double progressValue) 
 	{
         // Use progress percentage value here
-        int progress = Double.valueOf(progressValue).intValue();
+        $progress = Double.valueOf(progressValue).intValue();
         echo(progress + "% file converted");
     }
 }

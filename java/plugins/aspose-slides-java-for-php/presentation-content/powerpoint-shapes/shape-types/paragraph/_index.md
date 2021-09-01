@@ -10,11 +10,11 @@ url: /java/paragraph/
 Using Aspose.Slides for Java, developers can now get the rectangular coordinates for Paragraph inside paragraphs collection of TextFrame. It also allows you to get [the coordinates of portion](https://apireference.aspose.com/slides/java/com.aspose.slides/IPortion#getCoordinates--) inside portion collection of a paragraph. In this topic, we are going to demonstrate with the help of an example that how to get the rectangular coordinates for paragraph along with position of portion inside a paragraph.
 
 ```php
-AutoShape shape = (AutoShape)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
+AutoShape shape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
 TextFrame textFrame = (TextFrame)shape->getTextFrame();
-for (IParagraph paragraph : textFrame->getParagraphs()){
-  for (IPortion portion : paragraph->getPortions()){
-    Point2D.Float point = portion->getCoordinates();
+for ($paragraph : textFrame->getParagraphs()){
+  for ($portion : paragraph->getPortions()){
+    $point = $portion->getCoordinates();
   }
 }
 ```
@@ -26,9 +26,9 @@ Using [**getRect()**](https://apireference.aspose.com/slides/java/com.aspose.sli
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "HelloWorld.pptx");
 try {
-    IAutoShape shape = (IAutoShape) $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
-    ITextFrame textFrame = shape->getTextFrame();
-    Rectangle2D.Float rect = textFrame->getParagraphs()->get_Item(0)->getRect();
+    $shape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
+    $textFrame = $shape->getTextFrame();
+    $rect = textFrame->getParagraphs()->get_Item(0)->getRect();
     echo("X: " + rect.x + " Y: " + rect.y + " Width: " + rect.width + " Height: " + rect.height);
 } finally {
     if ($pres != null) $pres->dispose();
@@ -44,36 +44,36 @@ This sample code demonstrates the described operation:
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "source.pptx");
 try {
-    Table tbl = (Table)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
-    ICell cell = tbl->getRows()->get_Item(1)->get_Item(1);
+    $tbl = (Table)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
+    $cell = $tbl->getRows()->get_Item(1)->get_Item(1);
 
-    $double x = tbl->getX() + tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetX();
-    $double y = tbl->getY() + tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetY();
+    $double x = $tbl->getX() + $tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetX();
+    $double y = $tbl->getY() + $tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetY();
 
-    for (IParagraph para : cell->getTextFrame()->getParagraphs())
+    for ($para : cell->getTextFrame()->getParagraphs())
     {
-        if (para->getText().equals(""))
+        if ($para->getText() == (""))
             continue;
 
-        Rectangle2D.Float rect = para->getRect();
-        IAutoShape shape =
+        $rect = $para->getRect();
+        $shape =
                 $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle,
-                        (float)rect->getX() + (float)x, (float)rect->getY() + (float)y, (float)rect->getWidth(), (float)rect->getHeight());
+                        rect->getX() + x, rect->getY() + y, rect->getWidth(), rect->getHeight());
 
-        shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
-        shape->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.YELLOW);
-        shape->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+        $shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
+        $shape->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->YELLOW);
+        $shape->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-        for (IPortion portion : para->getPortions())
+        for ($portion : $para->getPortions())
         {
-            if (portion->getText().contains("0"))
+            if ($portion->getText().contains("0"))
             {
-                rect = portion->getRect();
+                rect = $portion->getRect();
                 shape =
                         $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle,
-                                (float)rect->getX() + (float)x, (float)rect->getY() + (float)y, (float)rect->getWidth(), (float)rect->getHeight());
+                                rect->getX() + x, rect->getY() + y, rect->getWidth(), rect->getHeight());
 
-                shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
+                $shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
             }
         }
     }

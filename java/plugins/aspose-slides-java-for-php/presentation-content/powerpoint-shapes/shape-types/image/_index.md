@@ -17,15 +17,15 @@ This sample code shows you how to add an EMZ image to the images collection:
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
 
     byte[] imageFile = Files.readAllBytes(Paths->get("image.emz"));
 
-    $image = $pres->getImages().addImage(imageFile);
+    $image = $pres->getImages()->addImage(imageFile);
 
-    slide->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0,
-            (float) $pres->getSlideSize()->getSize()->getWidth(), 
-			(float) $pres->getSlideSize()->getSize()->getHeight(), 
+    $slide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0,
+            $pres->getSlideSize()->getSize()->getWidth(), 
+			$pres->getSlideSize()->getSize()->getHeight(), 
 			image);
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch (JavaException $e) {
@@ -48,10 +48,10 @@ This sample code shows you how to implement the steps above to add an SVG image 
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    String svgContent = new String(Files.readAllBytes(Paths->get("image.svg")));
+    $svgContent = new String(Files.readAllBytes(Paths->get("image.svg")));
     ISvgImage svgImage = new SvgImage(svgContent);
-    IPPImage ppImage = $pres->getImages().addImage(svgImage);
-    $pres->getSlides()->get_Item(0)->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0, 
+    $ppImage = $pres->getImages()->addImage(svgImage);
+    $pres->getSlides()->get_Item(0)->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0, 
 			ppImage->getWidth(), ppImage->getHeight(), ppImage);
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch (JavaException $e) {
@@ -84,7 +84,7 @@ try {
 
     // Convert SVG image to group of shapes scaling it to slide size
     $presentation->getSlides()->get_Item(0)->getShapes().
-            addGroupShape(svgImage, 0f, 0f, (float)slideSize->getWidth(), (float)slideSize->getHeight());
+            addGroupShape(svgImage, 0f, 0f, slideSize->getWidth(), slideSize->getHeight());
 
     // Save presentation in PPTX format
     $presentation->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -113,19 +113,19 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     $pres->getSlides()->removeAt(0);
     
-    String EmfSheetName = "";
-    for (int j = 0; j < sr->getPageCount(); j++)
+    $EmfSheetName = "";
+    for ($j = 0; j < sr->getPageCount(); j++)
     {
     
         EmfSheetName = "test" + sheet->getName() + " Page" + (j + 1) + ".out.emf";
         sr.toImage(j, EmfSheetName);
     
         byte[] bytes = Files.readAllBytes(Paths->get(EmfSheetName));
-        IPPImage emfImage = $pres->getImages().addImage(bytes);
-        ISlide slide = $pres->getSlides().addEmptySlide($pres->getLayoutSlides()->getByType(SlideLayoutType.Blank));
-        IShape m = $slide->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0,
-					(float)pres->getSlideSize()->getSize()->getWidth(), 
-					(float)pres->getSlideSize()->getSize()->getHeight(), 
+        $emfImage = $pres->getImages()->addImage(bytes);
+        $slide = $pres->getSlides()->addEmptySlide($pres->getLayoutSlides()->getByType(SlideLayoutType.Blank));
+        $m = $slide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0,
+					pres->getSlideSize()->getSize()->getWidth(), 
+					pres->getSlideSize()->getSize()->getHeight(), 
 					emfImage);
     }
     

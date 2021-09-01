@@ -19,7 +19,7 @@ In the example given below, we have set different properties of Pie of Pie chart
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add chart on slide
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.PieOfPie, 50, 50, 500, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.PieOfPie, 50, 50, 500, 400);
     
     // Set different properties
     chart->getChartData()->getSeries()->get_Item(0)->getLabels()->getDefaultDataLabelFormat()->setShowValue(true);
@@ -55,10 +55,10 @@ Write the modified presentation to a PPTX file.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add chart with default data
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes().addChart(ChartType.Pie, 100, 100, 400, 400);
+    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.Pie, 100, 100, 400, 400);
 
     // Setting chart Title
-    chart->getChartTitle().addTextFrameForOverriding("Sample Title");
+    chart->getChartTitle()->addTextFrameForOverriding("Sample Title");
     chart->getChartTitle()->getTextFrameForOverriding()->getTextFrameFormat()->setCenterText(NullableBool.True);
     chart->getChartTitle()->setHeight(20);
     chart->setTitle(true);
@@ -67,27 +67,27 @@ try {
     chart->getChartData()->getSeries()->get_Item(0)->getLabels()->getDefaultDataLabelFormat()->setShowValue(true);
 
     // Setting the index of chart data sheet
-    int defaultWorksheetIndex = 0;
+    $defaultWorksheetIndex = 0;
 
     // Getting the chart data worksheet
     IChartDataWorkbook fact = chart->getChartData()->getChartDataWorkbook();
 
     // Delete default generated series and categories
-    chart->getChartData()->getSeries().clear();
-    chart->getChartData()->getCategories().clear();
+    chart->getChartData()->getSeries()->clear();
+    chart->getChartData()->getCategories()->clear();
 
     // Adding new categories
-    chart->getChartData()->getCategories().add(fact->getCell(0, 1, 0, "First Qtr"));
-    chart->getChartData()->getCategories().add(fact->getCell(0, 2, 0, "2nd Qtr"));
-    chart->getChartData()->getCategories().add(fact->getCell(0, 3, 0, "3rd Qtr"));
+    chart->getChartData()->getCategories()->add(fact->getCell(0, 1, 0, "First Qtr"));
+    chart->getChartData()->getCategories()->add(fact->getCell(0, 2, 0, "2nd Qtr"));
+    chart->getChartData()->getCategories()->add(fact->getCell(0, 3, 0, "3rd Qtr"));
 
     // Adding new series
-    IChartSeries series = chart->getChartData()->getSeries().add(fact->getCell(0, 0, 1, "Series 1"), chart->getType());
+    IChartSeries series = chart->getChartData()->getSeries()->add(fact->getCell(0, 0, 1, "Series 1"), chart->getType());
 
     // Now populating series data
-    series->getDataPoints().addDataPointForPieSeries(fact->getCell(defaultWorksheetIndex, 1, 1, 20));
-    series->getDataPoints().addDataPointForPieSeries(fact->getCell(defaultWorksheetIndex, 2, 1, 50));
-    series->getDataPoints().addDataPointForPieSeries(fact->getCell(defaultWorksheetIndex, 3, 1, 30));
+    series->getDataPoints()->addDataPointForPieSeries(fact->getCell(defaultWorksheetIndex, 1, 1, 20));
+    series->getDataPoints()->addDataPointForPieSeries(fact->getCell(defaultWorksheetIndex, 2, 1, 50));
+    series->getDataPoints()->addDataPointForPieSeries(fact->getCell(defaultWorksheetIndex, 3, 1, 30));
 
     series->getParentSeriesGroup()->setColorVaried(true);
     $pres->save("Pie.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

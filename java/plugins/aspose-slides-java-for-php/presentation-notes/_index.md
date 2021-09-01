@@ -47,7 +47,7 @@ $pres = new Java("com.aspose.slides.Presentation", "presWithNotes.pptx");
 try {
     // Removing notes of all slides
     INotesSlideManager mgr = null;
-    for (int i = 0; i < $pres->getSlides()->size(); i++) {
+    for ($i = 0; i < $pres->getSlides()->size(); i++) {
         mgr = $pres->getSlides()->get_Item(i)->getNotesSlideManager();
         mgr.removeNotesSlide();
     }
@@ -68,14 +68,14 @@ $pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     IMasterNotesSlide notesMaster = $pres->getMasterNotesSlideManager()->getMasterNotesSlide();
     
-    if (notesMaster != null)
+    if ($notesMaster != null)
     {
         // Get MasterNotesSlide text style
         ITextStyle notesStyle = notesMaster->getNotesStyle();
     
         //Set symbol bullet for the first level paragraphs
         IParagraphFormat paragraphFormat = notesStyle->getLevel(0);
-        paragraphFormat->getBullet()->setType(BulletType.Symbol);
+        paragraphFormat->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
     }
     $pres->save("NotesSlideWithNotesStyle.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

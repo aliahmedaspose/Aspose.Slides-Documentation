@@ -129,7 +129,7 @@ try {
     htmlOptions->setHtmlFormatter(HtmlFormatter.createCustomFormatter(new CustomFormattingController()));
 
     // Saving File
-    for (int i = 0; i < $pres->getSlides()->size(); i++)
+    for ($i = 0; i < $pres->getSlides()->size(); i++)
         $pres->save("Individual Slide" + (i + 1) + "_out.html", new int[]{i + 1},Java("com.aspose.slides.SaveFormat")->Html, htmlOptions);
 } finally {
     if ($pres != null) $pres->dispose();
@@ -157,10 +157,10 @@ public class CustomFormattingController implements IHtmlFormattingController
     }
 
     @Override
-    public void writeShapeStart(IHtmlGenerator generator, IShape shape) { }
+    public void writeShapeStart(IHtmlGenerator generator, $shape) { }
 
     @Override
-    public void writeShapeEnd(IHtmlGenerator generator, IShape shape) { }
+    public void writeShapeEnd(IHtmlGenerator generator, $shape) { }
 
     private final String SlideHeader = "<div class=\"slide\" name=\"slide\" id=\"slide%d\">";
     private final String SlideFooter = "</div>";
@@ -199,7 +199,7 @@ public class CustomHeaderAndFontsController extends EmbedAllFontsHtmlController
 
     private final String m_cssFileName;
 
-    public CustomHeaderAndFontsController(String cssFileName) 
+    public CustomHeaderAndFontsController($cssFileName) 
     {
         m_cssFileName = cssFileName;
     }
@@ -255,14 +255,14 @@ public class LinkAllFontsHtmlController extends EmbedAllFontsHtmlController
             IHtmlGenerator generator,
             IFontData originalFont,
             IFontData substitutedFont,
-            String fontStyle,
-            String fontWeight,
+            $fontStyle,
+            $fontWeight,
             byte[] fontData)
     {
         try {
-            String fontName = substitutedFont == null ? originalFont->getFontName() : substitutedFont->getFontName();
+            $fontName = substitutedFont == null ? originalFont->getFontName() : substitutedFont->getFontName();
             $path = fontName + ".woff"; // some path sanitaze may be needed
-            Files.write(new File(m_basePath + path).toPath(), fontData, StandardOpenOption.CREATE);
+            Files->write(new File(m_basePath + path).toPath(), fontData, StandardOpenOption.CREATE);
 
             generator.addHtml("<style>");
             generator.addHtml("@font-face { ");

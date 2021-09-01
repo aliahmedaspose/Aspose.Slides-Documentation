@@ -21,7 +21,7 @@ The example below adds a group shape to a slide.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
 
     // Accessing the shape collection of slides
     IShapeCollection slideShapes = sld->getShapes();
@@ -61,20 +61,20 @@ The example below accesses alternative text of group shape.
 $pres = new Java("com.aspose.slides.Presentation", "AltText.pptx");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
     
-    for (int i = 0; i < sld->getShapes()->size(); i++)
+    for ($i = 0; i < sld->getShapes()->size(); i++)
     {
         // Accessing the shape collection of slides
-        IShape shape = sld->getShapes()->get_Item(i);
+        $shape = sld->getShapes()->get_Item(i);
     
-        if (shape instanceof GroupShape)
+        if ($shape instanceof GroupShape)
         {
             // Accessing the group shape.
             IGroupShape grphShape = (IGroupShape)shape;
-            for (int j = 0; j < grphShape->getShapes()->size(); j++)
+            for ($j = 0; j < grphShape->getShapes()->size(); j++)
             {
-                IShape shape2 = grphShape->getShapes()->get_Item(j);
+                $shape2 = grphShape->getShapes()->get_Item(j);
                 
                 // Accessing the AltText property
                 echo(shape2->getAlternativeText());

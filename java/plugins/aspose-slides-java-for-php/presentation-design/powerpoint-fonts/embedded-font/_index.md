@@ -13,8 +13,8 @@ Now, you can also work with embedded fonts. [FontsManager](https://apireference.
 $pres = new Java("com.aspose.slides.Presentation", "EmbeddedFonts.pptx");
 try {
     // render a slide that contains a text frame that uses embedded "FunSized"
-    ImageIO.write($pres->getSlides()->get_Item(0)->getThumbnail(new Dimension(960, 720)),
-            "PNG", new File("picture1_out.png"));
+    Java("javax.imageio.ImageIO")->write($pres->getSlides()->get_Item(0)->getThumbnail(new Dimension(960, 720)),
+            "PNG", new Java("java.io.File", "picture1_out.png"));
 
     IFontsManager fontsManager = $pres->getFontsManager();
 
@@ -23,9 +23,9 @@ try {
 
     // find "Calibri" font
     IFontData calibriEmbeddedFont = null;
-    for (int i = 0; i < embeddedFonts.length; i++) {
+    for ($i = 0; i < embeddedFonts->length; i++) {
         echo(""+ embeddedFonts[i]->getFontName());
-        if ("Calibri".equals(embeddedFonts[i]->getFontName())) {
+        if ("Calibri" == (embeddedFonts[i]->getFontName())) {
             calibriEmbeddedFont = embeddedFonts[i];
             break;
         }
@@ -35,8 +35,8 @@ try {
     fontsManager.removeEmbeddedFont(calibriEmbeddedFont);
 
     // render the presentation; removed "Calibri" font is replaced to an existing one
-    ImageIO.write($pres->getSlides()->get_Item(0)->getThumbnail(new Dimension(960, 720)),
-            "PNG", new File("picture2_out.png"));
+    Java("javax.imageio.ImageIO")->write($pres->getSlides()->get_Item(0)->getThumbnail(new Dimension(960, 720)),
+            "PNG", new Java("java.io.File", "picture2_out.png"));
 
     // save the presentation without embedded "Calibri" font
     $pres->save("WithoutManageEmbeddedFonts_out.ppt", Java("com.aspose.slides.SaveFormat")->Ppt);
@@ -59,13 +59,13 @@ try {
     for (IFontData font : allFonts)
     {
         $embeddedFontsContainsFont = false;
-        for (int i = 0; i < embeddedFonts.length; i++)
+        for ($i = 0; i < embeddedFonts->length; i++)
         {
-            if (embeddedFonts.equals(font)) embeddedFontsContainsFont = true;
+            if ($embeddedFonts == (font)) embeddedFontsContainsFont = true;
         }
-        if (!embeddedFontsContainsFont)
+        if ($!embeddedFontsContainsFont)
         {
-            $pres->getFontsManager().addEmbeddedFont(font, EmbedFontCharacters.All);
+            $pres->getFontsManager()->addEmbeddedFont(font, EmbedFontCharacters.All);
         }
     }
 

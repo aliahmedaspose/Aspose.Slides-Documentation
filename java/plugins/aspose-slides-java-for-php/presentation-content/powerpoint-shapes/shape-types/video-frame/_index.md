@@ -22,13 +22,13 @@ In the example below, we added a Video Frame to the slide.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
     
     // Embed video inside presentation
-    IVideo vid = $pres->getVideos().addVideo(new FileInputStream(new File("Wildlife.mp4")));
+    $vid = $pres->getVideos()->addVideo(new FileInputStream(new Java("java.io.File", "Wildlife.mp4")));
 
     // Add Video Frame
-    IVideoFrame vf = sld->getShapes().addVideoFrame(50, 150, 300, 350, vid);
+    IVideoFrame vf = sld->getShapes()->addVideoFrame(50, 150, 300, 350, vid);
 
     // Set video to Video Frame
     vf->setEmbeddedVideo(vid);
@@ -72,17 +72,17 @@ try {
 private static void addVideoFromYouTube(Presentation pres, String videoID)
 {
     // add videoFrame
-    IVideoFrame videoFrame = $pres->getSlides()->get_Item(0)->getShapes().addVideoFrame(
+    IVideoFrame videoFrame = $pres->getSlides()->get_Item(0)->getShapes()->addVideoFrame(
             10, 10, 427, 240, "https://www.youtube.com/embed/" + videoID);
     videoFrame->setPlayMode(VideoPlayModePreset.Auto);
 
     // load thumbnail
-    String thumbnailUri = "http://img.youtube.com/vi/" + videoID + "/hqdefault.jpg";
+    $thumbnailUri = "http://img.youtube.com/vi/" + videoID + "/hqdefault.jpg";
     URL url;
 
     try {
         url = new URL(thumbnailUri);
-        videoFrame->getPictureFormat()->getPicture()->setImage($pres->getImages().addImage(url.openStream()));
+        videoFrame->getPictureFormat()->getPicture()->setImage($pres->getImages()->addImage(url.openStream()));
     } catch (MalformedURLException e) {
         e.printStackTrace();
     } catch (JavaException $e) {
@@ -110,10 +110,10 @@ In the example below, we added a Video Frame to the slide.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
 
     // Add Video Frame
-    IVideoFrame vf = sld->getShapes().addVideoFrame(50, 150, 300, 150, "Wildlife.mp4");
+    IVideoFrame vf = sld->getShapes()->addVideoFrame(50, 150, 300, 150, "Wildlife.mp4");
 
     // Set Play Mode and Volume of the Video
     vf->setPlayMode(VideoPlayModePreset.Auto);
@@ -139,25 +139,25 @@ In the example given below, we saved the video file from a slide.
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "VideoSample.pptx");
 try {
-    for (ISlide slide : $pres->getSlides()) 
+    for ($slide : $pres->getSlides()) 
     {
-        for (IShape shape : slide->getShapes()) 
+        for ($shape : $slide->getShapes()) 
         {
-            if (shape instanceof VideoFrame) 
+            if ($shape instanceof VideoFrame) 
             {
                 IVideoFrame vf = (IVideoFrame) shape;
-                String type = vf->getEmbeddedVideo()->getContentType();
-                int ss = type.lastIndexOf('-');
+                $type = vf->getEmbeddedVideo()->getContentType();
+                $ss = type.lastIndexOf('-');
                 byte[] buffer = vf->getEmbeddedVideo()->getBinaryData();
 
                 //Get File Extension
-                int charIndex = type.indexOf("/");
+                $charIndex = type.indexOf("/");
                 type = type.substring(charIndex + 1);
 
                 $fop = new Java("java.io.FileOutputStream", "testing2." + type);
-                fop.write(buffer);
+                fop->write(buffer);
                 fop.flush();
-                fop.close();
+                fop->close();
             }
         }
     }

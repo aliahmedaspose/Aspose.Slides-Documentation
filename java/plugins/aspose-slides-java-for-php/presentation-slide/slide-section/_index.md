@@ -23,14 +23,14 @@ This sample code shows you to create a section in a presentation in Java:
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide defaultSlide = $pres->getSlides()->get_Item(0);
-    ISlide newSlide1 = $pres->getSlides().addEmptySlide($pres->getLayoutSlides()->get_Item(0));
-    ISlide newSlide2 = $pres->getSlides().addEmptySlide($pres->getLayoutSlides()->get_Item(0));
-    ISlide newSlide3 = $pres->getSlides().addEmptySlide($pres->getLayoutSlides()->get_Item(0));
-    ISlide newSlide4 = $pres->getSlides().addEmptySlide($pres->getLayoutSlides()->get_Item(0));
+    $defaultSlide = $pres->getSlides()->get_Item(0);
+    $newSlide1 = $pres->getSlides()->addEmptySlide($pres->getLayoutSlides()->get_Item(0));
+    $newSlide2 = $pres->getSlides()->addEmptySlide($pres->getLayoutSlides()->get_Item(0));
+    $newSlide3 = $pres->getSlides()->addEmptySlide($pres->getLayoutSlides()->get_Item(0));
+    $newSlide4 = $pres->getSlides()->addEmptySlide($pres->getLayoutSlides()->get_Item(0));
 
-    ISection section1 = $pres->getSections().addSection("Section 1", newSlide1);
-    ISection section2 = $pres->getSections().addSection("Section 2", newSlide3); // section1 will be ended at newSlide2 and after it section2 will start   
+    ISection section1 = $pres->getSections()->addSection("Section 1", newSlide1);
+    ISection section2 = $pres->getSections()->addSection("Section 2", newSlide3); // section1 will be ended at newSlide2 and after it section2 will start   
 
     $pres->save("pres-sections.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 

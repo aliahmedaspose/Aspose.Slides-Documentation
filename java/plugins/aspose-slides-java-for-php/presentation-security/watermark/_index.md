@@ -102,15 +102,15 @@ It is possible to center watermark on a slide and for that you can do the follow
 
 
 ```php
-Point2D.Float center = new Point2D.Float((float)  $pres->getSlideSize()->getSize()->getWidth() / 2, (float) $pres->getSlideSize()->getSize()->getHeight() / 2);
+$center = Java("java.awt.geom.Point2D")->Float( $pres->getSlideSize()->getSize()->getWidth() / 2, $pres->getSlideSize()->getSize()->getHeight() / 2);
 
-float width = 300;
+$width = 300;
 
-float height = 300;
+$height = 300;
 
-float x = (float) center->getX() - width / 2;
+float x = center->getX() - width / 2;
 
-float y = (float) center->getY() - height / 2;
+float y = center->getY() - height / 2;
 
 
 //...
@@ -125,7 +125,7 @@ $watermarkShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.Shap
 To add image watermark into all presentation slides, you may do the following:
 
 ```php
-$image = $pres->getImages().addImage(Files.readAllBytes(Paths->get("watermark.png")));
+$image = $pres->getImages()->addImage(Files.readAllBytes(Paths->get("watermark.png")));
 
 
 // ...
@@ -133,9 +133,9 @@ $image = $pres->getImages().addImage(Files.readAllBytes(Paths->get("watermark.pn
 
 $watermarkShape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Picture);
 
-$watermarkShape->getFillFormat()->getPictureFillFormat()->getPicture()->setImage(image);
+$watermarkShape->getFillFormat()->getPictureFillFormat()->getPicture()->setImage($image);
 
-$watermarkShape->getFillFormat()->getPictureFillFormat()->setPictureFillMode(PictureFillMode.Stretch);
+$watermarkShape->getFillFormat()->getPictureFillFormat()->setPictureFillMode(Java("com.aspose.slides.PictureFillMode")->Stretch);
 ``` 
 
 
@@ -174,9 +174,9 @@ slide->getShapes().reorder(slide->getShapes()->size() - 1, watermarkShape);
 Here is an example how to set the rotation of watermark (and its parent shape):
 
 ```php
-float h = (float) $pres->getSlideSize()->getSize()->getHeight();
+$h = $pres->getSlideSize()->getSize()->getHeight();
 
-float w = (float) $pres->getSlideSize()->getSize()->getWidth();
+$w = $pres->getSlideSize()->getSize()->getWidth();
 
 $watermarkShape->setX((w - $watermarkShape->getWidth()) / 2);
 
@@ -186,13 +186,13 @@ $watermarkShape->setRotation(calculateRotation(h, w));
 ```
 
 ```php
-private int calculateRotation(float height, float width)
+private int calculateRotation($height, $width)
 {
     $double pageHeight = height;
     
     $double pageWidth = width;
     
-    $double rotation = Math.atan((pageHeight / pageWidth)) * 180 / Math.PI;
+    $double rotation = atan(($pageHeight / pageWidth)) * 180 / M_PI;
     
     return (int) rotation;
 }
@@ -213,13 +213,13 @@ $watermarkShape->setName("watermark");
 To remove watermark shape and its child controls from slide, use [AutoShape->getName](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#getName--) method to find it in slide shapes. Then pass watermark shape into [**ShapeCollection.remove**](https://apireference.aspose.com/slides/java/com.aspose.slides/ShapeCollection#remove-com.aspose.slides.IShape-) method:
 
 ```php
-for (int i = 0; i < slide->getShapes()->size(); i++)
+for ($i = 0; i < $slide->getShapes()->size(); i++)
 {
-    AutoShape shape = (AutoShape)slide->getShapes()->get_Item(i);
+    $shape = $slide->getShapes()->get_Item(i);
 
-    if ("watermark".equals(shape->getName()))
+    if ("watermark" == ($shape->getName()))
     {
-        slide->getShapes()->remove(watermarkShape);
+        $slide->getShapes()->remove($watermarkShape);
     }
 }
 ``` 

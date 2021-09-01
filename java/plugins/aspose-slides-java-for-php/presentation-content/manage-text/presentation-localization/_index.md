@@ -19,9 +19,9 @@ The implementation of the above steps is demonstrated below in an example.
 $pres = new Java("com.aspose.slides.Presentation", "test.pptx");
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 50, 200, 50);
-    shape->addTextFrame("Text to apply spellcheck language");
+    $shape->addTextFrame("Text to apply spellcheck language");
 
-    shape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0)->getPortionFormat()->setLanguageId("en-EN");
+    $shape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0)->getPortionFormat()->setLanguageId("en-EN");
 
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

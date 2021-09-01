@@ -18,7 +18,7 @@ try {
     Control flashControl = null;
     for (IControl control : controls)
     {
-        if (control->getName() == "ShockwaveFlash1")
+        if ($control->getName() == "ShockwaveFlash1")
         {
             flashControl = (Control)control;
         }

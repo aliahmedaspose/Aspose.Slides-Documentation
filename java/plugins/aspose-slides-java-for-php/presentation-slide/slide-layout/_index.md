@@ -26,12 +26,12 @@ try {
     IMasterLayoutSlideCollection layoutSlides = $pres->getMasters()->get_Item(0)->getLayoutSlides();
     ILayoutSlide layoutSlide = null;
 
-    if (layoutSlides->getByType(SlideLayoutType.TitleAndObject) != null)
+    if ($layoutSlides->getByType(SlideLayoutType.TitleAndObject) != null)
         layoutSlide = layoutSlides->getByType(SlideLayoutType.TitleAndObject);
     else
         layoutSlide = layoutSlides->getByType(SlideLayoutType.Title);
 
-    if (layoutSlide == null) {
+    if ($layoutSlide == null) {
         // The situation when a presentation doesn't contain some type of layouts.
         // Technographics.pptx presentation only contains Blank and Custom layout types.
         // But layout slides with Custom types has different slide names, like "Title", "Title and Content", etc. 
@@ -39,21 +39,21 @@ try {
         // Also it is possible to use the set of placeholder shape types. For example,
         // Title slide should have only Title placeholder type, etc.
         for (ILayoutSlide titleAndObjectLayoutSlide : layoutSlides) {
-            if (titleAndObjectLayoutSlide->getName() == "Title and Object") {
+            if ($titleAndObjectLayoutSlide->getName() == "Title and Object") {
                 layoutSlide = titleAndObjectLayoutSlide;
                 break;
             }
         }
-        if (layoutSlide == null) {
+        if ($layoutSlide == null) {
             for (ILayoutSlide titleLayoutSlide : layoutSlides) {
-                if (titleLayoutSlide->getName() == "Title") {
+                if ($titleLayoutSlide->getName() == "Title") {
                     layoutSlide = titleLayoutSlide;
                     break;
                 }
             }
-            if (layoutSlide == null) {
+            if ($layoutSlide == null) {
                 layoutSlide = layoutSlides->getByType(SlideLayoutType.Blank);
-                if (layoutSlide == null) {
+                if ($layoutSlide == null) {
                     layoutSlide = layoutSlides.add(SlideLayoutType.TitleAndObject, "Title and Object");
                 }
             }
@@ -85,7 +85,7 @@ try {
         auxPresentation->getSlideSize()->setSize(SlideSizeType.A4Paper, SlideSizeScaleType.Maximize);
         
         // Clone required slide
-        auxPresentation->getSlides().addClone(presentation->getSlides()->get_Item(0));
+        auxPresentation->getSlides()->addClone(presentation->getSlides()->get_Item(0));
         auxPresentation->getSlides()->removeAt(0);
         
         // Save Presentation to disk
@@ -94,7 +94,7 @@ try {
         auxPresentation.dispose();
     }
 } finally {
-    presentation.dispose();
+    $presentation->dispose();
 }
 ```
 
@@ -111,22 +111,22 @@ To set footer in a slide using its index position in the slides collection of th
 $presentation = new Java("com.aspose.slides.Presentation"), "presentation.ppt");
 try {
     IBaseSlideHeaderFooterManager headerFooterManager = $presentation->getSlides()->get_Item(0)->getHeaderFooterManager();
-    if (!headerFooterManager.isFooterVisible()) // Method isFooterVisible is used for indicating that a slide footer placeholder is not present.
+    if ($!headerFooterManager->isFooterVisible()) // Method isFooterVisible is used for indicating that a slide footer placeholder is not present.
     {
         headerFooterManager->setFooterVisibility(true); // Method setFooterVisibility is used for making a slide footer placeholder visible.
     }
-    if (!headerFooterManager.isSlideNumberVisible()) // Method isSlideNumberVisible is used for indicating that a slide page number placeholder is not present.
+    if ($!headerFooterManager->isSlideNumberVisible()) // Method isSlideNumberVisible is used for indicating that a slide page number placeholder is not present.
     {
         headerFooterManager->setSlideNumberVisibility(true); // Method setSlideNumberVisibility is used for making a slide page number placeholder visible.
     }
-    if (!headerFooterManager.isDateTimeVisible()) // Method isDateTimeVisible is used for indicating that a slide date-time placeholder is not present.
+    if ($!headerFooterManager->isDateTimeVisible()) // Method isDateTimeVisible is used for indicating that a slide date-time placeholder is not present.
     {
         headerFooterManager->setDateTimeVisibility(true); // Method setFooterVisibility is used for making a slide date-time placeholder visible.
     }
     headerFooterManager->setFooterText("Footer text"); // Method setFooterText is used for setting text to slide footer placeholder.
     headerFooterManager->setDateTimeText("Date and time text"); // Method setDateTimeText is used for setting text to slide date-time placeholder.
 } finally {
-    presentation.dispose();
+    $presentation->dispose();
 }
 ```
 
@@ -151,7 +151,7 @@ try {
     headerFooterManager->setFooterAndChildFootersText("Footer text"); // Method setFooterAndChildFootersText is used for setting text to master slide and all child footer placeholders.
     headerFooterManager->setDateTimeAndChildDateTimesText("Date and time text"); // Method setDateTimeAndChildDateTimesText is used for setting text to master slide and all child date-time placeholders.
 } finally {
-    presentation.dispose();
+    $presentation->dispose();
 }
 ```
 
@@ -169,7 +169,7 @@ try {
     // Save Presentation to disk
     $presentation->save("Set_Size&Type_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
-    presentation.dispose();
+    $presentation->dispose();
 }
 ```
 
@@ -190,7 +190,7 @@ try {
     // Save presentation to disk
     $presentation->save("SetPDFPageSize_out.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, opts);
 } finally {
-    presentation.dispose();
+    $presentation->dispose();
 }
 ```
 

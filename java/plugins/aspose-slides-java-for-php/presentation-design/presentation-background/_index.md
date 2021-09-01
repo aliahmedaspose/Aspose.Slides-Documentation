@@ -27,7 +27,7 @@ try {
     // Set the background color of the Master ISlide to Green
     $pres->getMasters()->get_Item(0)->getBackground()->setType(BackgroundType.OwnBackground);
     $pres->getMasters()->get_Item(0)->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    $pres->getMasters()->get_Item(0)->getBackground()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.GREEN);
+    $pres->getMasters()->get_Item(0)->getBackground()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->GREEN);
     
     // Write the presentation to disk
     $pres->save("MasterBG.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -52,7 +52,7 @@ try {
     // Set the background color of the first ISlide to Blue
     $pres->getSlides()->get_Item(0)->getBackground()->setType(BackgroundType.OwnBackground);
     $pres->getSlides()->get_Item(0)->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    $pres->getSlides()->get_Item(0)->getBackground()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
+    $pres->getSlides()->get_Item(0)->getBackground()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLUE);
     
     $pres->save("ContentBG.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -107,13 +107,13 @@ try {
     $pres->getSlides()->get_Item(0)->getBackground()->setType(BackgroundType.OwnBackground);
     $pres->getSlides()->get_Item(0)->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Picture);
     $pres->getSlides()->get_Item(0)->getBackground()->getFillFormat()->getPictureFillFormat()
-            ->setPictureFillMode(PictureFillMode.Stretch);
+            ->setPictureFillMode(Java("com.aspose.slides.PictureFillMode")->Stretch);
     
     // Set the picture
-    IPPImage imgx = $pres->getImages().addImage(Files.readAllBytes(Paths->get("Desert.jpg")));
+    $imgx = $pres->getImages()->addImage(Files.readAllBytes(Paths->get("Desert.jpg")));
     
     // Add image to presentation's images collection
-    $pres->getSlides()->get_Item(0)->getBackground()->getFillFormat()->getPictureFillFormat()->getPicture()->setImage(imgx);
+    $pres->getSlides()->get_Item(0)->getBackground()->getFillFormat()->getPictureFillFormat()->getPicture()->setImage($imgx);
     
     // Write the presentation to disk
     $pres->save("ContentBG_Img.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -136,7 +136,7 @@ $pres = new Java("com.aspose.slides.Presentation", "SamplePresentation.pptx");
 try {
     IBackgroundEffectiveData effBackground = $pres->getSlides()->get_Item(0)->getBackground()->getEffective();
     
-    if (effBackground->getFillFormat()->getFillType() == Java("com.aspose.slides.FillType")->Solid)
+    if ($effBackground->getFillFormat()->getFillType() == Java("com.aspose.slides.FillType")->Solid)
         echo("Fill color: " + effBackground->getFillFormat()->getSolidFillColor());
     else
         echo("Fill type: " + effBackground->getFillFormat()->getFillType());

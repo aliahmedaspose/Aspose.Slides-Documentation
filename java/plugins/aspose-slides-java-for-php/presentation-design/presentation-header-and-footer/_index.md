@@ -28,7 +28,7 @@ try {
 
     // Access and Update Header
     IMasterNotesSlide masterNotesSlide = $pres->getMasterNotesSlideManager()->getMasterNotesSlide();
-    if (null != masterNotesSlide)
+    if ($null != masterNotesSlide)
     {
         updateHeaderFooterText(masterNotesSlide);
     }
@@ -43,13 +43,13 @@ try {
 // Method to set Header/Footer Text
 public static void updateHeaderFooterText(IBaseSlide master)
 {
-    foreach (IShape shape in master.Shapes)
+    foreach ($shape in master.Shapes)
     {
-        if (shape.Placeholder != null)
+        if ($shape.Placeholder != null)
         {
-            if (shape.Placeholder.Type == PlaceholderType.Header)
+            if ($shape.Placeholder.Type == PlaceholderType.Header)
             {
-                ((IAutoShape)shape).TextFrame.Text = "HI there new header";
+                ($shape).TextFrame.Text = "HI there new header";
             }
         }
     }
@@ -76,7 +76,7 @@ $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
     // Change Header and Footer settings for notes master and all notes slides
     IMasterNotesSlide masterNotesSlide = $pres->getMasterNotesSlideManager()->getMasterNotesSlide();
-    if (masterNotesSlide != null)
+    if ($masterNotesSlide != null)
     {
         IMasterNotesSlideHeaderFooterManager headerFooterManager = masterNotesSlide->getHeaderFooterManager();
 
@@ -92,19 +92,19 @@ try {
 
     // Change Header and Footer settings for first notes slide only
     INotesSlide notesSlide = $pres->getSlides()->get_Item(0)->getNotesSlideManager()->getNotesSlide();
-    if (notesSlide != null)
+    if ($notesSlide != null)
     {
         INotesSlideHeaderFooterManager headerFooterManager = notesSlide->getHeaderFooterManager();
-        if (!headerFooterManager.isHeaderVisible())
+        if ($!headerFooterManager->isHeaderVisible())
             headerFooterManager->setHeaderVisibility(true); // make this notes slide Header placeholder visible
 
-        if (!headerFooterManager.isFooterVisible())
+        if ($!headerFooterManager->isFooterVisible())
             headerFooterManager->setFooterVisibility(true); // make this notes slide Footer placeholder visible
 
-        if (!headerFooterManager.isSlideNumberVisible())
+        if ($!headerFooterManager->isSlideNumberVisible())
             headerFooterManager->setSlideNumberVisibility(true); // make this notes slide SlideNumber placeholder visible
 
-        if (!headerFooterManager.isDateTimeVisible())
+        if ($!headerFooterManager->isDateTimeVisible())
             headerFooterManager->setDateTimeVisibility(true); // make this notes slide Date-time placeholder visible
 
         headerFooterManager->setHeaderText("New header text"); // set text to notes slide Header placeholder

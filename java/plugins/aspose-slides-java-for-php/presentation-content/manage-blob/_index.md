@@ -12,18 +12,18 @@ Aspose.Slides for Java provides a facility to add large files (video file in tha
 // create a new presentation which will contain this video
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    InputStream fileStream = new FileInputStream("veryLargeVideo.avi");
+    $fileStream = new Java("java.io.FileInputStream", new Java("java.io.File", "veryLargeVideo.avi"));
     try {
         // let's add the video to the presentation - we choose KeepLocked behavior, because we not
         // have an intent to access the "veryLargeVideo.avi" file.
-        IVideo video = $pres->getVideos().addVideo(fileStream, LoadingStreamBehavior.KeepLocked);
-        $pres->getSlides()->get_Item(0)->getShapes().addVideoFrame(0, 0, 480, 270, video);
+        $video = $pres->getVideos()->addVideo($fileStream, LoadingStreamBehavior.KeepLocked);
+        $pres->getSlides()->get_Item(0)->getShapes()->addVideoFrame(0, 0, 480, 270, $video);
 
         // save the presentation. Despite that the output presentation will be very large, the memory
         // consumption will be low the whole lifetime of the pres object
         $pres->save("presentationWithLargeVideo.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
     } finally {
-        fileStream.close();
+        $fileStream->close();
     }
 } catch (JavaException $e) {
 } finally {
@@ -47,26 +47,26 @@ try {
     byte[] buffer = new byte[8 * 1024];
 
     // iterate through the videos
-    for (int index = 0; index < $pres->getVideos()->size(); index++) {
-        IVideo video = $pres->getVideos()->get_Item(index);
+    for ($index = 0; index < $pres->getVideos()->size(); index++) {
+        $video = $pres->getVideos()->get_Item(index);
 
         // open the presentation video stream. Please note that we intentionally avoid accessing properties
         // like video.BinaryData - this property returns a byte array containing full video, and that means
         // this bytes will be loaded into memory. We will use video.GetStream, which will return Stream and
         // that allows us to not load the whole video into memory.
-        InputStream presVideoStream = video->getStream();
+        $presVideoStream = video->getStream();
         try {
             $outputFileStream = new Java("java.io.FileOutputStream", "video" + index + ".avi");
             try {
-                int bytesRead;
-                while ((bytesRead = presVideoStream.read(buffer, 0, buffer.length)) > 0) {
-                    outputFileStream.write(buffer, 0, bytesRead);
+                $bytesRead;
+                while ((bytesRead = presVideoStream.read(buffer, 0, buffer->length)) > 0) {
+                    $outputFileStream->write(buffer, 0, bytesRead);
                 }
             } finally {
-                outputFileStream.close();
+                $outputFileStream->close();
             }
         } finally {
-            presVideoStream.close();
+            $presVideoStream->close();
         }
         // memory consumption will stay low no matter what size the videos or presentation is.
     }
@@ -80,24 +80,24 @@ try {
 ## **Add Image as Blob in Presentation**
 Aspose.Slides for Java added a new method to [**IImageCollection**](https://apireference.aspose.com/java/slides/com.aspose.slides/IImageCollection) interface and [**ImageCollection**](https://apireference.aspose.com/java/slides/com.aspose.slides/ImageCollection) class to support adding a large images as streams to treat them as BLOBs.
 
-This example demonstrates how to include the large Blob (image) and prevent a high memory consumption.
+This example demonstrates how to include the large Blob ($image) and prevent a high memory consumption.
 
 ```php
 // create a new presentation which will contain this image
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    FileInputStream fip = new FileInputStream("large_image.jpg");
+    $fip = new Java("java.io.FileInputStream", new Java("java.io.File", "large_image.jpg"));
     try {
         // let's add the image to the presentation - we choose KeepLocked behavior, because we not
         // have an intent to access the "largeImage.png" file.
-        IPPImage img = $pres->getImages().addImage(fip, LoadingStreamBehavior.KeepLocked);
-        $pres->getSlides()->get_Item(0)->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0, 300, 200, img);
+        $img = $pres->getImages()->addImage($fip, LoadingStreamBehavior.KeepLocked);
+        $pres->getSlides()->get_Item(0)->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0, 300, 200, $img);
 
         // save the presentation. Despite that the output presentation will be
         // large, the memory consumption will be low the whole lifetime of the pres object
         $pres->save("presentationWithLargeImage.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
     } finally {
-        fip.close();
+        $fip->close();
     }
 } catch (JavaException $e) {
 } finally {

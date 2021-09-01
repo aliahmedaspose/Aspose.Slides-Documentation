@@ -28,14 +28,14 @@ $pres = new Java("com.aspose.slides.Presentation", "ReplacingText.pptx");
 try {
 
     // Access first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
 
     // Iterate through shapes to find the placeholder
-    for (IShape shp : sld->getShapes()) 
+    for ($shp : sld->getShapes()) 
     {
-        if (shp->getPlaceholder() != null) {
+        if ($shp->getPlaceholder() != null) {
             // Change the text of each placeholder
-            ((IAutoShape) shp)->getTextFrame()->setText("This is Placeholder");
+            (shp)->getTextFrame()->setText("This is Placeholder");
         }
     }
 
@@ -54,22 +54,22 @@ The code snippet below shows how to use this feature:
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
-    ISlide slide = $pres->getSlides()->get_Item(0);
-    for (IShape shape : slide->getSlide()->getShapes()) // iterate through the slide
+    $slide = $pres->getSlides()->get_Item(0);
+    for ($shape : $slide->getSlide()->getShapes()) // iterate through the slide
     {
-        if (shape->getPlaceholder() != null && shape instanceof AutoShape)
+        if ($shape->getPlaceholder() != null && shape instanceof AutoShape)
         {
-            String text = "";
-            if (shape->getPlaceholder()->getType() == PlaceholderType.CenteredTitle) //PowerPoint displays "Click to add title". 
+            $text = "";
+            if ($shape->getPlaceholder()->getType() == PlaceholderType.CenteredTitle) //PowerPoint displays "Click to add title". 
             {
                 text = "Add Title";
             }
-            else if (shape->getPlaceholder()->getType() == PlaceholderType.Subtitle) //add subtitle.
+            else if ($shape->getPlaceholder()->getType() == PlaceholderType.Subtitle) //add subtitle.
             {
                 text = "Add Subtitle";
             }
 
-            ((IAutoShape)shape)->getTextFrame()->setText(text);
+            ($shape)->getTextFrame()->setText($text);
             echo("Placeholder with text: " + text);
         }
     }

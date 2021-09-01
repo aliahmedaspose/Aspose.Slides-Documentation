@@ -15,7 +15,7 @@ The following example shows how to convert a presentation to a PDF notes documen
 Presentation presIn = new Presentation("SelectedSlides.pptx");
 Presentation presOut = new Presentation();
 try {
-    ISlide slide = presIn->getSlides()->get_Item(0);
+    $slide = presIn->getSlides()->get_Item(0);
     presOut->getSlides().insertClone(0, slide);
     
     // Setting Slide Type and Size
@@ -26,8 +26,8 @@ try {
 
     presOut->save("PDF-SelectedSlide.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
 } finally {
-    if (presIn != null) presIn.dispose();
-    if (presOut != null) presOut.dispose();
+    if ($presIn != null) presIn.dispose();
+    if ($presOut != null) presOut.dispose();
 }
 ```
 

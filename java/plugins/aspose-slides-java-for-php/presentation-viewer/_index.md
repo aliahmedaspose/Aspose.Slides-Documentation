@@ -33,7 +33,7 @@ To generate an SVG image from any desired slide with Aspose.Slides for Java, ple
 $pres = new Java("com.aspose.slides.Presentation", "CreateSlidesSVGImage.pptx");
 try {
     // Access the first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
 
     // Create a memory stream object
     $svgStream = new Java("java.io.FileOutputStream", "Aspose_out.svg");
@@ -41,7 +41,7 @@ try {
     // Generate SVG image of slide and save in memory stream
     sld.writeAsSvg(svgStream);
 
-    svgStream.close();
+    svgStream->close();
 } catch (JavaException $e) {
 } finally {
     $pres->dispose();
@@ -61,7 +61,7 @@ try {
 
         $pres->getSlides()->get_Item(0).writeAsSvg(stream, svgOptions);
     } finally {
-        if (stream != null) stream.close();
+        if ($stream != null) stream->close();
     }
 } catch (JavaException $e) {
 } finally {
@@ -78,12 +78,12 @@ class CustomSvgShapeFormattingController implements ISvgShapeFormattingControlle
         m_shapeIndex = 0;
     }
     
-    public CustomSvgShapeFormattingController(int shapeStartIndex)
+    public CustomSvgShapeFormattingController($shapeStartIndex)
     {
         m_shapeIndex = shapeStartIndex;
     }
 
-    public void formatShape(ISvgShape svgShape, IShape shape)
+    public void formatShape(ISvgShape svgShape, $shape)
     {
         svgShape->setId(String.format("shape-%d", m_shapeIndex++));
     }
@@ -103,13 +103,13 @@ Aspose.Slides for Java help you generate thumbnail images of the slides. To gene
 $pres = new Java("com.aspose.slides.Presentation", "ThumbnailFromSlide.pptx");
 try {
     // Access the first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
 
     // Create a full scale image
-    BufferedImage bmp = sld->getThumbnail(1f, 1f);
+    $bmp = sld->getThumbnail(1f, 1f);
 
     // Save the image to disk in JPEG format
-    ImageIO.write(bmp, "PNG", new java.io.File("Thumbnail_out.png"));
+    Java("javax.imageio.ImageIO")->write($bmp, "PNG", new Java("java.io.File", "Thumbnail_out.png"));
 } catch (JavaException $e) {
 } finally {
     $pres->dispose();
@@ -128,21 +128,21 @@ try {
 $pres = new Java("com.aspose.slides.Presentation", "ThumbnailWithUserDefinedDimensions.pptx");
 try {
     // Access the first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
 
     // User defined dimension
-    int desiredX = 1200;
-    int desiredY = 800;
+    $desiredX = 1200;
+    $desiredY = 800;
 
     // Getting scaled value  of X and Y
-    float ScaleX = (float)(1.0 / $pres->getSlideSize()->getSize()->getWidth()) * desiredX;
-    float ScaleY = (float)(1.0 / $pres->getSlideSize()->getSize()->getHeight()) * desiredY;
+    $ScaleX = (1.0 / $pres->getSlideSize()->getSize()->getWidth()) * desiredX;
+    $ScaleY = (1.0 / $pres->getSlideSize()->getSize()->getHeight()) * desiredY;
     
     // Create a full scale image
-    BufferedImage bmp = sld->getThumbnail(ScaleX, ScaleY);
+    $bmp = sld->getThumbnail(ScaleX, ScaleY);
 
     // Save the image to disk in JPEG format
-    ImageIO.write(bmp, "PNG", new java.io.File("Thumbnail_out.png"));
+    Java("javax.imageio.ImageIO")->write($bmp, "PNG", new Java("java.io.File", "Thumbnail_out.png"));
 } catch (JavaException $e) {
 } finally {
     $pres->dispose();
@@ -164,24 +164,24 @@ The code snippet below produces a thumbnail of the first slide of a presentation
 $pres = new Java("com.aspose.slides.Presentation", "ThumbnailWithUserDefinedDimensions.pptx");
 try {
     // Access the first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
 
     // User defined dimension
-    int desiredX = 1200;
-    int desiredY = 800;
+    $desiredX = 1200;
+    $desiredY = 800;
 
     // Getting scaled value  of X and Y
-    float ScaleX = (float)(1.0 / $pres->getSlideSize()->getSize()->getWidth()) * desiredX;
-    float ScaleY = (float)(1.0 / $pres->getSlideSize()->getSize()->getHeight()) * desiredY;
+    $ScaleX = (1.0 / $pres->getSlideSize()->getSize()->getWidth()) * desiredX;
+    $ScaleY = (1.0 / $pres->getSlideSize()->getSize()->getHeight()) * desiredY;
 
     RenderingOptions opts = new RenderingOptions();
     opts->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomTruncated);
     
     // Create a full scale image
-    BufferedImage bmp = sld->getThumbnail(opts, ScaleX, ScaleY);
+    $bmp = sld->getThumbnail(opts, ScaleX, ScaleY);
 
     // Save the image to disk in JPEG format
-    ImageIO.write(bmp, "PNG", new java.io.File("Thumbnail_out.png"));
+    Java("javax.imageio.ImageIO")->write($bmp, "PNG", new Java("java.io.File", "Thumbnail_out.png"));
 } catch (JavaException $e) {
 } finally {
     $pres->dispose();

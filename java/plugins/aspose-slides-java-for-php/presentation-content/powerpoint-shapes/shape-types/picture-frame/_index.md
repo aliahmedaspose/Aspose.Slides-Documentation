@@ -36,13 +36,13 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
     
     // Instantiate the Image class
-    IPPImage imgx = $pres->getImages().addImage(new FileInputStream(new File("asp1.jpg")));
+    $imgx = $pres->getImages()->addImage(new FileInputStream(new Java("java.io.File", "asp1.jpg")));
     
     // Add Picture Frame with height and width equivalent of Picture
-    sld->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, imgx->getWidth(), imgx->getHeight(), imgx);
+    sld->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, imgx->getWidth(), imgx->getHeight(), imgx);
     
     // Write the PPTX file to disk
     $pres->save("RectPicFrame.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -69,14 +69,14 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
     
     // Instantiate the Image class
-    IPPImage imgx = $pres->getImages().addImage(new FileInputStream(new File("asp1.jpg")));
+    $imgx = $pres->getImages()->addImage(new FileInputStream(new Java("java.io.File", "asp1.jpg")));
     
     
     // Add Picture Frame with height and width equivalent of Picture
-    IPictureFrame pf = sld->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, imgx->getWidth(), imgx->getHeight(), imgx);
+    IPictureFrame pf = sld->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, imgx->getWidth(), imgx->getHeight(), imgx);
     
     // Setting relative scale width and height
     pf->setRelativeScaleHeight(0.8f);
@@ -113,17 +113,17 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
     
     // Instantiate the Image class
-    IPPImage imgx = $pres->getImages().addImage(new FileInputStream(new File("asp1.jpg")));
+    $imgx = $pres->getImages()->addImage(new FileInputStream(new Java("java.io.File", "asp1.jpg")));
     
     // Add Picture Frame with height and width equivalent of Picture
-    IPictureFrame pf = sld->getShapes().addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, imgx->getWidth(), imgx->getHeight(), imgx);
+    IPictureFrame pf = sld->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, imgx->getWidth(), imgx->getHeight(), imgx);
     
     // Apply some formatting to PictureFrameEx
     pf->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    pf->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLUE);
+    pf->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLUE);
     pf->getLineFormat()->setWidth(20);
     pf->setRotation(45);
     
@@ -155,23 +155,23 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
 
     // Instantiate the ImageEx class
-    BufferedImage img = ImageIO.read(new File("aspose-logo.jpg"));
-    IPPImage imgEx = $pres->getImages().addImage(img);
+    $img = ImageIO.read(new Java("java.io.File", "aspose-logo.jpg"));
+    $imgEx = $pres->getImages()->addImage($img);
 
     // Add an AutoShape of Rectangle type
-    IAutoShape aShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 300, 300);
+    $aShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 300, 300);
 
     // Set shape's fill type
     aShape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Picture);
 
     // Set shape's picture fill mode
-    aShape->getFillFormat()->getPictureFillFormat()->setPictureFillMode(PictureFillMode.Stretch);
+    aShape->getFillFormat()->getPictureFillFormat()->setPictureFillMode(Java("com.aspose.slides.PictureFillMode")->Stretch);
 
     // Set image to fill the shape
-    aShape->getFillFormat()->getPictureFillFormat()->getPicture()->setImage(imgEx);
+    aShape->getFillFormat()->getPictureFillFormat()->getPicture()->setImage($imgEx);
 
     // Specify image offsets from the corresponding edge of the shape's bounding box
     aShape->getFillFormat()->getPictureFillFormat()->setStretchOffsetLeft(25);

@@ -27,7 +27,7 @@ In slides, a tag corresponds to the [IDocumentProperties->getKeywords()](https:/
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try{
-    String keywords = $pres->getDocumentProperties()->getKeywords();
+    $keywords = $pres->getDocumentProperties()->getKeywords();
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -59,8 +59,8 @@ Tags also can be set for [Slide](https://apireference.aspose.com/slides/java/com
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = $pres->getSlides()->get_Item(0);
-    slide->getCustomData()->getTags()->set_Item("tag", "value");
+    $slide = $pres->getSlides()->get_Item(0);
+    $slide->getCustomData()->getTags()->set_Item("tag", "value");
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -71,10 +71,10 @@ Or any individual [Shape](https://apireference.aspose.com/slides/java/com.aspose
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide slide = $pres->getSlides()->get_Item(0);
-    IAutoShape shape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 100, 50);
-    shape->getTextFrame()->setText("My text");
-    shape->getCustomData()->getTags()->set_Item("tag", "value");
+    $slide = $pres->getSlides()->get_Item(0);
+    $shape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 100, 50);
+    $shape->getTextFrame()->setText("My text");
+    $shape->getCustomData()->getTags()->set_Item("tag", "value");
 } finally {
     if ($pres != null) $pres->dispose();
 }

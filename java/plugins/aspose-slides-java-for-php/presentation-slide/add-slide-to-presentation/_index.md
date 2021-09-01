@@ -27,7 +27,7 @@ try {
     // Instantiate SlideCollection calss
     ISlideCollection slds = $pres->getSlides();
 
-    for (int i = 0; i < $pres->getLayoutSlides()->size(); i++) {
+    for ($i = 0; i < $pres->getLayoutSlides()->size(); i++) {
         // Add an empty slide to the Slides collection
         slds.addEmptySlide($pres->getLayoutSlides()->get_Item(i));
     }

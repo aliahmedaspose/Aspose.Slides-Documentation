@@ -24,44 +24,44 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
 
     // Define columns with widths and rows with heights
     double[] dblCols = {50, 50, 50};
     double[] dblRows = {50, 30, 30, 30, 30};
 
     // Add table shape to slide
-    ITable tbl = sld->getShapes().addTable(100, 50, dblCols, dblRows);
+    $tbl = sld->getShapes()->addTable(100, 50, dblCols, dblRows);
 
     // Set border format for each cell
-    for (int row = 0; row < tbl->getRows()->size(); row++)
+    for ($row = 0; row < $tbl->getRows()->size(); row++)
     {
-        for (int cell = 0; cell < tbl->getRows()->get_Item(row)->size(); cell++)
+        for ($cell = 0; cell < $tbl->getRows()->get_Item(row)->size(); cell++)
         {
-            ICellFormat cellFormat = tbl->getRows()->get_Item(row)->get_Item(cell)->getCellFormat();
+            ICellFormat cellFormat = $tbl->getRows()->get_Item(row)->get_Item(cell)->getCellFormat();
             
             cellFormat->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cellFormat->getBorderTop()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
+            cellFormat->getBorderTop()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
             cellFormat->getBorderTop()->setWidth(5);
 
             cellFormat->getBorderBottom()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cellFormat->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
+            cellFormat->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
             cellFormat->getBorderBottom()->setWidth(5);
 
             cellFormat->getBorderLeft()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cellFormat->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
+            cellFormat->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
             cellFormat->getBorderLeft()->setWidth(5);
 
             cellFormat->getBorderRight()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cellFormat->getBorderRight()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
+            cellFormat->getBorderRight()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
             cellFormat->getBorderRight()->setWidth(5);
         }
     }
     // Merge cells 1 & 2 of row 1
-    tbl.mergeCells(tbl->getRows()->get_Item(0)->get_Item(0), tbl->getRows()->get_Item(1)->get_Item(1), false);
+    tbl.mergeCells(tbl->getRows()->get_Item(0)->get_Item(0), $tbl->getRows()->get_Item(1)->get_Item(1), false);
 
     // Add text to the merged cell
-    tbl->getRows()->get_Item(0)->get_Item(0)->getTextFrame()->setText("Merged Cells");
+    $tbl->getRows()->get_Item(0)->get_Item(0)->getTextFrame()->setText("Merged Cells");
 
     // Save PPTX to Disk
     $pres->save("table.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -86,19 +86,19 @@ $pres = new Java("com.aspose.slides.Presentation", "UpdateExistingTable.pptx");
 try {
 
     // Access the first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
 
     // Initialize null TableEx
-    ITable tbl = null;
+    $tbl = null;
 
     // Iterate through the shapes and set a reference to the table found
-    for (IShape shp : sld->getShapes()) 
+    for ($shp : sld->getShapes()) 
     {
-        if (shp instanceof ITable) 
+        if ($shp instanceof ITable) 
         {
-            tbl = (ITable) shp;
+            tbl = $shp;
             // Set the text of the first column of second row
-            tbl->get_Item(0, 1)->getTextFrame()->setText("New");
+            $tbl->get_Item(0, 1)->getTextFrame()->setText("New");
         }
     }
     
@@ -125,32 +125,32 @@ Aspose.Slides for Java has provided the simplest API to work with tables in an e
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide 
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     
     // Define columns with widths and rows with heights
     double[] dblCols = { 120, 120, 120, 120 };
     double[] dblRows = { 100, 100, 100, 100 };
     
     // Add table shape to slide
-    ITable tbl = $slide->getShapes().addTable(100, 50, dblCols, dblRows);
-    tbl->get_Item(1, 0)->getTextFrame()->setText("10");
-    tbl->get_Item(2, 0)->getTextFrame()->setText("20");
-    tbl->get_Item(3, 0)->getTextFrame()->setText("30");
+    $tbl = $slide->getShapes()->addTable(100, 50, dblCols, dblRows);
+    $tbl->get_Item(1, 0)->getTextFrame()->setText("10");
+    $tbl->get_Item(2, 0)->getTextFrame()->setText("20");
+    $tbl->get_Item(3, 0)->getTextFrame()->setText("30");
     
     // Accessing the text frame
-    ITextFrame txtFrame = tbl->get_Item(0, 0)->getTextFrame();
+    $txtFrame = $tbl->get_Item(0, 0)->getTextFrame();
     
     // Create the Paragraph object for text frame
-    IParagraph paragraph = txtFrame->getParagraphs()->get_Item(0);
+    $paragraph = txtFrame->getParagraphs()->get_Item(0);
     
     // Create Portion object for paragraph
-    IPortion portion = paragraph->getPortions()->get_Item(0);
-    portion->setText("Text here");
-    portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
+    $portion = paragraph->getPortions()->get_Item(0);
+    $portion->setText("Text here");
+    $portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLACK);
     
     // Aligning the text vertically
-    ICell cell = tbl->get_Item(0, 0);
+    $cell = $tbl->get_Item(0, 0);
     cell->setTextAnchorType(TextAnchorType.Center);
     cell->setTextVerticalType(TextVerticalType.Vertical270);
     
@@ -177,23 +177,23 @@ Aspose.Slides for Java has provided the simplest API to create tables in an easi
 $pres = new Java("com.aspose.slides.Presentation", "simpletable.pptx");
 try {
     // the first shape on the first slide is a table
-    ITable someTable = (ITable) $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
+    $someTable = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     
     // setting table cells' font height
-    PortionFormat portionFormat = new PortionFormat();
-    portionFormat->setFontHeight(25);
+    $portionFormat = new Java("com.aspose.slides.PortionFormat");
+    $portionFormat->setFontHeight(25);
     someTable->setTextFormat(portionFormat);
     
     // setting table cells' text alignment and right margin in one call
     ParagraphFormat paragraphFormat = new ParagraphFormat();
-    paragraphFormat->setAlignment(TextAlignment.Right);
+    paragraphFormat->setAlignment(Java("com.aspose.slides.TextAlignment")->Right);
     paragraphFormat->setMarginRight(20);
-    someTable->setTextFormat(paragraphFormat);
+    someTable->setTextFormat($paragraphFormat);
     
     // setting table cells' text vertical type
     TextFrameFormat textFrameFormat = new TextFrameFormat();
     textFrameFormat->setTextVerticalType(TextVerticalType.Vertical);
-    someTable->setTextFormat(textFrameFormat);
+    someTable->setTextFormat($textFrameFormat);
     
     $pres->save("result.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -215,34 +215,34 @@ In a standard table numeration of cells is straightforward and zero-based. The f
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
 
     // Define columns with widths and rows with heights
     double[] dblCols = { 70, 70, 70, 70 };
     double[] dblRows = { 70, 70, 70, 70 };
 
     // Add table shape to slide
-    ITable tbl = sld->getShapes().addTable(100, 50, dblCols, dblRows);
+    $tbl = sld->getShapes()->addTable(100, 50, dblCols, dblRows);
 
     // Set border format for each cell
-    for (IRow row : tbl->getRows())
+    for (IRow row : $tbl->getRows())
     {
         for (ICell cell : row)
         {
             cell->getCellFormat()->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
+            cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
             cell->getCellFormat()->getBorderTop()->setWidth(5);
 
             cell->getCellFormat()->getBorderBottom()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
+            cell->getCellFormat()->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
             cell->getCellFormat()->getBorderBottom()->setWidth(5);
 
             cell->getCellFormat()->getBorderLeft()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
+            cell->getCellFormat()->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
             cell->getCellFormat()->getBorderLeft()->setWidth(5);
 
             cell->getCellFormat()->getBorderRight()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderRight()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
+            cell->getCellFormat()->getBorderRight()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
             cell->getCellFormat()->getBorderRight()->setWidth(5);
         }
     }
@@ -260,7 +260,7 @@ The aspect ratio of a geometric shape is the ratio of its sizes in different dim
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
-    ITable table = (ITable)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
+    $table = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     echo("Lock aspect ratio set: " + table->getGraphicalObjectLock()->getAspectRatioLocked());
 
     table->getGraphicalObjectLock()->setAspectRatioLocked(!table->getGraphicalObjectLock()->getAspectRatioLocked()); // invert

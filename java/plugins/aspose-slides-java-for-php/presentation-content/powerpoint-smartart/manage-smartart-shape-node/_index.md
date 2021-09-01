@@ -21,25 +21,25 @@ Aspose.Slides for Java has provided the simplest API to manage the SmartArt shap
 $pres = new Java("com.aspose.slides.Presentation", "SimpleSmartArt.pptx");
 try {
     // Traverse through every shape inside first slide
-    for (IShape shape : $pres->getSlides()->get_Item(0)->getShapes()) 
+    for ($shape : $pres->getSlides()->get_Item(0)->getShapes()) 
     {
         // Check if shape is of SmartArt type
-        if (shape instanceof SmartArt) 
+        if ($shape instanceof SmartArt) 
         {
             // Typecast shape to SmartArt
-            SmartArt smart = (SmartArt) shape;
+            $smart = (SmartArt) shape;
     
             // Adding a new SmartArt Node
-            SmartArtNode TemNode = (SmartArtNode) smart->getAllNodes().addNode();
+            $TemNode = $smart->getAllNodes()->addNode();
     
             // Adding text
-            TemNode->getTextFrame()->setText("Test");
+            $TemNode->getTextFrame()->setText("Test");
     
             // Adding new child node in parent node. It will be added in the end of collection
-            SmartArtNode newNode = (SmartArtNode) TemNode->getChildNodes().addNode();
+            $newNode = $TemNode->getChildNodes()->addNode();
     
             // Adding text
-            newNode->getTextFrame()->setText("New Node Added");
+            $newNode->getTextFrame()->setText("New Node Added");
         }
     }
     
@@ -65,16 +65,16 @@ In the following sample code we have explained how to add the child nodes belong
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Access the presentation slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
 
     // Add Smart Art IShape
-    ISmartArt smart = $slide->getShapes().addSmartArt(0, 0, 400, 400, SmartArtLayoutType.StackedList);
+    $smart = $slide->getShapes()->addSmartArt(0, 0, 400, 400, Java("com.aspose.slides.SmartArtLayoutType")->StackedList);
 
     // Accessing the SmartArt node at index 0
-    ISmartArtNode node = smart->getAllNodes()->get_Item(0);
+    $node = $smart->getAllNodes()->get_Item(0);
 
     // Adding new child node at position 2 in parent node
-    SmartArtNode chNode = (SmartArtNode) ((SmartArtNodeCollection) node->getChildNodes()).addNodeByPosition(2);
+    $chNode = $((SmartArtNodeCollection) $node->getChildNodes())->addNodeByPosition(2);
 
     // Add Text
     chNode->getTextFrame()->setText("Sample Text Added");
@@ -101,25 +101,25 @@ The following sample code will help to access nodes inside SmartArt shape. Pleas
 $pres = new Java("com.aspose.slides.Presentation", "SmartArtShape.pptx");
 try {
     // Get first slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     
     // Traverse through every shape inside first slide
-    for (IShape shape : slide->getShapes()) 
+    for ($shape : $slide->getShapes()) 
     {
         // Check if shape is of SmartArt type
-        if (shape instanceof ISmartArt) 
+        if ($shape instanceof ISmartArt) 
         {
             // Typecast shape to SmartArt
-            ISmartArt smart = (ISmartArt) shape;
+            $smart = (ISmartArt) shape;
     
             // Traverse through all nodes inside SmartArt
-            for (int i = 0; i < smart->getAllNodes()->size(); i++) 
+            for ($i = 0; i < $smart->getAllNodes()->size(); i++) 
             {
                 // Accessing SmartArt node at index i
-                SmartArtNode node = (SmartArtNode) smart->getAllNodes()->get_Item(i);
+                $node = $smart->getAllNodes()->get_Item(i);
     
                 // Printing the SmartArt node parameters
-                System.out.print(node->getTextFrame()->getText() + " " + node->getLevel() + " " + node->getPosition());
+                echo($node->getTextFrame()->getText() + " " + $node->getLevel() + " " + $node->getPosition());
             }
         }
     }
@@ -145,31 +145,31 @@ The following sample code will help to access the child nodes belonging to respe
 $pres = new Java("com.aspose.slides.Presentation", "AccessChildNodes.pptx");
 try {
     // Get first slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     
     // Traverse through every shape inside first slide
-    for (IShape shape : slide->getShapes()) 
+    for ($shape : $slide->getShapes()) 
     {
         // Check if shape is of SmartArt type
-        if (shape instanceof ISmartArt) 
+        if ($shape instanceof ISmartArt) 
         {
             // Typecast shape to SmartArt
-            ISmartArt smart = (ISmartArt) shape;
+            $smart = (ISmartArt) shape;
     
             // Traverse through all nodes inside SmartArt
-            for (int i = 0; i < smart->getAllNodes()->size(); i++) 
+            for ($i = 0; i < $smart->getAllNodes()->size(); i++) 
             {
                 // Accessing SmartArt node at index i
-                SmartArtNode node0 = (SmartArtNode) smart->getAllNodes()->get_Item(i);
+                $node0 = $smart->getAllNodes()->get_Item(i);
                 
                 // Traversing through the child nodes in SmartArt node at index i
-                for (int j = 0; j < node0->getChildNodes()->size(); j++) 
+                for ($j = 0; j < node0->getChildNodes()->size(); j++) 
                 {
                     // Accessing the child node in SmartArt node
-                    SmartArtNode node = (SmartArtNode) node0->getChildNodes()->get_Item(j);
+                    $node = $node0->getChildNodes()->get_Item(j);
     
                     // Printing the SmartArt child node parameters
-                    System.out.print("j = " + j + ", Text = " + node->getTextFrame()->getText() + ",  Level = " + node->getLevel() + ", Position = " + node->getPosition());
+                    echo("j = " + j + ", Text = " + $node->getTextFrame()->getText() + ",  Level = " + $node->getLevel() + ", Position = " + $node->getPosition());
                 }
             }
         }
@@ -195,20 +195,20 @@ In this example, we will learn to access the child nodes at some particular posi
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing the first slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     
     // Adding the SmartArt shape in first slide
-    ISmartArt smart = $slide->getShapes().addSmartArt(0, 0, 400, 400, SmartArtLayoutType.StackedList);
+    $smart = $slide->getShapes()->addSmartArt(0, 0, 400, 400, Java("com.aspose.slides.SmartArtLayoutType")->StackedList);
     
     // Accessing the SmartArt node at index 0
-    ISmartArtNode node = smart->getAllNodes()->get_Item(0);
+    $node = $smart->getAllNodes()->get_Item(0);
     
     // Accessing the child node at position 1 in parent node
-    int position = 1;
-    SmartArtNode chNode = (SmartArtNode) ((SmartArtNodeCollection) node->getChildNodes())->get_Item(position);
+    $position = 1;
+    $chNode = $((SmartArtNodeCollection) $node->getChildNodes())->get_Item(position);
     
     // Printing the SmartArt child node parameters
-    System.out.print("Text = " + chNode->getTextFrame()->getText() + ",  Level = " + chNode->getLevel() + ", Position = " + chNode->getPosition());
+    echo("Text = " + chNode->getTextFrame()->getText() + ",  Level = " + chNode->getLevel() + ", Position = " + chNode->getPosition());
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -231,21 +231,21 @@ In this example, we will learn to remove the nodes inside SmartArt shape.
 $pres = new Java("com.aspose.slides.Presentation", "AddSmartArtNode.pptx");
 try {
     // Traverse through every shape inside first slide
-    for (IShape shape : $pres->getSlides()->get_Item(0)->getShapes()) 
+    for ($shape : $pres->getSlides()->get_Item(0)->getShapes()) 
     {
         // Check if shape is of SmartArt type
-        if (shape instanceof ISmartArt) 
+        if ($shape instanceof ISmartArt) 
         {
             // Typecast shape to SmartArt
-            ISmartArt smart = (ISmartArt) shape;
+            $smart = (ISmartArt) shape;
     
-            if (smart->getAllNodes()->size() > 0) 
+            if ($smart->getAllNodes()->size() > 0) 
             {
                 // Accessing SmartArt node at index 0
-                ISmartArtNode node = smart->getAllNodes()->get_Item(0);
+                $node = $smart->getAllNodes()->get_Item(0);
     
                 // Removing the selected node
-                smart->getAllNodes()->removeNode(node);
+                $smart->getAllNodes()->removeNode(node);
             }
         }
     }
@@ -274,23 +274,23 @@ In this example, we will learn to remove the nodes inside SmartArt shape at part
 $pres = new Java("com.aspose.slides.Presentation", "AddSmartArtNode.pptx");
 try {
     // Traverse through every shape inside first slide
-    for (IShape shape : $pres->getSlides()->get_Item(0)->getShapes()) 
+    for ($shape : $pres->getSlides()->get_Item(0)->getShapes()) 
     {
         // Check if shape is of SmartArt type
-        if (shape instanceof SmartArt) 
+        if ($shape instanceof SmartArt) 
         {
             // Typecast shape to SmartArt
-            SmartArt smart = (SmartArt) shape;
+        $smart = (SmartArt) shape;
     
-            if (smart->getAllNodes()->size() > 0) 
+            if ($smart->getAllNodes()->size() > 0) 
             {
                 // Accessing SmartArt node at index 0
-                ISmartArtNode node = smart->getAllNodes()->get_Item(0);
+                $node = $smart->getAllNodes()->get_Item(0);
     
-                if (node->getChildNodes()->size() >= 2) 
+                if ($node->getChildNodes()->size() >= 2) 
                 {
                     // Removing the child node at position 1
-                    (node->getChildNodes())->removeNode(1);
+                    ($node->getChildNodes())->removeNode(1);
                 }
             }
         }
@@ -310,28 +310,28 @@ Now Aspose.Slides for Java support for setting [SmartArtShape](https://apirefere
 // Instantiate Presentation Class
 $pres = new Java("com.aspose.slides.Presentation", "SimpleSmartArt.pptx");
 try{
-    ISmartArt smart = $pres->getSlides()->get_Item(0)->getShapes().addSmartArt(20, 20, 600, 500, SmartArtLayoutType.OrganizationChart);
+    $smart = $pres->getSlides()->get_Item(0)->getShapes()->addSmartArt(20, 20, 600, 500, Java("com.aspose.slides.SmartArtLayoutType")->OrganizationChart);
 
     // Move SmartArt shape to new position
-    ISmartArtNode node = smart->getAllNodes()->get_Item(1);
-    ISmartArtShape shape = node->getShapes()->get_Item(1);
-    shape->setX(shape->getX() + shape->getWidth() * 2);
-    shape->setY(shape->getY() - shape->getHeight() * 2);
+    $node = $smart->getAllNodes()->get_Item(1);
+    $shape = $node->getShapes()->get_Item(1);
+    $shape->setX($shape->getX() + $shape->getWidth() * 2);
+    $shape->setY($shape->getY() - $shape->getHeight() * 2);
 
     // Change SmartArt shape's widths
-    node = smart->getAllNodes()->get_Item(2);
-    shape = node->getShapes()->get_Item(1);
-    shape->setWidth(shape->getWidth() + shape->getWidth() * 2);
+    $node = $smart->getAllNodes()->get_Item(2);
+    shape = $node->getShapes()->get_Item(1);
+    $shape->setWidth($shape->getWidth() + $shape->getWidth() * 2);
 
     // Change SmartArt shape's height
-    node = smart->getAllNodes()->get_Item(3);
-    shape = node->getShapes()->get_Item(1);
-    shape->setHeight(shape->getHeight() + shape->getHeight() * 2);
+    $node = $smart->getAllNodes()->get_Item(3);
+    shape = $node->getShapes()->get_Item(1);
+    $shape->setHeight($shape->getHeight() + $shape->getHeight() * 2);
 
     // Change SmartArt shape's rotation
-    node = smart->getAllNodes()->get_Item(4);
-    shape = node->getShapes()->get_Item(1);
-    shape->setRotation(90);
+    $node = $smart->getAllNodes()->get_Item(4);
+    shape = $node->getShapes()->get_Item(1);
+    $shape->setRotation(90);
 
     $pres->save("SmartArt.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 }finally {
@@ -367,23 +367,23 @@ In the following sample code we will investigate how to identify **Assistant Nod
 $pres = new Java("com.aspose.slides.Presentation", "AddNodes.pptx");
 try {
     // Traverse through every shape inside first slide
-    for (IShape shape : $pres->getSlides()->get_Item(0)->getShapes()) 
+    for ($shape : $pres->getSlides()->get_Item(0)->getShapes()) 
     {
         // Check if shape is of SmartArt type
-        if (shape instanceof ISmartArt) 
+        if ($shape instanceof ISmartArt) 
         {
             // Typecast shape to SmartArt
-            ISmartArt smart = (SmartArt) shape;
+            $smart = (SmartArt) shape;
     
             // Traversing through all nodes of SmartArt shape
-            for (int i = 0; i < smart->getAllNodes()->size(); i++) 
+            for ($i = 0; i < $smart->getAllNodes()->size(); i++) 
             {
-                ISmartArtNode node = smart->getAllNodes()->get_Item(i);
+                $node = $smart->getAllNodes()->get_Item(i);
                 // Check if node is Assistant node
-                if (node.isAssistant()) 
+                if ($node->isAssistant()) 
                 {
                     // Setting Assistant node to false and making it normal node
-                    node.isAssistant();
+                    node->isAssistant();
                 }
             }
         }
@@ -416,18 +416,18 @@ Please follow the steps below:
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing the slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     
     // Adding SmartArt shape and nodes
-    ISmartArt chevron = $slide->getShapes().addSmartArt(10, 10, 800, 60, SmartArtLayoutType.ClosedChevronProcess);
-    ISmartArtNode node = chevron->getAllNodes().addNode();
-    node->getTextFrame()->setText("Some text");
+    $chevron = $slide->getShapes()->addSmartArt(10, 10, 800, 60, Java("com.aspose.slides.SmartArtLayoutType")->ClosedChevronProcess);
+    $node = chevron->getAllNodes()->addNode();
+    $node->getTextFrame()->setText("Some text");
     
     // Setting node fill color
-    for (IShape item : node->getShapes()) 
+    for ($item : $node->getShapes()) 
     {
-        item->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-        item->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.RED);
+        $item->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+        $item->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
     }
     
     // Save the presentation
@@ -451,16 +451,16 @@ Developers can generate a thumbnail of Child node of a SmartArt by following the
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Add SmartArt 
-    ISmartArt smart = $pres->getSlides()->get_Item(0)->getShapes().addSmartArt(10, 10, 400, 300, SmartArtLayoutType.BasicCycle);
+    $smart = $pres->getSlides()->get_Item(0)->getShapes()->addSmartArt(10, 10, 400, 300, Java("com.aspose.slides.SmartArtLayoutType")->BasicCycle);
 
     // Obtain the reference of a node by using its Index  
-    ISmartArtNode node = smart->getNodes()->get_Item(1);
+    $node = $smart->getNodes()->get_Item(1);
 
     // Get thumbnail
-    BufferedImage bmp = node->getShapes()->get_Item(0)->getThumbnail();
+    $bmp = $node->getShapes()->get_Item(0)->getThumbnail();
 
     // Save thumbnail
-    ImageIO.write(bmp, "PNG", new File("SmartArt_ChildNote_Thumbnail.png"));
+    Java("javax.imageio.ImageIO")->write($bmp, "PNG", new Java("java.io.File", "SmartArt_ChildNote_Thumbnail.png"));
 } catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();

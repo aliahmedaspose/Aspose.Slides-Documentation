@@ -19,10 +19,10 @@ Aspose.Slides for Java has provided an API to create SmartArt shapes. To create 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get first slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     
     // Add Smart Art Shape
-    ISmartArt smart = $slide->getShapes().addSmartArt(0, 0, 400, 400, SmartArtLayoutType.BasicBlockList);
+    $smart = $slide->getShapes()->addSmartArt(0, 0, 400, 400, Java("com.aspose.slides.SmartArtLayoutType")->BasicBlockList);
     
     // Saving presentation
     $pres->save("SimpleSmartArt.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -43,14 +43,14 @@ The following code will be used to access the SmartArt shapes added in presentat
 $pres = new Java("com.aspose.slides.Presentation", "AccessSmartArtShape.pptx");
 try {
     // Traverse through every shape inside first slide
-    for (IShape shape : $pres->getSlides()->get_Item(0)->getShapes())
+    for ($shape : $pres->getSlides()->get_Item(0)->getShapes())
     {
         // Check if shape is of SmartArt type
-        if (shape instanceof ISmartArt)
+        if ($shape instanceof ISmartArt)
         {
             // Typecast shape to SmartArtEx
-            ISmartArt smart = (ISmartArt)shape;
-            echo("Shape Name:" + smart->getName());
+            $smart = (ISmartArt)shape;
+            echo("Shape Name:" + $smart->getName());
         }
     }
 } finally {
@@ -71,16 +71,16 @@ The following sample code will help to access the [SmartArt](https://apireferenc
 $pres = new Java("com.aspose.slides.Presentation", "AccessSmartArtShape.pptx");
 try {
     // Traverse through every shape inside first slide
-    for (IShape shape : $pres->getSlides()->get_Item(0)->getShapes())
+    for ($shape : $pres->getSlides()->get_Item(0)->getShapes())
     {
         // Check if shape is of SmartArt type
-        if (shape instanceof ISmartArt)
+        if ($shape instanceof ISmartArt)
         {
             // Typecast shape to SmartArtEx
-            ISmartArt smart = (ISmartArt) shape;
+            $smart = (ISmartArt) shape;
 
             // Checking SmartArt Layout
-            if (smart->getLayout() == SmartArtLayoutType.BasicBlockList)
+            if ($smart->getLayout() == Java("com.aspose.slides.SmartArtLayoutType")->BasicBlockList)
             {
                 echo("Do some thing here....");
             }
@@ -107,21 +107,21 @@ In this example, we will learn to change the quick style for any SmartArt shape.
 $pres = new Java("com.aspose.slides.Presentation", "SimpleSmartArt.pptx");
 try {
     // Get first slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     
     // Traverse through every shape inside first slide
-    for (IShape shape : slide->getShapes()) 
+    for ($shape : $slide->getShapes()) 
     {
         // Check if shape is of SmartArt type
-        if (shape instanceof ISmartArt) 
+        if ($shape instanceof ISmartArt) 
         {
             // Typecast shape to SmartArtEx
-            ISmartArt smart = (ISmartArt) shape;
+            $smart = (ISmartArt) shape;
     
             // Checking SmartArt style
-            if (smart->getQuickStyle() == SmartArtQuickStyleType.SimpleFill) {
+            if ($smart->getQuickStyle() == SmartArtQuickStyleType.SimpleFill) {
                 // Changing SmartArt Style
-                smart->setQuickStyle(SmartArtQuickStyleType.Cartoon);
+                $smart->setQuickStyle(SmartArtQuickStyleType.Cartoon);
             }
         }
     }
@@ -152,21 +152,21 @@ In this example, we will learn to change the color style for any SmartArt shape.
 $pres = new Java("com.aspose.slides.Presentation", "SimpleSmartArt.pptx");
 try {
     // Get first slide
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     
     // Traverse through every shape inside first slide
-    for (IShape shape : slide->getShapes()) 
+    for ($shape : $slide->getShapes()) 
     {
         // Check if shape is of SmartArt type
-        if (shape instanceof ISmartArt) 
+        if ($shape instanceof ISmartArt) 
         {
             // Typecast shape to SmartArtEx
-            ISmartArt smart = (ISmartArt) shape;
+            $smart = (ISmartArt) shape;
     
             // Checking SmartArt color type
-            if (smart->getColorStyle() == SmartArtColorType.ColoredFillAccent1) {
+            if ($smart->getColorStyle() == SmartArtColorType.ColoredFillAccent1) {
                 // Changing SmartArt color type
-                smart->setColorStyle(SmartArtColorType.ColorfulAccentColors);
+                $smart->setColorStyle(SmartArtColorType.ColorfulAccentColors);
             }
         }
     }

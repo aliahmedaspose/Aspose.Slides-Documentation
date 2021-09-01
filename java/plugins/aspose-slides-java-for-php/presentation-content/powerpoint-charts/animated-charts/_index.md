@@ -27,29 +27,29 @@ In the example given below, we animated chart series.
 $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
     // Get reference of the chart object
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     IShapeCollection shapes = $slide->getShapes();
     IChart chart = (IChart) shapes->get_Item(0);
 
     // Animate the series
-    slide->getTimeline()->getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None,
-            EffectTriggerType.AfterPrevious);
+    $slide->getTimeline()->getMainSequence()->addEffect(chart, Java("com.aspose.slides.EffectType")->Fade, Java("com.aspose.slides.EffectSubtype")->None,
+            Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
 
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart,
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart,
             EffectChartMajorGroupingType.BySeries, 0,
-            EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+            Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
 
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart,
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart,
             EffectChartMajorGroupingType.BySeries, 1,
-            EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+            Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
 
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart,
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart,
             EffectChartMajorGroupingType.BySeries, 2,
-            EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+            Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
 
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart,
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart,
             EffectChartMajorGroupingType.BySeries, 3,
-            EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+            Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
 
     // Write the modified presentation to disk
     $pres->save("AnimatingSeries_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -72,28 +72,28 @@ In the example given below, we animated chart category.
 // Instantiate Presentation class that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     IShapeCollection shapes = $slide->getShapes();
     IChart chart = (IChart) shapes->get_Item(0);
 
-    slide->getTimeline()->getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None,
-            EffectTriggerType.AfterPrevious);
+    $slide->getTimeline()->getMainSequence()->addEffect(chart, Java("com.aspose.slides.EffectType")->Fade, Java("com.aspose.slides.EffectSubtype")->None,
+            Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
 
-    ((Sequence) slide->getTimeline()->getMainSequence()).addEffect(chart,
+    ((Sequence) $slide->getTimeline()->getMainSequence())->addEffect(chart,
             EffectChartMajorGroupingType.ByCategory, 0, 
-            EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+            Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
     
-    ((Sequence) slide->getTimeline()->getMainSequence()).addEffect(chart, 
+    ((Sequence) $slide->getTimeline()->getMainSequence())->addEffect(chart, 
             EffectChartMajorGroupingType.ByCategory, 1, 
-            EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+            Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
     
-    ((Sequence) slide->getTimeline()->getMainSequence()).addEffect(chart, 
+    ((Sequence) $slide->getTimeline()->getMainSequence())->addEffect(chart, 
             EffectChartMajorGroupingType.ByCategory, 2, 
-            EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+            Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
     
-    ((Sequence) slide->getTimeline()->getMainSequence()).addEffect(chart, 
+    ((Sequence) $slide->getTimeline()->getMainSequence())->addEffect(chart, 
             EffectChartMajorGroupingType.ByCategory, 3, 
-            EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+            Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
 
     $pres->save("Sample_Animation_C.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -116,39 +116,39 @@ In the example given below, we have animated series' elements.
 $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
     // Get reference of the chart object
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     IShapeCollection shapes = $slide->getShapes();
     IChart chart = (IChart) shapes->get_Item(0);
 
     // Animate series elements
-    slide->getTimeline()->getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+    $slide->getTimeline()->getMainSequence()->addEffect(chart, Java("com.aspose.slides.EffectType")->Fade, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
 
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
-            0, 0, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
-            0, 1, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
-            0, 2, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
-            0, 3, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+            0, 0, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+            0, 1, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+            0, 2, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+            0, 3, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
 
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
-            1, 0, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
-            1, 1, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
-            1, 2, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
-            1, 3, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+            1, 0, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+            1, 1, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+            1, 2, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+            1, 3, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
 
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
-            2, 0, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
-            2, 1, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
-            2, 2, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
-            2, 3, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+            2, 0, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+            2, 1, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+            2, 2, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInSeries, 
+            2, 3, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
 
     // Write the presentation file to disk 
     $pres->save("AnimatingSeriesElements_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -172,38 +172,38 @@ In the example given below, we have animated categories elements.
 $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
     // Get reference of the chart object
-    ISlide slide = $pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     IShapeCollection shapes = $slide->getShapes();
     IChart chart = (IChart) shapes->get_Item(0);
 
     // Animate categories' elements
-    slide->getTimeline()->getMainSequence().addEffect(chart, EffectType.Fade, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
-            0, 0, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
-            0, 1, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
-            0, 2, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
-            0, 3, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+    $slide->getTimeline()->getMainSequence()->addEffect(chart, Java("com.aspose.slides.EffectType")->Fade, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+            0, 0, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+            0, 1, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+            0, 2, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+            0, 3, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
 
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
-            1, 0, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
-            1, 1, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
-            1, 2, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
-            1, 3, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+            1, 0, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+            1, 1, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+            1, 2, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+            1, 3, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
 
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
-            2, 0, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
-            2, 1, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
-            2, 2, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
-    ((Sequence)slide->getTimeline()->getMainSequence()).addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
-            2, 3, EffectType.Appear, EffectSubtype.None, EffectTriggerType.AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+            2, 0, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+            2, 1, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+            2, 2, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
+    ((Sequence)slide->getTimeline()->getMainSequence())->addEffect(chart, EffectChartMinorGroupingType.ByElementInCategory, 
+            2, 3, Java("com.aspose.slides.EffectType")->Appear, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
 
     // Write the presentation file to disk
     $pres->save("AnimatingCategoriesElements_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

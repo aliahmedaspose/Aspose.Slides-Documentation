@@ -24,34 +24,34 @@ This sample code, based on the steps above, shows you how to apply the PathFootb
 // Instantiate PrseetationEx class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
 
     // Now create effect "PathFootball" for existing shape from scratch.
-    IAutoShape ashp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 150, 250, 25);
-    ashp->addTextFrame("Animated TextBox");
+    $ashp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 150, 250, 25);
+    $ashp->addTextFrame("Animated TextBox");
 
     // Add PathFootBall animation effect
-    $pres->getSlides()->get_Item(0)->getTimeline()->getMainSequence().addEffect(ashp, EffectType.PathFootball,
-            EffectSubtype.None, EffectTriggerType.AfterPrevious);
+    $pres->getSlides()->get_Item(0)->getTimeline()->getMainSequence()->addEffect($ashp, Java("com.aspose.slides.EffectType")->PathFootball,
+            Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->AfterPrevious);
 
     // Create some kind of "button".
-    IShape shapeTrigger = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Bevel, 10, 10, 20, 20);
+    $shapeTrigger = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Bevel, 10, 10, 20, 20);
 
     // Create sequence of effects for this button.
-    ISequence seqInter = $pres->getSlides()->get_Item(0)->getTimeline()->getInteractiveSequences().add(shapeTrigger);
+    $seqInter = $pres->getSlides()->get_Item(0)->getTimeline()->getInteractiveSequences()->add(shapeTrigger);
 
     // Create custom user path. Our object will be moved only after "button" click.
-    IEffect fxUserPath = seqInter.addEffect(ashp, EffectType.PathUser, EffectSubtype.None, EffectTriggerType.OnClick);
+    $fxUserPath = seqInter.addEffect($ashp, Java("com.aspose.slides.EffectType")->PathUser, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->OnClick);
 
     // Created path is empty so we should add commands for moving.
     IMotionEffect motionBhv = ((IMotionEffect)fxUserPath->getBehaviors()->get_Item(0));
 
     Point2D.Float[] pts = new Point2D.Float[1];
-    pts[0] = new Point2D.Float(0.076f, 0.59f);
-    motionBhv->getPath().add(MotionCommandPathType.LineTo, pts, MotionPathPointsType.Auto, true);
-    pts[0] = new Point2D.Float(-0.076f, -0.59f);
-    motionBhv->getPath().add(MotionCommandPathType.LineTo, pts, MotionPathPointsType.Auto, false);
-    motionBhv->getPath().add(MotionCommandPathType.End, null, MotionPathPointsType.Auto, false);
+    pts[0] = Java("java.awt.geom.Point2D")->Float(0.076f, 0.59f);
+    motionBhv->getPath()->add(MotionCommandPathType.LineTo, pts, MotionPathPointsType.Auto, true);
+    pts[0] = Java("java.awt.geom.Point2D")->Float(-0.076f, -0.59f);
+    motionBhv->getPath()->add(MotionCommandPathType.LineTo, pts, MotionPathPointsType.Auto, false);
+    motionBhv->getPath()->add(MotionCommandPathType.End, null, MotionPathPointsType.Auto, false);
 
     //Write the presentation as PPTX to disk
     $pres->save("AnimExample_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

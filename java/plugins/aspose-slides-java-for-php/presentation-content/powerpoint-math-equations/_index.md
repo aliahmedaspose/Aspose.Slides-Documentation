@@ -44,7 +44,7 @@ To add a mathematical expression on the slide, first, add a shape that will con
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IAutoShape mathShape = $pres->getSlides()->get_Item(0)->getShapes().addMathShape(0, 0, 720, 150);
+    $mathShape = $pres->getSlides()->get_Item(0)->getShapes()->addMathShape(0, 0, 720, 150);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -53,7 +53,7 @@ try {
 After creating, the shape will already contain one paragraph with a mathematical portion by default. The [**MathPortion**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathPortion) class is a portion that contains a mathematical text inside. To access mathematical content inside [**MathPortion**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathPortion), refer to the [**MathParagraph** ](https://apireference.aspose.com/slides/java/com.aspose.slides/MathParagraph)variable:
 
 ```php
-IMathParagraph mathParagraph = ((MathPortion)mathShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0))->getMathParagraph();
+IMathParagraph mathParagraph = ((MathPortion)mathShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0))->getMathJava("com.aspose.slides.Paragraph");
 ``` 
 
 The [**MathParagraph**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathParagraph) class allows to read, add, edit and delete math blocks ([**MathBlock**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathBlock)), that consist of a combination of mathematical elements. For example, create a fraction and place it in the presentation:
@@ -82,9 +82,9 @@ The full source code sample:
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IAutoShape mathShape = $pres->getSlides()->get_Item(0)->getShapes().addMathShape(0, 0, 720, 150);
+    $mathShape = $pres->getSlides()->get_Item(0)->getShapes()->addMathShape(0, 0, 720, 150);
 
-    IMathParagraph mathParagraph = ((MathPortion)mathShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0))->getMathParagraph();
+    IMathParagraph mathParagraph = ((MathPortion)mathShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0))->getMathJava("com.aspose.slides.Paragraph");
     
     IMathFraction fraction = new MathematicalText("x").divide("y");
 
@@ -280,7 +280,7 @@ public IMathFunction function(IMathElement functionArgument);
  * Takes a function of an argument using this instance as the function name
  * </p>
  */
-public IMathFunction function(String functionArgument);
+public IMathFunction function($functionArgument);
 ``` 
 
 

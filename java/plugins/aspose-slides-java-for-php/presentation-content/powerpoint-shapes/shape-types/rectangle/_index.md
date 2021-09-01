@@ -26,10 +26,10 @@ In the example given below, we have added a simple rectangle to the first slide 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
 
     // Add AutoShape of ellipse type
-    IShape shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 150, 50);
+    $shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 150, 50);
 
     // Write the PPTX file to disk
     $pres->save("RecShp1.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -57,18 +57,18 @@ The above steps are implemented in the example given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Get the first slide
-    ISlide sld = $pres->getSlides()->get_Item(0);
+    $sld = $pres->getSlides()->get_Item(0);
 
     // Add AutoShape of ellipse type
-    IShape shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 150, 50);
+    $shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 150, 50);
 
     // Apply some formatting to ellipse shape
     shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.GRAY);
+    shp->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->GRAY);
 
     // Apply some formatting to the line of Ellipse
     shp->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->.BLACK);
+    shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLACK);
     shp->getLineFormat()->setWidth(5);
 
     // Write the PPTX file to disk

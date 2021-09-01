@@ -80,6 +80,6 @@ try {
 
     $presentation->save("Zoom_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
-    presentation.dispose();
+    $presentation->dispose();
 }
 ```

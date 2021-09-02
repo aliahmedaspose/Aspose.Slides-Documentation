@@ -18,8 +18,8 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     IFontFallBackRulesCollection userRulesList = new FontFallBackRulesCollection();
 
-    userRulesList.add(new FontFallBackRule(0x0B80, 0x0BFF, "Vijaya"));
-    userRulesList.add(new FontFallBackRule(0x3040, 0x309F, "MS Mincho, MS Gothic"));
+    userRulesList->add(new FontFallBackRule(0x0B80, 0x0BFF, "Vijaya"));
+    userRulesList->add(new FontFallBackRule(0x3040, 0x309F, "MS Mincho, MS Gothic"));
 
     $pres->getFontsManager()->setFontFallBackRulesCollection(userRulesList);
 } finally {

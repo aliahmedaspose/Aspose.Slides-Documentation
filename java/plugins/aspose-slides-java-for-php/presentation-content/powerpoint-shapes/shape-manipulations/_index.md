@@ -17,7 +17,7 @@ try {
 
     $slide = $pres->getSlides()->get_Item(0);
     // Alternative text of the shape to be found
-    $shape = findShape(slide, "Shape1");
+    $shape = findShape($slide, "Shape1");
     if ($shape != null)
     {
         echo("Shape Name: " + $shape->getName());
@@ -35,8 +35,8 @@ public static $findShape($slide, String alttext)
     {
         // If the alternative text of the slide matches with the required one then
         // Return the shape
-        if ($slide->getShapes()->get_Item(i)->getAlternativeText().compareTo(alttext) == 0)
-            return $slide->getShapes()->get_Item(i);
+        if ($slide->getShapes()->get_Item($i)->getAlternativeText()->compareTo($alttext) == 0)
+            return $slide->getShapes()->get_Item($i);
     }
     return null;
 }
@@ -58,13 +58,13 @@ The example below adds a group shape to a slide.
 // Instantiate Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "Source Frame.pptx");
 try {
-    IShapeCollection sourceShapes = $pres->getSlides()->get_Item(0)->getShapes();
-    ILayoutSlide blankLayout = $pres->getMasters()->get_Item(0)->getLayoutSlides()->getByType(SlideLayoutType.Blank);
-    $destSlide = $pres->getSlides()->addEmptySlide(blankLayout);
-    IShapeCollection destShapes = destSlide->getShapes();
-    destShapes.addClone(sourceShapes->get_Item(1), 50, 150 + sourceShapes->get_Item(0)->getHeight());
-    destShapes.addClone(sourceShapes->get_Item(2));
-    destShapes.insertClone(0, sourceShapes->get_Item(0), 50, 150);
+    $sourceShapes = $pres->getSlides()->get_Item(0)->getShapes();
+    $blankLayout = $pres->getMasters()->get_Item(0)->getLayoutSlides()->getByType(Java("com.aspose.slides.SlideLayoutType")-> Blank);
+    $destSlide = $pres->getSlides()->addEmptySlide($blankLayout);
+    $destShapes = $destSlide->getShapes();
+    $destShapes->addClone(sourceShapes->get_Item(1), 50, 150 + $sourceShapes->get_Item(0)->getHeight());
+    $destShapes->addClone(sourceShapes->get_Item(2));
+    $destShapes->insertClone(0, $sourceShapes->get_Item(0), 50, 150);
 
     // Write the PPTX file to disk
     $pres->save("CloneShape_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -90,17 +90,17 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Add autoshape of rectangle type
-    sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 40, 150, 50);
-    sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Moon, 160, 40, 150, 50);
+    $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 40, 150, 50);
+    $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Moon, 160, 40, 150, 50);
 
     $altText = "User Defined";
-    $iCount = sld->getShapes()->size();
+    $iCount = $sld->getShapes()->size();
     for ($i = 0; i < iCount; i++)
     {
         $ashp = $sld->getShapes()->get_Item(0);
         if ($alttext == ($ashp->getAlternativeText()))
         {
-            sld->getShapes()->remove($ashp);
+            $sld->getShapes()->remove($ashp);
         }
     }
 
@@ -128,14 +128,14 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Add autoshape of rectangle type
-    sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 40, 150, 50);
-    sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Moon, 160, 40, 150, 50);
+    $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 40, 150, 50);
+    $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Moon, 160, 40, 150, 50);
 
     $alttext = "User Defined";
-    $iCount = sld->getShapes()->size();
+    $iCount = $sld->getShapes()->size();
     for ($i = 0; i < iCount; i++)
     {
-        $ashp = $sld->getShapes()->get_Item(i);
+        $ashp = $sld->getShapes()->get_Item($i);
         if ($alttext == ($ashp->getAlternativeText()))
         {
             $ashp->setHidden(true);
@@ -165,16 +165,16 @@ $pres = new Java("com.aspose.slides.Presentation", "ChangeShapeOrder.pptx");
 try {
     $slide = $pres->getSlides()->get_Item(0);
     $shp3 = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 365, 400, 150);
-    shp3->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
-    shp3->addTextFrame(" ");
+    $shp3->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
+    $shp3->addTextFrame(" ");
 
-    $para = shp3->getTextFrame()->getParagraphs()->get_Item(0);
+    $para = $shp3->getTextFrame()->getParagraphs()->get_Item(0);
     $portion = $para->getPortions()->get_Item(0);
     $portion->setText("Watermark Text Watermark Text Watermark Text");
 
-    shp3 = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Triangle, 200, 365, 400, 150);
+    $shp3 = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Triangle, 200, 365, 400, 150);
 
-    $slide->getShapes().reorder(2, shp3);
+    $slide->getShapes()->reorder(2, $shp3);
 
     $pres->save("Reshape_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -189,7 +189,7 @@ Aspose.Slides for Java allows developers to get a unique shape identifier in sli
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Getting unique shape identifier in slide scope
-    long officeInteropShapeId = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getOfficeInteropShapeId();
+    $officeInteropShapeId = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getOfficeInteropShapeId();
 
 } finally {
     if ($pres != null) $pres->dispose();
@@ -220,14 +220,14 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Add autoshape of rectangle type
-    $shp1 = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 40, 150, 50);
-    $shp2 = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Moon, 160, 40, 150, 50);
-    shp2->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp2->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->GRAY);
+    $shp1 = $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 40, 150, 50);
+    $shp2 = $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Moon, 160, 40, 150, 50);
+    $shp2->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $shp2->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->GRAY);
 
-    for ($i = 0; i < sld->getShapes()->size(); i++)
+    for ($i = 0; i < $sld->getShapes()->size(); i++)
     {
-        $shape = $sld->getShapes()->get_Item(i);
+        $shape = $sld->getShapes()->get_Item($i);
         if ($shape != null)
         {
             $shape->setAlternativeText("User Defined");
@@ -249,12 +249,12 @@ Below sample code is given.
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
-    for (ILayoutSlide layoutSlide : $pres->getLayoutSlides())
+    for ($layoutSlide : $pres->getLayoutSlides())
     {
         for ($shape : layoutSlide->getShapes())
         {
-            IFillFormat fillFormats = $shape->getFillFormat();
-            ILineFormat lineFormats = $shape->getLineFormat();
+            $fillFormats = $shape->getFillFormat();
+            $lineFormats = $shape->getLineFormat();
         }
     }
 } finally {
@@ -270,7 +270,7 @@ $pres = new Java("com.aspose.slides.Presentation", "TestExportShapeToSvg.pptx");
 try {
     $stream = new Java("java.io.FileOutputStream", "SingleShape.svg");
     try {
-        $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0).writeAsSvg(stream);
+        $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->writeAsSvg($stream);
     } finally {
         if ($stream != null) stream->close();
     }
@@ -294,11 +294,11 @@ try {
     $shape1 = $slide->getShapes()->get_Item(1);
     $shape2 = $slide->getShapes()->get_Item(2);
     $shape3 = $slide->getShapes()->get_Item(4);
-    SlideUtil.alignShapes(ShapesAlignmentType.AlignTop, true, $pres->getSlides()->get_Item(0), new int[]
+    $SlideUtil->alignShapes(Java("com.aspose.slides.ShapesAlignmentType")-> AlignTop, true, $pres->getSlides()->get_Item(0), new int[]
     {
-        $slide->getShapes().indexOf(shape1),
-        $slide->getShapes().indexOf(shape2),
-        $slide->getShapes().indexOf(shape3)
+        $slide->getShapes()->indexOf($shape1),
+        $slide->getShapes()->indexOf($shape2),
+        $slide->getShapes()->indexOf($shape3)
     });
 } finally {
     if ($pres != null) $pres->dispose();
@@ -313,7 +313,7 @@ The example below shows how to align the entire collection of shapes relative to
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "example.pptx");
 try {
-    SlideUtil.alignShapes(ShapesAlignmentType.AlignBottom, false, $pres->getSlides()->get_Item(0));
+    $SlideUtil->alignShapes(Java("com.aspose.slides.ShapesAlignmentType")-> AlignBottom, false, $pres->getSlides()->get_Item(0));
 } finally {
     if ($pres != null) $pres->dispose();
 }

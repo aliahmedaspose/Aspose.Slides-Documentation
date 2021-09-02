@@ -34,7 +34,7 @@ try {
 
     $pres->save("pres-sections.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 
-    $pres->getSections().reorderSectionWithSlides(section2, 0);
+    $pres->getSections()->reorderSectionWithSlides($section2, 0);
     $pres->save("pres-sections-moved.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 
     $pres->getSections()->removeSectionWithSlides(section2);

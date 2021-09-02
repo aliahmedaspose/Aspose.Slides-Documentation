@@ -121,7 +121,7 @@ class ExportProgressHandler implements IProgressCallback
     public void reporting(double progressValue) 
 	{
         // Use progress percentage value here
-        $progress = Double.valueOf(progressValue).intValue();
+        $progress = Double.valueOf(progressValue)->intValue();
         echo(progress + "% file converted");
     }
 }

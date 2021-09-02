@@ -48,7 +48,7 @@ try {
     // Removing notes of all slides
     INotesSlideManager mgr = null;
     for ($i = 0; i < $pres->getSlides()->size(); i++) {
-        mgr = $pres->getSlides()->get_Item(i)->getNotesSlideManager();
+        mgr = $pres->getSlides()->get_Item($i)->getNotesSlideManager();
         mgr.removeNotesSlide();
     }
     

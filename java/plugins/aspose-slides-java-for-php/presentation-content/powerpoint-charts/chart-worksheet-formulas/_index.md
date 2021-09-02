@@ -9,9 +9,9 @@ description: "PowerPoint Equations and Spreadsheet Formulas"
 
 
 ## **About Chart Spreadsheet Formula in Presentation**
-**Chart spreadsheet** (or chart worksheet) in presentation is the data source of the chart. Chart spreadsheet contains data, which are represented on the chart in a graphic way. When you create a chart in PowerPoint, the worksheet associated with this chart is automatically created too. Chart worksheet is created for all types of charts: line chart, bar chart, sunburst chart, pie chart, etc. To see chart spreadsheet in PowerPoint you should double-click on the chart:
+**Chart spreadsheet** (or chart worksheet) in presentation is the data source of the $chart-> Chart spreadsheet contains data, which are represented on the chart in a graphic way. When you create a chart in PowerPoint, the worksheet associated with this chart is automatically created too. Chart worksheet is created for all types of charts: line chart, bar chart, sunburst chart, pie chart, etc. To see chart spreadsheet in PowerPoint you should double-click on the chart:
 
-![todo:image_alt_text](chart-worksheet-formulas_1.png)
+![todo:image_alt_text]($chart-worksheet-formulas_1.png)
 
 
 Chart spreadsheet contains the names of chart elements (Category Name: *Category1*, Serie Name) and a table with numeric data appropriate to these categories and series. By default, when you create a new chart - the chart spreadsheet data are set with the default data. Then you may change spreadsheet data in the worksheet manually.
@@ -42,7 +42,7 @@ Typically, spreadsheets store the last calculated formula values. If after prese
 
 ## **Add Chart Spreadsheet Formula to Presentation**
 First, add a chart to the first slide of a new presentation with 
-[IShapeCollection->getShapes.addChart](https://apireference.aspose.com/slides/java/com.aspose.slides/IShapeCollection#addChart-int-float-float-float-float-). 
+[IShapeCollection->getShapes->addChart](https://apireference.aspose.com/slides/java/com.aspose.slides/IShapeCollection#addChart-int-float-float-float-float-). 
 The worksheet of the chart is automatically created and can be accessed with 
 [**Chart->getChartData->getChartDataWorkbook**](https://apireference.aspose.com/slides/java/com.aspose.slides/IChartData#getChartDataWorkbook--) method:
 
@@ -51,9 +51,9 @@ The worksheet of the chart is automatically created and can be accessed with 
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 150, 150, 500, 300);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 150, 150, 500, 300);
 
-    IChartDataWorkbook workbook = chart->getChartData()->getChartDataWorkbook();
+    $workbook = $chart->getChartData()->getChartDataWorkbook();
 
     // ...
 } finally {
@@ -95,7 +95,7 @@ You can use logical constants such as *FALSE* and *TRUE* in cell formulas:
 workbook->getCell(0, "A2")->setValue(false);
 IChartDataCell cell = workbook->getCell(0, "B2");
 cell->setFormula("A2 = TRUE");
-Object value = cell->getValue(); // the value contains boolean "false"
+Object value = $cell->getValue(); // the value contains boolean "false"
 ```
 
 ## **Numerical Constants**
@@ -129,7 +129,7 @@ Sometimes its not possible to calculate the result by the formula. In that case,
 ```php
 IChartDataCell cell = workbook->getCell(0, "A2");
 cell->setFormula("2 / 0");
-Object value = cell->getValue(); // the value contains the string "#DIV/0!"
+Object value = $cell->getValue(); // the value contains the string "#DIV/0!"
 ```
 
 ## **Arithmetic Operators**

@@ -20,14 +20,14 @@ Aspose.Slides for Java provides a simple API for getting value of vertical axis.
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    Chart chart = (Chart)pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.Area, 100, 100, 500, 350);
-    chart.validateChartLayout();
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Area, 100, 100, 500, 350);
+    $chart->validateChartLayout();
 
-    $double maxValue = chart->getAxes()->getVerticalAxis()->getActualMaxValue();
-    $double minValue = chart->getAxes()->getVerticalAxis()->getActualMinValue();
+    $maxValue = $chart->getAxes()->getVerticalAxis()->getActualMaxValue();
+    $minValue = $chart->getAxes()->getVerticalAxis()->getActualMinValue();
 
-    $double majorUnit = chart->getAxes()->getHorizontalAxis()->getActualMajorUnit();
-    $double minorUnit = chart->getAxes()->getHorizontalAxis()->getActualMinorUnit();
+    $majorUnit = $chart->getAxes()->getHorizontalAxis()->getActualMajorUnit();
+    $minorUnit = $chart->getAxes()->getHorizontalAxis()->getActualMinorUnit();
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -39,10 +39,10 @@ A new property has been added which Swap the data over the axis. Data being cha
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 100, 100, 400, 300);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 100, 100, 400, 300);
 
     //Switching rows and columns
-    chart->getChartData().switchRowColumn();
+    $chart->getChartData()->switchRowColumn();
 
     // Saving presentation
     $pres->save("SwitchChartRowColumns_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -52,17 +52,17 @@ try {
 ```
 
 ## **Change Category Axis**
-**CategoryAxisType** can be changed to [Date](https://apireference.aspose.com/slides/java/com.aspose.slides/CategoryAxisType#Date) or [Text](https://apireference.aspose.com/slides/java/com.aspose.slides/CategoryAxisType#Text). However, **CategoryAxisType.Auto** is not supported at the moment. New methods [**getCategoryAxisType**](https://apireference.aspose.com/slides/java/com.aspose.slides/IAxis#getCategoryAxisType--) and [**setCategoryAxisType**](https://apireference.aspose.com/slides/java/com.aspose.slides/IAxis#setCategoryAxisType-int-) have been added to [**IAxis**](https://apireference.aspose.com/slides/java/com.aspose.slides/IAxis) interface and [Axis](https://apireference.aspose.com/slides/java/com.aspose.slides/Axis) class which specifies type of category axis.
+**CategoryAxisType** can be changed to [Date](https://apireference.aspose.com/slides/java/com.aspose.slides/CategoryAxisType#Date) or [Text](https://apireference.aspose.com/slides/java/com.aspose.slides/CategoryAxisType#Text). However, **Java("com.aspose.slides.CategoryAxisType")->Auto** is not supported at the moment. New methods [**getCategoryAxisType**](https://apireference.aspose.com/slides/java/com.aspose.slides/IAxis#getCategoryAxisType--) and [**setCategoryAxisType**](https://apireference.aspose.com/slides/java/com.aspose.slides/IAxis#setCategoryAxisType-int-) have been added to [**IAxis**](https://apireference.aspose.com/slides/java/com.aspose.slides/IAxis) interface and [Axis](https://apireference.aspose.com/slides/java/com.aspose.slides/Axis) class which specifies type of category axis.
 
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "ExistingChart.pptx");
 try {
-    IChart chart = (IChart) $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     
-    chart->getAxes()->getHorizontalAxis()->setCategoryAxisType(CategoryAxisType.Date);
-    chart->getAxes()->getHorizontalAxis()->setAutomaticMajorUnit(false);
-    chart->getAxes()->getHorizontalAxis()->setMajorUnit(1);
-    chart->getAxes()->getHorizontalAxis()->setMajorUnitScale(TimeUnitType.Months);
+    $chart->getAxes()->getHorizontalAxis()->setCategoryAxisType(Java("com.aspose.slides.CategoryAxisType")->Date);
+    $chart->getAxes()->getHorizontalAxis()->setAutomaticMajorUnit(false);
+    $chart->getAxes()->getHorizontalAxis()->setMajorUnit(1);
+    $chart->getAxes()->getHorizontalAxis()->setMajorUnitScale(Java("com.aspose.slides.TimeUnitType")->Months);
     
     $pres->save("ChangeChartCategoryAxis_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -76,26 +76,26 @@ Aspose.Slides for Java provides a simple API for setting date format for categor
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.Area, 50, 50, 450, 300);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Area, 50, 50, 450, 300);
 
-    IChartDataWorkbook wb = chart->getChartData()->getChartDataWorkbook();
-    wb.clear(0);
+    $wb = $chart->getChartData()->getChartDataWorkbook();
+    $wb->clear(0);
 
-    chart->getChartData()->getCategories()->clear();
-    chart->getChartData()->getSeries()->clear();
-    chart->getChartData()->getCategories()->add(wb->getCell(0, "A2", convertToOADate(new GregorianCalendar(2015, 1, 1))));
-    chart->getChartData()->getCategories()->add(wb->getCell(0, "A3", convertToOADate(new GregorianCalendar(2016, 1, 1))));
-    chart->getChartData()->getCategories()->add(wb->getCell(0, "A4", convertToOADate(new GregorianCalendar(2017, 1, 1))));
-    chart->getChartData()->getCategories()->add(wb->getCell(0, "A5", convertToOADate(new GregorianCalendar(2018, 1, 1))));
+    $chart->getChartData()->getCategories()->clear();
+    $chart->getChartData()->getSeries()->clear();
+    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A2", convertToOADate(new Java("java.util.GregorianCalendar", 2015, 1, 1))));
+    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A3", convertToOADate(new Java("java.util.GregorianCalendar", 2016, 1, 1))));
+    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A4", convertToOADate(new Java("java.util.GregorianCalendar", 2017, 1, 1))));
+    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A5", convertToOADate(new Java("java.util.GregorianCalendar", 2018, 1, 1))));
 
-    IChartSeries series = chart->getChartData()->getSeries()->add(ChartType.Line);
-    series->getDataPoints()->addDataPointForLineSeries(wb->getCell(0, "B2", 1));
-    series->getDataPoints()->addDataPointForLineSeries(wb->getCell(0, "B3", 2));
-    series->getDataPoints()->addDataPointForLineSeries(wb->getCell(0, "B4", 3));
-    series->getDataPoints()->addDataPointForLineSeries(wb->getCell(0, "B5", 4));
-    chart->getAxes()->getHorizontalAxis()->setCategoryAxisType(CategoryAxisType.Date);
-    chart->getAxes()->getHorizontalAxis()->setNumberFormatLinkedToSource(false);
-    chart->getAxes()->getHorizontalAxis()->setNumberFormat("yyyy");
+    $series = $chart->getChartData()->getSeries()->add(Java("com.aspose.slides.ChartType")->Line);
+    $series->getDataPoints()->addDataPointForLineSeries(wb->getCell(0, "B2", 1));
+    $series->getDataPoints()->addDataPointForLineSeries(wb->getCell(0, "B3", 2));
+    $series->getDataPoints()->addDataPointForLineSeries(wb->getCell(0, "B4", 3));
+    $series->getDataPoints()->addDataPointForLineSeries(wb->getCell(0, "B5", 4));
+    $chart->getAxes()->getHorizontalAxis()->setCategoryAxisType(Java("com.aspose.slides.CategoryAxisType")->Date);
+    $chart->getAxes()->getHorizontalAxis()->setNumberFormatLinkedToSource(false);
+    $chart->getAxes()->getHorizontalAxis()->setNumberFormat("yyyy");
 	
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -105,11 +105,11 @@ try {
 ```php
 public static String convertToOADate(GregorianCalendar date) throws ParseException
 {
-    $double oaDate;
+    oaDate;
     SimpleDateFormat myFormat = new SimpleDateFormat("dd MM yyyy");
     java.util.Date baseDate = myFormat.parse("30 12 1899");
     Long days = TimeUnit.DAYS.convert(date->getTimeInMillis() - baseDate->getTime(), TimeUnit.MILLISECONDS);
-    oaDate = (double) days + ((double) date->get(Calendar.HOUR_OF_DAY) / 24) + ((double) date->get(Calendar.MINUTE) / (60 * 24)) + ((double) date->get(Calendar.SECOND) / (60 * 24 * 60));
+    oaDate = days + (date->get(Calendar.HOUR_OF_DAY) / 24) + (date->get(Calendar.MINUTE) / (60 * 24)) + (date->get(Calendar.SECOND) / (60 * 24 * 60));
     return String.valueOf(oaDate);
 }
 ```
@@ -120,10 +120,10 @@ Aspose.Slides for Java provides a simple API for setting rotation angle for char
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 50, 50, 450, 300);
     
-    chart->getAxes()->getVerticalAxis()->setTitle(true);
-    chart->getAxes()->getVerticalAxis()->getTitle()->getTextFormat()->getTextBlockFormat()->setRotationAngle(90);
+    $chart->getAxes()->getVerticalAxis()->setTitle(true);
+    $chart->getAxes()->getVerticalAxis()->getTitle()->getTextFormat()->getTextBlockFormat()->setRotationAngle(90);
 
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -138,9 +138,9 @@ Aspose.Slides for Java provides a simple API for setting Position axis in catego
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 50, 50, 450, 300);
     
-    chart->getAxes()->getHorizontalAxis()->setAxisBetweenCategories(true);
+    $chart->getAxes()->getHorizontalAxis()->setAxisBetweenCategories(true);
 
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -154,9 +154,9 @@ Aspose.Slides for Java provides support for showing Display unit label on chart 
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 50, 50, 450, 300);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 50, 50, 450, 300);
 
-    chart->getAxes()->getVerticalAxis()->setDisplayUnit(DisplayUnitType.Millions);
+    $chart->getAxes()->getVerticalAxis()->setDisplayUnit(Java("com.aspose.slides.DisplayUnitType")->Millions);
     
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

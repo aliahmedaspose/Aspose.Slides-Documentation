@@ -118,10 +118,10 @@ Aspose.Slides for Java provides a simple API for creating and PictureOrganizati
 
 1. Create an instance of the [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class.
 1. Obtain a slide's reference by its index.
-1. Add a chart with default data along with the desired type (ChartType.PictureOrganizationChart).
+1. Add a chart with default data along with the desired type (Java("com.aspose.slides.ChartType")->PictureOrganizationChart).
 1. Write the modified presentation to a PPTX file
 
-The following code is used to create a chart.
+The following code is used to create a $chart->
 
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "test.pptx");
@@ -141,7 +141,7 @@ In order to change the layout type of [SmartArt](https://apireference.aspose.com
 1. [Get](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArt#isReversed--) or [Set](https://apireference.aspose.com/slides/java/com.aspose.slides/ISmartArt#setReversed-boolean-) the state of SmartArt Diagram.
 1. Write the presentation as a PPTX file.
 
-The following code is used to create a chart.
+The following code is used to create a $chart->
 
 ```php
 // Instantiate Presentation class that represents the PPTX file

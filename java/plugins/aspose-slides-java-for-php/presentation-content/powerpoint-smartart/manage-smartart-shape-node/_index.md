@@ -116,7 +116,7 @@ try {
             for ($i = 0; i < $smart->getAllNodes()->size(); i++) 
             {
                 // Accessing SmartArt node at index i
-                $node = $smart->getAllNodes()->get_Item(i);
+                $node = $smart->getAllNodes()->get_Item($i);
     
                 // Printing the SmartArt node parameters
                 echo($node->getTextFrame()->getText() + " " + $node->getLevel() + " " + $node->getPosition());
@@ -160,13 +160,13 @@ try {
             for ($i = 0; i < $smart->getAllNodes()->size(); i++) 
             {
                 // Accessing SmartArt node at index i
-                $node0 = $smart->getAllNodes()->get_Item(i);
+                $node0 = $smart->getAllNodes()->get_Item($i);
                 
                 // Traversing through the child nodes in SmartArt node at index i
                 for ($j = 0; j < node0->getChildNodes()->size(); j++) 
                 {
                     // Accessing the child node in SmartArt node
-                    $node = $node0->getChildNodes()->get_Item(j);
+                    $node = $node0->getChildNodes()->get_Item($j);
     
                     // Printing the SmartArt child node parameters
                     echo("j = " + j + ", Text = " + $node->getTextFrame()->getText() + ",  Level = " + $node->getLevel() + ", Position = " + $node->getPosition());
@@ -378,7 +378,7 @@ try {
             // Traversing through all nodes of SmartArt shape
             for ($i = 0; i < $smart->getAllNodes()->size(); i++) 
             {
-                $node = $smart->getAllNodes()->get_Item(i);
+                $node = $smart->getAllNodes()->get_Item($i);
                 // Check if node is Assistant node
                 if ($node->isAssistant()) 
                 {
@@ -427,7 +427,7 @@ try {
     for ($item : $node->getShapes()) 
     {
         $item->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-        $item->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
+        $item->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
     }
     
     // Save the presentation

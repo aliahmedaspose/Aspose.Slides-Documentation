@@ -212,11 +212,11 @@ The following example shows you how to convert a presentation to a PDF notes doc
 // Instantiate a Presentation object that represents a presentation file 
 $pres = new Java("com.aspose.slides.Presentation", "SelectedSlides.pptx");
 try {
-    Presentation outPres = new Presentation();
+    $outPres = new Presentation();
     try {
         $slide = $pres->getSlides()->get_Item(0);
 
-        outPres->getSlides().insertClone(0, slide);
+        outPres->getSlides()->insertClone(0, slide);
         
         // Setting Slide Type and Size
         outPres->getSlideSize()->setSize(612F, 792F, SlideSizeScaleType.EnsureFit);

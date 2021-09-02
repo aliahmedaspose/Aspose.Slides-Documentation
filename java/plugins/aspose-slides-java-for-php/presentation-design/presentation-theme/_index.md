@@ -75,7 +75,7 @@ try {
 
     $shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-    $shape->getFillFormat()->getSolidFillColor()->setSchemeColor(SchemeColor.Accent4);
+    $shape->getFillFormat()->getSolidFillColor()->setSchemeColor(Java("com.aspose.slides.SchemeColor")->Accent4);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -108,9 +108,9 @@ IAutoShape otherShape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoSha
 
 otherShape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-otherShape->getFillFormat()->getSolidFillColor()->setSchemeColor(SchemeColor.Accent4);
+otherShape->getFillFormat()->getSolidFillColor()->setSchemeColor(Java("com.aspose.slides.SchemeColor")->Accent4);
 
-pres->getMasterTheme()->getColorScheme()->getAccent4()->setColorJava("java.awt.Color")->RED);
+pres->getMasterTheme()->getColorScheme()->getAccent4()->setColor(Java("java.awt.Color")->RED);
 ``` 
 
 The color will change on both elements after we have changed it in the color theme. 
@@ -136,13 +136,13 @@ $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.as
 
 Paragraph paragraph = new Java("com.aspose.slides.Paragraph");
 
-Portion portion = new Java("com.aspose.slides.Portion"), "Theme text format");
+Portion portion = new Java("com.aspose.slides.Portion", "Theme text format");
 
-paragraph->getPortions()->add(portion);
+paragraph->getPortions()->add($portion);
 
 shape->getTextFrame()->getParagraphs()->add($paragraph);
 
-portion->getPortionFormat()->setLatinFont(new  Java("com.aspose.slides.FontData"), "+mn-lt"));
+portion->getPortionFormat()->setLatinFont(new  Java("com.aspose.slides.FontData", "+mn-lt"));
 ``` 
 
 Now lets check that the same font is set for Body Latin:
@@ -156,7 +156,7 @@ echo("Theme Body Latin font is: " + $pres->getMasterTheme()->getFontScheme()->ge
 It is possible to change the presentation theme font, which will be updated for all presentation text accordingly:
 
 ```php
-pres->getMasterTheme()->getFontScheme()->getMinor()->setLatinFont(new  Java("com.aspose.slides.FontData"), "Arial"));
+pres->getMasterTheme()->getFontScheme()->getMinor()->setLatinFont(new  Java("com.aspose.slides.FontData", "Arial"));
 ``` 
 
 {{% alert color="primary" title="See also" %}} 
@@ -220,13 +220,13 @@ So, the effects you can use in PowerPoint are strictly limited. While, in Aspos
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "Subtle_Moderate_Intense.pptx");
 try {
-    $pres->getMasterTheme()->getFormatScheme()->getLineStyles()->get_Item(0)->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
+    $pres->getMasterTheme()->getFormatScheme()->getLineStyles()->get_Item(0)->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
 
     $pres->getMasterTheme()->getFormatScheme()->getFillStyles()->get_Item(2)->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-    $pres->getMasterTheme()->getFormatScheme()->getFillStyles()->get_Item(2)->getSolidFillColor()->setColorJava("java.awt.Color")->GREEN);
+    $pres->getMasterTheme()->getFormatScheme()->getFillStyles()->get_Item(2)->getSolidFillColor()->setColor(Java("java.awt.Color")->GREEN);
 
-    $pres->getMasterTheme()->getFormatScheme()->getEffectStyles()->get_Item(2)->getEffectFormat()->getOuterShadowEffect()->setDistance(10f);
+    $pres->getMasterTheme()->getFormatScheme()->getEffectStyles()->get_Item(2)->getEffectFormat()->getOuterShadowEffect()->setDistance(10);
 
     $pres->save("Design_04_Subtle_Moderate_Intense-out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

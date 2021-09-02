@@ -35,7 +35,7 @@ try {
     if ($pres != null) $pres->dispose();
 
     // Clear Font Cachce
-    FontsLoader.clearCache();
+    FontsLoader->clearCache();
 }
 ```
 
@@ -52,8 +52,8 @@ String[] fontFolders = FontsLoader->getFontFolders();
 A new [getDocumentLevelFontSources](https://apireference.aspose.com/slides/java/com.aspose.slides/ILoadOptions#getDocumentLevelFontSources--) method has been added to [ILoadOptions](https://apireference.aspose.com/slides/java/com.aspose.slides/ILoadOptions) interface. It allows to specify external fonts that are used with the presentation.
 
 ```php
-byte[] memoryFont1 = Files.readAllBytes("customfonts/CustomFont1.ttf");
-byte[] memoryFont2 = Files.readAllBytes("customfonts/CustomFont2.ttf");
+byte[] memoryFont1 = Files->readAllBytes("customfonts/CustomFont1.ttf");
+byte[] memoryFont2 = Files->readAllBytes("customfonts/CustomFont2.ttf");
 
 $loadOptions = new LoadOptions();
 $loadOptions->getDocumentLevelFontSources()->setFontFolders(new String[] { "assets/fonts", "global/fonts" });

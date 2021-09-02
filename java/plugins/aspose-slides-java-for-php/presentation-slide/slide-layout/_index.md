@@ -24,12 +24,12 @@ $pres = new Java("com.aspose.slides.Presentation", "AccessSlides.pptx");
 try {
     // Try to search by layout slide type
     IMasterLayoutSlideCollection layoutSlides = $pres->getMasters()->get_Item(0)->getLayoutSlides();
-    ILayoutSlide layoutSlide = null;
+    $layoutSlide = null;
 
-    if ($layoutSlides->getByType(SlideLayoutType.TitleAndObject) != null)
-        layoutSlide = layoutSlides->getByType(SlideLayoutType.TitleAndObject);
+    if ($layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")-> TitleAndObject) != null)
+        layoutSlide = layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")-> TitleAndObject);
     else
-        layoutSlide = layoutSlides->getByType(SlideLayoutType.Title);
+        layoutSlide = layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")-> Title);
 
     if ($layoutSlide == null) {
         // The situation when a presentation doesn't contain some type of layouts.
@@ -38,30 +38,30 @@ try {
         // And it is possible to use these names for layout slide selection.
         // Also it is possible to use the set of placeholder shape types. For example,
         // Title slide should have only Title placeholder type, etc.
-        for (ILayoutSlide titleAndObjectLayoutSlide : layoutSlides) {
+        for ($titleAndObjectLayoutSlide : layoutSlides) {
             if ($titleAndObjectLayoutSlide->getName() == "Title and Object") {
                 layoutSlide = titleAndObjectLayoutSlide;
                 break;
             }
         }
         if ($layoutSlide == null) {
-            for (ILayoutSlide titleLayoutSlide : layoutSlides) {
+            for ($titleLayoutSlide : layoutSlides) {
                 if ($titleLayoutSlide->getName() == "Title") {
                     layoutSlide = titleLayoutSlide;
                     break;
                 }
             }
             if ($layoutSlide == null) {
-                layoutSlide = layoutSlides->getByType(SlideLayoutType.Blank);
+                layoutSlide = layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")-> Blank);
                 if ($layoutSlide == null) {
-                    layoutSlide = layoutSlides.add(SlideLayoutType.TitleAndObject, "Title and Object");
+                    layoutSlide = layoutSlides->add(Java("com.aspose.slides.SlideLayoutType")-> TitleAndObject, "Title and Object");
                 }
             }
         }
     }
 
     // Adding empty slide with added layout slide
-    $pres->getSlides().insertEmptySlide(0, layoutSlide);
+    $pres->getSlides()->insertEmptySlide(0, layoutSlide);
 
     // Save presentation
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -75,9 +75,9 @@ try {
 
 ```php
 // Instantiate Presentation objects that represent presentation files
-$presentation = new Java("com.aspose.slides.Presentation"), "demo.pptx");
+$presentation = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
-    Presentation auxPresentation = new Presentation();
+    $auxPresentation = new Presentation();
     try {
         // Set the slide size of generated presentations to that of source
         auxPresentation->getSlideSize()->setSize(540, 720, SlideSizeScaleType.EnsureFit);
@@ -108,7 +108,7 @@ To set footer in a slide using its index position in the slides collection of th
 1. Write the modified presentation file.
 
 ```php
-$presentation = new Java("com.aspose.slides.Presentation"), "presentation.ppt");
+$presentation = new Java("com.aspose.slides.Presentation", "presentation.ppt");
 try {
     IBaseSlideHeaderFooterManager headerFooterManager = $presentation->getSlides()->get_Item(0)->getHeaderFooterManager();
     if ($!headerFooterManager->isFooterVisible()) // Method isFooterVisible is used for indicating that a slide footer placeholder is not present.
@@ -141,7 +141,7 @@ To set footer and child footer a slide using its index position in the slides co
 1. Write the modified presentation file.
 
 ```php
-$presentation = new Java("com.aspose.slides.Presentation"), "presentation.ppt");
+$presentation = new Java("com.aspose.slides.Presentation", "presentation.ppt");
 try {
     IMasterSlideHeaderFooterManager headerFooterManager = $presentation->getMasters()->get_Item(0)->getHeaderFooterManager();
     headerFooterManager->setFooterAndChildFootersVisibility(true); // Method setFooterAndChildFootersVisibility is used for making a master slide and all child footer placeholders visible.
@@ -160,7 +160,7 @@ You can also set the slide size by using it with different ways of content scali
 
 ```php
 // Instantiate Presentation objects that represent presentation files
-$presentation = new Java("com.aspose.slides.Presentation"), "demo.pptx");
+$presentation = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     // Set the slide size of generated presentations to that of source
     $presentation->getSlideSize()->setSize(540, 720, SlideSizeScaleType.EnsureFit); // Method SetSize is used for set slide size with scale content to ensure fit

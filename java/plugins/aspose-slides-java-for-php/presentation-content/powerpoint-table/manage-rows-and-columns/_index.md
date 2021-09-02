@@ -19,7 +19,7 @@ try {
     $tbl = null;
 
     // Iterate through the shapes and set a reference to the table found
-    for ($shp : sld->getShapes())
+    for ($shp : $sld->getShapes())
     {
         if ($shp instanceof ITable) 
         {
@@ -61,7 +61,7 @@ try {
     double[] dblRows = { 50, 30, 30, 30, 30 };
 
     // Add table shape to slide
-    $table = sld->getShapes()->addTable(100, 50, dblCols, dblRows);
+    $table = $sld->getShapes()->addTable(100, 50, dblCols, dblRows);
 
     // Add text to the row 1 cell 1
     table->get_Item(0, 0)->getTextFrame()->setText("Row 1 Cell 1");
@@ -79,13 +79,13 @@ try {
     table->get_Item(1, 1)->getTextFrame()->setText("Row 2 Cell 2");
 
     // Clone Row 2 as 4th row of table
-    table->getRows().insertClone(3, table->getRows()->get_Item(1), false);
+    table->getRows()->insertClone(3, table->getRows()->get_Item(1), false);
 
     //Cloning first column at end
     table->getColumns()->addClone(table->getColumns()->get_Item(0), false);
 
     //Cloning 2nd column at 4th column index
-    table->getColumns().insertClone(3,table->getColumns()->get_Item(1), false);
+    table->getColumns()->insertClone(3,table->getColumns()->get_Item(1), false);
     
     // Write PPTX to Disk
     $pres->save("table_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -146,7 +146,7 @@ try {
     $portionFormat = new Java("com.aspose.slides.PortionFormat");
     $portionFormat->setFontHeight(25);
 	
-    someTable->getRows()->get_Item(0)->setTextFormat(portionFormat);
+    someTable->getRows()->get_Item(0)->setTextFormat($portionFormat);
     
     // setting first row cells' text alignment and right margin in one call
     ParagraphFormat paragraphFormat = new ParagraphFormat();
@@ -156,8 +156,8 @@ try {
     someTable->getRows()->get_Item(0)->setTextFormat($paragraphFormat);
     
     // setting second row cells' text vertical type
-    TextFrameFormat textFrameFormat = new TextFrameFormat();
-    textFrameFormat->setTextVerticalType(TextVerticalType.Vertical);
+    $textFrameFormat = new TextFrameFormat();
+    textFrameFormat->setTextVerticalType(Java("com.aspose.slides.TextVerticalType")->Vertical);
 	
     someTable->getRows()->get_Item(1)->setTextFormat($textFrameFormat);
 
@@ -189,7 +189,7 @@ try {
     $portionFormat = new Java("com.aspose.slides.PortionFormat");
     $portionFormat->setFontHeight(25);
 	
-    someTable->getColumns()->get_Item(0)->setTextFormat(portionFormat);
+    someTable->getColumns()->get_Item(0)->setTextFormat($portionFormat);
 
     // setting first column cells' text alignment and right margin in one call
     ParagraphFormat paragraphFormat = new ParagraphFormat();
@@ -199,8 +199,8 @@ try {
     someTable->getColumns()->get_Item(0)->setTextFormat($paragraphFormat);
 
     // setting second column cells' text vertical type
-    TextFrameFormat textFrameFormat = new TextFrameFormat();
-    textFrameFormat->setTextVerticalType(TextVerticalType.Vertical);
+    $textFrameFormat = new TextFrameFormat();
+    textFrameFormat->setTextVerticalType(Java("com.aspose.slides.TextVerticalType")->Vertical);
 	
     someTable->getColumns()->get_Item(1)->setTextFormat($textFrameFormat);
 

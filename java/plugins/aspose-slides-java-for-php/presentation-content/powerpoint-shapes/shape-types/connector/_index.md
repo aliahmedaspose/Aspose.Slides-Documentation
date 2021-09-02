@@ -22,7 +22,7 @@ In order to add a connector shape for joining two shapes. Please follow the step
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing shapes collection for selected slide
-    IShapeCollection shapes = $pres->getSlides()->get_Item(0)->getShapes();
+    $shapes = $pres->getSlides()->get_Item(0)->getShapes();
     
     // Add Autoshape Ellipse
     $ellipse = shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 0, 100, 100, 100);
@@ -31,14 +31,14 @@ try {
     $rectangle = shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 300, 100, 100);
     
     // Adding connector shape to slide shape collection
-    IConnector connector = shapes.addConnector(Java("com.aspose.slides.ShapeType")->BentConnector2, 0, 0, 10, 10);
+    IConnector connector = shapes->addConnector(Java("com.aspose.slides.ShapeType")->BentConnector2, 0, 0, 10, 10);
     
     // Joining Shapes to connectors
     connector->setStartShapeConnectedTo(ellipse);
     connector->setEndShapeConnectedTo(rectangle);
     
     // Call reroute to set the automatic shortest path between shapes
-    connector.reroute();
+    connector->reroute();
     
     // Saving Presentation
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -71,7 +71,7 @@ In the example given below, we have added a connector between two shapes.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Accessing shapes collection for selected slide
-    IShapeCollection shapes = $pres->getSlides()->get_Item(0)->getShapes();
+    $shapes = $pres->getSlides()->get_Item(0)->getShapes();
 
     // Add Autoshape Ellipse
     $ellipse = shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 0, 100, 100, 100);
@@ -80,7 +80,7 @@ try {
     $rectangle = shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 300, 100, 100);
 
     // Adding connector shape to slide shape collection
-    IConnector connector = shapes.addConnector(Java("com.aspose.slides.ShapeType")->BentConnector2, 0, 0, 10, 10);
+    IConnector connector = shapes->addConnector(Java("com.aspose.slides.ShapeType")->BentConnector2, 0, 0, 10, 10);
 
     // Joining Shapes to connectors
     connector->setStartShapeConnectedTo(ellipse);
@@ -122,8 +122,8 @@ try {
     
     for ($i = 0; i < $slide->getShapes()->size(); i++)
     {
-        $double dir = 0.0;
-        Shape shape = (Shape)slide->getShapes()->get_Item(i);
+        dir = 0.0;
+        Shape shape = (Shape)slide->getShapes()->get_Item($i);
         if ($shape instanceof AutoShape)
         {
             $ashp = $shape;
@@ -153,7 +153,7 @@ public static double getDirection($w, $h, boolean flipH, boolean flipV)
     $endLineY = h * (flipV ? -1 : 1);
     $endYAxisX = 0;
     $endYAxisY = h;
-    $double angle = (atan2(endYAxisY, endYAxisX) - atan2(endLineY, endLineX));
+    angle = (atan2(endYAxisY, endYAxisX) - atan2(endLineY, endLineX));
     if ($angle < 0) angle += 2 * M_PI;
     return angle * 180.0 / M_PI;
 }

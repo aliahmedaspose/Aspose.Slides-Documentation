@@ -17,7 +17,7 @@ try {
     
     $textFrame = (ITextFrame) $shape->getTextFrame();
     
-    for ($paragraph : textFrame->getParagraphs()) 
+    for ($paragraph : $textFrame->getParagraphs()) 
     {
         for ($portion : paragraph->getPortions()) 
         {

@@ -31,11 +31,11 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Iterate through shapes to find the placeholder
-    for ($shp : sld->getShapes()) 
+    for ($shp : $sld->getShapes()) 
     {
         if ($shp->getPlaceholder() != null) {
             // Change the text of each placeholder
-            (shp)->getTextFrame()->setText("This is Placeholder");
+            $shp->getTextFrame()->setText("This is Placeholder");
         }
     }
 
@@ -60,16 +60,16 @@ try {
         if ($shape->getPlaceholder() != null && shape instanceof AutoShape)
         {
             $text = "";
-            if ($shape->getPlaceholder()->getType() == PlaceholderType.CenteredTitle) //PowerPoint displays "Click to add title". 
+            if ($shape->getPlaceholder()->getType() == Java("com.aspose.slides.PlaceholderType")->CenteredTitle) //PowerPoint displays "Click to add title". 
             {
-                text = "Add Title";
+                $text = "Add Title";
             }
-            else if ($shape->getPlaceholder()->getType() == PlaceholderType.Subtitle) //add subtitle.
+            else if ($shape->getPlaceholder()->getType() == Java("com.aspose.slides.PlaceholderType")->Subtitle) //add subtitle.
             {
-                text = "Add Subtitle";
+                $text = "Add Subtitle";
             }
 
-            ($shape)->getTextFrame()->setText($text);
+            $shape->getTextFrame()->setText($text);
             echo("Placeholder with text: " + text);
         }
     }

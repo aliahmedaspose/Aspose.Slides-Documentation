@@ -53,7 +53,7 @@ To merge presentation slides with a slide template of their styles and layouts -
 Note, that Slide Layout of the Slide Master, that should be applied to slides, is choosed automatically. If there is no appropriate layout will be found, then layout of the source slide will be used. The allowCloneMissingLayout boolean parameter of AddClone method determines if the source layout can be used instead of not found layout. If allowCloneMissingLayout is true - source layout will be used instead of missed layout, otherwise PptxEditException will be thrown.
 
 ```php
-mergedPresentation->getSlides()->addClone(slide, masterSlide, true);
+mergedPresentation->getSlides()->addClone($slide, masterSlide, true);
 ``` 
 
 If you want to define other Slide Layout, you should use [**addClone (ISlide, ILayoutSlide)**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlideCollection#addClone-com.aspose.slides.ISlide-com.aspose.slides.ILayoutSlide-) method.

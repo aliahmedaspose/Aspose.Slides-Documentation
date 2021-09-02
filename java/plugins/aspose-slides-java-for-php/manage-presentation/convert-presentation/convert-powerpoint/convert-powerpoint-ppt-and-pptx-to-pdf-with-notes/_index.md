@@ -12,11 +12,11 @@ The following example shows how to convert a presentation to a PDF notes documen
 
 ```php
 // Instantiate a Presentation object that represents a presentation file
-Presentation presIn = new Presentation("SelectedSlides.pptx");
+Presentation presIn = new Java("com.aspose.slides.Presentation", "SelectedSlides.pptx");
 Presentation presOut = new Presentation();
 try {
     $slide = presIn->getSlides()->get_Item(0);
-    presOut->getSlides().insertClone(0, slide);
+    presOut->getSlides()->insertClone(0, slide);
     
     // Setting Slide Type and Size
     presOut->getSlideSize()->setSize(612F, 792F,SlideSizeScaleType.EnsureFit);

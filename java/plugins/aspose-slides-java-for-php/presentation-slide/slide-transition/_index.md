@@ -26,7 +26,7 @@ To create a simple slide transition effect, follow the steps below:
 
 ```php
 // Instantiate Presentation class to load the source presentation file
-$presentation = new Java("com.aspose.slides.Presentation"), "AccessSlides.pptx");
+$presentation = new Java("com.aspose.slides.Presentation", "AccessSlides.pptx");
 try {
     // Apply circle type transition on slide 1
     $presentation->getSlides()->get_Item(0)->getSlideShowTransition()->setType(TransitionType.Circle);
@@ -97,7 +97,7 @@ The following code snippet shows you how to add a clone of the slide with some t
 $presentation = new Java("com.aspose.slides.Presentation");
 try {
     $autoshape = $presentation->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 400, 100);
-    autoshape->getTextFrame()->setText("Morph Transition in PowerPoint Presentations");
+    $autoshape->getTextFrame()->setText("Morph Transition in PowerPoint Presentations");
 
     $presentation->getSlides()->addClone(presentation->getSlides()->get_Item(0));
 
@@ -128,7 +128,7 @@ TransitionMorphType enum has three members:
 The following code snippet shows you how to set morph transition to slide and change morph type:
 
 ```php
-$presentation = new Java("com.aspose.slides.Presentation"), "presentation.pptx");
+$presentation = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
     $presentation->getSlides()->get_Item(0)->getSlideShowTransition()->setType(TransitionType.Morph);
     ((IMorphTransition)presentation->getSlides()->get_Item(0)->getSlideShowTransition()->getValue())->setMorphType(TransitionMorphType.ByWord);
@@ -150,7 +150,7 @@ In the example given below, we have set the transition effects.
 
 ```php
 // Create an instance of Presentation class
-$presentation = new Java("com.aspose.slides.Presentation"), "AccessSlides.pptx");
+$presentation = new Java("com.aspose.slides.Presentation", "AccessSlides.pptx");
 try {
     // Set effect
     $presentation->getSlides()->get_Item(0)->getSlideShowTransition()->setType(TransitionType.Cut);

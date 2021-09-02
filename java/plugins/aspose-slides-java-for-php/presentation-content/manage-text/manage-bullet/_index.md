@@ -56,8 +56,8 @@ try {
     $para->getParagraphFormat()->setIndent(25);
     
     // Setting bullet color
-    $para->getParagraphFormat()->getBullet()->getColor()->setColorTypeJava("java.awt.Color")->Type.RGB);
-    $para->getParagraphFormat()->getBullet()->getColor()->setColorJava("java.awt.Color")->BLACK);
+    $para->getParagraphFormat()->getBullet()->getColor()->setColorTypeJava("com.aspose.slides.ColorType")->RGB);
+    $para->getParagraphFormat()->getBullet()->getColor()->setColor(Java("java.awt.Color")->BLACK);
     
     // set IsBulletHardColor to true to use own bullet color
     $para->getParagraphFormat()->getBullet()->isBulletHardColor();
@@ -103,7 +103,7 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
 
     // Instantiate the image for bullets
-    $img = ImageIO.read(new Java("java.io.File", "asp1.jpg"));
+    $img = ImageIO->read(new Java("java.io.File", "asp1.jpg"));
     $imgx = $pres->getImages()->addImage($img);
 
     // Adding and accessing Autoshape
@@ -176,20 +176,20 @@ try {
     $para2->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
     $para2->getParagraphFormat()->getBullet()->setChar((char) 8226);
     $para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
-    $para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLACK);
+    $para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
     //Setting bullet level
     $para2->getParagraphFormat()->setDepth ((short)0);
     
     // Creating second paragraph
     $para2 = new Java("com.aspose.slides.Paragraph");
     // Setting paragraph bullet style and symbol
-    para2->setText("Second level");
-    para2->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    para2->getParagraphFormat()->getBullet()->setChar('-');
-    para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
-    para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLACK);
+    $para2->setText("Second level");
+    $para2->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
+    $para2->getParagraphFormat()->getBullet()->setChar('-');
+    $para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
+    $para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
     //Setting bullet level
-    para2->getParagraphFormat()->setDepth ((short)1);
+    $para2->getParagraphFormat()->setDepth ((short)1);
     
     // Creating third paragraph
     $para3 = new Java("com.aspose.slides.Paragraph");
@@ -198,7 +198,7 @@ try {
     $para3->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
     $para3->getParagraphFormat()->getBullet()->setChar((char) 8226);
     $para3->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
-    $para3->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLACK);
+    $para3->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
     //Setting bullet level
     $para3->getParagraphFormat()->setDepth ((short)2);
     
@@ -209,7 +209,7 @@ try {
     $para4->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
     $para4->getParagraphFormat()->getBullet()->setChar('-');
     $para4->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
-    $para4->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLACK);
+    $para4->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
     //Setting bullet level
     $para4->getParagraphFormat()->setDepth ((short)3);
     

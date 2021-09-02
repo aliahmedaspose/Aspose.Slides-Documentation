@@ -12,8 +12,8 @@ Aspose.Slides for Java provides a simple API for . 
 1. Access first slide.
 1. Add chart with default data.
 1. Call method [IChart.validateChartLayout()](https://apireference.aspose.com/slides/java/com.aspose.slides/IChart#validateChartLayout--) before to get actual values.
-1. Gets actual X location (left) of the chart element relative to the left top corner of the chart.
-1. Gets actual top of the chart element relative to the left top corner of the chart.
+1. Gets actual X location (left) of the chart element relative to the left top corner of the $chart->
+1. Gets actual top of the chart element relative to the left top corner of the $chart->
 1. Gets actual width of the chart element.
 1. Gets actual height of the chart element.
 
@@ -21,13 +21,13 @@ Aspose.Slides for Java provides a simple API for . 
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    Chart chart = (Chart)pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 100, 100, 500, 350);
-    chart.validateChartLayout();
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 100, 100, 500, 350);
+    $chart->validateChartLayout();
 
-    $double x = chart->getPlotArea()->getActualX();
-    $double y = chart->getPlotArea()->getActualY();
-    $double w = chart->getPlotArea()->getActualWidth();
-    $double h = chart->getPlotArea()->getActualHeight();
+    $x = $chart->getPlotArea()->getActualX();
+    $y = $chart->getPlotArea()->getActualY();
+    $w = $chart->getPlotArea()->getActualWidth();
+    $h = $chart->getPlotArea()->getActualHeight();
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -46,12 +46,12 @@ Sample code is given below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     $slide = $pres->getSlides()->get_Item(0);
-    IChart chart = $slide->getShapes()->addChart(ChartType.ClusteredColumn, 20, 100, 600, 400);
-    chart->getPlotArea()->setX(0.2f);
-    chart->getPlotArea()->setY(0.2f);
-    chart->getPlotArea()->setWidth(0.7f);
-    chart->getPlotArea()->setHeight(0.7f);
-    chart->getPlotArea()->setLayoutTargetType(LayoutTargetType.Inner);
+    $chart = $slide->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 20, 100, 600, 400);
+    $chart->getPlotArea()->setX(0.2);
+    $chart->getPlotArea()->setY(0.2);
+    $chart->getPlotArea()->setWidth(0.7);
+    $chart->getPlotArea()->setHeight(0.7);
+    $chart->getPlotArea()->setLayoutTargetType(Java("com.aspose.slides.LayoutTargetType")->Inner);
 
     $pres->save("SetLayoutMode_outer.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

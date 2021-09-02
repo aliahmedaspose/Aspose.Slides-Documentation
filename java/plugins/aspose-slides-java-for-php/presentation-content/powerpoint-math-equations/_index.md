@@ -53,26 +53,26 @@ try {
 After creating, the shape will already contain one paragraph with a mathematical portion by default. The [**MathPortion**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathPortion) class is a portion that contains a mathematical text inside. To access mathematical content inside [**MathPortion**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathPortion), refer to the [**MathParagraph** ](https://apireference.aspose.com/slides/java/com.aspose.slides/MathParagraph)variable:
 
 ```php
-IMathParagraph mathParagraph = ((MathPortion)mathShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0))->getMathJava("com.aspose.slides.Paragraph");
+$mathParagraph = ($mathShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0))->getMathJava("com.aspose.slides.Paragraph");
 ``` 
 
 The [**MathParagraph**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathParagraph) class allows to read, add, edit and delete math blocks ([**MathBlock**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathBlock)), that consist of a combination of mathematical elements. For example, create a fraction and place it in the presentation:
 
 ```php
-IMathFraction fraction = new MathematicalText("x").divide("y");
+$fraction = new Java("com.aspose.slides.MathematicalText", "x")->divide("y");
 
-mathParagraph.add(new MathBlock(fraction));
+$mathParagraph->add(new MathBlock(fraction));
 ``` 
 
 Each mathematical element is represented by some class that implements the [**IMathElement**](https://apireference.aspose.com/slides/java/com.aspose.slides/IMathElement) interface. This interface provides a lot of methods for easily creating mathematical expressions. You can create a fairly complex mathematical expression with a single line of code. For example, the Pythagorean theorem would look like this:
 
 ```php
-IMathBlock mathBlock = new MathematicalText("c")
+$mathBlock = new Java("com.aspose.slides.MathematicalText", "c")
         ->setSuperscript("2")
-        .join("=")
-        .join(new MathematicalText("a")->setSuperscript("2"))
-        .join("+")
-        .join(new MathematicalText("b")->setSuperscript("2"));
+        ->join("=")
+        ->join(new Java("com.aspose.slides.MathematicalText", "a")->setSuperscript("2"))
+        ->join("+")
+        ->join(new Java("com.aspose.slides.MathematicalText", "b")->setSuperscript("2"));
 ``` 
 
 Operations of the interface [**IMathElement**](https://apireference.aspose.com/slides/java/com.aspose.slides/IMathElement) are implemented in any type of element, including the [**MathBlock**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathBlock).
@@ -84,19 +84,19 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     $mathShape = $pres->getSlides()->get_Item(0)->getShapes()->addMathShape(0, 0, 720, 150);
 
-    IMathParagraph mathParagraph = ((MathPortion)mathShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0))->getMathJava("com.aspose.slides.Paragraph");
+    $mathParagraph = ($mathShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0))->getMathJava("com.aspose.slides.Paragraph");
     
-    IMathFraction fraction = new MathematicalText("x").divide("y");
+    $fraction = new Java("com.aspose.slides.MathematicalText", "x")->divide("y");
 
-    mathParagraph.add(new MathBlock(fraction));
+    $mathParagraph->add(new MathBlock(fraction));
 
-    IMathBlock mathBlock = new MathematicalText("c")
+    $mathBlock = new Java("com.aspose.slides.MathematicalText", "c")
             ->setSuperscript("2")
-            .join("=")
-            .join(new MathematicalText("a")->setSuperscript("2"))
-            .join("+")
-            .join(new MathematicalText("b")->setSuperscript("2"));
-    mathParagraph.add(mathBlock);
+            ->join("=")
+            ->join(new Java("com.aspose.slides.MathematicalText", "a")->setSuperscript("2"))
+            ->join("+")
+            ->join(new Java("com.aspose.slides.MathematicalText", "b")->setSuperscript("2"));
+    $mathParagraph->add(mathBlock);
 
     $pres->save("math.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -148,9 +148,9 @@ Example:
 is created using a combination of [**MathFunction**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathFunction) and [**MathLimit**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathLimit) elements this way:
 
 ```php
-MathLimit funcName = new MathLimit(new MathematicalText("lim"), new MathematicalText("𝑥→∞"));
+$funcName = new MathLimit(new Java("com.aspose.slides.MathematicalText", "lim"), new Java("com.aspose.slides.MathematicalText", "𝑥→∞"));
 
-MathFunction mathFunc = new MathFunction(funcName, new MathematicalText("𝑥"));
+$mathFunc = new MathFunction($funcName, new Java("com.aspose.slides.MathematicalText", "𝑥"));
 ``` 
 
 
@@ -209,11 +209,11 @@ Each mathematical element and mathematical expression (via [**MathBlock**](https
 Joins a mathematical element and forms a mathematical block. For example:
 
 ```php
-IMathElement element1 = new MathematicalText("x");
+$element1 = new Java("com.aspose.slides.MathematicalText", "x");
 
-IMathElement element2 = new MathematicalText("y");
+$element2 = new Java("com.aspose.slides.MathematicalText", "y");
 
-IMathBlock block = element1.join(element2);
+$block = element1->join(element2);
 ``` 
 
 ### **Divide method**
@@ -225,9 +225,9 @@ IMathBlock block = element1.join(element2);
 Creates a fraction of the specified type with this numerator and specified denominator. For example:
 
 ```php
-IMathElement numerator = new MathematicalText("x");
+$numerator = new Java("com.aspose.slides.MathematicalText", "x");
 
-IMathFraction fraction = numerator.divide("y", MathFractionTypes.Linear);
+$fraction = $numerator->divide("y", Java("com.aspose.slides.MathFractionTypes")->Linear);
 ``` 
 
 ### **Enclose method**
@@ -242,23 +242,23 @@ Encloses the element in specified characters such as parenthesis or another char
  * Enclose a math element in parenthesis
  * </p>
  */
-public IMathDelimiter enclose();
+public $enclose();
 
 /**
  * <p>
  * Encloses this element in specified characters such as parenthesis or another characters as framing
  * </p>
  */
-public IMathDelimiter enclose(char beginningCharacter, char endingCharacter);
+public $enclose($beginningCharacter, $endingCharacter);
 ``` 
 
 
 For example:
 
 ```php
-IMathDelimiter delimiter = new MathematicalText("x")->enclose('[', ']');
+$delimiter = new Java("com.aspose.slides.MathematicalText", "x")->enclose('[', ']');
 
-IMathDelimiter delimiter2 = new MathematicalText("elem1").join("elem2")->enclose();
+$delimiter2 = new Java("com.aspose.slides.MathematicalText", "elem1")->join("elem2")->enclose();
 ``` 
 
 ### **Function method**
@@ -273,21 +273,21 @@ Takes a function of an argument using the current object as the function name.
  * Takes a function of an argument using this instance as the function name
  * </p>
  */
-public IMathFunction function(IMathElement functionArgument);
+public $function($functionArgument);
 
 /**
  * <p>
  * Takes a function of an argument using this instance as the function name
  * </p>
  */
-public IMathFunction function($functionArgument);
+public $function($functionArgument);
 ``` 
 
 
 For example:
 
 ```php
-IMathFunction func = new MathematicalText("sin").function("x");
+$func = new Java("com.aspose.slides.MathematicalText", "sin")->function("x");
 ``` 
 
 ### **AsArgumentOfFunction method**
@@ -306,15 +306,15 @@ Takes the specified function using the current instance as the argument. You can
 For example:
 
 ```php
-MathLimit funcName = new MathLimit(new MathematicalText("lim"), new MathematicalText("𝑛→∞"));
+$funcName = new MathLimit(new Java("com.aspose.slides.MathematicalText", "lim"), new Java("com.aspose.slides.MathematicalText", "𝑛→∞"));
 
-IMathFunction func1 = new MathematicalText("2x").asArgumentOfFunction(funcName);
+$func1 = new Java("com.aspose.slides.MathematicalText", "2x")->asArgumentOfFunction($funcName);
 
-IMathFunction func2 = new MathematicalText("x").asArgumentOfFunction("sin");
+$func2 = new Java("com.aspose.slides.MathematicalText", "x")->asArgumentOfFunction("sin");
 
-IMathFunction func3 = new MathematicalText("x").asArgumentOfFunction(MathFunctionsOfOneArgument.Sin);
+$func3 = new Java("com.aspose.slides.MathematicalText", "x")->asArgumentOfFunction(Java("com.aspose.slides.MathFunctionsOfOneArgument")->Sin);
 
-IMathFunction func4 = new MathematicalText("x").asArgumentOfFunction(MathFunctionsOfTwoArguments.Log, "3");
+$func4 = new Java("com.aspose.slides.MathematicalText", "x")->asArgumentOfFunction(Java("com.aspose.slides.MathFunctionsOfTwoArguments")->Log, "3");
 ``` 
 
 ### **SetSubscript, SetSuperscript, SetSubSuperscriptOnTheRight, SetSubSuperscriptOnTheLeft methods**
@@ -332,7 +332,7 @@ Sets subscript and superscript. You can set subscript and superscript at the sam
 Example:
 
 ```php
-IMathLeftSubSuperscriptElement script = new MathematicalText("y")->setSubSuperscriptOnTheLeft("2x", "3z");
+IMathLeftSubSuperscriptElement script = new Java("com.aspose.slides.MathematicalText", "y")->setSubSuperscriptOnTheLeft("2x", "3z");
 ``` 
 
 ### **Radical method**
@@ -344,7 +344,7 @@ Specifies the mathematical root of the given degree from the specified argument.
 Example:
 
 ```php
-IMathRadical radical = new MathematicalText("x").radical("3");
+IMathRadical radical = new Java("com.aspose.slides.MathematicalText", "x").radical("3");
 ``` 
 
 ### **SetUpperLimit and SetLowerLimit methods**
@@ -362,7 +362,7 @@ Let's consider an expression: 
 Such expressions can be created through a combination of classes [MathFunction](https://apireference.aspose.com/slides/java/com.aspose.slides/MathFunction) and [MathLimit](https://apireference.aspose.com/slides/java/com.aspose.slides/MathLimit), and operations of the [IMathElement](https://apireference.aspose.com/slides/java/com.aspose.slides/IMathElement) as follows:
 
 ```php
-IMathFunction mathExpression = new MathematicalText("lim")->setLowerLimit("x→∞").function("x");
+$mathExpression = new Java("com.aspose.slides.MathematicalText", "lim")->setLowerLimit("x→∞")->function("x");
 ``` 
 
 ### **Nary and Integral methods**
@@ -379,9 +379,9 @@ Both **nary** and **integral** methods create and return the N-ary operator repr
 Example:
 
 ```php
-IMathBlock baseArg = new MathematicalText("x").join(new MathematicalText("dx").toBox());
+$baseArg = new Java("com.aspose.slides.MathematicalText", "x")->join(new Java("com.aspose.slides.MathematicalText", "dx")->toBox());
 
-IMathNaryOperator integral = baseArg.integral(MathIntegralTypes.Simple, "0", "1");
+$integral = baseArg->integral(Java("com.aspose.slides.MathIntegralTypes")->Simple, "0", "1");
 ``` 
 
 ### **ToMathArray method**
@@ -390,7 +390,7 @@ IMathNaryOperator integral = baseArg.integral(MathIntegralTypes.Simple, "0", "1"
 Example:
 
 ```php
-IMathArray arrayFunction = new MathematicalText("x").join("y").toMathArray();
+$arrayFunction = new Java("com.aspose.slides.MathematicalText", "x")->join("y")->toMathArray();
 ``` 
 
 ### **Formatting operations: Accent, Overbar, Underbar, Group, ToBorderBox, ToBox**
@@ -403,13 +403,13 @@ IMathArray arrayFunction = new MathematicalText("x").join("y").toMathArray();
 Examples:
 
 ```php
-IMathAccent accent = new MathematicalText("x").accent('\u0303');
+$accent = new Java("com.aspose.slides.MathematicalText", "x")->accent('\u0303');
 
-IMathBar bar = new MathematicalText("x").overbar();
+$bar = new Java("com.aspose.slides.MathematicalText", "x")->overbar();
 
-IMathGroupingCharacter groupChr = new MathematicalText("x").join("y").join("z").group('\u23E1', MathTopBotPositions.Bottom, MathTopBotPositions.Top);
+$groupChr = new Java("com.aspose.slides.MathematicalText", "x")->join("y")->join("z")->group('\u23E1', Java("com.aspose.slides.MathTopBotPositions")->Bottom, Java("com.aspose.slides.MathTopBotPositions")->Top);
 
-IMathBorderBox borderBox = new MathematicalText("x+y+z").toBorderBox();
+$borderBox = new Java("com.aspose.slides.MathematicalText", "x+y+z")->toBorderBox();
 
-IMathBox boxedOperator = new MathematicalText(":=").toBox();
+$boxedOperator = new Java("com.aspose.slides.MathematicalText", ":=")->toBox();
 ``` 

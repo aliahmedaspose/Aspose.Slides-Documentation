@@ -130,7 +130,7 @@ try {
 
     // Saving File
     for ($i = 0; i < $pres->getSlides()->size(); i++)
-        $pres->save("Individual Slide" + (i + 1) + "_out.html", new int[]{i + 1},Java("com.aspose.slides.SaveFormat")->Html, htmlOptions);
+        $pres->save("Individual Slide" + ($i+ 1) + "_out.html", new int[]{i + 1},Java("com.aspose.slides.SaveFormat")->Html, htmlOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -147,13 +147,13 @@ public class CustomFormattingController implements IHtmlFormattingController
     @Override
     public void writeSlideStart(IHtmlGenerator generator, ISlide slide) 
 	{
-        generator.addHtml(String.format(SlideHeader, generator->getSlideIndex() + 1));
+        generator->addHtml(String.format(SlideHeader, generator->getSlideIndex() + 1));
     }
 
     @Override
     public void writeSlideEnd(IHtmlGenerator generator, ISlide slide) 
 	{
-        generator.addHtml(SlideFooter);
+        generator->addHtml(SlideFooter);
     }
 
     @Override
@@ -206,14 +206,14 @@ public class CustomHeaderAndFontsController extends EmbedAllFontsHtmlController
 
     public void writeDocumentStart(IHtmlGenerator generator, IPresentation presentation) 
     {
-        generator.addHtml(String.format(Header, m_cssFileName));
+        generator->addHtml(String.format(Header, m_cssFileName));
         writeAllFonts(generator, presentation);
     }
 
     public void writeAllFonts(IHtmlGenerator generator, IPresentation presentation) 
     {
-        generator.addHtml("<!-- Embedded fonts -->");
-        super.writeAllFonts(generator, presentation);
+        generator->addHtml("<!-- Embedded fonts -->");
+        super->writeAllFonts(generator, presentation);
     }
 }
 ```
@@ -253,8 +253,8 @@ public class LinkAllFontsHtmlController extends EmbedAllFontsHtmlController
     public void writeFont
     (
             IHtmlGenerator generator,
-            IFontData originalFont,
-            IFontData substitutedFont,
+            $originalFont,
+            $substitutedFont,
             $fontStyle,
             $fontWeight,
             byte[] fontData)
@@ -262,15 +262,15 @@ public class LinkAllFontsHtmlController extends EmbedAllFontsHtmlController
         try {
             $fontName = substitutedFont == null ? originalFont->getFontName() : substitutedFont->getFontName();
             $path = fontName + ".woff"; // some path sanitaze may be needed
-            Files->write(new File(m_basePath + path).toPath(), fontData, StandardOpenOption.CREATE);
+            Files->write(new File(m_basePath + path)->toPath(), fontData, StandardOpenOption.CREATE);
 
-            generator.addHtml("<style>");
-            generator.addHtml("@font-face { ");
-            generator.addHtml("font-family: '" + fontName + "'; ");
-            generator.addHtml("src: url('" + path + "')");
+            generator->addHtml("<style>");
+            generator->addHtml("@font-face { ");
+            generator->addHtml("font-family: '" + fontName + "'; ");
+            generator->addHtml("src: url('" + path + "')");
 
-            generator.addHtml(" }");
-            generator.addHtml("</style>");
+            generator->addHtml(" }");
+            generator->addHtml("</style>");
         } catch (JavaException $ex) {
             ex.printStackTrace();
         }

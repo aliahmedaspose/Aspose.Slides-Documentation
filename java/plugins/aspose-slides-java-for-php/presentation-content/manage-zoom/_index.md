@@ -34,26 +34,26 @@ try {
     $slide3 = $pres->getSlides()->addEmptySlide($pres->getSlides()->get_Item(0)->getLayoutSlide());
 
     // Create a background for the second slide
-    slide2->getBackground()->setType(BackgroundType.OwnBackground);
-    slide2->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    slide2->getBackground()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->CYAN);
+   $slide2->getBackground()->setType(Java("com.aspose.slides.BackgroundType")->OwnBackground);
+   $slide2->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+   $slide2->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->CYAN);
 
     // Create a text box for the second slide
-    $autoshape = slide2->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
-    autoshape->getTextFrame()->setText("Second Slide");
+    $autoshape =$slide2->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
+    $autoshape->getTextFrame()->setText("Second Slide");
 
     // Create a background for the third slide
-    slide3->getBackground()->setType(BackgroundType.OwnBackground);
-    slide3->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    slide3->getBackground()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->DARK_GRAY);
+    $slide3->getBackground()->setType(Java("com.aspose.slides.BackgroundType")->OwnBackground);
+    $slide3->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $slide3->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->DARK_GRAY);
 
     // Create a text box for the third slide
-    autoshape = slide3->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
-    autoshape->getTextFrame()->setText("Trird Slide");
+    autoshape = $slide3->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
+    $autoshape->getTextFrame()->setText("Trird Slide");
 
     //Add ZoomFrame objects
-    $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(20, 20, 250, 200, slide2);
-    $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(200, 250, 250, 200, slide3);
+    $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(20, 20, 250, 200, $slide2);
+    $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(200, 250, 250, 200, $slide3);
 
     // Save the presentation
     $pres->save("presentation.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -79,24 +79,24 @@ try {
     $slide = $pres->getSlides()->addEmptySlide($pres->getSlides()->get_Item(0)->getLayoutSlide());
 
     // Create a background for the second slide
-    $slide->getBackground()->setType(BackgroundType.OwnBackground);
+    $slide->getBackground()->setType(Java("com.aspose.slides.BackgroundType")->OwnBackground);
     $slide->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    $slide->getBackground()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->CYAN);
+    $slide->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->CYAN);
 
     // Create a text box for the third slide
     $autoshape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
-    autoshape->getTextFrame()->setText("Second Slide");
+    $autoshape->getTextFrame()->setText("Second Slide");
 
     // Create a new image for the zoom object
-    byte[] imageBytes = Files.readAllBytes(Paths->get("image.png"));
+    byte[] imageBytes = Files->readAllBytes(Paths->get("image.png"));
     $image = $pres->getImages()->addImage(imageBytes);
 
     //Add the ZoomFrame object
-    $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(20, 20, 300, 200, slide, image);
+    $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(20, 20, 300, 200, $slide, $image);
 
     // Save the presentation
     $pres->save("presentation.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
-} catch(IOException e) {
+} catch(JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -127,46 +127,46 @@ try {
     $slide3 = $pres->getSlides()->addEmptySlide($pres->getSlides()->get_Item(0)->getLayoutSlide());
 
     // Create a background for the second slide
-    slide2->getBackground()->setType(BackgroundType.OwnBackground);
-    slide2->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    slide2->getBackground()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->CYAN);
+   $slide2->getBackground()->setType(Java("com.aspose.slides.BackgroundType")->OwnBackground);
+   $slide2->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+   $slide2->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->CYAN);
 
     // Create a text box for the second slide
-    $autoshape = slide2->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
-    autoshape->getTextFrame()->setText("Second Slide");
+    $autoshape =$slide2->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
+    $autoshape->getTextFrame()->setText("Second Slide");
 
     // Create a background for the third slide
-    slide3->getBackground()->setType(BackgroundType.OwnBackground);
-    slide3->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    slide3->getBackground()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->DARK_GRAY);
+    $slide3->getBackground()->setType(Java("com.aspose.slides.BackgroundType")->OwnBackground);
+    $slide3->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $slide3->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->DARK_GRAY);
 
     // Create a text box for the third slide
-    autoshape = slide3->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
-    autoshape->getTextFrame()->setText("Trird Slide");
+    $autoshape = $slide3->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
+    $autoshape->getTextFrame()->setText("Trird Slide");
 
     //Add ZoomFrame objects
-    IZoomFrame zoomFrame1 = $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(20, 20, 250, 200, slide2);
-    IZoomFrame zoomFrame2 = $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(200, 250, 250, 200, slide3);
+    $zoomFrame1 = $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(20, 20, 250, 200, $slide2);
+    $zoomFrame2 = $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(200, 250, 250, 200, $slide3);
 
     // Create a new image for the zoom object
-    byte[] imageBytes = Files.readAllBytes(Paths->get("image.png")); 
+    byte[] imageBytes = Files->readAllBytes(Paths->get("image.png")); 
     $image = $pres->getImages()->addImage(imageBytes);
 	
     // Set custom image for zoomFrame1 object
-    zoomFrame1->setImage($image);
+    $zoomFrame1->setImage($image);
 
     // Set a zoom frame format for the zoomFrame2 object
-    zoomFrame2->getLineFormat()->setWidth(5);
-    zoomFrame2->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    zoomFrame2->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->MAGENTA);
-    zoomFrame2->getLineFormat()->setDashStyle(LineDashStyle.DashDot);
+    $zoomFrame2->getLineFormat()->setWidth(5);
+    $zoomFrame2->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $zoomFrame2->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->MAGENTA);
+    $zoomFrame2->getLineFormat()->setDashStyle(Java("com.aspose.slides.LineDashStyle")->DashDot);
 
     // Do not show background for zoomFrame2 object
-    zoomFrame2->setShowBackground(false);
+    $zoomFrame2->setShowBackground(false);
 
     // Save the presentation
     $pres->save("presentation.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
-} catch(IOException e) {
+} catch(JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -201,24 +201,24 @@ try {
         $slide = $pres->getSlides()->addEmptySlide($pres->getSlides()->get_Item(0)->getLayoutSlide());
 
         // Create a background for the slide
-        $slide->getBackground()->setType(BackgroundType.OwnBackground);
+        $slide->getBackground()->setType(Java("com.aspose.slides.BackgroundType")->OwnBackground);
         $slide->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-        $slide->getBackground()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->DARK_GRAY);
+        $slide->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->DARK_GRAY);
 
         // Create a text box for the slide
         $autoshape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
-        autoshape->getTextFrame()->setText(String.format("Slide - %d", slideNumber + 2));
+        $autoshape->getTextFrame()->setText(String.format("Slide - %d", $slideNumber + 2));
     }
 
     // Create zoom objects for all slides in the first slide
-    for ($slideNumber = 1; slideNumber < $pres->getSlides()->size(); slideNumber++)
+    for ($slideNumber = 1; slideNumber < $pres->getSlides()->size(); $slideNumber++)
     {
-        $x = (slideNumber - 1) * 100;
-        $y = (slideNumber - 1) * 100;
-        IZoomFrame zoomFrame = $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(x, y, 150, 120, $pres->getSlides()->get_Item(slideNumber));
+        $x = ($slideNumber - 1) * 100;
+        $y = ($slideNumber - 1) * 100;
+        $zoomFrame = $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(x, y, 150, 120, $pres->getSlides()->get_Item($slideNumber));
 
         // Set the ReturnToParent property to return to the first slide
-        zoomFrame->setReturnToParent(true);
+        $zoomFrame->setReturnToParent(true);
     }
 
     // Save the presentation

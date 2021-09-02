@@ -23,23 +23,23 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation", "Fonts.pptx");
 try {
     // Load source font to be replaced
-    IFontData sourceFont = new  Java("com.aspose.slides.FontData"), "SomeRareFont");
+    $sourceFont = new  Java("com.aspose.slides.FontData", "SomeRareFont");
     
     // Load the replacing font
-    IFontData destFont = new  Java("com.aspose.slides.FontData"), "Arial");
+    $destFont = new  Java("com.aspose.slides.FontData", "Arial");
     
     // Add font rule for font replacement
     IFontSubstRule fontSubstRule = new FontSubstRule(sourceFont, destFont, FontSubstCondition.WhenInaccessible);
     
     // Add rule to font substitute rules collection
     IFontSubstRuleCollection fontSubstRuleCollection = new FontSubstRuleCollection();
-    fontSubstRuleCollection.add(fontSubstRule);
+    fontSubstRuleCollection->add(fontSubstRule);
     
     // Add font rule collection to rule list
     $pres->getFontsManager()->setFontSubstRuleList(fontSubstRuleCollection);
     
     // Arial font will be used instead of SomeRareFont when inaccessible
-    $image = $pres->getSlides()->get_Item(0)->getThumbnail(1f, 1f);
+    $image = $pres->getSlides()->get_Item(0)->getThumbnail(1, 1);
     
     // Save the image to disk in JPEG format
     Java("javax.imageio.ImageIO")->write($image, "PNG", new Java("java.io.File", "Thumbnail_out.jpg"));

@@ -22,7 +22,7 @@ try {
     $author = $presentation->getCommentAuthors()->addAuthor("Jawad", "MF");
 
     // Position of comments
-    $point = Java("java.awt.geom.Point2D")->Float(0.2f, 0.2f);
+    $point = Java("java.awt.geom.Point2D")->Float(0.2, 0.2);
 
     // Adding slide comment for an author on slide 1
     $author->getComments()->addComment("Hello Jawad, this is slide comment", $presentation->getSlides()->get_Item(0), point, new Java("java.util.Date"));
@@ -57,7 +57,7 @@ In the following example, we will learn how to access the existing slide comment
 
 ```php
 // Instantiate a Presentation class that represents the presentation file
-$presentation = new Java("com.aspose.slides.Presentation"), "Comments1.pptx");
+$presentation = new Java("com.aspose.slides.Presentation", "Comments1.pptx");
 try {
     for ($commentAuthor : $presentation->getCommentAuthors())
     {

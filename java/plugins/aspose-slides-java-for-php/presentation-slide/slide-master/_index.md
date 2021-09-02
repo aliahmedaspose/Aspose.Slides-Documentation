@@ -123,16 +123,16 @@ The same can be achieved with Aspose.Slides for Java:
 
 ```php
 // add images to the presentation
-IPPImage logo = $pres->getImages()->addImage(Files.readAllBytes(Paths->get("logo.png")));
-IPPImage image1 = $pres->getImages()->addImage(Files.readAllBytes(Paths->get("slides.png")));
-IPPImage image2 = $pres->getImages()->addImage(Files.readAllBytes(Paths->get("cells.png")));
-IPPImage image3 = $pres->getImages()->addImage(Files.readAllBytes(Paths->get("words.png")));
+IPPImage logo = $pres->getImages()->addImage(Files->readAllBytes(Paths->get("logo.png")));
+IPPImage image1 = $pres->getImages()->addImage(Files->readAllBytes(Paths->get("slides.png")));
+IPPImage image2 = $pres->getImages()->addImage(Files->readAllBytes(Paths->get("cells.png")));
+IPPImage image3 = $pres->getImages()->addImage(Files->readAllBytes(Paths->get("words.png")));
 
 // add these added images to the master slide
 masterSlide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 25, 25, logo);
-masterSlide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 40, 25, 25, image1);
-masterSlide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 75, 25, 25, image2);
-masterSlide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 110, 25, 25, image3);
+masterSlide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 40, 25, 25, $image1);
+masterSlide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 75, 25, 25, $image2);
+masterSlide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 110, 25, 25, $image3);
 
 // add new slides with same master slide template
 pres->getSlides()->addEmptySlide(masterSlide->getLayoutSlides()->get_Item(0));
@@ -168,9 +168,9 @@ $titlePlaceholder = masterSlide->getShapes()->get_Item(0);
 
 // format fill as gradient fill
 titlePlaceholder->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Gradient);
-titlePlaceholder->getFillFormat()->getGradientFormat()->getGradientStops()->add(0, Color.RED);
-titlePlaceholder->getFillFormat()->getGradientFormat()->getGradientStops()->add(50, Color.GREEN);
-titlePlaceholder->getFillFormat()->getGradientFormat()->getGradientStops()->add(100, Color.BLUE);
+titlePlaceholder->getFillFormat()->getGradientFormat()->getGradientStops()->add(0, Java("java.awt.Color")->RED);
+titlePlaceholder->getFillFormat()->getGradientFormat()->getGradientStops()->add(50, Java("java.awt.Color")->GREEN);
+titlePlaceholder->getFillFormat()->getGradientFormat()->getGradientStops()->add(100, Java("java.awt.Color")->BLUE);
 ```
 
 The style and formatting of the title will change for all slides, based on this Slide Master:
@@ -185,9 +185,9 @@ The style and formatting of the title will change for all slides, based on this 
 It is possible to change the background of Slide Master and make it apply to all presentation slides this way. If you change the background color of the master slide, all normal slides in the presentation will receive the same background color settings. Follow the steps below to change the background color of the master slide:
 
 ```php
-masterSlide->getBackground()->setType(BackgroundType.OwnBackground);
+masterSlide->getBackground()->setType(Java("com.aspose.slides.BackgroundType")->OwnBackground);
 masterSlide->getBackground()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-masterSlide->getBackground()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->GRAY);
+masterSlide->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->GRAY);
 ```
 
 {{% alert color="primary" title="See also" %}} 

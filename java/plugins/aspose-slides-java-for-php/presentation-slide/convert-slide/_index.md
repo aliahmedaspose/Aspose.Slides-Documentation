@@ -88,10 +88,10 @@ try {
     options->getNotesCommentsLayouting()->setCommentsAreaWidth(500);
 
     // Set the color of comments area
-    options->getNotesCommentsLayouting()->setCommentsAreaColorJava("java.awt.Color")->LIGHT_GRAY);
+    options->getNotesCommentsLayouting()->setCommentsAreaColor(Java("java.awt.Color")->LIGHT_GRAY);
 
     // Convert the first slide of the presentation to a Bitmap object
-    $bmp = $pres->getSlides()->get_Item(0)->getThumbnail(options, 2f, 2f);
+    $bmp = $pres->getSlides()->get_Item(0)->getThumbnail(options, 2, 2);
 
     // Save the image in GIF format
     Java("javax.imageio.ImageIO")->write($bmp, "GIF", new Java("java.io.File", "Slide_Notes_Comments_0.gif"));
@@ -149,11 +149,11 @@ try {
     for ($i = 0 ; i < $pres->getSlides()->size(); i++)
     {
         // Control hidden slides (do not render hidden slides)
-        if ($pres->getSlides()->get_Item(i)->getHidden())
+        if ($pres->getSlides()->get_Item($i)->getHidden())
             continue;
 
         // Convert slide to a Bitmap object
-        $bmp = $pres->getSlides()->get_Item(i)->getThumbnail(2f, 2f);
+        $bmp = $pres->getSlides()->get_Item($i)->getThumbnail(2, 2);
 		
         // Create file name for an image
         $outputFilePath = outputDir + "Slide_" + i + ".jpg";

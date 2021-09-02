@@ -39,7 +39,7 @@ Every slide in the presentation has a unique ID associated with it. The [Present
 $pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     // Getting Slide ID
-    $id = (int) $pres->getSlides()->get_Item(0)->getSlideId();
+    $id = $pres->getSlides()->get_Item(0)->getSlideId();
     
     // Accessing Slide by ID
     IBaseSlide slide = $pres->getSlideById(id);
@@ -72,7 +72,7 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
     
     // Set the new position for the slide
-    sld->setSlideNumber(2);
+    $sld->setSlideNumber(2);
     
     // Write the presentation to disk
     $pres->save("helloworld_Pos.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

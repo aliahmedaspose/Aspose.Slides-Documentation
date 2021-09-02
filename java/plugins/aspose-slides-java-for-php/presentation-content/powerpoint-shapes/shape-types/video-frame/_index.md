@@ -28,7 +28,7 @@ try {
     $vid = $pres->getVideos()->addVideo(new FileInputStream(new Java("java.io.File", "Wildlife.mp4")));
 
     // Add Video Frame
-    IVideoFrame vf = sld->getShapes()->addVideoFrame(50, 150, 300, 350, vid);
+    IVideoFrame vf = $sld->getShapes()->addVideoFrame(50, 150, 300, 350, vid);
 
     // Set video to Video Frame
     vf->setEmbeddedVideo(vid);
@@ -113,7 +113,7 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Add Video Frame
-    IVideoFrame vf = sld->getShapes()->addVideoFrame(50, 150, 300, 150, "Wildlife.mp4");
+    IVideoFrame vf = $sld->getShapes()->addVideoFrame(50, 150, 300, 150, "Wildlife.mp4");
 
     // Set Play Mode and Volume of the Video
     vf->setPlayMode(VideoPlayModePreset.Auto);
@@ -151,7 +151,7 @@ try {
                 byte[] buffer = vf->getEmbeddedVideo()->getBinaryData();
 
                 //Get File Extension
-                $charIndex = type.indexOf("/");
+                $charIndex = type->indexOf("/");
                 type = type.substring(charIndex + 1);
 
                 $fop = new Java("java.io.FileOutputStream", "testing2." + type);

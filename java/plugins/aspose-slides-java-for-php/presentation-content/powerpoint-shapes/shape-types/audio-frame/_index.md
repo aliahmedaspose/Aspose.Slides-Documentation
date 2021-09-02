@@ -28,11 +28,11 @@ try {
     $fstr = new FileInputStream(new Java("java.io.File", "audio.wav"));
 
     // Add Audio Frame
-    IAudioFrame af = sld->getShapes()->addAudioFrameEmbedded(50, 150, 100, 100, fstr);
+    $af = $sld->getShapes()->addAudioFrameEmbedded(50, 150, 100, 100, $fstr);
 
     // Set Play Mode and Volume of the Audio
-    af->setPlayMode(AudioPlayModePreset.Auto);
-    af->setVolume(AudioVolumeMode.Loud);
+    $af->setPlayMode(Java("com.aspose.slides.AudioPlayModePreset")-> Auto);
+    $af->setVolume(AudioVolumeMode.Loud);
 
     //Write the PPTX file to disk
     $pres->save("AudioFrameEmbed_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -62,7 +62,7 @@ try {
     
     //Extract sound in byte array
     byte[] audio = transition->getSound()->getBinaryData();
-    echo("Length: " + audio->length);
+    echo("Length: " + $audio->length);
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -11,14 +11,14 @@ Aspose.Slides for Java provides a simple API for getting these properties. Prope
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    Chart chart = (Chart)pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.Area, 100, 100, 500, 350);
-    chart.validateChartLayout();
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Area, 100, 100, 500, 350);
+    $chart->validateChartLayout();
     
-    $double maxValue = chart->getAxes()->getVerticalAxis()->getActualMaxValue();
-    $double minValue = chart->getAxes()->getVerticalAxis()->getActualMinValue();
+    $maxValue = $chart->getAxes()->getVerticalAxis()->getActualMaxValue();
+    $minValue = $chart->getAxes()->getVerticalAxis()->getActualMinValue();
     
-    $double majorUnit = chart->getAxes()->getHorizontalAxis()->getActualMajorUnit();
-    $double minorUnit = chart->getAxes()->getHorizontalAxis()->getActualMinorUnit();
+    $majorUnit = $chart->getAxes()->getHorizontalAxis()->getActualMajorUnit();
+    $minorUnit = $chart->getAxes()->getHorizontalAxis()->getActualMinorUnit();
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -30,58 +30,58 @@ Aspose.Slides for Java provides a simple API for getting these properties. Prop
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    Chart chart = (Chart) $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 100, 100, 500, 350);
-    chart.validateChartLayout();
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 100, 100, 500, 350);
+    $chart->validateChartLayout();
 
-    $double x = chart->getPlotArea()->getActualX();
-    $double y = chart->getPlotArea()->getActualY();
-    $double w = chart->getPlotArea()->getActualWidth();
-    $double h = chart->getPlotArea()->getActualHeight();
+    $x = $chart->getPlotArea()->getActualX();
+    $y = $chart->getPlotArea()->getActualY();
+    $w = $chart->getPlotArea()->getActualWidth();
+    $h = $chart->getPlotArea()->getActualHeight();
 } finally {
     if ($pres != null) $pres->dispose();
 }
 ```
 
 ## **Hide Information from Chart**
-This topic helps you to understand how to hide information from chart. Using Aspose.Slides for Java you can hide **Title, Vertical Axis, Horizontal Axis** and **Grid Lines** from chart. Below code example shows how to use these properties.
+This topic helps you to understand how to hide information from $chart-> Using Aspose.Slides for Java you can hide **Title, Vertical Axis, Horizontal Axis** and **Grid Lines** from $chart-> Below code example shows how to use these properties.
 
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     $slide = $pres->getSlides()->get_Item(0);
-    IChart chart = $slide->getShapes()->addChart(ChartType.LineWithMarkers, 140, 118, 320, 370);
+    $chart = $slide->getShapes()->addChart(Java("com.aspose.slides.ChartType")->LineWithMarkers, 140, 118, 320, 370);
 
     //Hiding chart Title
-    chart->setTitle(false);
+    $chart->setTitle(false);
 
     ///Hiding Values axis
-    chart->getAxes()->getVerticalAxis()->setVisible(false);
+    $chart->getAxes()->getVerticalAxis()->setVisible(false);
 
     //Category Axis visibility
-    chart->getAxes()->getHorizontalAxis()->setVisible(false);
+    $chart->getAxes()->getHorizontalAxis()->setVisible(false);
 
     //Hiding Legend
-    chart->setLegend(false);
+    $chart->setLegend(false);
 
     //Hiding MajorGridLines
-    chart->getAxes()->getHorizontalAxis()->getMajorGridLinesFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
+    $chart->getAxes()->getHorizontalAxis()->getMajorGridLinesFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
 
-    for ($i = 0; i < chart->getChartData()->getSeries()->size(); i++)
+    for ($i = 0; i < $chart->getChartData()->getSeries()->size(); i++)
     {
-        chart->getChartData()->getSeries()->removeAt(i);
+        $chart->getChartData()->getSeries()->removeAt($i);
     }
 
-    IChartSeries series = chart->getChartData()->getSeries()->get_Item(0);
+    $series = $chart->getChartData()->getSeries()->get_Item(0);
 
-    series->getMarker()->setSymbol(MarkerStyleType.Circle);
-    series->getLabels()->getDefaultDataLabelFormat()->setShowValue(true);
-    series->getLabels()->getDefaultDataLabelFormat()->setPosition(LegendDataLabelPosition.Top);
-    series->getMarker()->setSize(15);
+    $series->getMarker()->setSymbol(Java("com.aspose.slides.MarkerStyleType")->Circle);
+    $series->getLabels()->getDefaultDataLabelFormat()->setShowValue(true);
+    $series->getLabels()->getDefaultDataLabelFormat()->setPosition(Java("com.aspose.slides.LegendDataLabelPosition")->Top);
+    $series->getMarker()->setSize(15);
 
     //Setting series line color
-    series->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    series->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->MAGENTA);
-    series->getFormat()->getLine()->setDashStyle(LineDashStyle.Solid);
+    $series->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $series->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->MAGENTA);
+    $series->getFormat()->getLine()->setDashStyle(Java("com.aspose.slides.LineDashStyle")->Solid);
 
     $pres->save("HideInformationFromChart.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

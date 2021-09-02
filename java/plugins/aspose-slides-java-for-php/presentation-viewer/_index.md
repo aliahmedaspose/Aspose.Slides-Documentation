@@ -39,7 +39,7 @@ try {
     $svgStream = new Java("java.io.FileOutputStream", "Aspose_out.svg");
 
     // Generate SVG image of slide and save in memory stream
-    sld.writeAsSvg(svgStream);
+    $sld->writeAsSvg(svgStream);
 
     svgStream->close();
 } catch (JavaException $e) {
@@ -59,7 +59,7 @@ try {
         SVGOptions svgOptions = new SVGOptions();
         svgOptions->setShapeFormattingController(new CustomSvgShapeFormattingController());
 
-        $pres->getSlides()->get_Item(0).writeAsSvg(stream, svgOptions);
+        $pres->getSlides()->get_Item(0)->writeAsSvg($stream, svgOptions);
     } finally {
         if ($stream != null) stream->close();
     }
@@ -106,7 +106,7 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Create a full scale image
-    $bmp = sld->getThumbnail(1f, 1f);
+    $bmp = $sld->getThumbnail(1, 1);
 
     // Save the image to disk in JPEG format
     Java("javax.imageio.ImageIO")->write($bmp, "PNG", new Java("java.io.File", "Thumbnail_out.png"));
@@ -139,7 +139,7 @@ try {
     $ScaleY = (1.0 / $pres->getSlideSize()->getSize()->getHeight()) * desiredY;
     
     // Create a full scale image
-    $bmp = sld->getThumbnail(ScaleX, ScaleY);
+    $bmp = $sld->getThumbnail(ScaleX, ScaleY);
 
     // Save the image to disk in JPEG format
     Java("javax.imageio.ImageIO")->write($bmp, "PNG", new Java("java.io.File", "Thumbnail_out.png"));
@@ -178,7 +178,7 @@ try {
     opts->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomTruncated);
     
     // Create a full scale image
-    $bmp = sld->getThumbnail(opts, ScaleX, ScaleY);
+    $bmp = $sld->getThumbnail(opts, ScaleX, ScaleY);
 
     // Save the image to disk in JPEG format
     Java("javax.imageio.ImageIO")->write($bmp, "PNG", new Java("java.io.File", "Thumbnail_out.png"));

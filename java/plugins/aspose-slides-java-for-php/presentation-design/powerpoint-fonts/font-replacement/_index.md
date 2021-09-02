@@ -21,10 +21,10 @@ The implementation of the above steps is given below.
 $pres = new Java("com.aspose.slides.Presentation", "Fonts.pptx");
 try {
     // Load source font to be replaced
-    IFontData sourceFont = new  Java("com.aspose.slides.FontData"), "Arial");
+    $sourceFont = new  Java("com.aspose.slides.FontData", "Arial");
     
     // Load the replacing font
-    IFontData destFont = new  Java("com.aspose.slides.FontData"), "Times New Roman");
+    $destFont = new  Java("com.aspose.slides.FontData", "Times New Roman");
     
     // Replace the fonts
     $pres->getFontsManager().replaceFont(sourceFont, destFont);

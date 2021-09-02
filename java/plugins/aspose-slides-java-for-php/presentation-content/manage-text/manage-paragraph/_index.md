@@ -37,44 +37,44 @@ try {
 
     // Create Paragraphs and Portions with different text formats
     $para0 = $tf->getParagraphs()->get_Item(0);
-    $port01 = new Portion();
-    $port02 = new Portion();
-    para0->getPortions()->add(port01);
-    para0->getPortions()->add(port02);
+    $port01 = new Java("com.aspose.slides.Portion");
+    $port02 = new Java("com.aspose.slides.Portion");
+    para0->getPortions()->add($port01);
+    para0->getPortions()->add($port02);
 
     $para1 = new Java("com.aspose.slides.Paragraph");
     $tf->getParagraphs()->add($para1);
-    $port10 = new Portion();
-    $port11 = new Portion();
-    $port12 = new Portion();
-    $para2->getPortions()->add(port10);
-    $para2->getPortions()->add(port11);
-    $para2->getPortions()->add(port12);
+    $port10 = new Java("com.aspose.slides.Portion");
+    $port11 = new Java("com.aspose.slides.Portion");
+    $port12 = new Java("com.aspose.slides.Portion");
+    $para2->getPortions()->add($port10);
+    $para2->getPortions()->add($port11);
+    $para2->getPortions()->add($port12);
 
     $para2 = new Java("com.aspose.slides.Paragraph");
     $tf->getParagraphs()->add($para2);
-    $port20 = new Portion();
-    $port21 = new Portion();
-    $port22 = new Portion();
-    para2->getPortions()->add(port20);
-    para2->getPortions()->add(port21);
-    para2->getPortions()->add(port22);
+    $port20 = new Java("com.aspose.slides.Portion");
+    $port21 = new Java("com.aspose.slides.Portion");
+    $port22 = new Java("com.aspose.slides.Portion");
+    $para2->getPortions()->add($port20);
+    $para2->getPortions()->add($port21);
+    $para2->getPortions()->add($port22);
 
     for ($i = 0; i < 3; i++) 
     {
         for ($j = 0; j < 3; j++) 
         {
-            $portion = $tf->getParagraphs()->get_Item(i)->getPortions()->get_Item(j); 
+            $portion = $tf->getParagraphs()->get_Item($i)->getPortions()->get_Item($j); 
             $portion->setText("Portion0" + j);
             if ($j == 0) {
                 $portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-                $portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
-                $portion->getPortionFormat()->setFontBold(NullableBool.True);
+                $portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
+                $portion->getPortionFormat()->setFontBold(Java("com.aspose.slides.NullableBool")->True);
                 $portion->getPortionFormat()->setFontHeight(15);
             } else if ($j == 1) {
                 $portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-                $portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLUE);
-                $portion->getPortionFormat()->setFontItalic(NullableBool.True);
+                $portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLUE);
+                $portion->getPortionFormat()->setFontItalic(Java("com.aspose.slides.NullableBool")->True);
                 $portion->getPortionFormat()->setFontHeight(18);
             }
         }
@@ -108,13 +108,13 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
     
     // Add a Rectangle Shape
-    $rect = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 500, 150);
+    $rect = $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 500, 150);
     
     // Add TextFrame to the Rectangle
     $tf = rect->addTextFrame("This is first line \rThis is second line \rThis is third line");
     
     // Set the text to fit the shape
-    $tf->getTextFrameFormat()->setAutofitType(TextAutofitType.Shape);
+    $tf->getTextFrameFormat()->setAutofitType(Java("com.aspose.slides.TextAutofitType")->Shape);
     
     // Hide the lines of the Rectangle
     rect->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
@@ -131,11 +131,11 @@ try {
     
     // Get second Paragraph in the TextFrame and set its Indent
     $para2 = $tf->getParagraphs()->get_Item(1);
-    para2->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    para2->getParagraphFormat()->getBullet()->setChar((char)8226);
-    para2->getParagraphFormat()->setAlignment(Java("com.aspose.slides.TextAlignment")->Left);
-    para2->getParagraphFormat()->setDepth((short)2);
-    para2->getParagraphFormat()->setIndent(40);
+    $para2->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
+    $para2->getParagraphFormat()->getBullet()->setChar((char)8226);
+    $para2->getParagraphFormat()->setAlignment(Java("com.aspose.slides.TextAlignment")->Left);
+    $para2->getParagraphFormat()->setDepth((short)2);
+    $para2->getParagraphFormat()->setIndent(40);
     
     // Get third Paragraph in the TextFrame and set its Indent
     $para3 = $tf->getParagraphs()->get_Item(2);
@@ -171,15 +171,15 @@ try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 200, 250);
 
     $para1 = new Java("com.aspose.slides.Paragraph");
-    $para2->getPortions()->add(new Java("com.aspose.slides.Portion"), "Sample text"));
+    $para2->getPortions()->add(new Java("com.aspose.slides.Portion", "Sample text"));
 
     $para2 = new Java("com.aspose.slides.Paragraph");
-    para2->getPortions()->add(new Java("com.aspose.slides.Portion"), "Sample text 2"));
+    $para2->getPortions()->add(new Java("com.aspose.slides.Portion", "Sample text 2"));
 
     $portionFormat = new Java("com.aspose.slides.PortionFormat");
     $portionFormat->setFontHeight(48);
-    $portionFormat->setLatinFont(new  Java("com.aspose.slides.FontData"), "Times New Roman"));
-    para2->setEndParagraphPortionFormat(portionFormat);
+    $portionFormat->setLatinFont(new  Java("com.aspose.slides.FontData", "Times New Roman"));
+    $para2->setEndParagraphPortionFormat($portionFormat);
 
     $shape->getTextFrame()->getParagraphs()->add($para1);
     $shape->getTextFrame()->getParagraphs()->add($para2);
@@ -214,7 +214,7 @@ try {
 
     // Adding the AutoShape to accomodate the HTML content
     $ashape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10,
-            pres->getSlideSize()->getSize()->getWidth() - 20, pres->getSlideSize()->getSize()->getHeight() - 10);
+            $pres->getSlideSize()->getSize()->getWidth() - 20, $pres->getSlideSize()->getSize()->getHeight() - 10);
 
     $ashape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
 
@@ -228,7 +228,7 @@ try {
     $tr = new StreamReader("file.html");
 
     // Adding text from HTML stream reader in text frame
-    $ashape->getTextFrame()->getParagraphs()->addFromHtml($tr.readToEnd());
+    $ashape->getTextFrame()->getParagraphs()->addFromHtml($tr->readToEnd());
 
     // Saving Presentation
     $pres->save("output_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -260,16 +260,16 @@ try {
     $index = 0;
 
     // Accessing the added shape
-    $ashape = $slide->getShapes()->get_Item(index);
+    $ashape = $slide->getShapes()->get_Item($index);
 
     // Creating output HTML file
     $os = new Java("java.io.FileOutputStream", "output.html");
-    Writer writer = new OutputStreamWriter(os, "UTF-8");
+    $writer = new Java("java.io.OutputStreamWriter", os, "UTF-8");
 
     //Extracting first paragraph as HTML
     // Writing Paragraphs data to HTML by providing paragraph starting index, total paragraphs to be copied
-    writer->write(ashape->getTextFrame()->getParagraphs().exportToHtml(0, $ashape->getTextFrame()->getParagraphs()->getCount(), null));
-    writer->close();
+    $writer->write($ashape->getTextFrame()->getParagraphs().exportToHtml(0, $ashape->getTextFrame()->getParagraphs()->getCount(), null));
+    $writer->close();
 } catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();

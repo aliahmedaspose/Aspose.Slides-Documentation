@@ -24,10 +24,10 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Accessing the shape collection of slides
-    IShapeCollection slideShapes = sld->getShapes();
+    $slideShapes = $sld->getShapes();
 
     // Adding a group shape to the slide
-    IGroupShape groupShape = slideShapes.addGroupShape();
+    IGroupShape groupShape = slideShapes->addGroupShape();
     
     // Adding shapes inside Added group shape
     groupShape->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 300, 100, 100, 100);
@@ -36,7 +36,7 @@ try {
     groupShape->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 500, 300, 100, 100);
 
     // Adding group shape frame
-    groupShape->setFrame(new ShapeFrame(100, 300, 500, 40, NullableBool.False, NullableBool.False, 0));
+    groupShape->setFrame(new Java("com.aspose.slides.ShapeFrame", 100, 300, 500, 40, Java("com.aspose.slides.NullableBool")->False, Java("com.aspose.slides.NullableBool")->False, 0));
 
     // Write the PPTX file to disk
     $pres->save("GroupShape.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -63,10 +63,10 @@ try {
     // Get the first slide
     $sld = $pres->getSlides()->get_Item(0);
     
-    for ($i = 0; i < sld->getShapes()->size(); i++)
+    for ($i = 0; i < $sld->getShapes()->size(); i++)
     {
         // Accessing the shape collection of slides
-        $shape = sld->getShapes()->get_Item(i);
+        $shape = $sld->getShapes()->get_Item($i);
     
         if ($shape instanceof GroupShape)
         {
@@ -74,7 +74,7 @@ try {
             IGroupShape grphShape = (IGroupShape)shape;
             for ($j = 0; j < grphShape->getShapes()->size(); j++)
             {
-                $shape2 = grphShape->getShapes()->get_Item(j);
+                $shape2 = grphShape->getShapes()->get_Item($j);
                 
                 // Accessing the AltText property
                 echo(shape2->getAlternativeText());

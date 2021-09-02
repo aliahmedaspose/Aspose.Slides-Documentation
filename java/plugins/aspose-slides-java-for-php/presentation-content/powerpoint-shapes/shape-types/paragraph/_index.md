@@ -12,7 +12,7 @@ Using Aspose.Slides for Java, developers can now get the rectangular coordinates
 ```php
 AutoShape shape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
 TextFrame textFrame = (TextFrame)shape->getTextFrame();
-for ($paragraph : textFrame->getParagraphs()){
+for ($paragraph : $textFrame->getParagraphs()){
   for ($portion : paragraph->getPortions()){
     $point = $portion->getCoordinates();
   }
@@ -28,7 +28,7 @@ $pres = new Java("com.aspose.slides.Presentation", "HelloWorld.pptx");
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     $textFrame = $shape->getTextFrame();
-    $rect = textFrame->getParagraphs()->get_Item(0)->getRect();
+    $rect = $textFrame->getParagraphs()->get_Item(0)->getRect();
     echo("X: " + rect.x + " Y: " + rect.y + " Width: " + rect.width + " Height: " + rect.height);
 } finally {
     if ($pres != null) $pres->dispose();
@@ -47,10 +47,10 @@ try {
     $tbl = (Table)pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     $cell = $tbl->getRows()->get_Item(1)->get_Item(1);
 
-    $double x = $tbl->getX() + $tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetX();
-    $double y = $tbl->getY() + $tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetY();
+    $x = $tbl->getX() + $tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetX();
+    y = $tbl->getY() + $tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetY();
 
-    for ($para : cell->getTextFrame()->getParagraphs())
+    for ($para : $cell->getTextFrame()->getParagraphs())
     {
         if ($para->getText() == (""))
             continue;
@@ -61,7 +61,7 @@ try {
                         rect->getX() + x, rect->getY() + y, rect->getWidth(), rect->getHeight());
 
         $shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
-        $shape->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->YELLOW);
+        $shape->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->YELLOW);
         $shape->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
         for ($portion : $para->getPortions())

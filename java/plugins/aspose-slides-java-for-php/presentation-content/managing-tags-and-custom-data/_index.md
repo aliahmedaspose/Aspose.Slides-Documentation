@@ -47,7 +47,7 @@ This sample code shows you how to add a tag to a [Presentation](https://apirefer
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
-    ITagCollection tags = $pres->getCustomData()->getTags();
+    $tags = $pres->getCustomData()->getTags();
     $pres->getCustomData()->getTags()->set_Item("MyTag", "My Tag Value");
 } finally {
     if ($pres != null) $pres->dispose();

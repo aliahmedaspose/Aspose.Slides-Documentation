@@ -48,7 +48,7 @@ try {
 
     // iterate through the videos
     for ($index = 0; index < $pres->getVideos()->size(); index++) {
-        $video = $pres->getVideos()->get_Item(index);
+        $video = $pres->getVideos()->get_Item($index);
 
         // open the presentation video stream. Please note that we intentionally avoid accessing properties
         // like video.BinaryData - this property returns a byte array containing full video, and that means
@@ -59,7 +59,7 @@ try {
             $outputFileStream = new Java("java.io.FileOutputStream", "video" + index + ".avi");
             try {
                 $bytesRead;
-                while ((bytesRead = presVideoStream.read(buffer, 0, buffer->length)) > 0) {
+                while ((bytesRead = presVideoStream->read(buffer, 0, buffer->length)) > 0) {
                     $outputFileStream->write(buffer, 0, bytesRead);
                 }
             } finally {

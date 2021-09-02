@@ -47,9 +47,9 @@ public static void updateHeaderFooterText(IBaseSlide master)
     {
         if ($shape.Placeholder != null)
         {
-            if ($shape.Placeholder.Type == PlaceholderType.Header)
+            if ($shape.Placeholder.Type == Java("com.aspose.slides.PlaceholderType")->Header)
             {
-                ($shape).TextFrame.Text = "HI there new header";
+                $shape.TextFrame.Text = "HI there new header";
             }
         }
     }

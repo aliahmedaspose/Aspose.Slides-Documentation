@@ -29,8 +29,8 @@ public void lineTo(float x, float y);
 ```
 **Adds line** to the specified place of the path:
 ```php    
-public void lineTo($point, long index);
-public void lineTo(float x, float y, long index);
+public void lineTo($point, $index);
+public void lineTo(float x, float y, $index);
 ```
 **Adds cubic Bezier curve** at the end the path:
 ```php
@@ -39,8 +39,8 @@ public void cubicBezierTo(float x1, float y1, float x2, float y2, float x3, floa
 ```
 **Adds cubic Bezier curve** to the specified place of the path:
 ```php
-public void cubicBezierTo($point1, $point2, $point3, long index);
-public void cubicBezierTo(float x1, float y1, float x2, float y2, float x3, float y3, long index);
+public void cubicBezierTo($point1, $point2, $point3, $index);
+public void cubicBezierTo(float x1, float y1, float x2, float y2, float x3, float y3, $index);
 ```
 **Adds quadratic Bezier curve** at the end the path:
 ```php
@@ -49,8 +49,8 @@ public void quadraticBezierTo(float x1, float y1, float x2, float y2);
 ```
 **Adds quadratic Bezier curve** to the specified place of the path:
 ```php
-public void quadraticBezierTo($point1, $point2, long index);
-public void quadraticBezierTo(float x1, float y1, float x2, float y2, long index);
+public void quadraticBezierTo($point1, $point2, $index);
+public void quadraticBezierTo(float x1, float y1, float x2, float y2, $index);
 ```
 **Appends the specified arc** to the path:
 ```php
@@ -89,9 +89,9 @@ Method [IGeometryPath->getPathData](https://apireference.aspose.com/slides/java/
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0).
+    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0)->
             getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 200, 100);
-    IGeometryPath geometryPath = $shape->getGeometryPaths()[0];
+    $geometryPath = $shape->getGeometryPaths()[0];
 
     geometryPath.lineTo(100, 50, 1);
     geometryPath.lineTo(100, 50, 4);
@@ -113,11 +113,11 @@ try {
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0).
+    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0)->
             getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Heart, 100, 100, 300, 300);
 
-    IGeometryPath path = $shape->getGeometryPaths()[0];
-    path.removeAt(2);
+    $path = $shape->getGeometryPaths()[0];
+    path->removeAt(2);
     $shape->setGeometryPath($path);
 } finally {
     if ($pres != null) $pres->dispose();
@@ -141,30 +141,30 @@ int step = 72;
 
 for ($angle = -90; angle < 270; angle += step)
 {
-    $double radians = angle * (M_PI / 180f);
-    $double x = R * cos(radians);
-    $double y = R * sin(radians);
-    points.add(Java("java.awt.geom.Point2D")->Float(x + R, y + R));
+    radians = angle * (M_PI / 180);
+    $x = R * cos(radians);
+    y = R * sin(radians);
+    points->add(Java("java.awt.geom.Point2D")->Float(x + R, y + R));
 
     radians = M_PI * (angle + step / 2) / 180.0;
-    x = r * cos(radians);
+    $x = r * cos(radians);
     y = r * sin(radians);
-    points.add(Java("java.awt.geom.Point2D")->Float(x + R, y + R));
+    points->add(Java("java.awt.geom.Point2D")->Float(x + R, y + R));
 }
 
 GeometryPath starPath = new GeometryPath();
 starPath.moveTo(points->get(0));
 
-for ($i = 1; i < points->size(); i++)
+for ($i = 1; i < $points->size(); i++)
 {
-    starPath.lineTo(points->get(i));
+    starPath.lineTo(points->get($i));
 }
 
 starPath.closeFigure();
 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0).
+    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0)->
             getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, R * 2, R * 2);
 
     $shape->setGeometryPath(starPath);
@@ -186,7 +186,7 @@ try {
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0).
+    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0)->
             getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 200, 100);
 
     GeometryPath geometryPath0 = new GeometryPath();
@@ -221,31 +221,31 @@ try {
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Create new shape
-    GeometryShape shape = (GeometryShape)pres->getSlides()->get_Item(0).
+    GeometryShape shape = (GeometryShape)pres->getSlides()->get_Item(0)->
             getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 300, 100);
 
     // Get geometry path of the shape
-    IGeometryPath originalPath = $shape->getGeometryPaths()[0];
+    $originalPath = $shape->getGeometryPaths()[0];
     originalPath->setFillMode(PathFillModeType.None);
 
     // Create new graphics path with text
     Shape graphicsPath;
-    Font font = new java.awt.Font("Arial", Font.PLAIN, 40);
+    $font = Java("java.awt.Font", "Arial", Font.PLAIN, 40);
     $text = "Text in shape";
-    $img = new BufferedImage(100, 100, BufferedImage.TYPE_INT_ARGB);
+    $img = new BufferedImage(100, 100, Java("java.awt.image.BufferedImage")->TYPE_INT_ARGB);
     Graphics2D g2 = img.createGraphics();
 
     try
     {
         GlyphVector glyphVector = font.createGlyphVector(g2->getFontRenderContext(), text);
-        graphicsPath = glyphVector->getOutline(20f, (-glyphVector->getVisualBounds()->getY()) + 10);
+        graphicsPath = glyphVector->getOutline(20, (-glyphVector->getVisualBounds()->getY()) + 10);
     }
     finally {
         g2.dispose();
     }
 
     // Convert graphics path to geometry path
-    IGeometryPath textPath = ShapeUtil.graphicsPathToGeometryPath(graphicsPath);
+    $textPath = ShapeUtil->graphicsPathToGeometryPath(graphicsPath);
     textPath->setFillMode(PathFillModeType.Normal);
 
     // Set combination of new geometry path and origin geometry path to the shape

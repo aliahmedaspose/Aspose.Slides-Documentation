@@ -38,10 +38,10 @@ $pres = new Java("com.aspose.slides.Presentation", "PowerPoint-Presentation.pptx
 try {
     for ($sld : $pres->getSlides()) {
         // Create a full scale image
-        $bmp = sld->getThumbnail(1f, 1f);
+        $bmp = $sld->getThumbnail(1, 1);
 
         // Save the image to disk in JPEG format
-        Java("javax.imageio.ImageIO")->write($bmp, "JPEG", new File(String.format("Slide_%d.jpg", sld->getSlideNumber())));
+        Java("javax.imageio.ImageIO")->write($bmp, "JPEG", new File(String.format("Slide_%d.jpg", $sld->getSlideNumber())));
     }
 } catch (JavaException $e) {
 } finally {
@@ -65,10 +65,10 @@ try {
     for ($sld : $pres->getSlides())
     {
         // Create a full scale image
-        $bmp = sld->getThumbnail(ScaleX, ScaleY);
+        $bmp = $sld->getThumbnail(ScaleX, ScaleY);
 
         // Save the image to disk in JPEG format
-        Java("javax.imageio.ImageIO")->write($bmp, "JPEG", new File(String.format("Slide_%d.jpg", sld->getSlideNumber())));
+        Java("javax.imageio.ImageIO")->write($bmp, "JPEG", new File(String.format("Slide_%d.jpg", $sld->getSlideNumber())));
     }
 } catch (JavaException $e) {
 } finally {
@@ -86,15 +86,15 @@ try {
     opts->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomTruncated);
 
     for ($sld : $pres->getSlides()) {
-        $image = new BufferedImage(740, 960, BufferedImage.TYPE_INT_ARGB);
-        java.awt.Graphics graphics = image.createGraphics();
+        $image = new BufferedImage(740, 960, Java("java.awt.image.BufferedImage")->TYPE_INT_ARGB);
+        $graphics = image.createGraphics();
         try {
 
-            $pres->getSlides()->get_Item(0).renderToGraphics(opts, (Graphics2D) graphics);
+            $pres->getSlides()->get_Item(0)->renderToGraphics(opts, (Graphics2D) graphics);
         } finally {
-            if ($graphics != null) graphics.dispose();
+            if ($graphics != null) $graphics->dispose();
         }
-        Java("javax.imageio.ImageIO")->write($image,"png", new File(String.format("Slide_%d.png", sld->getSlideNumber())));
+        Java("javax.imageio.ImageIO")->write($image,"png", new File(String.format("Slide_%d.png", $sld->getSlideNumber())));
     }
 } catch (JavaException $e) {
 } finally {

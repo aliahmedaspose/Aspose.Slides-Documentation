@@ -76,7 +76,7 @@ You can change the font of text watermark:
 ```php
 $watermarkPortion = watermarkTextFrame->getParagraphs()->get_Item(0)->getPortions()->get_Item(0);
 
-$watermarkPortion->getPortionFormat()->setFontBold(NullableBool.True);
+$watermarkPortion->getPortionFormat()->setFontBold(Java("com.aspose.slides.NullableBool")->True);
 
 $watermarkPortion->getPortionFormat()->setFontHeight(52);
 ``` 
@@ -108,7 +108,7 @@ $width = 300;
 
 $height = 300;
 
-float x = center->getX() - width / 2;
+float $x = center->getX() - width / 2;
 
 float y = center->getY() - height / 2;
 
@@ -125,7 +125,7 @@ $watermarkShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.Shap
 To add image watermark into all presentation slides, you may do the following:
 
 ```php
-$image = $pres->getImages()->addImage(Files.readAllBytes(Paths->get("watermark.png")));
+$image = $pres->getImages()->addImage(Files->readAllBytes(Paths->get("watermark.png")));
 
 
 // ...
@@ -166,7 +166,7 @@ $watermarkShape->getShapeLock()->setGroupingLocked(true);
 In Aspose.Slides the Z-Order of shapes can be set via [**SlideCollection.reorder**](https://apireference.aspose.com/slides/java/com.aspose.slides/SlideCollection#reorder-int-com.aspose.slides.ISlide...-) method. For that, you need to call this method from presentation slides list and pass shape reference and its order number into the method. This way its possible to put shape to the front or back of the slide. This feature is especially useful if you need to place watermark on front of presentation:
 
 ```php
-slide->getShapes().reorder(slide->getShapes()->size() - 1, watermarkShape);
+slide->getShapes()->reorder($slide->getShapes()->size() - 1, watermarkShape);
 ``` 
 
 
@@ -188,13 +188,13 @@ $watermarkShape->setRotation(calculateRotation(h, w));
 ```php
 private int calculateRotation($height, $width)
 {
-    $double pageHeight = height;
+    pageHeight = height;
     
-    $double pageWidth = width;
+    pageWidth = width;
     
-    $double rotation = atan(($pageHeight / pageWidth)) * 180 / M_PI;
+    rotation = atan(($pageHeight / pageWidth)) * 180 / M_PI;
     
-    return (int) rotation;
+    return rotation;
 }
 ``` 
 
@@ -215,7 +215,7 @@ To remove watermark shape and its child controls from slide, use [AutoShape->get
 ```php
 for ($i = 0; i < $slide->getShapes()->size(); i++)
 {
-    $shape = $slide->getShapes()->get_Item(i);
+    $shape = $slide->getShapes()->get_Item($i);
 
     if ("watermark" == ($shape->getName()))
     {

@@ -17,21 +17,21 @@ The following example includes these steps:
 IFontFallBackRulesCollection rulesList = new FontFallBackRulesCollection();
 
 // create a number of rules
-rulesList.add(new FontFallBackRule(0x400, 0x4FF, "Times New Roman"));
+rulesList->add(new FontFallBackRule(0x400, 0x4FF, "Times New Roman"));
 
 for (IFontFallBackRule fallBackRule : rulesList)
 {
     //Trying to remove FallBack font "Tahoma" from loaded rules
-    fallBackRule.remove("Tahoma");
+    fallBackRule->remove("Tahoma");
 
     //And to update of rules for specified range
     if ($(fallBackRule->getRangeEndIndex() >= 0x4000) && (fallBackRule->getRangeStartIndex() < 0x5000))
-        fallBackRule.addFallBackFonts("Verdana");
+        fallBackRule->addFallBackFonts("Verdana");
 }
 
 //Also we can remove any existing rules from list
 if ($rulesList->size() > 0)
-    rulesList.remove(rulesList->get_Item(0));
+    rulesList->remove(rulesList->get_Item(0));
 
 $pres = new Java("com.aspose.slides.Presentation", "input.pptx");
 try {
@@ -39,7 +39,7 @@ try {
     $pres->getFontsManager()->setFontFallBackRulesCollection(rulesList);
 
     // Rendering of thumbnail with using of initialized rules collection and saving to PNG
-    Java("javax.imageio.ImageIO")->write($pres->getSlides()->get_Item(0)->getThumbnail(1f, 1f), 
+    Java("javax.imageio.ImageIO")->write($pres->getSlides()->get_Item(0)->getThumbnail(1, 1), 
             "PNG", new Java("java.io.File", "Slide_0.png"));
 } catch (JavaException $e) {
 } finally {

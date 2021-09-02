@@ -22,7 +22,7 @@ try {
     IFontData[] embeddedFonts = fontsManager->getEmbeddedFonts();
 
     // find "Calibri" font
-    IFontData calibriEmbeddedFont = null;
+    $calibriEmbeddedFont = null;
     for ($i = 0; i < embeddedFonts->length; i++) {
         echo(""+ embeddedFonts[i]->getFontName());
         if ("Calibri" == (embeddedFonts[i]->getFontName())) {
@@ -40,7 +40,7 @@ try {
 
     // save the presentation without embedded "Calibri" font
     $pres->save("WithoutManageEmbeddedFonts_out.ppt", Java("com.aspose.slides.SaveFormat")->Ppt);
-} catch(IOException e) {
+} catch(JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -56,7 +56,7 @@ try {
     IFontData[] allFonts = $pres->getFontsManager()->getFonts();
     IFontData[] embeddedFonts = $pres->getFontsManager()->getEmbeddedFonts();
 
-    for (IFontData font : allFonts)
+    for ($font : allFonts)
     {
         $embeddedFontsContainsFont = false;
         for ($i = 0; i < embeddedFonts->length; i++)

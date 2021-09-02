@@ -27,7 +27,7 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Now create effect "PathFootball" for existing shape from scratch.
-    $ashp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 150, 250, 25);
+    $ashp = $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 150, 150, 250, 25);
     $ashp->addTextFrame("Animated TextBox");
 
     // Add PathFootBall animation effect
@@ -41,17 +41,17 @@ try {
     $seqInter = $pres->getSlides()->get_Item(0)->getTimeline()->getInteractiveSequences()->add(shapeTrigger);
 
     // Create custom user path. Our object will be moved only after "button" click.
-    $fxUserPath = seqInter.addEffect($ashp, Java("com.aspose.slides.EffectType")->PathUser, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->OnClick);
+    $fxUserPath = seqInter->addEffect($ashp, Java("com.aspose.slides.EffectType")->PathUser, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->OnClick);
 
     // Created path is empty so we should add commands for moving.
-    IMotionEffect motionBhv = ((IMotionEffect)fxUserPath->getBehaviors()->get_Item(0));
+    $motionBhv = ($fxUserPath->getBehaviors()->get_Item(0));
 
     Point2D.Float[] pts = new Point2D.Float[1];
-    pts[0] = Java("java.awt.geom.Point2D")->Float(0.076f, 0.59f);
-    motionBhv->getPath()->add(MotionCommandPathType.LineTo, pts, MotionPathPointsType.Auto, true);
-    pts[0] = Java("java.awt.geom.Point2D")->Float(-0.076f, -0.59f);
-    motionBhv->getPath()->add(MotionCommandPathType.LineTo, pts, MotionPathPointsType.Auto, false);
-    motionBhv->getPath()->add(MotionCommandPathType.End, null, MotionPathPointsType.Auto, false);
+    pts[0] = Java("java.awt.geom.Point2D")->Float(0.076, 0.59);
+    $motionBhv->getPath()->add(Java("com.aspose.slides.MotionCommandPathType")-> LineTo, pts, Java("com.aspose.slides.MotionPathPointsType")-> Auto, true);
+    pts[0] = Java("java.awt.geom.Point2D")->Float(-0.076, -0.59);
+    $motionBhv->getPath()->add(Java("com.aspose.slides.MotionCommandPathType")-> LineTo, pts, Java("com.aspose.slides.MotionPathPointsType")-> Auto, false);
+    $motionBhv->getPath()->add(Java("com.aspose.slides.MotionCommandPathType")-> End, null, Java("com.aspose.slides.MotionPathPointsType")-> Auto, false);
 
     //Write the presentation as PPTX to disk
     $pres->save("AnimExample_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

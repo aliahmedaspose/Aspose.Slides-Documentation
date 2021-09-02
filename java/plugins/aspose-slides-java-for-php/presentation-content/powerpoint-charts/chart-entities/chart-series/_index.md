@@ -19,13 +19,13 @@ Aspose.Slides for Java provides a simple API interface to set chart series overl
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Adding chart
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 50, 50, 600, 400, true);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 50, 50, 600, 400, true);
 
-    IChartSeriesCollection series = chart->getChartData()->getSeries();
+    $series = $chart->getChartData()->getSeries();
     
     if ($series->get_Item(0)->getOverlap() == 0) {
         // Setting series overlap
-        series->get_Item(0)->getParentSeriesGroup()->setOverlap((byte) -30);
+        $series->get_Item(0)->getParentSeriesGroup()->setOverlap((byte) -30);
     }
 
     // Saving presentation
@@ -40,7 +40,7 @@ Aspose.Slides for Java provides support for changing series color. 
 
 1. Instantiate [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class object.
 1. Add chart on the slide.
-1. Access specific series of chart.
+1. Access specific series of $chart->
 1. Set fill type and fill color.
 1. Save modified presentation.
 
@@ -50,13 +50,13 @@ Below sample example is given. 
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.Pie, 50, 50, 600, 400);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Pie, 50, 50, 600, 400);
 
-    IChartDataPoint point = chart->getChartData()->getSeries()->get_Item(0)->getDataPoints()->get_Item(1);
+    $point = $chart->getChartData()->getSeries()->get_Item(0)->getDataPoints()->get_Item(1);
 
-    point->setExplosion(30);
-    point->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    point->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->BLUE);
+    $point->setExplosion(30);
+    $point->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $point->getFormat()->getFill()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLUE);
     
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -69,7 +69,7 @@ Aspose.Slides for Java provides support for changing color of categories in a se
 
 1. Instantiate [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class object.
 1. Add chart on the slide.
-1. Access specific series of chart.
+1. Access specific series of $chart->
 1. Set fill type and fill color.
 1. Save modified presentation.
 
@@ -79,13 +79,13 @@ Below sample example is given. 
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 50, 50, 600, 400);
 
-    IChartDataPoint point = chart->getChartData()->getSeries()->get_Item(0)->getDataPoints()->get_Item(0);
+    $point = $chart->getChartData()->getSeries()->get_Item(0)->getDataPoints()->get_Item(0);
 
-    point->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $point->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-    point->getFormat()->getFill()->getSolidFillColor()->setColorJava("java.awt.Color")->BLUE);
+    $point->getFormat()->getFill()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLUE);
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
@@ -97,7 +97,7 @@ Aspose.Slides for Java provides a simple API for setting automatic fill color fo
 
 1. Create an instance of the [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class.
 1. Obtain a slide's reference by its index.
-1. Add a chart with default data along with the any of desired type (this example uses **ChartType.ClusteredColumn**).
+1. Add a chart with default data along with the any of desired type (this example uses **Java("com.aspose.slides.ChartType")->ClusteredColumn**).
 1. Accessing the chart series and setting the fill color to Automatic.
 1. Save the presentation to a PPTX file.
 
@@ -106,11 +106,11 @@ Aspose.Slides for Java provides a simple API for setting automatic fill color fo
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Creating a clustered column chart
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 100, 50, 600, 400);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 100, 50, 600, 400);
 
     // Setting series fill format to automatic
-    for ($i = 0; i < chart->getChartData()->getSeries()->size(); i++) {
-        chart->getChartData()->getSeries()->get_Item(i)->getAutomaticSeriesColor();
+    for ($i = 0; i < $chart->getChartData()->getSeries()->size(); i++) {
+        $chart->getChartData()->getSeries()->get_Item($i)->getAutomaticSeriesColor();
     }
 
     // Saving presentation
@@ -125,7 +125,7 @@ Aspose.Slides for Java provides a simple API for setting invert fill color for c
 
 1. Create an instance of the [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class.
 1. Obtain a slide's reference by its index.
-1. Add a chart with default data along with the any of desired type (this example uses **ChartType.ClusteredColumn**).
+1. Add a chart with default data along with the any of desired type (this example uses **Java("com.aspose.slides.ChartType")->ClusteredColumn**).
 1. Accessing the chart series and setting the fill color to invert.
 1. Save the presentation to a PPTX file.
 
@@ -133,30 +133,30 @@ Aspose.Slides for Java provides a simple API for setting invert fill color for c
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 100, 100, 400, 300);
-    IChartDataWorkbook workBook = chart->getChartData()->getChartDataWorkbook();
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 100, 100, 400, 300);
+    $workBook = $chart->getChartData()->getChartDataWorkbook();
 
-    chart->getChartData()->getSeries()->clear();
-    chart->getChartData()->getCategories()->clear();
+    $chart->getChartData()->getSeries()->clear();
+    $chart->getChartData()->getCategories()->clear();
 
     // Adding new series and categories
-    chart->getChartData()->getSeries()->add(workBook->getCell(0, 0, 1, "Series 1"), chart->getType());
-    chart->getChartData()->getCategories()->add(workBook->getCell(0, 1, 0, "Category 1"));
-    chart->getChartData()->getCategories()->add(workBook->getCell(0, 2, 0, "Category 2"));
-    chart->getChartData()->getCategories()->add(workBook->getCell(0, 3, 0, "Category 3"));
+    $chart->getChartData()->getSeries()->add(workBook->getCell(0, 0, 1, "Series 1"), $chart->getType());
+    $chart->getChartData()->getCategories()->add(workBook->getCell(0, 1, 0, "Category 1"));
+    $chart->getChartData()->getCategories()->add(workBook->getCell(0, 2, 0, "Category 2"));
+    $chart->getChartData()->getCategories()->add(workBook->getCell(0, 3, 0, "Category 3"));
 
     // Take first chart series and populating series data.
-    IChartSeries series = chart->getChartData()->getSeries()->get_Item(0);
-    series->getDataPoints()->addDataPointForBarSeries(workBook->getCell(0, 1, 1, -20));
-    series->getDataPoints()->addDataPointForBarSeries(workBook->getCell(0, 2, 1, 50));
-    series->getDataPoints()->addDataPointForBarSeries(workBook->getCell(0, 3, 1, -30));
+    $series = $chart->getChartData()->getSeries()->get_Item(0);
+    $series->getDataPoints()->addDataPointForBarSeries(workBook->getCell(0, 1, 1, -20));
+    $series->getDataPoints()->addDataPointForBarSeries(workBook->getCell(0, 2, 1, 50));
+    $series->getDataPoints()->addDataPointForBarSeries(workBook->getCell(0, 3, 1, -30));
     
-    Color seriesColor = series->getAutomaticSeriesColor();
+    $seriesColor = $series->getAutomaticSeriesColor();
     
-    series->setInvertIfNegative(true);
-    series->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    series->getFormat()->getFill()->getSolidFillColor()->setColor(seriesColor);
-    series->getInvertedSolidFillColor()->setColorJava("java.awt.Color")->RED);
+    $series->setInvertIfNegative(true);
+    $series->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $series->getFormat()->getFill()->getSolidFillColor()->setColor(seriesColor);
+    $series->getInvertedSolidFillColor()->setColor(Java("java.awt.Color")->RED);
     
     $pres->save("SetInvertFillColorChart_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -170,19 +170,19 @@ The Aspose.Slides for Java lets developers allow to set inverts. Methods [**set
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 50, 50, 600, 400, true);
-    IChartSeriesCollection series = chart->getChartData()->getSeries();
-    chart->getChartData()->getSeries()->clear();
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 50, 50, 600, 400, true);
+    $series = $chart->getChartData()->getSeries();
+    $chart->getChartData()->getSeries()->clear();
 
-    series.add(chart->getChartData()->getChartDataWorkbook()->getCell(0, "B1"), chart->getType());
-    series->get_Item(0)->getDataPoints()->addDataPointForBarSeries(chart->getChartData()->getChartDataWorkbook()->getCell(0, "B2",-5));
-    series->get_Item(0)->getDataPoints()->addDataPointForBarSeries(chart->getChartData()->getChartDataWorkbook()->getCell(0, "B3",3));
-    series->get_Item(0)->getDataPoints()->addDataPointForBarSeries(chart->getChartData()->getChartDataWorkbook()->getCell(0, "B4",-2));
-    series->get_Item(0)->getDataPoints()->addDataPointForBarSeries(chart->getChartData()->getChartDataWorkbook()->getCell(0, "B5",1));
+    series->add($chart->getChartData()->getChartDataWorkbook()->getCell(0, "B1"), $chart->getType());
+    $series->get_Item(0)->getDataPoints()->addDataPointForBarSeries($chart->getChartData()->getChartDataWorkbook()->getCell(0, "B2",-5));
+    $series->get_Item(0)->getDataPoints()->addDataPointForBarSeries($chart->getChartData()->getChartDataWorkbook()->getCell(0, "B3",3));
+    $series->get_Item(0)->getDataPoints()->addDataPointForBarSeries($chart->getChartData()->getChartDataWorkbook()->getCell(0, "B4",-2));
+    $series->get_Item(0)->getDataPoints()->addDataPointForBarSeries($chart->getChartData()->getChartDataWorkbook()->getCell(0, "B5",1));
 
-    series->get_Item(0)->setInvertIfNegative(false);
-    series->get_Item(0)->getInvertIfNegative();
-    series->get_Item(0)->getDataPoints()->get_Item(2)->setInvertIfNegative(true);
+    $series->get_Item(0)->setInvertIfNegative(false);
+    $series->get_Item(0)->getInvertIfNegative();
+    $series->get_Item(0)->getDataPoints()->get_Item(2)->setInvertIfNegative(true);
 
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -209,15 +209,15 @@ try {
     // Accessing the first slide in presentation
     $slide = $pres->getSlides()->get_Item(0);
 
-    IChart chart = (IChart)slide->getShapes()->get_Item(0);
+    $chart = $slide->getShapes()->get_Item(0);
 
-    for (IChartDataPoint dataPoint : chart->getChartData()->getSeries()->get_Item(0)->getDataPoints()) {
+    for ($dataPoint : $chart->getChartData()->getSeries()->get_Item(0)->getDataPoints()) {
 
-        dataPoint->getXValue()->getAsCell()->setValue(null);
-        dataPoint->getYValue()->getAsCell()->setValue(null);
+        $dataPoint->getXValue()->getAsCell()->setValue(null);
+        $dataPoint->getYValue()->getAsCell()->setValue(null);
     }
 
-    chart->getChartData()->getSeries()->get_Item(0)->getDataPoints()->clear();
+    $chart->getChartData()->getSeries()->get_Item(0)->getDataPoints()->clear();
 
     $pres->save("ClearSpecificChartSeriesDataPointsData.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -243,36 +243,36 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Add chart with default data
-    IChart chart = sld->getShapes()->addChart(ChartType.StackedColumn, 0, 0, 500, 500);
+    $chart = $sld->getShapes()->addChart(Java("com.aspose.slides.ChartType")->StackedColumn, 0, 0, 500, 500);
 
     // Setting the index of chart data sheet
     $defaultWorksheetIndex = 0;
     
     // Getting the chart data worksheet
-    IChartDataWorkbook fact = chart->getChartData()->getChartDataWorkbook();
+    $fact = $chart->getChartData()->getChartDataWorkbook();
     
     // Add series
-    chart->getChartData()->getSeries()->add(fact->getCell(defaultWorksheetIndex, 0, 1, "Series 1"), chart->getType());
-    chart->getChartData()->getSeries()->add(fact->getCell(defaultWorksheetIndex, 0, 2, "Series 2"), chart->getType());
+    $chart->getChartData()->getSeries()->add(fact->getCell($defaultWorksheetIndex, 0, 1, "Series 1"), $chart->getType());
+    $chart->getChartData()->getSeries()->add(fact->getCell($defaultWorksheetIndex, 0, 2, "Series 2"), $chart->getType());
     
     // Add Catrgories
-    chart->getChartData()->getCategories()->add(fact->getCell(defaultWorksheetIndex, 1, 0, "Caetegoty 1"));
-    chart->getChartData()->getCategories()->add(fact->getCell(defaultWorksheetIndex, 2, 0, "Caetegoty 2"));
-    chart->getChartData()->getCategories()->add(fact->getCell(defaultWorksheetIndex, 3, 0, "Caetegoty 3"));
+    $chart->getChartData()->getCategories()->add(fact->getCell($defaultWorksheetIndex, 1, 0, "Caetegoty 1"));
+    $chart->getChartData()->getCategories()->add(fact->getCell($defaultWorksheetIndex, 2, 0, "Caetegoty 2"));
+    $chart->getChartData()->getCategories()->add(fact->getCell($defaultWorksheetIndex, 3, 0, "Caetegoty 3"));
     
     // Take second chart series
-    IChartSeries series = chart->getChartData()->getSeries()->get_Item(1);
+    $series = $chart->getChartData()->getSeries()->get_Item(1);
     
     // Now populating series data
-    series->getDataPoints()->addDataPointForBarSeries(fact->getCell(defaultWorksheetIndex, 1, 1, 20));
-    series->getDataPoints()->addDataPointForBarSeries(fact->getCell(defaultWorksheetIndex, 2, 1, 50));
-    series->getDataPoints()->addDataPointForBarSeries(fact->getCell(defaultWorksheetIndex, 3, 1, 30));
-    series->getDataPoints()->addDataPointForBarSeries(fact->getCell(defaultWorksheetIndex, 1, 2, 30));
-    series->getDataPoints()->addDataPointForBarSeries(fact->getCell(defaultWorksheetIndex, 2, 2, 10));
-    series->getDataPoints()->addDataPointForBarSeries(fact->getCell(defaultWorksheetIndex, 3, 2, 60));
+    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 1, 1, 20));
+    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 2, 1, 50));
+    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 3, 1, 30));
+    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 1, 2, 30));
+    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 2, 2, 10));
+    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 3, 2, 60));
     
     // Set GapWidth value
-    series->getParentSeriesGroup()->setGapWidth(50);
+    $series->getParentSeriesGroup()->setGapWidth(50);
     
     // Save presentation with chart
     $pres->save("GapWidth_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

@@ -123,7 +123,7 @@ try {
 
     for ($i = 0; i <= 8; i++)
     {
-        $effectiveStyleLevel = $effectiveTextStyle->getLevel(i);
+        $effectiveStyleLevel = $effectiveTextStyle->getLevel($i);
         echo("= Effective paragraph formatting for style level #" + i + " =");
 
         echo("Depth: " + effectiveStyleLevel->getDepth());
@@ -146,11 +146,11 @@ try {
     $newShape->addTextFrame("");
     $newShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->clear();
 
-    $portion0 = new Java("com.aspose.slides.Portion"), "Sample text with first portion");
-    $portion1 = new Java("com.aspose.slides.Portion"), " and second portion.");
+    $portion0 = new Java("com.aspose.slides.Portion", "Sample text with first portion");
+    $portion1 = new Java("com.aspose.slides.Portion", " and second portion.");
 
-    $newShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->add(portion0);
-    $newShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->add(portion1);
+    $newShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->add($portion0);
+    $newShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->add($portion1);
 
     echo("Effective font height just after creation:");
     echo("Portion #0: " + $portion0->getPortionFormat()->getEffective()->getFontHeight());

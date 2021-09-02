@@ -63,7 +63,7 @@ try {
         for ($signature : $pres->getDigitalSignatures())
         {
             echo($signature->getComments() + ", "
-                    + $signature->getSignTime().toString() + " -- " + ($signature->isValid() ? "VALID" : "INVALID"));
+                    + $signature->getSignTime()->toString() + " -- " + ($signature->isValid() ? "VALID" : "INVALID"));
             $allSignaturesAreValid &= $signature->isValid();
         }
 

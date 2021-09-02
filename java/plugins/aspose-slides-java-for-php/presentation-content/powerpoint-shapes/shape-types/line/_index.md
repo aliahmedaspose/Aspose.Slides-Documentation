@@ -31,7 +31,7 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
     
     // Add an AutoShape of type line
-    sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 50, 150, 300, 0);
+    $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 50, 150, 300, 0);
     
     // Write the PPTX to Disk
     $pres->save("LineShape.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -62,22 +62,22 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Add an AutoShape of type line
-    $shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 50, 150, 300, 0);
+    $shp = $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 50, 150, 300, 0);
 
     // Apply some formatting on the line
-    shp->getLineFormat()->setStyle(LineStyle.ThickBetweenThin);
-    shp->getLineFormat()->setWidth(10);
+    $shp->getLineFormat()->setStyle(Java("com.aspose.slides.LineStyle")->ThickBetweenThin);
+    $shp->getLineFormat()->setWidth(10);
 
-    shp->getLineFormat()->setDashStyle(LineDashStyle.DashDot);
+    $shp->getLineFormat()->setDashStyle(Java("com.aspose.slides.LineDashStyle")->DashDot);
 
-    shp->getLineFormat()->setBeginArrowheadLength(LineArrowheadLength.Short);
-    shp->getLineFormat()->setBeginArrowheadStyle(LineArrowheadStyle.Oval);
+    $shp->getLineFormat()->setBeginArrowheadLength(LineArrowheadLength.Short);
+    $shp->getLineFormat()->setBeginArrowheadStyle(LineArrowheadStyle.Oval);
 
-    shp->getLineFormat()->setEndArrowheadLength(LineArrowheadLength.Long);
-    shp->getLineFormat()->setEndArrowheadStyle(LineArrowheadStyle.Triangle);
+    $shp->getLineFormat()->setEndArrowheadLength(LineArrowheadLength.Long);
+    $shp->getLineFormat()->setEndArrowheadStyle(LineArrowheadStyle.Triangle);
 
-    shp->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(new Java("java.awt.Color", PresetColor.Maroon));
+    $shp->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(new Java("java.awt.Color", Java("com.aspose.slides.PresetColor")->Maroon));
 
     // Write the PPTX to Disk
     $pres->save("LineShape.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

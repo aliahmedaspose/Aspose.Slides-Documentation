@@ -14,7 +14,7 @@ OLE  (Object Linking & Embedding) is a Microsoft technology that allows data and
 Consider a chart created in MS Excel. The chart is then placed inside a PowerPoint slide. That Excel chart is considered an OLE object. 
 
 - An OLE object may appear as an icon. In this case, when you double-click the icon, the chart gets opened in its associated application (Excel), or you are asked to select an application for object opening or editing. 
-- An OLE object may display actual contents—for example, the contents of a chart. In this case, the chart is activated in PowerPoint, the chart interface loads, and you get to modify the chart's data within the PowerPoint app. 
+- An OLE object may display actual contents—for example, the contents of a $chart-> In this case, the chart is activated in PowerPoint, the chart interface loads, and you get to modify the chart's data within the PowerPoint app. 
 
 Aspose.Slides for Java allows you to insert OLE Objects into slides as OLE Object Frames. In this topic, we will show you how to work with OLE Object Frames. You will learn how to add and manipulate OLE objects. 
 
@@ -43,7 +43,7 @@ try {
     byte[] buf = new byte[4096];
     while (true)
     {
-        $bytesRead = fs.read(buf, 0, buf->length);
+        $bytesRead = fs->read(buf, 0, buf->length);
         if ($bytesRead <= 0)
             break;
         mstream->write(buf, 0, bytesRead);
@@ -51,11 +51,11 @@ try {
     fs->close();
 
     // Create data object for embedding
-    IOleEmbeddedDataInfo dataInfo = new OleEmbeddedDataInfo(mstream.toByteArray(), "xlsx");
+    IOleEmbeddedDataInfo dataInfo = new OleEmbeddedDataInfo(mstream->toByteArray(), "xlsx");
     mstream->close();
 
     // Add an Ole Object Frame shape
-    IOleObjectFrame oleObjectFrame = sld->getShapes()->addOleObjectFrame(0, 0,
+    IOleObjectFrame oleObjectFrame = $sld->getShapes()->addOleObjectFrame(0, 0,
             $pres->getSlideSize()->getSize()->getWidth(),
             $pres->getSlideSize()->getSize()->getHeight(),
             dataInfo);
@@ -88,7 +88,7 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Cast the shape to OleObjectFrame
-    OleObjectFrame oleObjectFrame = (OleObjectFrame) sld->getShapes()->get_Item(0);
+    OleObjectFrame oleObjectFrame = (OleObjectFrame) $sld->getShapes()->get_Item(0);
 
     // Read the OLE Object and write it to disk
     if ($oleObjectFrame != null) {
@@ -166,7 +166,7 @@ try {
                 Wb->save(msout, so1);
 
                 // Changing Ole frame object data
-                IOleEmbeddedDataInfo newData = new OleEmbeddedDataInfo(msout.toByteArray(), ole->getEmbeddedData()->getEmbeddedFileExtension());
+                IOleEmbeddedDataInfo newData = new OleEmbeddedDataInfo(msout->toByteArray(), ole->getEmbeddedData()->getEmbeddedFileExtension());
                 ole->setEmbeddedData(newData);
             } finally {
                 if ($msout != null) msout->close();
@@ -194,12 +194,12 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     $slide = $pres->getSlides()->get_Item(0);
 
-    byte[] htmlBytes = Files.readAllBytes(Paths->get("embedOle.html"));
+    byte[] htmlBytes = Files->readAllBytes(Paths->get("embedOle.html"));
     IOleEmbeddedDataInfo dataInfoHtml = new OleEmbeddedDataInfo(htmlBytes, "html");
     IOleObjectFrame oleFrameHtml = $slide->getShapes()->addOleObjectFrame(150, 120, 50, 50, dataInfoHtml);
     oleFrameHtml->setObjectIcon(true);
 
-    byte[] zipBytes = Files.readAllBytes(Paths->get("embedOle.zip"));
+    byte[] zipBytes = Files->readAllBytes(Paths->get("embedOle.zip"));
     IOleEmbeddedDataInfo dataInfoZip = new OleEmbeddedDataInfo(zipBytes, "zip");
     IOleObjectFrame oleFrameZip = $slide->getShapes()->addOleObjectFrame(150, 220, 50, 50, dataInfoZip);
     oleFrameZip->setObjectIcon(true);
@@ -226,7 +226,7 @@ try {
     IOleObjectFrame oleObjectFrame = (IOleObjectFrame)slide->getShapes()->get_Item(0);
     echo("Current embedded data extension is: " + oleObjectFrame->getEmbeddedData()->getEmbeddedFileExtension());
 
-    oleObjectFrame->setEmbeddedData(new OleEmbeddedDataInfo(Files.readAllBytes(Paths->get("embedOle.zip")), "zip"));
+    oleObjectFrame->setEmbeddedData(new OleEmbeddedDataInfo(Files->readAllBytes(Paths->get("embedOle.zip")), "zip"));
 
     $pres->save("embeddedChanged.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch (Exception e) {
@@ -249,7 +249,7 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
     IOleObjectFrame oleObjectFrame = (IOleObjectFrame) $slide->getShapes()->get_Item(0);
 
-    $oleImage = $pres->getImages()->addImage(Files.readAllBytes(Paths->get("image.png")));
+    $oleImage = $pres->getImages()->addImage(Files->readAllBytes(Paths->get("image.png")));
     oleObjectFrame->setSubstitutePictureTitle("My title");
     oleObjectFrame->getSubstitutePictureFormat()->getPicture()->setImage(oleImage);
     oleObjectFrame->setObjectIcon(false);
@@ -278,7 +278,7 @@ try {
 
     for ($index = 0; index < $slide->getShapes()->size(); index++)
     {
-        $shape = $slide->getShapes()->get_Item(index);
+        $shape = $slide->getShapes()->get_Item($index);
         IOleObjectFrame oleFrame = (IOleObjectFrame)shape;
 
         if ($oleFrame != null) 

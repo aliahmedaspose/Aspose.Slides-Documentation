@@ -19,20 +19,20 @@ Aspose.Slides for Java provides a simple API for managing error bar values. The 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Creating a bubble chart
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.Bubble, 50, 50, 400, 300, true);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Bubble, 50, 50, 400, 300, true);
 
     // Adding Error bars and setting its format
-    IErrorBarsFormat errBarX = chart->getChartData()->getSeries()->get_Item(0)->getErrorBarsXFormat();
-    IErrorBarsFormat errBarY = chart->getChartData()->getSeries()->get_Item(0)->getErrorBarsYFormat();
+    $errBarX = $chart->getChartData()->getSeries()->get_Item(0)->getErrorBarsXFormat();
+    $errBarY = $chart->getChartData()->getSeries()->get_Item(0)->getErrorBarsYFormat();
 
-    errBarX->isVisible();
-    errBarY->isVisible();
-    errBarX->setValueType((byte) ErrorBarValueType.Fixed);
-    errBarX->setValue(0.1f);
-    errBarY->setValueType((byte) ErrorBarValueType.Percentage);
-    errBarY->setValue(5);
-    errBarX->setType((byte) ErrorBarType.Plus);
-    errBarY->getFormat()->getLine()->setWidth(2.0f);
+    $errBarX->isVisible();
+    $errBarY->isVisible();
+    $errBarX->setValueType((byte) Java("com.aspose.slides.ErrorBarValueType")->Fixed);
+    $errBarX->setValue(0.1);
+    $errBarY->setValueType((byte) Java("com.aspose.slides.ErrorBarValueType")->Percentage);
+    $errBarY->setValue(5);
+    $errBarX->setType((byte) Java("com.aspose.slides.ErrorBarType")->Plus);
+    $errBarY->getFormat()->getLine()->setWidth(2.0);
     errBarX.hasEndCap();
 
     // Saving presentation
@@ -58,31 +58,31 @@ Aspose.Slides for Java provides a simple API for managing custom error bar value
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Creating a bubble chart
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.Bubble, 50, 50, 400, 300, true);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Bubble, 50, 50, 400, 300, true);
 
     // Adding custom Error bars and setting its format
-    IChartSeries series = chart->getChartData()->getSeries()->get_Item(0);
-    IErrorBarsFormat errBarX = series->getErrorBarsXFormat();
-    IErrorBarsFormat errBarY = series->getErrorBarsYFormat();
-    errBarX->isVisible();
-    errBarY->isVisible();
-    errBarX->setValueType((byte) ErrorBarValueType.Custom);
-    errBarY->setValueType((byte) ErrorBarValueType.Custom);
+    $series = $chart->getChartData()->getSeries()->get_Item(0);
+    $errBarX = $series->getErrorBarsXFormat();
+    $errBarY = $series->getErrorBarsYFormat();
+    $errBarX->isVisible();
+    $errBarY->isVisible();
+    $errBarX->setValueType((byte) Java("com.aspose.slides.ErrorBarValueType")->Custom);
+    $errBarY->setValueType((byte) Java("com.aspose.slides.ErrorBarValueType")->Custom);
 
     // Accessing chart series data point and setting error bars values for
     // individual point
-    IChartDataPointCollection points = series->getDataPoints();
-    points->getDataSourceTypeForErrorBarsCustomValues()->setDataSourceTypeForXPlusValues((byte) DataSourceType.DoubleLiterals);
-    points->getDataSourceTypeForErrorBarsCustomValues()->setDataSourceTypeForXMinusValues((byte) DataSourceType.DoubleLiterals);
-    points->getDataSourceTypeForErrorBarsCustomValues()->setDataSourceTypeForYPlusValues((byte) DataSourceType.DoubleLiterals);
-    points->getDataSourceTypeForErrorBarsCustomValues()->setDataSourceTypeForYMinusValues((byte) DataSourceType.DoubleLiterals);
+    $points = $series->getDataPoints();
+    $points->getDataSourceTypeForErrorBarsCustomValues()->setDataSourceTypeForXPlusValues((byte) Java("com.aspose.slides.DataSourceType")->DoubleLiterals);
+    $points->getDataSourceTypeForErrorBarsCustomValues()->setDataSourceTypeForXMinusValues((byte) Java("com.aspose.slides.DataSourceType")->DoubleLiterals);
+    $points->getDataSourceTypeForErrorBarsCustomValues()->setDataSourceTypeForYPlusValues((byte) Java("com.aspose.slides.DataSourceType")->DoubleLiterals);
+    $points->getDataSourceTypeForErrorBarsCustomValues()->setDataSourceTypeForYMinusValues((byte) Java("com.aspose.slides.DataSourceType")->DoubleLiterals);
 
     // Setting error bars for chart series points
-    for ($i = 0; i < points->size(); i++) {
-        points->get_Item(i)->getErrorBarsCustomValues()->getXMinus()->setAsLiteralDouble(i + 1);
-        points->get_Item(i)->getErrorBarsCustomValues()->getXPlus()->setAsLiteralDouble(i + 1);
-        points->get_Item(i)->getErrorBarsCustomValues()->getYMinus()->setAsLiteralDouble(i + 1);
-        points->get_Item(i)->getErrorBarsCustomValues()->getYPlus()->setAsLiteralDouble(i + 1);
+    for ($i = 0; i < $points->size(); i++) {
+        $points->get_Item($i)->getErrorBarsCustomValues()->getXMinus()->setAsLiteralDouble($i+ 1);
+        $points->get_Item($i)->getErrorBarsCustomValues()->getXPlus()->setAsLiteralDouble($i+ 1);
+        $points->get_Item($i)->getErrorBarsCustomValues()->getYMinus()->setAsLiteralDouble($i+ 1);
+        $points->get_Item($i)->getErrorBarsCustomValues()->getYPlus()->setAsLiteralDouble($i+ 1);
     }
 
     // Saving presentation

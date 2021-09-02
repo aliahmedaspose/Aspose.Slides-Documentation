@@ -31,7 +31,7 @@ try {
     double[] dblRows = {50, 30, 30, 30, 30};
 
     // Add table shape to slide
-    $tbl = sld->getShapes()->addTable(100, 50, dblCols, dblRows);
+    $tbl = $sld->getShapes()->addTable(100, 50, dblCols, dblRows);
 
     // Set border format for each cell
     for ($row = 0; row < $tbl->getRows()->size(); row++)
@@ -41,19 +41,19 @@ try {
             ICellFormat cellFormat = $tbl->getRows()->get_Item(row)->get_Item(cell)->getCellFormat();
             
             cellFormat->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cellFormat->getBorderTop()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
+            cellFormat->getBorderTop()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
             cellFormat->getBorderTop()->setWidth(5);
 
             cellFormat->getBorderBottom()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cellFormat->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
+            cellFormat->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
             cellFormat->getBorderBottom()->setWidth(5);
 
             cellFormat->getBorderLeft()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cellFormat->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
+            cellFormat->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
             cellFormat->getBorderLeft()->setWidth(5);
 
             cellFormat->getBorderRight()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cellFormat->getBorderRight()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
+            cellFormat->getBorderRight()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
             cellFormat->getBorderRight()->setWidth(5);
         }
     }
@@ -92,7 +92,7 @@ try {
     $tbl = null;
 
     // Iterate through the shapes and set a reference to the table found
-    for ($shp : sld->getShapes()) 
+    for ($shp : $sld->getShapes()) 
     {
         if ($shp instanceof ITable) 
         {
@@ -141,18 +141,18 @@ try {
     $txtFrame = $tbl->get_Item(0, 0)->getTextFrame();
     
     // Create the Paragraph object for text frame
-    $paragraph = txtFrame->getParagraphs()->get_Item(0);
+    $paragraph = $txtFrame->getParagraphs()->get_Item(0);
     
     // Create Portion object for paragraph
     $portion = paragraph->getPortions()->get_Item(0);
     $portion->setText("Text here");
     $portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    $portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLACK);
+    $portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
     
     // Aligning the text vertically
     $cell = $tbl->get_Item(0, 0);
-    cell->setTextAnchorType(TextAnchorType.Center);
-    cell->setTextVerticalType(TextVerticalType.Vertical270);
+    $cell->setTextAnchorType(Java("com.aspose.slides.TextAnchorType")->Center);
+    $cell->setTextVerticalType(Java("com.aspose.slides.TextVerticalType")->Vertical270);
     
     // Save Presentation
     $pres->save("Vertical_Align_Text_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -182,7 +182,7 @@ try {
     // setting table cells' font height
     $portionFormat = new Java("com.aspose.slides.PortionFormat");
     $portionFormat->setFontHeight(25);
-    someTable->setTextFormat(portionFormat);
+    someTable->setTextFormat($portionFormat);
     
     // setting table cells' text alignment and right margin in one call
     ParagraphFormat paragraphFormat = new ParagraphFormat();
@@ -191,8 +191,8 @@ try {
     someTable->setTextFormat($paragraphFormat);
     
     // setting table cells' text vertical type
-    TextFrameFormat textFrameFormat = new TextFrameFormat();
-    textFrameFormat->setTextVerticalType(TextVerticalType.Vertical);
+    $textFrameFormat = new TextFrameFormat();
+    textFrameFormat->setTextVerticalType(Java("com.aspose.slides.TextVerticalType")->Vertical);
     someTable->setTextFormat($textFrameFormat);
     
     $pres->save("result.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -222,28 +222,28 @@ try {
     double[] dblRows = { 70, 70, 70, 70 };
 
     // Add table shape to slide
-    $tbl = sld->getShapes()->addTable(100, 50, dblCols, dblRows);
+    $tbl = $sld->getShapes()->addTable(100, 50, dblCols, dblRows);
 
     // Set border format for each cell
     for (IRow row : $tbl->getRows())
     {
         for (ICell cell : row)
         {
-            cell->getCellFormat()->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
-            cell->getCellFormat()->getBorderTop()->setWidth(5);
+            $cell->getCellFormat()->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+            $cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
+            $cell->getCellFormat()->getBorderTop()->setWidth(5);
 
-            cell->getCellFormat()->getBorderBottom()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
-            cell->getCellFormat()->getBorderBottom()->setWidth(5);
+            $cell->getCellFormat()->getBorderBottom()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+            $cell->getCellFormat()->getBorderBottom()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
+            $cell->getCellFormat()->getBorderBottom()->setWidth(5);
 
-            cell->getCellFormat()->getBorderLeft()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
-            cell->getCellFormat()->getBorderLeft()->setWidth(5);
+            $cell->getCellFormat()->getBorderLeft()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+            $cell->getCellFormat()->getBorderLeft()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
+            $cell->getCellFormat()->getBorderLeft()->setWidth(5);
 
-            cell->getCellFormat()->getBorderRight()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            cell->getCellFormat()->getBorderRight()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->RED);
-            cell->getCellFormat()->getBorderRight()->setWidth(5);
+            $cell->getCellFormat()->getBorderRight()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+            $cell->getCellFormat()->getBorderRight()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
+            $cell->getCellFormat()->getBorderRight()->setWidth(5);
         }
     }
 

@@ -19,12 +19,12 @@ Aspose.Slides for Java provides support for changing color of categories in a se
 // Creating empty presentation
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 50, 50, 600, 400);
 
-    chart->setDataTable(true);
+    $chart->setDataTable(true);
 
-    chart->getChartDataTable()->getTextFormat()->getPortionFormat()->setFontBold(NullableBool.True);
-    chart->getChartDataTable()->getTextFormat()->getPortionFormat()->setFontHeight(20);
+    $chart->getChartDataTable()->getTextFormat()->getPortionFormat()->setFontBold(Java("com.aspose.slides.NullableBool")->True);
+    $chart->getChartDataTable()->getTextFormat()->getPortionFormat()->setFontHeight(20);
 
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

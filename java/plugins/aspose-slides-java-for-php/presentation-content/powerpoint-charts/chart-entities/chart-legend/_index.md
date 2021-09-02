@@ -23,13 +23,13 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
     
     // Add a clustered column chart on the slide
-    IChart chart = $slide->getShapes()->addChart(ChartType.ClusteredColumn, 50, 50, 500, 500);
+    $chart = $slide->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 50, 50, 500, 500);
     
     // Set Legend Properties
-    chart->getLegend()->setX(50 / chart->getWidth());
-    chart->getLegend()->setY(50 / chart->getHeight());
-    chart->getLegend()->setWidth(100 / chart->getWidth());
-    chart->getLegend()->setHeight(100 / chart->getHeight());
+    $chart->getLegend()->setX(50 / $chart->getWidth());
+    $chart->getLegend()->setY(50 / $chart->getHeight());
+    $chart->getLegend()->setWidth(100 / $chart->getWidth());
+    $chart->getLegend()->setHeight(100 / $chart->getHeight());
     
     // Write presentation to disk
     $pres->save("Legend_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -42,7 +42,7 @@ try {
 The Aspose.Slides for Java lets developers allow to set font size of legend. Please follow the steps below: 
 
 - Instantiate [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class.
-- Creating the default chart.
+- Creating the default $chart->
 - Set the Font Size.
 - Set minimum axis value.
 - Set maximum axis value.
@@ -52,14 +52,14 @@ The Aspose.Slides for Java lets developers allow to set font size of legend. Pl
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 50, 50, 600, 400);
 
-    chart->getLegend()->getTextFormat()->getPortionFormat()->setFontHeight(20);
+    $chart->getLegend()->getTextFormat()->getPortionFormat()->setFontHeight(20);
 
-    chart->getAxes()->getVerticalAxis()->setAutomaticMinValue(false);
-    chart->getAxes()->getVerticalAxis()->setMinValue(-5);
-    chart->getAxes()->getVerticalAxis()->setAutomaticMaxValue(false);
-    chart->getAxes()->getVerticalAxis()->setMaxValue(10);
+    $chart->getAxes()->getVerticalAxis()->setAutomaticMinValue(false);
+    $chart->getAxes()->getVerticalAxis()->setMinValue(-5);
+    $chart->getAxes()->getVerticalAxis()->setAutomaticMaxValue(false);
+    $chart->getAxes()->getVerticalAxis()->setMaxValue(10);
 
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -71,7 +71,7 @@ try {
 The Aspose.Slides for Java lets developers allow to set font size of individual legend entries. Please follow the steps below: 
 
 - Instantiate [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class.
-- Creating the default chart.
+- Creating the default $chart->
 - Access legend entry.
 - Set the Font Size.
 - Set minimum axis value.
@@ -82,15 +82,15 @@ The Aspose.Slides for Java lets developers allow to set font size of individual 
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IChart chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(ChartType.ClusteredColumn, 50, 50, 600, 400);
+    $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 50, 50, 600, 400);
 
-    IChartTextFormat tf = chart->getLegend()->getEntries()->get_Item(1)->getTextFormat();
+    $tf = $chart->getLegend()->getEntries()->get_Item(1)->getTextFormat();
 
-    $tf->getPortionFormat()->setFontBold(NullableBool.True);
+    $tf->getPortionFormat()->setFontBold(Java("com.aspose.slides.NullableBool")->True);
     $tf->getPortionFormat()->setFontHeight(20);
-    $tf->getPortionFormat()->setFontItalic(NullableBool.True);
+    $tf->getPortionFormat()->setFontItalic(Java("com.aspose.slides.NullableBool")->True);
     $tf->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    $tf->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLUE);
+    $tf->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLUE);
     
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

@@ -28,20 +28,20 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
     
     // Add AutoShape of rectangle type
-    $shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 150, 75);
+    $shp = $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 150, 75);
     
     // Set the fill color of the rectangle shape
-    shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->WHITE);
+    $shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $shp->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->WHITE);
     
     // Apply some formatting on the line of the rectangle
-    shp->getLineFormat()->setStyle(LineStyle.ThickThin);
-    shp->getLineFormat()->setWidth(7);
-    shp->getLineFormat()->setDashStyle(LineDashStyle.Dash);
+    $shp->getLineFormat()->setStyle(Java("com.aspose.slides.LineStyle")->ThickThin);
+    $shp->getLineFormat()->setWidth(7);
+    $shp->getLineFormat()->setDashStyle(Java("com.aspose.slides.LineDashStyle")->Dash);
     
     // set the color of the line of rectangle
-    shp->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLUE);
+    $shp->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLUE);
     
     // Write the PPTX file to disk
     $pres->save("RectShpLn.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -67,35 +67,35 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
     
     // Add three AutoShapes of rectangle type
-    $shp1 = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 100, 150, 75);
-    $shp2 = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 300, 100, 150, 75);
-    $shp3 = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 250, 150, 75);
+    $shp1 = $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 100, 150, 75);
+    $shp2 = $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 300, 100, 150, 75);
+    $shp3 = $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 250, 150, 75);
     
     // Set the fill color of the rectangle shape
-    shp1->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp1->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLACK);
-    shp2->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp2->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLACK);
-    shp3->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp3->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLACK);
+    $shp1->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $shp1->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
+    $shp2->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $shp2->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
+    $shp3->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $shp3->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
     
     // Set the line width
-    shp1->getLineFormat()->setWidth(15);
-    shp2->getLineFormat()->setWidth(15);
-    shp3->getLineFormat()->setWidth(15);
+    $shp1->getLineFormat()->setWidth(15);
+    $shp2->getLineFormat()->setWidth(15);
+    $shp3->getLineFormat()->setWidth(15);
     
     // Set the color of the line of rectangle
-    shp1->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp1->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLUE);
-    shp2->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp2->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLUE);
-    shp3->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    shp3->getLineFormat()->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->BLUE);
+    $shp1->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $shp1->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLUE);
+    $shp2->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $shp2->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLUE);
+    $shp3->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $shp3->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLUE);
     
     // Set the Join Style
-    shp1->getLineFormat()->setJoinStyle(LineJoinStyle.Miter);
-    shp2->getLineFormat()->setJoinStyle(LineJoinStyle.Bevel);
-    shp3->getLineFormat()->setJoinStyle(LineJoinStyle.Round);
+    $shp1->getLineFormat()->setJoinStyle(Java("com.aspose.slides.LineJoinStyle")-> Miter);
+    $shp2->getLineFormat()->setJoinStyle(Java("com.aspose.slides.LineJoinStyle")-> Bevel);
+    $shp3->getLineFormat()->setJoinStyle(Java("com.aspose.slides.LineJoinStyle")-> Round);
     
     // Add text to each rectangle
     (shp1)->getTextFrame()->setText("This is Miter Join Style");
@@ -129,18 +129,18 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
     
     // Add AutoShape of ellipse type
-    $shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 50, 150, 75, 150);
+    $shp = $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 50, 150, 75, 150);
     
     // Apply some Gradient formatting to ellipse shape
-    shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Gradient);
-    shp->getFillFormat()->getGradientFormat()->setGradientShape(GradientShape.Linear);
+    $shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Gradient);
+    $shp->getFillFormat()->getGradientFormat()->setGradientShape(Java("com.aspose.slides.GradientShape")-> Linear);
     
     // Set the Gradient Direction
-    shp->getFillFormat()->getGradientFormat()->setGradientDirection(GradientDirection.FromCorner2);
+    $shp->getFillFormat()->getGradientFormat()->setGradientDirection(Java("com.aspose.slides.v")-> FromCorner2);
     
     // Add two Gradient Stops
-    shp->getFillFormat()->getGradientFormat()->getGradientStops()->add(1.0, Color.pink);
-    shp->getFillFormat()->getGradientFormat()->getGradientStops()->add(0, Color.red);
+    $shp->getFillFormat()->getGradientFormat()->getGradientStops()->add(1.0, Java("java.awt.Color")->pink);
+    $shp->getFillFormat()->getGradientFormat()->getGradientStops()->add(0, Java("java.awt.Color")->red);
     
     // Write the PPTX file to disk
     $pres->save("EllipseShpGrad.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -171,17 +171,17 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
     
     // Add AutoShape of rectangle type
-    $shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 75, 150);
+    $shp = $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 75, 150);
     
     // Set the fill type to Pattern
-    shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Pattern);
+    $shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Pattern);
     
     // Set the pattern style
-    shp->getFillFormat()->getPatternFormat()->setPatternStyle(PatternStyle.Trellis);
+    $shp->getFillFormat()->getPatternFormat()->setPatternStyle(Java("com.aspose.slides.PatternStyle")->Trellis);
     
     // Set the pattern back and fore colors
-    shp->getFillFormat()->getPatternFormat()->getBackColor()->setColorJava("java.awt.Color")->LIGHT_GRAY);
-    shp->getFillFormat()->getPatternFormat()->getForeColor()->setColorJava("java.awt.Color")->YELLOW);
+    $shp->getFillFormat()->getPatternFormat()->getBackColor()->setColor(Java("java.awt.Color")->LIGHT_GRAY);
+    $shp->getFillFormat()->getPatternFormat()->getForeColor()->setColor(Java("java.awt.Color")->YELLOW);
     
     // Write the PPTX file to disk
     $pres->save("RectShpPatt.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -212,17 +212,17 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
     
     // Add AutoShape of rectangle type
-    $shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 75, 150);
+    $shp = $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 75, 150);
     
     // Set the fill type to Picture
-    shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Picture);
+    $shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Picture);
     
     // Set the picture fill mode
-    shp->getFillFormat()->getPictureFillFormat()->setPictureFillMode(Java("com.aspose.slides.PictureFillMode")->Tile);
+    $shp->getFillFormat()->getPictureFillFormat()->setPictureFillMode(Java("com.aspose.slides.PictureFillMode")->Tile);
     
     // Set the picture
     $imgx = $pres->getImages()->addImage(new FileInputStream(new Java("java.io.File", "aspose1.jpg")));
-    shp->getFillFormat()->getPictureFillFormat()->getPicture()->setImage($imgx);
+    $shp->getFillFormat()->getPictureFillFormat()->getPicture()->setImage($imgx);
     
     // Write the PPTX file to disk
     $pres->save("RectShpPic.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -252,13 +252,13 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Add AutoShape of rectangle type
-    $shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 75, 150);
+    $shp = $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 75, 150);
 
     // Set the fill type to Solid
-    shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
     // Set the color of the rectangle
-    shp->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->YELLOW);
+    $shp->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->YELLOW);
 
     // Write the PPTX file to disk
     $pres->save("RectShpSolid.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -286,10 +286,10 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Add autoshape of rectangle type
-    $shp = sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 75, 150);
+    $shp = $sld->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, 75, 150);
 
     // Rotate the shape to 90 degree
-    shp->setRotation(90);
+    $shp->setRotation(90);
 
     // Write the PPTX file to disk
     $pres->save("RectShpRot_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -317,20 +317,20 @@ try {
     // Add a shape on slide
     $shape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 30, 30, 100, 100);
     $shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    $shape->getFillFormat()->getSolidFillColor()->setColorJava("java.awt.Color")->GREEN);
+    $shape->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->GREEN);
     ILineFillFormat format = $shape->getLineFormat()->getFillFormat();
-    format->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    format->getSolidFillColor()->setColorJava("java.awt.Color")->ORANGE);
+    $format->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $format->getSolidFillColor()->setColor(Java("java.awt.Color")->ORANGE);
     $shape->getLineFormat()->setWidth(2.0);
     
     // Set ThreeDFormat properties of shape
     $shape->getThreeDFormat()->setDepth(4);
-    $shape->getThreeDFormat()->getBevelTop()->setBevelType(BevelPresetType.Circle);
+    $shape->getThreeDFormat()->getBevelTop()->setBevelType(Java("com.aspose.slides.BevelPresetType")->Circle);
     $shape->getThreeDFormat()->getBevelTop()->setHeight(6);
     $shape->getThreeDFormat()->getBevelTop()->setWidth(6);
-    $shape->getThreeDFormat()->getCamera()->setCameraType(CameraPresetType.OrthographicFront);
-    $shape->getThreeDFormat()->getLightRig()->setLightType(LightRigPresetType.ThreePt);
-    $shape->getThreeDFormat()->getLightRig()->setDirection(LightingDirection.Top);
+    $shape->getThreeDFormat()->getCamera()->setCameraType(Java("com.aspose.slides.CameraPresetType")->OrthographicFront);
+    $shape->getThreeDFormat()->getLightRig()->setLightType(Java("com.aspose.slides.LightRigPresetType")->ThreePt);
+    $shape->getThreeDFormat()->getLightRig()->setDirection(Java("com.aspose.slides.LightingDirection")->Top);
     
     // Write the presentation as a PPTX file
     $pres->save("Bavel.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -357,14 +357,14 @@ try {
     
     autoShape->getThreeDFormat()->setDepth(6);
     autoShape->getThreeDFormat()->getCamera()->setRotation(40, 35, 20);
-    autoShape->getThreeDFormat()->getCamera()->setCameraType(CameraPresetType.IsometricLeftUp);
-    autoShape->getThreeDFormat()->getLightRig()->setLightType(LightRigPresetType.Balanced);
+    autoShape->getThreeDFormat()->getCamera()->setCameraType(Java("com.aspose.slides.CameraPresetType")->IsometricLeftUp);
+    autoShape->getThreeDFormat()->getLightRig()->setLightType(Java("com.aspose.slides.LightRigPresetType")->Balanced);
     
     autoShape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 30, 300, 200, 200);
     autoShape->getThreeDFormat()->setDepth(6);
     autoShape->getThreeDFormat()->getCamera()->setRotation(0, 35, 20);
-    autoShape->getThreeDFormat()->getCamera()->setCameraType(CameraPresetType.IsometricLeftUp);
-    autoShape->getThreeDFormat()->getLightRig()->setLightType(LightRigPresetType.Balanced);
+    autoShape->getThreeDFormat()->getCamera()->setCameraType(Java("com.aspose.slides.CameraPresetType")->IsometricLeftUp);
+    autoShape->getThreeDFormat()->getLightRig()->setLightType(Java("com.aspose.slides.LightRigPresetType")->Balanced);
     
     $pres->save("Rotation_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

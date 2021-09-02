@@ -37,39 +37,39 @@ try {
     // Create text box
     $shape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 200, 100);
     $textFrame = $shape->getTextFrame();
-    textFrame->getParagraphs()->clear();
+    $textFrame->getParagraphs()->clear();
 
     // Create paragraph for superscript text
     $superPar = new Java("com.aspose.slides.Paragraph");
 
     // Create portion with usual text
-    $portion1 = new Portion();
+    $portion1 = new Java("com.aspose.slides.Portion");
     $portion1->setText("SlideTitle");
-    superPar->getPortions()->add(portion1);
+    $superPar->getPortions()->add($portion1);
 
     // Create portion with superscript text
-    $superPortion = new Portion();
+    $superPortion = new Java("com.aspose.slides.Portion");
     superPortion->getPortionFormat()->setEscapement(30);
     superPortion->setText("TM");
-    superPar->getPortions()->add(superPortion);
+    $superPar->getPortions()->add($superPortion);
 
     // Create paragraph for subscript text
     $paragraph2 = new Java("com.aspose.slides.Paragraph");
 
     // Create portion with usual text
-    $portion2 = new Portion();
-    portion2->setText("a");
-    $paragraph2->getPortions()->add(portion2);
+    $portion2 = new Java("com.aspose.slides.Portion");
+    $portion2->setText("a");
+    $paragraph2->getPortions()->add($portion2);
 
     // Create portion with subscript text
-    $subPortion = new Portion();
-    subPortion->getPortionFormat()->setEscapement(-25);
-    subPortion->setText("i");
-    $paragraph2->getPortions()->add(subPortion);
+    $subPortion = new Java("com.aspose.slides.Portion");
+    $subPortion->getPortionFormat()->setEscapement(-25);
+    $subPortion->setText("i");
+    $paragraph2->getPortions()->add($subPortion);
 
     // Add paragraphs to text box
-    textFrame->getParagraphs()->add(superPar);
-    textFrame->getParagraphs()->add($paragraph2);
+    $textFrame->getParagraphs()->add($superPar);
+    $textFrame->getParagraphs()->add($paragraph2);
 
     $pres->save("formatText.pptx",Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

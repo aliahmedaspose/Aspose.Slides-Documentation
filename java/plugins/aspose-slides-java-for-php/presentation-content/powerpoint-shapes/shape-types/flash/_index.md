@@ -16,7 +16,7 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     IControlCollection controls = $pres->getSlides()->get_Item(0)->getControls();
     Control flashControl = null;
-    for (IControl control : controls)
+    for ($control : controls)
     {
         if ($control->getName() == "ShockwaveFlash1")
         {

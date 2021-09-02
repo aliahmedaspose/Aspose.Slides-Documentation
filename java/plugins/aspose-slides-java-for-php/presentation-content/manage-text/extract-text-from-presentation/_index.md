@@ -31,14 +31,14 @@ try {
                 //Loop through portions in the current IParagraph
                 for ($port : $para->getPortions()) {
                     //Display text in the current portion
-                    echo(port->getText());
+                    echo($port->getText());
 
                     //Display font height of the text
-                    echo(port->getPortionFormat()->getFontHeight());
+                    echo($port->getPortionFormat()->getFontHeight());
 
                     //Display font name of the text
                     if ($port->getPortionFormat()->getLatinFont() != null)
-                        echo(port->getPortionFormat()->getLatinFont()->getFontName());
+                        echo($port->getPortionFormat()->getLatinFont()->getFontName());
                 }
             }
         }
@@ -73,14 +73,14 @@ try {
             for ($port : $para->getPortions())
             {
                 //Display text in the current portion
-                echo(port->getText());
+                echo($port->getText());
 
                 //Display font height of the text
-                echo(port->getPortionFormat()->getFontHeight());
+                echo($port->getPortionFormat()->getFontHeight());
 
                 //Display font name of the text
                 if ($port->getPortionFormat()->getLatinFont() != null)
-                    echo(port->getPortionFormat()->getLatinFont()->getFontName());
+                    echo($port->getPortionFormat()->getLatinFont()->getFontName());
             }
         }
     }

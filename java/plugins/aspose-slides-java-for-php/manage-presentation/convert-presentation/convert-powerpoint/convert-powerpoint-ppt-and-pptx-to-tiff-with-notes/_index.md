@@ -14,11 +14,11 @@ The [Save](https://apireference.aspose.com/slides/java/com.aspose.slides/Present
 //Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
-    TiffOptions opts = new TiffOptions();
-    opts->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomFull);
+    $opts = new Java("com.aspose.slides.TiffOptions");
+    $opts->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
     
     //Saving the presentation to TIFF notes
-    $pres->save("Tiff-Notes.tiff", Java("com.aspose.slides.SaveFormat")->Tiff,opts);
+    $pres->save("Tiff-Notes.tiff", Java("com.aspose.slides.SaveFormat")->Tiff $opts);
 } finally {
     if ($pres != null) $pres->dispose();
 }

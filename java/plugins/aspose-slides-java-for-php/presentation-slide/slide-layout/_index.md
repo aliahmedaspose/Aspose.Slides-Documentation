@@ -77,12 +77,12 @@ try {
 // Instantiate Presentation objects that represent presentation files
 $presentation = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
-    $auxPresentation = new Presentation();
+    $auxPresentation = new Java("com.aspose.slides.Presentation");
     try {
         // Set the slide size of generated presentations to that of source
-        auxPresentation->getSlideSize()->setSize(540, 720, SlideSizeScaleType.EnsureFit);
+        auxPresentation->getSlideSize()->setSize(540, 720, Java("com.aspose.slides.SlideSizeScaleType")->EnsureFit);
         //getType());
-        auxPresentation->getSlideSize()->setSize(SlideSizeType.A4Paper, SlideSizeScaleType.Maximize);
+        auxPresentation->getSlideSize()->setSize(SlideSizeType.A4Paper, Java("com.aspose.slides.SlideSizeScaleType")->Maximize);
         
         // Clone required slide
         auxPresentation->getSlides()->addClone(presentation->getSlides()->get_Item(0));
@@ -91,7 +91,7 @@ try {
         // Save Presentation to disk
         auxPresentation->save("size.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
     } finally {
-        auxPresentation.dispose();
+        auxPresentation->dispose();
     }
 } finally {
     $presentation->dispose();
@@ -163,8 +163,8 @@ You can also set the slide size by using it with different ways of content scali
 $presentation = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     // Set the slide size of generated presentations to that of source
-    $presentation->getSlideSize()->setSize(540, 720, SlideSizeScaleType.EnsureFit); // Method SetSize is used for set slide size with scale content to ensure fit
-    $presentation->getSlideSize()->setSize(SlideSizeType.A4Paper, SlideSizeScaleType.Maximize); // Method SetSize is used for set slide size with maximize size of content
+    $presentation->getSlideSize()->setSize(540, 720, Java("com.aspose.slides.SlideSizeScaleType")->EnsureFit); // Method SetSize is used for set slide size with scale content to ensure fit
+    $presentation->getSlideSize()->setSize(SlideSizeType.A4Paper, Java("com.aspose.slides.SlideSizeScaleType")->Maximize); // Method SetSize is used for set slide size with maximize size of content
 
     // Save Presentation to disk
     $presentation->save("Set_Size&Type_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -181,14 +181,14 @@ Slides in presentation could be set as different paper sizes. The [SlideSize->ge
 $presentation = new Java("com.aspose.slides.Presentation");
 try {
     // Set SlideSize.Type Property 
-    $presentation->getSlideSize()->setSize(SlideSizeType.A4Paper,SlideSizeScaleType.EnsureFit);
+    $presentation->getSlideSize()->setSize(SlideSizeType.A4Paper, Java("com.aspose.slides.SlideSizeScaleType")->EnsureFit);
     
     // Set different properties of PDF Options
-    PdfOptions opts = new  PdfOptions();
-    opts->setSufficientResolution(600);
+    $opts = new  Java("com.aspose.slides.PdfOptions");
+    $opts->setSufficientResolution(600);
     
     // Save presentation to disk
-    $presentation->save("SetPDFPageSize_out.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, opts);
+    $presentation->save("SetPDFPageSize_out.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $opts);
 } finally {
     $presentation->dispose();
 }

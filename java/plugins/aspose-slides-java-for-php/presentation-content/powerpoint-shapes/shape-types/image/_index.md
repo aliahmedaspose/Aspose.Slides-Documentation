@@ -102,13 +102,13 @@ This sample code shows you how to perform the described task:
 ```php 
 Workbook book = new Workbook("chart.xlsx");
 Worksheet sheet = book->getWorksheets()->get(0);
-ImageOrPrintOptions options = new ImageOrPrintOptions();
+$options = new ImageOrPrintOptions();
 options->setHorizontalResolution(200);
 options->setVerticalResolution(200);
 options->setImageType(ImageType.EMF);
 
 //Save the workbook to stream
-SheetRender sr = new SheetRender(sheet, options);
+SheetRender sr = new SheetRender(sheet, $options);
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     $pres->getSlides()->removeAt(0);

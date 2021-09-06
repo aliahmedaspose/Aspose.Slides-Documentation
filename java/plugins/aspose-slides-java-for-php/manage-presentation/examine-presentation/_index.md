@@ -25,10 +25,10 @@ $info = Java("com.aspose.slides.PresentationFactory")->getInstance()->getPresent
 echo($info->getLoadFormat()); // PPTX
 
 $info2 = Java("com.aspose.slides.PresentationFactory")->getInstance()->getPresentationInfo("pres.ppt");
-echo(info2->getLoadFormat()); // PPT
+echo($info2->getLoadFormat()); // PPT
 
 $info3 = Java("com.aspose.slides.PresentationFactory")->getInstance()->getPresentationInfo("pres.odp");
-echo(info3->getLoadFormat()); // ODP
+echo($info3->getLoadFormat()); // ODP
 ```
 
 ## **Getting the Properties of a Presentation**

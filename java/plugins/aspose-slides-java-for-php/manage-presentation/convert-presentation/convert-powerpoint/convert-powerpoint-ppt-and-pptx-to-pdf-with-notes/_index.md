@@ -12,22 +12,22 @@ The following example shows how to convert a presentation to a PDF notes documen
 
 ```php
 // Instantiate a Presentation object that represents a presentation file
-Presentation presIn = new Java("com.aspose.slides.Presentation", "SelectedSlides.pptx");
-Presentation presOut = new Presentation();
+$presIn = new Java("com.aspose.slides.Presentation", "SelectedSlides.pptx");
+$presOut = new Java("com.aspose.slides.Presentation");
 try {
     $slide = presIn->getSlides()->get_Item(0);
-    presOut->getSlides()->insertClone(0, slide);
+    $presOut->getSlides()->insertClone(0, $slide);
     
     // Setting Slide Type and Size
-    presOut->getSlideSize()->setSize(612F, 792F,SlideSizeScaleType.EnsureFit);
+    $presOut->getSlideSize()->setSize(612, 792, Java("com.aspose.slides.SlideSizeScaleType")->EnsureFit);
         
-    PdfOptions pdfOptions = new PdfOptions();
-    pdfOptions->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomFull);
+    $pdfOptions = new Java("com.aspose.slides.PdfOptions");
+    $pdfOptions->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
 
-    presOut->save("PDF-SelectedSlide.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
+    $presOut->save("PDF-SelectedSlide.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
 } finally {
-    if ($presIn != null) presIn.dispose();
-    if ($presOut != null) presOut.dispose();
+    if ($presIn != null) $presIn->dispose();
+    if ($presOut != null) $presOut->dispose();
 }
 ```
 
@@ -37,10 +37,10 @@ The [**Save**](https://apireference.aspose.com/slides/java/com.aspose.slides/Pre
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
-    PdfOptions pdfOptions = new PdfOptions();
-    pdfOptions->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomFull);
+    $pdfOptions = new Java("com.aspose.slides.PdfOptions");
+    $pdfOptions->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
 
-    $pres->save(resourcesOutputPath+"PDF-Notes.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
+    $pres->save(resourcesOutputPath+"PDF-Notes.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }

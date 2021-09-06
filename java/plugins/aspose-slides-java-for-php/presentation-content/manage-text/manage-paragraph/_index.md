@@ -126,7 +126,7 @@ try {
     $para2->getParagraphFormat()->getBullet()->setChar((char)8226);
     $para2->getParagraphFormat()->setAlignment(Java("com.aspose.slides.TextAlignment")->Left);
     
-    $para2->getParagraphFormat()->setDepth((short)2);
+    $para2->getParagraphFormat()->setDepth(2);
     $para2->getParagraphFormat()->setIndent(30);
     
     // Get second Paragraph in the TextFrame and set its Indent
@@ -134,7 +134,7 @@ try {
     $para2->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
     $para2->getParagraphFormat()->getBullet()->setChar((char)8226);
     $para2->getParagraphFormat()->setAlignment(Java("com.aspose.slides.TextAlignment")->Left);
-    $para2->getParagraphFormat()->setDepth((short)2);
+    $para2->getParagraphFormat()->setDepth(2);
     $para2->getParagraphFormat()->setIndent(40);
     
     // Get third Paragraph in the TextFrame and set its Indent
@@ -142,7 +142,7 @@ try {
     $para3->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
     $para3->getParagraphFormat()->getBullet()->setChar((char)8226);
     $para3->getParagraphFormat()->setAlignment(Java("com.aspose.slides.TextAlignment")->Left);
-    $para3->getParagraphFormat()->setDepth((short)2);
+    $para3->getParagraphFormat()->setDepth(2);
     $para3->getParagraphFormat()->setIndent(50);
     
     //Write the Presentation to disk
@@ -264,7 +264,7 @@ try {
 
     // Creating output HTML file
     $os = new Java("java.io.FileOutputStream", "output.html");
-    $writer = new Java("java.io.OutputStreamWriter", os, "UTF-8");
+    $writer = new Java("java.io.OutputStreamWriter", $os, "UTF-8");
 
     //Extracting first paragraph as HTML
     // Writing Paragraphs data to HTML by providing paragraph starting index, total paragraphs to be copied

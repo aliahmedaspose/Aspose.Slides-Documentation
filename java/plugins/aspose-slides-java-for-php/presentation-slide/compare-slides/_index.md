@@ -24,9 +24,9 @@ try {
             }
         }
     } finally {
-        presentation2.dispose();
+        presentation2->dispose();
     }
 } finally {
-    presentation1.dispose();
+    presentation1->dispose();
 }
 ```

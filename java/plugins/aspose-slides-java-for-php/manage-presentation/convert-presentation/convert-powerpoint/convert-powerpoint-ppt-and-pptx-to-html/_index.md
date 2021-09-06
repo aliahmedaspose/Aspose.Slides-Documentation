@@ -51,12 +51,12 @@ Convert PPT or PPTX presentation to HTML file using Aspose.Slides. For that, sav
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "Convert_HTML.pptx");
 try {
-    HtmlOptions htmlOpt = new HtmlOptions();
-    htmlOpt->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomFull);
-    htmlOpt->setHtmlFormatter(HtmlFormatter.createDocumentFormatter("", false));
+    $htmlOpt = new Java("com.aspose.slides.HtmlOptions");
+    $htmlOpt->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
+    $htmlOpt->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createDocumentFormatter("", false));
 
     // Saving the presentation to HTML
-    $pres->save("ConvertWholePresentationToHTML_out.html", Java("com.aspose.slides.SaveFormat")->Html, htmlOpt);
+    $pres->save("ConvertWholePresentationToHTML_out.html", Java("com.aspose.slides.SaveFormat")->Html, $htmlOpt);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -70,12 +70,12 @@ Convert PPT(X) presentation to Responsive HTML, which will ensure the generated 
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "Convert_HTML.pptx");
 try {
-    ResponsiveHtmlController controller = new ResponsiveHtmlController();
-    HtmlOptions htmlOptions = new HtmlOptions();
-    htmlOptions->setHtmlFormatter(HtmlFormatter.createCustomFormatter(controller));
+    $controller = new Java("com.aspose.slides.ResponsiveHtmlController");
+    $htmlOptions = new Java("com.aspose.slides.HtmlOptions");
+    $htmlOptions->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($controller));
 
     // Saving the presentation to HTML
-    $pres->save("ConvertPresentationToResponsiveHTML_out.html", Java("com.aspose.slides.SaveFormat")->Html, htmlOptions);
+    $pres->save("ConvertPresentationToResponsiveHTML_out.html", Java("com.aspose.slides.SaveFormat")->Html, $htmlOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -87,12 +87,12 @@ The following example shows how to convert PPT(X) presentation to HTML with the 
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
-    HtmlOptions opt = new HtmlOptions();
-    INotesCommentsLayoutingOptions options = opt->getNotesCommentsLayouting();
-    options->setNotesPosition(NotesPositions.BottomFull);
+    $opt = new Java("com.aspose.slides.HtmlOptions");
+    $options = $opt->getNotesCommentsLayouting();
+    $options->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
 
     // Saving notes pages
-    $pres->save("Output.html", Java("com.aspose.slides.SaveFormat")->Html, opt);
+    $pres->save("Output.html", Java("com.aspose.slides.SaveFormat")->Html, $opt);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -107,12 +107,12 @@ try {
     // exclude default presentation fonts
     String[] fontNameExcludeList = { "Calibri", "Arial" };
 
-    EmbedAllFontsHtmlController embedFontsController = new EmbedAllFontsHtmlController(fontNameExcludeList);
+    $embedFontsController = new Java("com.aspose.slides.EmbedAllFontsHtmlController", $fontNameExcludeList);
 
-    HtmlOptions htmlOptionsEmbed = new HtmlOptions();
-    htmlOptionsEmbed->setHtmlFormatter(HtmlFormatter.createCustomFormatter(embedFontsController));
+    $htmlOptionsEmbed = new Java("com.aspose.slides.HtmlOptions");
+    $htmlOptionsEmbed->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($embedFontsController));
 
-    $pres->save("input-PFDinDisplayPro-Regular-installed.html", Java("com.aspose.slides.SaveFormat")->Html, htmlOptionsEmbed);
+    $pres->save("input-PFDinDisplayPro-Regular-installed.html", Java("com.aspose.slides.SaveFormat")->Html, $htmlOptionsEmbed);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -124,13 +124,13 @@ Convert a separate presentation slide to HTML. Fo that use the same [**Save**](
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "Individual-Slide.pptx");
 try {
-    HtmlOptions htmlOptions = new HtmlOptions();
-    htmlOptions->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomFull);
-    htmlOptions->setHtmlFormatter(HtmlFormatter.createCustomFormatter(new CustomFormattingController()));
+    $htmlOptions = new Java("com.aspose.slides.HtmlOptions");
+    $htmlOptions->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
+    $htmlOptions->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter(new Java("com.aspose.slides.CustomFormattingController")));
 
     // Saving File
     for ($i = 0; i < $pres->getSlides()->size(); i++)
-        $pres->save("Individual Slide" + ($i+ 1) + "_out.html", new int[]{i + 1},Java("com.aspose.slides.SaveFormat")->Html, htmlOptions);
+        $pres->save("Individual Slide" + ($i+ 1) + "_out.html", new int[]{i + 1},Java("com.aspose.slides.SaveFormat")->Html, $htmlOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -162,8 +162,8 @@ public class CustomFormattingController implements IHtmlFormattingController
     @Override
     public void writeShapeEnd(IHtmlGenerator generator, $shape) { }
 
-    private final String SlideHeader = "<div class=\"slide\" name=\"slide\" id=\"slide%d\">";
-    private final String SlideFooter = "</div>";
+    private $SlideHeader = "<div class=\"slide\" name=\"slide\" id=\"slide%d\">";
+    private $SlideFooter = "</div>";
 }
 ```
 
@@ -173,11 +173,11 @@ Use new CSS styles file to change the resulting styles of the HTML file while PP
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
-    CustomHeaderAndFontsController htmlController = new CustomHeaderAndFontsController("styles.css");
-    HtmlOptions options = new HtmlOptions();
-    options->setHtmlFormatter(HtmlFormatter.createCustomFormatter(htmlController));
+    $htmlController = new Java("com.aspose.slides.CustomHeaderAndFontsController", "styles.css");
+    $options = new Java("com.aspose.slides.HtmlOptions");
+    $options->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($htmlController));
 
-    $pres->save("pres.html", Java("com.aspose.slides.SaveFormat")->Html, options);
+    $pres->save("pres.html", Java("com.aspose.slides.SaveFormat")->Html, $options);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -197,7 +197,7 @@ public class CustomHeaderAndFontsController extends EmbedAllFontsHtmlController
             "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\">\n" +
             "</head>";
 
-    private final String m_cssFileName;
+    private $m_cssFileName;
 
     public CustomHeaderAndFontsController($cssFileName) 
     {
@@ -227,12 +227,12 @@ try
     //Exclude default presentation fonts
     String[] fontNameExcludeList = { "Calibri", "Arial" };
 
-    LinkAllFontsHtmlController linkcont = new LinkAllFontsHtmlController(fontNameExcludeList,"C:/Windows/Fonts/");
+    $linkcont = new Java("com.aspose.slides.LinkAllFontsHtmlController", fontNameExcludeList,"C:/Windows/Fonts/");
 
-    HtmlOptions htmlOptionsEmbed = new HtmlOptions();
-    htmlOptionsEmbed->setHtmlFormatter(HtmlFormatter.createCustomFormatter((IHtmlFormattingController) linkcont));
+    $htmlOptionsEmbed = new Java("com.aspose.slides.HtmlOptions");
+    $htmlOptionsEmbed->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter(($linkcont));
 
-    $pres->save("pres.html", Java("com.aspose.slides.SaveFormat")->Html, htmlOptionsEmbed);
+    $pres->save("pres.html", Java("com.aspose.slides.SaveFormat")->Html, $htmlOptionsEmbed);
 }
 finally {
     if ($pres != null) $pres->dispose();
@@ -242,7 +242,7 @@ finally {
 ```php
 public class LinkAllFontsHtmlController extends EmbedAllFontsHtmlController
 {
-    private final String m_basePath;
+    private $m_basePath;
 
     public LinkAllFontsHtmlController(String[] fontNameExcludeList, String basePath)
     {
@@ -284,9 +284,9 @@ The code sample below shows how to export a PPT(X) presentation to HTML with the
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "SomePresentation.pptx");
 try {
-    HtmlOptions saveOptions = new HtmlOptions();
-    saveOptions->setSvgResponsiveLayout(true);
-    $pres->save("SomePresentation-out.html", Java("com.aspose.slides.SaveFormat")->Html, saveOptions);
+    $saveOptions = new Java("com.aspose.slides.HtmlOptions");
+    $saveOptions->setSvgResponsiveLayout(true);
+    $pres->save("SomePresentation-out.html", Java("com.aspose.slides.SaveFormat")->Html, $saveOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -307,20 +307,20 @@ In the example given below, we have exported the media files to HTML.
 $pres = new Java("com.aspose.slides.Presentation", "Media File.pptx");
 try {
     $path = ".";
-    final String fileName = "ExportMediaFiles_out.html";
-    final String baseUri = "http://www.example.com/";
+    $fileName = "ExportMediaFiles_out.html";
+    $baseUri = "http://www.example.com/";
 
-    VideoPlayerHtmlController controller = new VideoPlayerHtmlController($path, fileName, baseUri);
+    $controller = new Java("com.aspose.slides.VideoPlayerHtmlController", $path, $fileName, $baseUri);
 
     // Setting HTML options
-    HtmlOptions htmlOptions = new HtmlOptions(controller);
+    $htmlOptions = new HtmlOptions(controller);
     SVGOptions svgOptions = new SVGOptions(controller);
 
-    htmlOptions->setHtmlFormatter(HtmlFormatter.createCustomFormatter(controller));
-    htmlOptions->setSlideImageFormat(SlideImageFormat.svg(svgOptions));
+    $htmlOptions->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($controller));
+    $htmlOptions->setSlideImageFormat(Java("com.aspose.slides.SlideImageFormat")->svg($svgOptions));
 
     // Saving the file
-    $pres->save(fileName, Java("com.aspose.slides.SaveFormat")->Html, htmlOptions);
+    $pres->save(fileName, Java("com.aspose.slides.SaveFormat")->Html, $htmlOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }

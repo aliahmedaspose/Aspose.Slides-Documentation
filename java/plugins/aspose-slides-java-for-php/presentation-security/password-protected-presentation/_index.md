@@ -115,7 +115,7 @@ Aspose.Slides allow you to load an encrypted file by passing its password. To de
 This sample code shows you how to decrypt a presentation: 
 
 ```php
-$loadOptions = new LoadOptions();
+$loadOptions = new Java("com.aspose.slides.LoadOptions");
 $loadOptions->setPassword("123123");
 $presentation = new Java("com.aspose.slides.Presentation", "pres.pptx", $loadOptions);
 try {
@@ -133,7 +133,7 @@ You can remove the encryption or password protection on a presentation. This way
 To remove encryption or password protection, you have to call the [removeEncryption](https://apireference.aspose.com/slides/java/com.aspose.slides/IProtectionManager#removeEncryption--) method. This sample code shows you to remove encryption from a presentation:
 
 ```php
-$loadOptions = new LoadOptions();
+$loadOptions = new Java("com.aspose.slides.LoadOptions");
 $loadOptions->setPassword("123123");
 $presentation = new Java("com.aspose.slides.Presentation", "pres.pptx", $loadOptions);
 try {

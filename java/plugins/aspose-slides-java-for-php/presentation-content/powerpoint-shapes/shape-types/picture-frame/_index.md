@@ -165,19 +165,19 @@ try {
     $aShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 300, 300);
 
     // Set shape's fill type
-    aShape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Picture);
+    $aShape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Picture);
 
     // Set shape's picture fill mode
-    aShape->getFillFormat()->getPictureFillFormat()->setPictureFillMode(Java("com.aspose.slides.PictureFillMode")->Stretch);
+    $aShape->getFillFormat()->getPictureFillFormat()->setPictureFillMode(Java("com.aspose.slides.PictureFillMode")->Stretch);
 
     // Set image to fill the shape
-    aShape->getFillFormat()->getPictureFillFormat()->getPicture()->setImage($imgEx);
+    $aShape->getFillFormat()->getPictureFillFormat()->getPicture()->setImage($imgEx);
 
     // Specify image offsets from the corresponding edge of the shape's bounding box
-    aShape->getFillFormat()->getPictureFillFormat()->setStretchOffsetLeft(25);
-    aShape->getFillFormat()->getPictureFillFormat()->setStretchOffsetRight(25);
-    aShape->getFillFormat()->getPictureFillFormat()->setStretchOffsetTop(-20);
-    aShape->getFillFormat()->getPictureFillFormat()->setStretchOffsetBottom(-10);
+    $aShape->getFillFormat()->getPictureFillFormat()->setStretchOffsetLeft(25);
+    $aShape->getFillFormat()->getPictureFillFormat()->setStretchOffsetRight(25);
+    $aShape->getFillFormat()->getPictureFillFormat()->setStretchOffsetTop(-20);
+    $aShape->getFillFormat()->getPictureFillFormat()->setStretchOffsetBottom(-10);
     
     //Write the PPTX file to disk
     $pres->save("StretchOffsetLeftForPictureFrame_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

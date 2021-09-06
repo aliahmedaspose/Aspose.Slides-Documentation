@@ -40,7 +40,7 @@ $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     $options = new  Java("com.aspose.slides.TextHighlightingOptions");
     
-    $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame().highlightRegex("\\b[^\\s]{4}\\b", java.awt.Color.YELLOW, options); // highlighting all words with 10 symbols or longer
+    $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame().highlightRegex("\\b[^\\s]{4}\\b", java.awt.Color.YELLOW, $options); // highlighting all words with 10 symbols or longer
     
     $pres->save("OutputPresentation-highlight.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

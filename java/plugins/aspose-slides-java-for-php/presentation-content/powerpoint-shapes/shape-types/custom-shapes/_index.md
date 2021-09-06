@@ -232,16 +232,16 @@ try {
     Shape graphicsPath;
     $font = Java("java.awt.Font", "Arial", Font.PLAIN, 40);
     $text = "Text in shape";
-    $img = new BufferedImage(100, 100, Java("java.awt.image.BufferedImage")->TYPE_INT_ARGB);
-    Graphics2D g2 = img.createGraphics();
+    $img = new Java("java.awt.image.BufferedImage", 100, 100, Java("java.awt.image.BufferedImage")->TYPE_INT_ARGB);
+    Graphics2D g2 = img->createGraphics();
 
     try
     {
-        GlyphVector glyphVector = font.createGlyphVector(g2->getFontRenderContext(), text);
+        GlyphVector glyphVector = font->createGlyphVector(g2->getFontRenderContext(), text);
         graphicsPath = glyphVector->getOutline(20, (-glyphVector->getVisualBounds()->getY()) + 10);
     }
     finally {
-        g2.dispose();
+        g2->dispose();
     }
 
     // Convert graphics path to geometry path

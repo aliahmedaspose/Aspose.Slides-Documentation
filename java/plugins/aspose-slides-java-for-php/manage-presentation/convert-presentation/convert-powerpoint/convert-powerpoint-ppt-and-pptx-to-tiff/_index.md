@@ -14,7 +14,7 @@ TIFF format is known for its flexibility to accommodate multipage images and dat
 
 {{% /alert %}} 
 
-The [**Save**](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation#save-java.lang.String-int-com.aspose.slides.ISaveOptions-) method exposed by [Presentation](https://apireference.aspose.com/java/slides/com.aspose.slides/presentation) class can be called by developers to convert the whole presentation into TIFF document. Further, [TiffOptions](https://apireference.aspose.com/java/slides/com.aspose.slides/tiffoptions) class exposes [**ImageSize** ](https://apireference.aspose.com/java/slides/com.aspose.slides/TiffOptions#setImageSize-java.awt.Dimension-)property enabling the developer to define the size of the image if required.
+The [**Save**](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation#save-java.lang.String-int-com.aspose.slides.ISaveOptions-) method exposed by [Presentation](https://apireference.aspose.com/java/slides/com.aspose.slides/presentation) class can be called by developers to convert the whole presentation into TIFF document. Further, [TiffOptions](https://apireference.aspose.com/java/slides/com.aspose.slides/tiffoptions) class exposes [**ImageSize** ](https://apireference.aspose.com/java/slides/com.aspose.slides/TiffOptions#setImageSize-Dimension-)property enabling the developer to define the size of the image if required.
 
 ## **Convert PPT(X) to TIFF with Default Size**
 The following example shows how to convert a presentation into a [TIFF](https://wiki.fileformat.com/image/tiff/) document with default options.
@@ -38,7 +38,7 @@ The following example shows how to convert a presentation into TIFF document wit
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
     // Instantiate the TiffOptions class
-    TiffOptions opts = new TiffOptions();
+    $opts = new Java("com.aspose.slides.TiffOptions");
     
     // Setting compression type
     // Possible values are:
@@ -48,21 +48,21 @@ try {
     // CCITT4
     // LZW
     // RLE
-    opts->setCompressionType(TiffCompressionTypes.Default);
+    $opts->setCompressionType(Java("com.aspose.slides.TiffCompressionTypes")->Default);
     
     // Depth – depends on the compression type and cannot be set manually.
     
     // Setting image DPI
-    opts->setDpiX(200);
-    opts->setDpiY(100);
+    $opts->setDpiX(200);
+    $opts->setDpiY(100);
     
     // Set Image Size
-    opts->setImageSize(new java.awt.Dimension(1728, 1078));
+    $opts->setImageSize(new Java("java.awt.Dimension", 1728, 1078));
     
-    INotesCommentsLayoutingOptions options = opts->getNotesCommentsLayouting();
-    options->setNotesPosition(NotesPositions.BottomFull);
+    $options = $opts->getNotesCommentsLayouting();
+    $options->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
     // Save the presentation to TIFF with specified image size
-    $pres->save("tiff-ImageSize.tiff", Java("com.aspose.slides.SaveFormat")->Tiff, opts);
+    $pres->save("tiff-ImageSize.tiff", Java("com.aspose.slides.SaveFormat")->Tiff, $opts);
 } finally {
     if ($pres != null) $pres->dispose();
 }    
@@ -75,8 +75,8 @@ The following example shows how to convert a presentation into a TIFF document w
 // Instantiate a Presentation object that represents a Presentation file
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
-    TiffOptions options = new TiffOptions();
-    options->setPixelFormat(ImagePixelFormat.Format8bppIndexed);
+    $options = new Java("com.aspose.slides.TiffOptions");
+    $options->setPixelFormat(Java("com.aspose.slides.ImagePixelFormat")->Format8bppIndexed);
     
     /*
      * ImagePixelFormat contains the following values (as could be seen from documentation):
@@ -88,7 +88,7 @@ try {
      */
     
     // Save the presentation to TIFF with specified image size
-    $pres->save("Tiff-PixelFormat.tiff", Java("com.aspose.slides.SaveFormat")->Tiff, options);
+    $pres->save("Tiff-PixelFormat.tiff", Java("com.aspose.slides.SaveFormat")->Tiff, $options);
 } finally {
     if ($pres != null) $pres->dispose();
 }

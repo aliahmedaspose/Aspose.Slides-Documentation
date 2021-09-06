@@ -89,7 +89,7 @@ try {
 
     // Create a new image for the zoom object
     byte[] imageBytes = Files->readAllBytes(Paths->get("image.png"));
-    $image = $pres->getImages()->addImage(imageBytes);
+    $image = $pres->getImages()->addImage($imageBytes);
 
     //Add the ZoomFrame object
     $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(20, 20, 300, 200, $slide, $image);
@@ -150,7 +150,7 @@ try {
 
     // Create a new image for the zoom object
     byte[] imageBytes = Files->readAllBytes(Paths->get("image.png")); 
-    $image = $pres->getImages()->addImage(imageBytes);
+    $image = $pres->getImages()->addImage($imageBytes);
 	
     // Set custom image for zoomFrame1 object
     $zoomFrame1->setImage($image);

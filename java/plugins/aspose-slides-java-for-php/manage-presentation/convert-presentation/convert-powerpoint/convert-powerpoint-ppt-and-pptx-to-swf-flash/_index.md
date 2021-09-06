@@ -13,12 +13,12 @@ The [Save](https://apireference.aspose.com/slides/java/com.aspose.slides/Present
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "Sample.pptx");
 try {
-    SwfOptions swfOptions = new SwfOptions();
-    swfOptions->setViewerIncluded(false);
-    swfOptions->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomFull);
+    $swfOptions = new Java("com.aspose.slides.SwfOptions");
+    $swfOptions->setViewerIncluded(false);
+    $swfOptions->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
     
     // Saving presentation
-    $pres->save("Sample.swf", Java("com.aspose.slides.SaveFormat")->Swf, swfOptions);
+    $pres->save("Sample.swf", Java("com.aspose.slides.SaveFormat")->Swf, $swfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }

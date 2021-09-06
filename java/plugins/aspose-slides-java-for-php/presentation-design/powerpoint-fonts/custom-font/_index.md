@@ -55,7 +55,7 @@ A new [getDocumentLevelFontSources](https://apireference.aspose.com/slides/java/
 byte[] memoryFont1 = Files->readAllBytes("customfonts/CustomFont1.ttf");
 byte[] memoryFont2 = Files->readAllBytes("customfonts/CustomFont2.ttf");
 
-$loadOptions = new LoadOptions();
+$loadOptions = new Java("com.aspose.slides.LoadOptions");
 $loadOptions->getDocumentLevelFontSources()->setFontFolders(new String[] { "assets/fonts", "global/fonts" });
 $loadOptions->getDocumentLevelFontSources()->setMemoryFonts(new byte[][] { memoryFont1, memoryFont2 });
 

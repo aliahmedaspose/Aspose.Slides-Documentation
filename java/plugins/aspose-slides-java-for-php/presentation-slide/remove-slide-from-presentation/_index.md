@@ -34,7 +34,7 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
     
     // Removing a slide using its reference
-    $pres->getSlides()->remove(slide);
+    $pres->getSlides()->remove($slide);
     
     // Writing the presentation file
     $pres->save("modified.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

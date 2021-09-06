@@ -31,7 +31,7 @@ Aspose.Slides for Java provides a facility to open password-protected presentati
 
 ```php
 // Creating instance of load options to set the presentation access password
-$loadOptions = new LoadOptions();
+$loadOptions = new Java("com.aspose.slides.LoadOptions");
 
 // Setting the access password
 $loadOptions->setPassword("pass");
@@ -51,10 +51,10 @@ try {
 Aspose.Slides for Java provides a facility to open very large presentations using [Presentation](https://apireference.aspose.com/java/slides/com.aspose.slides/Presentation) class. Now you can load large presentations lets say presentation size is 2 Gb, you can easily open that with these sample codes provided below.
 
 ```php
-$loadOptions = new LoadOptions();
-$loadOptions->getBlobManagementOptions()->setPresentationLockingBehavior(PresentationLockingBehavior.KeepLocked);
+$loadOptions = new Java("com.aspose.slides.LoadOptions");
+$loadOptions->getBlobManagementOptions()->setPresentationLockingBehavior(Java("com.aspose.slides.PresentationLockingBehavior")->KeepLocked);
 $loadOptions->getBlobManagementOptions()->setTemporaryFilesAllowed(true);
-$loadOptions->getBlobManagementOptions()->setMaxBlobsBytesInMemory(0L);
+$loadOptions->getBlobManagementOptions()->setMaxBlobsBytesInMemory(0);
 
 $pres = new Java("com.aspose.slides.Presentation", "veryLargePresentation.pptx", $loadOptions);
 try {
@@ -76,10 +76,10 @@ This callback interface is used to manage external resources loading and has one
 The code snippet below shows how to use IResourceLoadingCallback interface:
 
 ```php
-LoadOptions opts = new LoadOptions();
-opts->setResourceLoadingCallback(new ImageLoadingHandler());
+$$opts = new Java("com.aspose.slides.LoadOptions");
+o$pts->setResourceLoadingCallback(new Java("com.aspose.slides.ImageLoadingHandler"));
 
-$pres = new Java("com.aspose.slides.Presentation", "presentation.pptx", opts);
+$pres = new Java("com.aspose.slides.Presentation", "presentation.pptx", $opts);
 ```
 ```php
 class ImageLoadingHandler implements IResourceLoadingCallback 
@@ -91,7 +91,7 @@ class ImageLoadingHandler implements IResourceLoadingCallback
             try // load substitute image
             {
                 byte[] imageBytes = Files->readAllBytes(new Java("java.io.File", "aspose-logo.jpg")->toPath());
-                args->setData(imageBytes);
+                args->setData($imageBytes);
                 return ResourceLoadingAction.UserProvided;
             } catch (RuntimeException ex) {
                 return ResourceLoadingAction.Skip;

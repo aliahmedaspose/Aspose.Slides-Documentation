@@ -77,7 +77,7 @@ try {
     
         // Changing substitute image. PowerPoint will replace this image during activeX activation, 
         // so sometime it's OK to leave image unchanged.
-        $image = new BufferedImage(control->getFrame()->getWidth(), $control->getFrame()->getHeight(),
+        $image = new Java("java.awt.image.BufferedImage", control->getFrame()->getWidth(), $control->getFrame()->getHeight(),
                 Java("java.awt.image.BufferedImage")->TYPE_INT_ARGB);
     
         $graphics =$image->getGraphics();
@@ -116,7 +116,7 @@ try {
         $newCaption = "Show MessageBox";
         $control->getProperties()->set_Item("Caption", newCaption);
         // Changing substitute
-        $image = new BufferedImage(control->getFrame()->getWidth(), $control->getFrame()->getHeight(),
+        $image = new Java("java.awt.image.BufferedImage", control->getFrame()->getWidth(), $control->getFrame()->getHeight(),
                 Java("java.awt.image.BufferedImage")->TYPE_INT_ARGB);
         $graphics =$image->getGraphics();
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->control);

@@ -16,7 +16,7 @@ try {
     try {
         // let's add the video to the presentation - we choose KeepLocked behavior, because we not
         // have an intent to access the "veryLargeVideo.avi" file.
-        $video = $pres->getVideos()->addVideo($fileStream, LoadingStreamBehavior.KeepLocked);
+        $video = $pres->getVideos()->addVideo($fileStream, Java("com.aspose.slides.LoadingStreamBehavior")->KeepLocked);
         $pres->getSlides()->get_Item(0)->getShapes()->addVideoFrame(0, 0, 480, 270, $video);
 
         // save the presentation. Despite that the output presentation will be very large, the memory
@@ -35,9 +35,9 @@ try {
 Aspose.Slides for Java provides a facility to Export large files (audio and video file in that case). We want to extract these files from the presentation and do not want to load this presentation into memory to keep our memory consumption low. Here is an example is given below how we can export Blob from presentations in Java.
 
 ```php
-$loadOptions = new LoadOptions();
+$loadOptions = new Java("com.aspose.slides.LoadOptions");
 // lock the source file and don't load it into memory
-$loadOptions->getBlobManagementOptions()->setPresentationLockingBehavior(PresentationLockingBehavior.KeepLocked);
+$loadOptions->getBlobManagementOptions()->setPresentationLockingBehavior(Java("com.aspose.slides.PresentationLockingBehavior")->KeepLocked);
 
 // create the Presentation's instance, lock the "hugePresentationWithAudiosAndVideos.pptx" file.
 $pres = new Java("com.aspose.slides.Presentation", "Large_Video_File_Test.pptx", $loadOptions);
@@ -90,7 +90,7 @@ try {
     try {
         // let's add the image to the presentation - we choose KeepLocked behavior, because we not
         // have an intent to access the "largeImage.png" file.
-        $img = $pres->getImages()->addImage($fip, LoadingStreamBehavior.KeepLocked);
+        $img = $pres->getImages()->addImage($fip, Java("com.aspose.slides.LoadingStreamBehavior")->KeepLocked);
         $pres->getSlides()->get_Item(0)->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0, 300, 200, $img);
 
         // save the presentation. Despite that the output presentation will be

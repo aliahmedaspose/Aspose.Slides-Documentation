@@ -70,13 +70,13 @@ This sample code shows you how to convert a presentation to an XPS document usin
 $pres = new Java("com.aspose.slides.Presentation", "Convert_XPS_Options.pptx");
 try {
     // Instantiate the TiffOptions class
-    XpsOptions options = new XpsOptions();
+    $options = new Java("com.aspose.slides.XpsOptions");
 
     // Save MetaFiles as PNG
-    options->setSaveMetafilesAsPng(true);
+    $options->setSaveMetafilesAsPng(true);
 
     // Save the presentation to XPS document
-    $pres->save("XPS_Output_With_Options.xps", Java("com.aspose.slides.SaveFormat")->Xps, options);
+    $pres->save("XPS_Output_With_Options.xps", Java("com.aspose.slides.SaveFormat")->Xps, $options);
 } finally {
     if ($pres != null) $pres->dispose();
 }

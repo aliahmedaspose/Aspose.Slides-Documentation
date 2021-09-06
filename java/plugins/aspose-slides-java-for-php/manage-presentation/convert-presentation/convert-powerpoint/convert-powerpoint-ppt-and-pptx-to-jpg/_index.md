@@ -82,15 +82,15 @@ Aspose.Slides for Java provides a facility to render comments of presentations o
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
-    IRenderingOptions opts = new RenderingOptions();
-    opts->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomTruncated);
+    $opts = new Java("com.aspose.slides.RenderingOptions");
+    $opts->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomTruncated);
 
     for ($sld : $pres->getSlides()) {
-        $image = new BufferedImage(740, 960, Java("java.awt.image.BufferedImage")->TYPE_INT_ARGB);
-        $graphics = image.createGraphics();
+        $image = new Java("java.awt.image.BufferedImage", 740, 960, Java("java.awt.image.BufferedImage")->TYPE_INT_ARGB);
+        $graphics = $image->createGraphics();
         try {
 
-            $pres->getSlides()->get_Item(0)->renderToGraphics(opts, (Graphics2D) graphics);
+            $pres->getSlides()->get_Item(0)->renderToGraphics(opts, $graphics);
         } finally {
             if ($graphics != null) $graphics->dispose();
         }

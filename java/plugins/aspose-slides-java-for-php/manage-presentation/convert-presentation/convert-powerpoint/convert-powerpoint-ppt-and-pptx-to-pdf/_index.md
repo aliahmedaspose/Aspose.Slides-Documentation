@@ -51,16 +51,16 @@ This sample code shows you how to specify your preferred PDF compliance standard
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
-    PdfOptions pdfOptions = new PdfOptions();
+    $pdfOptions = new Java("com.aspose.slides.PdfOptions");
     
-    pdfOptions->setCompliance(PdfCompliance.PdfA1a);
-    $pres->save("pres-a1a-compliance.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
+    $pdfOptions->setCompliance(Java("com.aspose.slides.PdfCompliance")->PdfA1a);
+    $pres->save("pres-a1a-compliance.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
 
-    pdfOptions->setCompliance(PdfCompliance.PdfA1b);
-    $pres->save("pres-a1b-compliance.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
+    $pdfOptions->setCompliance(Java("com.aspose.slides.PdfCompliance")->PdfA1b);
+    $pres->save("pres-a1b-compliance.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
 
-    pdfOptions->setCompliance(PdfCompliance.PdfUa);
-    $pres->save("pres-ua-compliance.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
+    $pdfOptions->setCompliance(Java("com.aspose.slides.PdfCompliance")->PdfUa);
+    $pres->save("pres-ua-compliance.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -120,22 +120,22 @@ The following example shows you how to convert PowerPoint PPT, PPTX and OpenOff
 $pres = new Java("com.aspose.slides.Presentation", "PowerPoint.pptx");
 try {
     // Instantiate the PdfOptions class
-    PdfOptions pdfOptions = new PdfOptions();
+    $pdfOptions = new Java("com.aspose.slides.PdfOptions");
     
     // Set Jpeg quality
-    pdfOptions->setJpegQuality((byte)90);
+    $pdfOptions->setJpegQuality((byte)90);
     
     // Set behavior for metafiles
-    pdfOptions->setSaveMetafilesAsPng(true);
+    $pdfOptions->setSaveMetafilesAsPng(true);
     
     // Set text compression level
-    pdfOptions->setTextCompression(PdfTextCompression.Flate);
+    $pdfOptions->setTextCompression(PdfTextCompression.Flate);
     
     // Define the PDF standard
-    pdfOptions->setCompliance(PdfCompliance.Pdf15);
+    $pdfOptions->setCompliance(Java("com.aspose.slides.PdfCompliance")->Pdf15);
     
     // Save the presentation as PDF
-    $pres->save("PowerPoint-to-PDF.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
+    $pres->save("PowerPoint-to-PDF.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -155,13 +155,13 @@ Default value is **"false"**.
 $pres = new Java("com.aspose.slides.Presentation", "PowerPoint.pptx");
 try {
     // Instantiate the PdfOptions class
-    PdfOptions pdfOptions = new PdfOptions();
+    $pdfOptions = new Java("com.aspose.slides.PdfOptions");
     
     // Include hidden slides
-    pdfOptions->setShowHiddenSlides(true);
+    $pdfOptions->setShowHiddenSlides(true);
     
     // Save the presentation as PDF
-    $pres->save("PowerPoint-to-PDF.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
+    $pres->save("PowerPoint-to-PDF.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -175,14 +175,14 @@ The following example shows you how to convert a presentation to a password-prot
 $pres = new Java("com.aspose.slides.Presentation", "PowerPoint.pptx");
 try {
     /// Instantiate the PdfOptions class
-    PdfOptions pdfOptions = new PdfOptions();
+    $pdfOptions = new Java("com.aspose.slides.PdfOptions");
     
     // Setting PDF password and access permissions
-    pdfOptions->setPassword("password");
-    pdfOptions->setAccessPermissions(PdfAccessPermissions.PrintDocument | PdfAccessPermissions.HighQualityPrint);
+    $pdfOptions->setPassword("password");
+    $pdfOptions->setAccessPermissions(Java("com.aspose.slides.PdfAccessPermissions")PrintDocument | Java("com.aspose.slides.PdfAccessPermissions")HighQualityPrint);
     
     // Save the presentation as PDF
-    $pres->save("PPTX-to-PDF.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
+    $pres->save("PPTX-to-PDF.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -212,20 +212,20 @@ The following example shows you how to convert a presentation to a PDF notes doc
 // Instantiate a Presentation object that represents a presentation file 
 $pres = new Java("com.aspose.slides.Presentation", "SelectedSlides.pptx");
 try {
-    $outPres = new Presentation();
+    $outPres = new Java("com.aspose.slides.Presentation");
     try {
         $slide = $pres->getSlides()->get_Item(0);
 
-        outPres->getSlides()->insertClone(0, slide);
+        outPres->getSlides()->insertClone(0, $slide);
         
         // Setting Slide Type and Size
-        outPres->getSlideSize()->setSize(612F, 792F, SlideSizeScaleType.EnsureFit);
+        outPres->getSlideSize()->setSize(612, 792, Java("com.aspose.slides.SlideSizeScaleType")->EnsureFit);
         
-        PdfOptions pdfOptions = new PdfOptions();
-        INotesCommentsLayoutingOptions options = pdfOptions->getNotesCommentsLayouting();
-        options->setNotesPosition(NotesPositions.BottomFull);
+        $pdfOptions = new Java("com.aspose.slides.PdfOptions");
+        $options = $pdfOptions->getNotesCommentsLayouting();
+        $options->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
 
-        outPres->save("PDFnotes_out.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
+        outPres->save("PDFnotes_out.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
     } finally {
         if ($pres != null) $pres->dispose();
     }
@@ -241,11 +241,11 @@ The following example shows you how to convert a presentation to a PDF notes doc
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "SelectedSlides.pptx");
 try {
-    PdfOptions pdfOptions = new PdfOptions();
-    INotesCommentsLayoutingOptions options = pdfOptions->getNotesCommentsLayouting();
-    options->setNotesPosition(NotesPositions.BottomFull);
+    $pdfOptions = new Java("com.aspose.slides.PdfOptions");
+    $options = $pdfOptions->getNotesCommentsLayouting();
+    $options->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
 
-    $pres->save("Pdf_With_Notes.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, pdfOptions);
+    $pres->save("Pdf_With_Notes.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -86,7 +86,7 @@ In the example given below, we have cloned a slide (from the first index of the 
 Presentation srcPres = new Java("com.aspose.slides.Presentation", "CloneAtEndOfAnother.pptx");
 try {
     // Instantiate Presentation class for destination PPTX (where slide is to be cloned)
-    $destPres = new Presentation();
+    $destPres = new Java("com.aspose.slides.Presentation");
     try {
         // Clone the desired slide from the source presentation to the end of the collection of slides in destination presentation
         ISlideCollection slds = destPres->getSlides();
@@ -96,10 +96,10 @@ try {
         // Write the destination presentation to disk
         destPres->save("Aspose2_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
     } finally {
-        destPres.dispose();
+        destPres->dispose();
     }
 } finally {
-    srcPres.dispose();
+    srcPres->dispose();
 }
 ```
 
@@ -119,7 +119,7 @@ In the example given below, we have cloned a slide (from the zero index of the s
 Presentation srcPres = new Java("com.aspose.slides.Presentation", "CloneAtEndOfAnother.pptx");
 try {
     // Instantiate Presentation class for destination PPTX (where slide is to be cloned)
-    $destPres = new Presentation();
+    $destPres = new Java("com.aspose.slides.Presentation");
     try {
         // Clone the desired slide from the source presentation to the end of the collection of slides in destination presentation
         ISlideCollection slds = destPres->getSlides();
@@ -129,10 +129,10 @@ try {
         // Write the destination presentation to disk
         destPres->save("Aspose2_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
     } finally {
-        destPres.dispose();
+        destPres->dispose();
     }
 } finally {
-    srcPres.dispose();
+    srcPres->dispose();
 }
 ```
 
@@ -155,7 +155,7 @@ In the example given below, we have cloned a slide with a master (lying at the z
 Presentation srcPres = new Java("com.aspose.slides.Presentation", "CloneToAnotherPresentationWithMaster.pptx");
 try {
     // Instantiate Presentation class for destination presentation (where slide is to be cloned)
-    $destPres = new Presentation();
+    $destPres = new Java("com.aspose.slides.Presentation");
     try {
         // Instantiate ISlide from the collection of slides in source presentation along with
         // Master slide
@@ -179,10 +179,10 @@ try {
         // Save the destination presentation to disk
         destPres->save("CloneToAnotherPresentationWithMaster_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
     } finally {
-        destPres.dispose();
+        destPres->dispose();
     }
 } finally {
-    srcPres.dispose();
+    srcPres->dispose();
 }
 ```
 

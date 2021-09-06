@@ -174,8 +174,8 @@ try {
     $ScaleX = (1.0 / $pres->getSlideSize()->getSize()->getWidth()) * desiredX;
     $ScaleY = (1.0 / $pres->getSlideSize()->getSize()->getHeight()) * desiredY;
 
-    RenderingOptions opts = new RenderingOptions();
-    opts->getNotesCommentsLayouting()->setNotesPosition(NotesPositions.BottomTruncated);
+    RenderingOptions $opts = new Java("com.aspose.slides.RenderingOptions");
+    $opts->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomTruncated);
     
     // Create a full scale image
     $bmp = $sld->getThumbnail(opts, ScaleX, ScaleY);

@@ -88,11 +88,11 @@ try {
     $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 50, 150, 300, 0);
     
     //Setting strick XML save options
-    PptxOptions options = new PptxOptions();
-    options->setConformance(Conformance.Iso29500_2008_Strict);
+    $options = new Java("com.aspose.slides.PptxOptions");
+    $options->setConformance(Conformance.Iso29500_2008_Strict);
     
     // Save your presentation to a file
-    $pres->save("demoPass.pptx", Java("com.aspose.slides.SaveFormat")->Pptx, options);
+    $pres->save("demoPass.pptx", Java("com.aspose.slides.SaveFormat")->Pptx, $options);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -108,9 +108,9 @@ The following code snippets below show how to use [IProgressCallback](https://ap
 // Opening the presentation file
 $pres = new Java("com.aspose.slides.Presentation", "ConvertToPDF.pptx");
 try {
-    ISaveOptions saveOptions = new PdfOptions();
-    saveOptions->setProgressCallback((IProgressCallback) new ExportProgressHandler());
-    $pres->save("ConvertToPDF.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, saveOptions);
+    $saveOptions = new Java("com.aspose.slides.PdfOptions");
+    $saveOptions->setProgressCallback(new Java("com.aspose.slides.ExportProgressHandler"));
+    $pres->save("ConvertToPDF.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $saveOptions);
 } finally {
     $pres->dispose();
 }

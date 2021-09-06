@@ -22,7 +22,7 @@ try {
     for ($slide : $pres->getSlides()) 
     {
         //Get an Array of ITextFrame objects from all slides in the PPTX
-        $textFramesPPTX = SlideUtil->getAllTextBoxes(slide);
+        $textFramesPPTX = SlideUtil->getAllTextBoxes($slide);
 
         //Loop through the Array of TextFrames
         for ($i = 0; i < textFramesPPTX->length; i++) {

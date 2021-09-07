@@ -70,11 +70,11 @@ try {
 
     $shp->getLineFormat()->setDashStyle(Java("com.aspose.slides.LineDashStyle")->DashDot);
 
-    $shp->getLineFormat()->setBeginArrowheadLength(LineArrowheadLength.Short);
-    $shp->getLineFormat()->setBeginArrowheadStyle(LineArrowheadStyle.Oval);
+    $shp->getLineFormat()->setBeginArrowheadLength(Java("com.aspose.slides.LineArrowheadLength")->Short);
+    $shp->getLineFormat()->setBeginArrowheadStyle(Java("com.aspose.slides.LineArrowheadStyle")->Oval);
 
-    $shp->getLineFormat()->setEndArrowheadLength(LineArrowheadLength.Long);
-    $shp->getLineFormat()->setEndArrowheadStyle(LineArrowheadStyle.Triangle);
+    $shp->getLineFormat()->setEndArrowheadLength(Java("com.aspose.slides.LineArrowheadLength")->Long);
+    $shp->getLineFormat()->setEndArrowheadStyle(Java("com.aspose.slides.LineArrowheadStyle")->Triangle);
 
     $shp->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
     $shp->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(new Java("java.awt.Color", Java("com.aspose.slides.PresetColor")->Maroon));

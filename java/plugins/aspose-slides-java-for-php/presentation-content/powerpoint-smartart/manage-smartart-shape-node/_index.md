@@ -27,7 +27,7 @@ try {
         if ($shape instanceof SmartArt) 
         {
             // Typecast shape to SmartArt
-            $smart = (SmartArt) shape;
+            $smart = $shape;
     
             // Adding a new SmartArt Node
             $TemNode = $smart->getAllNodes()->addNode();
@@ -74,10 +74,10 @@ try {
     $node = $smart->getAllNodes()->get_Item(0);
 
     // Adding new child node at position 2 in parent node
-    $chNode = $((SmartArtNodeCollection) $node->getChildNodes())->addNodeByPosition(2);
+    $chNode = $($node->getChildNodes())->addNodeByPosition(2);
 
     // Add Text
-    chNode->getTextFrame()->setText("Sample Text Added");
+    $chNode->getTextFrame()->setText("Sample Text Added");
 
     // Save Presentation
     $pres->save("AddSmartArtNodeByPosition.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -110,10 +110,10 @@ try {
         if ($shape instanceof ISmartArt) 
         {
             // Typecast shape to SmartArt
-            $smart = (ISmartArt) shape;
+            $smart = $shape;
     
             // Traverse through all nodes inside SmartArt
-            for ($i = 0; i < $smart->getAllNodes()->size(); i++) 
+            for ($i = 0; $i < $smart->getAllNodes()->size(); $i++) 
             {
                 // Accessing SmartArt node at index i
                 $node = $smart->getAllNodes()->get_Item($i);
@@ -154,22 +154,22 @@ try {
         if ($shape instanceof ISmartArt) 
         {
             // Typecast shape to SmartArt
-            $smart = (ISmartArt) shape;
+            $smart = $shape;
     
             // Traverse through all nodes inside SmartArt
-            for ($i = 0; i < $smart->getAllNodes()->size(); i++) 
+            for ($i = 0; $i < $smart->getAllNodes()->size(); $i++) 
             {
                 // Accessing SmartArt node at index i
                 $node0 = $smart->getAllNodes()->get_Item($i);
                 
                 // Traversing through the child nodes in SmartArt node at index i
-                for ($j = 0; j < node0->getChildNodes()->size(); j++) 
+                for ($j = 0; $j < node0->getChildNodes()->size(); $j++) 
                 {
                     // Accessing the child node in SmartArt node
                     $node = $node0->getChildNodes()->get_Item($j);
     
                     // Printing the SmartArt child node parameters
-                    echo("j = " + j + ", Text = " + $node->getTextFrame()->getText() + ",  Level = " + $node->getLevel() + ", Position = " + $node->getPosition());
+                    echo("j = " + $j + ", Text = " + $node->getTextFrame()->getText() + ",  Level = " + $node->getLevel() + ", Position = " + $node->getPosition());
                 }
             }
         }
@@ -205,10 +205,10 @@ try {
     
     // Accessing the child node at position 1 in parent node
     $position = 1;
-    $chNode = $((SmartArtNodeCollection) $node->getChildNodes())->get_Item(position);
+    $chNode = $node->getChildNodes()->get_Item($position);
     
     // Printing the SmartArt child node parameters
-    echo("Text = " + chNode->getTextFrame()->getText() + ",  Level = " + chNode->getLevel() + ", Position = " + chNode->getPosition());
+    echo("Text = " + $chNode->getTextFrame()->getText() + ",  Level = " + $chNode->getLevel() + ", Position = " + $chNode->getPosition());
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -237,7 +237,7 @@ try {
         if ($shape instanceof ISmartArt) 
         {
             // Typecast shape to SmartArt
-            $smart = (ISmartArt) shape;
+            $smart = $shape;
     
             if ($smart->getAllNodes()->size() > 0) 
             {
@@ -245,7 +245,7 @@ try {
                 $node = $smart->getAllNodes()->get_Item(0);
     
                 // Removing the selected node
-                $smart->getAllNodes()->removeNode(node);
+                $smart->getAllNodes()->removeNode($node);
             }
         }
     }
@@ -280,7 +280,7 @@ try {
         if ($shape instanceof SmartArt) 
         {
             // Typecast shape to SmartArt
-        $smart = (SmartArt) shape;
+        $smart = $shape;
     
             if ($smart->getAllNodes()->size() > 0) 
             {
@@ -373,17 +373,17 @@ try {
         if ($shape instanceof ISmartArt) 
         {
             // Typecast shape to SmartArt
-            $smart = (SmartArt) shape;
+            $smart = $shape;
     
             // Traversing through all nodes of SmartArt shape
-            for ($i = 0; i < $smart->getAllNodes()->size(); i++) 
+            for ($i = 0; $i < $smart->getAllNodes()->size(); $i++) 
             {
                 $node = $smart->getAllNodes()->get_Item($i);
                 // Check if node is Assistant node
                 if ($node->isAssistant()) 
                 {
                     // Setting Assistant node to false and making it normal node
-                    node->isAssistant();
+                    $node->isAssistant();
                 }
             }
         }

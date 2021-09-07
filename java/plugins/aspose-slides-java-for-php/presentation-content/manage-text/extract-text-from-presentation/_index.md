@@ -25,9 +25,9 @@ try {
         $textFramesPPTX = SlideUtil->getAllTextBoxes($slide);
 
         //Loop through the Array of TextFrames
-        for ($i = 0; i < textFramesPPTX->length; i++) {
+        for ($i = 0; $i < textFramesPPTX->length; $i++) {
             //Loop through paragraphs in current ITextFrame
-            for ($para : textFramesPPTX[i]->getParagraphs()) {
+            for ($para : textFramesPPTX->get_Item($i)->getParagraphs()) {
                 //Loop through portions in the current IParagraph
                 for ($port : $para->getPortions()) {
                     //Display text in the current portion
@@ -61,13 +61,13 @@ To scan the text from the whole presentation, use the
 $pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
     //Get an Array of ITextFrame objects from all slides in the PPTX
-    $textFramesPPTX = SlideUtil->getAllTextFrames(pres, true);
+    $textFramesPPTX = SlideUtil->getAllTextFrames($pres, true);
 
     //Loop through the Array of TextFrames
-    for ($i = 0; i < textFramesPPTX->length; i++) 
+    for ($i = 0; $i < textFramesPPTX->length; $i++) 
     {
         //Loop through paragraphs in current ITextFrame
-        for ($para : textFramesPPTX[i]->getParagraphs())
+        for ($para : textFramesPPTX->get_Item($i)->getParagraphs())
         {
             //Loop through portions in the current IParagraph
             for ($port : $para->getPortions())

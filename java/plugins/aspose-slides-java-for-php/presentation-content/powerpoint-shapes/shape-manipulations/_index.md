@@ -31,7 +31,7 @@ try {
 public static $findShape($slide, String alttext)
 {
     // Iterating through all shapes inside the slide
-    for ($i = 0; i < $slide->getShapes()->size(); i++)
+    for ($i = 0; $i < $slide->getShapes()->size(); $i++)
     {
         // If the alternative text of the slide matches with the required one then
         // Return the shape
@@ -59,7 +59,7 @@ The example below adds a group shape to a slide.
 $pres = new Java("com.aspose.slides.Presentation", "Source Frame.pptx");
 try {
     $sourceShapes = $pres->getSlides()->get_Item(0)->getShapes();
-    $blankLayout = $pres->getMasters()->get_Item(0)->getLayoutSlides()->getByType(Java("com.aspose.slides.SlideLayoutType")-> Blank);
+    $blankLayout = $pres->getMasters()->get_Item(0)->getLayoutSlides()->getByType(Java("com.aspose.slides.SlideLayoutType")->Blank);
     $destSlide = $pres->getSlides()->addEmptySlide($blankLayout);
     $destShapes = $destSlide->getShapes();
     $destShapes->addClone(sourceShapes->get_Item(1), 50, 150 + $sourceShapes->get_Item(0)->getHeight());
@@ -95,7 +95,7 @@ try {
 
     $altText = "User Defined";
     $iCount = $sld->getShapes()->size();
-    for ($i = 0; i < iCount; i++)
+    for ($i = 0; $i < iCount; $i++)
     {
         $ashp = $sld->getShapes()->get_Item(0);
         if ($alttext == ($ashp->getAlternativeText()))
@@ -133,7 +133,7 @@ try {
 
     $alttext = "User Defined";
     $iCount = $sld->getShapes()->size();
-    for ($i = 0; i < iCount; i++)
+    for ($i = 0; $i < iCount; $i++)
     {
         $ashp = $sld->getShapes()->get_Item($i);
         if ($alttext == ($ashp->getAlternativeText()))
@@ -225,7 +225,7 @@ try {
     $shp2->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
     $shp2->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->GRAY);
 
-    for ($i = 0; i < $sld->getShapes()->size(); i++)
+    for ($i = 0; $i < $sld->getShapes()->size(); $i++)
     {
         $shape = $sld->getShapes()->get_Item($i);
         if ($shape != null)
@@ -272,7 +272,7 @@ try {
     try {
         $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->writeAsSvg($stream);
     } finally {
-        if ($stream != null) stream->close();
+        if ($stream != null) $stream->close();
     }
 } catch (JavaException $e) {
 } finally {
@@ -294,7 +294,7 @@ try {
     $shape1 = $slide->getShapes()->get_Item(1);
     $shape2 = $slide->getShapes()->get_Item(2);
     $shape3 = $slide->getShapes()->get_Item(4);
-    $SlideUtil->alignShapes(Java("com.aspose.slides.ShapesAlignmentType")-> AlignTop, true, $pres->getSlides()->get_Item(0), new int[]
+    $SlideUtil->alignShapes(Java("com.aspose.slides.ShapesAlignmentType")->AlignTop, true, $pres->getSlides()->get_Item(0), new int[]
     {
         $slide->getShapes()->indexOf($shape1),
         $slide->getShapes()->indexOf($shape2),
@@ -313,7 +313,7 @@ The example below shows how to align the entire collection of shapes relative to
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "example.pptx");
 try {
-    $SlideUtil->alignShapes(Java("com.aspose.slides.ShapesAlignmentType")-> AlignBottom, false, $pres->getSlides()->get_Item(0));
+    $SlideUtil->alignShapes(Java("com.aspose.slides.ShapesAlignmentType")->AlignBottom, false, $pres->getSlides()->get_Item(0));
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -26,10 +26,10 @@ try {
     IMasterLayoutSlideCollection layoutSlides = $pres->getMasters()->get_Item(0)->getLayoutSlides();
     $layoutSlide = null;
 
-    if ($layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")-> TitleAndObject) != null)
-        layoutSlide = layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")-> TitleAndObject);
+    if ($layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")->TitleAndObject) != null)
+        layoutSlide = layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")->TitleAndObject);
     else
-        layoutSlide = layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")-> Title);
+        layoutSlide = layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")->Title);
 
     if ($layoutSlide == null) {
         // The situation when a presentation doesn't contain some type of layouts.
@@ -52,9 +52,9 @@ try {
                 }
             }
             if ($layoutSlide == null) {
-                layoutSlide = layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")-> Blank);
+                layoutSlide = layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")->Blank);
                 if ($layoutSlide == null) {
-                    layoutSlide = layoutSlides->add(Java("com.aspose.slides.SlideLayoutType")-> TitleAndObject, "Title and Object");
+                    layoutSlide = layoutSlides->add(Java("com.aspose.slides.SlideLayoutType")->TitleAndObject, "Title and Object");
                 }
             }
         }
@@ -85,7 +85,7 @@ try {
         auxPresentation->getSlideSize()->setSize(SlideSizeType.A4Paper, Java("com.aspose.slides.SlideSizeScaleType")->Maximize);
         
         // Clone required slide
-        auxPresentation->getSlides()->addClone(presentation->getSlides()->get_Item(0));
+        auxPresentation->getSlides()->addClone($presentation->getSlides()->get_Item(0));
         auxPresentation->getSlides()->removeAt(0);
         
         // Save Presentation to disk
@@ -111,20 +111,20 @@ To set footer in a slide using its index position in the slides collection of th
 $presentation = new Java("com.aspose.slides.Presentation", "presentation.ppt");
 try {
     IBaseSlideHeaderFooterManager headerFooterManager = $presentation->getSlides()->get_Item(0)->getHeaderFooterManager();
-    if ($!headerFooterManager->isFooterVisible()) // Method isFooterVisible is used for indicating that a slide footer placeholder is not present.
+    if (!$headerFooterManager->isFooterVisible()) // Method isFooterVisible is used for indicating that a slide footer placeholder is not present.
     {
-        headerFooterManager->setFooterVisibility(true); // Method setFooterVisibility is used for making a slide footer placeholder visible.
+        $headerFooterManager->setFooterVisibility(true); // Method setFooterVisibility is used for making a slide footer placeholder visible.
     }
-    if ($!headerFooterManager->isSlideNumberVisible()) // Method isSlideNumberVisible is used for indicating that a slide page number placeholder is not present.
+    if (!$headerFooterManager->isSlideNumberVisible()) // Method isSlideNumberVisible is used for indicating that a slide page number placeholder is not present.
     {
-        headerFooterManager->setSlideNumberVisibility(true); // Method setSlideNumberVisibility is used for making a slide page number placeholder visible.
+        $headerFooterManager->setSlideNumberVisibility(true); // Method setSlideNumberVisibility is used for making a slide page number placeholder visible.
     }
-    if ($!headerFooterManager->isDateTimeVisible()) // Method isDateTimeVisible is used for indicating that a slide date-time placeholder is not present.
+    if (!$headerFooterManager->isDateTimeVisible()) // Method isDateTimeVisible is used for indicating that a slide date-time placeholder is not present.
     {
-        headerFooterManager->setDateTimeVisibility(true); // Method setFooterVisibility is used for making a slide date-time placeholder visible.
+        $headerFooterManager->setDateTimeVisibility(true); // Method setFooterVisibility is used for making a slide date-time placeholder visible.
     }
-    headerFooterManager->setFooterText("Footer text"); // Method setFooterText is used for setting text to slide footer placeholder.
-    headerFooterManager->setDateTimeText("Date and time text"); // Method setDateTimeText is used for setting text to slide date-time placeholder.
+    $headerFooterManager->setFooterText("Footer text"); // Method setFooterText is used for setting text to slide footer placeholder.
+    $headerFooterManager->setDateTimeText("Date and time text"); // Method setDateTimeText is used for setting text to slide date-time placeholder.
 } finally {
     $presentation->dispose();
 }
@@ -144,12 +144,12 @@ To set footer and child footer a slide using its index position in the slides co
 $presentation = new Java("com.aspose.slides.Presentation", "presentation.ppt");
 try {
     IMasterSlideHeaderFooterManager headerFooterManager = $presentation->getMasters()->get_Item(0)->getHeaderFooterManager();
-    headerFooterManager->setFooterAndChildFootersVisibility(true); // Method setFooterAndChildFootersVisibility is used for making a master slide and all child footer placeholders visible.
-    headerFooterManager->setSlideNumberAndChildSlideNumbersVisibility(true); // Method setSlideNumberAndChildSlideNumbersVisibility is used for making a master slide and all child page number placeholders visible.
-    headerFooterManager->setDateTimeAndChildDateTimesVisibility(true); // Method setDateTimeAndChildDateTimesVisibility is used for making a master slide and all child date-time placeholders visible.
+    $headerFooterManager->setFooterAndChildFootersVisibility(true); // Method setFooterAndChildFootersVisibility is used for making a master slide and all child footer placeholders visible.
+    $headerFooterManager->setSlideNumberAndChildSlideNumbersVisibility(true); // Method setSlideNumberAndChildSlideNumbersVisibility is used for making a master slide and all child page number placeholders visible.
+    $headerFooterManager->setDateTimeAndChildDateTimesVisibility(true); // Method setDateTimeAndChildDateTimesVisibility is used for making a master slide and all child date-time placeholders visible.
 
-    headerFooterManager->setFooterAndChildFootersText("Footer text"); // Method setFooterAndChildFootersText is used for setting text to master slide and all child footer placeholders.
-    headerFooterManager->setDateTimeAndChildDateTimesText("Date and time text"); // Method setDateTimeAndChildDateTimesText is used for setting text to master slide and all child date-time placeholders.
+    $headerFooterManager->setFooterAndChildFootersText("Footer text"); // Method setFooterAndChildFootersText is used for setting text to master slide and all child footer placeholders.
+    $headerFooterManager->setDateTimeAndChildDateTimesText("Date and time text"); // Method setDateTimeAndChildDateTimesText is used for setting text to master slide and all child date-time placeholders.
 } finally {
     $presentation->dispose();
 }

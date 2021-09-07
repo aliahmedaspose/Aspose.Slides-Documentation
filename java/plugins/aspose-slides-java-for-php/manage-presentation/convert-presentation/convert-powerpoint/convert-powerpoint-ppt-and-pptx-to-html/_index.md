@@ -89,7 +89,7 @@ $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     $opt = new Java("com.aspose.slides.HtmlOptions");
     $options = $opt->getNotesCommentsLayouting();
-    $options->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
+    $$options->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
 
     // Saving notes pages
     $pres->save("Output.html", Java("com.aspose.slides.SaveFormat")->Html, $opt);
@@ -129,7 +129,7 @@ try {
     $htmlOptions->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter(new Java("com.aspose.slides.CustomFormattingController")));
 
     // Saving File
-    for ($i = 0; i < $pres->getSlides()->size(); i++)
+    for ($i = 0; $i < $pres->getSlides()->size(); $i++)
         $pres->save("Individual Slide" + ($i+ 1) + "_out.html", new int[]{i + 1},Java("com.aspose.slides.SaveFormat")->Html, $htmlOptions);
 } finally {
     if ($pres != null) $pres->dispose();
@@ -147,7 +147,7 @@ public class CustomFormattingController implements IHtmlFormattingController
     @Override
     public void writeSlideStart(IHtmlGenerator generator, ISlide slide) 
 	{
-        generator->addHtml(String.format(SlideHeader, generator->getSlideIndex() + 1));
+        generator->addHtml(sprintf(SlideHeader, generator->getSlideIndex() + 1));
     }
 
     @Override
@@ -175,7 +175,7 @@ $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     $htmlController = new Java("com.aspose.slides.CustomHeaderAndFontsController", "styles.css");
     $options = new Java("com.aspose.slides.HtmlOptions");
-    $options->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($htmlController));
+    $$options->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($htmlController));
 
     $pres->save("pres.html", Java("com.aspose.slides.SaveFormat")->Html, $options);
 } finally {
@@ -206,7 +206,7 @@ public class CustomHeaderAndFontsController extends EmbedAllFontsHtmlController
 
     public void writeDocumentStart(IHtmlGenerator generator, IPresentation presentation) 
     {
-        generator->addHtml(String.format(Header, m_cssFileName));
+        generator->addHtml(sprintf(Header, m_cssFileName));
         writeAllFonts(generator, presentation);
     }
 
@@ -246,7 +246,7 @@ public class LinkAllFontsHtmlController extends EmbedAllFontsHtmlController
 
     public LinkAllFontsHtmlController(String[] fontNameExcludeList, String basePath)
     {
-        super(fontNameExcludeList);
+        super($fontNameExcludeList);
         m_basePath = basePath;
     }
 
@@ -272,7 +272,7 @@ public class LinkAllFontsHtmlController extends EmbedAllFontsHtmlController
             generator->addHtml(" }");
             generator->addHtml("</style>");
         } catch (JavaException $ex) {
-            ex.printStackTrace();
+        
         }
     }
 }

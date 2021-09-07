@@ -72,7 +72,7 @@ try {
     $portionFormat->setHyperlinkClick(new Java("com.aspose.slides.Hyperlink", "https://www.aspose.com/"));
     $portionFormat->getHyperlinkClick()->setColorSource(HyperlinkColorSource.PortionFormat);
     $portionFormat->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    $portionFormat->getFillFormat()->getSolidFillColor()->setColor(java.awt.Color.RED);
+    $portionFormat->getFillFormat()->getSolidFillColor()->setColor($java.awt.Color.RED);
 
     $shape2 = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 450, 50, false);
     $shape2->addTextFrame("This is a sample of usual hyperlink.");

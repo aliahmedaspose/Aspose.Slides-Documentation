@@ -199,7 +199,7 @@ To clone Slide Master to another presentation, [**addClone**](https://apirefere
 
 ```php
 // add new master slide form another presentation
-IMasterSlide pres1MasterSlide = $pres->getMasters()->addClone(pres1MasterSlide);
+IMasterSlide pres1MasterSlide = $pres->getMasters()->addClone($pres1MasterSlide);
 ```
 
 ## **Add Multiple Slide Masters to Presentation**

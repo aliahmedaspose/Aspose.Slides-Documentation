@@ -25,20 +25,20 @@ try {
     $shapes = $pres->getSlides()->get_Item(0)->getShapes();
     
     // Add Autoshape Ellipse
-    $ellipse = shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 0, 100, 100, 100);
+    $ellipse = $shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 0, 100, 100, 100);
     
     // Add Autoshape Rectangle
-    $rectangle = shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 300, 100, 100);
+    $rectangle = $shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 300, 100, 100);
     
     // Adding connector shape to slide shape collection
-    IConnector connector = shapes->addConnector(Java("com.aspose.slides.ShapeType")->BentConnector2, 0, 0, 10, 10);
+    $connector = $shapes->addConnector(Java("com.aspose.slides.ShapeType")->BentConnector2, 0, 0, 10, 10);
     
     // Joining Shapes to connectors
-    connector->setStartShapeConnectedTo(ellipse);
-    connector->setEndShapeConnectedTo(rectangle);
+    $connector->setStartShapeConnectedTo($ellipse);
+    $connector->setEndShapeConnectedTo($rectangle);
     
     // Call reroute to set the automatic shortest path between shapes
-    connector->reroute();
+    $connector->reroute();
     
     // Saving Presentation
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -74,27 +74,27 @@ try {
     $shapes = $pres->getSlides()->get_Item(0)->getShapes();
 
     // Add Autoshape Ellipse
-    $ellipse = shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 0, 100, 100, 100);
+    $ellipse = $shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 0, 100, 100, 100);
 
     // Add Autoshape Rectangle
-    $rectangle = shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 300, 100, 100);
+    $rectangle = $shapes->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 300, 100, 100);
 
     // Adding connector shape to slide shape collection
-    IConnector connector = shapes->addConnector(Java("com.aspose.slides.ShapeType")->BentConnector2, 0, 0, 10, 10);
+    $connector = $shapes->addConnector(Java("com.aspose.slides.ShapeType")->BentConnector2, 0, 0, 10, 10);
 
     // Joining Shapes to connectors
-    connector->setStartShapeConnectedTo(ellipse);
-    connector->setEndShapeConnectedTo(rectangle);
+    $connector->setStartShapeConnectedTo($ellipse);
+    $connector->setEndShapeConnectedTo($rectangle);
 
     // Setting the desired connection site index of Ellipse shape for
     // connector to get connected
     $wantedIndex = 6;
 
     // Checking if desired index is less than maximum site index count
-    if ($ellipse->getConnectionSiteCount() > wantedIndex) 
+    if ($ellipse->getConnectionSiteCount() > $wantedIndex) 
     {
         // Setting the desired connection site for connector on Ellipse
-        connector->setStartShapeConnectionSiteIndex(wantedIndex);
+        $connector->setStartShapeConnectionSiteIndex($wantedIndex);
     }
 
     // Saving presentation
@@ -118,12 +118,12 @@ In the example given below, we have calculated the angle for connector line shap
 // Instantiate Presentation class that represents the PPTX file
 $pres = new Java("com.aspose.slides.Presentation", "ConnectorLineAngle.pptx");
 try {
-    Slide slide = (Slide)pres->getSlides()->get_Item(0);
+    $slide = $pres->getSlides()->get_Item(0);
     
-    for ($i = 0; i < $slide->getShapes()->size(); i++)
+    for ($i = 0; $i < $slide->getShapes()->size(); $i++)
     {
         dir = 0.0;
-        Shape shape = (Shape)slide->getShapes()->get_Item($i);
+        $shape = $slide->getShapes()->get_Item($i);
         if ($shape instanceof AutoShape)
         {
             $ashp = $shape;
@@ -135,26 +135,26 @@ try {
         }
         else if ($shape instanceof Connector)
         {
-            Connector ashp = (Connector)shape;
-            dir = getDirection($ashp->getWidth(), $ashp->getHeight(),
+            $ashp = $shape;
+            $dir = getDirection($ashp->getWidth(), $ashp->getHeight(),
                     $ashp->getFrame()->getFlipH() > 0, $ashp->getFrame()->getFlipV() > 0);
         }
 
-        echo(dir);
+        echo($dir);
     }
 } finally {
     if ($pres != null) $pres->dispose();
 }
 ```
 ```php
-public static double getDirection($w, $h, boolean flipH, boolean flipV)
+public static double getDirection($w, $h, $flipH, $flipV)
 {
-    $endLineX = w * (flipH ? -1 : 1);
-    $endLineY = h * (flipV ? -1 : 1);
+    $endLineX = $w * ($flipH ? -1 : 1);
+    $endLineY = $h * ($flipV ? -1 : 1);
     $endYAxisX = 0;
-    $endYAxisY = h;
-    angle = (atan2(endYAxisY, endYAxisX) - atan2(endLineY, endLineX));
-    if ($angle < 0) angle += 2 * M_PI;
-    return angle * 180.0 / M_PI;
+    $endYAxisY = $h;
+    angle = (atan2($endYAxisY, $endYAxisX) - atan2($endLineY, $endLineX));
+    if ($angle < 0) $angle += 2 * M_PI;
+    return $angle * 180.0 / M_PI;
 }
 ```

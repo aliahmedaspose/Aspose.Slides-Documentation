@@ -198,7 +198,7 @@ try {
     $presentation->getSections()->addSection("Section 1", $presentation->getSlides()->get_Item(0));
 
     ISection section2 = $presentation->getSections().appendEmptySection("Section 2");
-    $presentation->getSlides()->addClone(presentation->getSlides()->get_Item(0), section2);
+    $presentation->getSlides()->addClone($presentation->getSlides()->get_Item(0), section2);
     
 	// Save the destination presentation to disk
     $presentation->save(dataDir + "CloneSlideIntoSpecifiedSection.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

@@ -29,14 +29,14 @@ try {
     $destFont = new  Java("com.aspose.slides.FontData", "Arial");
     
     // Add font rule for font replacement
-    IFontSubstRule fontSubstRule = new FontSubstRule(sourceFont, destFont, FontSubstCondition.WhenInaccessible);
+    $fontSubstRule = new Java("com.aspose.slides.Java("com.aspose.slides.FontSubstRule", $sourceFont, $destFont, Java("com.aspose.slides.FontSubstCondition")->WhenInaccessible);
     
     // Add rule to font substitute rules collection
-    IFontSubstRuleCollection fontSubstRuleCollection = new FontSubstRuleCollection();
-    fontSubstRuleCollection->add(fontSubstRule);
+    $fontSubstRuleCollection = new Java("com.aspose.slides.FontSubstRuleCollection");
+    $fontSubstRuleCollection->add($fontSubstRule);
     
     // Add font rule collection to rule list
-    $pres->getFontsManager()->setFontSubstRuleList(fontSubstRuleCollection);
+    $pres->getFontsManager()->setFontSubstRuleList($fontSubstRuleCollection);
     
     // Arial font will be used instead of SomeRareFont when inaccessible
     $image = $pres->getSlides()->get_Item(0)->getThumbnail(1, 1);

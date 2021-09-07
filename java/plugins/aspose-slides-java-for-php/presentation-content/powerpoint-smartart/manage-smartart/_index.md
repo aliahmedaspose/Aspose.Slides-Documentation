@@ -12,15 +12,15 @@ Now TextFrame method has been added to [ISmartArtShape](https://apireference.asp
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     $slide = $pres->getSlides()->get_Item(0);
-    $smartArt = (ISmartArt)slide->getShapes()->get_Item(0);
+    $smartArt = $slide->getShapes()->get_Item(0);
 
-    ISmartArtNodeCollection smartArtNodes = smartArt->getAllNodes();
-    for (ISmartArtNode smartArtNode : smartArtNodes)
+    $smartArtNodes = $smartArt->getAllNodes();
+    for ($smartArtNode : $smartArtNodes)
     {
-        for ($nodeShape : smartArtNode->getShapes())
+        for ($nodeShape : $smartArtNode->getShapes())
         {
             if ($nodeShape->getTextFrame() != null)
-                echo(nodeShape->getTextFrame()->getText());
+                echo($nodeShape->getTextFrame()->getText());
         }
     }
 } finally {

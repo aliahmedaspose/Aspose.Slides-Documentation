@@ -8,16 +8,20 @@ url: /java/create-fallback-font/
 Aspose.Slides supports [IFontFallBackRule](https://apireference.aspose.com/slides/java/com.aspose.slides/IFontFallBackRule) interface and [FontFallBackRule](https://apireference.aspose.com/slides/java/com.aspose.slides/FontFallBackRule) class to specify the rules to apply a fallback font. [FontFallBackRule](https://apireference.aspose.com/slides/java/com.aspose.slides/FontFallBackRule) class represents an association between the specified Unicode range, used for searching missed glyphs, and a list of fonts that may contain proper glyphs:
 
 ```php
-long startUnicodeIndex = 0x0B80;
-long endUnicodeIndex = 0x0BFF;
+$startUnicodeIndex = 0x0B80;
+$endUnicodeIndex = 0x0BFF;
 
-IFontFallBackRule firstRule = new FontFallBackRule(startUnicodeIndex, endUnicodeIndex, "Vijaya");
-IFontFallBackRule secondRule = new FontFallBackRule(0x3040, 0x309F, "MS Mincho, MS Gothic");
+$firstRule = new Java("com.aspose.slides.FontFallBackRule", $startUnicodeIndex, $endUnicodeIndex, "Vijaya");
+$secondRule = new Java("com.aspose.slides.FontFallBackRule", 0x3040, 0x309F, "MS Mincho, MS Gothic");
 
 //Using multiple ways you can add fonts list:
-String[] fontNames = new String[] { "Segoe UI Emoji, Segoe UI Symbol", "Arial" };
+$Array = new JavaClass("java.lang.reflect.Array");
+$String = new JavaClass("java.lang.String");
+$fontNames = $Array->newInstance($String, 2);
+$fontNames[0] = "Segoe UI Emoji, Segoe UI Symbol";
+$fontNames[1] = "Arial";
 
-IFontFallBackRule thirdRule = new FontFallBackRule(0x1F300, 0x1F64F, fontNames);
+$thirdRule = new Java("com.aspose.slides.FontFallBackRule", 0x1F300, 0x1F64F, $fontNames);
 ```
 
 It is also possible to [remove](https://apireference.aspose.com/slides/java/com.aspose.slides/FontFallBackRule#remove-java.lang.String-) fallback font or [addFallBackFonts](https://apireference.aspose.com/slides/java/com.aspose.slides/FontFallBackRule#addFallBackFonts-java.lang.String-) into existing [FontFallBackRule](https://apireference.aspose.com/slides/java/com.aspose.slides/FontFallBackRule) object.

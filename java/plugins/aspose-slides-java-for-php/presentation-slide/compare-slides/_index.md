@@ -15,12 +15,12 @@ Presentation presentation1 = new Java("com.aspose.slides.Presentation", "AccessS
 try {
     $presentation2 = new Java("com.aspose.slides.Presentation", "HelloWorld.pptx");
     try {
-        for ($i = 0; i < presentation1->getMasters()->size(); i++)
+        for ($i = 0; $i < presentation1->getMasters()->size(); $i++)
         {
-            for ($j = 0; j < presentation2->getMasters()->size(); j++)
+            for ($j = 0; $j < presentation2->getMasters()->size(); $j++)
             {
-                if ($presentation1->getMasters()->get_Item($i) == (presentation2->getMasters()->get_Item($j)))
-                    echo(String.format("SomePresentation1 MasterSlide#%d is equal to SomePresentation2 MasterSlide#%d", i, j));
+                if ($presentation1->getMasters()->get_Item($i) == ($presentation2->getMasters()->get_Item($j)))
+                    echo(sprintf("SomePresentation1 MasterSlide#%d is equal to SomePresentation2 MasterSlide#%d", $i, $j));
             }
         }
     } finally {

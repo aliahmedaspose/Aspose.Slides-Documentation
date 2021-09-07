@@ -93,14 +93,14 @@ try {
     $shp3->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLUE);
     
     // Set the Join Style
-    $shp1->getLineFormat()->setJoinStyle(Java("com.aspose.slides.LineJoinStyle")-> Miter);
-    $shp2->getLineFormat()->setJoinStyle(Java("com.aspose.slides.LineJoinStyle")-> Bevel);
-    $shp3->getLineFormat()->setJoinStyle(Java("com.aspose.slides.LineJoinStyle")-> Round);
+    $shp1->getLineFormat()->setJoinStyle(Java("com.aspose.slides.LineJoinStyle")->Miter);
+    $shp2->getLineFormat()->setJoinStyle(Java("com.aspose.slides.LineJoinStyle")->Bevel);
+    $shp3->getLineFormat()->setJoinStyle(Java("com.aspose.slides.LineJoinStyle")->Round);
     
     // Add text to each rectangle
-    (shp1)->getTextFrame()->setText("This is Miter Join Style");
-    (shp2)->getTextFrame()->setText("This is Bevel Join Style");
-    (shp3)->getTextFrame()->setText("This is Round Join Style");
+    $shp1->getTextFrame()->setText("This is Miter Join Style");
+    $shp2->getTextFrame()->setText("This is Bevel Join Style");
+    $shp3->getTextFrame()->setText("This is Round Join Style");
     
     // Write the PPTX file to disk
     $pres->save("RectShpLnJoin.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -133,10 +133,10 @@ try {
     
     // Apply some Gradient formatting to ellipse shape
     $shp->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Gradient);
-    $shp->getFillFormat()->getGradientFormat()->setGradientShape(Java("com.aspose.slides.GradientShape")-> Linear);
+    $shp->getFillFormat()->getGradientFormat()->setGradientShape(Java("com.aspose.slides.GradientShape")->Linear);
     
     // Set the Gradient Direction
-    $shp->getFillFormat()->getGradientFormat()->setGradientDirection(Java("com.aspose.slides.v")-> FromCorner2);
+    $shp->getFillFormat()->getGradientFormat()->setGradientDirection(Java("com.aspose.slides.v")->FromCorner2);
     
     // Add two Gradient Stops
     $shp->getFillFormat()->getGradientFormat()->getGradientStops()->add(1.0, Java("java.awt.Color")->pink);
@@ -355,16 +355,16 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     $autoShape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 30, 30, 200, 200);
     
-    autoShape->getThreeDFormat()->setDepth(6);
-    autoShape->getThreeDFormat()->getCamera()->setRotation(40, 35, 20);
-    autoShape->getThreeDFormat()->getCamera()->setCameraType(Java("com.aspose.slides.CameraPresetType")->IsometricLeftUp);
-    autoShape->getThreeDFormat()->getLightRig()->setLightType(Java("com.aspose.slides.LightRigPresetType")->Balanced);
+    $autoShape->getThreeDFormat()->setDepth(6);
+    $autoShape->getThreeDFormat()->getCamera()->setRotation(40, 35, 20);
+    $autoShape->getThreeDFormat()->getCamera()->setCameraType(Java("com.aspose.slides.CameraPresetType")->IsometricLeftUp);
+    $autoShape->getThreeDFormat()->getLightRig()->setLightType(Java("com.aspose.slides.LightRigPresetType")->Balanced);
     
-    autoShape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 30, 300, 200, 200);
-    autoShape->getThreeDFormat()->setDepth(6);
-    autoShape->getThreeDFormat()->getCamera()->setRotation(0, 35, 20);
-    autoShape->getThreeDFormat()->getCamera()->setCameraType(Java("com.aspose.slides.CameraPresetType")->IsometricLeftUp);
-    autoShape->getThreeDFormat()->getLightRig()->setLightType(Java("com.aspose.slides.LightRigPresetType")->Balanced);
+    $autoShape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 30, 300, 200, 200);
+    $autoShape->getThreeDFormat()->setDepth(6);
+    $autoShape->getThreeDFormat()->getCamera()->setRotation(0, 35, 20);
+    $autoShape->getThreeDFormat()->getCamera()->setCameraType(Java("com.aspose.slides.CameraPresetType")->IsometricLeftUp);
+    $autoShape->getThreeDFormat()->getLightRig()->setLightType(Java("com.aspose.slides.LightRigPresetType")->Balanced);
     
     $pres->save("Rotation_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

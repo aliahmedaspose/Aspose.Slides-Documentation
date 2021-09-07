@@ -24,7 +24,7 @@ try {
     // Set different properties
     $chart->getChartData()->getSeries()->get_Item(0)->getLabels()->getDefaultDataLabelFormat()->setShowValue(true);
     $chart->getChartData()->getSeries()->get_Item(0)->getParentSeriesGroup()->setSecondPieSize(149);
-    $chart->getChartData()->getSeries()->get_Item(0)->getParentSeriesGroup()->setPieSplitBy(PieSplitType.ByPercentage);
+    $chart->getChartData()->getSeries()->get_Item(0)->getParentSeriesGroup()->setPieSplitBy(Java("com.aspose.slides.PieSplitType")->ByPercentage);
     $chart->getChartData()->getSeries()->get_Item(0)->getParentSeriesGroup()->setPieSplitPosition(53);
     
     // Write presentation to disk
@@ -59,7 +59,7 @@ try {
 
     // Setting chart Title
     $chart->getChartTitle()->addTextFrameForOverriding("Sample Title");
-    $chart->getChartTitle()->getTextFrameForOverriding()->getTextFrameFormat()->setCenterText(Java("com.aspose.slides.NullableBool")->True);
+    $chart->getChartTitle()->getTextFrameForOverriding()->getJava("com.aspose.slides.TextFrameFormat")->setCenterText(Java("com.aspose.slides.NullableBool")->True);
     $chart->getChartTitle()->setHeight(20);
     $chart->setTitle(true);
 

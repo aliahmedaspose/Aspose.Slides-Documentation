@@ -108,9 +108,9 @@ $width = 300;
 
 $height = 300;
 
-float $x = center->getX() - width / 2;
+$$x = center->getX() - width / 2;
 
-float y = center->getY() - height / 2;
+$y = center->getY() - height / 2;
 
 
 //...
@@ -213,7 +213,7 @@ $watermarkShape->setName("watermark");
 To remove watermark shape and its child controls from slide, use [AutoShape->getName](https://apireference.aspose.com/slides/java/com.aspose.slides/IShape#getName--) method to find it in slide shapes. Then pass watermark shape into [**ShapeCollection.remove**](https://apireference.aspose.com/slides/java/com.aspose.slides/ShapeCollection#remove-com.aspose.slides.IShape-) method:
 
 ```php
-for ($i = 0; i < $slide->getShapes()->size(); i++)
+for ($i = 0; $i < $slide->getShapes()->size(); $i++)
 {
     $shape = $slide->getShapes()->get_Item($i);
 

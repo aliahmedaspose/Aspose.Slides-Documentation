@@ -28,14 +28,14 @@ try {
     $vid = $pres->getVideos()->addVideo(new FileInputStream(new Java("java.io.File", "Wildlife.mp4")));
 
     // Add Video Frame
-    IVideoFrame vf = $sld->getShapes()->addVideoFrame(50, 150, 300, 350, vid);
+    $vf = $sld->getShapes()->addVideoFrame(50, 150, 300, 350, $vid);
 
     // Set video to Video Frame
-    vf->setEmbeddedVideo(vid);
+    $vf->setEmbeddedVideo($vid);
 
     // Set Play Mode and Volume of the Video
-    vf->setPlayMode(VideoPlayModePreset.Auto);
-    vf->setVolume(AudioVolumeMode.Loud);
+    $vf->setPlayMode(Java("com.aspose.slides.VideoPlayModePreset")->Auto);
+    $vf->setVolume(Java("com.aspose.slides.AudioVolumeMode")->Loud);
 
     // Write the PPTX file to disk
     $pres->save("VideoFrame.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -62,7 +62,7 @@ This sample code shows you how to add a video from YouTube to a slide:
 // Instantiate Presentation class that represents the PPTX
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    addVideoFromYouTube(pres, "Tj75Arhq5ho");
+    addVideoFromYouTube($pres, "Tj75Arhq5ho");
     $pres->save("out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
@@ -72,21 +72,18 @@ try {
 private static void addVideoFromYouTube(Presentation pres, String videoID)
 {
     // add videoFrame
-    IVideoFrame videoFrame = $pres->getSlides()->get_Item(0)->getShapes()->addVideoFrame(
+    $videoFrame = $pres->getSlides()->get_Item(0)->getShapes()->addVideoFrame(
             10, 10, 427, 240, "https://www.youtube.com/embed/" + videoID);
-    videoFrame->setPlayMode(VideoPlayModePreset.Auto);
+    $videoFrame->setPlayMode(Java("com.aspose.slides.VideoPlayModePreset")->Auto);
 
     // load thumbnail
     $thumbnailUri = "http://img.youtube.com/vi/" + videoID + "/hqdefault.jpg";
     URL url;
 
     try {
-        url = new URL(thumbnailUri);
-        videoFrame->getPictureFormat()->getPicture()->setImage($pres->getImages()->addImage(url.openStream()));
-    } catch (MalformedURLException e) {
-        e.printStackTrace();
-    } catch (JavaException $e) {
-        e.printStackTrace();
+        $url = new URL($thumbnailUri);
+        $videoFrame->getPictureFormat()->getPicture()->setImage($pres->getImages()->addImage($url->openStream()));
+    } catch (JavaException $ex) {
     }
 }
 ```
@@ -113,11 +110,11 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Add Video Frame
-    IVideoFrame vf = $sld->getShapes()->addVideoFrame(50, 150, 300, 150, "Wildlife.mp4");
+    $vf = $sld->getShapes()->addVideoFrame(50, 150, 300, 150, "Wildlife.mp4");
 
     // Set Play Mode and Volume of the Video
-    vf->setPlayMode(VideoPlayModePreset.Auto);
-    vf->setVolume(AudioVolumeMode.Loud);
+    $vf->setPlayMode(Java("com.aspose.slides.VideoPlayModePreset")->Auto);
+    $vf->setVolume(Java("com.aspose.slides.AudioVolumeMode")->Loud);
 
     // Write the PPTX file to disk
     $pres->save("VideoFrame.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -145,19 +142,19 @@ try {
         {
             if ($shape instanceof VideoFrame) 
             {
-                IVideoFrame vf = (IVideoFrame) shape;
-                $type = vf->getEmbeddedVideo()->getContentType();
+                $vf = shape;
+                $type = $vf->getEmbeddedVideo()->getContentType();
                 $ss = type.lastIndexOf('-');
-                byte[] buffer = vf->getEmbeddedVideo()->getBinaryData();
+                $buffer = $vf->getEmbeddedVideo()->getBinaryData();
 
                 //Get File Extension
-                $charIndex = type->indexOf("/");
-                type = type.substring(charIndex + 1);
+                $charIndex = $type->indexOf("/");
+                $type = $type->substring($charIndex + 1);
 
-                $fop = new Java("java.io.FileOutputStream", "testing2." + type);
-                fop->write(buffer);
-                fop.flush();
-                fop->close();
+                $fop = new Java("java.io.FileOutputStream", "testing2." + $type);
+                $fop->write($buffer);
+                $fop->flush();
+                $fop->close();
             }
         }
     }

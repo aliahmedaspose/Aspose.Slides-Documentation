@@ -10,8 +10,8 @@ url: /java/paragraph/
 Using Aspose.Slides for Java, developers can now get the rectangular coordinates for Paragraph inside paragraphs collection of TextFrame. It also allows you to get [the coordinates of portion](https://apireference.aspose.com/slides/java/com.aspose.slides/IPortion#getCoordinates--) inside portion collection of a paragraph. In this topic, we are going to demonstrate with the help of an example that how to get the rectangular coordinates for paragraph along with position of portion inside a paragraph.
 
 ```php
-AutoShape shape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
-TextFrame textFrame = (TextFrame)shape->getTextFrame();
+$shape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
+$textFrame = shape->getTextFrame();
 for ($paragraph : $textFrame->getParagraphs()){
   for ($portion : paragraph->getPortions()){
     $point = $portion->getCoordinates();
@@ -29,7 +29,7 @@ try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     $textFrame = $shape->getTextFrame();
     $rect = $textFrame->getParagraphs()->get_Item(0)->getRect();
-    echo("X: " + rect.x + " Y: " + rect.y + " Width: " + rect.width + " Height: " + rect.height);
+    echo("X: " + $rect.x + " Y: " + $rect.y + " Width: " + $rect.width + " Height: " + $rect.height);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -48,7 +48,7 @@ try {
     $cell = $tbl->getRows()->get_Item(1)->get_Item(1);
 
     $x = $tbl->getX() + $tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetX();
-    y = $tbl->getY() + $tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetY();
+    $y = $tbl->getY() + $tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetY();
 
     for ($para : $cell->getTextFrame()->getParagraphs())
     {
@@ -58,7 +58,7 @@ try {
         $rect = $para->getRect();
         $shape =
                 $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle,
-                        rect->getX() + x, rect->getY() + y, rect->getWidth(), rect->getHeight());
+                        $rect->getX() + $x, $rect->getY() + $y, $rect->getWidth(), $rect->getHeight());
 
         $shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
         $shape->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->YELLOW);
@@ -68,10 +68,10 @@ try {
         {
             if ($portion->getText().contains("0"))
             {
-                rect = $portion->getRect();
-                shape =
+                $rect = $portion->getRect();
+                $shape =
                         $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle,
-                                rect->getX() + x, rect->getY() + y, rect->getWidth(), rect->getHeight());
+                                $rect->getX() + $x, $rect->getY() + $y, $rect->getWidth(), $rect->getHeight());
 
                 $shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
             }

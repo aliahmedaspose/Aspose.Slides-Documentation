@@ -66,11 +66,11 @@ Let's write some values in cells with 
 of the **Object** type, which means you can set any value to the property:
 
 ```php
-workbook->getCell(0, "F2")->setValue(-2.5);
+$workbook->getCell(0, "F2")->setValue(-2.5);
 
-workbook->getCell(0, "G3")->setValue(6.3);
+$workbook->getCell(0, "G3")->setValue(6.3);
 
-workbook->getCell(0, "H4")->setValue(3);
+$workbook->getCell(0, "H4")->setValue(3);
 ``` 
 
 Now to write formula to the cell, you can use the 
@@ -83,35 +83,35 @@ To set the [R1C1Formula](https://apireference.aspose.com/slides/java/com.aspose
 Then if you try to read the values from the cells B2 and C2, they will be calculated:
 
 ```php
-Object value1 = cell1->getValue(); // 7.8
+$value1 = $cell1->getValue(); // 7.8
 
-Object value2 = cell2->getValue(); // 2.1
+$value2 = $cell2->getValue(); // 2.1
 ``` 
 
 ## **Logical Constants**
 You can use logical constants such as *FALSE* and *TRUE* in cell formulas:
 
 ```php
-workbook->getCell(0, "A2")->setValue(false);
-IChartDataCell cell = workbook->getCell(0, "B2");
-cell->setFormula("A2 = TRUE");
-Object value = $cell->getValue(); // the value contains boolean "false"
+$workbook->getCell(0, "A2")->setValue(false);
+$cell = $workbook->getCell(0, "B2");
+$cell->setFormula("A2 = TRUE");
+$value = $cell->getValue(); // the value contains boolean "false"
 ```
 
 ## **Numerical Constants**
 Numbers can be used in common or scientific notations to create chart spreadsheet formula:
 
 ```php
-workbook->getCell(0, "A2")->setFormula("1 + 0.5");
-workbook->getCell(0, "B2")->setFormula(".3 * 1E-2");
+$workbook->getCell(0, "A2")->setFormula("1 + 0.5");
+$workbook->getCell(0, "B2")->setFormula(".3 * 1E-2");
 ```
 
 ## **String Constants**
 String (or literal) constant is a specific value that is used as it is and does not change. String constants may be: dates, texts, numbers, etc.:
 
 ```php
-workbook->getCell(0, "A2")->setFormula("\"abc\"");
-workbook->getCell(0, "B2")->setFormula("\"2/3/2020 12:00\"");
+$workbook->getCell(0, "A2")->setFormula("\"abc\"");
+$workbook->getCell(0, "B2")->setFormula("\"2/3/2020 12:00\"");
 ```
 
 ## **Error Constants**
@@ -127,9 +127,9 @@ Sometimes its not possible to calculate the result by the formula. In that case,
 - #VALUE! - unexpected value type. For example, string value set to numeric cell.
 
 ```php
-IChartDataCell cell = workbook->getCell(0, "A2");
-cell->setFormula("2 / 0");
-Object value = $cell->getValue(); // the value contains the string "#DIV/0!"
+$cell = $workbook->getCell(0, "A2");
+$cell->setFormula("2 / 0");
+$value = $cell->getValue(); // the value contains the string "#DIV/0!"
 ```
 
 ## **Arithmetic Operators**
@@ -173,7 +173,7 @@ You can compare the values of cells with the comparison operators. When two valu
 Here is an example how to use A1-style cell reference in formula:
 
 ```php
-workbook->getCell(0, "A2")->setFormula("C3 + SUM(F2:H5)");
+$workbook->getCell(0, "A2")->setFormula("C3 + SUM(F2:H5)");
 ```
 
 ## **R1C1-style Cell References**
@@ -191,7 +191,7 @@ workbook->getCell(0, "A2")->setFormula("C3 + SUM(F2:H5)");
 Here is an example how to use A1-style cell reference in formula:
 
 ```php
-workbook->getCell(0, "A2")->setR1C1Formula("R2C4 + SUM(R5C6:R7C9)");
+$workbook->getCell(0, "A2")->setR1C1Formula("R2C4 + SUM(R5C6:R7C9)");
 ```
 
 ## **Predefined Functions**

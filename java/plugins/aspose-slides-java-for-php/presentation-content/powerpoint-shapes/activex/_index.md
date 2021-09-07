@@ -80,13 +80,13 @@ try {
         $image = new Java("java.awt.image.BufferedImage", control->getFrame()->getWidth(), $control->getFrame()->getHeight(),
                 Java("java.awt.image.BufferedImage")->TYPE_INT_ARGB);
     
-        $graphics =$image->getGraphics();
+        $graphics = $image->getGraphics();
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->window);
         $graphics->fillRect(0, 0, $image->getWidth(), $image->getHeight());
     
         $font = Java("java.awt.Font", $control->getProperties()->get_Item("FontName"), Java("java.awt.Font")->PLAIN, 16);
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->windowText);
-        $graphics->setFont(font);
+        $graphics->setFont($font);
         $graphics->drawString(newText, 10, 20);
     
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->controlShadow);
@@ -99,11 +99,11 @@ try {
     
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->controlHighlight);
         $graphics->drawLine(1, $image->getHeight() - 1, $image->getWidth() - 1, $image->getHeight() - 1);
-        $graphics->drawLine(image->getWidth() - 1, $image->getHeight() - 1, $image->getWidth() - 1, 1);
+        $graphics->drawLine($image->getWidth() - 1, $image->getHeight() - 1, $image->getWidth() - 1, 1);
     
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->controlLtHighlight);
         $graphics->drawLine(0, $image->getHeight(), $image->getWidth(), $image->getHeight());
-        $graphics->drawLine(image->getWidth(), $image->getHeight(), $image->getWidth(), 0);
+        $graphics->drawLine($image->getWidth(), $image->getHeight(), $image->getWidth(), 0);
     
         $graphics->dispose();
         $control->getSubstitutePictureFormat()->getPicture()->setImage($pres->getImages()->addImage($image));
@@ -118,15 +118,15 @@ try {
         // Changing substitute
         $image = new Java("java.awt.image.BufferedImage", control->getFrame()->getWidth(), $control->getFrame()->getHeight(),
                 Java("java.awt.image.BufferedImage")->TYPE_INT_ARGB);
-        $graphics =$image->getGraphics();
+        $graphics = $image->getGraphics();
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->control);
         $graphics->fillRect(0, 0, $image->getWidth(), $image->getHeight());
     
         $font = Java("java.awt.Font", $control->getProperties()->get_Item("FontName"), Java("java.awt.Font")->PLAIN, 16);
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->windowText);
-        $graphics->setFont(font);
-        $metrics = $graphics->getFontMetrics(font);
-        $graphics->drawString(newCaption, (image->getWidth() - metrics->stringWidth(newCaption)) / 2, 20);
+        $graphics->setFont($font);
+        $metrics = $graphics->getFontMetrics($font);
+        $graphics->drawString(newCaption, ($image->getWidth() - metrics->stringWidth(newCaption)) / 2, 20);
     
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->controlLtHighlight);
         $graphics->drawLine(0, $image->getHeight() - 1, 0, 0);
@@ -138,11 +138,11 @@ try {
     
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->controlShadow);
         $graphics->drawLine(1, $image->getHeight() - 1, $image->getWidth() - 1, $image->getHeight() - 1);
-        $graphics->drawLine(image->getWidth() - 1, $image->getHeight() - 1, $image->getWidth() - 1, 1);
+        $graphics->drawLine($image->getWidth() - 1, $image->getHeight() - 1, $image->getWidth() - 1, 1);
     
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->controlDkShadow);
         $graphics->drawLine(0, $image->getHeight(), $image->getWidth(), $image->getHeight());
-        $graphics->drawLine(image->getWidth(), $image->getHeight(), $image->getWidth(), 0);
+        $graphics->drawLine($image->getWidth(), $image->getHeight(), $image->getWidth(), 0);
     
         $graphics->dispose();
         $control->getSubstitutePictureFormat()->getPicture()->setImage($pres->getImages()->addImage($image));

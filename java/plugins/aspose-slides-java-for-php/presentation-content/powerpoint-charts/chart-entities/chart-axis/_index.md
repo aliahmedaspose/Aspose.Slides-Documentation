@@ -83,16 +83,16 @@ try {
 
     $chart->getChartData()->getCategories()->clear();
     $chart->getChartData()->getSeries()->clear();
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A2", convertToOADate(new Java("java.util.GregorianCalendar", 2015, 1, 1))));
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A3", convertToOADate(new Java("java.util.GregorianCalendar", 2016, 1, 1))));
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A4", convertToOADate(new Java("java.util.GregorianCalendar", 2017, 1, 1))));
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A5", convertToOADate(new Java("java.util.GregorianCalendar", 2018, 1, 1))));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A2", convertToOADate(new Java("java.util.GregorianCalendar", 2015, 1, 1))));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A3", convertToOADate(new Java("java.util.GregorianCalendar", 2016, 1, 1))));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A4", convertToOADate(new Java("java.util.GregorianCalendar", 2017, 1, 1))));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A5", convertToOADate(new Java("java.util.GregorianCalendar", 2018, 1, 1))));
 
     $series = $chart->getChartData()->getSeries()->add(Java("com.aspose.slides.ChartType")->Line);
-    $series->getDataPoints()->addDataPointForLineSeries(wb->getCell(0, "B2", 1));
-    $series->getDataPoints()->addDataPointForLineSeries(wb->getCell(0, "B3", 2));
-    $series->getDataPoints()->addDataPointForLineSeries(wb->getCell(0, "B4", 3));
-    $series->getDataPoints()->addDataPointForLineSeries(wb->getCell(0, "B5", 4));
+    $series->getDataPoints()->addDataPointForLineSeries($wb->getCell(0, "B2", 1));
+    $series->getDataPoints()->addDataPointForLineSeries($wb->getCell(0, "B3", 2));
+    $series->getDataPoints()->addDataPointForLineSeries($wb->getCell(0, "B4", 3));
+    $series->getDataPoints()->addDataPointForLineSeries($wb->getCell(0, "B5", 4));
     $chart->getAxes()->getHorizontalAxis()->setCategoryAxisType(Java("com.aspose.slides.CategoryAxisType")->Date);
     $chart->getAxes()->getHorizontalAxis()->setNumberFormatLinkedToSource(false);
     $chart->getAxes()->getHorizontalAxis()->setNumberFormat("yyyy");

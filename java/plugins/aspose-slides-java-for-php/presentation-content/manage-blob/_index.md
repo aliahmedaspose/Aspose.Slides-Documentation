@@ -56,7 +56,7 @@ try {
         // that allows us to not load the whole video into memory.
         $presVideoStream = video->getStream();
         try {
-            $outputFileStream = new Java("java.io.FileOutputStream", "video" + index + ".avi");
+            $outputFileStream = new Java("java.io.FileOutputStream", "video" + $index + ".avi");
             try {
                 $bytesRead;
                 while ((bytesRead = presVideoStream->read(buffer, 0, buffer->length)) > 0) {

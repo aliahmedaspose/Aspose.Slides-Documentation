@@ -66,7 +66,7 @@ try {
     //Hiding MajorGridLines
     $chart->getAxes()->getHorizontalAxis()->getMajorGridLinesFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
 
-    for ($i = 0; i < $chart->getChartData()->getSeries()->size(); i++)
+    for ($i = 0; $i < $chart->getChartData()->getSeries()->size(); $i++)
     {
         $chart->getChartData()->getSeries()->removeAt($i);
     }

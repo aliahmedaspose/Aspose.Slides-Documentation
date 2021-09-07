@@ -76,7 +76,7 @@ This callback interface is used to manage external resources loading and has one
 The code snippet below shows how to use IResourceLoadingCallback interface:
 
 ```php
-$$opts = new Java("com.aspose.slides.LoadOptions");
+$opts = new Java("com.aspose.slides.LoadOptions");
 o$pts->setResourceLoadingCallback(new Java("com.aspose.slides.ImageLoadingHandler"));
 
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx", $opts);
@@ -96,7 +96,7 @@ class ImageLoadingHandler implements IResourceLoadingCallback
             } catch (RuntimeException ex) {
                 return ResourceLoadingAction.Skip;
             }  catch (JavaException $ex) {
-                ex.printStackTrace();
+            
             }
         } else if ($args->getOriginalUri()->endsWith(".png")) {
             // set substitute url

@@ -16,7 +16,7 @@ $presentation = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // select paragraph to add effect
     $autoShape = $presentation->getSlides()->get_Item(0)->getShapes()->get_Item(0);
-    $paragraph = autoShape->getTextFrame()->getParagraphs()->get_Item(0);
+    $paragraph = $autoShape->getTextFrame()->getParagraphs()->get_Item(0);
 
     // add Fly animation effect to selected paragraph
     $effect = $presentation->getSlides()->get_Item(0)->getTimeline()->getMainSequence()->
@@ -40,7 +40,7 @@ try {
     $sequence = $pres->getSlides()->get_Item(0)->getTimeline()->getMainSequence();
     $autoShape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
 
-    for ($paragraph : autoShape->getTextFrame()->getParagraphs())
+    for ($paragraph : $autoShape->getTextFrame()->getParagraphs())
     {
         $effects = sequence->getEffectsByParagraph($paragraph);
 

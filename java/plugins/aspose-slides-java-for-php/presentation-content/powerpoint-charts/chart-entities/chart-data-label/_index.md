@@ -46,7 +46,7 @@ try {
     for ($k = 0; k < $chart->getChartData()->getCategories()->size(); k++) {
         $cat = $chart->getChartData()->getCategories()->get_Item(k);
     
-        for ($i = 0; i < $chart->getChartData()->getSeries()->size(); i++) {
+        for ($i = 0; $i < $chart->getChartData()->getSeries()->size(); $i++) {
             total_for_Cat[k] = total_for_Cat[k] + ($chart->getChartData()->getSeries()->get_Item($i)->getDataPoints()->get_Item(k)->getValue()->getData());
         }
     }
@@ -56,15 +56,15 @@ try {
         $series = $chart->getChartData()->getSeries()->get_Item(x);
         $series->getLabels()->getDefaultDataLabelFormat()->setShowLegendKey(false);
     
-        for ($j = 0; j < $series->getDataPoints()->size(); j++) {
+        for ($j = 0; $j < $series->getDataPoints()->size(); $j++) {
             $lbl = $series->getDataPoints()->get_Item($j)->getLabel();
-            $dataPontPercent = ((series->getDataPoints()->get_Item($j)->getValue()->getData())) / (total_for_Cat[j]) * 100;
+            $dataPontPercent = ((series->getDataPoints()->get_Item($j)->getValue()->getData())) / (total_for_Cat->get_Item($j)) * 100;
     
             $port = new Java("com.aspose.slides.Portion");
-            $port->setText(String.format("{0:F2} %.2", $dataPontPercent));
+            $port->setText(sprintf("{0:F2} %.2", $dataPontPercent));
             $port->getPortionFormat()->setFontHeight(8);
             $lbl->getTextFrameForOverriding()->setText("");
-            $para =$lbl->getTextFrameForOverriding()->getParagraphs()->get_Item(0);
+            $para = $lbl->getTextFrameForOverriding()->getParagraphs()->get_Item(0);
             $para->getPortions()->add($port);
     
            $lbl->getDataLabelFormat()->setShowSeriesName(false);
@@ -116,11 +116,11 @@ try {
     $workbook = $chart->getChartData()->getChartDataWorkbook();
     
     // Add new series
-    $series = $chart->getChartData()->getSeries()->add(workbook->getCell($defaultWorksheetIndex, 0, 1, "Reds"), $chart->getType());
-    $series->getDataPoints()->addDataPointForBarSeries(workbook->getCell($defaultWorksheetIndex, 1, 1, 0.30));
-    $series->getDataPoints()->addDataPointForBarSeries(workbook->getCell($defaultWorksheetIndex, 2, 1, 0.50));
-    $series->getDataPoints()->addDataPointForBarSeries(workbook->getCell($defaultWorksheetIndex, 3, 1, 0.80));
-    $series->getDataPoints()->addDataPointForBarSeries(workbook->getCell($defaultWorksheetIndex, 4, 1, 0.65));
+    $series = $chart->getChartData()->getSeries()->add($workbook->getCell($defaultWorksheetIndex, 0, 1, "Reds"), $chart->getType());
+    $series->getDataPoints()->addDataPointForBarSeries($workbook->getCell($defaultWorksheetIndex, 1, 1, 0.30));
+    $series->getDataPoints()->addDataPointForBarSeries($workbook->getCell($defaultWorksheetIndex, 2, 1, 0.50));
+    $series->getDataPoints()->addDataPointForBarSeries($workbook->getCell($defaultWorksheetIndex, 3, 1, 0.80));
+    $series->getDataPoints()->addDataPointForBarSeries($workbook->getCell($defaultWorksheetIndex, 4, 1, 0.65));
     
     // Setting the fill color of series
     $series->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
@@ -136,11 +136,11 @@ try {
     $series->getLabels()->getDefaultDataLabelFormat()->setShowValue(true);
     
     // Add new series
-    $series2 = $chart->getChartData()->getSeries()->add(workbook->getCell($defaultWorksheetIndex, 0, 2, "Blues"), $chart->getType());
-    $series2->getDataPoints()->addDataPointForBarSeries(workbook->getCell($defaultWorksheetIndex, 1, 2, 0.70));
-    $series2->getDataPoints()->addDataPointForBarSeries(workbook->getCell($defaultWorksheetIndex, 2, 2, 0.50));
-    $series2->getDataPoints()->addDataPointForBarSeries(workbook->getCell($defaultWorksheetIndex, 3, 2, 0.20));
-    $series2->getDataPoints()->addDataPointForBarSeries(workbook->getCell($defaultWorksheetIndex, 4, 2, 0.35));
+    $series2 = $chart->getChartData()->getSeries()->add($workbook->getCell($defaultWorksheetIndex, 0, 2, "Blues"), $chart->getType());
+    $series2->getDataPoints()->addDataPointForBarSeries($workbook->getCell($defaultWorksheetIndex, 1, 2, 0.70));
+    $series2->getDataPoints()->addDataPointForBarSeries($workbook->getCell($defaultWorksheetIndex, 2, 2, 0.50));
+    $series2->getDataPoints()->addDataPointForBarSeries($workbook->getCell($defaultWorksheetIndex, 3, 2, 0.20));
+    $series2->getDataPoints()->addDataPointForBarSeries($workbook->getCell($defaultWorksheetIndex, 4, 2, 0.35));
     
     // Setting Fill type and color
     $series2->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);

@@ -20,7 +20,7 @@ $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
 
-    $localTextFrameFormat = $shape->getTextFrame()->getTextFrameFormat();
+    $localTextFrameFormat = $shape->getTextFrame()->getJava("com.aspose.slides.TextFrameFormat");
     $effectiveTextFrameFormat = localTextFrameFormat->getEffective();
 
     $localPortionFormat = $shape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0)->getPortionFormat();
@@ -95,7 +95,7 @@ This sample code shows you how to get effective text frame formatting properties
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
-    $effectiveTextFrameFormat = $shape->getTextFrame()->getTextFrameFormat()->getEffective();
+    $effectiveTextFrameFormat = $shape->getTextFrame()->getJava("com.aspose.slides.TextFrameFormat")->getEffective();
 
     echo("Anchoring type: " + effectiveTextFrameFormat->getAnchoringType());
     echo("Autofit type: " + effectiveTextFrameFormat->getAutofitType());
@@ -119,12 +119,12 @@ This sample code sample shows you how to get effective text style properties:
 $pres = new Java("com.aspose.slides.Presentation", "Presentation1.pptx");
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
-    $effectiveTextStyle = $shape->getTextFrame()->getTextFrameFormat()->getTextStyle()->getEffective();
+    $effectiveTextStyle = $shape->getTextFrame()->getJava("com.aspose.slides.TextFrameFormat")->getTextStyle()->getEffective();
 
-    for ($i = 0; i <= 8; i++)
+    for ($i = 0; i <= 8; $i++)
     {
         $effectiveStyleLevel = $effectiveTextStyle->getLevel($i);
-        echo("= Effective paragraph formatting for style level #" + i + " =");
+        echo("= Effective paragraph formatting for style level #" + $i + " =");
 
         echo("Depth: " + effectiveStyleLevel->getDepth());
         echo("Indent: " + effectiveStyleLevel->getIndent());
@@ -161,7 +161,7 @@ try {
     echo("Portion #0: " + $portion0->getPortionFormat()->getEffective()->getFontHeight());
     echo("Portion #1: " + $portion1->getPortionFormat()->getEffective()->getFontHeight());
 
-    $newShape->getTextFrame()->getParagraphs()->get_Item(0)->getParagraphFormat()->getDefaultPortionFormat()->setFontHeight(40);
+    $newShape->getTextFrame()->getParagraphs()->get_Item(0)->getJava("com.aspose.slides.ParagraphFormat")->getDefaultPortionFormat()->setFontHeight(40);
     echo("Effective font height after setting paragraph default font height:");
     echo("Portion #0: " + $portion0->getPortionFormat()->getEffective()->getFontHeight());
     echo("Portion #1: " + $portion1->getPortionFormat()->getEffective()->getFontHeight());

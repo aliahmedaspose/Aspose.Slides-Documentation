@@ -80,8 +80,8 @@ try {
     $para2 = $tf2->getParagraphs()->get_Item(0);
 
     // Aligning the text paragraph to center
-    $para2->getParagraphFormat()->setAlignment(Java("com.aspose.slides.TextAlignment")->Center);
-    $para2->getParagraphFormat()->setAlignment(Java("com.aspose.slides.TextAlignment")->Center);
+    $para2->getJava("com.aspose.slides.ParagraphFormat")->setAlignment(Java("com.aspose.slides.TextAlignment")->Center);
+    $para2->getJava("com.aspose.slides.ParagraphFormat")->setAlignment(Java("com.aspose.slides.TextAlignment")->Center);
 
     //Writing the presentation as a PPTX file
     $pres->save("Centeralign_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -161,22 +161,22 @@ try {
     $fd2 = new  Java("com.aspose.slides.FontData", "Castellar");
 
     // Assign new fonts to portion
-    port1->getPortionFormat()->setLatinFont(fd1);
-    port2->getPortionFormat()->setLatinFont(fd2);
+    $port1->getPortionFormat()->setLatinFont(fd1);
+    $port2->getPortionFormat()->setLatinFont(fd2);
 
     // Set font to Bold
-    port1->getPortionFormat()->setFontBold(Java("com.aspose.slides.NullableBool")->True);
-    port2->getPortionFormat()->setFontBold(Java("com.aspose.slides.NullableBool")->True);
+    $port1->getPortionFormat()->setFontBold(Java("com.aspose.slides.NullableBool")->True);
+    $port2->getPortionFormat()->setFontBold(Java("com.aspose.slides.NullableBool")->True);
 
     // Set font to Italic
-    port1->getPortionFormat()->setFontItalic(Java("com.aspose.slides.NullableBool")->True);
-    port2->getPortionFormat()->setFontItalic(Java("com.aspose.slides.NullableBool")->True);
+    $port1->getPortionFormat()->setFontItalic(Java("com.aspose.slides.NullableBool")->True);
+    $port2->getPortionFormat()->setFontItalic(Java("com.aspose.slides.NullableBool")->True);
 
     // Set font color
-    port1->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    port1->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->MAGENTA);
-    port2->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    port2->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->ORANGE);
+    $port1->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $port1->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->MAGENTA);
+    $port2->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $port2->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->ORANGE);
 
     //Write the PPTX to disk
     $pres->save("WelcomeFont_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -275,7 +275,7 @@ try {
     
     // Accessing the text frame
     $txtFrame = $ashp->getTextFrame();
-    $txtFrame->getTextFrameFormat()->setTextVerticalType(Java("com.aspose.slides.TextVerticalType")->Vertical270);
+    $txtFrame->getJava("com.aspose.slides.TextFrameFormat")->setTextVerticalType(Java("com.aspose.slides.TextVerticalType")->Vertical270);
     
     // Create the Paragraph object for text frame
     $para = $txtFrame->getParagraphs()->get_Item(0);
@@ -319,7 +319,7 @@ try {
 
     // Accessing the text frame
     $txtFrame = $ashp->getTextFrame();
-    $txtFrame->getTextFrameFormat()->setRotationAngle(25);
+    $txtFrame->getJava("com.aspose.slides.TextFrameFormat")->setRotationAngle(25);
 
     // Create the Paragraph object for text frame
     $para = $txtFrame->getParagraphs()->get_Item(0);
@@ -361,9 +361,9 @@ try {
     $para = $tf1->getParagraphs()->get_Item(0);
     
     // Set properties of Paragraph
-    $para->getParagraphFormat()->setSpaceWithin(80);
-    $para->getParagraphFormat()->setSpaceBefore(40);
-    $para->getParagraphFormat()->setSpaceAfter(40);
+    $para->getJava("com.aspose.slides.ParagraphFormat")->setSpaceWithin(80);
+    $para->getJava("com.aspose.slides.ParagraphFormat")->setSpaceBefore(40);
+    $para->getJava("com.aspose.slides.ParagraphFormat")->setSpaceAfter(40);
     
     // Save Presentation
     $pres->save("LineSpacing_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -398,7 +398,7 @@ try {
 
     // Accessing the text frame
     $txtFrame = $ashp->getTextFrame();
-    $txtFrame->getTextFrameFormat()->setAutofitType(Java("com.aspose.slides.TextAutofitType")->Shape);
+    $txtFrame->getJava("com.aspose.slides.TextFrameFormat")->setAutofitType(Java("com.aspose.slides.TextAutofitType")->Shape);
 
     // Create the Paragraph object for text frame
     $para = $txtFrame->getParagraphs()->get_Item(0);
@@ -442,7 +442,7 @@ try {
     
     // Accessing the text frame
     $txtFrame = $ashp->getTextFrame();
-    $txtFrame->getTextFrameFormat()->setAnchoringType(Java("com.aspose.slides.TextAnchorType")->Bottom);
+    $txtFrame->getJava("com.aspose.slides.TextFrameFormat")->setAnchoringType(Java("com.aspose.slides.TextAnchorType")->Bottom);
     
     // Create the Paragraph object for text frame
     $para = $txtFrame->getParagraphs()->get_Item(0);

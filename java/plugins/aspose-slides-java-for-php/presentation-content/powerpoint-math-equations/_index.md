@@ -148,9 +148,9 @@ Example:
 is created using a combination of [**MathFunction**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathFunction) and [**MathLimit**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathLimit) elements this way:
 
 ```php
-$funcName = new MathLimit(new Java("com.aspose.slides.MathematicalText", "lim"), new Java("com.aspose.slides.MathematicalText", "𝑥→∞"));
+$funcName = new Java("com.aspose.slides.MathLimit")->new Java("com.aspose.slides.MathematicalText", "lim"), new Java("com.aspose.slides.MathematicalText", "𝑥→∞"));
 
-$mathFunc = new MathFunction($funcName, new Java("com.aspose.slides.MathematicalText", "𝑥"));
+$mathFunc = new Java("com.aspose.slides.MathFunction")->$funcName, new Java("com.aspose.slides.MathematicalText", "𝑥"));
 ``` 
 
 
@@ -213,7 +213,7 @@ $element1 = new Java("com.aspose.slides.MathematicalText", "x");
 
 $element2 = new Java("com.aspose.slides.MathematicalText", "y");
 
-$block = element1->join(element2);
+$block = element1->join($element2);
 ``` 
 
 ### **Divide method**
@@ -306,7 +306,7 @@ Takes the specified function using the current instance as the argument. You can
 For example:
 
 ```php
-$funcName = new MathLimit(new Java("com.aspose.slides.MathematicalText", "lim"), new Java("com.aspose.slides.MathematicalText", "𝑛→∞"));
+$funcName = new Java("com.aspose.slides.MathLimit")->new Java("com.aspose.slides.MathematicalText", "lim"), new Java("com.aspose.slides.MathematicalText", "𝑛→∞"));
 
 $func1 = new Java("com.aspose.slides.MathematicalText", "2x")->asArgumentOfFunction($funcName);
 
@@ -332,7 +332,7 @@ Sets subscript and superscript. You can set subscript and superscript at the sam
 Example:
 
 ```php
-IMathLeftSubSuperscriptElement script = new Java("com.aspose.slides.MathematicalText", "y")->setSubSuperscriptOnTheLeft("2x", "3z");
+$script = new Java("com.aspose.slides.MathematicalText", "y")->setSubSuperscriptOnTheLeft("2x", "3z");
 ``` 
 
 ### **Radical method**
@@ -344,7 +344,7 @@ Specifies the mathematical root of the given degree from the specified argument.
 Example:
 
 ```php
-IMathRadical radical = new Java("com.aspose.slides.MathematicalText", "x").radical("3");
+$radical = new Java("com.aspose.slides.MathematicalText", "x")->radical("3");
 ``` 
 
 ### **SetUpperLimit and SetLowerLimit methods**

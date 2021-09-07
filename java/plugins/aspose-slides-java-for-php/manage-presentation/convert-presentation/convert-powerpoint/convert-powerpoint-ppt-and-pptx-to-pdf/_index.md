@@ -196,7 +196,7 @@ The following example shows you how to convert a specific presentation slide to 
 $pres = new Java("com.aspose.slides.Presentation", "PowerPoint.pptx");
 try {
     // Setting array of slides positions
-    int[] slides = { 1, 3 };
+    $slides = { 1, 3 };
     
     // Save the presentation as PDF
     $pres->save("PPTX-to-PDF.pdf", slides, Java("com.aspose.slides.SaveFormat")->Pdf);
@@ -223,7 +223,7 @@ try {
         
         $pdfOptions = new Java("com.aspose.slides.PdfOptions");
         $options = $pdfOptions->getNotesCommentsLayouting();
-        $options->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
+        $$options->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
 
         outPres->save("PDFnotes_out.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
     } finally {
@@ -243,7 +243,7 @@ $pres = new Java("com.aspose.slides.Presentation", "SelectedSlides.pptx");
 try {
     $pdfOptions = new Java("com.aspose.slides.PdfOptions");
     $options = $pdfOptions->getNotesCommentsLayouting();
-    $options->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
+    $$options->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
 
     $pres->save("Pdf_With_Notes.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
 } finally {

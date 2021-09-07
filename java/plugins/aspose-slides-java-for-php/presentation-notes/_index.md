@@ -28,8 +28,8 @@ Notes of some specific slide could be removed as shown in example below:
 $pres = new Java("com.aspose.slides.Presentation", "presWithNotes.pptx");
 try {
     // Removing notes of first slide
-    INotesSlideManager mgr = $pres->getSlides()->get_Item(0)->getNotesSlideManager();
-    mgr.removeNotesSlide();
+    $mgr = $pres->getSlides()->get_Item(0)->getNotesSlideManager();
+    $mgr->removeNotesSlide();
 
     // Saving presentation to disk
     $pres->save("test.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -46,10 +46,10 @@ Notes of all the slides of a presentation could be removed as shown in example b
 $pres = new Java("com.aspose.slides.Presentation", "presWithNotes.pptx");
 try {
     // Removing notes of all slides
-    INotesSlideManager mgr = null;
-    for ($i = 0; i < $pres->getSlides()->size(); i++) {
-        mgr = $pres->getSlides()->get_Item($i)->getNotesSlideManager();
-        mgr.removeNotesSlide();
+    $mgr = null;
+    for ($i = 0; $i < $pres->getSlides()->size(); $i++) {
+        $mgr = $pres->getSlides()->get_Item($i)->getNotesSlideManager();
+        $mgr->removeNotesSlide();
     }
     
     // Saving presentation to disk
@@ -66,16 +66,16 @@ try {
 // Instantiate a Presentation object that represents a presentation file
 $pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
-    IMasterNotesSlide notesMaster = $pres->getMasterNotesSlideManager()->getMasterNotesSlide();
+    $notesMaster = $pres->getMasterNotesSlideManager()->getMasterNotesSlide();
     
     if ($notesMaster != null)
     {
         // Get MasterNotesSlide text style
-        ITextStyle notesStyle = notesMaster->getNotesStyle();
+        $notesStyle = $notesMaster->getNotesStyle();
     
         //Set symbol bullet for the first level paragraphs
-        IParagraphFormat paragraphFormat = notesStyle->getLevel(0);
-        paragraphFormat->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
+        $IparagraphFormat = $notesStyle->getLevel(0);
+        $paragraphFormat->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
     }
     $pres->save("NotesSlideWithNotesStyle.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

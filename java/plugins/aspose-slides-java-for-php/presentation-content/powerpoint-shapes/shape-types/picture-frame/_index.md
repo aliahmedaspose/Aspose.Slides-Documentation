@@ -42,7 +42,7 @@ try {
     $imgx = $pres->getImages()->addImage(new FileInputStream(new Java("java.io.File", "asp1.jpg")));
     
     // Add Picture Frame with height and width equivalent of Picture
-    $sld->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, imgx->getWidth(), imgx->getHeight(), imgx);
+    $sld->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, $imgx->getWidth(), $imgx->getHeight(), $imgx);
     
     // Write the PPTX file to disk
     $pres->save("RectPicFrame.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -76,11 +76,11 @@ try {
     
     
     // Add Picture Frame with height and width equivalent of Picture
-    IPictureFrame pf = $sld->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, imgx->getWidth(), imgx->getHeight(), imgx);
+    $pf = $sld->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, $imgx->getWidth(), $imgx->getHeight(), $imgx);
     
     // Setting relative scale width and height
-    pf->setRelativeScaleHeight(0.8);
-    pf->setRelativeScaleWidth(1.35);
+    $pf->setRelativeScaleHeight(0.8);
+    $pf->setRelativeScaleWidth(1.35);
     
     // Write the PPTX file to disk
     $pres->save("RectPicFrame.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -119,13 +119,13 @@ try {
     $imgx = $pres->getImages()->addImage(new FileInputStream(new Java("java.io.File", "asp1.jpg")));
     
     // Add Picture Frame with height and width equivalent of Picture
-    IPictureFrame pf = $sld->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, imgx->getWidth(), imgx->getHeight(), imgx);
+    $pf = $sld->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, $imgx->getWidth(), $imgx->getHeight(), $imgx);
     
     // Apply some formatting to PictureFrameEx
-    pf->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    pf->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLUE);
-    pf->getLineFormat()->setWidth(20);
-    pf->setRotation(45);
+    $pf->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $pf->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLUE);
+    $pf->getLineFormat()->setWidth(20);
+    $pf->setRotation(45);
     
     // Write the PPTX file to disk
     $pres->save("RectPicFrame.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

@@ -16,7 +16,7 @@ In Aspose.Slides for Java, the presentation slide comment are associated with a 
 $presentation = new Java("com.aspose.slides.Presentation");
 try {
     // Adding Empty slide
-    $presentation->getSlides()->addEmptySlide(presentation->getLayoutSlides()->get_Item(0));
+    $presentation->getSlides()->addEmptySlide($presentation->getLayoutSlides()->get_Item(0));
 
     // Adding Author
     $author = $presentation->getCommentAuthors()->addAuthor("Jawad", "MF");
@@ -108,16 +108,16 @@ try {
     // Display hierarchy on console
     $slide = $pres->getSlides()->get_Item(0);
     $comments = $slide->getSlideComments(null);
-    for ($i = 0; i < $comments->length; i++)
+    for ($i = 0; $i < $comments->length; $i++)
     {
-        $comment = comments[i];
+        $comment = comments->get_Item($i);
         while ($comment->getParentComment() != null)
         {
             echo("\t");
             $comment = $comment->getParentComment();
         }
 
-        echo($comments[i]->getAuthor()->getName() +  " : " + $comments[i]->getText());
+        echo($comments->get_Item($i)->getAuthor()->getName() +  " : " + $comments->get_Item($i)->getText());
         echo();
     }
     $pres->save("parent_comment.pptx",Java("com.aspose.slides.SaveFormat")->Pptx);

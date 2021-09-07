@@ -16,19 +16,18 @@ try {
     $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Pie, 50, 50, 500, 400);
     $chart->getChartData()->getChartDataWorkbook()->clear(0);
 
-    Workbook workbook = new Workbook("a1.xlsx");
+    $workbook = new Java("com.aspose.slides.Workbook", "a1.xlsx");
 
-    ByteArrayOutputStream mem = new ByteArrayOutputStream();
-    workbook->save(mem, com.aspose.cells.SaveFormat.XLSX);
+    $mem = new Java("java.io..ByteArrayOutputStream");
+    $workbook->save($mem, com.aspose.cells.SaveFormat.XLSX);
 
-    $chart->getChartData()->writeWorkbookStream(mem->toByteArray());
+    $chart->getChartData()->writeWorkbookStream($mem->toByteArray());
 
     $chart->getChartData()->setRange("Sheet1!$A$1:$B$9");
     $series = $chart->getChartData()->getSeries()->get_Item(0);
     $series->getParentSeriesGroup()->setColorVaried(true);
     $pres->save("response2.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
-} catch (Exception ex) {
-    ex.printStackTrace();
+} catch (JavaException $ex) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -56,9 +55,9 @@ try {
 
     $wb = $chart->getChartData()->getChartDataWorkbook();
 
-    $series->getLabels()->get_Item(0)->setValueFromCell(wb->getCell(0, "A10", "Label 0 cell value"));
-    $series->getLabels()->get_Item(1)->setValueFromCell(wb->getCell(0, "A11", "Label 1 cell value"));
-    $series->getLabels()->get_Item(2)->setValueFromCell(wb->getCell(0, "A12", "Label 2 cell value"));
+    $series->getLabels()->get_Item(0)->setValueFromCell($wb->getCell(0, "A10", "Label 0 cell value"));
+    $series->getLabels()->get_Item(1)->setValueFromCell($wb->getCell(0, "A11", "Label 1 cell value"));
+    $series->getLabels()->get_Item(2)->setValueFromCell($wb->getCell(0, "A12", "Label 2 cell value"));
 
     $pres->save("resultchart.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -83,7 +82,7 @@ try {
     $chart = $slide->getShapes()->get_Item(0);
     $sourceType = $chart->getChartData()->getDataSourceType();
     
-    if ($sourceType == ChartJava("com.aspose.slides.DataSourceType")->ExternalWorkbook)
+    if ($sourceType == Java("com.aspose.slides.DataSourceType")->ExternalWorkbook)
     {
         $path = $chart->getChartData()->getExternalWorkbookPath();
     }
@@ -106,7 +105,7 @@ The implementation is demonstrated below in an example.
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
-    $externalWbPath = dataPath + "externalWorkbook1.xlsx";
+    $externalWbPath = $dataPath + "externalWorkbook1.xlsx";
     
     $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Pie, 50, 50, 400, 600);
 
@@ -114,7 +113,7 @@ try {
     if ($file.exists())
         file.delete();
 
-    byte[] worbookData = $chart->getChartData()->readWorkbookStream();
+    $worbookData = $chart->getChartData()->readWorkbookStream();
     $outputStream = new Java("java.io.FileOutputStream", file);
     outputStream->write(worbookData);
     outputStream->close();
@@ -140,18 +139,18 @@ The implementation is demonstrated below in an example.
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
     $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Pie, 50, 50, 400, 600, false);
-    IChartData chartData = $chart->getChartData();
+    $chartData = $chart->getChartData();
 
-    chartData->setExternalWorkbook(dataPath +"externalWorkbook.xlsx");
+    $chartData->setExternalWorkbook($dataPath +"externalWorkbook.xlsx");
 
-    chartData->getSeries()->add($chartData->getChartDataWorkbook()->getCell(0, "B1"), Java("com.aspose.slides.ChartType")->Pie);
-    chartData->getSeries()->get_Item(0)->getDataPoints()->addDataPointForPieSeries($chartData->getChartDataWorkbook()->getCell(0, "B2"));
-    chartData->getSeries()->get_Item(0)->getDataPoints()->addDataPointForPieSeries($chartData->getChartDataWorkbook()->getCell(0, "B3"));
-    chartData->getSeries()->get_Item(0)->getDataPoints()->addDataPointForPieSeries($chartData->getChartDataWorkbook()->getCell(0, "B4"));
+    $chartData->getSeries()->add($chartData->getChartDataWorkbook()->getCell(0, "B1"), Java("com.aspose.slides.ChartType")->Pie);
+    $chartData->getSeries()->get_Item(0)->getDataPoints()->addDataPointForPieSeries($chartData->getChartDataWorkbook()->getCell(0, "B2"));
+    $chartData->getSeries()->get_Item(0)->getDataPoints()->addDataPointForPieSeries($chartData->getChartDataWorkbook()->getCell(0, "B3"));
+    $chartData->getSeries()->get_Item(0)->getDataPoints()->addDataPointForPieSeries($chartData->getChartDataWorkbook()->getCell(0, "B4"));
 
-    chartData->getCategories()->add($chartData->getChartDataWorkbook()->getCell(0, "A2"));
-    chartData->getCategories()->add($chartData->getChartDataWorkbook()->getCell(0, "A3"));
-    chartData->getCategories()->add($chartData->getChartDataWorkbook()->getCell(0, "A4"));
+    $chartData->getCategories()->add($chartData->getChartDataWorkbook()->getCell(0, "A2"));
+    $chartData->getCategories()->add($chartData->getChartDataWorkbook()->getCell(0, "A3"));
+    $chartData->getCategories()->add($chartData->getChartDataWorkbook()->getCell(0, "A4"));
     
     $pres->save("Presentation_with_externalWorkbook.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -168,9 +167,9 @@ The **updateChartData** parameter defines whether an excel workbook will be loa
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
     $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Pie, 50, 50, 400, 600, true);
-    IChartData chartData = $chart->getChartData();
+    $chartData = $chart->getChartData();
 
-    ((ChartData)chartData)->setExternalWorkbook("http://path/doesnt/exists", false);
+    $chartData->setExternalWorkbook("http://path/doesnt/exists", false);
 
     $pres->save("Presentation_with_externalWorkbookWithUpdateChartData.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -188,9 +187,9 @@ The implementation is demonstrated below in an example.
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
     $chart = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
-    ChartData chartData = (ChartData)chart->getChartData();
+    $chartData = $chart->getChartData();
     
-    chartData->getSeries()->get_Item(0)->getDataPoints()->get_Item(0)->getValue()->getAsCell()->setValue(100);
+    $chartData->getSeries()->get_Item(0)->getDataPoints()->get_Item(0)->getValue()->getAsCell()->setValue(100);
     
     $pres->save("presentation_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

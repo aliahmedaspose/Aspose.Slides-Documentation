@@ -22,10 +22,13 @@ The implementation of the above is given below.
 
 ```php
 // folders to seek fonts
-String[] folders = new String[] { externalFontsDir };
+$Array = new JavaClass("java.lang.reflect.Array");
+$String = new JavaClass("java.lang.String");
+$folders = $Array->newInstance($String, 1);
+$folders[0] = $externalFontsDir;
 
 // Load the custom font directory fonts
-FontsLoader.loadExternalFonts(folders);
+Java("com.aspose.slides.FontsLoader")->loadExternalFonts($folders);
 
 // Do Some work and perform presentation/slides rendering
 $pres = new Java("com.aspose.slides.Presentation", "DefaultFonts.pptx");
@@ -35,7 +38,7 @@ try {
     if ($pres != null) $pres->dispose();
 
     // Clear Font Cachce
-    FontsLoader->clearCache();
+    Java("com.aspose.slides.FontsLoader")->clearCache();
 }
 ```
 
@@ -45,19 +48,50 @@ A new method has been added that returns folders where font files are searched. 
 ```php
 //The following line shall return folders where font files are searched.
 //Those are folders that have been added with LoadExternalFonts method as well as system font folders.
-String[] fontFolders = FontsLoader->getFontFolders();
+$fontFolders = Java("com.aspose.slides.FontsLoader")->getFontFolders();
 ```
 
 ## **Specify Custom Fonts Used With Presentation**
 A new [getDocumentLevelFontSources](https://apireference.aspose.com/slides/java/com.aspose.slides/ILoadOptions#getDocumentLevelFontSources--) method has been added to [ILoadOptions](https://apireference.aspose.com/slides/java/com.aspose.slides/ILoadOptions) interface. It allows to specify external fonts that are used with the presentation.
 
 ```php
-byte[] memoryFont1 = Files->readAllBytes("customfonts/CustomFont1.ttf");
-byte[] memoryFont2 = Files->readAllBytes("customfonts/CustomFont2.ttf");
+$Byte = new JavaClass("java.lang.Byte");
+$Array = new JavaClass("java.lang.reflect.Array");
+
+$file1 = new Java("java.io.File", "customfonts/CustomFont1.ttf");
+try {
+	$fis1 = new Java("java.io.FileInputStream", $file1);
+	$memoryFont1 = $Array->newInstance($Byte, $file1->length());
+	$fis1->read($memoryFont1);
+} catch (JavaException $e) { }
+finally {
+    if ($fis1 != null) $fis1->close();
+}
+
+$file2 = new Java("java.io.File", "customfonts/CustomFont2.ttf");
+try {
+	$fis2 = new Java("java.io.FileInputStream", $file2);
+	$memoryFont2 = $Array->newInstance($Byte, $file2->length());
+	$fis2->read($memoryFont2);
+} catch (JavaException $e) { }
+finally {
+    if ($fis2 != null) $fis2->close();
+}
 
 $loadOptions = new Java("com.aspose.slides.LoadOptions");
-$loadOptions->getDocumentLevelFontSources()->setFontFolders(new String[] { "assets/fonts", "global/fonts" });
-$loadOptions->getDocumentLevelFontSources()->setMemoryFonts(new byte[][] { memoryFont1, memoryFont2 });
+
+$String = new JavaClass("java.lang.String");
+$folders = $Array->newInstance($String, 2);
+$folders[0] = "assets/fonts";
+$folders[1] = "global/fonts";
+
+$loadOptions->getDocumentLevelFontSources()->setFontFolders($folders);
+
+$memoryFonts = $Array->newInstance($Array, 2);
+$memoryFont[0] = $memoryFont1;
+$memoryFont[1] = $memoryFont2;
+
+$loadOptions->getDocumentLevelFontSources()->setMemoryFonts($memoryFonts);
 
 $pres = new Java("com.aspose.slides.Presentation", "MyPresentation.pptx", $loadOptions);
 try {

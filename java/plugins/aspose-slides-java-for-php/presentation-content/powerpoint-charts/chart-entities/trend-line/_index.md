@@ -34,9 +34,9 @@ try {
     
     // Adding Linear trend line for chart series 1
     $tredLineLin = $chart->getChartData()->getSeries()->get_Item(0)->getTrendLines()->add(Java("com.aspose.slides.TrendlineType")->Linear);
-    tredLineLin->setTrendlineType(Java("com.aspose.slides.TrendlineType")->Linear);
-    tredLineLin->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    tredLineLin->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
+    $tredLineLin->setTrendlineType(Java("com.aspose.slides.TrendlineType")->Linear);
+    $tredLineLin->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $tredLineLin->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
     
     
     // Adding Logarithmic trend line for chart series 2
@@ -88,7 +88,7 @@ try {
     $shape = $chart->getUserShapes()->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 0, $chart->getHeight()/2, $chart->getWidth(), 0);
     
     $shape->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    $shape->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(java.awt.Color.RED);
+    $shape->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor($java.awt.Color.RED);
     
     $pres->save("Presentation.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

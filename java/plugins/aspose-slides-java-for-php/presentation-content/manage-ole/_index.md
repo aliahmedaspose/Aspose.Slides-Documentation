@@ -39,7 +39,7 @@ try {
 
     // Load an cel file to stream
     $fs = new Java("java.io.FileInputStream", new Java("java.io.File", "book1.xlsx");
-    ByteArrayOutputStream mstream = new ByteArrayOutputStream();
+    $mstream = new Java("java.io..ByteArrayOutputStream");
     byte[] buf = new byte[4096];
     while (true)
     {
@@ -152,9 +152,9 @@ try {
         ByteArrayInputStream msln = new ByteArrayInputStream(ole->getEmbeddedData()->getEmbeddedFileData());
         try {
             // Reading object data in Workbook
-            Workbook Wb = new Workbook(msln);
+            $Wb = new Java("com.aspose.slides.Workbook", msln);
 
-            ByteArrayOutputStream msout = new ByteArrayOutputStream();
+            $msout = new Java("java.io..ByteArrayOutputStream");
             try {
                 // Modifying the workbook data
                 Wb->getWorksheets()->get(0)->getCells()->get(0, 4).putValue("E");
@@ -287,7 +287,7 @@ try {
             $extension = oleFrame->getEmbeddedData()->getEmbeddedFileExtension();
 
             // Save extracted data
-            $fstr = new Java("java.io.FileOutputStream", "oleFrame" + index + extension);
+            $fstr = new Java("java.io.FileOutputStream", "oleFrame" + $index + extension);
             try {
                 fstr->write(data, 0, data->length);
             } finally {

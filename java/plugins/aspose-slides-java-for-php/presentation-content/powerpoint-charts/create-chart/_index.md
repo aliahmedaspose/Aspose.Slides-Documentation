@@ -39,7 +39,7 @@ try {
     
     // Setting chart Title
     $chart->getChartTitle()->addTextFrameForOverriding("Sample Title");
-    $chart->getChartTitle()->getTextFrameForOverriding()->getTextFrameFormat()->setCenterText(Java("com.aspose.slides.NullableBool")->True);
+    $chart->getChartTitle()->getTextFrameForOverriding()->getJava("com.aspose.slides.TextFrameFormat")->setCenterText(Java("com.aspose.slides.NullableBool")->True);
     $chart->getChartTitle()->setHeight(20);
     $chart->hasTitle();
     
@@ -80,7 +80,7 @@ try {
     $series->getFormat()->getFill()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
     
     // Take second chart series
-    series = $chart->getChartData()->getSeries()->get_Item(1);
+    $series = $chart->getChartData()->getSeries()->get_Item(1);
     
     // Now populating series data
     $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 1, 2, 30));
@@ -94,16 +94,16 @@ try {
     // create custom labels for each of categories for new series
     // first label will be show Category name
     $lbl = $series->getDataPoints()->get_Item(0)->getLabel();
-   $lbl->getDataLabelFormat()->setShowCategoryName(true);
+    $lbl->getDataLabelFormat()->setShowCategoryName(true);
     
     lbl = $series->getDataPoints()->get_Item(1)->getLabel();
-   $lbl->getDataLabelFormat()->setShowSeriesName(true);
+    $lbl->getDataLabelFormat()->setShowSeriesName(true);
     
     // Show value for third label
-    lbl = $series->getDataPoints()->get_Item(2)->getLabel();
-   $lbl->getDataLabelFormat()->setShowValue(true);
-   $lbl->getDataLabelFormat()->setShowSeriesName(true);
-   $lbl->getDataLabelFormat()->setSeparator("/");
+    $lbl = $series->getDataPoints()->get_Item(2)->getLabel();
+    $lbl->getDataLabelFormat()->setShowValue(true);
+    $lbl->getDataLabelFormat()->setShowSeriesName(true);
+    $lbl->getDataLabelFormat()->setSeparator("/");
     
     // Save presentation with chart
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -142,10 +142,10 @@ try {
     $series = $chart->getChartData()->getSeries()->get_Item(0);
     
     // Add new point (1:3) there.
-    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 2, 1, 1), fact->getCell($defaultWorksheetIndex, 2, 2, 3));
+    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 2, 1, 1), $fact->getCell($defaultWorksheetIndex, 2, 2, 3));
     
     // Add new point (2:10)
-    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 3, 1, 2), fact->getCell($defaultWorksheetIndex, 3, 2, 10));
+    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 3, 1, 2), $fact->getCell($defaultWorksheetIndex, 3, 2, 10));
     
     // Edit the type of series
     $series->setType(Java("com.aspose.slides.ChartType")->ScatterWithStraightLinesAndMarkers);
@@ -155,19 +155,19 @@ try {
     $series->getMarker()->setSymbol(Java("com.aspose.slides.MarkerStyleType")->Star);
     
     // Take second chart series
-    series = $chart->getChartData()->getSeries()->get_Item(1);
+    $series = $chart->getChartData()->getSeries()->get_Item(1);
     
     // Add new point (5:2) there.
-    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 2, 3, 5), fact->getCell($defaultWorksheetIndex, 2, 4, 2));
+    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 2, 3, 5), $fact->getCell($defaultWorksheetIndex, 2, 4, 2));
     
     // Add new point (3:1)
-    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 3, 3, 3), fact->getCell($defaultWorksheetIndex, 3, 4, 1));
+    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 3, 3, 3), $fact->getCell($defaultWorksheetIndex, 3, 4, 1));
     
     // Add new point (2:2)
-    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 4, 3, 2), fact->getCell($defaultWorksheetIndex, 4, 4, 2));
+    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 4, 3, 2), $fact->getCell($defaultWorksheetIndex, 4, 4, 2));
     
     // Add new point (5:1)
-    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 5, 3, 5), fact->getCell($defaultWorksheetIndex, 5, 4, 1));
+    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 5, 3, 5), $fact->getCell($defaultWorksheetIndex, 5, 4, 1));
     
     // Changing the chart series marker
     $series->getMarker()->setSize(10);
@@ -203,11 +203,11 @@ try {
     $slides = $pres->getSlides()->get_Item(0);
     
     // Add chart with default data
-    $chart = slides->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Pie, 100, 100, 400, 400);
+    $chart = $slides->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Pie, 100, 100, 400, 400);
     
     // Setting chart Title
     $chart->getChartTitle()->addTextFrameForOverriding("Sample Title");
-    $chart->getChartTitle()->getTextFrameForOverriding()->getTextFrameFormat()->setCenterText(Java("com.aspose.slides.NullableBool")->True);
+    $chart->getChartTitle()->getTextFrameForOverriding()->getJava("com.aspose.slides.TextFrameFormat")->setCenterText(Java("com.aspose.slides.NullableBool")->True);
     $chart->getChartTitle()->setHeight(20);
     $chart->setTitle(true);
     
@@ -254,41 +254,41 @@ try {
     $point->getFormat()->getLine()->setDashStyle(Java("com.aspose.slides.LineDashStyle")->DashDot);
     
     $point1 = $series->getDataPoints()->get_Item(1);
-    point1->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    point1->getFormat()->getFill()->getSolidFillColor()->setColor(Java("java.awt.Color")->ORANGE);
+    $point1->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $point1->getFormat()->getFill()->getSolidFillColor()->setColor(Java("java.awt.Color")->ORANGE);
     
     // Setting Sector border
-    point1->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    point1->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLUE);
-    point1->getFormat()->getLine()->setWidth(3.0);
-    point1->getFormat()->getLine()->setStyle(Java("com.aspose.slides.LineStyle")->Single);
-    point1->getFormat()->getLine()->setDashStyle(Java("com.aspose.slides.LineDashStyle")->LargeDashDot);
+    $point1->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $point1->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLUE);
+    $point1->getFormat()->getLine()->setWidth(3.0);
+    $point1->getFormat()->getLine()->setStyle(Java("com.aspose.slides.LineStyle")->Single);
+    $point1->getFormat()->getLine()->setDashStyle(Java("com.aspose.slides.LineDashStyle")->LargeDashDot);
     
     $point2 = $series->getDataPoints()->get_Item(2);
-    point2->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    point2->getFormat()->getFill()->getSolidFillColor()->setColor(Java("java.awt.Color")->YELLOW);
+    $point2->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $point2->getFormat()->getFill()->getSolidFillColor()->setColor(Java("java.awt.Color")->YELLOW);
     
     // Setting Sector border
-    point2->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    point2->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
-    point2->getFormat()->getLine()->setWidth(2.0);
-    point2->getFormat()->getLine()->setStyle(Java("com.aspose.slides.LineStyle")->ThinThin);
-    point2->getFormat()->getLine()->setDashStyle(Java("com.aspose.slides.LineDashStyle")->LargeDashDotDot);
+    $point2->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $point2->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
+    $point2->getFormat()->getLine()->setWidth(2.0);
+    $point2->getFormat()->getLine()->setStyle(Java("com.aspose.slides.LineStyle")->ThinThin);
+    $point2->getFormat()->getLine()->setDashStyle(Java("com.aspose.slides.LineDashStyle")->LargeDashDotDot);
     
     // Create custom labels for each of categories for new series
     $lbl1 = $series->getDataPoints()->get_Item(0)->getLabel();
     
     // lbl.ShowCategoryName = true;
-    lbl1->getDataLabelFormat()->setShowValue(true);
+    $lbl1->getDataLabelFormat()->setShowValue(true);
     
     $lbl2 = $series->getDataPoints()->get_Item(1)->getLabel();
-    lbl2->getDataLabelFormat()->setShowValue(true);
-    lbl2->getDataLabelFormat()->setShowLegendKey(true);
-    lbl2->getDataLabelFormat()->setShowPercentage(true);
+    $lbl2->getDataLabelFormat()->setShowValue(true);
+    $lbl2->getDataLabelFormat()->setShowLegendKey(true);
+    $lbl2->getDataLabelFormat()->setShowPercentage(true);
     
     $lbl3 = $series->getDataPoints()->get_Item(2)->getLabel();
-    lbl3->getDataLabelFormat()->setShowSeriesName(true);
-    lbl3->getDataLabelFormat()->setShowPercentage(true);
+    $lbl3->getDataLabelFormat()->setShowSeriesName(true);
+    $lbl3->getDataLabelFormat()->setShowPercentage(true);
     
     // Showing Leader Lines for Chart
     $series->getLabels()->getDefaultDataLabelFormat()->setShowLeaderLines(true);
@@ -326,41 +326,41 @@ try {
     $wb->clear(0);
 
     //branch 1
-    $leaf = $chart->getChartData()->getCategories()->add(wb->getCell(0, "C1", "Leaf1"));
-    leaf->getGroupingLevels()->setGroupingItem(1, "Stem1");
-    leaf->getGroupingLevels()->setGroupingItem(2, "Branch1");
+    $leaf = $chart->getChartData()->getCategories()->add($wb->getCell(0, "C1", "Leaf1"));
+    $leaf->getGroupingLevels()->setGroupingItem(1, "Stem1");
+    $leaf->getGroupingLevels()->setGroupingItem(2, "Branch1");
 
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "C2", "Leaf2"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "C2", "Leaf2"));
 
-    leaf = $chart->getChartData()->getCategories()->add(wb->getCell(0, "C3", "Leaf3"));
-    leaf->getGroupingLevels()->setGroupingItem(1, "Stem2");
+    $leaf = $chart->getChartData()->getCategories()->add($wb->getCell(0, "C3", "Leaf3"));
+    $leaf->getGroupingLevels()->setGroupingItem(1, "Stem2");
 
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "C4", "Leaf4"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "C4", "Leaf4"));
 
     //branch 2
-    leaf = $chart->getChartData()->getCategories()->add(wb->getCell(0, "C5", "Leaf5"));
-    leaf->getGroupingLevels()->setGroupingItem(1, "Stem3");
-    leaf->getGroupingLevels()->setGroupingItem(2, "Branch2");
+    $leaf = $chart->getChartData()->getCategories()->add($wb->getCell(0, "C5", "Leaf5"));
+    $leaf->getGroupingLevels()->setGroupingItem(1, "Stem3");
+    $leaf->getGroupingLevels()->setGroupingItem(2, "Branch2");
 
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "C6", "Leaf6"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "C6", "Leaf6"));
 
-    leaf = $chart->getChartData()->getCategories()->add(wb->getCell(0, "C7", "Leaf7"));
-    leaf->getGroupingLevels()->setGroupingItem(1, "Stem4");
+    $leaf = $chart->getChartData()->getCategories()->add($wb->getCell(0, "C7", "Leaf7"));
+    $leaf->getGroupingLevels()->setGroupingItem(1, "Stem4");
 
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "C8", "Leaf8"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "C8", "Leaf8"));
 
     $series = $chart->getChartData()->getSeries()->add(Java("com.aspose.slides.ChartType")->Treemap);
     $series->getLabels()->getDefaultDataLabelFormat()->setShowCategoryName(true);
-    $series->getDataPoints()->addDataPointForTreemapSeries(wb->getCell(0, "D1", 4));
-    $series->getDataPoints()->addDataPointForTreemapSeries(wb->getCell(0, "D2", 5));
-    $series->getDataPoints()->addDataPointForTreemapSeries(wb->getCell(0, "D3", 3));
-    $series->getDataPoints()->addDataPointForTreemapSeries(wb->getCell(0, "D4", 6));
-    $series->getDataPoints()->addDataPointForTreemapSeries(wb->getCell(0, "D5", 9));
-    $series->getDataPoints()->addDataPointForTreemapSeries(wb->getCell(0, "D6", 9));
-    $series->getDataPoints()->addDataPointForTreemapSeries(wb->getCell(0, "D7", 4));
-    $series->getDataPoints()->addDataPointForTreemapSeries(wb->getCell(0, "D8", 3));
+    $series->getDataPoints()->addDataPointForTreemapSeries($wb->getCell(0, "D1", 4));
+    $series->getDataPoints()->addDataPointForTreemapSeries($wb->getCell(0, "D2", 5));
+    $series->getDataPoints()->addDataPointForTreemapSeries($wb->getCell(0, "D3", 3));
+    $series->getDataPoints()->addDataPointForTreemapSeries($wb->getCell(0, "D4", 6));
+    $series->getDataPoints()->addDataPointForTreemapSeries($wb->getCell(0, "D5", 9));
+    $series->getDataPoints()->addDataPointForTreemapSeries($wb->getCell(0, "D6", 9));
+    $series->getDataPoints()->addDataPointForTreemapSeries($wb->getCell(0, "D7", 4));
+    $series->getDataPoints()->addDataPointForTreemapSeries($wb->getCell(0, "D8", 3));
 
-    $series->setParentLabelLayout(ParentLabelLayoutType.Overlapping);
+    $series->setParentLabelLayout(Java("com.aspose.slides.ParentLabelLayoutType")->Overlapping);
 
     $pres->save("Treemap.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -391,35 +391,35 @@ try {
 
     $wb = $chart->getChartData()->getChartDataWorkbook();
 
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, 1, 0, "A"));
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, 2, 0, "B"));
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, 3, 0, "C"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, 1, 0, "A"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, 2, 0, "B"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, 3, 0, "C"));
 
-    $chart->getChartData()->getSeries()->add(wb->getCell(0, 0, 1, "Open"), $chart->getType());
-    $chart->getChartData()->getSeries()->add(wb->getCell(0, 0, 2, "High"), $chart->getType());
-    $chart->getChartData()->getSeries()->add(wb->getCell(0, 0, 3, "Low"), $chart->getType());
-    $chart->getChartData()->getSeries()->add(wb->getCell(0, 0, 4, "Close"), $chart->getType());
+    $chart->getChartData()->getSeries()->add($wb->getCell(0, 0, 1, "Open"), $chart->getType());
+    $chart->getChartData()->getSeries()->add($wb->getCell(0, 0, 2, "High"), $chart->getType());
+    $chart->getChartData()->getSeries()->add($wb->getCell(0, 0, 3, "Low"), $chart->getType());
+    $chart->getChartData()->getSeries()->add($wb->getCell(0, 0, 4, "Close"), $chart->getType());
 
     $series = $chart->getChartData()->getSeries()->get_Item(0);
 
-    $series->getDataPoints()->addDataPointForStockSeries(wb->getCell(0, 1, 1, 72));
-    $series->getDataPoints()->addDataPointForStockSeries(wb->getCell(0, 2, 1, 25));
-    $series->getDataPoints()->addDataPointForStockSeries(wb->getCell(0, 3, 1, 38));
+    $series->getDataPoints()->addDataPointForStockSeries($wb->getCell(0, 1, 1, 72));
+    $series->getDataPoints()->addDataPointForStockSeries($wb->getCell(0, 2, 1, 25));
+    $series->getDataPoints()->addDataPointForStockSeries($wb->getCell(0, 3, 1, 38));
 
-    series = $chart->getChartData()->getSeries()->get_Item(1);
-    $series->getDataPoints()->addDataPointForStockSeries(wb->getCell(0, 1, 2, 172));
-    $series->getDataPoints()->addDataPointForStockSeries(wb->getCell(0, 2, 2, 57));
-    $series->getDataPoints()->addDataPointForStockSeries(wb->getCell(0, 3, 2, 57));
+    $series = $chart->getChartData()->getSeries()->get_Item(1);
+    $series->getDataPoints()->addDataPointForStockSeries($wb->getCell(0, 1, 2, 172));
+    $series->getDataPoints()->addDataPointForStockSeries($wb->getCell(0, 2, 2, 57));
+    $series->getDataPoints()->addDataPointForStockSeries($wb->getCell(0, 3, 2, 57));
 
-    series = $chart->getChartData()->getSeries()->get_Item(2);
-    $series->getDataPoints()->addDataPointForStockSeries(wb->getCell(0, 1, 3, 12));
-    $series->getDataPoints()->addDataPointForStockSeries(wb->getCell(0, 2, 3, 12));
-    $series->getDataPoints()->addDataPointForStockSeries(wb->getCell(0, 3, 3, 13));
+    $series = $chart->getChartData()->getSeries()->get_Item(2);
+    $series->getDataPoints()->addDataPointForStockSeries($wb->getCell(0, 1, 3, 12));
+    $series->getDataPoints()->addDataPointForStockSeries($wb->getCell(0, 2, 3, 12));
+    $series->getDataPoints()->addDataPointForStockSeries($wb->getCell(0, 3, 3, 13));
 
-    series = $chart->getChartData()->getSeries()->get_Item(3);
-    $series->getDataPoints()->addDataPointForStockSeries(wb->getCell(0, 1, 4, 25));
-    $series->getDataPoints()->addDataPointForStockSeries(wb->getCell(0, 2, 4, 38));
-    $series->getDataPoints()->addDataPointForStockSeries(wb->getCell(0, 3, 4, 50));
+    $series = $chart->getChartData()->getSeries()->get_Item(3);
+    $series->getDataPoints()->addDataPointForStockSeries($wb->getCell(0, 1, 4, 25));
+    $series->getDataPoints()->addDataPointForStockSeries($wb->getCell(0, 2, 4, 38));
+    $series->getDataPoints()->addDataPointForStockSeries($wb->getCell(0, 3, 4, 50));
 
     $chart->getChartData()->getSeriesGroups()->get_Item(0)->getUpDownBars()->setUpDownBars(true);
     $chart->getChartData()->getSeriesGroups()->get_Item(0)->getHiLowLinesFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
@@ -457,12 +457,12 @@ try {
     $wb = $chart->getChartData()->getChartDataWorkbook();
     $wb->clear(0);
 
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A1", "Category 1"));
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A2", "Category 1"));
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A3", "Category 1"));
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A4", "Category 1"));
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A5", "Category 1"));
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A6", "Category 1"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A1", "Category 1"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A2", "Category 1"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A3", "Category 1"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A4", "Category 1"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A5", "Category 1"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A6", "Category 1"));
 
     $series = $chart->getChartData()->getSeries()->add(Java("com.aspose.slides.ChartType")->BoxAndWhisker);
 
@@ -472,12 +472,12 @@ try {
     $series->setShowInnerPoints(true);
     $series->setShowOutlierPoints(true);
 
-    $series->getDataPoints()->addDataPointForBoxAndWhiskerSeries(wb->getCell(0, "B1", 15));
-    $series->getDataPoints()->addDataPointForBoxAndWhiskerSeries(wb->getCell(0, "B2", 41));
-    $series->getDataPoints()->addDataPointForBoxAndWhiskerSeries(wb->getCell(0, "B3", 16));
-    $series->getDataPoints()->addDataPointForBoxAndWhiskerSeries(wb->getCell(0, "B4", 10));
-    $series->getDataPoints()->addDataPointForBoxAndWhiskerSeries(wb->getCell(0, "B5", 23));
-    $series->getDataPoints()->addDataPointForBoxAndWhiskerSeries(wb->getCell(0, "B6", 16));
+    $series->getDataPoints()->addDataPointForBoxAndWhiskerSeries($wb->getCell(0, "B1", 15));
+    $series->getDataPoints()->addDataPointForBoxAndWhiskerSeries($wb->getCell(0, "B2", 41));
+    $series->getDataPoints()->addDataPointForBoxAndWhiskerSeries($wb->getCell(0, "B3", 16));
+    $series->getDataPoints()->addDataPointForBoxAndWhiskerSeries($wb->getCell(0, "B4", 10));
+    $series->getDataPoints()->addDataPointForBoxAndWhiskerSeries($wb->getCell(0, "B5", 23));
+    $series->getDataPoints()->addDataPointForBoxAndWhiskerSeries($wb->getCell(0, "B6", 16));
 
     $pres->save("BoxAndWhisker.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -504,21 +504,21 @@ try {
 
     $wb->clear(0);
 
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A1", "Category 1"));
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A2", "Category 2"));
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A3", "Category 3"));
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A4", "Category 4"));
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A5", "Category 5"));
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "A6", "Category 6"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A1", "Category 1"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A2", "Category 2"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A3", "Category 3"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A4", "Category 4"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A5", "Category 5"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "A6", "Category 6"));
 
     $series = $chart->getChartData()->getSeries()->add(Java("com.aspose.slides.ChartType")->Funnel);
 
-    $series->getDataPoints()->addDataPointForFunnelSeries(wb->getCell(0, "B1", 50));
-    $series->getDataPoints()->addDataPointForFunnelSeries(wb->getCell(0, "B2", 100));
-    $series->getDataPoints()->addDataPointForFunnelSeries(wb->getCell(0, "B3", 200));
-    $series->getDataPoints()->addDataPointForFunnelSeries(wb->getCell(0, "B4", 300));
-    $series->getDataPoints()->addDataPointForFunnelSeries(wb->getCell(0, "B5", 400));
-    $series->getDataPoints()->addDataPointForFunnelSeries(wb->getCell(0, "B6", 500));
+    $series->getDataPoints()->addDataPointForFunnelSeries($wb->getCell(0, "B1", 50));
+    $series->getDataPoints()->addDataPointForFunnelSeries($wb->getCell(0, "B2", 100));
+    $series->getDataPoints()->addDataPointForFunnelSeries($wb->getCell(0, "B3", 200));
+    $series->getDataPoints()->addDataPointForFunnelSeries($wb->getCell(0, "B4", 300));
+    $series->getDataPoints()->addDataPointForFunnelSeries($wb->getCell(0, "B5", 400));
+    $series->getDataPoints()->addDataPointForFunnelSeries($wb->getCell(0, "B6", 500));
 
     $pres->save("Funnel.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -545,39 +545,39 @@ try {
     $wb->clear(0);
 
     //branch 1
-    $leaf = $chart->getChartData()->getCategories()->add(wb->getCell(0, "C1", "Leaf1"));
-    leaf->getGroupingLevels()->setGroupingItem(1, "Stem1");
-    leaf->getGroupingLevels()->setGroupingItem(2, "Branch1");
+    $leaf = $chart->getChartData()->getCategories()->add($wb->getCell(0, "C1", "Leaf1"));
+    $leaf->getGroupingLevels()->setGroupingItem(1, "Stem1");
+    $leaf->getGroupingLevels()->setGroupingItem(2, "Branch1");
 
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "C2", "Leaf2"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "C2", "Leaf2"));
 
-    leaf = $chart->getChartData()->getCategories()->add(wb->getCell(0, "C3", "Leaf3"));
-    leaf->getGroupingLevels()->setGroupingItem(1, "Stem2");
+    $leaf = $chart->getChartData()->getCategories()->add($wb->getCell(0, "C3", "Leaf3"));
+    $leaf->getGroupingLevels()->setGroupingItem(1, "Stem2");
 
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "C4", "Leaf4"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "C4", "Leaf4"));
 
     //branch 2
-    leaf = $chart->getChartData()->getCategories()->add(wb->getCell(0, "C5", "Leaf5"));
-    leaf->getGroupingLevels()->setGroupingItem(1, "Stem3");
-    leaf->getGroupingLevels()->setGroupingItem(2, "Branch2");
+    $leaf = $chart->getChartData()->getCategories()->add($wb->getCell(0, "C5", "Leaf5"));
+    $leaf->getGroupingLevels()->setGroupingItem(1, "Stem3");
+    $leaf->getGroupingLevels()->setGroupingItem(2, "Branch2");
 
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "C6", "Leaf6"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "C6", "Leaf6"));
 
-    leaf = $chart->getChartData()->getCategories()->add(wb->getCell(0, "C7", "Leaf7"));
-    leaf->getGroupingLevels()->setGroupingItem(1, "Stem4");
+    $leaf = $chart->getChartData()->getCategories()->add($wb->getCell(0, "C7", "Leaf7"));
+    $leaf->getGroupingLevels()->setGroupingItem(1, "Stem4");
 
-    $chart->getChartData()->getCategories()->add(wb->getCell(0, "C8", "Leaf8"));
+    $chart->getChartData()->getCategories()->add($wb->getCell(0, "C8", "Leaf8"));
 
     $series = $chart->getChartData()->getSeries()->add(Java("com.aspose.slides.ChartType")->Sunburst);
     $series->getLabels()->getDefaultDataLabelFormat()->setShowCategoryName(true);
-    $series->getDataPoints()->addDataPointForSunburstSeries(wb->getCell(0, "D1", 4));
-    $series->getDataPoints()->addDataPointForSunburstSeries(wb->getCell(0, "D2", 5));
-    $series->getDataPoints()->addDataPointForSunburstSeries(wb->getCell(0, "D3", 3));
-    $series->getDataPoints()->addDataPointForSunburstSeries(wb->getCell(0, "D4", 6));
-    $series->getDataPoints()->addDataPointForSunburstSeries(wb->getCell(0, "D5", 9));
-    $series->getDataPoints()->addDataPointForSunburstSeries(wb->getCell(0, "D6", 9));
-    $series->getDataPoints()->addDataPointForSunburstSeries(wb->getCell(0, "D7", 4));
-    $series->getDataPoints()->addDataPointForSunburstSeries(wb->getCell(0, "D8", 3));
+    $series->getDataPoints()->addDataPointForSunburstSeries($wb->getCell(0, "D1", 4));
+    $series->getDataPoints()->addDataPointForSunburstSeries($wb->getCell(0, "D2", 5));
+    $series->getDataPoints()->addDataPointForSunburstSeries($wb->getCell(0, "D3", 3));
+    $series->getDataPoints()->addDataPointForSunburstSeries($wb->getCell(0, "D4", 6));
+    $series->getDataPoints()->addDataPointForSunburstSeries($wb->getCell(0, "D5", 9));
+    $series->getDataPoints()->addDataPointForSunburstSeries($wb->getCell(0, "D6", 9));
+    $series->getDataPoints()->addDataPointForSunburstSeries($wb->getCell(0, "D7", 4));
+    $series->getDataPoints()->addDataPointForSunburstSeries($wb->getCell(0, "D8", 3));
     
     $pres->save("Sunburst.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -607,12 +607,12 @@ try {
     $wb->clear(0);
 
     $series = $chart->getChartData()->getSeries()->add(Java("com.aspose.slides.ChartType")->Histogram);
-    $series->getDataPoints()->addDataPointForHistogramSeries(wb->getCell(0, "A1", 15));
-    $series->getDataPoints()->addDataPointForHistogramSeries(wb->getCell(0, "A2", -41));
-    $series->getDataPoints()->addDataPointForHistogramSeries(wb->getCell(0, "A3", 16));
-    $series->getDataPoints()->addDataPointForHistogramSeries(wb->getCell(0, "A4", 10));
-    $series->getDataPoints()->addDataPointForHistogramSeries(wb->getCell(0, "A5", -23));
-    $series->getDataPoints()->addDataPointForHistogramSeries(wb->getCell(0, "A6", 16));
+    $series->getDataPoints()->addDataPointForHistogramSeries($wb->getCell(0, "A1", 15));
+    $series->getDataPoints()->addDataPointForHistogramSeries($wb->getCell(0, "A2", -41));
+    $series->getDataPoints()->addDataPointForHistogramSeries($wb->getCell(0, "A3", 16));
+    $series->getDataPoints()->addDataPointForHistogramSeries($wb->getCell(0, "A4", 10));
+    $series->getDataPoints()->addDataPointForHistogramSeries($wb->getCell(0, "A5", -23));
+    $series->getDataPoints()->addDataPointForHistogramSeries($wb->getCell(0, "A6", 16));
 
     $chart->getAxes()->getHorizontalAxis()->setAggregationType(AxisAggregationType.Automatic;)
 
@@ -642,7 +642,7 @@ try {
     $ch->getChartData()->getCategories()->clear();
     
     $fact = $ch->getChartData()->getChartDataWorkbook();
-    fact->clear(0);
+    $fact->clear(0);
     $defaultWorksheetIndex = 0;
 
     $category = $ch->getChartData()->getCategories()->add(fact->getCell(0, "c2", "A"));
@@ -710,23 +710,23 @@ try {
     $fact = $chart->getChartData()->getChartDataWorkbook();
 
     // Changing chart Category Name
-    fact->getCell($defaultWorksheetIndex, 1, 0, "Modified Category 1");
-    fact->getCell($defaultWorksheetIndex, 2, 0, "Modified Category 2");
+    $fact->getCell($defaultWorksheetIndex, 1, 0, "Modified Category 1");
+    $fact->getCell($defaultWorksheetIndex, 2, 0, "Modified Category 2");
 
     // Take first chart series
     $series = $chart->getChartData()->getSeries()->get_Item(0);
 
     // Now updating series data
-    fact->getCell($defaultWorksheetIndex, 0, 1, "New_Series1");// Modifying series name
+    $fact->getCell($defaultWorksheetIndex, 0, 1, "New_Series1");// Modifying series name
     $series->getDataPoints()->get_Item(0)->getValue()->setData(90);
     $series->getDataPoints()->get_Item(1)->getValue()->setData(123);
     $series->getDataPoints()->get_Item(2)->getValue()->setData(44);
 
     // Take Second chart series
-    series = $chart->getChartData()->getSeries()->get_Item(1);
+    $series = $chart->getChartData()->getSeries()->get_Item(1);
 
     // Now updating series data
-    fact->getCell($defaultWorksheetIndex, 0, 2, "New_Series2");// Modifying series name
+    $fact->getCell($defaultWorksheetIndex, 0, 2, "New_Series2");// Modifying series name
     $series->getDataPoints()->get_Item(0)->getValue()->setData(23);
     $series->getDataPoints()->get_Item(1)->getValue()->setData(67);
     $series->getDataPoints()->get_Item(2)->getValue()->setData(99);
@@ -735,7 +735,7 @@ try {
     $chart->getChartData()->getSeries()->add(fact->getCell($defaultWorksheetIndex, 0, 3, "Series 3"), $chart->getType());
 
     // Take 3rd chart series
-    series = $chart->getChartData()->getSeries()->get_Item(2);
+    $series = $chart->getChartData()->getSeries()->get_Item(2);
 
     // Now populating series data
     $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 1, 3, 20));

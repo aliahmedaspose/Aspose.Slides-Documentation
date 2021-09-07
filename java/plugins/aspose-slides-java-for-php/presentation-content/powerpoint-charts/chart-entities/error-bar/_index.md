@@ -78,7 +78,7 @@ try {
     $points->getDataSourceTypeForErrorBarsCustomValues()->setDataSourceTypeForYMinusValues((byte) Java("com.aspose.slides.DataSourceType")->DoubleLiterals);
 
     // Setting error bars for chart series points
-    for ($i = 0; i < $points->size(); i++) {
+    for ($i = 0; $i < $points->size(); $i++) {
         $points->get_Item($i)->getErrorBarsCustomValues()->getXMinus()->setAsLiteralDouble($i+ 1);
         $points->get_Item($i)->getErrorBarsCustomValues()->getXPlus()->setAsLiteralDouble($i+ 1);
         $points->get_Item($i)->getErrorBarsCustomValues()->getYMinus()->setAsLiteralDouble($i+ 1);

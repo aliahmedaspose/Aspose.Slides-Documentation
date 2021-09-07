@@ -23,12 +23,12 @@ Let us have a quick look on the main methods of **[ThreeDFormat](https://apirefe
 we create a rectangle 2D shape with a text on it. By getting camera view on the shape, we change its rotation and make looking as a 3D model. Setting a flat light 
 and its direction to the top of the 3D model, bring more volume to the model. Changed materials, extrusion height and color make the 3D model look more alive.  
 ```php
-<?php require_once("http://localhost:8087/JavaBridge/java/Java->inc");
+<?php require_once("http://localhost:8087/JavaBridge/java/Java.inc");
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 150, 200, 200);
     $shape->getTextFrame()->setText("3D");
-    $shape->getTextFrame()->getParagraphs()->get_Item(0)->getParagraphFormat()->getDefaultPortionFormat()->setFontHeight(64);
+    $shape->getTextFrame()->getParagraphs()->get_Item(0)->getJava("com.aspose.slides.ParagraphFormat")->getDefaultPortionFormat()->setFontHeight(64);
  
     $shape->getThreeDFormat()->getCamera()->setCameraType(Java("com.aspose.slides.CameraPresetType")->OrthographicFront);
     $shape->getThreeDFormat()->getCamera()->setRotation(20, 30, 40);
@@ -94,12 +94,12 @@ In PowerPoint, Depth of the shape is set via:
 3D gradient can bring more volume to PowerPoint 3D shape:
 
 ```php
-<?php require_once("http://localhost:8087/JavaBridge/java/Java->inc");
+<?php require_once("http://localhost:8087/JavaBridge/java/Java.inc");
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 150, 250, 250);
     $shape->getTextFrame()->setText("3D");
-    $shape->getTextFrame()->getParagraphs()->get_Item(0)->getParagraphFormat()->getDefaultPortionFormat()->setFontHeight(64);
+    $shape->getTextFrame()->getParagraphs()->get_Item(0)->getJava("com.aspose.slides.ParagraphFormat")->getDefaultPortionFormat()->setFontHeight(64);
  
     $shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Gradient);
     $shape->getFillFormat()->getGradientFormat()->getGradientStops()->add(0, Java("java.awt.Color")->BLUE);
@@ -131,7 +131,7 @@ $shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Picture
 $picture = null;
 try {
 	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "sample_3d.png"));
-	$picture = $pres->getImages()->addImage(new Java("java.io.FileInputStream", new Java("java.io.File", "sample_3d.png")));
+	$picture = $pres->getImages()->addImage($fis);
 } catch (JavaException $e) { }
 finally {
     if ($fis != null) $fis->close();
@@ -152,7 +152,7 @@ Here is the result:
 ## 3D Text (WordArt)
 To create a 3D text (WordArt), do the following:
 ```php
-<?php require_once("http://localhost:8087/JavaBridge/java/Java->inc");
+<?php require_once("http://localhost:8087/JavaBridge/java/Java.inc");
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 150, 200, 200);
@@ -167,20 +167,20 @@ try {
     $portion->getPortionFormat()->getFillFormat()->getPatternFormat()->getBackColor()->setColor(Java("java.awt.Color")->WHITE);
     $portion->getPortionFormat()->getFillFormat()->getPatternFormat()->setPatternStyle(Java("com.aspose.slides.PatternStyle")->LargeGrid);
  
-    $shape->getTextFrame()->getParagraphs()->get_Item(0)->getParagraphFormat()->getDefaultPortionFormat()->setFontHeight(128);
+    $shape->getTextFrame()->getParagraphs()->get_Item(0)->getJava("com.aspose.slides.ParagraphFormat")->getDefaultPortionFormat()->setFontHeight(128);
  
     $textFrame = $shape->getTextFrame();
     // setup "Arch Up" WordArt transform effect
-    $textFrame->getTextFrameFormat()->setTransform(Java("com.aspose.slides.TextShapeType")->ArchUp);
+    $textFrame->getJava("com.aspose.slides.TextFrameFormat")->setTransform(Java("com.aspose.slides.TextShapeType")->ArchUp);
  
-    $textFrame->getTextFrameFormat()->getThreeDFormat()->setExtrusionHeight(3.5);
-    $textFrame->getTextFrameFormat()->getThreeDFormat()->setDepth(3);
-    $textFrame->getTextFrameFormat()->getThreeDFormat()->setMaterial(Java("com.aspose.slides.MaterialPresetType")->Plastic);
-    $textFrame->getTextFrameFormat()->getThreeDFormat()->getLightRig()->setDirection(Java("com.aspose.slides.LightingDirection")->Top);
-    $textFrame->getTextFrameFormat()->getThreeDFormat()->getLightRig()->setLightType(Java("com.aspose.slides.LightRigPresetType")->Balanced);
-    $textFrame->getTextFrameFormat()->getThreeDFormat()->getLightRig()->setRotation(0, 0, 40);
+    $textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->setExtrusionHeight(3.5);
+    $textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->setDepth(3);
+    $textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->setMaterial(Java("com.aspose.slides.MaterialPresetType")->Plastic);
+    $textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getLightRig()->setDirection(Java("com.aspose.slides.LightingDirection")->Top);
+    $textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getLightRig()->setLightType(Java("com.aspose.slides.LightRigPresetType")->Balanced);
+    $textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getLightRig()->setRotation(0, 0, 40);
  
-    $textFrame->getTextFrameFormat()->getThreeDFormat()->getCamera()->setCameraType(Java("com.aspose.slides.CameraPresetType")->PerspectiveContrastingRightFacing);
+    $textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getCamera()->setCameraType(Java("com.aspose.slides.CameraPresetType")->PerspectiveContrastingRightFacing);
  
     try {
         Java("javax.imageio.ImageIO")->write($pres->getSlides()->get_Item(0)->getThumbnail(2, 2), "PNG", new Java("java.io.File", "text3d.png"));

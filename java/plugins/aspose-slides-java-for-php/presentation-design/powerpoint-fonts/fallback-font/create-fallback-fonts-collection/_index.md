@@ -16,12 +16,12 @@ Here is an examples how to create fallback fonts rules collection and assign in 
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    IFontFallBackRulesCollection userRulesList = new FontFallBackRulesCollection();
+    $userRulesList = new Java("com.aspose.slides.FontFallBackRulesCollection");
 
-    userRulesList->add(new FontFallBackRule(0x0B80, 0x0BFF, "Vijaya"));
-    userRulesList->add(new FontFallBackRule(0x3040, 0x309F, "MS Mincho, MS Gothic"));
+    $userRulesList->add(new Java("com.aspose.slides.FontFallBackRule", 0x0B80, 0x0BFF, "Vijaya"));
+    $userRulesList->add(new Java("com.aspose.slides.FontFallBackRule", 0x3040, 0x309F, "MS Mincho, MS Gothic"));
 
-    $pres->getFontsManager()->setFontFallBackRulesCollection(userRulesList);
+    $pres->getFontsManager()->setFontFallBackRulesCollection($userRulesList);
 } finally {
     if ($pres != null) $pres->dispose();
 }

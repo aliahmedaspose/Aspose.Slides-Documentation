@@ -60,7 +60,7 @@ try {
     $opts->setImageSize(new Java("java.awt.Dimension", 1728, 1078));
     
     $options = $opts->getNotesCommentsLayouting();
-    $options->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
+    $$options->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
     // Save the presentation to TIFF with specified image size
     $pres->save("tiff-ImageSize.tiff", Java("com.aspose.slides.SaveFormat")->Tiff, $opts);
 } finally {
@@ -76,7 +76,7 @@ The following example shows how to convert a presentation into a TIFF document w
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx");
 try {
     $options = new Java("com.aspose.slides.TiffOptions");
-    $options->setPixelFormat(Java("com.aspose.slides.ImagePixelFormat")->Format8bppIndexed);
+    $$options->setPixelFormat(Java("com.aspose.slides.ImagePixelFormat")->Format8bppIndexed);
     
     /*
      * ImagePixelFormat contains the following values (as could be seen from documentation):

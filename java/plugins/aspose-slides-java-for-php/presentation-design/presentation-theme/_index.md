@@ -86,31 +86,31 @@ In the example above, we have set a reference on *Accent4* color, taken from the
 ```php
 $fillEffective = $shape->getFillFormat()->getEffective();
 
-Color effectiveColor = fillEffective->getSolidFillColor();
+$effectiveColor = $fillEffective->getSolidFillColor();
 
-echo(String.format("Color [A=%d, R=%d, G=%d, B=%d]", 
-        effectiveColor->getAlpha(), effectiveColor->getRed(), effectiveColor->getGreen(), effectiveColor->getBlue()));
+echo(sprintf("Color [A=%d, R=%d, G=%d, B=%d]", 
+        $effectiveColor->getAlpha(), $effectiveColor->getRed(), $effectiveColor->getGreen(), $effectiveColor->getBlue()));
 ``` 
 
 We can check that color matches the one defined as *Accent4* for the presentation theme:
 
 ```php
-Color themeAccent4 = $pres->getMasterTheme()->getColorScheme()->getAccent4()->getColor();
+$themeAccent4 = $pres->getMasterTheme()->getColorScheme()->getAccent4()->getColor();
 
-echo(String.format("Color [A=%d, R=%d, G=%d, B=%d] - from theme",
-        themeAccent4->getAlpha(), themeAccent4->getRed(), themeAccent4->getGreen(), themeAccent4->getBlue()));
+echo(sprintf("Color [A=%d, R=%d, G=%d, B=%d] - from theme",
+        $themeAccent4->getAlpha(), $themeAccent4->getRed(), $themeAccent4->getGreen(), $themeAccent4->getBlue()));
 ``` 
 
 Lets us create one more element and assign it the same *Accent4* color from the scheme. Then we will change this color in the scheme:
 
 ```php
-IAutoShape otherShape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 120, 100, 100);
+$otherShape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 120, 100, 100);
 
-otherShape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+$otherShape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-otherShape->getFillFormat()->getSolidFillColor()->setSchemeColor(Java("com.aspose.slides.SchemeColor")->Accent4);
+$otherShape->getFillFormat()->getSolidFillColor()->setSchemeColor(Java("com.aspose.slides.SchemeColor")->Accent4);
 
-pres->getMasterTheme()->getColorScheme()->getAccent4()->setColor(Java("java.awt.Color")->RED);
+$pres->getMasterTheme()->getColorScheme()->getAccent4()->setColor(Java("java.awt.Color")->RED);
 ``` 
 
 The color will change on both elements after we have changed it in the color theme. 
@@ -134,15 +134,15 @@ Let us create an element with the text, and assign the Latin font from the font 
 ```php
 $shape = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 100, 100);
 
-Paragraph paragraph = new Java("com.aspose.slides.Paragraph");
+$paragraph = new Java("com.aspose.slides.Paragraph");
 
-Portion portion = new Java("com.aspose.slides.Portion", "Theme text format");
+$portion = new Java("com.aspose.slides.Portion", "Theme text format");
 
-paragraph->getPortions()->add($portion);
+$paragraph->getPortions()->add($portion);
 
-shape->getTextFrame()->getParagraphs()->add($paragraph);
+$shape->getTextFrame()->getParagraphs()->add($paragraph);
 
-portion->getPortionFormat()->setLatinFont(new  Java("com.aspose.slides.FontData", "+mn-lt"));
+$portion->getPortionFormat()->setLatinFont(new  Java("com.aspose.slides.FontData", "+mn-lt"));
 ``` 
 
 Now lets check that the same font is set for Body Latin:
@@ -178,7 +178,7 @@ $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     $numberOfBackgroundFills = $pres->getMasterTheme()->getFormatScheme()->getBackgroundFillStyles()->size();
 
-    echo("Number of background fill styles for theme is " + numberOfBackgroundFills);
+    echo("Number of background fill styles for theme is " + $numberOfBackgroundFills);
 } finally {
     if ($pres != null) $pres->dispose();
 }

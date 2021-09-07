@@ -24,7 +24,7 @@ Here are the steps to convert PPT/PPTX to JPG:
 
 - Create an instance of [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) type.
 - Get the slide object of [ISlide](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlide) type from [Presentation->getSlides()](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation#getSlides--) collection.
-- Create the thumbnail of each slide and then convert it into JPG. [**ISlide->getThumbnail(float scaleX, float scaleY)**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlide#getThumbnail-float-float-) method is used to get a thumbnail of a slide, it returns [BufferedImage](https://docs.oracle.com/javase/7/docs/api/java/awt/image/BufferedImage.html) object as a result. [getThumbnail](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlide#getThumbnail-com.aspose.slides.IRenderingOptions-float-float-) method has to be called from the needed slide of [ISlide](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlide) type, the scales of the resulting thumbnail are passed into the method.
+- Create the thumbnail of each slide and then convert it into JPG. [**ISlide->getThumbnail($scaleX, $scaleY)**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlide#getThumbnail-float-float-) method is used to get a thumbnail of a slide, it returns [BufferedImage](https://docs.oracle.com/javase/7/docs/api/java/awt/image/BufferedImage.html) object as a result. [getThumbnail](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlide#getThumbnail-com.aspose.slides.IRenderingOptions-float-float-) method has to be called from the needed slide of [ISlide](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlide) type, the scales of the resulting thumbnail are passed into the method.
 - After you get the slide thumbnail, call [**ImageIO->write(RenderedImage im, String formatName, File output)**](https://docs.oracle.com/javase/7/docs/api/javax/imageio/ImageIO.html#write(java.awt.image.RenderedImage,%20java.lang.String,%20java.io.File)) method from the thumbnail object. Pass the resulting file name and the image format into it. 
 
 {{% alert color="primary" %}}
@@ -41,7 +41,7 @@ try {
         $bmp = $sld->getThumbnail(1, 1);
 
         // Save the image to disk in JPEG format
-        Java("javax.imageio.ImageIO")->write($bmp, "JPEG", new File(String.format("Slide_%d.jpg", $sld->getSlideNumber())));
+        Java("javax.imageio.ImageIO")->write($bmp, "JPEG", new File(sprintf("Slide_%d.jpg", $sld->getSlideNumber())));
     }
 } catch (JavaException $e) {
 } finally {
@@ -50,7 +50,7 @@ try {
 ```
 
 ## **Convert PowerPoint PPT/PPTX to JPG with Customized Dimensions**
-To change the dimension of the resulting thumbnail and JPG image, you can set the *ScaleX* and *ScaleY* for it. To do that, pass *ScaleX* and *ScaleY* values into [**ISlide->getThumbnail(float scaleX, float scaleY)**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlide#getThumbnail-float-float-) method:
+To change the dimension of the resulting thumbnail and JPG image, you can set the *ScaleX* and *ScaleY* for it. To do that, pass *ScaleX* and *ScaleY* values into [**ISlide->getThumbnail($scaleX, $scaleY)**](https://apireference.aspose.com/slides/java/com.aspose.slides/ISlide#getThumbnail-float-float-) method:
 
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "PowerPoint-Presentation.pptx");
@@ -68,7 +68,7 @@ try {
         $bmp = $sld->getThumbnail(ScaleX, ScaleY);
 
         // Save the image to disk in JPEG format
-        Java("javax.imageio.ImageIO")->write($bmp, "JPEG", new File(String.format("Slide_%d.jpg", $sld->getSlideNumber())));
+        Java("javax.imageio.ImageIO")->write($bmp, "JPEG", new File(sprintf("Slide_%d.jpg", $sld->getSlideNumber())));
     }
 } catch (JavaException $e) {
 } finally {
@@ -94,7 +94,7 @@ try {
         } finally {
             if ($graphics != null) $graphics->dispose();
         }
-        Java("javax.imageio.ImageIO")->write($image,"png", new File(String.format("Slide_%d.png", $sld->getSlideNumber())));
+        Java("javax.imageio.ImageIO")->write($image,"png", new File(sprintf("Slide_%d.png", $sld->getSlideNumber())));
     }
 } catch (JavaException $e) {
 } finally {

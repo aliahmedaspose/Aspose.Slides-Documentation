@@ -59,7 +59,7 @@ This sample code shows you how to generate a shape thumbnail based on a defined 
 $pres = new Java("com.aspose.slides.Presentation", "Thumbnail.pptx");
 try {
     // Create a full scale image
-    $image = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getThumbnail(Java("com.aspose.slides.ShapeThumbnailBounds")-> Shape, 1, 1);
+    $image = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getThumbnail(Java("com.aspose.slides.ShapeThumbnailBounds")->Shape, 1, 1);
 
     // Save the image to disk in PNG format
     Java("javax.imageio.ImageIO")->write($image, "jpeg", new Java("java.io.File", "output.jpg"));
@@ -84,7 +84,7 @@ This sample code is based on the steps above:
 $pres = new Java("com.aspose.slides.Presentation", "Thumbnail.pptx");
 try {
     // Create a full scale image
-    $image = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getThumbnail(Java("com.aspose.slides.ShapeThumbnailBounds")-> Appearance, 1, 1);
+    $image = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0)->getThumbnail(Java("com.aspose.slides.ShapeThumbnailBounds")->Appearance, 1, 1);
 
     // Save the image to disk in PNG format
     Java("javax.imageio.ImageIO")->write($image, "jpeg", new Java("java.io.File", "output.jpg"));

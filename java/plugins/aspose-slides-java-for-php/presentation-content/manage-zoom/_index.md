@@ -39,7 +39,7 @@ try {
    $slide2->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->CYAN);
 
     // Create a text box for the second slide
-    $autoshape =$slide2->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
+    $autoshape = $slide2->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
     $autoshape->getTextFrame()->setText("Second Slide");
 
     // Create a background for the third slide
@@ -132,7 +132,7 @@ try {
    $slide2->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->CYAN);
 
     // Create a text box for the second slide
-    $autoshape =$slide2->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
+    $autoshape = $slide2->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
     $autoshape->getTextFrame()->setText("Second Slide");
 
     // Create a background for the third slide
@@ -207,7 +207,7 @@ try {
 
         // Create a text box for the slide
         $autoshape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
-        $autoshape->getTextFrame()->setText(String.format("Slide - %d", $slideNumber + 2));
+        $autoshape->getTextFrame()->setText(sprintf("Slide - %d", $slideNumber + 2));
     }
 
     // Create zoom objects for all slides in the first slide

@@ -79,16 +79,16 @@ try {
     $options = new Java("com.aspose.slides.RenderingOptions");
 
     // Set the position of the notes on the page
-    $options->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomTruncated);
+    $$options->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomTruncated);
 
     // Set the position of the comments on the page
-    $options->getNotesCommentsLayouting()->setCommentsPosition(CommentsPositions.Right);
+    $$options->getNotesCommentsLayouting()->setCommentsPosition(CommentsPositions.Right);
 
     // Set the width of the comment output area
-    $options->getNotesCommentsLayouting()->setCommentsAreaWidth(500);
+    $$options->getNotesCommentsLayouting()->setCommentsAreaWidth(500);
 
     // Set the color of comments area
-    $options->getNotesCommentsLayouting()->setCommentsAreaColor(Java("java.awt.Color")->LIGHT_GRAY);
+    $$options->getNotesCommentsLayouting()->setCommentsAreaColor(Java("java.awt.Color")->LIGHT_GRAY);
 
     // Convert the first slide of the presentation to a Bitmap object
     $bmp = $pres->getSlides()->get_Item(0)->getThumbnail(options, 2, 2);
@@ -117,17 +117,17 @@ try {
 
     // Create TiffOptions object
     $options = new Java("com.aspose.slides.TiffOptions");
-    $options->setImageSize(new Java("java.awt.Dimension", 2160, 2880));
+    $$options->setImageSize(new Java("java.awt.Dimension", 2160, 2880));
 
     // Set font used in case source font is not found
-    $options->setDefaultRegularFont("Arial Black");
+    $$options->setDefaultRegularFont("Arial Black");
 
     // Set the position of the notes on the page
-    $options->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomTruncated);
+    $$options->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomTruncated);
 
     // Set resolution
-    $options->setDpiX(300);
-    $options->setDpiY(300);
+    $$options->setDpiX(300);
+    $$options->setDpiY(300);
 
     // Convert slide to a Tiff image
     $pres->save("Slide_Notes_Comments_0.tiff", Java("com.aspose.slides.SaveFormat")->Tiff, $options);
@@ -146,7 +146,7 @@ the same as PowerPoint allows. The following example demonstrates this possibili
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     // Render presentation to images array slide by slide
-    for ($i = 0 ; i < $pres->getSlides()->size(); i++)
+    for ($i = 0 ; $i < $pres->getSlides()->size(); $i++)
     {
         // Control hidden slides (do not render hidden slides)
         if ($pres->getSlides()->get_Item($i)->getHidden())
@@ -156,7 +156,7 @@ try {
         $bmp = $pres->getSlides()->get_Item($i)->getThumbnail(2, 2);
 		
         // Create file name for an image
-        $outputFilePath = outputDir + "Slide_" + i + ".jpg";
+        $outputFilePath = outputDir + "Slide_" + $i + ".jpg";
 
         // Save the image in PNG format
         Java("javax.imageio.ImageIO")->write($bmp, "PNG", new File(outputFilePath));

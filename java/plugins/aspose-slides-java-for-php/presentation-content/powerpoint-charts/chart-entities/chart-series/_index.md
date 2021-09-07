@@ -109,7 +109,7 @@ try {
     $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->ClusteredColumn, 100, 50, 600, 400);
 
     // Setting series fill format to automatic
-    for ($i = 0; i < $chart->getChartData()->getSeries()->size(); i++) {
+    for ($i = 0; $i < $chart->getChartData()->getSeries()->size(); $i++) {
         $chart->getChartData()->getSeries()->get_Item($i)->getAutomaticSeriesColor();
     }
 

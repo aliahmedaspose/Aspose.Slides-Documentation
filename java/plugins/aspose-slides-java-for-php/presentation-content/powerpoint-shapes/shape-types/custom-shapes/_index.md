@@ -25,36 +25,36 @@ To set [GeometryPath](https://apireference.aspose.com/slides/java/com.aspose.sli
 **Adds line** to the end of the path
 ```php
 public void lineTo($point);
-public void lineTo(float x, float y);
+public void lineTo($x, $y);
 ```
 **Adds line** to the specified place of the path:
 ```php    
 public void lineTo($point, $index);
-public void lineTo(float x, float y, $index);
+public void lineTo($x, $y, $index);
 ```
 **Adds cubic Bezier curve** at the end the path:
 ```php
 public void cubicBezierTo($point1, $point2, $point3);
-public void cubicBezierTo(float x1, float y1, float x2, float y2, float x3, float y3);
+public void cubicBezierTo($x1, $y1, $x2, $y2, $x3, $y3);
 ```
 **Adds cubic Bezier curve** to the specified place of the path:
 ```php
 public void cubicBezierTo($point1, $point2, $point3, $index);
-public void cubicBezierTo(float x1, float y1, float x2, float y2, float x3, float y3, $index);
+public void cubicBezierTo($x1, $y1, $x2, $y2, $x3, $y3, $index);
 ```
 **Adds quadratic Bezier curve** at the end the path:
 ```php
 public void quadraticBezierTo($point1, $point2);
-public void quadraticBezierTo(float x1, float y1, float x2, float y2);
+public void quadraticBezierTo($x1, $y1, $x2, $y2);
 ```
 **Adds quadratic Bezier curve** to the specified place of the path:
 ```php
 public void quadraticBezierTo($point1, $point2, $index);
-public void quadraticBezierTo(float x1, float y1, float x2, float y2, $index);
+public void quadraticBezierTo($x1, $y1, $x2, $y2, $index);
 ```
 **Appends the specified arc** to the path:
 ```php
-public void arcTo($width, $heigth, float startAngle, float sweepAngle);
+public void arcTo($width, $heigth, $startAngle, $sweepAngle);
 ```
 **Closes the current figure** of this path:
 ```php
@@ -63,7 +63,7 @@ public void closeFigure();
 **Sets next point position**:
 ```php
 public void moveTo($point);
-public void moveTo(float x, float y);
+public void moveTo($x, $y);
 ```
 **Removes path segment** at the specified index:
 ```php
@@ -89,13 +89,13 @@ Method [IGeometryPath->getPathData](https://apireference.aspose.com/slides/java/
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0)->
+    $shape = $pres->getSlides()->get_Item(0)->
             getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 200, 100);
     $geometryPath = $shape->getGeometryPaths()[0];
 
-    geometryPath.lineTo(100, 50, 1);
-    geometryPath.lineTo(100, 50, 4);
-    $shape->setGeometryPath(geometryPath);
+    $geometryPath->lineTo(100, 50, 1);
+    $geometryPath->lineTo(100, 50, 4);
+    $shape->setGeometryPath($geometryPath);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -113,11 +113,11 @@ try {
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0)->
+    $shape = $pres->getSlides()->get_Item(0)->
             getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Heart, 100, 100, 300, 300);
 
     $path = $shape->getGeometryPaths()[0];
-    path->removeAt(2);
+    $path->removeAt(2);
     $shape->setGeometryPath($path);
 } finally {
     if ($pres != null) $pres->dispose();
@@ -134,40 +134,41 @@ try {
 - Apply the path to the shape.
 
 ```php
-List<Point2D.Float> points = new ArrayList<Point2D.Float>();
+List<Java("java.awt.geom.Point2D")->Float> points = new ArrayList<Java("java.awt.geom.Point2D")->Float>();
 
-float R = 100, r = 50;
-int step = 72;
+$R = 100;
+$r = 50;
+$step = 72;
 
-for ($angle = -90; angle < 270; angle += step)
+for ($angle = -90; $angle < 270; $angle += $step)
 {
-    radians = angle * (M_PI / 180);
-    $x = R * cos(radians);
-    y = R * sin(radians);
-    points->add(Java("java.awt.geom.Point2D")->Float(x + R, y + R));
+    $radians = $angle * (M_PI / 180);
+    $x = R * cos($radians);
+    $y = R * sin($radians);
+    $points->add(Java("java.awt.geom.Point2D")->Float($x + $R, $y + $R));
 
-    radians = M_PI * (angle + step / 2) / 180.0;
-    $x = r * cos(radians);
-    y = r * sin(radians);
-    points->add(Java("java.awt.geom.Point2D")->Float(x + R, y + R));
+    $radians = M_PI * (angle + step / 2) / 180.0;
+    $x = r * cos($radians);
+    $y = r * sin($radians);
+    points->add(Java("java.awt.geom.Point2D")->Float($x + $R, $y + $R));
 }
 
-GeometryPath starPath = new GeometryPath();
-starPath.moveTo(points->get(0));
+$starPath = new Java("com.aspose.slides.GeometryPath");
+$starPath->moveTo($points->get(0));
 
-for ($i = 1; i < $points->size(); i++)
+for ($i = 1; $i < $points->size(); $i++)
 {
-    starPath.lineTo(points->get($i));
+    $starPath->lineTo($points->get($i));
 }
 
-starPath.closeFigure();
+$starPath->closeFigure();
 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0)->
-            getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, R * 2, R * 2);
+    $shape = $pres->getSlides()->get_Item(0)->
+            getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, $R * 2, $R * 2);
 
-    $shape->setGeometryPath(starPath);
+    $shape->setGeometryPath($starPath);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -186,24 +187,30 @@ try {
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    GeometryShape shape = (GeometryShape) $pres->getSlides()->get_Item(0)->
+    $shape = $pres->getSlides()->get_Item(0)->
             getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 200, 100);
 
-    GeometryPath geometryPath0 = new GeometryPath();
-    geometryPath0.moveTo(0, 0);
-    geometryPath0.lineTo($shape->getWidth(), 0);
-    geometryPath0.lineTo($shape->getWidth(), $shape->getHeight()/3);
-    geometryPath0.lineTo(0, $shape->getHeight() / 3);
-    geometryPath0.closeFigure();
+    $geometryPath0 = new Java("com.aspose.slides.GeometryPath");
+    $geometryPath0->moveTo(0, 0);
+    $geometryPath0->lineTo($shape->getWidth(), 0);
+    $geometryPath0->lineTo($shape->getWidth(), $shape->getHeight()/3);
+    $geometryPath0->lineTo(0, $shape->getHeight() / 3);
+    $geometryPath0->closeFigure();
 
-    GeometryPath geometryPath1 = new GeometryPath();
-    geometryPath1.moveTo(0, $shape->getHeight()/3 * 2);
-    geometryPath1.lineTo($shape->getWidth(), $shape->getHeight() / 3 * 2);
-    geometryPath1.lineTo($shape->getWidth(), $shape->getHeight());
-    geometryPath1.lineTo(0, $shape->getHeight());
-    geometryPath1.closeFigure();
+    $geometryPath1 = new Java("com.aspose.slides.GeometryPath");
+    $geometryPath1->moveTo(0, $shape->getHeight()/3 * 2);
+    $geometryPath1->lineTo($shape->getWidth(), $shape->getHeight() / 3 * 2);
+    $geometryPath1->lineTo($shape->getWidth(), $shape->getHeight());
+    $geometryPath1->lineTo(0, $shape->getHeight());
+    $geometryPath1->closeFigure();
 
-    $shape->setGeometryPaths(new GeometryPath[] { geometryPath0, geometryPath1});
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $GeometryPath = new JavaClass("com.aspose.slides.GeometryPath");
+    $geometryPathArray = $Array->newInstance($GeometryPath, 2);
+    $geometryPathArray[0] = $geometryPath0;
+    $geometryPathArray[1] = $geometryPath1;
+
+    $shape->setGeometryPaths($geometryPathArray);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -221,35 +228,41 @@ try {
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Create new shape
-    GeometryShape shape = (GeometryShape)pres->getSlides()->get_Item(0)->
+    $shape = $pres->getSlides()->get_Item(0)->
             getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 300, 100);
 
     // Get geometry path of the shape
     $originalPath = $shape->getGeometryPaths()[0];
-    originalPath->setFillMode(PathFillModeType.None);
+    $originalPath->setFillMode(Java("com.aspose.slides.PathFillModeType")->None);
 
     // Create new graphics path with text
-    Shape graphicsPath;
+    $graphicsPath;
     $font = Java("java.awt.Font", "Arial", Font.PLAIN, 40);
     $text = "Text in shape";
     $img = new Java("java.awt.image.BufferedImage", 100, 100, Java("java.awt.image.BufferedImage")->TYPE_INT_ARGB);
-    Graphics2D g2 = img->createGraphics();
+    $g2 = $img->createGraphics();
 
     try
     {
-        GlyphVector glyphVector = font->createGlyphVector(g2->getFontRenderContext(), text);
-        graphicsPath = glyphVector->getOutline(20, (-glyphVector->getVisualBounds()->getY()) + 10);
+        $glyphVector = $font->createGlyphVector($g2->getFontRenderContext(), $text);
+        $graphicsPath = $glyphVector->getOutline(20, (-$glyphVector->getVisualBounds()->getY()) + 10);
     }
     finally {
-        g2->dispose();
+        $g2->dispose();
     }
 
     // Convert graphics path to geometry path
-    $textPath = ShapeUtil->graphicsPathToGeometryPath(graphicsPath);
-    textPath->setFillMode(PathFillModeType.Normal);
+    $textPath = ShapeUtil->graphicsPathToGeometryPath(PathFillModeTypegraphicsPath);
+    $textPath->setFillMode(Java("com.aspose.slides.PathFillModeType")->Normal);
 
     // Set combination of new geometry path and origin geometry path to the shape
-    $shape->setGeometryPaths(new IGeometryPath[] { originalPath, textPath });
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $IGeometryPath = new JavaClass("com.aspose.slides.IGeometryPath");
+    $igeometryPathArray = $Array->newInstance($IGeometryPath, 2);
+    $igeometryPathArray[0] = $originalPath;
+    $igeometryPathArray[1] = $textPath;
+        
+    $shape->setGeometryPaths($igeometryPathArray);
 
     // Save the presentation
     $pres->save(resultPath, Java("com.aspose.slides.SaveFormat")->Pptx);

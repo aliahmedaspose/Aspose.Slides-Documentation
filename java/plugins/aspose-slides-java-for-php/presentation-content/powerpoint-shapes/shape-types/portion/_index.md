@@ -15,14 +15,14 @@ try {
     // Reshaping the context of presentation
     $shape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     
-    $textFrame = (ITextFrame) $shape->getTextFrame();
+    $textFrame = $shape->getTextFrame();
     
     for ($paragraph : $textFrame->getParagraphs()) 
     {
         for ($portion : paragraph->getPortions()) 
         {
             $point = $portion->getCoordinates();
-            echo("X: " + point.x + " Y: " + point.y);
+            echo("X: " + $point->x + " Y: " + $point->y);
         }
     }
 } finally {

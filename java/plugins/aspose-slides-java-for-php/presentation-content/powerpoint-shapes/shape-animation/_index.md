@@ -46,12 +46,12 @@ try {
     // Created path is empty so we should add commands for moving.
     $motionBhv = ($fxUserPath->getBehaviors()->get_Item(0));
 
-    Point2D.Float[] pts = new Point2D.Float[1];
-    pts[0] = Java("java.awt.geom.Point2D")->Float(0.076, 0.59);
-    $motionBhv->getPath()->add(Java("com.aspose.slides.MotionCommandPathType")-> LineTo, pts, Java("com.aspose.slides.MotionPathPointsType")-> Auto, true);
-    pts[0] = Java("java.awt.geom.Point2D")->Float(-0.076, -0.59);
-    $motionBhv->getPath()->add(Java("com.aspose.slides.MotionCommandPathType")-> LineTo, pts, Java("com.aspose.slides.MotionPathPointsType")-> Auto, false);
-    $motionBhv->getPath()->add(Java("com.aspose.slides.MotionCommandPathType")-> End, null, Java("com.aspose.slides.MotionPathPointsType")-> Auto, false);
+    Java("java.awt.geom.Point2D")->Float[] $pts = new Java("java.awt.geom.Point2D")->Float[1];
+    $pts[0] = Java("java.awt.geom.Point2D")->Float(0.076, 0.59);
+    $motionBhv->getPath()->add(Java("com.aspose.slides.MotionCommandPathType")->LineTo, $pts, Java("com.aspose.slides.MotionPathPointsType")->Auto, true);
+    $pts[0] = Java("java.awt.geom.Point2D")->Float(-0.076, -0.59);
+    $motionBhv->getPath()->add(Java("com.aspose.slides.MotionCommandPathType")->LineTo, $pts, Java("com.aspose.slides.MotionPathPointsType")->Auto, false);
+    $motionBhv->getPath()->add(Java("com.aspose.slides.MotionCommandPathType")->End, null, Java("com.aspose.slides.MotionPathPointsType")->Auto, false);
 
     //Write the presentation as PPTX to disk
     $pres->save("AnimExample_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

@@ -21,12 +21,12 @@ try {
 
     byte[] imageFile = Files->readAllBytes(Paths->get("image.emz"));
 
-    $image = $pres->getImages()->addImage(imageFile);
+    $image = $pres->getImages()->addImage($imageFile);
 
     $slide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0,
             $pres->getSlideSize()->getSize()->getWidth(), 
 			$pres->getSlideSize()->getSize()->getHeight(), 
-			image);
+			$image);
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch (JavaException $e) {
 } finally {
@@ -49,10 +49,10 @@ This sample code shows you how to implement the steps above to add an SVG image 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     $svgContent = new String(Files->readAllBytes(Paths->get("image.svg")));
-    ISvgImage svgImage = new SvgImage(svgContent);
-    $ppImage = $pres->getImages()->addImage(svgImage);
+    $svgImage = new Java("com.aspose.slides.SvgImage", $svgContent);
+    $ppImage = $pres->getImages()->addImage($svgImage);
     $pres->getSlides()->get_Item(0)->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0, 
-			ppImage->getWidth(), ppImage->getHeight(), ppImage);
+			$ppImage->getWidth(), ppImage->getHeight(), $ppImage);
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch (JavaException $e) {
 } finally {
@@ -77,14 +77,14 @@ try {
     byte[] svgContent = Files->readAllBytes(Paths->get("image.svg"));
 
     // Create SvgImage object
-    ISvgImage svgImage = new SvgImage(svgContent);
+    $svgImage = new Java("com.aspose.slides.SvgImage", $svgContent);
 
     // Get slide size
-    Dimension2D slideSize = $presentation->getSlideSize()->getSize();
+    $slideSize = $presentation->getSlideSize()->getSize();
 
     // Convert SVG image to group of shapes scaling it to slide size
     $presentation->getSlides()->get_Item(0)->getShapes().
-            addGroupShape(svgImage, 0, 0, $slideSize->getWidth(), $slideSize->getHeight());
+            addGroupShape($svgImage, 0, 0, $slideSize->getWidth(), $slideSize->getHeight());
 
     // Save presentation in PPTX format
     $presentation->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -100,33 +100,33 @@ Aspose.Slides for Java allows you to generate EMF images from excel sheets and a
 This sample code shows you how to perform the described task:
 
 ```php 
-Workbook book = new Workbook("chart.xlsx");
-Worksheet sheet = book->getWorksheets()->get(0);
-$options = new ImageOrPrintOptions();
-options->setHorizontalResolution(200);
-options->setVerticalResolution(200);
-options->setImageType(ImageType.EMF);
+$book = new Java("com.aspose.slides.Workbook", "chart.xlsx");
+$sheet = $book->getWorksheets()->get(0);
+$options = new Java("com.aspose.slides.ImageOrPrintOptions");
+$options->setHorizontalResolution(200);
+$options->setVerticalResolution(200);
+$options->setImageType(Java("com.aspose.slides.ImageType")->EMF);
 
 //Save the workbook to stream
-SheetRender sr = new SheetRender(sheet, $options);
+$sr = new Java("com.aspose.slides.SheetRender", $sheet, $options);
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     $pres->getSlides()->removeAt(0);
     
     $EmfSheetName = "";
-    for ($j = 0; j < sr->getPageCount(); j++)
+    for ($j = 0; $j < $sr->getPageCount(); $j++)
     {
     
-        EmfSheetName = "test" + sheet->getName() + " Page" + (j + 1) + ".out.emf";
-        sr->toImage(j, EmfSheetName);
+        $EmfSheetName = "test" + $sheet->getName() + " Page" + ($j + 1) + ".out.emf";
+        $sr->toImage($j, $EmfSheetName);
     
-        byte[] bytes = Files->readAllBytes(Paths->get(EmfSheetName));
-        $emfImage = $pres->getImages()->addImage(bytes);
-        $slide = $pres->getSlides()->addEmptySlide($pres->getLayoutSlides()->getByType(Java("com.aspose.slides.SlideLayoutType")-> Blank));
+        byte[] $bytes = Files->readAllBytes(Paths->get($EmfSheetName));
+        $emfImage = $pres->getImages()->addImage($bytes);
+        $slide = $pres->getSlides()->addEmptySlide($pres->getLayoutSlides()->getByType(Java("com.aspose.slides.SlideLayoutType")->Blank));
         $m = $slide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0,
-					pres->getSlideSize()->getSize()->getWidth(), 
-					pres->getSlideSize()->getSize()->getHeight(), 
-					emfImage);
+					$pres->getSlideSize()->getSize()->getWidth(), 
+					$pres->getSlideSize()->getSize()->getHeight(), 
+					$emfImage);
     }
     
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

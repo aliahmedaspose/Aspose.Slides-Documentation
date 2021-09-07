@@ -31,8 +31,8 @@ try {
     $af = $sld->getShapes()->addAudioFrameEmbedded(50, 150, 100, 100, $fstr);
 
     // Set Play Mode and Volume of the Audio
-    $af->setPlayMode(Java("com.aspose.slides.AudioPlayModePreset")-> Auto);
-    $af->setVolume(AudioVolumeMode.Loud);
+    $af->setPlayMode(Java("com.aspose.slides.AudioPlayModePreset")->Auto);
+    $af->setVolume(Java("com.aspose.slides.AudioVolumeMode")->Loud);
 
     //Write the PPTX file to disk
     $pres->save("AudioFrameEmbed_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -58,10 +58,10 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
     
     // Get the slideshow transition effects for slide
-    ISlideShowTransition transition = $slide->getSlideShowTransition();
+    $transition = $slide->getSlideShowTransition();
     
     //Extract sound in byte array
-    byte[] audio = transition->getSound()->getBinaryData();
+    $audio = $transition->getSound()->getBinaryData();
     echo("Length: " + $audio->length);
 } finally {
     if ($pres != null) $pres->dispose();

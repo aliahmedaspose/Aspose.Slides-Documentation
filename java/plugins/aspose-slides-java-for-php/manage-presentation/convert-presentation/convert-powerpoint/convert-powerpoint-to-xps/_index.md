@@ -73,7 +73,7 @@ try {
     $options = new Java("com.aspose.slides.XpsOptions");
 
     // Save MetaFiles as PNG
-    $options->setSaveMetafilesAsPng(true);
+    $$options->setSaveMetafilesAsPng(true);
 
     // Save the presentation to XPS document
     $pres->save("XPS_Output_With_Options.xps", Java("com.aspose.slides.SaveFormat")->Xps, $options);

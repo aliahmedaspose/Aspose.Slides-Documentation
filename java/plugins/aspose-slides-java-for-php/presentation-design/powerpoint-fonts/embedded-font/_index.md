@@ -16,23 +16,23 @@ try {
     Java("javax.imageio.ImageIO")->write($pres->getSlides()->get_Item(0)->getThumbnail(new Java("java.awt.Dimension", 960, 720)),
             "PNG", new Java("java.io.File", "picture1_out.png"));
 
-    IFontsManager fontsManager = $pres->getFontsManager();
+    $fontsManager = $pres->getFontsManager();
 
     // get all embedded fonts
-    IFontData[] embeddedFonts = fontsManager->getEmbeddedFonts();
+    $embeddedFonts = $fontsManager->getEmbeddedFonts();
 
     // find "Calibri" font
     $calibriEmbeddedFont = null;
-    for ($i = 0; i < embeddedFonts->length; i++) {
-        echo(""+ embeddedFonts[i]->getFontName());
-        if ("Calibri" == (embeddedFonts[i]->getFontName())) {
-            calibriEmbeddedFont = embeddedFonts[i];
+    for ($i = 0; $i < $embeddedFonts->length; $i++) {
+        echo(""+ $embeddedFonts->get_Item($i)->getFontName());
+        if ("Calibri" == ($embeddedFonts->get_Item($i)->getFontName())) {
+            $calibriEmbeddedFont = $embeddedFonts->get_Item($i);
             break;
         }
     }
 
     // remove "Calibri" font
-    fontsManager.removeEmbeddedFont(calibriEmbeddedFont);
+    $fontsManager->removeEmbeddedFont($calibriEmbeddedFont);
 
     // render the presentation; removed "Calibri" font is replaced to an existing one
     Java("javax.imageio.ImageIO")->write($pres->getSlides()->get_Item(0)->getThumbnail(new Java("java.awt.Dimension", 960, 720)),
@@ -53,19 +53,19 @@ A new property of embedding fonts has been added. To allow embedding fonts into
 // Load presentation
 $pres = new Java("com.aspose.slides.Presentation", "Fonts.pptx");
 try {
-    IFontData[] allFonts = $pres->getFontsManager()->getFonts();
-    IFontData[] embeddedFonts = $pres->getFontsManager()->getEmbeddedFonts();
+    $allFonts = $pres->getFontsManager()->getFonts();
+    $embeddedFonts = $pres->getFontsManager()->getEmbeddedFonts();
 
-    for ($font : allFonts)
+    for ($font : $allFonts)
     {
         $embeddedFontsContainsFont = false;
-        for ($i = 0; i < embeddedFonts->length; i++)
+        for ($i = 0; $i < $embeddedFonts->length; $i++)
         {
-            if ($embeddedFonts == (font)) embeddedFontsContainsFont = true;
+            if ($embeddedFonts == ($font)) $embeddedFontsContainsFont = true;
         }
-        if ($!embeddedFontsContainsFont)
+        if (!$embeddedFontsContainsFont)
         {
-            $pres->getFontsManager()->addEmbeddedFont(font, EmbedFontCharacters.All);
+            $pres->getFontsManager()->addEmbeddedFont($font, Java("com.aspose.slides.EmbedFontCharacters")->All);
         }
     }
 

@@ -49,7 +49,7 @@ try {
         if ($shape instanceof ISmartArt)
         {
             // Typecast shape to SmartArtEx
-            $smart = (ISmartArt)shape;
+            $smart = $shape;
             echo("Shape Name:" + $smart->getName());
         }
     }
@@ -77,7 +77,7 @@ try {
         if ($shape instanceof ISmartArt)
         {
             // Typecast shape to SmartArtEx
-            $smart = (ISmartArt) shape;
+            $smart = $shape;
 
             // Checking SmartArt Layout
             if ($smart->getLayout() == Java("com.aspose.slides.SmartArtLayoutType")->BasicBlockList)
@@ -116,12 +116,12 @@ try {
         if ($shape instanceof ISmartArt) 
         {
             // Typecast shape to SmartArtEx
-            $smart = (ISmartArt) shape;
+            $smart = $shape;
     
             // Checking SmartArt style
-            if ($smart->getQuickStyle() == SmartArtQuickStyleType.SimpleFill) {
+            if ($smart->getQuickStyle() == Java("com.aspose.slides.SmartArtQuickStyleType")->SimpleFill) {
                 // Changing SmartArt Style
-                $smart->setQuickStyle(SmartArtQuickStyleType.Cartoon);
+                $smart->setQuickStyle(Java("com.aspose.slides.SmartArtQuickStyleType")->Cartoon);
             }
         }
     }
@@ -161,12 +161,12 @@ try {
         if ($shape instanceof ISmartArt) 
         {
             // Typecast shape to SmartArtEx
-            $smart = (ISmartArt) shape;
+            $smart = $shape;
     
             // Checking SmartArt color type
-            if ($smart->getColorStyle() == SmartArtColorType.ColoredFillAccent1) {
+            if ($smart->getColorStyle() == Java("com.aspose.slides.SmartArtColorType")->ColoredFillAccent1) {
                 // Changing SmartArt color type
-                $smart->setColorStyle(SmartArtColorType.ColorfulAccentColors);
+                $smart->setColorStyle(Java("com.aspose.slides.SmartArtColorType")->ColorfulAccentColors);
             }
         }
     }

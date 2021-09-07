@@ -27,11 +27,11 @@ try {
     $mathParagraph = ($autoShape->getTextFrame()->getParagraphs()->get_Item(0)->
             getPortions()->get_Item(0))->getMathJava("com.aspose.slides.Paragraph");
 
-    $mathParagraph->add(new Java("com.aspose.slides.MathematicalText", "a").
-            setSuperscript("2").
-            join("+").
-            join(new Java("com.aspose.slides.MathematicalText", "b")->setSuperscript("2")).
-            join("=").
+    $mathParagraph->add(new Java("com.aspose.slides.MathematicalText", "a")->
+            setSuperscript("2")->
+            join("+")->
+            join(new Java("com.aspose.slides.MathematicalText", "b")->setSuperscript("2"))->
+            join("=")->
             join(new Java("com.aspose.slides.MathematicalText", "c")->setSuperscript("2")));
 
     $stream = new Java("java.io.FileOutputStream", "mathml.xml");

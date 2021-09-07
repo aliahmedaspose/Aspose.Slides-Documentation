@@ -61,7 +61,7 @@ try {
 
         $pres->getSlides()->get_Item(0)->writeAsSvg($stream, svgOptions);
     } finally {
-        if ($stream != null) stream->close();
+        if ($stream != null) $stream->close();
     }
 } catch (JavaException $e) {
 } finally {
@@ -85,7 +85,7 @@ class CustomSvgShapeFormattingController implements ISvgShapeFormattingControlle
 
     public void formatShape(ISvgShape svgShape, $shape)
     {
-        svgShape->setId(String.format("shape-%d", m_shapeIndex++));
+        svgShape->setId(sprintf("shape-%d", m_shapeIndex++));
     }
 }
 ```

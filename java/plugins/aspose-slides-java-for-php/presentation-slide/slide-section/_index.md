@@ -29,15 +29,15 @@ try {
     $newSlide3 = $pres->getSlides()->addEmptySlide($pres->getLayoutSlides()->get_Item(0));
     $newSlide4 = $pres->getSlides()->addEmptySlide($pres->getLayoutSlides()->get_Item(0));
 
-    ISection section1 = $pres->getSections()->addSection("Section 1", newSlide1);
-    ISection section2 = $pres->getSections()->addSection("Section 2", newSlide3); // section1 will be ended at newSlide2 and after it section2 will start   
+    $section1 = $pres->getSections()->addSection("Section 1", $newSlide1);
+    $section2 = $pres->getSections()->addSection("Section 2", $newSlide3); // section1 will be ended at newSlide2 and after it section2 will start   
 
     $pres->save("pres-sections.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 
     $pres->getSections()->reorderSectionWithSlides($section2, 0);
     $pres->save("pres-sections-moved.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 
-    $pres->getSections()->removeSectionWithSlides(section2);
+    $pres->getSections()->removeSectionWithSlides($section2);
 
     $pres->getSections().appendEmptySection("Last empty section");
 
@@ -56,7 +56,7 @@ This sample code shows you how to change the name of a section in a presentation
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
-    ISection section = $pres->getSections()->get_Item(0);
+    $section = $pres->getSections()->get_Item(0);
     section->setName("My section");
 } finally {
     if ($pres != null) $pres->dispose();

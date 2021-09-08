@@ -251,7 +251,7 @@ $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     for ($layoutSlide : $pres->getLayoutSlides())
     {
-        for ($shape : layoutSlide->getShapes())
+        for ($shape : $layoutSlide->getShapes())
         {
             $fillFormats = $shape->getFillFormat();
             $lineFormats = $shape->getLineFormat();

@@ -108,9 +108,9 @@ $width = 300;
 
 $height = 300;
 
-$$x = center->getX() - width / 2;
+$x = $center->getX() - $width / 2;
 
-$y = center->getY() - height / 2;
+$y = $center->getY() - $height / 2;
 
 
 //...
@@ -178,23 +178,23 @@ $h = $pres->getSlideSize()->getSize()->getHeight();
 
 $w = $pres->getSlideSize()->getSize()->getWidth();
 
-$watermarkShape->setX((w - $watermarkShape->getWidth()) / 2);
+$watermarkShape->setX(($w - $watermarkShape->getWidth()) / 2);
 
-$watermarkShape->setY((h - $watermarkShape->getHeight()) / 2);
+$watermarkShape->setY(($h - $watermarkShape->getHeight()) / 2);
 
-$watermarkShape->setRotation(calculateRotation(h, w));
+$watermarkShape->setRotation(calculateRotation($h, $w));
 ```
 
 ```php
 private int calculateRotation($height, $width)
 {
-    pageHeight = height;
+    $pageHeight = $height;
     
-    pageWidth = width;
+    $pageWidth = $width;
     
-    rotation = atan(($pageHeight / pageWidth)) * 180 / M_PI;
+    $rotation = atan(($pageHeight / $pageWidth)) * 180 / M_PI;
     
-    return rotation;
+    return $rotation;
 }
 ``` 
 

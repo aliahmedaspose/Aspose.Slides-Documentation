@@ -38,7 +38,7 @@ try {
     
     // Save the image to disk in PNG format
     Java("javax.imageio.ImageIO")->write($image, "jpeg", new Java("java.io.File", "output.jpg"));
-} catch (Exception e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -63,7 +63,7 @@ try {
 
     // Save the image to disk in PNG format
     Java("javax.imageio.ImageIO")->write($image, "jpeg", new Java("java.io.File", "output.jpg"));
-} catch (Exception e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -88,7 +88,7 @@ try {
 
     // Save the image to disk in PNG format
     Java("javax.imageio.ImageIO")->write($image, "jpeg", new Java("java.io.File", "output.jpg"));
-} catch (Exception e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

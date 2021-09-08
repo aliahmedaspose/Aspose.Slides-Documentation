@@ -71,7 +71,7 @@ This sample code shows you how to use the described method to convert an SVG fil
 
 ```php 
 // Create new presentation
-I$presentation = new Java("com.aspose.slides.Presentation");
+$presentation = new Java("com.aspose.slides.Presentation");
 try {
     // Read SVG file content
     byte[] svgContent = Files->readAllBytes(Paths->get("image.svg"));

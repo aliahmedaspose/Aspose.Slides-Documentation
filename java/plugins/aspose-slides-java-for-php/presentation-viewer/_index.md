@@ -39,7 +39,7 @@ try {
     $svgStream = new Java("java.io.FileOutputStream", "Aspose_out.svg");
 
     // Generate SVG image of slide and save in memory stream
-    $sld->writeAsSvg(svgStream);
+    $sld->writeAsSvg($svgStream);
 
     svgStream->close();
 } catch (JavaException $e) {
@@ -56,10 +56,10 @@ $pres = new Java("com.aspose.slides.Presentation", "pptxFileName.pptx");
 try {
     $stream = new Java("java.io.FileOutputStream", "Aspose_out.svg");
     try {
-        SVGOptions svgOptions = new SVGOptions();
-        svgOptions->setShapeFormattingController(new CustomSvgShapeFormattingController());
+        $svgOptions = new Java("com.aspose.slides.SVGOptions");
+        $svgOptions->setShapeFormattingController(new Java("com.aspose.slides.CustomSvgShapeFormattingController"));
 
-        $pres->getSlides()->get_Item(0)->writeAsSvg($stream, svgOptions);
+        $pres->getSlides()->get_Item(0)->writeAsSvg($stream, $svgOptions);
     } finally {
         if ($stream != null) $stream->close();
     }
@@ -71,21 +71,21 @@ try {
 ```php
 class CustomSvgShapeFormattingController implements ISvgShapeFormattingController
 {
-    private int m_shapeIndex;
+    private int $m_shapeIndex;
 
-    public CustomSvgShapeFormattingController()
+    public Java("com.aspose.slides.CustomSvgShapeFormattingController")
     {
-        m_shapeIndex = 0;
+        $m_shapeIndex = 0;
     }
     
     public CustomSvgShapeFormattingController($shapeStartIndex)
     {
-        m_shapeIndex = shapeStartIndex;
+        $m_shapeIndex = shapeStartIndex;
     }
 
-    public void formatShape(ISvgShape svgShape, $shape)
+    public void formatShape($svgShape, $shape)
     {
-        svgShape->setId(sprintf("shape-%d", m_shapeIndex++));
+        svgShape->setId(sprintf("shape-%d", $m_shapeIndex++));
     }
 }
 ```
@@ -135,11 +135,11 @@ try {
     $desiredY = 800;
 
     // Getting scaled value  of X and Y
-    $ScaleX = (1.0 / $pres->getSlideSize()->getSize()->getWidth()) * desiredX;
-    $ScaleY = (1.0 / $pres->getSlideSize()->getSize()->getHeight()) * desiredY;
+    $ScaleX = (1.0 / $pres->getSlideSize()->getSize()->getWidth()) * $desiredX;
+    $ScaleY = (1.0 / $pres->getSlideSize()->getSize()->getHeight()) * $desiredY;
     
     // Create a full scale image
-    $bmp = $sld->getThumbnail(ScaleX, ScaleY);
+    $bmp = $sld->getThumbnail($ScaleX, $ScaleY);
 
     // Save the image to disk in JPEG format
     Java("javax.imageio.ImageIO")->write($bmp, "PNG", new Java("java.io.File", "Thumbnail_out.png"));
@@ -171,14 +171,14 @@ try {
     $desiredY = 800;
 
     // Getting scaled value  of X and Y
-    $ScaleX = (1.0 / $pres->getSlideSize()->getSize()->getWidth()) * desiredX;
-    $ScaleY = (1.0 / $pres->getSlideSize()->getSize()->getHeight()) * desiredY;
+    $ScaleX = (1.0 / $pres->getSlideSize()->getSize()->getWidth()) * $desiredX;
+    $ScaleY = (1.0 / $pres->getSlideSize()->getSize()->getHeight()) * $desiredY;
 
     RenderingOptions $opts = new Java("com.aspose.slides.RenderingOptions");
     $opts->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomTruncated);
     
     // Create a full scale image
-    $bmp = $sld->getThumbnail(opts, ScaleX, ScaleY);
+    $bmp = $sld->getThumbnail($opts, $ScaleX, $ScaleY);
 
     // Save the image to disk in JPEG format
     Java("javax.imageio.ImageIO")->write($bmp, "PNG", new Java("java.io.File", "Thumbnail_out.png"));

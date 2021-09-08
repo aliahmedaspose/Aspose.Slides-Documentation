@@ -23,13 +23,13 @@ In the example given below, we have added Layout Slides to Presentation.
 $pres = new Java("com.aspose.slides.Presentation", "AccessSlides.pptx");
 try {
     // Try to search by layout slide type
-    IMasterLayoutSlideCollection layoutSlides = $pres->getMasters()->get_Item(0)->getLayoutSlides();
+    $layoutSlides = $pres->getMasters()->get_Item(0)->getLayoutSlides();
     $layoutSlide = null;
 
     if ($layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")->TitleAndObject) != null)
-        layoutSlide = layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")->TitleAndObject);
+        $layoutSlide = $layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")->TitleAndObject);
     else
-        layoutSlide = layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")->Title);
+        $layoutSlide = $layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")->Title);
 
     if ($layoutSlide == null) {
         // The situation when a presentation doesn't contain some type of layouts.
@@ -38,30 +38,30 @@ try {
         // And it is possible to use these names for layout slide selection.
         // Also it is possible to use the set of placeholder shape types. For example,
         // Title slide should have only Title placeholder type, etc.
-        for ($titleAndObjectLayoutSlide : layoutSlides) {
+        for ($titleAndObjectLayoutSlide : $layoutSlides) {
             if ($titleAndObjectLayoutSlide->getName() == "Title and Object") {
-                layoutSlide = titleAndObjectLayoutSlide;
+                $layoutSlide = $titleAndObjectLayoutSlide;
                 break;
             }
         }
         if ($layoutSlide == null) {
-            for ($titleLayoutSlide : layoutSlides) {
+            for ($titleLayoutSlide : $layoutSlides) {
                 if ($titleLayoutSlide->getName() == "Title") {
-                    layoutSlide = titleLayoutSlide;
+                    $layoutSlide = $titleLayoutSlide;
                     break;
                 }
             }
             if ($layoutSlide == null) {
-                layoutSlide = layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")->Blank);
+                $layoutSlide = $layoutSlides->getByType(Java("com.aspose.slides.SlideLayoutType")->Blank);
                 if ($layoutSlide == null) {
-                    layoutSlide = layoutSlides->add(Java("com.aspose.slides.SlideLayoutType")->TitleAndObject, "Title and Object");
+                    $layoutSlide = $layoutSlides->add(Java("com.aspose.slides.SlideLayoutType")->TitleAndObject, "Title and Object");
                 }
             }
         }
     }
 
     // Adding empty slide with added layout slide
-    $pres->getSlides()->insertEmptySlide(0, layoutSlide);
+    $pres->getSlides()->insertEmptySlide(0, $layoutSlide);
 
     // Save presentation
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -80,18 +80,18 @@ try {
     $auxPresentation = new Java("com.aspose.slides.Presentation");
     try {
         // Set the slide size of generated presentations to that of source
-        auxPresentation->getSlideSize()->setSize(540, 720, Java("com.aspose.slides.SlideSizeScaleType")->EnsureFit);
+        $auxPresentation->getSlideSize()->setSize(540, 720, Java("com.aspose.slides.SlideSizeScaleType")->EnsureFit);
         //getType());
-        auxPresentation->getSlideSize()->setSize(SlideSizeType.A4Paper, Java("com.aspose.slides.SlideSizeScaleType")->Maximize);
+        $auxPresentation->getSlideSize()->setSize(SlideSizeType.A4Paper, Java("com.aspose.slides.SlideSizeScaleType")->Maximize);
         
         // Clone required slide
-        auxPresentation->getSlides()->addClone($presentation->getSlides()->get_Item(0));
-        auxPresentation->getSlides()->removeAt(0);
+        $auxPresentation->getSlides()->addClone($presentation->getSlides()->get_Item(0));
+        $auxPresentation->getSlides()->removeAt(0);
         
         // Save Presentation to disk
-        auxPresentation->save("size.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+        $auxPresentation->save("size.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
     } finally {
-        auxPresentation->dispose();
+        $auxPresentation->dispose();
     }
 } finally {
     $presentation->dispose();
@@ -110,7 +110,7 @@ To set footer in a slide using its index position in the slides collection of th
 ```php
 $presentation = new Java("com.aspose.slides.Presentation", "presentation.ppt");
 try {
-    IBaseSlideHeaderFooterManager headerFooterManager = $presentation->getSlides()->get_Item(0)->getHeaderFooterManager();
+    $headerFooterManager = $presentation->getSlides()->get_Item(0)->getHeaderFooterManager();
     if (!$headerFooterManager->isFooterVisible()) // Method isFooterVisible is used for indicating that a slide footer placeholder is not present.
     {
         $headerFooterManager->setFooterVisibility(true); // Method setFooterVisibility is used for making a slide footer placeholder visible.
@@ -143,7 +143,7 @@ To set footer and child footer a slide using its index position in the slides co
 ```php
 $presentation = new Java("com.aspose.slides.Presentation", "presentation.ppt");
 try {
-    IMasterSlideHeaderFooterManager headerFooterManager = $presentation->getMasters()->get_Item(0)->getHeaderFooterManager();
+    $headerFooterManager = $presentation->getMasters()->get_Item(0)->getHeaderFooterManager();
     $headerFooterManager->setFooterAndChildFootersVisibility(true); // Method setFooterAndChildFootersVisibility is used for making a master slide and all child footer placeholders visible.
     $headerFooterManager->setSlideNumberAndChildSlideNumbersVisibility(true); // Method setSlideNumberAndChildSlideNumbersVisibility is used for making a master slide and all child page number placeholders visible.
     $headerFooterManager->setDateTimeAndChildDateTimesVisibility(true); // Method setDateTimeAndChildDateTimesVisibility is used for making a master slide and all child date-time placeholders visible.

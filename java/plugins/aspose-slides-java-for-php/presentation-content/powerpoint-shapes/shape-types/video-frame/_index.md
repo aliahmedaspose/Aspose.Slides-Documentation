@@ -39,7 +39,7 @@ try {
 
     // Write the PPTX file to disk
     $pres->save("VideoFrame.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
-} catch (Exception e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

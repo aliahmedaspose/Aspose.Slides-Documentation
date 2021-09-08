@@ -32,7 +32,7 @@ try {
 ```
 
 ### **Access Slide by ID**
-Every slide in the presentation has a unique ID associated with it. The [Presentation](https://apireference.aspose.com/java/slides/com.aspose.slides/presentation) class exposes the [**getSlideById(id)**](https://apireference.aspose.com/java/slides/com.aspose.slides/Presentation#getSlideById-long-) method that can be used to access the slide by ID. All you need to do is to provide the valid slide ID and access that slide using [**getSlideById(id)**](https://apireference.aspose.com/java/slides/com.aspose.slides/Presentation#getSlideById-long-) method as shown below in the example.
+Every slide in the presentation has a unique ID associated with it. The [Presentation](https://apireference.aspose.com/java/slides/com.aspose.slides/presentation) class exposes the [**getSlideById($id)**](https://apireference.aspose.com/java/slides/com.aspose.slides/Presentation#getSlideById-long-) method that can be used to access the slide by ID. All you need to do is to provide the valid slide ID and access that slide using [**getSlideById($id)**](https://apireference.aspose.com/java/slides/com.aspose.slides/Presentation#getSlideById-long-) method as shown below in the example.
 
 ```php
 // Instantiate a Presentation object that represents a presentation file
@@ -42,7 +42,7 @@ try {
     $id = $pres->getSlides()->get_Item(0)->getSlideId();
     
     // Accessing Slide by ID
-    IBaseSlide slide = $pres->getSlideById(id);
+    $slide = $pres->getSlideById($id);
 } finally {
     $pres->dispose();
 }

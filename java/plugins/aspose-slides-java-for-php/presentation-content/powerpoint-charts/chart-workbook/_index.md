@@ -121,7 +121,7 @@ try {
     $chart->getChartData()->setExternalWorkbook(externalWbPath);
 
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
-} catch (Exception e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

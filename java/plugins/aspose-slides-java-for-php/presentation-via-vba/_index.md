@@ -36,21 +36,21 @@ try {
     $pres->setVbaProject(new VbaProject());
     
     // Add empty module to the VBA project
-    IVbaModule module = $pres->getVbaProject()->getModules()->addEmptyModule("Module");
+    $module = $pres->getVbaProject()->getModules()->addEmptyModule("Module");
     
     // Set module source code
-    module->setSourceCode("Sub Test(oShape As Shape)MsgBox Test End Sub");
+    $module->setSourceCode("Sub Test(oShape As Shape)MsgBox Test End Sub");
     
     // Create reference to <stdole>
-    VbaReferenceOleTypeLib stdoleReference = new VbaReferenceOleTypeLib("stdole", "*\\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\\Windows\\system32\\stdole2.tlb#OLE Automation");
+    $stdoleReference = new VbaReferenceOleTypeLib("stdole", "*\\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\\Windows\\system32\\stdole2.tlb#OLE Automation");
     
     // Create reference to Office
-    VbaReferenceOleTypeLib officeReference = new VbaReferenceOleTypeLib("Office",
+    $officeReference = new VbaReferenceOleTypeLib("Office",
             "*\\G{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}#2.0#0#C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE14\\MSO.DLL#Microsoft Office 14.0 Object Library");
     
     // Add references to the VBA project
-    $pres->getVbaProject()->getReferences()->add(stdoleReference);
-    $pres->getVbaProject()->getReferences()->add(officeReference);
+    $pres->getVbaProject()->getReferences()->add($stdoleReference);
+    $pres->getVbaProject()->getReferences()->add($officeReference);
     
     $pres->save("test.pptm", Java("com.aspose.slides.SaveFormat")->Pptm);
 } finally {
@@ -102,10 +102,10 @@ $pres = new Java("com.aspose.slides.Presentation", "VBA.pptm");
 try {
     if ($pres->getVbaProject() != null) // check if Presentation contains VBA Project
     {
-        for (IVbaModule module : $pres->getVbaProject()->getModules())
+        for ($module : $pres->getVbaProject()->getModules())
         {
-            echo(module->getName());
-            echo(module->getSourceCode());
+            echo($module->getName());
+            echo($module->getSourceCode());
         }
     }
 } finally {

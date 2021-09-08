@@ -89,7 +89,7 @@ $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     $opt = new Java("com.aspose.slides.HtmlOptions");
     $options = $opt->getNotesCommentsLayouting();
-    $$options->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
+    $options->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
 
     // Saving notes pages
     $pres->save("Output.html", Java("com.aspose.slides.SaveFormat")->Html, $opt);
@@ -175,7 +175,7 @@ $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     $htmlController = new Java("com.aspose.slides.CustomHeaderAndFontsController", "styles.css");
     $options = new Java("com.aspose.slides.HtmlOptions");
-    $$options->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($htmlController));
+    $options->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($htmlController));
 
     $pres->save("pres.html", Java("com.aspose.slides.SaveFormat")->Html, $options);
 } finally {
@@ -314,7 +314,7 @@ try {
 
     // Setting HTML options
     $htmlOptions = new HtmlOptions(controller);
-    SVGOptions svgOptions = new SVGOptions(controller);
+    $svgOptions = new SVGOptions(controller);
 
     $htmlOptions->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($controller));
     $htmlOptions->setSlideImageFormat(Java("com.aspose.slides.SlideImageFormat")->svg($svgOptions));

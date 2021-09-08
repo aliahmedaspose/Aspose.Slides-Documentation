@@ -177,7 +177,7 @@ try {
     }
 
     $pres->save("OleEdit_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
-} catch (Exception e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -205,7 +205,7 @@ try {
     oleFrameZip->setObjectIcon(true);
 
     $pres->save("embeddedOle.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
-} catch (Exception e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -229,7 +229,7 @@ try {
     oleObjectFrame->setEmbeddedData(new OleEmbeddedDataInfo(Files->readAllBytes(Paths->get("embedOle.zip")), "zip"));
 
     $pres->save("embeddedChanged.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
-} catch (Exception e) {
+} catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();
 }

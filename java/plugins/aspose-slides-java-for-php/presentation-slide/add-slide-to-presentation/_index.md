@@ -25,11 +25,11 @@ Aspose.Slides for Java allows developers to add empty slides to their presentati
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Instantiate SlideCollection calss
-    ISlideCollection slds = $pres->getSlides();
+    $slds = $pres->getSlides();
 
     for ($i = 0; $i < $pres->getLayoutSlides()->size(); $i++) {
         // Add an empty slide to the Slides collection
-        slds->addEmptySlide($pres->getLayoutSlides()->get_Item($i));
+        $slds->addEmptySlide($pres->getLayoutSlides()->get_Item($i));
     }
     // Do some work on the newly added slide
 

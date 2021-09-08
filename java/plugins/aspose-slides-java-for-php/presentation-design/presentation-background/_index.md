@@ -110,8 +110,13 @@ try {
             ->setPictureFillMode(Java("com.aspose.slides.PictureFillMode")->Stretch);
     
     // Set the picture
-    $imgx = $pres->getImages()->addImage(Files->readAllBytes(Paths->get("Desert.jpg")));
-    
+    try {
+    	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "Desert.jpg"));
+        $imgx = $pres->getImages()->addImage($fis);
+    } catch (JavaException $e) { }
+    finally {
+        if ($fis != null) $fis->close();
+    }
     // Add image to presentation's images collection
     $pres->getSlides()->get_Item(0)->getBackground()->getFillFormat()->getPictureFillFormat()->getPicture()->setImage($imgx);
     

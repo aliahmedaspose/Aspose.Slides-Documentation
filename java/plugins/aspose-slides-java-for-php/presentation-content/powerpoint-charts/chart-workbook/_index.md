@@ -18,8 +18,8 @@ try {
 
     $workbook = new Java("com.aspose.slides.Workbook", "a1.xlsx");
 
-    $mem = new Java("java.io..ByteArrayOutputStream");
-    $workbook->save($mem, com.aspose.cells.SaveFormat.XLSX);
+    $mem = new Java("java.io.ByteArrayOutputStream");
+    $workbook->save($mem, Java("com.aspose.cells.SaveFormat")->XLSX);
 
     $chart->getChartData()->writeWorkbookStream($mem->toByteArray());
 

@@ -123,11 +123,34 @@ The same can be achieved with Aspose.Slides for Java:
 
 ```php
 // add images to the presentation
-$logo = $pres->getImages()->addImage(Files->readAllBytes(Paths->get("logo.png")));
-$image1 = $pres->getImages()->addImage(Files->readAllBytes(Paths->get("slides.png")));
-$image2 = $pres->getImages()->addImage(Files->readAllBytes(Paths->get("cells.png")));
-$image3 = $pres->getImages()->addImage(Files->readAllBytes(Paths->get("words.png")));
-
+try {
+	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "logo.png"));
+	$logo = $pres->getImages()->addImage($fis);
+} catch (JavaException $e) { }
+finally {
+    if ($fis != null) $fis->close();
+}
+try {
+	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "slides.png"));
+	$image1 = $pres->getImages()->addImage($fis);
+} catch (JavaException $e) { }
+finally {
+    if ($fis != null) $fis->close();
+}
+try {
+	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "cells.png"));
+	$image2 = $pres->getImages()->addImage($fis);
+} catch (JavaException $e) { }
+finally {
+    if ($fis != null) $fis->close();
+}
+try {
+	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "words.png"));
+	$image3 = $pres->getImages()->addImage($fis);
+} catch (JavaException $e) { }
+finally {
+    if ($fis != null) $fis->close();
+}
 // add these added images to the master slide
 $masterSlide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 10, 25, 25, $logo);
 $masterSlide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 10, 40, 25, 25, $image1);

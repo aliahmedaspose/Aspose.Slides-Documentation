@@ -19,9 +19,13 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     $slide = $pres->getSlides()->get_Item(0);
 
-    byte[] imageFile = Files->readAllBytes(Paths->get("image.emz"));
-
-    $image = $pres->getImages()->addImage($imageFile);
+try {
+	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "image.emz"));
+	$image = $pres->getImages()->addImage($fis);
+} catch (JavaException $e) { }
+finally {
+    if ($fis != null) $fis->close();
+}
 
     $slide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0,
             $pres->getSlideSize()->getSize()->getWidth(), 
@@ -48,8 +52,13 @@ This sample code shows you how to implement the steps above to add an SVG image 
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-    $svgContent = new String(Files->readAllBytes(Paths->get("image.svg")));
-    $svgImage = new Java("com.aspose.slides.SvgImage", $svgContent);
+try {
+	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "image.svg"));
+    $svgImage = new Java("com.aspose.slides.SvgImage", $fis);
+} catch (JavaException $e) { }
+finally {
+    if ($fis != null) $fis->close();
+}
     $ppImage = $pres->getImages()->addImage($svgImage);
     $pres->getSlides()->get_Item(0)->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0, 
 			$ppImage->getWidth(), ppImage->getHeight(), $ppImage);
@@ -74,10 +83,15 @@ This sample code shows you how to use the described method to convert an SVG fil
 $presentation = new Java("com.aspose.slides.Presentation");
 try {
     // Read SVG file content
-    byte[] svgContent = Files->readAllBytes(Paths->get("image.svg"));
-
+try {
+	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "watermark.png"));
+	
     // Create SvgImage object
-    $svgImage = new Java("com.aspose.slides.SvgImage", $svgContent);
+    $svgImage = new Java("com.aspose.slides.SvgImage", $fis);
+} catch (JavaException $e) { }
+finally {
+    if ($fis != null) $fis->close();
+}
 
     // Get slide size
     $slideSize = $presentation->getSlideSize()->getSize();
@@ -120,8 +134,13 @@ try {
         $EmfSheetName = "test" + $sheet->getName() + " Page" + ($j + 1) + ".out.emf";
         $sr->toImage($j, $EmfSheetName);
     
-        byte[] $bytes = Files->readAllBytes(Paths->get($EmfSheetName));
-        $emfImage = $pres->getImages()->addImage($bytes);
+        try {
+        	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", $EmfSheetName));
+        $emfImage = $pres->getImages()->addImage($fis);
+        } catch (JavaException $e) { }
+        finally {
+            if ($fis != null) $fis->close();
+        }
         $slide = $pres->getSlides()->addEmptySlide($pres->getLayoutSlides()->getByType(Java("com.aspose.slides.SlideLayoutType")->Blank));
         $m = $slide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0,
 					$pres->getSlideSize()->getSize()->getWidth(), 

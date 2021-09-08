@@ -88,8 +88,13 @@ try {
     $autoshape->getTextFrame()->setText("Second Slide");
 
     // Create a new image for the zoom object
-    byte[] imageBytes = Files->readAllBytes(Paths->get("image.png"));
-    $image = $pres->getImages()->addImage($imageBytes);
+    try {
+    	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "image.png"));
+    	$image = $pres->getImages()->addImage($fis);
+    } catch (JavaException $e) { }
+    finally {
+        if ($fis != null) $fis->close();
+    }
 
     //Add the ZoomFrame object
     $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(20, 20, 300, 200, $slide, $image);
@@ -149,8 +154,13 @@ try {
     $zoomFrame2 = $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(200, 250, 250, 200, $slide3);
 
     // Create a new image for the zoom object
-    byte[] imageBytes = Files->readAllBytes(Paths->get("image.png")); 
-    $image = $pres->getImages()->addImage($imageBytes);
+    try {
+    	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "image.png"));
+    	$image = $pres->getImages()->addImage($fis);
+    } catch (JavaException $e) { }
+    finally {
+        if ($fis != null) $fis->close();
+    }
 	
     // Set custom image for zoomFrame1 object
     $zoomFrame1->setImage($image);

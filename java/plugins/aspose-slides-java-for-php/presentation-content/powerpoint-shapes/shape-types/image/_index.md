@@ -19,13 +19,13 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     $slide = $pres->getSlides()->get_Item(0);
 
-try {
 	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "image.emz"));
+	try {
 	$image = $pres->getImages()->addImage($fis);
-} catch (JavaException $e) { }
-finally {
+	} catch (JavaException $e) { }
+	finally {
     if ($fis != null) $fis->close();
-}
+    }
 
     $slide->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 0, 0,
             $pres->getSlideSize()->getSize()->getWidth(), 
@@ -52,8 +52,8 @@ This sample code shows you how to implement the steps above to add an SVG image 
 // Instantiate Presentation class that represents PPTX file
 $pres = new Java("com.aspose.slides.Presentation");
 try {
-try {
 	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "image.svg"));
+try {
     $svgImage = new Java("com.aspose.slides.SvgImage", $fis);
 } catch (JavaException $e) { }
 finally {
@@ -83,15 +83,14 @@ This sample code shows you how to use the described method to convert an SVG fil
 $presentation = new Java("com.aspose.slides.Presentation");
 try {
     // Read SVG file content
-try {
 	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "watermark.png"));
-	
+	try {
     // Create SvgImage object
     $svgImage = new Java("com.aspose.slides.SvgImage", $fis);
-} catch (JavaException $e) { }
-finally {
+    } catch (JavaException $e) { }
+    finally {
     if ($fis != null) $fis->close();
-}
+    }
 
     // Get slide size
     $slideSize = $presentation->getSlideSize()->getSize();
@@ -134,8 +133,8 @@ try {
         $EmfSheetName = "test" + $sheet->getName() + " Page" + ($j + 1) + ".out.emf";
         $sr->toImage($j, $EmfSheetName);
     
+        $fis = new Java("java.io.FileInputStream", new Java("java.io.File", $EmfSheetName));
         try {
-        	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", $EmfSheetName));
         $emfImage = $pres->getImages()->addImage($fis);
         } catch (JavaException $e) { }
         finally {

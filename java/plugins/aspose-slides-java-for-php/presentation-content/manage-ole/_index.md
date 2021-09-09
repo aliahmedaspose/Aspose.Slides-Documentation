@@ -39,6 +39,7 @@ try {
 
     // Load an cel file to stream
     $fs = new Java("java.io.FileInputStream", new Java("java.io.File", "book1.xlsx");
+    try {
     $mstream = new Java("java.io.ByteArrayOutputStream");
     $Array = new JavaClass("java.lang.reflect.Array");
     $Byte = new JavaClass("java.lang.Byte");
@@ -50,7 +51,9 @@ try {
             break;
         $mstream->write($buf, 0, $bytesRead);
     }
-    $fs->close();
+    } finally {
+        if ($fs != null) $fs->close();
+    }
 
     // Create data object for embedding
     $dataInfo = new Java("com.aspose.slides.OleEmbeddedDataInfo", $mstream->toByteArray(), "xlsx");
@@ -250,13 +253,12 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     $slide = $pres->getSlides()->get_Item(0);
     $oleObjectFrame = $slide->getShapes()->get_Item(0);
-try {
 	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "watermark.png"));
+	try {
     $oleImage = $pres->getImages()->addImage($fis);
-} catch (JavaException $e) { }
-finally {
+    } finally {
     if ($fis != null) $fis->close();
-}
+    }
     $oleObjectFrame->setSubstitutePictureTitle("My title");
     $oleObjectFrame->getSubstitutePictureFormat()->getPicture()->setImage($oleImage);
     $oleObjectFrame->setObjectIcon(false);

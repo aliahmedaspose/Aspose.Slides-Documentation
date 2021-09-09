@@ -25,9 +25,9 @@ try {
         $textFramesPPTX = SlideUtil->getAllTextBoxes($slide);
 
         //Loop through the Array of TextFrames
-        for ($i = 0; $i < textFramesPPTX->length; $i++) {
+        for ($i = 0; $i < $textFramesPPTX->length; $i++) {
             //Loop through paragraphs in current ITextFrame
-            foreach( textFramesPPTX->get_Item($i)->getParagraphs() as $para ) {
+            foreach( $textFramesPPTX->get_Item($i)->getParagraphs() as $para ) {
                 //Loop through portions in the current IParagraph
                 foreach( $para->getPortions() as $port ) {
                     //Display text in the current portion
@@ -64,10 +64,10 @@ try {
     $textFramesPPTX = SlideUtil->getAllTextFrames($pres, true);
 
     //Loop through the Array of TextFrames
-    for ($i = 0; $i < textFramesPPTX->length; $i++) 
+    for ($i = 0; $i < $textFramesPPTX->length; $i++) 
     {
         //Loop through paragraphs in current ITextFrame
-        foreach( textFramesPPTX->get_Item($i)->getParagraphs() as $para )
+        foreach( $textFramesPPTX->get_Item($i)->getParagraphs() as $para )
         {
             //Loop through portions in the current IParagraph
             foreach( $para->getPortions() as $port )

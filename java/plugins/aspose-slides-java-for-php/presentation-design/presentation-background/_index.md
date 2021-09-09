@@ -110,8 +110,8 @@ try {
             ->setPictureFillMode(Java("com.aspose.slides.PictureFillMode")->Stretch);
     
     // Set the picture
+    $fis = new Java("java.io.FileInputStream", new Java("java.io.File", "Desert.jpg"));
     try {
-    	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "Desert.jpg"));
         $imgx = $pres->getImages()->addImage($fis);
     } catch (JavaException $e) { }
     finally {

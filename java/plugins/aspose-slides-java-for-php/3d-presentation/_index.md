@@ -129,8 +129,8 @@ You may also create an image gradient:
 ```php
 $shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Picture);
 $picture = null;
+$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "sample_3d.png"));
 try {
-	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "sample_3d.png"));
 	$picture = $pres->getImages()->addImage($fis);
 } catch (JavaException $e) { }
 finally {

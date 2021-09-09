@@ -125,8 +125,8 @@ $watermarkShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.Shap
 To add image watermark into all presentation slides, you may do the following:
 
 ```php
+$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "watermark.png"));
 try {
-	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "watermark.png"));
 	$image = $pres->getImages()->addImage($fis);
 } catch (JavaException $e) { }
 finally {

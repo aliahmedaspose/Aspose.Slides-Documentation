@@ -88,8 +88,8 @@ try {
     $autoshape->getTextFrame()->setText("Second Slide");
 
     // Create a new image for the zoom object
+    $fis = new Java("java.io.FileInputStream", new Java("java.io.File", "image.png"));
     try {
-    	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "image.png"));
     	$image = $pres->getImages()->addImage($fis);
     } catch (JavaException $e) { }
     finally {
@@ -154,8 +154,8 @@ try {
     $zoomFrame2 = $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(200, 250, 250, 200, $slide3);
 
     // Create a new image for the zoom object
+    $fis = new Java("java.io.FileInputStream", new Java("java.io.File", "image.png"));
     try {
-    	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "image.png"));
     	$image = $pres->getImages()->addImage($fis);
     } catch (JavaException $e) { }
     finally {

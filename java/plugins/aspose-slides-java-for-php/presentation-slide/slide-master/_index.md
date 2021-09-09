@@ -123,29 +123,29 @@ The same can be achieved with Aspose.Slides for Java:
 
 ```php
 // add images to the presentation
+$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "logo.png"));
 try {
-	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "logo.png"));
 	$logo = $pres->getImages()->addImage($fis);
 } catch (JavaException $e) { }
 finally {
     if ($fis != null) $fis->close();
 }
+$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "slides.png"));
 try {
-	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "slides.png"));
 	$image1 = $pres->getImages()->addImage($fis);
 } catch (JavaException $e) { }
 finally {
     if ($fis != null) $fis->close();
 }
+$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "cells.png"));
 try {
-	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "cells.png"));
 	$image2 = $pres->getImages()->addImage($fis);
 } catch (JavaException $e) { }
 finally {
     if ($fis != null) $fis->close();
 }
+$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "words.png"));
 try {
-	$fis = new Java("java.io.FileInputStream", new Java("java.io.File", "words.png"));
 	$image3 = $pres->getImages()->addImage($fis);
 } catch (JavaException $e) { }
 finally {

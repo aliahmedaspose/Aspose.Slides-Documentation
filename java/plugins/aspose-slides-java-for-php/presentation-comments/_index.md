@@ -37,15 +37,15 @@ try {
     $comments = $slide->getSlideComments(author);
 
     // Accessin the comment at index 0 for slide 1
-    $str = comments[0]->getText();
+    $str = $comments[0]->getText();
 
     $presentation->save("Comments_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 
     if ($comments->length > 0)
     {
         // Select comments collection of Author at index 0
-        $commentCollection = comments[0]->getAuthor()->getComments();
-        $comment = commentCollection->get_Item(0)->getText();
+        $commentCollection = $comments[0]->getAuthor()->getComments();
+        $comment = $commentCollection->get_Item(0)->getText();
     }
 } finally {
     $presentation->dispose();
@@ -61,10 +61,10 @@ $presentation = new Java("com.aspose.slides.Presentation", "Comments1.pptx");
 try {
     foreach( $presentation->getCommentAuthors() as $commentAuthor )
     {
-        $author = commentAuthor;
+        $author = $commentAuthor;
         foreach( $author->getComments() as $comment1 )
         {
-            $comment = comment1;
+            $comment = $comment1;
             echo("ISlide :" + $comment->getSlide()->getSlideNumber() + " has comment: " + $comment->getText() + 
                     " with Author: " + $comment->getAuthor()->getName() + " posted on time :" + $comment->getCreatedTime() + "\n");
         }
@@ -103,14 +103,14 @@ try {
     $comment3 = $author2->getComments()->addComment("comment 3", $pres->getSlides()->get_Item(0), Java("java.awt.geom.Point2D")->Float(10, 10), new Java("java.util.Date"));
 
     $reply3 = $author1->getComments()->addComment("reply 4 for comment 3", $pres->getSlides()->get_Item(0), Java("java.awt.geom.Point2D")->Float(10, 10), new Java("java.util.Date"));
-    reply3->setParentComment(comment3);
+    $reply3->setParentComment($comment3);
 
     // Display hierarchy on console
     $slide = $pres->getSlides()->get_Item(0);
     $comments = $slide->getSlideComments(null);
     for ($i = 0; $i < $comments->length; $i++)
     {
-        $comment = comments->get_Item($i);
+        $comment = $comments->get_Item($i);
         while ($comment->getParentComment() != null)
         {
             echo("\t");

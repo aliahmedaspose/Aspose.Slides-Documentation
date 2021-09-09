@@ -59,8 +59,8 @@ $Byte = new JavaClass("java.lang.Byte");
 $Array = new JavaClass("java.lang.reflect.Array");
 
 $file1 = new Java("java.io.File", "customfonts/CustomFont1.ttf");
+$fis1 = new Java("java.io.FileInputStream", $file1);
 try {
-	$fis1 = new Java("java.io.FileInputStream", $file1);
 	$memoryFont1 = $Array->newInstance($Byte, $file1->length());
 	$fis1->read($memoryFont1);
 } catch (JavaException $e) { }
@@ -69,8 +69,8 @@ finally {
 }
 
 $file2 = new Java("java.io.File", "customfonts/CustomFont2.ttf");
+$fis2 = new Java("java.io.FileInputStream", $file2);
 try {
-	$fis2 = new Java("java.io.FileInputStream", $file2);
 	$memoryFont2 = $Array->newInstance($Byte, $file2->length());
 	$fis2->read($memoryFont2);
 } catch (JavaException $e) { }

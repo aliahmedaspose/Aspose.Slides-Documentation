@@ -62,7 +62,7 @@ try {
     foreach( $presentation->getCommentAuthors() as $commentAuthor )
     {
         $author = commentAuthor;
-        forech( $author->getComments() as $comment1 )
+        foreach( $author->getComments() as $comment1 )
         {
             $comment = comment1;
             echo("ISlide :" + $comment->getSlide()->getSlideNumber() + " has comment: " + $comment->getText() + 

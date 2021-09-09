@@ -19,7 +19,7 @@ try {
     $tbl = null;
 
     // Iterate through the shapes and set a reference to the table found
-    forech( $sld->getShapes() as $shp )
+    foreach( $sld->getShapes() as $shp )
     {
         if ($shp instanceof ITable) 
         {

@@ -149,7 +149,7 @@ try {
     }
     
     // moving 100 points down
-    forech( $pres->getSlides()->get_Item(0)->getControls() as $ctl ) {
+    foreach( $pres->getSlides()->get_Item(0)->getControls() as $ctl ) {
         $frame = $ctl->getFrame();
         $ctl->setFrame(new Java("com.aspose.slides.ShapeFrame", $frame->getX(), $frame->getY() + 100,
                 $frame->getWidth(), $frame->getHeight(), $frame->getFlipH(), $frame->getFlipV(), $frame->getRotation()));

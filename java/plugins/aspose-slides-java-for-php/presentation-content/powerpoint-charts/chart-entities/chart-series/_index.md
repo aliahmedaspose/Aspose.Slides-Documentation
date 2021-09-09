@@ -211,7 +211,7 @@ try {
 
     $chart = $slide->getShapes()->get_Item(0);
 
-    forech( $chart->getChartData()->getSeries()->get_Item(0)->getDataPoints() as $dataPoint ) {
+    foreach( $chart->getChartData()->getSeries()->get_Item(0)->getDataPoints() as $dataPoint ) {
 
         $dataPoint->getXValue()->getAsCell()->setValue(null);
         $dataPoint->getYValue()->getAsCell()->setValue(null);

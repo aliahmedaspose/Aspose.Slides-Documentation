@@ -142,7 +142,7 @@ try {
     $ole = null;
 
     // Traversing all shapes for Ole frame
-    forech( $slide->getShapes() as $shape ) 
+    foreach( $slide->getShapes() as $shape ) 
     {
         if ($shape instanceof OleObjectFrame) 
         {

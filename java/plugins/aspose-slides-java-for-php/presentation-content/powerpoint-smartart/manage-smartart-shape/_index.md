@@ -43,7 +43,7 @@ The following code will be used to access the SmartArt shapes added in presentat
 $pres = new Java("com.aspose.slides.Presentation", "AccessSmartArtShape.pptx");
 try {
     // Traverse through every shape inside first slide
-    forech( $pres->getSlides()->get_Item(0)->getShapes() as $shape )
+    foreach( $pres->getSlides()->get_Item(0)->getShapes() as $shape )
     {
         // Check if shape is of SmartArt type
         if ($shape instanceof ISmartArt)
@@ -71,7 +71,7 @@ The following sample code will help to access the [SmartArt](https://apireferenc
 $pres = new Java("com.aspose.slides.Presentation", "AccessSmartArtShape.pptx");
 try {
     // Traverse through every shape inside first slide
-    forech( $pres->getSlides()->get_Item(0)->getShapes() as $shape )
+    foreach( $pres->getSlides()->get_Item(0)->getShapes() as $shape )
     {
         // Check if shape is of SmartArt type
         if ($shape instanceof ISmartArt)
@@ -110,7 +110,7 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
     
     // Traverse through every shape inside first slide
-    forech( $slide->getShapes() as $shape ) 
+    foreach( $slide->getShapes() as $shape ) 
     {
         // Check if shape is of SmartArt type
         if ($shape instanceof ISmartArt) 
@@ -155,7 +155,7 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
     
     // Traverse through every shape inside first slide
-    forech( $slide->getShapes() as $shape ) 
+    foreach( $slide->getShapes() as $shape ) 
     {
         // Check if shape is of SmartArt type
         if ($shape instanceof ISmartArt) 

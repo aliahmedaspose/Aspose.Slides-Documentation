@@ -92,7 +92,7 @@ try {
     $tbl = null;
 
     // Iterate through the shapes and set a reference to the table found
-    forech( $sld->getShapes() as $shp ) 
+    foreach( $sld->getShapes() as $shp ) 
     {
         if ($shp instanceof ITable) 
         {
@@ -225,9 +225,9 @@ try {
     $tbl = $sld->getShapes()->addTable(100, 50, $dblCols, $dblRows);
 
     // Set border format for each cell
-    forech( $tbl->getRows() as $row )
+    foreach( $tbl->getRows() as $row )
     {
-        forech( $row as $cell )
+        foreach( $row as $cell )
         {
             $cell->getCellFormat()->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
             $cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);

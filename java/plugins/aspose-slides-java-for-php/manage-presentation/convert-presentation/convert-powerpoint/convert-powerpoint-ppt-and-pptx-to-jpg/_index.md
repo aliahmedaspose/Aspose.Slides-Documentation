@@ -36,7 +36,7 @@ Here are the steps to convert PPT/PPTX to JPG:
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "PowerPoint-Presentation.pptx");
 try {
-    forech( $pres->getSlides() as $sld ) {
+    foreach( $pres->getSlides() as $sld ) {
         // Create a full scale image
         $bmp = $sld->getThumbnail(1, 1);
 
@@ -62,7 +62,7 @@ try {
     $ScaleX = (1.0 / $pres->getSlideSize()->getSize()->getWidth()) * desiredX;
     $ScaleY = (1.0 / $pres->getSlideSize()->getSize()->getHeight()) * desiredY;
 
-    forech( $pres->getSlides() as $sld )
+    foreach( $pres->getSlides() as $sld )
     {
         // Create a full scale image
         $bmp = $sld->getThumbnail(ScaleX, ScaleY);
@@ -85,7 +85,7 @@ try {
     $opts = new Java("com.aspose.slides.RenderingOptions");
     $opts->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomTruncated);
 
-    forech( $pres->getSlides() as $sld ) {
+    foreach( $pres->getSlides() as $sld ) {
         $image = new Java("java.awt.image.BufferedImage", 740, 960, Java("java.awt.image.BufferedImage")->TYPE_INT_ARGB);
         $graphics = $image->createGraphics();
         try {

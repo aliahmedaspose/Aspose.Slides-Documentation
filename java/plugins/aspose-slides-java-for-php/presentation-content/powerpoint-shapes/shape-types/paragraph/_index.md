@@ -12,8 +12,8 @@ Using Aspose.Slides for Java, developers can now get the rectangular coordinates
 ```php
 $shape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
 $textFrame = shape->getTextFrame();
-forech( $textFrame->getParagraphs() as $paragraph ){
-  forech( paragraph->getPortions() as $portion ){
+foreach( $textFrame->getParagraphs() as $paragraph ){
+  foreach( paragraph->getPortions() as $portion ){
     $point = $portion->getCoordinates();
   }
 }
@@ -50,7 +50,7 @@ try {
     $x = $tbl->getX() + $tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetX();
     $y = $tbl->getY() + $tbl->getRows()->get_Item(1)->get_Item(1)->getOffsetY();
 
-    forech( $cell->getTextFrame()->getParagraphs() as $para )
+    foreach( $cell->getTextFrame()->getParagraphs() as $para )
     {
         if ($para->getText() == (""))
             continue;
@@ -64,7 +64,7 @@ try {
         $shape->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->YELLOW);
         $shape->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-        forech( $para->getPortions() as $portion )
+        foreach( $para->getPortions() as $portion )
         {
             if ($portion->getText().contains("0"))
             {

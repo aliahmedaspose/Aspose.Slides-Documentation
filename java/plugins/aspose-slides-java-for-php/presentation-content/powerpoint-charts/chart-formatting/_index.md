@@ -250,10 +250,10 @@ try {
     $series = $chart->getChartData()->getSeries();
     
     // Traverse through every chart series
-    forech( #series as $ser ) 
+    foreach( #series as $ser ) 
     {
         // Traverse through every data cell in series
-        forech( $ser->getDataPoints() as $cell ) 
+        foreach( $ser->getDataPoints() as $cell ) 
         {
             // Setting the number format
             $cell->getValue()->getAsCell()->setPresetNumberFormat((byte) 10); // 0.00%

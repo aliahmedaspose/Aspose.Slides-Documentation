@@ -31,7 +31,7 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Iterate through shapes to find the placeholder
-    for ($shp : $sld->getShapes()) 
+    forech( $sld->getShapes() as $shp ) 
     {
         if ($shp->getPlaceholder() != null) {
             // Change the text of each placeholder
@@ -55,7 +55,7 @@ The code snippet below shows how to use this feature:
 $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     $slide = $pres->getSlides()->get_Item(0);
-    for ($shape : $slide->getSlide()->getShapes()) // iterate through the slide
+    forech( $slide->getSlide()->getShapes() as $shape ) // iterate through the slide
     {
         if ($shape->getPlaceholder() != null && shape instanceof AutoShape)
         {

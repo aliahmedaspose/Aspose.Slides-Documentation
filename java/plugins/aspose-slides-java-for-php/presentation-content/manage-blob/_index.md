@@ -44,8 +44,10 @@ $pres = new Java("com.aspose.slides.Presentation", "Large_Video_File_Test.pptx",
 try {
     // let's save each video to a file. to prevent memory usage we need a buffer which will be used
     // to exchange tha data from the presentation's video stream to a stream for newly created video file.
-    byte[] buffer = new byte[8 * 1024];
-
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $Byte = new JavaClass("java.lang.Byte");
+    $buffer = $Array->newInstance($Byte, 8 * 1024);
+    
     // iterate through the videos
     for ($index = 0; index < $pres->getVideos()->size(); index++) {
         $video = $pres->getVideos()->get_Item($index);
@@ -59,8 +61,8 @@ try {
             $outputFileStream = new Java("java.io.FileOutputStream", "video" + $index + ".avi");
             try {
                 $bytesRead;
-                while ((bytesRead = presVideoStream->read(buffer, 0, buffer->length)) > 0) {
-                    $outputFileStream->write(buffer, 0, bytesRead);
+                while (($bytesRead = $presVideoStream->read($buffer, 0, $buffer->length)) > 0) {
+                    $outputFileStream->write($buffer, 0, $bytesRead);
                 }
             } finally {
                 $outputFileStream->close();

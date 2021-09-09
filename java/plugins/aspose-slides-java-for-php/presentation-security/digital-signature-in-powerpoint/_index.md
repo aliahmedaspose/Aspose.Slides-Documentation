@@ -60,7 +60,7 @@ try {
         echo("Signatures used to sign the presentation: ");
 
         // Check if all digital signatures are valid
-        for ($signature : $pres->getDigitalSignatures())
+        forech( $pres->getDigitalSignatures() as $signature )
         {
             echo($signature->getComments() + ", "
                     + $signature->getSignTime()->toString() + " -- " + ($signature->isValid() ? "VALID" : "INVALID"));

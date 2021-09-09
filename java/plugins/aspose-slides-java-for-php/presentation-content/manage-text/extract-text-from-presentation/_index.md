@@ -19,7 +19,7 @@ Upon execution, the Slide method scans the entire text from the slide passed as
 //Instatiate Presentation class that represents a PPTX file
 $pres = new Java("com.aspose.slides.Presentation", "demo.pptx");
 try {
-    for ($slide : $pres->getSlides()) 
+    forech( $pres->getSlides() as $slide ) 
     {
         //Get an Array of ITextFrame objects from all slides in the PPTX
         $textFramesPPTX = SlideUtil->getAllTextBoxes($slide);
@@ -27,9 +27,9 @@ try {
         //Loop through the Array of TextFrames
         for ($i = 0; $i < textFramesPPTX->length; $i++) {
             //Loop through paragraphs in current ITextFrame
-            for ($para : textFramesPPTX->get_Item($i)->getParagraphs()) {
+            forech( textFramesPPTX->get_Item($i)->getParagraphs() as $para ) {
                 //Loop through portions in the current IParagraph
-                for ($port : $para->getPortions()) {
+                forech( $para->getPortions() as $port ) {
                     //Display text in the current portion
                     echo($port->getText());
 
@@ -67,10 +67,10 @@ try {
     for ($i = 0; $i < textFramesPPTX->length; $i++) 
     {
         //Loop through paragraphs in current ITextFrame
-        for ($para : textFramesPPTX->get_Item($i)->getParagraphs())
+        forech( textFramesPPTX->get_Item($i)->getParagraphs() as $para )
         {
             //Loop through portions in the current IParagraph
-            for ($port : $para->getPortions())
+            forech( $para->getPortions() as $port )
             {
                 //Display text in the current portion
                 echo($port->getText());

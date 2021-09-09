@@ -63,9 +63,9 @@ try {
     $tbl = $sld->getShapes()->addTable(100, 50, $dblCols, $dblRows);
 
     // Set border format for each cell
-    for ($row : $tbl->getRows())
+    forech( $tbl->getRows() as $row )
     {
-        for ($cell : $row)
+        forech( $row as $cell )
         {
             $cell->getCellFormat()->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
             $cell->getCellFormat()->getBorderBottom()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
@@ -99,9 +99,9 @@ try {
     $tbl = $sld->getShapes()->addTable(100, 50, $dblCols, $dblRows);
 
     // Set border format for each cell
-    for ($row : $tbl->getRows())
+    forech( $tbl->getRows() as $row )
     {
-        for ($cell : $row)
+        forech( $row as $cell )
         {
             $cell->getCellFormat()->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
             $cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
@@ -150,9 +150,9 @@ try {
     $tbl = $sld->getShapes()->addTable(100, 50, $dblCols, $dblRows);
 
     // Set border format for each cell
-    for ($row : $tbl->getRows())
+    forech( $tbl->getRows() as $row )
     {
-        for ($cell : $row)
+        forech( $row as $cell )
         {
             $cell->getCellFormat()->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
             $cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
@@ -205,9 +205,9 @@ try {
     $tbl = $sld->getShapes()->addTable(100, 50, $dblCols, $dblRows);
 
     // Set border format for each cell
-    for ($row : $tbl->getRows())
+    forech( $tbl->getRows() as $row )
     {
-        for ($cell : $row)
+        forech( $row as $cell )
         {
             $cell->getCellFormat()->getBorderTop()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
             $cell->getCellFormat()->getBorderTop()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);

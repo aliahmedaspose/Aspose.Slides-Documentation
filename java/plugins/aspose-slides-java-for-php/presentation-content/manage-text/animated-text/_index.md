@@ -40,7 +40,7 @@ try {
     $sequence = $pres->getSlides()->get_Item(0)->getTimeline()->getMainSequence();
     $autoShape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
 
-    for ($paragraph : $autoShape->getTextFrame()->getParagraphs())
+    forech( $autoShape->getTextFrame()->getParagraphs() as $paragraph )
     {
         $effects = sequence->getEffectsByParagraph($paragraph);
 

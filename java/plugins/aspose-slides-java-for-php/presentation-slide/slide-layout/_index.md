@@ -38,14 +38,14 @@ try {
         // And it is possible to use these names for layout slide selection.
         // Also it is possible to use the set of placeholder shape types. For example,
         // Title slide should have only Title placeholder type, etc.
-        for ($titleAndObjectLayoutSlide : $layoutSlides) {
+        forech( $layoutSlides as $titleAndObjectLayoutSlide ) {
             if ($titleAndObjectLayoutSlide->getName() == "Title and Object") {
                 $layoutSlide = $titleAndObjectLayoutSlide;
                 break;
             }
         }
         if ($layoutSlide == null) {
-            for ($titleLayoutSlide : $layoutSlides) {
+            forech( $layoutSlides as $titleLayoutSlide ) {
                 if ($titleLayoutSlide->getName() == "Title") {
                     $layoutSlide = $titleLayoutSlide;
                     break;

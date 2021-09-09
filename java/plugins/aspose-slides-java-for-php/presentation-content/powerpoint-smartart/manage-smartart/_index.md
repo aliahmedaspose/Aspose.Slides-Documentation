@@ -15,9 +15,9 @@ try {
     $smartArt = $slide->getShapes()->get_Item(0);
 
     $smartArtNodes = $smartArt->getAllNodes();
-    for ($smartArtNode : $smartArtNodes)
+    forech( $smartArtNodes as $smartArtNode )
     {
-        for ($nodeShape : $smartArtNode->getShapes())
+        forech( $smartArtNode->getShapes() as $nodeShape )
         {
             if ($nodeShape->getTextFrame() != null)
                 echo($nodeShape->getTextFrame()->getText());

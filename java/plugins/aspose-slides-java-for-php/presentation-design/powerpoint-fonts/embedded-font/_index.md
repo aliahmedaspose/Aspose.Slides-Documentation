@@ -56,7 +56,7 @@ try {
     $allFonts = $pres->getFontsManager()->getFonts();
     $embeddedFonts = $pres->getFontsManager()->getEmbeddedFonts();
 
-    for ($font : $allFonts)
+    forech( $allFonts as $font )
     {
         $embeddedFontsContainsFont = false;
         for ($i = 0; $i < $embeddedFonts->length; $i++)

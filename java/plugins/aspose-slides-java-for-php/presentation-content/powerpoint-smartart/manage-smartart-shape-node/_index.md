@@ -21,7 +21,7 @@ Aspose.Slides for Java has provided the simplest API to manage the SmartArt shap
 $pres = new Java("com.aspose.slides.Presentation", "SimpleSmartArt.pptx");
 try {
     // Traverse through every shape inside first slide
-    for ($shape : $pres->getSlides()->get_Item(0)->getShapes()) 
+    forech( $pres->getSlides()->get_Item(0)->getShapes() as $shape ) 
     {
         // Check if shape is of SmartArt type
         if ($shape instanceof SmartArt) 
@@ -104,7 +104,7 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
     
     // Traverse through every shape inside first slide
-    for ($shape : $slide->getShapes()) 
+    forech( $slide->getShapes() as $shape ) 
     {
         // Check if shape is of SmartArt type
         if ($shape instanceof ISmartArt) 
@@ -148,7 +148,7 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
     
     // Traverse through every shape inside first slide
-    for ($shape : $slide->getShapes()) 
+    forech( $slide->getShapes() as $shape ) 
     {
         // Check if shape is of SmartArt type
         if ($shape instanceof ISmartArt) 
@@ -231,7 +231,7 @@ In this example, we will learn to remove the nodes inside SmartArt shape.
 $pres = new Java("com.aspose.slides.Presentation", "AddSmartArtNode.pptx");
 try {
     // Traverse through every shape inside first slide
-    for ($shape : $pres->getSlides()->get_Item(0)->getShapes()) 
+    forech( $pres->getSlides()->get_Item(0)->getShapes() as $shape ) 
     {
         // Check if shape is of SmartArt type
         if ($shape instanceof ISmartArt) 
@@ -274,7 +274,7 @@ In this example, we will learn to remove the nodes inside SmartArt shape at part
 $pres = new Java("com.aspose.slides.Presentation", "AddSmartArtNode.pptx");
 try {
     // Traverse through every shape inside first slide
-    for ($shape : $pres->getSlides()->get_Item(0)->getShapes()) 
+    forech( $pres->getSlides()->get_Item(0)->getShapes() as $shape ) 
     {
         // Check if shape is of SmartArt type
         if ($shape instanceof SmartArt) 
@@ -367,7 +367,7 @@ In the following sample code we will investigate how to identify **Assistant Nod
 $pres = new Java("com.aspose.slides.Presentation", "AddNodes.pptx");
 try {
     // Traverse through every shape inside first slide
-    for ($shape : $pres->getSlides()->get_Item(0)->getShapes()) 
+    forech( $pres->getSlides()->get_Item(0)->getShapes() as $shape ) 
     {
         // Check if shape is of SmartArt type
         if ($shape instanceof ISmartArt) 
@@ -424,7 +424,7 @@ try {
     $node->getTextFrame()->setText("Some text");
     
     // Setting node fill color
-    for ($item : $node->getShapes()) 
+    forech( $node->getShapes() as $item ) 
     {
         $item->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
         $item->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);

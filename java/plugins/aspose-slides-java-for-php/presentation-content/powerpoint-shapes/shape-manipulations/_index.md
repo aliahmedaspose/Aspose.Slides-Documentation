@@ -249,9 +249,9 @@ Below sample code is given.
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
-    for ($layoutSlide : $pres->getLayoutSlides())
+    forech( $pres->getLayoutSlides() as $layoutSlide )
     {
-        for ($shape : $layoutSlide->getShapes())
+        forech( $layoutSlide->getShapes() as $shape )
         {
             $fillFormats = $shape->getFillFormat();
             $lineFormats = $shape->getLineFormat();

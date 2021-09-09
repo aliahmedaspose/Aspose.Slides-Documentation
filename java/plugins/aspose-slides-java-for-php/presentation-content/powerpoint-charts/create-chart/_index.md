@@ -424,7 +424,7 @@ try {
     $chart->getChartData()->getSeriesGroups()->get_Item(0)->getUpDownBars()->setUpDownBars(true);
     $chart->getChartData()->getSeriesGroups()->get_Item(0)->getHiLowLinesFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
 
-    for ($ser : $chart->getChartData()->getSeries())
+    forech( $chart->getChartData()->getSeries() as $ser )
     {
         $ser->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->NoFill);
     }

@@ -19,7 +19,7 @@ $rulesList = new Java("com.aspose.slides.FontFallBackRulesCollection");
 // create a number of rules
 $rulesList->add(new Java("com.aspose.slides.FontFallBackRule", 0x400, 0x4FF, "Times New Roman"));
 
-for ($fallBackRule : $rulesList)
+forech( $rulesList as $fallBackRule )
 {
     //Trying to remove FallBack font "Tahoma" from loaded rules
     $fallBackRule->remove("Tahoma");

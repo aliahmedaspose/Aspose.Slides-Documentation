@@ -40,25 +40,27 @@ try {
     // Load an cel file to stream
     $fs = new Java("java.io.FileInputStream", new Java("java.io.File", "book1.xlsx");
     $mstream = new Java("java.io.ByteArrayOutputStream");
-    byte[] buf = new byte[4096];
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $Byte = new JavaClass("java.lang.Byte");
+    $buf = $Array->newInstance($Byte, 4096);
     while (true)
     {
-        $bytesRead = fs->read(buf, 0, buf->length);
+        $bytesRead = $fs->read($buf, 0, $buf->length);
         if ($bytesRead <= 0)
             break;
-        mstream->write(buf, 0, bytesRead);
+        $mstream->write($buf, 0, $bytesRead);
     }
-    fs->close();
+    $fs->close();
 
     // Create data object for embedding
-    $dataInfo = new Java("com.aspose.slides.OleEmbeddedDataInfo", mstream->toByteArray(), "xlsx");
-    mstream->close();
+    $dataInfo = new Java("com.aspose.slides.OleEmbeddedDataInfo", $mstream->toByteArray(), "xlsx");
+    $mstream->close();
 
     // Add an Ole Object Frame shape
     $oleObjectFrame = $sld->getShapes()->addOleObjectFrame(0, 0,
             $pres->getSlideSize()->getSize()->getWidth(),
             $pres->getSlideSize()->getSize()->getHeight(),
-            dataInfo);
+            $dataInfo);
 
     //Write the PPTX to disk
     $pres->save("OleEmbed_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -93,7 +95,7 @@ try {
     // Read the OLE Object and write it to disk
     if ($oleObjectFrame != null) {
         // Get embedded file data
-        byte[] data = $oleObjectFrame->getEmbeddedData()->getEmbeddedFileData();
+        $data = $oleObjectFrame->getEmbeddedData()->getEmbeddedFileData();
 
         // Get embedded file extention
         $fileExtention = $oleObjectFrame->getEmbeddedData()->getEmbeddedFileExtension();
@@ -140,7 +142,7 @@ try {
     $ole = null;
 
     // Traversing all shapes for Ole frame
-    for ($shape : $slide->getShapes()) 
+    forech( $slide->getShapes() as $shape ) 
     {
         if ($shape instanceof OleObjectFrame) 
         {
@@ -288,8 +290,8 @@ try {
 
         if ($oleFrame != null) 
 		{
-            byte[] data = oleFrame->getEmbeddedData()->getEmbeddedFileData();
-            $extension = oleFrame->getEmbeddedData()->getEmbeddedFileExtension();
+            $data = $oleFrame->getEmbeddedData()->getEmbeddedFileData();
+            $extension = $oleFrame->getEmbeddedData()->getEmbeddedFileExtension();
 
             // Save extracted data
             $fstr = new Java("java.io.FileOutputStream", "oleFrame" + $index + $extension);

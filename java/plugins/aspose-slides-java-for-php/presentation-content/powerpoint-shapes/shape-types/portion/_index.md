@@ -17,9 +17,9 @@ try {
     
     $textFrame = $shape->getTextFrame();
     
-    for ($paragraph : $textFrame->getParagraphs()) 
+    forech( $textFrame->getParagraphs() as $paragraph ) 
     {
-        for ($portion : paragraph->getPortions()) 
+        forech( paragraph->getPortions() as $portion ) 
         {
             $point = $portion->getCoordinates();
             echo("X: " + $point->x + " Y: " + $point->y);

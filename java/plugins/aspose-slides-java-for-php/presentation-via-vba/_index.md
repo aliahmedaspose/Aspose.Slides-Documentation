@@ -102,7 +102,7 @@ $pres = new Java("com.aspose.slides.Presentation", "VBA.pptm");
 try {
     if ($pres->getVbaProject() != null) // check if Presentation contains VBA Project
     {
-        for ($module : $pres->getVbaProject()->getModules())
+        forech( $pres->getVbaProject()->getModules() as $module )
         {
             echo($module->getName());
             echo($module->getSourceCode());

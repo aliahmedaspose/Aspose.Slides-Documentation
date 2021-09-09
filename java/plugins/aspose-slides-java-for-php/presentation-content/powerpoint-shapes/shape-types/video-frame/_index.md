@@ -136,9 +136,9 @@ In the example given below, we saved the video file from a slide.
 ```php
 $pres = new Java("com.aspose.slides.Presentation", "VideoSample.pptx");
 try {
-    for ($slide : $pres->getSlides()) 
+    forech( $pres->getSlides() as $slide ) 
     {
-        for ($shape : $slide->getShapes()) 
+        forech( $slide->getShapes() as $shape ) 
         {
             if ($shape instanceof VideoFrame) 
             {

@@ -59,10 +59,10 @@ In the following example, we will learn how to access the existing slide comment
 // Instantiate a Presentation class that represents the presentation file
 $presentation = new Java("com.aspose.slides.Presentation", "Comments1.pptx");
 try {
-    for ($commentAuthor : $presentation->getCommentAuthors())
+    foreach( $presentation->getCommentAuthors() as $commentAuthor )
     {
         $author = commentAuthor;
-        for ($comment1 : $author->getComments())
+        forech( $author->getComments() as $comment1 )
         {
             $comment = comment1;
             echo("ISlide :" + $comment->getSlide()->getSlideNumber() + " has comment: " + $comment->getText() + 

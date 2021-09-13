@@ -114,7 +114,7 @@ try {
     $tf = $rect->addTextFrame("This is first line \rThis is second line \rThis is third line");
     
     // Set the text to fit the shape
-    $tf->getJava("com.aspose.slides.TextFrameFormat")->setAutofitType(Java("com.aspose.slides.TextAutofitType")->Shape);
+    $tf->getTextFrameFormat()->setAutofitType(Java("com.aspose.slides.TextAutofitType")->Shape);
     
     // Hide the lines of the Rectangle
     $rect->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
@@ -122,28 +122,28 @@ try {
     // Get first Paragraph in the TextFrame and set its Indent
     $para1 = $tf->getParagraphs()->get_Item(0);
     // Setting paragraph bullet style and symbol
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setChar((char)8226);
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->setAlignment(Java("com.aspose.slides.TextAlignment")->Left);
+    $para2->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
+    $para2->getParagraphFormat()->getBullet()->setChar((char)8226);
+    $para2->getParagraphFormat()->setAlignment(Java("com.aspose.slides.TextAlignment")->Left);
     
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->setDepth(2);
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->setIndent(30);
+    $para2->getParagraphFormat()->setDepth(2);
+    $para2->getParagraphFormat()->setIndent(30);
     
     // Get second Paragraph in the TextFrame and set its Indent
     $para2 = $tf->getParagraphs()->get_Item(1);
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setChar((char)8226);
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->setAlignment(Java("com.aspose.slides.TextAlignment")->Left);
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->setDepth(2);
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->setIndent(40);
+    $para2->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
+    $para2->getParagraphFormat()->getBullet()->setChar((char)8226);
+    $para2->getParagraphFormat()->setAlignment(Java("com.aspose.slides.TextAlignment")->Left);
+    $para2->getParagraphFormat()->setDepth(2);
+    $para2->getParagraphFormat()->setIndent(40);
     
     // Get third Paragraph in the TextFrame and set its Indent
     $para3 = $tf->getParagraphs()->get_Item(2);
-    $para3->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    $para3->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setChar((char)8226);
-    $para3->getJava("com.aspose.slides.ParagraphFormat")->setAlignment(Java("com.aspose.slides.TextAlignment")->Left);
-    $para3->getJava("com.aspose.slides.ParagraphFormat")->setDepth(2);
-    $para3->getJava("com.aspose.slides.ParagraphFormat")->setIndent(50);
+    $para3->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
+    $para3->getParagraphFormat()->getBullet()->setChar((char)8226);
+    $para3->getParagraphFormat()->setAlignment(Java("com.aspose.slides.TextAlignment")->Left);
+    $para3->getParagraphFormat()->setDepth(2);
+    $para3->getParagraphFormat()->setIndent(50);
     
     //Write the Presentation to disk
     $pres->save("InOutDent_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

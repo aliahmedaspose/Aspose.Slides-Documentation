@@ -70,7 +70,7 @@ try {
             "to other though -- we told you PowerPoint's column options for text are limited!");
     
     // Get text format of TextFrame
-    $format = $aShape->getTextFrame()->getJava("com.aspose.slides.TextFrameFormat");
+    $format = $aShape->getTextFrame()->getTextFrameFormat();
     
     // Specify number of columns in TextFrame
     $format->setColumnCount(3);
@@ -94,7 +94,7 @@ The implementation is demonstrated below in an example.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     $shape1 = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 300, 300);
-    $format = $shape1getTextFrame()->getJava("com.aspose.slides.TextFrameFormat");
+    $format = $shape1getTextFrame()->getTextFrameFormat();
 
     $format->setColumnCount(2);
     $shape1->getTextFrame()->setText("All these columns are limited to be within a single text container -- " +
@@ -105,8 +105,8 @@ try {
 
     $test1 = new Java("com.aspose.slides.Presentation", "output_column1.pptx");
     try {
-        Assert.assertEquals(2, ($test1->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame()->getJava("com.aspose.slides.TextFrameFormat")->getColumnCount());
-        Assert.assertEquals(Double.NaN, ($test1->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame()->getJava("com.aspose.slides.TextFrameFormat")->getColumnSpacing());
+        Assert.assertEquals(2, ($test1->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame()->getTextFrameFormat()->getColumnCount());
+        Assert.assertEquals(Double.NaN, ($test1->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame()->getTextFrameFormat()->getColumnSpacing());
     } finally {
         if ($test1 != null) $test1->dispose();
     }
@@ -116,8 +116,8 @@ try {
 
     $test2 = new Java("com.aspose.slides.Presentation", "output_column2.pptx");
     try {
-        Assert.assertEquals(2, ($test2->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame()->getJava("com.aspose.slides.TextFrameFormat")->getColumnCount());
-        Assert.assertEquals(20, ($test2->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame()->getJava("com.aspose.slides.TextFrameFormat")->getColumnSpacing());
+        Assert.assertEquals(2, ($test2->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame()->getTextFrameFormat()->getColumnCount());
+        Assert.assertEquals(20, ($test2->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame()->getTextFrameFormat()->getColumnSpacing());
     } finally {
         if ($test2 != null) $test2->dispose();
     }
@@ -128,8 +128,8 @@ try {
 
     $test3 = new Java("com.aspose.slides.Presentation", "output_column3.pptx");
     try {
-        Assert.assertEquals(3, ($test3->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame()->getJava("com.aspose.slides.TextFrameFormat")->getColumnCount());
-        Assert.assertEquals(15, ($test3->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame()->getJava("com.aspose.slides.TextFrameFormat")->getColumnSpacing());
+        Assert.assertEquals(3, ($test3->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame()->getTextFrameFormat()->getColumnCount());
+        Assert.assertEquals(15, ($test3->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame()->getTextFrameFormat()->getColumnSpacing());
     } finally {
         if ($test3 != null) $test3->dispose();
     }

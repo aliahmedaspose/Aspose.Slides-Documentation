@@ -171,7 +171,7 @@ You can change the parameters for shadow, display, and glow. The effects’ prop
 
 We use the Transform property (inherent in the entire block of text) through this code:
 ```php 
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->setTransform(TextJava("com.aspose.slides.ShapeType")->ArchUpPour);
+$textFrame->getTextFrameFormat()->setTransform(TextJava("com.aspose.slides.ShapeType")->ArchUpPour);
 ```
 
 The result:
@@ -229,29 +229,29 @@ The resulting text and its shape:
 We apply a 3D effect to the text with this Java code:
 
 ```php
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getBevelBottom()->setBevelType(Java("com.aspose.slides.BevelPresetType")->Circle);
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getBevelBottom()->setHeight(3.5);
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getBevelBottom()->setWidth(3.5);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->getBevelBottom()->setBevelType(Java("com.aspose.slides.BevelPresetType")->Circle);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->getBevelBottom()->setHeight(3.5);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->getBevelBottom()->setWidth(3.5);
 
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getBevelTop()->setBevelType(Java("com.aspose.slides.BevelPresetType")->Circle);
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getBevelTop()->setHeight(4);
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getBevelTop()->setWidth(4);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->getBevelTop()->setBevelType(Java("com.aspose.slides.BevelPresetType")->Circle);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->getBevelTop()->setHeight(4);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->getBevelTop()->setWidth(4);
 
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getExtrusionColor()->setColor(Java("java.awt.Color")->ORANGE);
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->setExtrusionHeight(6);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->getExtrusionColor()->setColor(Java("java.awt.Color")->ORANGE);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->setExtrusionHeight(6);
 
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getContourColor()->setColor(Java("java.awt.Color")->RED);
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->setContourWidth(1.5);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->getContourColor()->setColor(Java("java.awt.Color")->RED);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->setContourWidth(1.5);
 
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->setDepth(3);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->setDepth(3);
 
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->setMaterial(MaterialPresetType.Plastic);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->setMaterial(MaterialPresetType.Plastic);
 
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getLightRig()->setDirection(Java("com.aspose.slides.LightingDirection")->Top);
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getLightRig()->setLightType(Java("com.aspose.slides.LightRigPresetType")->Balanced);
-$textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getLightRig()->setRotation(0, 0, 40);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->getLightRig()->setDirection(Java("com.aspose.slides.LightingDirection")->Top);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->getLightRig()->setLightType(Java("com.aspose.slides.LightRigPresetType")->Balanced);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->getLightRig()->setRotation(0, 0, 40);
 
-textFrame->getJava("com.aspose.slides.TextFrameFormat")->getThreeDFormat()->getCamera()->setCameraType(Java("com.aspose.slides.CameraPresetType")->PerspectiveContrastingRightFacing);
+textFrame->getTextFrameFormat()->getThreeDFormat()->getCamera()->setCameraType(Java("com.aspose.slides.CameraPresetType")->PerspectiveContrastingRightFacing);
 ```
 
 The result of the operation:

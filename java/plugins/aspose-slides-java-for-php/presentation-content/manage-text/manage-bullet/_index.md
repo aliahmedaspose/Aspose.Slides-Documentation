@@ -46,24 +46,24 @@ try {
     $para = new Java("com.aspose.slides.Paragraph");
     
     // Setting paragraph bullet style and symbol
-    $para->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    $para->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setChar((char) 8226);
+    $para->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
+    $para->getParagraphFormat()->getBullet()->setChar((char) 8226);
     
     // Setting paragraph text
     $para->setText("Welcome to Aspose.Slides");
     
     // Setting bullet indent
-    $para->getJava("com.aspose.slides.ParagraphFormat")->setIndent(25);
+    $para->getParagraphFormat()->setIndent(25);
     
     // Setting bullet color
-    $para->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->getColor()->setColorTypeJava("com.aspose.slides.ColorType")->RGB);
-    $para->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->getColor()->setColor(Java("java.awt.Color")->BLACK);
+    $para->getParagraphFormat()->getBullet()->getColor()->setColorTypeJava("com.aspose.slides.ColorType")->RGB);
+    $para->getParagraphFormat()->getBullet()->getColor()->setColor(Java("java.awt.Color")->BLACK);
     
     // set IsBulletHardColor to true to use own bullet color
-    $para->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->isBulletHardColor();
+    $para->getParagraphFormat()->getBullet()->isBulletHardColor();
     
     // Setting Bullet Height
-    $para->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setHeight(100);
+    $para->getParagraphFormat()->getBullet()->setHeight(100);
     
     // Adding Paragraph to text frame
     $txtFrm->getParagraphs()->add($para);
@@ -119,11 +119,11 @@ try {
     $para->setText("Welcome to Aspose.Slides");
 
     // Setting paragraph bullet style and image
-    $para->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setType(Java("com.aspose.slides.BulletType")->Picture);
-    $para->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->getPicture()->setImage($imgx);
+    $para->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Picture);
+    $para->getParagraphFormat()->getBullet()->getPicture()->setImage($imgx);
 
     // Setting Bullet Height
-    $para->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setHeight(100);
+    $para->getParagraphFormat()->getBullet()->setHeight(100);
 
     // Adding Paragraph to text frame
     $txtFrm->getParagraphs()->add($para);
@@ -173,45 +173,45 @@ try {
     $para1 = new Java("com.aspose.slides.Paragraph");
     // Setting paragraph bullet style and symbol
     $para2->setText("Content");
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setChar((char) 8226);
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
+    $para2->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
+    $para2->getParagraphFormat()->getBullet()->setChar((char) 8226);
+    $para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
+    $para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
     //Setting bullet level
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->setDepth (0);
+    $para2->getParagraphFormat()->setDepth (0);
     
     // Creating second paragraph
     $para2 = new Java("com.aspose.slides.Paragraph");
     // Setting paragraph bullet style and symbol
     $para2->setText("Second level");
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setChar('-');
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
+    $para2->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
+    $para2->getParagraphFormat()->getBullet()->setChar('-');
+    $para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
+    $para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
     //Setting bullet level
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->setDepth (1);
+    $para2->getParagraphFormat()->setDepth (1);
     
     // Creating third paragraph
     $para3 = new Java("com.aspose.slides.Paragraph");
     // Setting paragraph bullet style and symbol
     $para3->setText("Third level");
-    $para3->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    $para3->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setChar((char) 8226);
-    $para3->getJava("com.aspose.slides.ParagraphFormat")->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
-    $para3->getJava("com.aspose.slides.ParagraphFormat")->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
+    $para3->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
+    $para3->getParagraphFormat()->getBullet()->setChar((char) 8226);
+    $para3->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
+    $para3->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
     //Setting bullet level
-    $para3->getJava("com.aspose.slides.ParagraphFormat")->setDepth (2);
+    $para3->getParagraphFormat()->setDepth (2);
     
     // Creating fourth paragraph
     $para4 = new Java("com.aspose.slides.Paragraph");
     // Setting paragraph bullet style and symbol
     $para4->setText("Fourth Level");
-    $para4->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    $para4->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setChar('-');
-    $para4->getJava("com.aspose.slides.ParagraphFormat")->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
-    $para4->getJava("com.aspose.slides.ParagraphFormat")->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
+    $para4->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
+    $para4->getParagraphFormat()->getBullet()->setChar('-');
+    $para4->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->setFillType ((byte)Java("com.aspose.slides.FillType")->Solid);
+    $para4->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
     //Setting bullet level
-    $para4->getJava("com.aspose.slides.ParagraphFormat")->setDepth (3);
+    $para4->getParagraphFormat()->setDepth (3);
     
     // Adding Paragraph to text frame
     $txtFrm->getParagraphs()->add($para1);
@@ -261,24 +261,24 @@ try {
     // First list
     $paragraph1 = new Java("com.aspose.slides.Paragraph");
     $paragraph1->setText("bullet 2");
-    $paragraph1->getJava("com.aspose.slides.ParagraphFormat")->setDepth(4);
-    $paragraph1->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setNumberedBulletStartWith(2);
-    $paragraph1->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setType(Java("com.aspose.slides.BulletType")->Numbered);
+    $paragraph1->getParagraphFormat()->setDepth(4);
+    $paragraph1->getParagraphFormat()->getBullet()->setNumberedBulletStartWith(2);
+    $paragraph1->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Numbered);
     $txtFrm->getParagraphs()->add($paragraph1);
 
     $paragraph2 = new Java("com.aspose.slides.Paragraph");
     $paragraph2->setText("bullet 3");
-    $paragraph2->getJava("com.aspose.slides.ParagraphFormat")->setDepth(4);
-    $paragraph2->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setNumberedBulletStartWith(3);
-    $paragraph2->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setType(Java("com.aspose.slides.BulletType")->Numbered);
+    $paragraph2->getParagraphFormat()->setDepth(4);
+    $paragraph2->getParagraphFormat()->getBullet()->setNumberedBulletStartWith(3);
+    $paragraph2->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Numbered);
     $txtFrm->getParagraphs()->add($paragraph2);
 
     // Second list
     $paragraph5 = new Java("com.aspose.slides.Paragraph");
     $paragraph5->setText("bullet 5");
-    $paragraph5->getJava("com.aspose.slides.ParagraphFormat")->setDepth(4);
-    $paragraph5->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setNumberedBulletStartWith(5);
-    $paragraph5->getJava("com.aspose.slides.ParagraphFormat")->getBullet()->setType(Java("com.aspose.slides.BulletType")->Numbered);
+    $paragraph5->getParagraphFormat()->setDepth(4);
+    $paragraph5->getParagraphFormat()->getBullet()->setNumberedBulletStartWith(5);
+    $paragraph5->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Numbered);
     $txtFrm->getParagraphs()->add($paragraph5);
 
     $pres->save(resourcesOutputPath + "SetCustomBulletsNumber-slides.pptx.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

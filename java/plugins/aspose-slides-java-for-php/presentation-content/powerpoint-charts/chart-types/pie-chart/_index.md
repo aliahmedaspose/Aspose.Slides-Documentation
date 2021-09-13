@@ -59,7 +59,7 @@ try {
 
     // Setting chart Title
     $chart->getChartTitle()->addTextFrameForOverriding("Sample Title");
-    $chart->getChartTitle()->getTextFrameForOverriding()->getJava("com.aspose.slides.TextFrameFormat")->setCenterText(Java("com.aspose.slides.NullableBool")->True);
+    $chart->getChartTitle()->getTextFrameForOverriding()->getTextFrameFormat()->setCenterText(Java("com.aspose.slides.NullableBool")->True);
     $chart->getChartTitle()->setHeight(20);
     $chart->setTitle(true);
 

@@ -80,8 +80,8 @@ try {
     $para2 = $tf2->getParagraphs()->get_Item(0);
 
     // Aligning the text paragraph to center
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->setAlignment(Java("com.aspose.slides.TextAlignment")->Center);
-    $para2->getJava("com.aspose.slides.ParagraphFormat")->setAlignment(Java("com.aspose.slides.TextAlignment")->Center);
+    $para2->getParagraphFormat()->setAlignment(Java("com.aspose.slides.TextAlignment")->Center);
+    $para2->getParagraphFormat()->setAlignment(Java("com.aspose.slides.TextAlignment")->Center);
 
     //Writing the presentation as a PPTX file
     $pres->save("Centeralign_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -275,7 +275,7 @@ try {
     
     // Accessing the text frame
     $txtFrame = $ashp->getTextFrame();
-    $txtFrame->getJava("com.aspose.slides.TextFrameFormat")->setTextVerticalType(Java("com.aspose.slides.TextVerticalType")->Vertical270);
+    $txtFrame->getTextFrameFormat()->setTextVerticalType(Java("com.aspose.slides.TextVerticalType")->Vertical270);
     
     // Create the Paragraph object for text frame
     $para = $txtFrame->getParagraphs()->get_Item(0);
@@ -319,7 +319,7 @@ try {
 
     // Accessing the text frame
     $txtFrame = $ashp->getTextFrame();
-    $txtFrame->getJava("com.aspose.slides.TextFrameFormat")->setRotationAngle(25);
+    $txtFrame->getTextFrameFormat()->setRotationAngle(25);
 
     // Create the Paragraph object for text frame
     $para = $txtFrame->getParagraphs()->get_Item(0);
@@ -361,9 +361,9 @@ try {
     $para = $tf1->getParagraphs()->get_Item(0);
     
     // Set properties of Paragraph
-    $para->getJava("com.aspose.slides.ParagraphFormat")->setSpaceWithin(80);
-    $para->getJava("com.aspose.slides.ParagraphFormat")->setSpaceBefore(40);
-    $para->getJava("com.aspose.slides.ParagraphFormat")->setSpaceAfter(40);
+    $para->getParagraphFormat()->setSpaceWithin(80);
+    $para->getParagraphFormat()->setSpaceBefore(40);
+    $para->getParagraphFormat()->setSpaceAfter(40);
     
     // Save Presentation
     $pres->save("LineSpacing_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -398,7 +398,7 @@ try {
 
     // Accessing the text frame
     $txtFrame = $ashp->getTextFrame();
-    $txtFrame->getJava("com.aspose.slides.TextFrameFormat")->setAutofitType(Java("com.aspose.slides.TextAutofitType")->Shape);
+    $txtFrame->getTextFrameFormat()->setAutofitType(Java("com.aspose.slides.TextAutofitType")->Shape);
 
     // Create the Paragraph object for text frame
     $para = $txtFrame->getParagraphs()->get_Item(0);
@@ -442,7 +442,7 @@ try {
     
     // Accessing the text frame
     $txtFrame = $ashp->getTextFrame();
-    $txtFrame->getJava("com.aspose.slides.TextFrameFormat")->setAnchoringType(Java("com.aspose.slides.TextAnchorType")->Bottom);
+    $txtFrame->getTextFrameFormat()->setAnchoringType(Java("com.aspose.slides.TextAnchorType")->Bottom);
     
     // Create the Paragraph object for text frame
     $para = $txtFrame->getParagraphs()->get_Item(0);

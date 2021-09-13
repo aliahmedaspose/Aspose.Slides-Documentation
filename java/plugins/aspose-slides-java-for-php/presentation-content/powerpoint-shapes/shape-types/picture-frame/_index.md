@@ -39,7 +39,7 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
     
     // Instantiate the Image class
-    $imgx = $pres->getImages()->addImage(new FileInputStream(new Java("java.io.File", "asp1.jpg")));
+    $imgx = $pres->getImages()->addImage(new Java("java.io.FileInputStream", new Java("java.io.File", "asp1.jpg")));
     
     // Add Picture Frame with height and width equivalent of Picture
     $sld->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, $imgx->getWidth(), $imgx->getHeight(), $imgx);
@@ -72,7 +72,7 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
     
     // Instantiate the Image class
-    $imgx = $pres->getImages()->addImage(new FileInputStream(new Java("java.io.File", "asp1.jpg")));
+    $imgx = $pres->getImages()->addImage(new Java("java.io.FileInputStream", new Java("java.io.File", "asp1.jpg")));
     
     
     // Add Picture Frame with height and width equivalent of Picture
@@ -116,7 +116,7 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
     
     // Instantiate the Image class
-    $imgx = $pres->getImages()->addImage(new FileInputStream(new Java("java.io.File", "asp1.jpg")));
+    $imgx = $pres->getImages()->addImage(new Java("java.io.FileInputStream", new Java("java.io.File", "asp1.jpg")));
     
     // Add Picture Frame with height and width equivalent of Picture
     $pf = $sld->getShapes()->addPictureFrame(Java("com.aspose.slides.ShapeType")->Rectangle, 50, 150, $imgx->getWidth(), $imgx->getHeight(), $imgx);

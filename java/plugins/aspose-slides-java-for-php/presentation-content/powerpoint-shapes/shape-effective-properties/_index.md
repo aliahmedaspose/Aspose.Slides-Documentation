@@ -191,7 +191,7 @@ try {
     $tbl = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     $tableFormatEffective = $tbl->getTableFormat()->getEffective();
     $rowFormatEffective = $tbl->getRows()->get_Item(0)->getRowFormat()->getEffective();
-    I$columnFormatEffective = $tbl->getColumns()->get_Item(0)->getColumnFormat()->getEffective();
+    $columnFormatEffective = $tbl->getColumns()->get_Item(0)->getColumnFormat()->getEffective();
     $cellFormatEffective = $tbl->get_Item(0, 0)->getCellFormat()->getEffective();
 
     $tableFillFormatEffective = $tableFormatEffective->getFillFormat();

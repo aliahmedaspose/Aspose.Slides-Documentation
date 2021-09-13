@@ -221,7 +221,7 @@ try {
     $shp->getFillFormat()->getPictureFillFormat()->setPictureFillMode(Java("com.aspose.slides.PictureFillMode")->Tile);
     
     // Set the picture
-    $imgx = $pres->getImages()->addImage(new FileInputStream(new Java("java.io.File", "aspose1.jpg")));
+    $imgx = $pres->getImages()->addImage(new Java("java.io.FileInputStream", new Java("java.io.File", "aspose1.jpg")));
     $shp->getFillFormat()->getPictureFillFormat()->getPicture()->setImage($imgx);
     
     // Write the PPTX file to disk

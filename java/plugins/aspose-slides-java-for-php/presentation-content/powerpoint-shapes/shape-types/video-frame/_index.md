@@ -25,7 +25,7 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
     
     // Embed video inside presentation
-    $vid = $pres->getVideos()->addVideo(new FileInputStream(new Java("java.io.File", "Wildlife.mp4")));
+    $vid = $pres->getVideos()->addVideo(new Java("java.io.FileInputStream", new Java("java.io.File", "Wildlife.mp4")));
 
     // Add Video Frame
     $vf = $sld->getShapes()->addVideoFrame(50, 150, 300, 350, $vid);

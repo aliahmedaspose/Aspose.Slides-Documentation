@@ -25,7 +25,7 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Load the wav sound file to stram
-    $fstr = new FileInputStream(new Java("java.io.File", "audio.wav"));
+    $fstr = new Java("java.io.FileInputStream", new Java("java.io.File", "audio.wav"));
 
     // Add Audio Frame
     $af = $sld->getShapes()->addAudioFrameEmbedded(50, 150, 100, 100, $fstr);

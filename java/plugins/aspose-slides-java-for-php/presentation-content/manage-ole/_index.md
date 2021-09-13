@@ -203,8 +203,8 @@ try {
     $Array = new JavaClass("java.lang.reflect.Array");
     $Byte = new JavaClass("java.lang.Byte");
     $htmlBytes = $Array->newInstance($Byte, $file->length());
-    try {
     $dis = new Java("java.io.DataInputStream", new Java("java.io.FileInputStream", $file));
+    try {
     $dis->readFully($htmlBytes);
     } finally {
             if ($dis != null) $dis->close();
@@ -215,8 +215,8 @@ try {
     
     $zipFile = new Java("java.io.File", "embedOle.zip");
     $zipBytes = $Array->newInstance($Byte, $zipFile->length());
-    try {
     $zDis = new Java("java.io.DataInputStream", new Java("java.io.FileInputStream", $zipFile));
+    try {
     $zDis->readFully($zipBytes);
     } finally {
                 if ($zDis != null) $zDis->close();

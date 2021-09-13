@@ -27,9 +27,18 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Define columns with widths and rows with heights
-    double[] $dblCols = {50, 50, 50};
-    double[] $dblRows = {50, 30, 30, 30, 30};
-
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $Double = new JavaClass("java.lang.Double");
+    $dblCols = $Array->newInstance($Double, 3);
+    $dblCols[0] = 50;
+    $dblCols[1] = 50;
+    $dblCols[2] = 50;
+    $dblRows = $Array->newInstance($Double, 5);
+    $dblRows[0] = 50;
+    $dblRows[1] = 30;
+    $dblRows[2] = 30;
+    $dblRows[3] = 30;
+    $dblRows[4] = 30;
     // Add table shape to slide
     $tbl = $sld->getShapes()->addTable(100, 50, $dblCols, $dblRows);
 
@@ -128,9 +137,18 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
     
     // Define columns with widths and rows with heights
-    double[] $dblCols = { 120, 120, 120, 120 };
-    double[] $dblRows = { 100, 100, 100, 100 };
-    
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $Double = new JavaClass("java.lang.Double");
+    $dblCols = $Array->newInstance($Double, 4);
+    $dblCols[0] = 120;
+    $dblCols[1] = 120;
+    $dblCols[2] = 120;
+    $dblCols[3] = 120;
+    $dblRows = $Array->newInstance($Double, 4);
+    $dblRows[0] = 100;
+    $dblRows[1] = 100;
+    $dblRows[2] = 100;
+    $dblRows[3] = 100;     
     // Add table shape to slide
     $tbl = $slide->getShapes()->addTable(100, 50, $dblCols, $dblRows);
     $tbl->get_Item(1, 0)->getTextFrame()->setText("10");
@@ -218,9 +236,18 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Define columns with widths and rows with heights
-    double[] $dblCols = { 70, 70, 70, 70 };
-    double[] $dblRows = { 70, 70, 70, 70 };
-
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $Double = new JavaClass("java.lang.Double");
+    $dblCols = $Array->newInstance($Double, 4);
+    $dblCols[0] = 70;
+    $dblCols[1] = 70;
+    $dblCols[2] = 70;
+    $dblCols[3] = 70;
+    $dblRows = $Array->newInstance($Double, 4);
+    $dblRows[0] = 70;
+    $dblRows[1] = 70;
+    $dblRows[2] = 70;
+    $dblRows[3] = 70; 
     // Add table shape to slide
     $tbl = $sld->getShapes()->addTable(100, 50, $dblCols, $dblRows);
 

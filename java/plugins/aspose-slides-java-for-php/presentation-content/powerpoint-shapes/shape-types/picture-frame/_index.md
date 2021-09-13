@@ -158,7 +158,7 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
 
     // Instantiate the ImageEx class
-    $img = ImageIO->read(new Java("java.io.File", "aspose-logo.jpg"));
+    $img = Java("java.io.ImageIO")->read(new Java("java.io.File", "aspose-logo.jpg"));
     $imgEx = $pres->getImages()->addImage($img);
 
     // Add an AutoShape of Rectangle type

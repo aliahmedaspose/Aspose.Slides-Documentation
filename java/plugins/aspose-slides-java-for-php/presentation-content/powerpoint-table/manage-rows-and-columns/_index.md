@@ -57,9 +57,18 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
 
     // Define columns with widths and rows with heights
-    double[] $dblCols = { 50, 50, 50 };
-    double[] $dblRows = { 50, 30, 30, 30, 30 };
-
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $Double = new JavaClass("java.lang.Double");
+    $dblCols = $Array->newInstance($Double, 3);
+    $dblCols[0] = 50;
+    $dblCols[1] = 50;
+    $dblCols[2] = 50;
+    $dblRows = $Array->newInstance($Double, 5);
+    $dblRows[0] = 50;
+    $dblRows[1] = 30;
+    $dblRows[2] = 30;
+    $dblRows[3] = 30;
+    $dblRows[4] = 30;
     // Add table shape to slide
     $table = $sld->getShapes()->addTable(100, 50, $dblCols, $dblRows);
 
@@ -111,9 +120,16 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     $slide = $pres->getSlides()->get_Item(0);
     
-    double[] colWidth = { 100, 50, 30 };
-    double[] rowHeight = { 30, 50, 30 };
-
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $Double = new JavaClass("java.lang.Double");
+    $dblCols = $Array->newInstance($Double, 3);
+    $dblCols[0] = 100;
+    $dblCols[1] = 50;
+    $dblCols[2] = 30;
+    $dblRows = $Array->newInstance($Double, 3);
+    $dblRows[0] = 30;
+    $dblRows[1] = 50;
+    $dblRows[2] = 30;
     $table = $slide->getShapes()->addTable(100, 100, colWidth, rowHeight);
     $table->getRows()->removeAt(1, false);
     $table->getColumns()->removeAt(1, false);

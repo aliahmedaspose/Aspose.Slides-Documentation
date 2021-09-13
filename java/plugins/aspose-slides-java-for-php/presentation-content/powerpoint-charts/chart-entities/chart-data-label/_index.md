@@ -42,12 +42,14 @@ try {
     
     $chart = $slide->getShapes()->addChart(Java("com.aspose.slides.ChartType")->StackedColumn, 20, 20, 400, 400);
     $series;
-    double[] total_for_Cat = new double[chart->getChartData()->getCategories()->size()];
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $Double = new JavaClass("java.lang.Double");
+    $total_for_Cat = $Array->newInstance($Double, chart->getChartData()->getCategories()->size());
     for ($k = 0; k < $chart->getChartData()->getCategories()->size(); k++) {
         $cat = $chart->getChartData()->getCategories()->get_Item(k);
     
         for ($i = 0; $i < $chart->getChartData()->getSeries()->size(); $i++) {
-            total_for_Cat[k] = total_for_Cat[k] + ($chart->getChartData()->getSeries()->get_Item($i)->getDataPoints()->get_Item(k)->getValue()->getData());
+            $total_for_Cat[k] = $total_for_Cat[k] + ($chart->getChartData()->getSeries()->get_Item($i)->getDataPoints()->get_Item(k)->getValue()->getData());
         }
     }
     

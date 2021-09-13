@@ -103,7 +103,7 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
 
     // Instantiate the image for bullets
-    $img = ImageIO->read(new Java("java.io.File", "asp1.jpg"));
+    $img = Java("java.io.ImageIO")->read(new Java("java.io.File", "asp1.jpg"));
     $imgx = $pres->getImages()->addImage($img);
 
     // Adding and accessing Autoshape

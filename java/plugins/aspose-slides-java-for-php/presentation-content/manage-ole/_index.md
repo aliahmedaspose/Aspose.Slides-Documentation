@@ -199,12 +199,28 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     $slide = $pres->getSlides()->get_Item(0);
 
-    byte[] htmlBytes = Files->readAllBytes(Paths->get("embedOle.html"));
+    $file = new Java("java.io.File", "embedOle.html");
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $Byte = new JavaClass("java.lang.Byte");
+    $htmlBytes = $Array->newInstance($Byte, $file->length());
+    try {
+    $dis = new Java("java.io.DataInputStream", new Java("java.io.FileInputStream", $file));
+    $dis->readFully($htmlBytes);
+    } finally {
+            if ($dis != null) $dis->close();
+        }
     $dataInfoHtml = new Java("com.aspose.slides.OleEmbeddedDataInfo", $htmlBytes, "html");
     $oleFrameHtml = $slide->getShapes()->addOleObjectFrame(150, 120, 50, 50, $dataInfoHtml);
     $oleFrameHtml->setObjectIcon(true);
-
-    byte[] zipBytes = Files->readAllBytes(Paths->get("embedOle.zip"));
+    
+    $zipFile = new Java("java.io.File", "embedOle.zip");
+    $zipBytes = $Array->newInstance($Byte, $zipFile->length());
+    try {
+    $zDis = new Java("java.io.DataInputStream", new Java("java.io.FileInputStream", $zipFile));
+    $zDis->readFully($zipBytes);
+    } finally {
+                if ($zDis != null) $zDis->close();
+            }
     $dataInfoZip = new Java("com.aspose.slides.OleEmbeddedDataInfo", $zipBytes, "zip");
     $oleFrameZip = $slide->getShapes()->addOleObjectFrame(150, 220, 50, 50, $dataInfoZip);
     $oleFrameZip->setObjectIcon(true);

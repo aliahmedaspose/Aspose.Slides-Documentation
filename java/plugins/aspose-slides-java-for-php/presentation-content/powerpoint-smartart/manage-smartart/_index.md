@@ -104,7 +104,7 @@ try {
     $smart = $pres->getSlides()->get_Item(0)->getShapes()->addSmartArt(10, 10, 400, 300, Java("com.aspose.slides.SmartArtLayoutType")->OrganizationChart);
 
     // Get or Set the organization chart type
-    $smart->getNodes()->get_Item(0)->setOrganizationChartLayout(Java("com.aspose.slides.OrganizationChartLayoutType")->.LeftHanging);
+    $smart->getNodes()->get_Item(0)->setOrganizationChartLayout(Java("com.aspose.slides.OrganizationChartLayoutType")->LeftHanging);
 
     // Saving Presentation
     $pres->save("OrganizeChartLayoutType_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

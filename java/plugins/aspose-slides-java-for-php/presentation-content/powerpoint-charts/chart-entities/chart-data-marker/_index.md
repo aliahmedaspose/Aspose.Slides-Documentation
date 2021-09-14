@@ -36,7 +36,7 @@ try {
     $chart->getChartData()->getSeries()->clear();
     
     // Add new series
-    $chart->getChartData()->getSeries()->add(fact->getCell($defaultWorksheetIndex, 1, 1, "Series 1"), $chart->getType());
+    $chart->getChartData()->getSeries()->add($fact->getCell($defaultWorksheetIndex, 1, 1, "Series 1"), $chart->getType());
 
     // Load the picture 1
     $imgx1 = $pres->getImages()->addImage(new Java("java.io.FileInputStream", new Java("java.io.File", "Desert.jpg")));
@@ -48,19 +48,19 @@ try {
     $series = $chart->getChartData()->getSeries()->get_Item(0);
     
     // Add new point (1:3) there.
-    $point = $series->getDataPoints()->addDataPointForLineSeries(fact->getCell($defaultWorksheetIndex, 1, 1, 4.5));
+    $point = $series->getDataPoints()->addDataPointForLineSeries($fact->getCell($defaultWorksheetIndex, 1, 1, 4.5));
     $point->getMarker()->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Picture);
     $point->getMarker()->getFormat()->getFill()->getPictureFillFormat()->getPicture()->setImage($imgx1);
     
-    $point = $series->getDataPoints()->addDataPointForLineSeries(fact->getCell($defaultWorksheetIndex, 2, 1, 2.5));
+    $point = $series->getDataPoints()->addDataPointForLineSeries($fact->getCell($defaultWorksheetIndex, 2, 1, 2.5));
     $point->getMarker()->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Picture);
     $point->getMarker()->getFormat()->getFill()->getPictureFillFormat()->getPicture()->setImage($imgx2);
     
-    $point = $series->getDataPoints()->addDataPointForLineSeries(fact->getCell($defaultWorksheetIndex, 3, 1, 3.5));
+    $point = $series->getDataPoints()->addDataPointForLineSeries($fact->getCell($defaultWorksheetIndex, 3, 1, 3.5));
     $point->getMarker()->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Picture);
     $point->getMarker()->getFormat()->getFill()->getPictureFillFormat()->getPicture()->setImage($imgx1);
     
-    $point = $series->getDataPoints()->addDataPointForLineSeries(fact->getCell($defaultWorksheetIndex, 4, 1, 4.5));
+    $point = $series->getDataPoints()->addDataPointForLineSeries($fact->getCell($defaultWorksheetIndex, 4, 1, 4.5));
     $point->getMarker()->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Picture);
     $point->getMarker()->getFormat()->getFill()->getPictureFillFormat()->getPicture()->setImage($imgx2);
     

@@ -46,9 +46,9 @@ try {
 
     $os = new Java("java.io.FileOutputStream", "Save_As_Stream_out.pptx");
 
-    $pres->save(os, Java("com.aspose.slides.SaveFormat")->Pptx);
+    $pres->save($os, Java("com.aspose.slides.SaveFormat")->Pptx);
 
-    os->close();
+    $os->close();
 } catch (JavaException $e) {
 } finally {
     if ($pres != null) $pres->dispose();

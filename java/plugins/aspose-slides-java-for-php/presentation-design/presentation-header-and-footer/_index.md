@@ -28,7 +28,7 @@ try {
 
     // Access and Update Header
     $masterNotesSlide = $pres->getMasterNotesSlideManager()->getMasterNotesSlide();
-    if ($null != $masterNotesSlide)
+    if (null != $masterNotesSlide)
     {
         updateHeaderFooterText($masterNotesSlide);
     }
@@ -91,7 +91,7 @@ try {
     }
 
     // Change Header and Footer settings for first notes slide only
-    INotesSlide notesSlide = $pres->getSlides()->get_Item(0)->getNotesSlideManager()->getNotesSlide();
+    $notesSlide = $pres->getSlides()->get_Item(0)->getNotesSlideManager()->getNotesSlide();
     if ($notesSlide != null)
     {
         $headerFooterManager = notesSlide->getHeaderFooterManager();

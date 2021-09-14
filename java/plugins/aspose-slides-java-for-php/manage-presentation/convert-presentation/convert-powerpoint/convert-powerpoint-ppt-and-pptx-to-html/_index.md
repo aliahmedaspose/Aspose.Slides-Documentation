@@ -105,7 +105,11 @@ Preserve original fonts that are used in presentation while converting PPT(X) to
 $pres = new Java("com.aspose.slides.Presentation", "input.pptx");
 try {
     // exclude default presentation fonts
-    String[] fontNameExcludeList = { "Calibri", "Arial" };
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $String = new JavaClass("java.lang.String");
+    $fontNameExcludeList = $Array->newInstance($String, 2);
+    $fontNameExcludeList[0] = "Calibri";
+    $fontNameExcludeList[1] = "Arial";
 
     $embedFontsController = new Java("com.aspose.slides.EmbedAllFontsHtmlController", $fontNameExcludeList);
 
@@ -228,9 +232,13 @@ $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try
 {
     //Exclude default presentation fonts
-    String[] fontNameExcludeList = { "Calibri", "Arial" };
-
-    $linkcont = new Java("com.aspose.slides.LinkAllFontsHtmlController", fontNameExcludeList,"C:/Windows/Fonts/");
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $String = new JavaClass("java.lang.String");
+    $fontNameExcludeList = $Array->newInstance($String, 2);
+    $fontNameExcludeList[0] = "Calibri";
+    $fontNameExcludeList[1] = "Arial";
+    
+    $linkcont = new Java("com.aspose.slides.LinkAllFontsHtmlController", $fontNameExcludeList,"C:/Windows/Fonts/");
 
     $htmlOptionsEmbed = new Java("com.aspose.slides.HtmlOptions");
     $htmlOptionsEmbed->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter(($linkcont));
@@ -247,7 +255,7 @@ public class LinkAllFontsHtmlController extends EmbedAllFontsHtmlController
 {
     private $m_basePath;
 
-    public LinkAllFontsHtmlController(String[] fontNameExcludeList, String basePath)
+    public LinkAllFontsHtmlController(String[] $fontNameExcludeList, String basePath)
     {
         super($fontNameExcludeList);
         m_basePath = basePath;

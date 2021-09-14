@@ -91,7 +91,7 @@ try {
     $options->getNotesCommentsLayouting()->setCommentsAreaColor(Java("java.awt.Color")->LIGHT_GRAY);
 
     // Convert the first slide of the presentation to a Bitmap object
-    $bmp = $pres->getSlides()->get_Item(0)->getThumbnail(options, 2, 2);
+    $bmp = $pres->getSlides()->get_Item(0)->getThumbnail($options, 2, 2);
 
     // Save the image in GIF format
     Java("javax.imageio.ImageIO")->write($bmp, "GIF", new Java("java.io.File", "Slide_Notes_Comments_0.gif"));

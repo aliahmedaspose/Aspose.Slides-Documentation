@@ -33,7 +33,7 @@ The implementation of the above steps is demonstrated in the example below.
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Create new VBA Project
-    $pres->setVbaProject(new VbaProject());
+    $pres->setVbaProject(new Java("com.aspose.slides.VbaProject"));
     
     // Add empty module to the VBA project
     $module = $pres->getVbaProject()->getModules()->addEmptyModule("Module");
@@ -42,10 +42,10 @@ try {
     $module->setSourceCode("Sub Test(oShape As Shape)MsgBox Test End Sub");
     
     // Create reference to <stdole>
-    $stdoleReference = new VbaReferenceOleTypeLib("stdole", "*\\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\\Windows\\system32\\stdole2.tlb#OLE Automation");
+    $stdoleReference = new Java("com.aspose.slides.VbaReferenceOleTypeLib", "stdole", "*\\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\\Windows\\system32\\stdole2.tlb#OLE Automation");
     
     // Create reference to Office
-    $officeReference = new VbaReferenceOleTypeLib("Office",
+    $officeReference = new Java("com.aspose.slides.VbaReferenceOleTypeLib", "Office",
             "*\\G{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}#2.0#0#C:\\Program Files\\Common Files\\Microsoft Shared\\OFFICE14\\MSO.DLL#Microsoft Office 14.0 Object Library");
     
     // Add references to the VBA project

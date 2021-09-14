@@ -184,7 +184,7 @@ try {
     $shape->getTextFrame()->getParagraphs()->add($para1);
     $shape->getTextFrame()->getParagraphs()->add($para2);
 
-    $pres->save(resourcesOutputPath+"pres.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+    $pres->save($resourcesOutputPath+"pres.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -268,7 +268,7 @@ try {
 
     //Extracting first paragraph as HTML
     // Writing Paragraphs data to HTML by providing paragraph starting index, total paragraphs to be copied
-    $writer->write($ashape->getTextFrame()->getParagraphs().exportToHtml(0, $ashape->getTextFrame()->getParagraphs()->getCount(), null));
+    $writer->write($ashape->getTextFrame()->getParagraphs()->exportToHtml(0, $ashape->getTextFrame()->getParagraphs()->getCount(), null));
     $writer->close();
 } catch (JavaException $e) {
 } finally {

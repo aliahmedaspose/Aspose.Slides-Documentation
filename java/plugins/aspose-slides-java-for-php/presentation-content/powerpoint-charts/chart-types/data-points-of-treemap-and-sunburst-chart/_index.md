@@ -52,7 +52,7 @@ Show value of "Leaf 4" data point:
 
 ```php
 $dataPoints = $chart->getChartData()->getSeries()->get_Item(0)->getDataPoints();
-dataPoints->get_Item(3)->getDataPointLevels()->get_Item(0)->getLabel()->getDataLabelFormat()->setShowValue(true);
+$dataPoints->get_Item(3)->getDataPointLevels()->get_Item(0)->getLabel()->getDataLabelFormat()->setShowValue(true);
 ```
 
 ![todo:image_alt_text](https://lh6.googleusercontent.com/bKHMf5Bj37ZkMwUE1OfXjw7_CRmDhafhQOUuVWDmitwbtdkwD68ibWluY6Q1HQz_z2Q-BR_SBrBPZ_gID5bGH0PUqI5w37S22RT-ZZal6k7qIDstKntYi5QXS8z-SgpnsI78WGiu)
@@ -61,12 +61,12 @@ dataPoints->get_Item(3)->getDataPointLevels()->get_Item(0)->getLabel()->getDataL
 Set "Branch 1" data label to show series name ("Series1") instead of category name. Then set text color to yellow:
 
 ```php
-$branch1Label = dataPoints->get_Item(0)->getDataPointLevels()->get_Item(0)->getLabel();
-branch1Label->getDataLabelFormat()->setShowCategoryName(false);
-branch1Label->getDataLabelFormat()->setShowSeriesName(true);
+$branch1Label = $dataPoints->get_Item(0)->getDataPointLevels()->get_Item(0)->getLabel();
+$branch1Label->getDataLabelFormat()->setShowCategoryName(false);
+$branch1Label->getDataLabelFormat()->setShowSeriesName(true);
 
-branch1Label->getDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-branch1Label->getDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->YELLOW);
+$branch1Label->getDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+$branch1Label->getDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->YELLOW);
 ```
 
 ![todo:image_alt_text](https://lh6.googleusercontent.com/I9g0kewJnxkhUVlfSWRN39Ng-wzjWyRwF3yTbOD9HhLTLBt_sMJiEfDe7vOfqRNx89o9AVZsYTW3Vv_TIuj4EgM4_UEEi7zQ3jdvaO8FoG2JcsOqNRgbiE5HQZNz8xx_q9qdj8JQ)
@@ -81,10 +81,10 @@ try {
 
     $dataPoints = $chart->getChartData()->getSeries()->get_Item(0)->getDataPoints();
 
-    IChartDataPointLevel stem4branch = dataPoints->get_Item(9)->getDataPointLevels()->get_Item(1);
+    $stem4branch = $dataPoints->get_Item(9)->getDataPointLevels()->get_Item(1);
 
-    stem4branch->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    stem4branch->getFormat()->getFill()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
+    $stem4branch->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
+    $stem4branch->getFormat()->getFill()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
 
     $pres->save("pres.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

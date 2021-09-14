@@ -61,7 +61,7 @@ The [**MathParagraph**](https://apireference.aspose.com/slides/java/com.aspose.
 ```php
 $fraction = new Java("com.aspose.slides.MathematicalText", "x")->divide("y");
 
-$mathParagraph->add(new MathBlock(fraction));
+$mathParagraph->add(new Java("com.aspose.slides.MathBlock", $fraction));
 ``` 
 
 Each mathematical element is represented by some class that implements the [**IMathElement**](https://apireference.aspose.com/slides/java/com.aspose.slides/IMathElement) interface. This interface provides a lot of methods for easily creating mathematical expressions. You can create a fairly complex mathematical expression with a single line of code. For example, the Pythagorean theorem would look like this:
@@ -88,7 +88,7 @@ try {
     
     $fraction = new Java("com.aspose.slides.MathematicalText", "x")->divide("y");
 
-    $mathParagraph->add(new MathBlock(fraction));
+    $mathParagraph->add(new Java("com.aspose.slides.MathBlock", $fraction));
 
     $mathBlock = new Java("com.aspose.slides.MathematicalText", "c")
             ->setSuperscript("2")
@@ -96,7 +96,7 @@ try {
             ->join(new Java("com.aspose.slides.MathematicalText", "a")->setSuperscript("2"))
             ->join("+")
             ->join(new Java("com.aspose.slides.MathematicalText", "b")->setSuperscript("2"));
-    $mathParagraph->add(mathBlock);
+    $mathParagraph->add($mathBlock);
 
     $pres->save("math.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

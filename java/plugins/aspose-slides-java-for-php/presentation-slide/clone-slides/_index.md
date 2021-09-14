@@ -197,7 +197,7 @@ try {
     $presentation->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 50, 300, 100);
     $presentation->getSections()->addSection("Section 1", $presentation->getSlides()->get_Item(0));
 
-    $section2 = $presentation->getSections().appendEmptySection("Section 2");
+    $section2 = $presentation->getSections()->appendEmptySection("Section 2");
     $presentation->getSlides()->addClone($presentation->getSlides()->get_Item(0), $section2);
     
 	// Save the destination presentation to disk

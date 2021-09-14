@@ -19,8 +19,8 @@ try {
     $textHighlightingOptions = new  Java("com.aspose.slides.TextHighlightingOptions");
     $textHighlightingOptions->setWholeWordsOnly(true);
     
-    $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame().highlightText("title", Java("java.awt.Color")->BLUE); // highlighting all words 'important'
-    $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame().highlightText("to", Java("java.awt.Color")->MAGENTA, $textHighlightingOptions);// highlighting all separate 'the' occurrences
+    $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame()->highlightText("title", Java("java.awt.Color")->BLUE); // highlighting all words 'important'
+    $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame()->highlightText("to", Java("java.awt.Color")->MAGENTA, $textHighlightingOptions);// highlighting all separate 'the' occurrences
     
     $pres->save("OutputPresentation-highlight.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -40,7 +40,7 @@ $pres = new Java("com.aspose.slides.Presentation", "Presentation.pptx");
 try {
     $options = new  Java("com.aspose.slides.TextHighlightingOptions");
     
-    $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame().highlightRegex("\\b[^\\s]{4}\\b", java.awt.Color.YELLOW, $options); // highlighting all words with 10 symbols or longer
+    $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0))->getTextFrame()->highlightRegex("\\b[^\\s]{4}\\b", Java("java.awt.Color")->YELLOW, $options); // highlighting all words with 10 symbols or longer
     
     $pres->save("OutputPresentation-highlight.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -68,8 +68,8 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
 
     // Accessing the first and second placeholder in the slide and typecasting it as AutoShape
-    $tf1 = ($slide->getShapes()->get_Item(0))->getTextFrame();
-    $tf2 = ($slide->getShapes()->get_Item(1))->getTextFrame();
+    $tf1 = $slide->getShapes()->get_Item(0))->getTextFrame();
+    $tf2 = $slide->getShapes()->get_Item(1))->getTextFrame();
 
     // Change the text in both placeholders
     $tf1->setText("Center Align by Aspose");
@@ -109,7 +109,7 @@ try {
     $outerShadowEffect = effects->getOuterShadowEffect();
 
     $shadowColor = $outerShadowEffect->getShadowColor()->getColor();
-    echo(shadowColor->toString() + " - transparency is: "+ (shadowColor->getAlpha() / 255) * 100);
+    echo($shadowColor->toString() + " - transparency is: "+ ($shadowColor->getAlpha() / 255) * 100);
 
     // set transparency to zero percent
     $outerShadowEffect->getShadowColor()->setColor(new Java("java.awt.Color", $shadowColor->getRed(), $shadowColor->getGreen(), $shadowColor->getBlue(), 255));
@@ -145,8 +145,8 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
 
     // Accessing the first and second placeholder in the slide and typecasting it as AutoShape
-    $tf1 = ($slide->getShapes()->get_Item(0))->getTextFrame();
-    $tf2 = ($slide->getShapes()->get_Item(1))->getTextFrame();
+    $tf1 = $slide->getShapes()->get_Item(0))->getTextFrame();
+    $tf2 = $slide->getShapes()->get_Item(1))->getTextFrame();
 
     // Accessing the first Paragraph
     $para1 = $tf1->getParagraphs()->get_Item(0);
@@ -331,7 +331,7 @@ try {
     $portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
 
     // Save Presentation
-    $pres->save(resourcesOutputPath+"RotateText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+    $pres->save($resourcesOutputPath+"RotateText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -410,7 +410,7 @@ try {
     $portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
 
     // Save Presentation
-    $pres->save(resourcesOutputPath + "formatText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+    $pres->save($resourcesOutputPath + "formatText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

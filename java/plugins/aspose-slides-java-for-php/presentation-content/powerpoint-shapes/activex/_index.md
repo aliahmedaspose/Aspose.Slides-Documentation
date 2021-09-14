@@ -73,7 +73,7 @@ try {
     
     if ($control->getName() == "TextBox1" && $control->getProperties() != null) {
         $newText = "Changed text";
-        $control->getProperties()->set_Item("Value", newText);
+        $control->getProperties()->set_Item("Value", $newText);
     
         // Changing substitute image. PowerPoint will replace this image during activeX activation, 
         // so sometime it's OK to leave image unchanged.
@@ -114,7 +114,7 @@ try {
     
     if ($control->getName() == IgnoreCase("CommandButton1") && $control->getProperties() != null) {
         $newCaption = "Show MessageBox";
-        $control->getProperties()->set_Item("Caption", newCaption);
+        $control->getProperties()->set_Item("Caption", $newCaption);
         // Changing substitute
         $image = new Java("java.awt.image.BufferedImage", control->getFrame()->getWidth(), $control->getFrame()->getHeight(),
                 Java("java.awt.image.BufferedImage")->TYPE_INT_ARGB);
@@ -126,7 +126,7 @@ try {
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->windowText);
         $graphics->setFont($font);
         $metrics = $graphics->getFontMetrics($font);
-        $graphics->drawString(newCaption, ($image->getWidth() - metrics->stringWidth(newCaption)) / 2, 20);
+        $graphics->drawString($newCaption, ($image->getWidth() - $metrics->stringWidth($newCaption)) / 2, 20);
     
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->controlLtHighlight);
         $graphics->drawLine(0, $image->getHeight() - 1, 0, 0);

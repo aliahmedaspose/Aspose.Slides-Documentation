@@ -225,7 +225,7 @@ try {
     {
         $x = ($slideNumber - 1) * 100;
         $y = ($slideNumber - 1) * 100;
-        $zoomFrame = $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame(x, y, 150, 120, $pres->getSlides()->get_Item($slideNumber));
+        $zoomFrame = $pres->getSlides()->get_Item(0)->getShapes()->addZoomFrame($x, $y, 150, 120, $pres->getSlides()->get_Item($slideNumber));
 
         // Set the ReturnToParent property to return to the first slide
         $zoomFrame->setReturnToParent(true);

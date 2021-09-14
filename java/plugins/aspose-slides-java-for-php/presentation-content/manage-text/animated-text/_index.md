@@ -45,7 +45,7 @@ try {
         $effects = sequence->getEffectsByParagraph($paragraph);
 
         if ($effects->length > 0)
-            echo("Paragraph \"" + paragraph->getText() + "\" has " + effects[0]->getType() + " effect.");
+            echo("Paragraph \"" + $paragraph->getText() + "\" has " + $effects[0]->getType() + " effect.");
     }
 } finally {
     $pres->dispose();

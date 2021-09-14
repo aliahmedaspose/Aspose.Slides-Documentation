@@ -74,7 +74,7 @@ try {
     $node = $smart->getAllNodes()->get_Item(0);
 
     // Adding new child node at position 2 in parent node
-    $chNode = $($node->getChildNodes())->addNodeByPosition(2);
+    $chNode = $node->getChildNodes()->addNodeByPosition(2);
 
     // Add Text
     $chNode->getTextFrame()->setText("Sample Text Added");

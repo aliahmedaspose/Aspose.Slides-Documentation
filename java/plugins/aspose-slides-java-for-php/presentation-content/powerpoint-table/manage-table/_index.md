@@ -162,7 +162,7 @@ try {
     $paragraph = $txtFrame->getParagraphs()->get_Item(0);
     
     // Create Portion object for paragraph
-    $portion = paragraph->getPortions()->get_Item(0);
+    $portion = $paragraph->getPortions()->get_Item(0);
     $portion->setText("Text here");
     $portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
     $portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
@@ -290,7 +290,7 @@ try {
     $table = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
     echo("Lock aspect ratio set: " + $table->getGraphicalObjectLock()->getAspectRatioLocked());
 
-    $table->getGraphicalObjectLock()->setAspectRatioLocked(!table->getGraphicalObjectLock()->getAspectRatioLocked()); // invert
+    $table->getGraphicalObjectLock()->setAspectRatioLocked(!$table->getGraphicalObjectLock()->getAspectRatioLocked()); // invert
 
     echo("Lock aspect ratio set: " + $table->getGraphicalObjectLock()->getAspectRatioLocked());
 

@@ -216,16 +216,16 @@ try {
     try {
         $slide = $pres->getSlides()->get_Item(0);
 
-        outPres->getSlides()->insertClone(0, $slide);
+        $outPres->getSlides()->insertClone(0, $slide);
         
         // Setting Slide Type and Size
-        outPres->getSlideSize()->setSize(612, 792, Java("com.aspose.slides.SlideSizeScaleType")->EnsureFit);
+        $outPres->getSlideSize()->setSize(612, 792, Java("com.aspose.slides.SlideSizeScaleType")->EnsureFit);
         
         $pdfOptions = new Java("com.aspose.slides.PdfOptions");
         $options = $pdfOptions->getNotesCommentsLayouting();
         $options->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
 
-        outPres->save("PDFnotes_out.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
+        $outPres->save("PDFnotes_out.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
     } finally {
         if ($pres != null) $pres->dispose();
     }

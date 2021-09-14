@@ -38,7 +38,7 @@ try {
     $shapeTrigger = $pres->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Bevel, 10, 10, 20, 20);
 
     // Create sequence of effects for this button.
-    $seqInter = $pres->getSlides()->get_Item(0)->getTimeline()->getInteractiveSequences()->add(shapeTrigger);
+    $seqInter = $pres->getSlides()->get_Item(0)->getTimeline()->getInteractiveSequences()->add($shapeTrigger);
 
     // Create custom user path. Our object will be moved only after "button" click.
     $fxUserPath = seqInter->addEffect($ashp, Java("com.aspose.slides.EffectType")->PathUser, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->OnClick);

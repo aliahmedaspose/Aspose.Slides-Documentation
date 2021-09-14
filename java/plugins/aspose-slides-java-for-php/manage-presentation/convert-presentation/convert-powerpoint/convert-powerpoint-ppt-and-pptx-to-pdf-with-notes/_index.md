@@ -40,7 +40,7 @@ try {
     $pdfOptions = new Java("com.aspose.slides.PdfOptions");
     $pdfOptions->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
 
-    $pres->save(resourcesOutputPath+"PDF-Notes.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
+    $pres->save($resourcesOutputPath+"PDF-Notes.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }

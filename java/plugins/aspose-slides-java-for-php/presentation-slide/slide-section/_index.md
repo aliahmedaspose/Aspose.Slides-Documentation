@@ -39,7 +39,7 @@ try {
 
     $pres->getSections()->removeSectionWithSlides($section2);
 
-    $pres->getSections().appendEmptySection("Last empty section");
+    $pres->getSections()->appendEmptySection("Last empty section");
 
     $pres->save("pres-section-with-empty.pptx",Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

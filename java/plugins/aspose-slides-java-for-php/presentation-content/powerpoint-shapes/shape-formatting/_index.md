@@ -318,7 +318,7 @@ try {
     $shape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Ellipse, 30, 30, 100, 100);
     $shape->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
     $shape->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->GREEN);
-    ILineFillFormat format = $shape->getLineFormat()->getFillFormat();
+    $format = $shape->getLineFormat()->getFillFormat();
     $format->setFillType(Java("com.aspose.slides.FillType")->Solid);
     $format->getSolidFillColor()->setColor(Java("java.awt.Color")->ORANGE);
     $shape->getLineFormat()->setWidth(2.0);

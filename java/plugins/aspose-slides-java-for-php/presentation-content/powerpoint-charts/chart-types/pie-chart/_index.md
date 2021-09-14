@@ -77,17 +77,17 @@ try {
     $chart->getChartData()->getCategories()->clear();
 
     // Adding new categories
-    $chart->getChartData()->getCategories()->add(fact->getCell(0, 1, 0, "First Qtr"));
-    $chart->getChartData()->getCategories()->add(fact->getCell(0, 2, 0, "2nd Qtr"));
-    $chart->getChartData()->getCategories()->add(fact->getCell(0, 3, 0, "3rd Qtr"));
+    $chart->getChartData()->getCategories()->add($fact->getCell(0, 1, 0, "First Qtr"));
+    $chart->getChartData()->getCategories()->add($fact->getCell(0, 2, 0, "2nd Qtr"));
+    $chart->getChartData()->getCategories()->add($fact->getCell(0, 3, 0, "3rd Qtr"));
 
     // Adding new series
-    $series = $chart->getChartData()->getSeries()->add(fact->getCell(0, 0, 1, "Series 1"), $chart->getType());
+    $series = $chart->getChartData()->getSeries()->add($fact->getCell(0, 0, 1, "Series 1"), $chart->getType());
 
     // Now populating series data
-    $series->getDataPoints()->addDataPointForPieSeries(fact->getCell($defaultWorksheetIndex, 1, 1, 20));
-    $series->getDataPoints()->addDataPointForPieSeries(fact->getCell($defaultWorksheetIndex, 2, 1, 50));
-    $series->getDataPoints()->addDataPointForPieSeries(fact->getCell($defaultWorksheetIndex, 3, 1, 30));
+    $series->getDataPoints()->addDataPointForPieSeries($fact->getCell($defaultWorksheetIndex, 1, 1, 20));
+    $series->getDataPoints()->addDataPointForPieSeries($fact->getCell($defaultWorksheetIndex, 2, 1, 50));
+    $series->getDataPoints()->addDataPointForPieSeries($fact->getCell($defaultWorksheetIndex, 3, 1, 30));
 
     $series->getParentSeriesGroup()->setColorVaried(true);
     $pres->save("Pie.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

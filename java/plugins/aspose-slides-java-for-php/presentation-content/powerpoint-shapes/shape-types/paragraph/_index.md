@@ -13,7 +13,7 @@ Using Aspose.Slides for Java, developers can now get the rectangular coordinates
 $shape = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
 $textFrame = shape->getTextFrame();
 foreach( $textFrame->getParagraphs() as $paragraph ){
-  foreach( paragraph->getPortions() as $portion ){
+  foreach( $paragraph->getPortions() as $portion ){
     $point = $portion->getCoordinates();
   }
 }
@@ -66,7 +66,7 @@ try {
 
         foreach( $para->getPortions() as $portion )
         {
-            if ($portion->getText().contains("0"))
+            if ($portion->getText()->contains("0"))
             {
                 $rect = $portion->getRect();
                 $shape =

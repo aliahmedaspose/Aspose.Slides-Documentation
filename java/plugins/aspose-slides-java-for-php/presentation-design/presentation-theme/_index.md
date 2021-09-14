@@ -156,7 +156,7 @@ echo("Theme Body Latin font is: " + $pres->getMasterTheme()->getFontScheme()->ge
 It is possible to change the presentation theme font, which will be updated for all presentation text accordingly:
 
 ```php
-pres->getMasterTheme()->getFontScheme()->getMinor()->setLatinFont(new  Java("com.aspose.slides.FontData", "Arial"));
+$pres->getMasterTheme()->getFontScheme()->getMinor()->setLatinFont(new  Java("com.aspose.slides.FontData", "Arial"));
 ``` 
 
 {{% alert color="primary" title="See also" %}} 
@@ -189,7 +189,7 @@ The reason is that,12 predefined backgrounds are used to design Background Style
 To define which background should be used for presentation, set the needed presentation index (**Note**: the index starts from 1, not from 0. 0 is used to define "*no fill*" value):
 
 ```php
-pres->getMasters()->get_Item(0)->getBackground()->setStyleIndex(2);
+$pres->getMasters()->get_Item(0)->getBackground()->setStyleIndex(2);
 ``` 
 
 {{% alert color="primary" title="See also" %}} 

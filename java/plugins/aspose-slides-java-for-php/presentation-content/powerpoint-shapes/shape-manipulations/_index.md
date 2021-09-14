@@ -62,8 +62,8 @@ try {
     $blankLayout = $pres->getMasters()->get_Item(0)->getLayoutSlides()->getByType(Java("com.aspose.slides.SlideLayoutType")->Blank);
     $destSlide = $pres->getSlides()->addEmptySlide($blankLayout);
     $destShapes = $destSlide->getShapes();
-    $destShapes->addClone(sourceShapes->get_Item(1), 50, 150 + $sourceShapes->get_Item(0)->getHeight());
-    $destShapes->addClone(sourceShapes->get_Item(2));
+    $destShapes->addClone($sourceShapes->get_Item(1), 50, 150 + $sourceShapes->get_Item(0)->getHeight());
+    $destShapes->addClone($sourceShapes->get_Item(2));
     $destShapes->insertClone(0, $sourceShapes->get_Item(0), 50, 150);
 
     // Write the PPTX file to disk

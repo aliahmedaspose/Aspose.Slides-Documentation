@@ -96,7 +96,7 @@ try {
     $slideSize = $presentation->getSlideSize()->getSize();
 
     // Convert SVG image to group of shapes scaling it to slide size
-    $presentation->getSlides()->get_Item(0)->getShapes().
+    $presentation->getSlides()->get_Item(0)->getShapes()->
             addGroupShape($svgImage, 0, 0, $slideSize->getWidth(), $slideSize->getHeight());
 
     // Save presentation in PPTX format

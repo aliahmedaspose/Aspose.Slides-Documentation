@@ -49,7 +49,7 @@ try {
     $buffer = $Array->newInstance($Byte, 8 * 1024);
     
     // iterate through the videos
-    for ($index = 0; index < $pres->getVideos()->size(); index++) {
+    for ($index = 0; $index < $pres->getVideos()->size(); $index++) {
         $video = $pres->getVideos()->get_Item($index);
 
         // open the presentation video stream. Please note that we intentionally avoid accessing properties

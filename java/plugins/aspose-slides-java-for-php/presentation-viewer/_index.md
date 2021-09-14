@@ -41,7 +41,7 @@ try {
     // Generate SVG image of slide and save in memory stream
     $sld->writeAsSvg($svgStream);
 
-    svgStream->close();
+    $svgStream->close();
 } catch (JavaException $e) {
 } finally {
     $pres->dispose();

@@ -98,7 +98,7 @@ try {
     $txtVal->setLatinFont(new  Java("com.aspose.slides.FontData", "Times New Roman"));
 
     // Setting value axis title
-    $chart->getAxes()->getVerticalAxis().hasTitle();
+    $chart->getAxes()->getVerticalAxis()->hasTitle();
     $chart->getAxes()->getVerticalAxis()->getTitle()->addTextFrameForOverriding("");
     $valtitle = $chart->getAxes()->getVerticalAxis()->getTitle()->getTextFrameForOverriding()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0);
     $valtitle->setText("Primary Axis");
@@ -128,7 +128,7 @@ try {
     $txtCat->setLatinFont(new  Java("com.aspose.slides.FontData", "Arial"));
 
     // Setting Category Title
-    $chart->getAxes()->getHorizontalAxis().hasTitle();
+    $chart->getAxes()->getHorizontalAxis()->hasTitle();
     $chart->getAxes()->getHorizontalAxis()->getTitle()->addTextFrameForOverriding("");
 
     $catTitle = $chart->getAxes()->getHorizontalAxis()->getTitle()->getTextFrameForOverriding()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0);
@@ -140,7 +140,7 @@ try {
     $catTitle->getPortionFormat()->setFontItalic(Java("com.aspose.slides.NullableBool")->True);
 
     // Setting category axis label position
-    $chart->getAxes()->getHorizontalAxis()->setTickLabelPosition(TickLabelPositionType.Low);
+    $chart->getAxes()->getHorizontalAxis()->setTickLabelPosition(Java("com.aspose.slides.TickLabelPositionType")->Low);
 
     // Setting category axis label rotation angle
     $chart->getAxes()->getHorizontalAxis()->setTickLabelRotationAngle(45);
@@ -250,7 +250,7 @@ try {
     $series = $chart->getChartData()->getSeries();
     
     // Traverse through every chart series
-    foreach( #series as $ser ) 
+    foreach( $series as $ser ) 
     {
         // Traverse through every data cell in series
         foreach( $ser->getDataPoints() as $cell ) 

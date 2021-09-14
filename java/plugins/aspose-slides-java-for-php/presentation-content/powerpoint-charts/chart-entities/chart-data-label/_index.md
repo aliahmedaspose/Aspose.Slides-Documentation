@@ -54,13 +54,13 @@ try {
     }
     
     $dataPontPercent = 0;
-    for ($x = 0; x < $chart->getChartData()->getSeries()->size(); x++) {
-        $series = $chart->getChartData()->getSeries()->get_Item(x);
+    for ($x = 0; x < $chart->getChartData()->getSeries()->size(); $x++) {
+        $series = $chart->getChartData()->getSeries()->get_Item($x);
         $series->getLabels()->getDefaultDataLabelFormat()->setShowLegendKey(false);
     
         for ($j = 0; $j < $series->getDataPoints()->size(); $j++) {
             $lbl = $series->getDataPoints()->get_Item($j)->getLabel();
-            $dataPontPercent = ((series->getDataPoints()->get_Item($j)->getValue()->getData())) / (total_for_Cat->get_Item($j)) * 100;
+            $dataPontPercent = (($series->getDataPoints()->get_Item($j)->getValue()->getData())) / ($total_for_Cat->get_Item($j)) * 100;
     
             $port = new Java("com.aspose.slides.Portion");
             $port->setText(sprintf("{0:F2} %.2", $dataPontPercent));

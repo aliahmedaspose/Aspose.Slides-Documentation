@@ -153,7 +153,7 @@ public static double getDirection($w, $h, $flipH, $flipV)
     $endLineY = $h * ($flipV ? -1 : 1);
     $endYAxisX = 0;
     $endYAxisY = $h;
-    angle = (atan2($endYAxisY, $endYAxisX) - atan2($endLineY, $endLineX));
+    $angle = atan2($endYAxisY, $endYAxisX) - atan2($endLineY, $endLineX);
     if ($angle < 0) $angle += 2 * M_PI;
     return $angle * 180.0 / M_PI;
 }

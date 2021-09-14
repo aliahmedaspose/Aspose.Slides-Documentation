@@ -37,7 +37,7 @@ try {
     $seriesIndex = 0;
     while ($seriesIndex < 15)
     {
-        $series = $chart->getChartData()->getSeries()->add(workBook->getCell(0, 0, seriesIndex + 1, "SERIES " + seriesIndex), $chart->getType());
+        $series = $chart->getChartData()->getSeries()->add($workBook->getCell(0, 0, $seriesIndex + 1, "SERIES " + $seriesIndex), $chart->getType());
         $series->setExplosion(0);
         $series->getParentSeriesGroup()->setDoughnutHoleSize((byte)20);
         $series->getParentSeriesGroup()->setFirstSliceAngle(351);
@@ -46,12 +46,12 @@ try {
     $categoryIndex = 0;
     while ($categoryIndex < 15)
     {
-        $chart->getChartData()->getCategories()->add(workBook->getCell(0, categoryIndex + 1, 0, "CATEGORY " + categoryIndex));
+        $chart->getChartData()->getCategories()->add($workBook->getCell(0, $categoryIndex + 1, 0, "CATEGORY " + $categoryIndex));
         $i = 0;
         while ($i< $chart->getChartData()->getSeries()->size())
         {
             $iCS = $chart->getChartData()->getSeries()->get_Item($i);
-            $dataPoint = iCS->getDataPoints()->addDataPointForDoughnutSeries(workBook->getCell(0, categoryIndex + 1, i + 1, 1));
+            $dataPoint = $iCS->getDataPoints()->addDataPointForDoughnutSeries($workBook->getCell(0, $categoryIndex + 1, i + 1, 1));
             $dataPoint->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
             $dataPoint->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
             $dataPoint->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor($java.awt.Color.WHITE);
@@ -74,8 +74,8 @@ try {
                $lbl->getDataLabelFormat()->setShowLeaderLines(true);
                $lbl->getDataLabelFormat()->setShowLabelAsDataCallout(false);
                $chart->validateChartLayout();
-               $lbl->setX(lbl->getX()+ 0.5);
-               $lbl->setY(lbl->getY()+ 0.5);
+               $lbl->setX($lbl->getX()+ 0.5);
+               $lbl->setY($lbl->getY()+ 0.5);
             }
             i++;
         }

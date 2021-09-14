@@ -79,7 +79,7 @@ try {
     $table->get_Item(1, 0)->getTextFrame()->setText("Row 1 Cell 2");
 
     // Clone Row 1 at end of table
-    $table->getRows()->addClone(table->getRows()->get_Item(0), false);
+    $table->getRows()->addClone($table->getRows()->get_Item(0), false);
 
     // Add text to the row 2 cell 1
     $table->get_Item(0, 1)->getTextFrame()->setText("Row 2 Cell 1");
@@ -91,10 +91,10 @@ try {
     $table->getRows()->insertClone(3, $table->getRows()->get_Item(1), false);
 
     //Cloning first column at end
-    $table->getColumns()->addClone(table->getColumns()->get_Item(0), false);
+    $table->getColumns()->addClone($table->getColumns()->get_Item(0), false);
 
     //Cloning 2nd column at 4th column index
-    $table->getColumns()->insertClone(3,table->getColumns()->get_Item(1), false);
+    $table->getColumns()->insertClone(3, $table->getColumns()->get_Item(1), false);
     
     // Write PPTX to Disk
     $pres->save("table_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

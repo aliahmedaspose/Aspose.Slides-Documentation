@@ -104,10 +104,10 @@ try {
         $fileExtention = $oleObjectFrame->getEmbeddedData()->getEmbeddedFileExtension();
 
         // Create path for saving the extracted file
-        $extractedPath = "excelFromOLE_out" + fileExtention;
+        $extractedPath = "excelFromOLE_out" + $fileExtention;
 
         // Save extracted data
-        $fstr = new Java("java.io.FileOutputStream", extractedPath);
+        $fstr = new Java("java.io.FileOutputStream", $extractedPath);
         try {
             $fstr->write($data, 0, $data->length);
         } finally {
@@ -301,7 +301,7 @@ $pres = new Java("com.aspose.slides.Presentation", "embeddedOle.pptx");
 try {
     $slide = $pres->getSlides()->get_Item(0);
 
-    for ($index = 0; index < $slide->getShapes()->size(); index++)
+    for ($index = 0; $index < $slide->getShapes()->size(); $index++)
     {
         $shape = $slide->getShapes()->get_Item($index);
         $oleFrame = $shape;

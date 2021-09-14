@@ -19,7 +19,7 @@ try {
     
     foreach( $textFrame->getParagraphs() as $paragraph ) 
     {
-        foreach( paragraph->getPortions() as $portion ) 
+        foreach( $paragraph->getPortions() as $portion ) 
         {
             $point = $portion->getCoordinates();
             echo("X: " + $point->x + " Y: " + $point->y);

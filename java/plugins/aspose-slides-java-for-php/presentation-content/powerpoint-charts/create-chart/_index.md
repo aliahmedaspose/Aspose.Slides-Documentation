@@ -56,24 +56,24 @@ try {
     $chart->getChartData()->getSeries()->clear();
     $chart->getChartData()->getCategories()->clear();
     $s = $chart->getChartData()->getSeries()->size();
-    s = $chart->getChartData()->getCategories()->size();
+    $s = $chart->getChartData()->getCategories()->size();
     
     // Adding new series
-    $chart->getChartData()->getSeries()->add(fact->getCell($defaultWorksheetIndex, 0, 1, "Series 1"),chart->getType());
-    $chart->getChartData()->getSeries()->add(fact->getCell($defaultWorksheetIndex, 0, 2, "Series 2"),chart->getType());
+    $chart->getChartData()->getSeries()->add($fact->getCell($defaultWorksheetIndex, 0, 1, "Series 1"), $chart->getType());
+    $chart->getChartData()->getSeries()->add($fact->getCell($defaultWorksheetIndex, 0, 2, "Series 2"), $chart->getType());
     
     // Adding new categories
-    $chart->getChartData()->getCategories()->add(fact->getCell($defaultWorksheetIndex, 1, 0, "Caetegoty 1"));
-    $chart->getChartData()->getCategories()->add(fact->getCell($defaultWorksheetIndex, 2, 0, "Caetegoty 2"));
-    $chart->getChartData()->getCategories()->add(fact->getCell($defaultWorksheetIndex, 3, 0, "Caetegoty 3"));
+    $chart->getChartData()->getCategories()->add($fact->getCell($defaultWorksheetIndex, 1, 0, "Caetegoty 1"));
+    $chart->getChartData()->getCategories()->add($fact->getCell($defaultWorksheetIndex, 2, 0, "Caetegoty 2"));
+    $chart->getChartData()->getCategories()->add($fact->getCell($defaultWorksheetIndex, 3, 0, "Caetegoty 3"));
     
     // Take first chart series
     $series = $chart->getChartData()->getSeries()->get_Item(0);
     
     // Now populating series data
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 1, 1, 20));
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 2, 1, 50));
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 3, 1, 30));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, 1, 1, 20));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, 2, 1, 50));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, 3, 1, 30));
     
     // Setting fill color for series
     $series->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
@@ -83,9 +83,9 @@ try {
     $series = $chart->getChartData()->getSeries()->get_Item(1);
     
     // Now populating series data
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 1, 2, 30));
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 2, 2, 10));
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 3, 2, 60));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, 1, 2, 30));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, 2, 2, 10));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, 3, 2, 60));
     
     // Setting fill color for series
     $series->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
@@ -135,17 +135,17 @@ try {
     $chart->getChartData()->getSeries()->clear();
     
     // Add new series
-    $chart->getChartData()->getSeries()->add(fact->getCell($defaultWorksheetIndex, 1, 1, "Series 1"), $chart->getType());
-    $chart->getChartData()->getSeries()->add(fact->getCell($defaultWorksheetIndex, 1, 3, "Series 2"), $chart->getType());
+    $chart->getChartData()->getSeries()->add($fact->getCell($defaultWorksheetIndex, 1, 1, "Series 1"), $chart->getType());
+    $chart->getChartData()->getSeries()->add($fact->getCell($defaultWorksheetIndex, 1, 3, "Series 2"), $chart->getType());
     
     // Take first chart series
     $series = $chart->getChartData()->getSeries()->get_Item(0);
     
     // Add new point (1:3) there.
-    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 2, 1, 1), $fact->getCell($defaultWorksheetIndex, 2, 2, 3));
+    $series->getDataPoints()->addDataPointForScatterSeries($fact->getCell($defaultWorksheetIndex, 2, 1, 1), $fact->getCell($defaultWorksheetIndex, 2, 2, 3));
     
     // Add new point (2:10)
-    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 3, 1, 2), $fact->getCell($defaultWorksheetIndex, 3, 2, 10));
+    $series->getDataPoints()->addDataPointForScatterSeries($fact->getCell($defaultWorksheetIndex, 3, 1, 2), $fact->getCell($defaultWorksheetIndex, 3, 2, 10));
     
     // Edit the type of series
     $series->setType(Java("com.aspose.slides.ChartType")->ScatterWithStraightLinesAndMarkers);
@@ -158,16 +158,16 @@ try {
     $series = $chart->getChartData()->getSeries()->get_Item(1);
     
     // Add new point (5:2) there.
-    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 2, 3, 5), $fact->getCell($defaultWorksheetIndex, 2, 4, 2));
+    $series->getDataPoints()->addDataPointForScatterSeries($fact->getCell($defaultWorksheetIndex, 2, 3, 5), $fact->getCell($defaultWorksheetIndex, 2, 4, 2));
     
     // Add new point (3:1)
-    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 3, 3, 3), $fact->getCell($defaultWorksheetIndex, 3, 4, 1));
+    $series->getDataPoints()->addDataPointForScatterSeries($fact->getCell($defaultWorksheetIndex, 3, 3, 3), $fact->getCell($defaultWorksheetIndex, 3, 4, 1));
     
     // Add new point (2:2)
-    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 4, 3, 2), $fact->getCell($defaultWorksheetIndex, 4, 4, 2));
+    $series->getDataPoints()->addDataPointForScatterSeries($fact->getCell($defaultWorksheetIndex, 4, 3, 2), $fact->getCell($defaultWorksheetIndex, 4, 4, 2));
     
     // Add new point (5:1)
-    $series->getDataPoints()->addDataPointForScatterSeries(fact->getCell($defaultWorksheetIndex, 5, 3, 5), $fact->getCell($defaultWorksheetIndex, 5, 4, 1));
+    $series->getDataPoints()->addDataPointForScatterSeries($fact->getCell($defaultWorksheetIndex, 5, 3, 5), $fact->getCell($defaultWorksheetIndex, 5, 4, 1));
     
     // Changing the chart series marker
     $series->getMarker()->setSize(10);
@@ -225,17 +225,17 @@ try {
     $chart->getChartData()->getCategories()->clear();
     
     // Adding new categories
-    $chart->getChartData()->getCategories()->add(fact->getCell(0, 1, 0, "First Qtr"));
-    $chart->getChartData()->getCategories()->add(fact->getCell(0, 2, 0, "2nd Qtr"));
-    $chart->getChartData()->getCategories()->add(fact->getCell(0, 3, 0, "3rd Qtr"));
+    $chart->getChartData()->getCategories()->add($fact->getCell(0, 1, 0, "First Qtr"));
+    $chart->getChartData()->getCategories()->add($fact->getCell(0, 2, 0, "2nd Qtr"));
+    $chart->getChartData()->getCategories()->add($fact->getCell(0, 3, 0, "3rd Qtr"));
     
     // Adding new series
-    $series = $chart->getChartData()->getSeries()->add(fact->getCell(0, 0, 1, "Series 1"), $chart->getType());
+    $series = $chart->getChartData()->getSeries()->add($fact->getCell(0, 0, 1, "Series 1"), $chart->getType());
     
     // Now populating series data
-    $series->getDataPoints()->addDataPointForPieSeries(fact->getCell($defaultWorksheetIndex, 1, 1, 20));
-    $series->getDataPoints()->addDataPointForPieSeries(fact->getCell($defaultWorksheetIndex, 2, 1, 50));
-    $series->getDataPoints()->addDataPointForPieSeries(fact->getCell($defaultWorksheetIndex, 3, 1, 30));
+    $series->getDataPoints()->addDataPointForPieSeries($fact->getCell($defaultWorksheetIndex, 1, 1, 20));
+    $series->getDataPoints()->addDataPointForPieSeries($fact->getCell($defaultWorksheetIndex, 2, 1, 50));
+    $series->getDataPoints()->addDataPointForPieSeries($fact->getCell($defaultWorksheetIndex, 3, 1, 30));
     
     // Not working in new version
     // Adding new points and setting sector color
@@ -466,7 +466,7 @@ try {
 
     $series = $chart->getChartData()->getSeries()->add(Java("com.aspose.slides.ChartType")->BoxAndWhisker);
 
-    $series->setQuartileMethod(QuartileMethodType.Exclusive);
+    $series->setQuartileMethod(Java("com.aspose.slides.QuartileMethodType")->Exclusive);
     $series->setShowMeanLine(true);
     $series->setShowMeanMarkers(true);
     $series->setShowInnerPoints(true);
@@ -614,7 +614,7 @@ try {
     $series->getDataPoints()->addDataPointForHistogramSeries($wb->getCell(0, "A5", -23));
     $series->getDataPoints()->addDataPointForHistogramSeries($wb->getCell(0, "A6", 16));
 
-    $chart->getAxes()->getHorizontalAxis()->setAggregationType(AxisAggregationType.Automatic;)
+    $chart->getAxes()->getHorizontalAxis()->setAggregationType(Java("com.aspose.slides.AxisAggregationType")->Automatic;)
 
     $pres->save("Histogram.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
@@ -645,34 +645,34 @@ try {
     $fact->clear(0);
     $defaultWorksheetIndex = 0;
 
-    $category = $ch->getChartData()->getCategories()->add(fact->getCell(0, "c2", "A"));
-    category->getGroupingLevels()->setGroupingItem(1, "Group1");
-    category = $ch->getChartData()->getCategories()->add(fact->getCell(0, "c3", "B"));
+    $category = $ch->getChartData()->getCategories()->add($fact->getCell(0, "c2", "A"));
+    $category->getGroupingLevels()->setGroupingItem(1, "Group1");
+    $category = $ch->getChartData()->getCategories()->add($fact->getCell(0, "c3", "B"));
 
-    category = $ch->getChartData()->getCategories()->add(fact->getCell(0, "c4", "C"));
-    category->getGroupingLevels()->setGroupingItem(1, "Group2");
-    category = $ch->getChartData()->getCategories()->add(fact->getCell(0, "c5", "D"));
+    $category = $ch->getChartData()->getCategories()->add($fact->getCell(0, "c4", "C"));
+    $category->getGroupingLevels()->setGroupingItem(1, "Group2");
+    $category = $ch->getChartData()->getCategories()->add($fact->getCell(0, "c5", "D"));
 
-    category = $ch->getChartData()->getCategories()->add(fact->getCell(0, "c6", "E"));
-    category->getGroupingLevels()->setGroupingItem(1, "Group3");
-    category = $ch->getChartData()->getCategories()->add(fact->getCell(0, "c7", "F"));
+    $category = $ch->getChartData()->getCategories()->add($fact->getCell(0, "c6", "E"));
+    $category->getGroupingLevels()->setGroupingItem(1, "Group3");
+    $category = $ch->getChartData()->getCategories()->add($fact->getCell(0, "c7", "F"));
 
-    category = $ch->getChartData()->getCategories()->add(fact->getCell(0, "c8", "G"));
-    category->getGroupingLevels()->setGroupingItem(1, "Group4");
-    category = $ch->getChartData()->getCategories()->add(fact->getCell(0, "c9", "H"));
+    $category = $ch->getChartData()->getCategories()->add($fact->getCell(0, "c8", "G"));
+    $category->getGroupingLevels()->setGroupingItem(1, "Group4");
+    $category = $ch->getChartData()->getCategories()->add($fact->getCell(0, "c9", "H"));
 
     // Adding Series
-    $series = $ch->getChartData()->getSeries()->add(fact->getCell(0, "D1", "Series 1"),
+    $series = $ch->getChartData()->getSeries()->add($fact->getCell(0, "D1", "Series 1"),
             Java("com.aspose.slides.ChartType")->ClusteredColumn);
 
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, "D2", 10));
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, "D3", 20));
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, "D4", 30));
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, "D5", 40));
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, "D6", 50));
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, "D7", 60));
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, "D8", 70));
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, "D9", 80));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, "D2", 10));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, "D3", 20));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, "D4", 30));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, "D5", 40));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, "D6", 50));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, "D7", 60));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, "D8", 70));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, "D9", 80));
     
     // Save presentation with chart
     $pres->save("AsposeChart_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
@@ -732,15 +732,15 @@ try {
     $series->getDataPoints()->get_Item(2)->getValue()->setData(99);
 
     // Now, Adding a new series
-    $chart->getChartData()->getSeries()->add(fact->getCell($defaultWorksheetIndex, 0, 3, "Series 3"), $chart->getType());
+    $chart->getChartData()->getSeries()->add($fact->getCell($defaultWorksheetIndex, 0, 3, "Series 3"), $chart->getType());
 
     // Take 3rd chart series
     $series = $chart->getChartData()->getSeries()->get_Item(2);
 
     // Now populating series data
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 1, 3, 20));
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 2, 3, 50));
-    $series->getDataPoints()->addDataPointForBarSeries(fact->getCell($defaultWorksheetIndex, 3, 3, 30));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, 1, 3, 20));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, 2, 3, 50));
+    $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, 3, 3, 30));
 
     $chart->setType(Java("com.aspose.slides.ChartType")->ClusteredCylinder);
 
@@ -792,27 +792,27 @@ try {
     $chart->getChartData()->getCategories()->clear();
 
     $fact = $chart->getChartData()->getChartDataWorkbook();
-    $chart->getChartData()->getSeries()->add(fact->getCell(0, 0, 1, "Series 1"), $chart->getType());
+    $chart->getChartData()->getSeries()->add($fact->getCell(0, 0, 1, "Series 1"), $chart->getType());
     $series = $chart->getChartData()->getSeries()->get_Item(0);
 
-    $chart->getChartData()->getCategories()->add(fact->getCell(0, 1, 0, "C1"));
-    $series->getDataPoints()->addDataPointForLineSeries(fact->getCell(0, 1, 1, 24));
-    $chart->getChartData()->getCategories()->add(fact->getCell(0, 2, 0, "C2"));
-    $series->getDataPoints()->addDataPointForLineSeries(fact->getCell(0, 2, 1, 23));
-    $chart->getChartData()->getCategories()->add(fact->getCell(0, 3, 0, "C3"));
-    $series->getDataPoints()->addDataPointForLineSeries(fact->getCell(0, 3, 1, -10));
-    $chart->getChartData()->getCategories()->add(fact->getCell(0, 4, 0, "C4"));
-    $series->getDataPoints()->addDataPointForLineSeries(fact->getCell(0, 4, 1, null));
+    $chart->getChartData()->getCategories()->add($fact->getCell(0, 1, 0, "C1"));
+    $series->getDataPoints()->addDataPointForLineSeries($fact->getCell(0, 1, 1, 24));
+    $chart->getChartData()->getCategories()->add($fact->getCell(0, 2, 0, "C2"));
+    $series->getDataPoints()->addDataPointForLineSeries($fact->getCell(0, 2, 1, 23));
+    $chart->getChartData()->getCategories()->add($fact->getCell(0, 3, 0, "C3"));
+    $series->getDataPoints()->addDataPointForLineSeries($fact->getCell(0, 3, 1, -10));
+    $chart->getChartData()->getCategories()->add($fact->getCell(0, 4, 0, "C4"));
+    $series->getDataPoints()->addDataPointForLineSeries($fact->getCell(0, 4, 1, null));
 
-    $chart->getChartData()->getSeries()->add(fact->getCell(0, 0, 2, "Series 2"), $chart->getType());
+    $chart->getChartData()->getSeries()->add($fact->getCell(0, 0, 2, "Series 2"), $chart->getType());
     //Take second chart series
     $series2 = $chart->getChartData()->getSeries()->get_Item(1);
 
     //Now populating series data
-    $series2->getDataPoints()->addDataPointForLineSeries(fact->getCell(0, 1, 2, 30));
-    $series2->getDataPoints()->addDataPointForLineSeries(fact->getCell(0, 2, 2, 10));
-    $series2->getDataPoints()->addDataPointForLineSeries(fact->getCell(0, 3, 2, 60));
-    $series2->getDataPoints()->addDataPointForLineSeries(fact->getCell(0, 4, 2, 40));
+    $series2->getDataPoints()->addDataPointForLineSeries($fact->getCell(0, 1, 2, 30));
+    $series2->getDataPoints()->addDataPointForLineSeries($fact->getCell(0, 2, 2, 10));
+    $series2->getDataPoints()->addDataPointForLineSeries($fact->getCell(0, 3, 2, 60));
+    $series2->getDataPoints()->addDataPointForLineSeries($fact->getCell(0, 4, 2, 40));
 
     $chart->setLegend(true);
     $chart->getLegend()->setOverlay(false);

@@ -109,16 +109,16 @@ try {
     
     $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Pie, 50, 50, 400, 600);
 
-    java.io.File file = new File(externalWbPath);
+    java.io.File file = new File($externalWbPath);
     if ($file.exists())
-        file.delete();
+        $file.delete();
 
     $worbookData = $chart->getChartData()->readWorkbookStream();
-    $outputStream = new Java("java.io.FileOutputStream", file);
-    outputStream->write(worbookData);
-    outputStream->close();
+    $outputStream = new Java("java.io.FileOutputStream", $file);
+    $outputStream->write($worbookData);
+    $outputStream->close();
 
-    $chart->getChartData()->setExternalWorkbook(externalWbPath);
+    $chart->getChartData()->setExternalWorkbook($externalWbPath);
 
     $pres->save("output.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch (JavaException $e) {

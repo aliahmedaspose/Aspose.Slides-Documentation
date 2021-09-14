@@ -127,10 +127,13 @@ try {
     $htmlOptions = new Java("com.aspose.slides.HtmlOptions");
     $htmlOptions->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
     $htmlOptions->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter(new Java("com.aspose.slides.CustomFormattingController")));
-
+    
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $Integer = new JavaClass("java.lang.Integer");
+    
     // Saving File
     for ($i = 0; $i < $pres->getSlides()->size(); $i++)
-        $pres->save("Individual Slide" + ($i+ 1) + "_out.html", new int[]{i + 1},Java("com.aspose.slides.SaveFormat")->Html, $htmlOptions);
+        $pres->save("Individual Slide" + ($i+ 1) + "_out.html", $Array->newInstance($Integer, $i + 1),Java("com.aspose.slides.SaveFormat")->Html, $htmlOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }

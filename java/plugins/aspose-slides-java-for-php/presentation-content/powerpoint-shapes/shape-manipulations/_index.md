@@ -294,12 +294,15 @@ try {
     $shape1 = $slide->getShapes()->get_Item(1);
     $shape2 = $slide->getShapes()->get_Item(2);
     $shape3 = $slide->getShapes()->get_Item(4);
-    $SlideUtil->alignShapes(Java("com.aspose.slides.ShapesAlignmentType")->AlignTop, true, $pres->getSlides()->get_Item(0), new int[]
-    {
-        $slide->getShapes()->indexOf($shape1),
-        $slide->getShapes()->indexOf($shape2),
-        $slide->getShapes()->indexOf($shape3)
-    });
+    
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $Integer = new JavaClass("java.lang.Integer");
+    $intArray = $Array->newInstance($Integer, 3);
+    $intArray[0] = $slide->getShapes()->indexOf($shape1);
+    $intArray[1] = $slide->getShapes()->indexOf($shape2);
+    $intArray[2] = $slide->getShapes()->indexOf($shape3);
+    
+    $SlideUtil->alignShapes(Java("com.aspose.slides.ShapesAlignmentType")->AlignTop, true, $pres->getSlides()->get_Item(0), $intArray);
 } finally {
     if ($pres != null) $pres->dispose();
 }

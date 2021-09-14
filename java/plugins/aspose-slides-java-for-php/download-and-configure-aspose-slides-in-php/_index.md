@@ -9,7 +9,7 @@ url: /java/download-and-configure-aspose-slides-in-php/
 Download required libraries mentioned below. These are the required for executing Aspose.Slides Java for PHP examples.
 
 - **Aspose:** [Aspose.Slides for Java Component](http://www.aspose.com/community/files/72/java-components/aspose.slides-for-java/default.aspx)
-- [PHP/Java Bridge](http://citylan.dl.sourceforge.net/project/php-java-bridge/Binary%20package/php-java-bridge_6.2.1/php-java-bridge_6.2.1_documentation.zip)
+- [PHP/Java Bridge](http://citylan.dl.sourceforge.net/project/php-java-bridge/Binary%20package/php-java-bridge_7.2.1/php-java-bridge_7.2.1_documentation.zip)
 ## **Download Examples from Social Coding Sites**
 Following releases of running examples are available to download on below mentioned social coding sites:
 
@@ -32,7 +32,7 @@ In order to download the PHP/JavaBridge binaries, issue following command on the
 
 ```
 
-  wget http://citylan.dl.sourceforge.net/project/php-java-bridge/Binary%20package/php-java-bridge_6.2.1/php-java-bridge_6.2.1_documentation.zip 
+  wget https://sourceforge.net/projects/php-java-bridge/files/Binary%20package/php-java-bridge_7.2.1/php-java-bridge_7.2.1_documentation.zip 
 
 ```
 
@@ -41,12 +41,12 @@ Unzip the PHP/JavaBridge binaries by issuing the following command on linux cons
 
 ```
 
-  unzip -d php-java-bridge_6.2.1_documentation.zip 
+  unzip -d php-java-bridge_7.2.1_documentation.zip 
 
 ```
 
 
-This will extract **JavaBridge.war** file. Copy it to tomcat88 **webapps** folder by issuing the following command on Linux console. 
+This will extract **JavaBridge.war** file. Copy it to tomcat8 **webapps** folder by issuing the following command on Linux console. 
 
 ```
 
@@ -83,11 +83,11 @@ $ git clone [https://github.com/aspose-slides/Aspose.Slides-for-Java/tree/master
 Please follow below simple steps to configure PHP/Java Bridge on Windows Platform
 
 1. Install PHP5 and configure as you normally do
-2. Install JRE 6 (Java Runtime Environment) if you don’t already have it. You can check this in C:\Program Files etc. You can download it here . I am using JRE 6 as It is compatible with PHP Java Bridge (PJB).
+2. Install JRE 8 (Java Runtime Environment) if you don’t already have it. You can check this in C:\Program Files etc. You can download it here . I am using JRE 6 as It is compatible with PHP Java Bridge (PJB).
 
 3. Install Apache Tomcat 8.0. You can download it here
 
-4.Download [JavaBridge.war](http://sourceforge.net/projects/php-java-bridge/files/Binary%20package/php-java-bridge_6.2.1/JavaBridgeTemplate621.war/download). Copy this file to tomcat webapps directory.
+4.Download [JavaBridge.war](http://sourceforge.net/projects/php-java-bridge/files/Binary%20package/php-java-bridge_7.2.1/JavaBridgeTemplate621.war/download). Copy this file to tomcat webapps directory.
 (ex: C:\Program Files\Apache Software Foundation\Tomcat 8.0\webapps )
 
 5. Restart tomcat apache service.

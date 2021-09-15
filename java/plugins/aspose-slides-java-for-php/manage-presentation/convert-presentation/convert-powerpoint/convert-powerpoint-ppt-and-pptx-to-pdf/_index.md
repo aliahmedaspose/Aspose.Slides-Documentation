@@ -179,7 +179,7 @@ try {
     
     // Setting PDF password and access permissions
     $pdfOptions->setPassword("password");
-    $pdfOptions->setAccessPermissions(Java("com.aspose.slides.PdfAccessPermissions")PrintDocument | Java("com.aspose.slides.PdfAccessPermissions")HighQualityPrint);
+    $pdfOptions->setAccessPermissions(Java("com.aspose.slides.PdfAccessPermissions")->PrintDocument | Java("com.aspose.slides.PdfAccessPermissions")->HighQualityPrint);
     
     // Save the presentation as PDF
     $pres->save("PPTX-to-PDF.pdf", Java("com.aspose.slides.SaveFormat")->Pdf, $pdfOptions);

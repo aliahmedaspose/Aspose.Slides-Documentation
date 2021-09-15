@@ -84,7 +84,7 @@ try {
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->window);
         $graphics->fillRect(0, 0, $image->getWidth(), $image->getHeight());
     
-        $font = Java("java.awt.Font", $control->getProperties()->get_Item("FontName"), Java("java.awt.Font")->PLAIN, 16);
+        $font = new Java("java.awt.Font", $control->getProperties()->get_Item("FontName"), Java("java.awt.Font")->PLAIN, 16);
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->windowText);
         $graphics->setFont($font);
         $graphics->drawString(newText, 10, 20);
@@ -122,7 +122,7 @@ try {
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->control);
         $graphics->fillRect(0, 0, $image->getWidth(), $image->getHeight());
     
-        $font = Java("java.awt.Font", $control->getProperties()->get_Item("FontName"), Java("java.awt.Font")->PLAIN, 16);
+        $font = new Java("java.awt.Font", $control->getProperties()->get_Item("FontName"), Java("java.awt.Font")->PLAIN, 16);
         $graphics->setColor(Java("com.aspose.slides.SystemColor")->windowText);
         $graphics->setFont($font);
         $metrics = $graphics->getFontMetrics($font);

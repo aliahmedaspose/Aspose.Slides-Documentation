@@ -237,7 +237,7 @@ try {
 
     // Create new graphics path with text
     $graphicsPath;
-    $font = Java("java.awt.Font", "Arial", Java("java.awt.Font")->PLAIN, 40);
+    $font = new Java("java.awt.Font", "Arial", Java("java.awt.Font")->PLAIN, 40);
     $text = "Text in shape";
     $img = new Java("java.awt.image.BufferedImage", 100, 100, Java("java.awt.image.BufferedImage")->TYPE_INT_ARGB);
     $g2 = $img->createGraphics();
@@ -252,7 +252,7 @@ try {
     }
 
     // Convert graphics path to geometry path
-    $textPath = Java("com.aspose.slides.ShapeUtil")->graphicsPathToGeometryPath($PathFillModeTypegraphicsPath);
+    $textPath = Java("com.aspose.slides.ShapeUtil")->graphicsPathToGeometryPath($graphicsPath);
     $textPath->setFillMode(Java("com.aspose.slides.PathFillModeType")->Normal);
 
     // Set combination of new geometry path and origin geometry path to the shape

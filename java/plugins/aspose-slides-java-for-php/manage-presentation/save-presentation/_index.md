@@ -63,7 +63,7 @@ Aspose.Slides for Java provides a facility to set the view type for the generate
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Setting view type
-    $pres->getViewProperties()->setLastView((byte) Java("com.aspose.slides.ViewType")->SlideMasterView);
+    $pres->getViewProperties()->setLastView((new Java("java.lang.Integer", Java("com.aspose.slides.ViewType")->SlideMasterView))->byteValue());
     
     // Saving presentation
     $pres->save("newDemo.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

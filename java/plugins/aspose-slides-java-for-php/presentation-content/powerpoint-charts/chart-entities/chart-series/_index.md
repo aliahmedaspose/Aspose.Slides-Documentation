@@ -25,7 +25,7 @@ try {
     
     if ($series->get_Item(0)->getOverlap() == 0) {
         // Setting series overlap
-        $series->get_Item(0)->getParentSeriesGroup()->setOverlap((byte) -30);
+        $series->get_Item(0)->getParentSeriesGroup()->setOverlap((new Java("java.lang.Integer", -30))->byteValue());
     }
 
     // Saving presentation

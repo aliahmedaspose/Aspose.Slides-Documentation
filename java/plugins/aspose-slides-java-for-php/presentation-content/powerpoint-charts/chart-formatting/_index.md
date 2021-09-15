@@ -256,7 +256,7 @@ try {
         foreach( $ser->getDataPoints() as $cell ) 
         {
             // Setting the number format
-            $cell->getValue()->getAsCell()->setPresetNumberFormat((byte) 10); // 0.00%
+            $cell->getValue()->getAsCell()->setPresetNumberFormat((new Java("java.lang.Integer", 10))->byteValue()); // 0.00%
         }
     }
 

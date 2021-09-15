@@ -129,7 +129,7 @@ try {
     $pdfOptions->setSaveMetafilesAsPng(true);
     
     // Set text compression level
-    $pdfOptions->setTextCompression(PdfTextCompression.Flate);
+    $pdfOptions->setTextCompression(Java("com.aspose.slides.PdfTextCompression")->Flate);
     
     // Define the PDF standard
     $pdfOptions->setCompliance(Java("com.aspose.slides.PdfCompliance")->Pdf15);

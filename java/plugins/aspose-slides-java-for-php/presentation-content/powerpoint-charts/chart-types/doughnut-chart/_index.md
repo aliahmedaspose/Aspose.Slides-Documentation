@@ -27,7 +27,7 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Doughnut, 50, 50, 400, 400);
     
-    $chart->getChartData()->getSeriesGroups()->get_Item(0)->setDoughnutHoleSize((byte)90);
+    $chart->getChartData()->getSeriesGroups()->get_Item(0)->setDoughnutHoleSize((new Java("java.lang.Integer", 90))->byteValue());
 
     // Write presentation to disk
     $pres->save("DoughnutHoleSize_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

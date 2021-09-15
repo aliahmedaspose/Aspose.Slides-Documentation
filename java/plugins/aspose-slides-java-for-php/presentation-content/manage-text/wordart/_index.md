@@ -152,7 +152,7 @@ We apply the glow effect to the text to make it shine or stand out using this co
 
 ```php
 $portion->getPortionFormat()->getEffectFormat()->enableGlowEffect();
-$portion->getPortionFormat()->getEffectFormat()->getGlowEffect()->getColor()->setR((byte)255);
+$portion->getPortionFormat()->getEffectFormat()->getGlowEffect()->getColor()->setR((new Java("java.lang.Integer", 255))->byteValue());
 $portion->getPortionFormat()->getEffectFormat()->getGlowEffect()->getColor()->getColorTransform()->addJava("java.awt.Color")->Java("com.aspose.slides.TransformOperation")->SetAlpha, 0.54);
 $portion->getPortionFormat()->getEffectFormat()->getGlowEffect()->setRadius(7);
 ```
@@ -359,7 +359,7 @@ try {
     $ef->getInnerShadowEffect()->setBlurRadius(8.0);
     $ef->getInnerShadowEffect()->setDirection(90.0);
     $ef->getInnerShadowEffect()->setDistance(6.0);
-    $ef->getInnerShadowEffect()->getShadowColor()->setB((byte)189);
+    $ef->getInnerShadowEffect()->getShadowColor()->setB((new Java("java.lang.Integer", 189))->byteValue());
 
     // Set ColorType as Scheme
     $ef->getInnerShadowEffect()->getShadowColor()->setColorTypeJava("com.aspose.slides.ColorType")->Scheme);

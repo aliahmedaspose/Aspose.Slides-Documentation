@@ -39,7 +39,7 @@ try {
     {
         $series = $chart->getChartData()->getSeries()->add($workBook->getCell(0, 0, $seriesIndex + 1, "SERIES " + $seriesIndex), $chart->getType());
         $series->setExplosion(0);
-        $series->getParentSeriesGroup()->setDoughnutHoleSize((byte)20);
+        $series->getParentSeriesGroup()->setDoughnutHoleSize((new Java("java.lang.Integer", 20))->byteValue());
         $series->getParentSeriesGroup()->setFirstSliceAngle(351);
         $seriesIndex++;
     }

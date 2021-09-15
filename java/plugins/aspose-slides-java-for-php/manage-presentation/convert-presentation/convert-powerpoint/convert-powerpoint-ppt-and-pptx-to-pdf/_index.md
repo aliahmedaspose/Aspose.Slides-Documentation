@@ -123,7 +123,7 @@ try {
     $pdfOptions = new Java("com.aspose.slides.PdfOptions");
     
     // Set Jpeg quality
-    $pdfOptions->setJpegQuality((byte)90);
+    $pdfOptions->setJpegQuality((new Java("java.lang.Integer", 90))->byteValue());
     
     // Set behavior for metafiles
     $pdfOptions->setSaveMetafilesAsPng(true);

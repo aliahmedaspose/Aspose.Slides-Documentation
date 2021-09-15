@@ -39,7 +39,7 @@ try {
     
     // Set Rotation3D properties
     $chart->getRotation3D()->setRightAngleAxes(true);
-    $chart->getRotation3D()->setRotationX((byte)40);
+    $chart->getRotation3D()->setRotationX((new Java("java.lang.Integer", 40))->byteValue());
     $chart->getRotation3D()->setRotationY(270);
     $chart->getRotation3D()->setDepthPercents(150);
     
@@ -55,7 +55,7 @@ try {
     $series->getDataPoints()->addDataPointForBarSeries($fact->getCell($defaultWorksheetIndex, 3, 2, 60));
     
     // Set OverLap value
-    $series->getParentSeriesGroup()->setOverlap((byte)100);
+    $series->getParentSeriesGroup()->setOverlap((new Java("java.lang.Integer", 100))->byteValue());
     
     // Write presentation to disk
     $pres->save("Rotation3D_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);

@@ -47,14 +47,14 @@ try {
     // Adding MovingAverage trend line for chart series 2
     $tredLineMovAvg = $chart->getChartData()->getSeries()->get_Item(1)->getTrendLines()->add(Java("com.aspose.slides.TrendlineType")->MovingAverage);
     $tredLineMovAvg->setTrendlineType(Java("com.aspose.slides.TrendlineType")->MovingAverage);
-    $tredLineMovAvg->setPeriod((byte)3);
+    $tredLineMovAvg->setPeriod((new Java("java.lang.Integer", 3))->byteValue());
     $tredLineMovAvg->setTrendlineName("New TrendLine Name");
     
     // Adding Polynomial trend line for chart series 3
     $tredLinePol = $chart->getChartData()->getSeries()->get_Item(2)->getTrendLines()->add(Java("com.aspose.slides.TrendlineType")->Polynomial);
     $tredLinePol->setTrendlineType(Java("com.aspose.slides.TrendlineType")->Polynomial);
     $tredLinePol->setForward(1);
-    $tredLinePol->setOrder((byte)3);
+    $tredLinePol->setOrder((new Java("java.lang.Integer", 3))->byteValue());
     
     // Adding Power trend line for chart series 3
     $tredLinePower = $chart->getChartData()->getSeries()->get_Item(1)->getTrendLines()->add(Java("com.aspose.slides.TrendlineType")->Power);

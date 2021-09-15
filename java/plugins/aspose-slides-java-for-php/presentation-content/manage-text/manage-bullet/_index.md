@@ -47,7 +47,7 @@ try {
     
     // Setting paragraph bullet style and symbol
     $para->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    $para->getParagraphFormat()->getBullet()->setChar((char) 8226);
+    $para->getParagraphFormat()->getBullet()->setChar(chr(8226));
     
     // Setting paragraph text
     $para->setText("Welcome to Aspose.Slides");
@@ -174,7 +174,7 @@ try {
     // Setting paragraph bullet style and symbol
     $para2->setText("Content");
     $para2->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    $para2->getParagraphFormat()->getBullet()->setChar((char) 8226);
+    $para2->getParagraphFormat()->getBullet()->setChar(chr(8226));
     $para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->setFillType ((new Java("java.lang.Integer", Java("com.aspose.slides.FillType")->Solid))->byteValue());
     $para2->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
     //Setting bullet level
@@ -196,7 +196,7 @@ try {
     // Setting paragraph bullet style and symbol
     $para3->setText("Third level");
     $para3->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    $para3->getParagraphFormat()->getBullet()->setChar((char) 8226);
+    $para3->getParagraphFormat()->getBullet()->setChar(chr(8226));
     $para3->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->setFillType ((new Java("java.lang.Integer", Java("com.aspose.slides.FillType")->Solid))->byteValue());
     $para3->getParagraphFormat()->getDefaultPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
     //Setting bullet level

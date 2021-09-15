@@ -123,7 +123,7 @@ try {
     $para1 = $tf->getParagraphs()->get_Item(0);
     // Setting paragraph bullet style and symbol
     $para2->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    $para2->getParagraphFormat()->getBullet()->setChar((char)8226);
+    $para2->getParagraphFormat()->getBullet()->setChar(chr(8226));
     $para2->getParagraphFormat()->setAlignment(Java("com.aspose.slides.TextAlignment")->Left);
     
     $para2->getParagraphFormat()->setDepth(2);
@@ -132,7 +132,7 @@ try {
     // Get second Paragraph in the TextFrame and set its Indent
     $para2 = $tf->getParagraphs()->get_Item(1);
     $para2->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    $para2->getParagraphFormat()->getBullet()->setChar((char)8226);
+    $para2->getParagraphFormat()->getBullet()->setChar(chr(8226));
     $para2->getParagraphFormat()->setAlignment(Java("com.aspose.slides.TextAlignment")->Left);
     $para2->getParagraphFormat()->setDepth(2);
     $para2->getParagraphFormat()->setIndent(40);
@@ -140,7 +140,7 @@ try {
     // Get third Paragraph in the TextFrame and set its Indent
     $para3 = $tf->getParagraphs()->get_Item(2);
     $para3->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Symbol);
-    $para3->getParagraphFormat()->getBullet()->setChar((char)8226);
+    $para3->getParagraphFormat()->getBullet()->setChar(chr(8226));
     $para3->getParagraphFormat()->setAlignment(Java("com.aspose.slides.TextAlignment")->Left);
     $para3->getParagraphFormat()->setDepth(2);
     $para3->getParagraphFormat()->setIndent(50);

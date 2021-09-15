@@ -324,8 +324,8 @@ try {
     $controller = new Java("com.aspose.slides.VideoPlayerHtmlController", $path, $fileName, $baseUri);
 
     // Setting HTML options
-    $htmlOptions = new HtmlOptions(controller);
-    $svgOptions = new SVGOptions(controller);
+    $htmlOptions = new Java("com.aspose.slides.HtmlOptions", $controller);
+    $svgOptions = new Java("com.aspose.slides.SVGOptions", $controller);
 
     $htmlOptions->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($controller));
     $htmlOptions->setSlideImageFormat(Java("com.aspose.slides.SlideImageFormat")->svg($svgOptions));

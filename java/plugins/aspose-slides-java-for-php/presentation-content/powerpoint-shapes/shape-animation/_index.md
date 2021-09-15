@@ -44,7 +44,7 @@ try {
     $fxUserPath = seqInter->addEffect($ashp, Java("com.aspose.slides.EffectType")->PathUser, Java("com.aspose.slides.EffectSubtype")->None, Java("com.aspose.slides.EffectSubtype")->OnClick);
 
     // Created path is empty so we should add commands for moving.
-    $motionBhv = ($fxUserPath->getBehaviors()->get_Item(0));
+    $motionBhv = $fxUserPath->getBehaviors()->get_Item(0));
 
     Java("java.awt.geom.Point2D")->Float[] $pts = new Java("java.awt.geom.Point2D")->Float[1];
     $pts[0] = Java("java.awt.geom.Point2D")->Float(0.076, 0.59);

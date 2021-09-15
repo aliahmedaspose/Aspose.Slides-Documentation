@@ -187,7 +187,7 @@ $watermarkShape->setX(($w - $watermarkShape->getWidth()) / 2);
 
 $watermarkShape->setY(($h - $watermarkShape->getHeight()) / 2);
 
-$watermarkShape->setRotation(calculateRotation($h, $w));
+$watermarkShape->setRotation($calculateRotation($h, $w));
 ```
 
 ```php

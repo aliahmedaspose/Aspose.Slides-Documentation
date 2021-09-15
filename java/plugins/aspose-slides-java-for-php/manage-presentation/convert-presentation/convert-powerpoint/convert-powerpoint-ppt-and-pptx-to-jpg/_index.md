@@ -90,7 +90,7 @@ try {
         $graphics = $image->createGraphics();
         try {
 
-            $pres->getSlides()->get_Item(0)->renderToGraphics(opts, $graphics);
+            $pres->getSlides()->get_Item(0)->renderToGraphics($opts, $graphics);
         } finally {
             if ($graphics != null) $graphics->dispose();
         }

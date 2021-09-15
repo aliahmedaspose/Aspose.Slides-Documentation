@@ -147,7 +147,7 @@ for ($angle = -90; $angle < 270; $angle += $step)
     $y = R * sin($radians);
     $points->add(Java("java.awt.geom.Point2D")->Float($x + $R, $y + $R));
 
-    $radians = M_PI * (angle + step / 2) / 180.0;
+    $radians = M_PI * ($angle + step / 2) / 180.0;
     $x = r * cos($radians);
     $y = r * sin($radians);
     points->add(Java("java.awt.geom.Point2D")->Float($x + $R, $y + $R));
@@ -237,7 +237,7 @@ try {
 
     // Create new graphics path with text
     $graphicsPath;
-    $font = Java("java.awt.Font", "Arial", Font.PLAIN, 40);
+    $font = Java("java.awt.Font", "Arial", Java("java.awt.Font")->PLAIN, 40);
     $text = "Text in shape";
     $img = new Java("java.awt.image.BufferedImage", 100, 100, Java("java.awt.image.BufferedImage")->TYPE_INT_ARGB);
     $g2 = $img->createGraphics();
@@ -252,7 +252,7 @@ try {
     }
 
     // Convert graphics path to geometry path
-    $textPath = ShapeUtil->graphicsPathToGeometryPath(PathFillModeTypegraphicsPath);
+    $textPath = Java("com.aspose.slides.ShapeUtil")->graphicsPathToGeometryPath($PathFillModeTypegraphicsPath);
     $textPath->setFillMode(Java("com.aspose.slides.PathFillModeType")->Normal);
 
     // Set combination of new geometry path and origin geometry path to the shape
@@ -265,7 +265,7 @@ try {
     $shape->setGeometryPaths($igeometryPathArray);
 
     // Save the presentation
-    $pres->save(resultPath, Java("com.aspose.slides.SaveFormat")->Pptx);
+    $pres->save($resultPath, Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

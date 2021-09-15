@@ -161,8 +161,8 @@ try {
     $fd2 = new  Java("com.aspose.slides.FontData", "Castellar");
 
     // Assign new fonts to portion
-    $port1->getPortionFormat()->setLatinFont(fd1);
-    $port2->getPortionFormat()->setLatinFont(fd2);
+    $port1->getPortionFormat()->setLatinFont($fd1);
+    $port2->getPortionFormat()->setLatinFont($fd2);
 
     // Set font to Bold
     $port1->getPortionFormat()->setFontBold(Java("com.aspose.slides.NullableBool")->True);
@@ -355,7 +355,7 @@ try {
     $sld = $pres->getSlides()->get_Item(0);
     
     // Access the TextFrame
-    $tf1 = ($sld->getShapes()->get_Item(0))->getTextFrame();
+    $tf1 = $sld->getShapes()->get_Item(0))->getTextFrame();
     
     // Access the Paragraph
     $para = $tf1->getParagraphs()->get_Item(0);

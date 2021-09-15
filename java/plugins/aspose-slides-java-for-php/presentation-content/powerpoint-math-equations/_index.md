@@ -53,7 +53,7 @@ try {
 After creating, the shape will already contain one paragraph with a mathematical portion by default. The [**MathPortion**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathPortion) class is a portion that contains a mathematical text inside. To access mathematical content inside [**MathPortion**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathPortion), refer to the [**MathParagraph** ](https://apireference.aspose.com/slides/java/com.aspose.slides/MathParagraph)variable:
 
 ```php
-$mathParagraph = ($mathShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0))->getMathJava("com.aspose.slides.Paragraph");
+$mathParagraph = $mathShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0))->getMathJava("com.aspose.slides.Paragraph");
 ``` 
 
 The [**MathParagraph**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathParagraph) class allows to read, add, edit and delete math blocks ([**MathBlock**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathBlock)), that consist of a combination of mathematical elements. For example, create a fraction and place it in the presentation:
@@ -84,7 +84,7 @@ $pres = new Java("com.aspose.slides.Presentation");
 try {
     $mathShape = $pres->getSlides()->get_Item(0)->getShapes()->addMathShape(0, 0, 720, 150);
 
-    $mathParagraph = ($mathShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0))->getMathJava("com.aspose.slides.Paragraph");
+    $mathParagraph = $mathShape->getTextFrame()->getParagraphs()->get_Item(0)->getPortions()->get_Item(0))->getMathJava("com.aspose.slides.Paragraph");
     
     $fraction = new Java("com.aspose.slides.MathematicalText", "x")->divide("y");
 
@@ -273,14 +273,7 @@ Takes a function of an argument using the current object as the function name.
  * Takes a function of an argument using this instance as the function name
  * </p>
  */
-public $function($functionArgument);
-
-/**
- * <p>
- * Takes a function of an argument using this instance as the function name
- * </p>
- */
-public $function($functionArgument);
+public function($functionArgument);
 ``` 
 
 

@@ -105,12 +105,12 @@ try {
 ```php
 public static String convertToOADate(GregorianCalendar date) throws ParseException
 {
-    oaDate;
-    SimpleDateFormat myFormat = new SimpleDateFormat("dd MM yyyy");
-    java.util.Date baseDate = myFormat.parse("30 12 1899");
-    Long days = TimeUnit.DAYS.convert(date->getTimeInMillis() - baseDate->getTime(), TimeUnit.MILLISECONDS);
-    oaDate = days + (date->get(Calendar.HOUR_OF_DAY) / 24) + (date->get(Calendar.MINUTE) / (60 * 24)) + (date->get(Calendar.SECOND) / (60 * 24 * 60));
-    return String.valueOf(oaDate);
+    $oaDate;
+    $myFormat = new SimpleDateFormat("dd MM yyyy");
+    $baseDate = $myFormat.parse("30 12 1899");
+    $days = TimeUnit.DAYS.convert($date->getTimeInMillis() - $baseDate->getTime(), TimeUnit.MILLISECONDS);
+    $oaDate = $days + ($date->get(Calendar.HOUR_OF_DAY) / 24) + ($date->get(Calendar.MINUTE) / (60 * 24)) + ($date->get(Calendar.SECOND) / (60 * 24 * 60));
+    return String.valueOf($oaDate);
 }
 ```
 

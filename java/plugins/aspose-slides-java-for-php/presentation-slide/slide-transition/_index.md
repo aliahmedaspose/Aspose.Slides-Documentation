@@ -99,7 +99,7 @@ try {
     $autoshape = $presentation->getSlides()->get_Item(0)->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 400, 100);
     $autoshape->getTextFrame()->setText("Morph Transition in PowerPoint Presentations");
 
-    $presentation->getSlides()->addClone(presentation->getSlides()->get_Item(0));
+    $presentation->getSlides()->addClone($presentation->getSlides()->get_Item(0));
 
     $shape = $presentation->getSlides()->get_Item(1)->getShapes()->get_Item(0);
     $shape->setX($shape->getX() + 100);
@@ -107,7 +107,7 @@ try {
     $shape->setWidth($shape->getWidth() - 200);
     $shape->setHeight($shape->getHeight() - 10);
 
-    $presentation->getSlides()->get_Item(1)->getSlideShowTransition()->setType(com.aspose.slides.Java("com.aspose.slides.TransitionType")->Morph);
+    $presentation->getSlides()->get_Item(1)->getSlideShowTransition()->setType(Java("com.aspose.slides.TransitionType")->Morph);
 
     $presentation->save("presentation-out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 }

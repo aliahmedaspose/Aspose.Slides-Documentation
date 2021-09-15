@@ -22,7 +22,7 @@ try {
         foreach( $paragraph->getPortions() as $portion ) 
         {
             $point = $portion->getCoordinates();
-            echo("X: " + $point->x + " Y: " + $point->y);
+            echo("X: " . $point->x . " Y: " . $point->y);
         }
     }
 } finally {

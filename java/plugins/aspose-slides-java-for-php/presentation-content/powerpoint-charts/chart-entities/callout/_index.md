@@ -37,7 +37,7 @@ try {
     $seriesIndex = 0;
     while ($seriesIndex < 15)
     {
-        $series = $chart->getChartData()->getSeries()->add($workBook->getCell(0, 0, $seriesIndex + 1, "SERIES " + $seriesIndex), $chart->getType());
+        $series = $chart->getChartData()->getSeries()->add($workBook->getCell(0, 0, $seriesIndex + 1, "SERIES " . $seriesIndex), $chart->getType());
         $series->setExplosion(0);
         $series->getParentSeriesGroup()->setDoughnutHoleSize((new Java("java.lang.Integer", 20))->byteValue());
         $series->getParentSeriesGroup()->setFirstSliceAngle(351);
@@ -46,7 +46,7 @@ try {
     $categoryIndex = 0;
     while ($categoryIndex < 15)
     {
-        $chart->getChartData()->getCategories()->add($workBook->getCell(0, $categoryIndex + 1, 0, "CATEGORY " + $categoryIndex));
+        $chart->getChartData()->getCategories()->add($workBook->getCell(0, $categoryIndex + 1, 0, "CATEGORY " . $categoryIndex));
         $i = 0;
         while ($i< $chart->getChartData()->getSeries()->size())
         {

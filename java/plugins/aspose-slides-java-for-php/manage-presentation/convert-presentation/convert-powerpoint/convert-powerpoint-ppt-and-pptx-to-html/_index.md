@@ -137,7 +137,7 @@ try {
     
     // Saving File
     for ($i = 0; $i < $pres->getSlides()->size(); $i++)
-        $pres->save("Individual Slide" + ($i+ 1) + "_out.html", $Array->newInstance($Integer, $i + 1),Java("com.aspose.slides.SaveFormat")->Html, $htmlOptions);
+        $pres->save("Individual Slide" . ($i+ 1) . "_out.html", $Array->newInstance($Integer, $i + 1),Java("com.aspose.slides.SaveFormat")->Html, $htmlOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -196,12 +196,12 @@ public class CustomHeaderAndFontsController extends EmbedAllFontsHtmlController
     private final int m_basePath = 0;
 
     // Custom header template
-    final static String Header = "<!DOCTYPE html>\n" +
-            "<html>\n" +
-            "<head>\n" +
-            "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n" +
-            "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=9\">\n" +
-            "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\">\n" +
+    final static String Header = "<!DOCTYPE html>\n" .
+            "<html>\n" .
+            "<head>\n" .
+            "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n" .
+            "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=9\">\n" .
+            "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\">\n" .
             "</head>";
 
     private $m_cssFileName;
@@ -272,13 +272,13 @@ public class LinkAllFontsHtmlController extends EmbedAllFontsHtmlController
     {
         try {
             $fontName = substitutedFont == null ? originalFont->getFontName() : substitutedFont->getFontName();
-            $path = fontName + ".woff"; // some path sanitaze may be needed
+            $path = fontName . ".woff"; // some path sanitaze may be needed
             Files->write(new File(m_basePath + path)->toPath(), fontData, StandardOpenOption.CREATE);
 
             generator->addHtml("<style>");
             generator->addHtml("@font-face { ");
-            generator->addHtml("font-family: '" + fontName + "'; ");
-            generator->addHtml("src: url('" + path + "')");
+            generator->addHtml("font-family: '" . fontName . "'; ");
+            generator->addHtml("src: url('" . path . "')");
 
             generator->addHtml(" }");
             generator->addHtml("</style>");

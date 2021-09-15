@@ -73,11 +73,11 @@ private static void addVideoFromYouTube(Presentation pres, String videoID)
 {
     // add videoFrame
     $videoFrame = $pres->getSlides()->get_Item(0)->getShapes()->addVideoFrame(
-            10, 10, 427, 240, "https://www.youtube.com/embed/" + videoID);
+            10, 10, 427, 240, "https://www.youtube.com/embed/" . videoID);
     $videoFrame->setPlayMode(Java("com.aspose.slides.VideoPlayModePreset")->Auto);
 
     // load thumbnail
-    $thumbnailUri = "http://img.youtube.com/vi/" + videoID + "/hqdefault.jpg";
+    $thumbnailUri = "http://img.youtube.com/vi/" . videoID . "/hqdefault.jpg";
     URL url;
 
     try {
@@ -151,7 +151,7 @@ try {
                 $charIndex = $type->indexOf("/");
                 $type = $type->substring($charIndex + 1);
 
-                $fop = new Java("java.io.FileOutputStream", "testing2." + $type);
+                $fop = new Java("java.io.FileOutputStream", "testing2." . $type);
                 $fop->write($buffer);
                 $fop->flush();
                 $fop->close();

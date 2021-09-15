@@ -142,9 +142,9 @@ try {
     $effBackground = $pres->getSlides()->get_Item(0)->getBackground()->getEffective();
     
     if ($effBackground->getFillFormat()->getFillType() == Java("com.aspose.slides.FillType")->Solid)
-        echo("Fill color: " + $effBackground->getFillFormat()->getSolidFillColor());
+        echo("Fill color: " . $effBackground->getFillFormat()->getSolidFillColor());
     else
-        echo("Fill type: " + $effBackground->getFillFormat()->getFillType());
+        echo("Fill type: " . $effBackground->getFillFormat()->getFillType());
 } finally {
     if ($pres != null) $pres->dispose();
 }

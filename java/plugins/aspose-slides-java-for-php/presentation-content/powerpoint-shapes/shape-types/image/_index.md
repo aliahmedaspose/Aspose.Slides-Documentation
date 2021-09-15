@@ -130,7 +130,7 @@ try {
     for ($j = 0; $j < $sr->getPageCount(); $j++)
     {
     
-        $EmfSheetName = "test" + $sheet->getName() + " Page" + ($j + 1) + ".out.emf";
+        $EmfSheetName = "test" . $sheet->getName() . " Page" . ($j + 1) . ".out.emf";
         $sr->toImage($j, $EmfSheetName);
     
         $fis = new Java("java.io.FileInputStream", new Java("java.io.File", $EmfSheetName));

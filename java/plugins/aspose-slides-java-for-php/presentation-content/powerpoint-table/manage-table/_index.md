@@ -288,11 +288,11 @@ The aspect ratio of a geometric shape is the ratio of its sizes in different dim
 $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     $table = $pres->getSlides()->get_Item(0)->getShapes()->get_Item(0);
-    echo("Lock aspect ratio set: " + $table->getGraphicalObjectLock()->getAspectRatioLocked());
+    echo("Lock aspect ratio set: " . $table->getGraphicalObjectLock()->getAspectRatioLocked());
 
     $table->getGraphicalObjectLock()->setAspectRatioLocked(!$table->getGraphicalObjectLock()->getAspectRatioLocked()); // invert
 
-    echo("Lock aspect ratio set: " + $table->getGraphicalObjectLock()->getAspectRatioLocked());
+    echo("Lock aspect ratio set: " . $table->getGraphicalObjectLock()->getAspectRatioLocked());
 
     $pres->save("pres-out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

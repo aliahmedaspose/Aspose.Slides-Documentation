@@ -148,9 +148,9 @@ $portion->getPortionFormat()->setLatinFont(new  Java("com.aspose.slides.FontData
 Now lets check that the same font is set for Body Latin:
 
 ```php
-echo("Portion Body Latin font is: " + $portion->getPortionFormat()->getEffective()->getLatinFont()->getFontName());
+echo("Portion Body Latin font is: " . $portion->getPortionFormat()->getEffective()->getLatinFont()->getFontName());
 
-echo("Theme Body Latin font is: " + $pres->getMasterTheme()->getFontScheme()->getMinor()->getLatinFont());
+echo("Theme Body Latin font is: " . $pres->getMasterTheme()->getFontScheme()->getMinor()->getLatinFont());
 ``` 
 
 It is possible to change the presentation theme font, which will be updated for all presentation text accordingly:
@@ -178,7 +178,7 @@ $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     $numberOfBackgroundFills = $pres->getMasterTheme()->getFormatScheme()->getBackgroundFillStyles()->size();
 
-    echo("Number of background fill styles for theme is " + $numberOfBackgroundFills);
+    echo("Number of background fill styles for theme is " . $numberOfBackgroundFills);
 } finally {
     if ($pres != null) $pres->dispose();
 }

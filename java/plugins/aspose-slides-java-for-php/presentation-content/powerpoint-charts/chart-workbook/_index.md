@@ -105,7 +105,7 @@ The implementation is demonstrated below in an example.
 // Create an instance of Presentation class
 $pres = new Java("com.aspose.slides.Presentation", "chart.pptx");
 try {
-    $externalWbPath = $dataPath + "externalWorkbook1.xlsx";
+    $externalWbPath = $dataPath . "externalWorkbook1.xlsx";
     
     $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Pie, 50, 50, 400, 600);
 
@@ -141,7 +141,7 @@ try {
     $chart = $pres->getSlides()->get_Item(0)->getShapes()->addChart(Java("com.aspose.slides.ChartType")->Pie, 50, 50, 400, 600, false);
     $chartData = $chart->getChartData();
 
-    $chartData->setExternalWorkbook($dataPath +"externalWorkbook.xlsx");
+    $chartData->setExternalWorkbook($dataPath . "externalWorkbook.xlsx");
 
     $chartData->getSeries()->add($chartData->getChartDataWorkbook()->getCell(0, "B1"), Java("com.aspose.slides.ChartType")->Pie);
     $chartData->getSeries()->get_Item(0)->getDataPoints()->addDataPointForPieSeries($chartData->getChartDataWorkbook()->getCell(0, "B2"));

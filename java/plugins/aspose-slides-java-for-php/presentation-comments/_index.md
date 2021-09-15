@@ -65,8 +65,8 @@ try {
         foreach( $author->getComments() as $comment1 )
         {
             $comment = $comment1;
-            echo("ISlide :" + $comment->getSlide()->getSlideNumber() + " has comment: " + $comment->getText() + 
-                    " with Author: " + $comment->getAuthor()->getName() + " posted on time :" + $comment->getCreatedTime() + "\n");
+            echo("ISlide :" . $comment->getSlide()->getSlideNumber() . " has comment: " . $comment->getText() . 
+                    " with Author: " . $comment->getAuthor()->getName() . " posted on time :" . $comment->getCreatedTime() . "\n");
         }
     }
 } finally {
@@ -117,7 +117,7 @@ try {
             $comment = $comment->getParentComment();
         }
 
-        echo($comments->get_Item($i)->getAuthor()->getName() +  " : " + $comments->get_Item($i)->getText());
+        echo($comments->get_Item($i)->getAuthor()->getName() .  " : " . $comments->get_Item($i)->getText());
         echo();
     }
     $pres->save("parent_comment.pptx",Java("com.aspose.slides.SaveFormat")->Pptx);

@@ -24,7 +24,7 @@ try {
     // find "Calibri" font
     $calibriEmbeddedFont = null;
     for ($i = 0; $i < $embeddedFonts->length; $i++) {
-        echo(""+ $embeddedFonts->get_Item($i)->getFontName());
+        echo("" . $embeddedFonts->get_Item($i)->getFontName());
         if ("Calibri" == ($embeddedFonts->get_Item($i)->getFontName())) {
             $calibriEmbeddedFont = $embeddedFonts->get_Item($i);
             break;

@@ -62,8 +62,8 @@ try {
         // Check if all digital signatures are valid
         foreach( $pres->getDigitalSignatures() as $signature )
         {
-            echo($signature->getComments() + ", "
-                    + $signature->getSignTime()->toString() + " -- " + ($signature->isValid() ? "VALID" : "INVALID"));
+            echo($signature->getComments() . ", "
+                    . $signature->getSignTime()->toString() . " -- " . ($signature->isValid() ? "VALID" : "INVALID"));
             $allSignaturesAreValid &= $signature->isValid();
         }
 

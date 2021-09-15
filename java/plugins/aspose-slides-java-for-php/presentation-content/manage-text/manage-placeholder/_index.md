@@ -70,7 +70,7 @@ try {
             }
 
             $shape->getTextFrame()->setText($text);
-            echo("Placeholder with text: " + text);
+            echo("Placeholder with text: " . text);
         }
     }
 

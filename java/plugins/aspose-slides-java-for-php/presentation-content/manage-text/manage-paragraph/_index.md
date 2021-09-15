@@ -65,7 +65,7 @@ try {
         for ($j = 0; $j < 3; $j++) 
         {
             $portion = $tf->getParagraphs()->get_Item($i)->getPortions()->get_Item($j); 
-            $portion->setText("Portion0" + $j);
+            $portion->setText("Portion0" . $j);
             if ($j == 0) {
                 $portion->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
                 $portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
@@ -184,7 +184,7 @@ try {
     $shape->getTextFrame()->getParagraphs()->add($para1);
     $shape->getTextFrame()->getParagraphs()->add($para2);
 
-    $pres->save($resourcesOutputPath+"pres.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+    $pres->save($resourcesOutputPath . "pres.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

@@ -109,7 +109,7 @@ try {
     $outerShadowEffect = effects->getOuterShadowEffect();
 
     $shadowColor = $outerShadowEffect->getShadowColor()->getColor();
-    echo($shadowColor->toString() + " - transparency is: "+ ($shadowColor->getAlpha() / 255) * 100);
+    echo($shadowColor->toString() . " - transparency is: " . ($shadowColor->getAlpha() / 255) * 100);
 
     // set transparency to zero percent
     $outerShadowEffect->getShadowColor()->setColor(new Java("java.awt.Color", $shadowColor->getRed(), $shadowColor->getGreen(), $shadowColor->getBlue(), 255));
@@ -331,7 +331,7 @@ try {
     $portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
 
     // Save Presentation
-    $pres->save($resourcesOutputPath+"RotateText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+    $pres->save($resourcesOutputPath . "RotateText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -410,7 +410,7 @@ try {
     $portion->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->BLACK);
 
     // Save Presentation
-    $pres->save($resourcesOutputPath + "formatText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+    $pres->save($resourcesOutputPath . "formatText_out.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

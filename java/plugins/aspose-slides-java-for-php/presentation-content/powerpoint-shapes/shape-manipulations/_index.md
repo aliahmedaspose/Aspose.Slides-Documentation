@@ -20,7 +20,7 @@ try {
     $shape = findShape($slide, "Shape1");
     if ($shape != null)
     {
-        echo("Shape Name: " + $shape->getName());
+        echo("Shape Name: " . $shape->getName());
     }
 } finally {
     if ($pres != null) $pres->dispose();

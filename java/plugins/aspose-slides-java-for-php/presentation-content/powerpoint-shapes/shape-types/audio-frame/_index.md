@@ -62,7 +62,7 @@ try {
     
     //Extract sound in byte array
     $audio = $transition->getSound()->getBinaryData();
-    echo("Length: " + $audio->length);
+    echo("Length: " . $audio->length);
 } finally {
     if ($pres != null) $pres->dispose();
 }

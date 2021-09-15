@@ -64,9 +64,9 @@ try {
     $aShape = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 100, 300, 300);
     
     // Add TextFrame to the Rectangle
-    $aShape->addTextFrame("All these columns are limited to be within a single text container -- " +
-            "you can add or delete text and the new or remaining text automatically adjusts " +
-            "itself to flow within the container. You cannot have text flow from one container " +
+    $aShape->addTextFrame("All these columns are limited to be within a single text container -- " .
+            "you can add or delete text and the new or remaining text automatically adjusts " .
+            "itself to flow within the container. You cannot have text flow from one container " .
             "to other though -- we told you PowerPoint's column options for text are limited!");
     
     // Get text format of TextFrame
@@ -97,9 +97,9 @@ try {
     $format = $shape1getTextFrame()->getTextFrameFormat();
 
     $format->setColumnCount(2);
-    $shape1->getTextFrame()->setText("All these columns are limited to be within a single text container -- " +
-            "you can add or delete text and the new or remaining text automatically adjusts " +
-            "itself to flow within the container. You cannot have text flow from one container " +
+    $shape1->getTextFrame()->setText("All these columns are limited to be within a single text container -- " .
+            "you can add or delete text and the new or remaining text automatically adjusts " .
+            "itself to flow within the container. You cannot have text flow from one container " .
             "to other though -- we told you PowerPoint's column options for text are limited!");
     $pres->save("output_column1.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 

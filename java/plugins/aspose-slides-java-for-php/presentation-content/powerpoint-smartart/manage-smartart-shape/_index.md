@@ -50,7 +50,7 @@ try {
         {
             // Typecast shape to SmartArtEx
             $smart = $shape;
-            echo("Shape Name:" + $smart->getName());
+            echo("Shape Name:" . $smart->getName());
         }
     }
 } finally {

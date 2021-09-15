@@ -156,7 +156,7 @@ try {
         $bmp = $pres->getSlides()->get_Item($i)->getThumbnail(2, 2);
 		
         // Create file name for an image
-        $outputFilePath = $outputDir + "Slide_" + $i + ".jpg";
+        $outputFilePath = $outputDir . "Slide_" . $i . ".jpg";
 
         // Save the image in PNG format
         Java("javax.imageio.ImageIO")->write($bmp, "PNG", new File($outputFilePath));

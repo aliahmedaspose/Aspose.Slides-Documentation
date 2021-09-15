@@ -119,7 +119,7 @@ try {
                 $node = $smart->getAllNodes()->get_Item($i);
     
                 // Printing the SmartArt node parameters
-                echo($node->getTextFrame()->getText() + " " + $node->getLevel() + " " + $node->getPosition());
+                echo($node->getTextFrame()->getText() . " " . $node->getLevel() . " " . $node->getPosition());
             }
         }
     }
@@ -169,7 +169,7 @@ try {
                     $node = $node0->getChildNodes()->get_Item($j);
     
                     // Printing the SmartArt child node parameters
-                    echo("j = " + $j + ", Text = " + $node->getTextFrame()->getText() + ",  Level = " + $node->getLevel() + ", Position = " + $node->getPosition());
+                    echo("j = " . $j . ", Text = " . $node->getTextFrame()->getText() . ",  Level = " . $node->getLevel() . ", Position = " . $node->getPosition());
                 }
             }
         }
@@ -208,7 +208,7 @@ try {
     $chNode = $node->getChildNodes()->get_Item($position);
     
     // Printing the SmartArt child node parameters
-    echo("Text = " + $chNode->getTextFrame()->getText() + ",  Level = " + $chNode->getLevel() + ", Position = " + $chNode->getPosition());
+    echo("Text = " . $chNode->getTextFrame()->getText() . ",  Level = " . $chNode->getLevel() . ", Position = " . $chNode->getPosition());
 } finally {
     if ($pres != null) $pres->dispose();
 }

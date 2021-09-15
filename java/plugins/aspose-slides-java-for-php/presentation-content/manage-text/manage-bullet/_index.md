@@ -281,7 +281,7 @@ try {
     $paragraph5->getParagraphFormat()->getBullet()->setType(Java("com.aspose.slides.BulletType")->Numbered);
     $txtFrm->getParagraphs()->add($paragraph5);
 
-    $pres->save($resourcesOutputPath + "SetCustomBulletsNumber-slides.pptx.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
+    $pres->save($resourcesOutputPath . "SetCustomBulletsNumber-slides.pptx.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {
     if ($pres != null) $pres->dispose();
 }

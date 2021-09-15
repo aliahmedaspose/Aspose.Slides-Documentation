@@ -54,20 +54,20 @@ try {
     $dp = $pres->getDocumentProperties();
     
     // Display the built-in properties
-    echo("Category : " + $dp->getCategory());
-    echo("Current Status : " + $dp->getContentStatus());
-    echo("Creation Date : " + $dp->getCreatedTime());
-    echo("Author : " + $dp->getAuthor());
-    echo("Description : " + $dp->getComments());
-    echo("KeyWords : " + $dp->getKeywords());
-    echo("Last Modified By : " + $dp->getLastSavedBy());
-    echo("Supervisor : " + $dp->getManager());
-    echo("Modified Date : " + $dp->getLastSavedTime());
-    echo("Presentation Format : " + $dp->getPresentationFormat());
-    echo("Last Print Date : " + $dp->getLastPrinted());
-    echo("Is Shared between producers : " + $dp->getSharedDoc());
-    echo("Subject : " + $dp->getSubject());
-    echo("Title : " + $dp->getTitle());
+    echo("Category : " . $dp->getCategory());
+    echo("Current Status : " . $dp->getContentStatus());
+    echo("Creation Date : " . $dp->getCreatedTime());
+    echo("Author : " . $dp->getAuthor());
+    echo("Description : " . $dp->getComments());
+    echo("KeyWords : " . $dp->getKeywords());
+    echo("Last Modified By : " . $dp->getLastSavedBy());
+    echo("Supervisor : " . $dp->getManager());
+    echo("Modified Date : " . $dp->getLastSavedTime());
+    echo("Presentation Format : " . $dp->getPresentationFormat());
+    echo("Last Print Date : " . $dp->getLastPrinted());
+    echo("Is Shared between producers : " . $dp->getSharedDoc());
+    echo("Subject : " . $dp->getSubject());
+    echo("Title : " . $dp->getTitle());
 } finally {
     if ($pres != null) $pres->dispose();
 }
@@ -145,11 +145,11 @@ try {
     // Access and modify custom properties
     for ($i = 0; $i < $dp->getCountOfCustomProperties(); $i++) {
         // Display names and values of custom properties
-        echo("Custom Property Name : " + $dp->getCustomPropertyName($i));
-        echo("Custom Property Value : " + $dp->get_Item($dp->getCustomPropertyName($i)));
+        echo("Custom Property Name : " . $dp->getCustomPropertyName($i));
+        echo("Custom Property Value : " . $dp->get_Item($dp->getCustomPropertyName($i)));
     
         // Modify values of custom properties
-        $dp->set_Item($dp->getCustomPropertyName($i), "New Value " + ($i+ 1));
+        $dp->set_Item($dp->getCustomPropertyName($i), "New Value " . ($i+ 1));
     }
     
     // Save your presentation to a file
@@ -264,7 +264,7 @@ $props = $info->readDocumentProperties();
 $app = $props->getNameOfApplication();
 $ver = $props->getAppVersion();
 
-echo("Application Name: " + $app);
-echo("Application Version: " + $ver);
+echo("Application Name: " . $app);
+echo("Application Version: " . $ver);
 ```
 

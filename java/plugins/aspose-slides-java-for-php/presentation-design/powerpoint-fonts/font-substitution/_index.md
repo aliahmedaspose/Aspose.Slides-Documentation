@@ -29,7 +29,7 @@ try {
     $destFont = new  Java("com.aspose.slides.FontData", "Arial");
     
     // Add font rule for font replacement
-    $fontSubstRule = new Java("Java("com.aspose.slides.FontSubstRule", $sourceFont, $destFont, Java("com.aspose.slides.FontSubstCondition")->WhenInaccessible);
+    $fontSubstRule = new Java("com.aspose.slides.FontSubstRule", $sourceFont, $destFont, Java("com.aspose.slides.FontSubstCondition")->WhenInaccessible);
     
     // Add rule to font substitute rules collection
     $fontSubstRuleCollection = new Java("com.aspose.slides.FontSubstRuleCollection");

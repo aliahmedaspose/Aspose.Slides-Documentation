@@ -20,7 +20,7 @@ The implementation of the above is given below.
 
 ```php
 // Use load options to define the default regualr and asian fonts
-$loadOptions = new Java("com.aspose.slides.LoadOptions", "Java("com.aspose.slides.LoadFormat")->Auto);
+$loadOptions = new Java("com.aspose.slides.LoadOptions", Java("com.aspose.slides.LoadFormat")->Auto);
 $loadOptions->setDefaultRegularFont("Wingdings");
 $loadOptions->setDefaultAsianFont("Wingdings");
 

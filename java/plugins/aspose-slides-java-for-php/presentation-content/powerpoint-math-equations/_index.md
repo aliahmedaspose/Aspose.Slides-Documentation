@@ -148,9 +148,9 @@ Example:
 is created using a combination of [**MathFunction**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathFunction) and [**MathLimit**](https://apireference.aspose.com/slides/java/com.aspose.slides/MathLimit) elements this way:
 
 ```php
-$funcName = new Java("com.aspose.slides.MathLimit")->new Java("com.aspose.slides.MathematicalText", "lim"), new Java("com.aspose.slides.MathematicalText", "𝑥→∞"));
+$funcName = new Java("com.aspose.slides.MathLimit", new Java("com.aspose.slides.MathematicalText", "lim"), new Java("com.aspose.slides.MathematicalText", "𝑥→∞"));
 
-$mathFunc = new Java("com.aspose.slides.MathFunction")->$funcName, new Java("com.aspose.slides.MathematicalText", "𝑥"));
+$mathFunc = new Java("com.aspose.slides.MathFunction", $funcName, new Java("com.aspose.slides.MathematicalText", "𝑥"));
 ``` 
 
 
@@ -280,7 +280,7 @@ public function($functionArgument);
 For example:
 
 ```php
-$func = new Java("com.aspose.slides.MathematicalText", "sin")->function("x");
+$func = (new Java("com.aspose.slides.MathematicalText", "sin"))->function("x");
 ``` 
 
 ### **AsArgumentOfFunction method**
@@ -299,15 +299,15 @@ Takes the specified function using the current instance as the argument. You can
 For example:
 
 ```php
-$funcName = new Java("com.aspose.slides.MathLimit")->new Java("com.aspose.slides.MathematicalText", "lim"), new Java("com.aspose.slides.MathematicalText", "𝑛→∞"));
+$funcName = (new Java("com.aspose.slides.MathLimit"))->new Java("com.aspose.slides.MathematicalText", "lim"), new Java("com.aspose.slides.MathematicalText", "𝑛→∞"));
 
-$func1 = new Java("com.aspose.slides.MathematicalText", "2x")->asArgumentOfFunction($funcName);
+$func1 = (new Java("com.aspose.slides.MathematicalText", "2x"))->asArgumentOfFunction($funcName);
 
-$func2 = new Java("com.aspose.slides.MathematicalText", "x")->asArgumentOfFunction("sin");
+$func2 = (new Java("com.aspose.slides.MathematicalText", "x"))->asArgumentOfFunction("sin");
 
-$func3 = new Java("com.aspose.slides.MathematicalText", "x")->asArgumentOfFunction(Java("com.aspose.slides.MathFunctionsOfOneArgument")->Sin);
+$func3 = (new Java("com.aspose.slides.MathematicalText", "x"))->asArgumentOfFunction(Java("com.aspose.slides.MathFunctionsOfOneArgument")->Sin);
 
-$func4 = new Java("com.aspose.slides.MathematicalText", "x")->asArgumentOfFunction(Java("com.aspose.slides.MathFunctionsOfTwoArguments")->Log, "3");
+$func4 = (new Java("com.aspose.slides.MathematicalText", "x"))->asArgumentOfFunction(Java("com.aspose.slides.MathFunctionsOfTwoArguments")->Log, "3");
 ``` 
 
 ### **SetSubscript, SetSuperscript, SetSubSuperscriptOnTheRight, SetSubSuperscriptOnTheLeft methods**
@@ -325,7 +325,7 @@ Sets subscript and superscript. You can set subscript and superscript at the sam
 Example:
 
 ```php
-$script = new Java("com.aspose.slides.MathematicalText", "y")->setSubSuperscriptOnTheLeft("2x", "3z");
+$script = (new Java("com.aspose.slides.MathematicalText", "y"))->setSubSuperscriptOnTheLeft("2x", "3z");
 ``` 
 
 ### **Radical method**
@@ -337,7 +337,7 @@ Specifies the mathematical root of the given degree from the specified argument.
 Example:
 
 ```php
-$radical = new Java("com.aspose.slides.MathematicalText", "x")->radical("3");
+$radical = (new Java("com.aspose.slides.MathematicalText", "x"))->radical("3");
 ``` 
 
 ### **SetUpperLimit and SetLowerLimit methods**
@@ -355,7 +355,7 @@ Let's consider an expression: 
 Such expressions can be created through a combination of classes [MathFunction](https://apireference.aspose.com/slides/java/com.aspose.slides/MathFunction) and [MathLimit](https://apireference.aspose.com/slides/java/com.aspose.slides/MathLimit), and operations of the [IMathElement](https://apireference.aspose.com/slides/java/com.aspose.slides/IMathElement) as follows:
 
 ```php
-$mathExpression = new Java("com.aspose.slides.MathematicalText", "lim")->setLowerLimit("x→∞")->function("x");
+$mathExpression = (new Java("com.aspose.slides.MathematicalText", "lim"))->setLowerLimit("x→∞")->function("x");
 ``` 
 
 ### **Nary and Integral methods**
@@ -372,9 +372,9 @@ Both **nary** and **integral** methods create and return the N-ary operator repr
 Example:
 
 ```php
-$baseArg = new Java("com.aspose.slides.MathematicalText", "x")->join(new Java("com.aspose.slides.MathematicalText", "dx")->toBox());
+$baseArg = (new Java("com.aspose.slides.MathematicalText", "x"))->join(new Java("com.aspose.slides.MathematicalText", "dx")->toBox());
 
-$integral = baseArg->integral(Java("com.aspose.slides.MathIntegralTypes")->Simple, "0", "1");
+$integral = $baseArg->integral(Java("com.aspose.slides.MathIntegralTypes")->Simple, "0", "1");
 ``` 
 
 ### **ToMathArray method**
@@ -383,7 +383,7 @@ $integral = baseArg->integral(Java("com.aspose.slides.MathIntegralTypes")->Simpl
 Example:
 
 ```php
-$arrayFunction = new Java("com.aspose.slides.MathematicalText", "x")->join("y")->toMathArray();
+$arrayFunction = (new Java("com.aspose.slides.MathematicalText", "x"))->join("y")->toMathArray();
 ``` 
 
 ### **Formatting operations: Accent, Overbar, Underbar, Group, ToBorderBox, ToBox**
@@ -396,13 +396,13 @@ $arrayFunction = new Java("com.aspose.slides.MathematicalText", "x")->join("y")-
 Examples:
 
 ```php
-$accent = new Java("com.aspose.slides.MathematicalText", "x")->accent('\u0303');
+$accent = (new Java("com.aspose.slides.MathematicalText", "x"))->accent('\u0303');
 
-$bar = new Java("com.aspose.slides.MathematicalText", "x")->overbar();
+$bar = (new Java("com.aspose.slides.MathematicalText", "x"))->overbar();
 
-$groupChr = new Java("com.aspose.slides.MathematicalText", "x")->join("y")->join("z")->group('\u23E1', Java("com.aspose.slides.MathTopBotPositions")->Bottom, Java("com.aspose.slides.MathTopBotPositions")->Top);
+$groupChr = (new Java("com.aspose.slides.MathematicalText", "x"))->join("y")->join("z")->group('\u23E1', Java("com.aspose.slides.MathTopBotPositions")->Bottom, Java("com.aspose.slides.MathTopBotPositions")->Top);
 
-$borderBox = new Java("com.aspose.slides.MathematicalText", "x+y+z")->toBorderBox();
+$borderBox = (new Java("com.aspose.slides.MathematicalText", "x+y+z"))->toBorderBox();
 
-$boxedOperator = new Java("com.aspose.slides.MathematicalText", ":=")->toBox();
+$boxedOperator = (new Java("com.aspose.slides.MathematicalText", ":="))->toBox();
 ``` 

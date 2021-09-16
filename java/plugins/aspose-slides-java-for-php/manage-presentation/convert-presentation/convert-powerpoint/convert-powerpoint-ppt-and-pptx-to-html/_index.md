@@ -53,7 +53,7 @@ $pres = new Java("com.aspose.slides.Presentation", "Convert_HTML.pptx");
 try {
     $htmlOpt = new Java("com.aspose.slides.HtmlOptions");
     $htmlOpt->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
-    $htmlOpt->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createDocumentFormatter("", false));
+    $htmlOpt->setHtmlFormatter(Java("com.aspose.slides.HtmlFormatter")->createDocumentFormatter("", false));
 
     // Saving the presentation to HTML
     $pres->save("ConvertWholePresentationToHTML_out.html", Java("com.aspose.slides.SaveFormat")->Html, $htmlOpt);
@@ -72,7 +72,7 @@ $pres = new Java("com.aspose.slides.Presentation", "Convert_HTML.pptx");
 try {
     $controller = new Java("com.aspose.slides.ResponsiveHtmlController");
     $htmlOptions = new Java("com.aspose.slides.HtmlOptions");
-    $htmlOptions->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($controller));
+    $htmlOptions->setHtmlFormatter(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($controller));
 
     // Saving the presentation to HTML
     $pres->save("ConvertPresentationToResponsiveHTML_out.html", Java("com.aspose.slides.SaveFormat")->Html, $htmlOptions);
@@ -114,7 +114,7 @@ try {
     $embedFontsController = new Java("com.aspose.slides.EmbedAllFontsHtmlController", $fontNameExcludeList);
 
     $htmlOptionsEmbed = new Java("com.aspose.slides.HtmlOptions");
-    $htmlOptionsEmbed->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($embedFontsController));
+    $htmlOptionsEmbed->setHtmlFormatter(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($embedFontsController));
 
     $pres->save("input-PFDinDisplayPro-Regular-installed.html", Java("com.aspose.slides.SaveFormat")->Html, $htmlOptionsEmbed);
 } finally {
@@ -130,7 +130,7 @@ $pres = new Java("com.aspose.slides.Presentation", "Individual-Slide.pptx");
 try {
     $htmlOptions = new Java("com.aspose.slides.HtmlOptions");
     $htmlOptions->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
-    $htmlOptions->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter(new Java("com.aspose.slides.CustomFormattingController")));
+    $htmlOptions->setHtmlFormatter(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter(new Java("com.aspose.slides.CustomFormattingController")));
     
     $Array = new JavaClass("java.lang.reflect.Array");
     $Integer = new JavaClass("java.lang.Integer");
@@ -182,7 +182,7 @@ $pres = new Java("com.aspose.slides.Presentation", "pres.pptx");
 try {
     $htmlController = new Java("com.aspose.slides.CustomHeaderAndFontsController", "styles.css");
     $options = new Java("com.aspose.slides.HtmlOptions");
-    $options->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($htmlController));
+    $options->setHtmlFormatter(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($htmlController));
 
     $pres->save("pres.html", Java("com.aspose.slides.SaveFormat")->Html, $options);
 } finally {
@@ -241,7 +241,7 @@ try
     $linkcont = new Java("com.aspose.slides.LinkAllFontsHtmlController", $fontNameExcludeList,"C:/Windows/Fonts/");
 
     $htmlOptionsEmbed = new Java("com.aspose.slides.HtmlOptions");
-    $htmlOptionsEmbed->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter(($linkcont));
+    $htmlOptionsEmbed->setHtmlFormatter(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter(($linkcont));
 
     $pres->save("pres.html", Java("com.aspose.slides.SaveFormat")->Html, $htmlOptionsEmbed);
 }
@@ -327,7 +327,7 @@ try {
     $htmlOptions = new Java("com.aspose.slides.HtmlOptions", $controller);
     $svgOptions = new Java("com.aspose.slides.SVGOptions", $controller);
 
-    $htmlOptions->setJava("com.aspose.slides.HtmlFormatter")->(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($controller));
+    $htmlOptions->setHtmlFormatter(Java("com.aspose.slides.HtmlFormatter")->createCustomFormatter($controller));
     $htmlOptions->setSlideImageFormat(Java("com.aspose.slides.SlideImageFormat")->svg($svgOptions));
 
     // Saving the file

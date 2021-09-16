@@ -199,7 +199,7 @@ try {
 ```
 
 ## **Set Font Properties for Chart**
-Aspose.Slides for Java provides support for setting the font related properties for the $chart-> Please follow the steps below for setting the font properties for $chart->
+Aspose.Slides for Java provides support for setting the font related properties for the chart. Please follow the steps below for setting the font properties for chart.
 
 - Instantiate [Presentation](http://www.aspose.com/api/net/slides/aspose.slides/presentation) class object.
 - Add chart on the slide.

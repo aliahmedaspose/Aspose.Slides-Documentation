@@ -43,7 +43,7 @@ try {
 ```
 
 ## **Hide Information from Chart**
-This topic helps you to understand how to hide information from $chart-> Using Aspose.Slides for Java you can hide **Title, Vertical Axis, Horizontal Axis** and **Grid Lines** from $chart-> Below code example shows how to use these properties.
+This topic helps you to understand how to hide information from chart. Using Aspose.Slides for Java you can hide **Title, Vertical Axis, Horizontal Axis** and **Grid Lines** from chart. Below code example shows how to use these properties.
 
 ```php
 $pres = new Java("com.aspose.slides.Presentation");

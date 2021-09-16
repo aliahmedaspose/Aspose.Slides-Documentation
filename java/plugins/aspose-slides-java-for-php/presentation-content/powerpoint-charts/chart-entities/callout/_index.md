@@ -54,7 +54,7 @@ try {
             $dataPoint = $iCS->getDataPoints()->addDataPointForDoughnutSeries($workBook->getCell(0, $categoryIndex + 1, i + 1, 1));
             $dataPoint->getFormat()->getFill()->setFillType(Java("com.aspose.slides.FillType")->Solid);
             $dataPoint->getFormat()->getLine()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-            $dataPoint->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor($java.awt.Color.WHITE);
+            $dataPoint->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->WHITE);
             $dataPoint->getFormat()->getLine()->setWidth(1);
             $dataPoint->getFormat()->getLine()->setStyle(Java("com.aspose.slides.LineStyle")->Single);
             $dataPoint->getFormat()->getLine()->setDashStyle(Java("com.aspose.slides.LineDashStyle")->Solid);
@@ -66,8 +66,8 @@ try {
                $lbl->getDataLabelFormat()->getTextFormat()->getPortionFormat()->setLatinFont(new  Java("com.aspose.slides.FontData", "DINPro-Bold"));
                $lbl->getDataLabelFormat()->getTextFormat()->getPortionFormat()->setFontHeight(12);
                $lbl->getDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-               $lbl->getDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor($java.awt.Color.LIGHT_GRAY);
-               $lbl->getDataLabelFormat()->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor($java.awt.Color.WHITE);
+               $lbl->getDataLabelFormat()->getTextFormat()->getPortionFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->LIGHT_GRAY);
+               $lbl->getDataLabelFormat()->getFormat()->getLine()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->WHITE);
                $lbl->getDataLabelFormat()->setShowValue(false);
                $lbl->getDataLabelFormat()->setShowCategoryName(true);
                $lbl->getDataLabelFormat()->setShowSeriesName(false);

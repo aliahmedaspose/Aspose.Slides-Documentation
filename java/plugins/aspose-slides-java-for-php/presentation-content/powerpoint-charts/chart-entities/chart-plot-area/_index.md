@@ -12,8 +12,8 @@ Aspose.Slides for Java provides a simple API for . 
 1. Access first slide.
 1. Add chart with default data.
 1. Call method [IChart.validateChartLayout()](https://apireference.aspose.com/slides/java/com.aspose.slides/IChart#validateChartLayout--) before to get actual values.
-1. Gets actual X location (left) of the chart element relative to the left top corner of the $chart->
-1. Gets actual top of the chart element relative to the left top corner of the $chart->
+1. Gets actual X location (left) of the chart element relative to the left top corner of the chart.
+1. Gets actual top of the chart element relative to the left top corner of the chart.
 1. Gets actual width of the chart element.
 1. Gets actual height of the chart element.
 

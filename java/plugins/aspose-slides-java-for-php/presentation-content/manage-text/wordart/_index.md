@@ -213,7 +213,7 @@ $autoShape->getThreeDFormat()->setContourWidth(1.5);
 
 $autoShape->getThreeDFormat()->setDepth(3);
 
-$autoShape->getThreeDFormat()->setMaterial(MaterialPresetType.Plastic);
+$autoShape->getThreeDFormat()->setMaterial(Java("com.aspose.slides.MaterialPresetType")->Plastic);
 
 $autoShape->getThreeDFormat()->getLightRig()->setDirection(Java("com.aspose.slides.LightingDirection")->Top);
 $autoShape->getThreeDFormat()->getLightRig()->setLightType(Java("com.aspose.slides.LightRigPresetType")->Balanced);
@@ -245,7 +245,7 @@ $textFrame->getTextFrameFormat()->getThreeDFormat()->setContourWidth(1.5);
 
 $textFrame->getTextFrameFormat()->getThreeDFormat()->setDepth(3);
 
-$textFrame->getTextFrameFormat()->getThreeDFormat()->setMaterial(MaterialPresetType.Plastic);
+$textFrame->getTextFrameFormat()->getThreeDFormat()->setMaterial(Java("com.aspose.slides.MaterialPresetType")->Plastic);
 
 $textFrame->getTextFrameFormat()->getThreeDFormat()->getLightRig()->setDirection(Java("com.aspose.slides.LightingDirection")->Top);
 $textFrame->getTextFrameFormat()->getThreeDFormat()->getLightRig()->setLightType(Java("com.aspose.slides.LightRigPresetType")->Balanced);

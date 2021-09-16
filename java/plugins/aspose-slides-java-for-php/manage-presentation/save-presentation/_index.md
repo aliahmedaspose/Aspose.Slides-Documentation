@@ -89,7 +89,7 @@ try {
     
     //Setting strick XML save options
     $options = new Java("com.aspose.slides.PptxOptions");
-    $options->setConformance(Conformance.Iso29500_2008_Strict);
+    $options->setConformance(Java("com.aspose.slides.Conformance")->Iso29500_2008_Strict);
     
     // Save your presentation to a file
     $pres->save("demoPass.pptx", Java("com.aspose.slides.SaveFormat")->Pptx, $options);

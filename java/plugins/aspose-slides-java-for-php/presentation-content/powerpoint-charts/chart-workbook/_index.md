@@ -71,7 +71,7 @@ Aspose.Slides for Java provides a simple API for getting value from WorkBook Cel
 1. Create an instance of the [Presentation](http://www.aspose.com/api/java/slides/com.aspose.slides/classes/Presentation) class.
 1. Obtain a slide's reference by its index.
 1. Create object for chart shape
-1. Create object for source type of ChartDataSourceType which represents data source of the $chart->
+1. Create object for source type of ChartDataSourceType which represents data source of the chart.
 1. If Source Type is equal to external workbook the get chart external data source workbook path.
 
 ```php

@@ -445,7 +445,7 @@ try {
 1. Add new chart data for the chart series.
 1. Write the modified presentation to a PPTX file
 
-The following code is used to create a $chart->
+The following code is used to create a chart.
 
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
@@ -491,7 +491,7 @@ try {
 1. Add a chart with default data along with the desired type ([ChartType](https://apireference.aspose.com/slides/java/com.aspose.slides/ChartType).Funnel).
 1. Write the modified presentation to a PPTX file
 
-The following code is used to create a $chart->
+The following code is used to create a chart.
 
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
@@ -532,7 +532,7 @@ try {
 1. Add a chart with default data along with the desired type ([ChartType](https://apireference.aspose.com/slides/java/com.aspose.slides/ChartType).sunburst).
 1. Write the modified presentation to a PPTX file
 
-The following code is used to create a $chart->
+The following code is used to create a chart.
 
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
@@ -594,7 +594,7 @@ try {
 1. Add new series and categories.
 1. Write the modified presentation to a PPTX file
 
-The following code is used to create a $chart->
+The following code is used to create a chart.
 
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
@@ -632,7 +632,7 @@ try {
 1. Add new chart data for the chart series.
 1. Write the modified presentation to a PPTX file.
 
-The following code is used to create a $chart->
+The following code is used to create a chart.
 
 ```php
 $pres = new Java("com.aspose.slides.Presentation");
@@ -684,7 +684,7 @@ try {
 ## **Updating Charts**
 To update a chart, do this:
 
-- Open an instance of the [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class containing the $chart->
+- Open an instance of the [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class containing the chart.
 - Obtain the reference of a slide by using its Index.
 - Traverse through all shapes to find the desired $chart->
 - Access the chart data worksheet.
@@ -755,7 +755,7 @@ try {
 
 To set the data range for a chart, do this:
 
-- Open an instance of the [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class containing the $chart->
+- Open an instance of the [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class containing the chart.
 - Obtain the reference of a slide by using its Index.
 - Traverse through all shapes to find the desired $chart->
 - Access the chart data and set the range.

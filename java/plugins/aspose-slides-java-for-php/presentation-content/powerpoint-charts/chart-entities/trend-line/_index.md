@@ -69,7 +69,7 @@ try {
 ```
 
 ## **Add Custom Line**
-Aspose.Slides for Java provides a simple API to add custom lines in a $chart-> To add a simple plain line to a selected slide of the presentation, please follow the steps below:
+Aspose.Slides for Java provides a simple API to add custom lines in a chart. To add a simple plain line to a selected slide of the presentation, please follow the steps below:
 
 - Create an instance of [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class
 - Obtain the reference of a slide by using its Index
@@ -88,7 +88,7 @@ try {
     $shape = $chart->getUserShapes()->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Line, 0, $chart->getHeight()/2, $chart->getWidth(), 0);
     
     $shape->getLineFormat()->getFillFormat()->setFillType(Java("com.aspose.slides.FillType")->Solid);
-    $shape->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor($java.awt.Color.RED);
+    $shape->getLineFormat()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->RED);
     
     $pres->save("Presentation.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } finally {

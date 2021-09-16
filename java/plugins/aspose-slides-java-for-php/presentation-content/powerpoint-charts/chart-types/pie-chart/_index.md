@@ -5,14 +5,14 @@ url: /java/pie-chart/
 ---
 
 ## **Second Plot Options for Pie of Pie and Bar of Pie Chart**
-Aspose.Slides for Java now supports second plot options for Pie of Pie or Bar of Pie $chart-> In this topic, we will show you how to specify those options using Aspose.Slides. To specify the properties, do this:
+Aspose.Slides for Java now supports second plot options for Pie of Pie or Bar of Pie chart. In this topic, we will show you how to specify those options using Aspose.Slides. To specify the properties, do this:
 
 1. Instantiate [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class object.
 1. Add chart on the slide.
-1. Specify the second plot options of $chart->
+1. Specify the second plot options of chart.
 1. Write presentation to disk.
 
-In the example given below, we have set different properties of Pie of Pie $chart->
+In the example given below, we have set different properties of Pie of Pie chart.
 
 ```php
 // Create an instance of Presentation class

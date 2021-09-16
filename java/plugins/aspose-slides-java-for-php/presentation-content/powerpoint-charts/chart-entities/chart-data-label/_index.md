@@ -25,7 +25,7 @@ try {
 Aspose.Slides for Java supports displaying the percentage as labels. In this topic, we will see with example how to display the percentage as labels using Aspose.Slides. In order to set percentage as display. Please follow the steps below.
 
 1. Instantiate [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) object.
-1. Add stacked column $chart->
+1. Add stacked column chart.
 1. Calculate the series data point values for particular categories.
 1. Displaying the percentage as labels.
 1. Set properties of label.
@@ -44,7 +44,7 @@ try {
     $series;
     $Array = new JavaClass("java.lang.reflect.Array");
     $Double = new JavaClass("java.lang.Double");
-    $total_for_Cat = $Array->newInstance($Double, chart->getChartData()->getCategories()->size());
+    $total_for_Cat = $Array->newInstance($Double, $chart->getChartData()->getCategories()->size());
     for ($k = 0; $k < $chart->getChartData()->getCategories()->size(); $k++) {
         $cat = $chart->getChartData()->getCategories()->get_Item($k);
     

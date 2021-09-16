@@ -9,7 +9,7 @@ description: "PowerPoint Equations and Spreadsheet Formulas"
 
 
 ## **About Chart Spreadsheet Formula in Presentation**
-**Chart spreadsheet** (or chart worksheet) in presentation is the data source of the $chart-> Chart spreadsheet contains data, which are represented on the chart in a graphic way. When you create a chart in PowerPoint, the worksheet associated with this chart is automatically created too. Chart worksheet is created for all types of charts: line chart, bar chart, sunburst chart, pie chart, etc. To see chart spreadsheet in PowerPoint you should double-click on the chart:
+**Chart spreadsheet** (or chart worksheet) in presentation is the data source of the chart. Chart spreadsheet contains data, which are represented on the chart in a graphic way. When you create a chart in PowerPoint, the worksheet associated with this chart is automatically created too. Chart worksheet is created for all types of charts: line chart, bar chart, sunburst chart, pie chart, etc. To see chart spreadsheet in PowerPoint you should double-click on the chart:
 
 ![todo:image_alt_text]($chart-worksheet-formulas_1.png)
 

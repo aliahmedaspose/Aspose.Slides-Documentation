@@ -40,7 +40,7 @@ Aspose.Slides for Java provides support for changing series color. 
 
 1. Instantiate [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class object.
 1. Add chart on the slide.
-1. Access specific series of $chart->
+1. Access specific series of chart.
 1. Set fill type and fill color.
 1. Save modified presentation.
 
@@ -69,7 +69,7 @@ Aspose.Slides for Java provides support for changing color of categories in a se
 
 1. Instantiate [Presentation](https://apireference.aspose.com/slides/java/com.aspose.slides/Presentation) class object.
 1. Add chart on the slide.
-1. Access specific series of $chart->
+1. Access specific series of chart.
 1. Set fill type and fill color.
 1. Save modified presentation.
 

@@ -190,37 +190,37 @@ try {
 }
 
 ```
-```php
+```java
 public class CustomHeaderAndFontsController extends EmbedAllFontsHtmlController
 {
     private final int m_basePath = 0;
 
     // Custom header template
-    final static String Header = "<!DOCTYPE html>\n" .
-            "<html>\n" .
-            "<head>\n" .
-            "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n" .
-            "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=9\">\n" .
-            "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\">\n" .
+    final static String Header = "<!DOCTYPE html>\n" +
+            "<html>\n" +
+            "<head>\n" +
+            "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n" +
+            "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=9\">\n" +
+            "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s\">\n" +
             "</head>";
 
-    private $m_cssFileName;
+    private final String m_cssFileName;
 
-    public CustomHeaderAndFontsController($cssFileName) 
+    public CustomHeaderAndFontsController(String cssFileName) 
     {
         m_cssFileName = cssFileName;
     }
 
     public void writeDocumentStart(IHtmlGenerator generator, IPresentation presentation) 
     {
-        generator->addHtml(sprintf(Header, m_cssFileName));
+        generator.addHtml(String.format(Header, m_cssFileName));
         writeAllFonts(generator, presentation);
     }
 
     public void writeAllFonts(IHtmlGenerator generator, IPresentation presentation) 
     {
-        generator->addHtml("<!-- Embedded fonts -->");
-        super->writeAllFonts(generator, presentation);
+        generator.addHtml("<!-- Embedded fonts -->");
+        super.writeAllFonts(generator, presentation);
     }
 }
 ```
@@ -250,40 +250,40 @@ finally {
 }
 ```
 
-```php
+```java
 public class LinkAllFontsHtmlController extends EmbedAllFontsHtmlController
 {
-    private $m_basePath;
+    private final String m_basePath;
 
-    public LinkAllFontsHtmlController(String[] $fontNameExcludeList, String basePath)
+    public LinkAllFontsHtmlController(String[] fontNameExcludeList, String basePath)
     {
-        super($fontNameExcludeList);
+        super(fontNameExcludeList);
         m_basePath = basePath;
     }
 
     public void writeFont
     (
             IHtmlGenerator generator,
-            $originalFont,
-            $substitutedFont,
-            $fontStyle,
-            $fontWeight,
+            IFontData originalFont,
+            IFontData substitutedFont,
+            String fontStyle,
+            String fontWeight,
             byte[] fontData)
     {
         try {
-            $fontName = substitutedFont == null ? originalFont->getFontName() : substitutedFont->getFontName();
-            $path = fontName . ".woff"; // some path sanitaze may be needed
-            Files->write(new File(m_basePath + path)->toPath(), fontData, StandardOpenOption.CREATE);
+            String fontName = substitutedFont == null ? originalFont.getFontName() : substitutedFont.getFontName();
+            String path = fontName + ".woff"; // some path sanitaze may be needed
+            Files.write(new File(m_basePath + path).toPath(), fontData, StandardOpenOption.CREATE);
 
-            generator->addHtml("<style>");
-            generator->addHtml("@font-face { ");
-            generator->addHtml("font-family: '" . fontName . "'; ");
-            generator->addHtml("src: url('" . path . "')");
+            generator.addHtml("<style>");
+            generator.addHtml("@font-face { ");
+            generator.addHtml("font-family: '" + fontName + "'; ");
+            generator.addHtml("src: url('" + path + "')");
 
-            generator->addHtml(" }");
-            generator->addHtml("</style>");
-        } catch (JavaException $ex) {
-        
+            generator.addHtml(" }");
+            generator.addHtml("</style>");
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 }

@@ -115,14 +115,14 @@ try {
     $pres->dispose();
 }
 ```
-```php
+```java
 class ExportProgressHandler implements IProgressCallback 
 {
     public void reporting(double progressValue) 
 	{
         // Use progress percentage value here
-        $progress = Double.valueOf(progressValue)->intValue();
-        echo(progress . "% file converted");
+        int progress = Double.valueOf(progressValue).intValue();
+        System.out.println(progress + "% file converted");
     }
 }
 ```

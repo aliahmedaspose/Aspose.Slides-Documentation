@@ -331,7 +331,7 @@ try {
     $htmlOptions->setSlideImageFormat(Java("com.aspose.slides.SlideImageFormat")->svg($svgOptions));
 
     // Saving the file
-    $pres->save(fileName, Java("com.aspose.slides.SaveFormat")->Html, $htmlOptions);
+    $pres->save($fileName, Java("com.aspose.slides.SaveFormat")->Html, $htmlOptions);
 } finally {
     if ($pres != null) $pres->dispose();
 }

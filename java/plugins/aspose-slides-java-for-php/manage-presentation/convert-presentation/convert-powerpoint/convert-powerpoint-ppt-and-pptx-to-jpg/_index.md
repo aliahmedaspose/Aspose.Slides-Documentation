@@ -59,13 +59,13 @@ try {
     $desiredX = 1200;
     $desiredY = 800;
     // Get scaled values of X and Y
-    $ScaleX = (1.0 / $pres->getSlideSize()->getSize()->getWidth()) * desiredX;
-    $ScaleY = (1.0 / $pres->getSlideSize()->getSize()->getHeight()) * desiredY;
+    $ScaleX = (1.0 / $pres->getSlideSize()->getSize()->getWidth()) * $desiredX;
+    $ScaleY = (1.0 / $pres->getSlideSize()->getSize()->getHeight()) * $desiredY;
 
     foreach( $pres->getSlides() as $sld )
     {
         // Create a full scale image
-        $bmp = $sld->getThumbnail(ScaleX, ScaleY);
+        $bmp = $sld->getThumbnail($ScaleX, $ScaleY);
 
         // Save the image to disk in JPEG format
         Java("javax.imageio.ImageIO")->write($bmp, "JPEG", new File(sprintf("Slide_%d.jpg", $sld->getSlideNumber())));

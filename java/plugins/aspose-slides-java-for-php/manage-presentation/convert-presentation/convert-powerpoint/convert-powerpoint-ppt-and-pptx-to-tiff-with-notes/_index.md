@@ -18,7 +18,7 @@ try {
     $opts->getNotesCommentsLayouting()->setNotesPosition(Java("com.aspose.slides.NotesPositions")->BottomFull);
     
     //Saving the presentation to TIFF notes
-    $pres->save("Tiff-Notes.tiff", Java("com.aspose.slides.SaveFormat")->Tiff $opts);
+    $pres->save("Tiff-Notes.tiff", Java("com.aspose.slides.SaveFormat")->Tiff, $opts);
 } finally {
     if ($pres != null) $pres->dispose();
 }

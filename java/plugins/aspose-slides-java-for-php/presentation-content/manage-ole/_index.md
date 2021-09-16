@@ -246,8 +246,19 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
     $oleObjectFrame = $slide->getShapes()->get_Item(0);
     echo("Current embedded data extension is: " . $oleObjectFrame->getEmbeddedData()->getEmbeddedFileExtension());
-
-    $oleObjectFrame->setEmbeddedData(new Java("com.aspose.slides.OleEmbeddedDataInfo", Files->readAllBytes(Paths->get("embedOle.zip")), "zip"));
+    
+    $Array = new JavaClass("java.lang.reflect.Array");
+    $Byte = new JavaClass("java.lang.Byte");
+    $zipFile = new Java("java.io.File", "embedOle.zip");
+    $zipBytes = $Array->newInstance($Byte, $zipFile->length());
+    $zDis = new Java("java.io.DataInputStream", new Java("java.io.FileInputStream", $zipFile));
+    try {
+    $zDis->readFully($zipBytes);
+    } finally {
+                if ($zDis != null) $zDis->close();
+            }
+            
+    $oleObjectFrame->setEmbeddedData(new Java("com.aspose.slides.OleEmbeddedDataInfo", $zipBytes, "zip"));
 
     $pres->save("embeddedChanged.pptx", Java("com.aspose.slides.SaveFormat")->Pptx);
 } catch (JavaException $e) {

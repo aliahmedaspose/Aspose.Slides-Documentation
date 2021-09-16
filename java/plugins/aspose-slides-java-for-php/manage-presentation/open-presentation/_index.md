@@ -77,30 +77,30 @@ The code snippet below shows how to use IResourceLoadingCallback interface:
 
 ```php
 $opts = new Java("com.aspose.slides.LoadOptions");
-o$pts->setResourceLoadingCallback(new Java("com.aspose.slides.ImageLoadingHandler"));
+$opts->setResourceLoadingCallback(new Java("com.aspose.slides.ImageLoadingHandler"));
 
 $pres = new Java("com.aspose.slides.Presentation", "presentation.pptx", $opts);
 ```
-```php
+```java
 class ImageLoadingHandler implements IResourceLoadingCallback 
 {
     public int resourceLoading(IResourceLoadingArgs args) 
     {
-        if ($args->getOriginalUri()->endsWith(".jpg")) 
+        if (args.getOriginalUri().endsWith(".jpg")) 
         {
             try // load substitute image
             {
-                byte[] imageBytes = Files->readAllBytes(new Java("java.io.File", "aspose-logo.jpg")->toPath());
-                args->setData($imageBytes);
+                byte[] imageBytes = Files.readAllBytes(new File("aspose-logo.jpg").toPath());
+                args.setData(imageBytes);
                 return ResourceLoadingAction.UserProvided;
             } catch (RuntimeException ex) {
                 return ResourceLoadingAction.Skip;
-            }  catch (JavaException $ex) {
-            
+            }  catch (IOException ex) {
+                ex.printStackTrace();
             }
-        } else if ($args->getOriginalUri()->endsWith(".png")) {
+        } else if (args.getOriginalUri().endsWith(".png")) {
             // set substitute url
-            args->setUri("http://www.google.com/images/logos/ps_logo2.png");
+            args.setUri("http://www.google.com/images/logos/ps_logo2.png");
             return ResourceLoadingAction.Default;
         }
         // skip all other images

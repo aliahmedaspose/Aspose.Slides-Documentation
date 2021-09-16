@@ -110,14 +110,14 @@ try {
     $comments = $slide->getSlideComments(null);
     for ($i = 0; $i < $comments->length; $i++)
     {
-        $comment = $comments->get_Item($i);
+        $comment = $comments[$i];
         while ($comment->getParentComment() != null)
         {
             echo("\t");
             $comment = $comment->getParentComment();
         }
 
-        echo($comments->get_Item($i)->getAuthor()->getName() .  " : " . $comments->get_Item($i)->getText());
+        echo($comments[$i]->getAuthor()->getName() .  " : " . $comments[$i]->getText());
         echo();
     }
     $pres->save("parent_comment.pptx",Java("com.aspose.slides.SaveFormat")->Pptx);

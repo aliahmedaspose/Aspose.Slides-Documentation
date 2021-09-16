@@ -25,16 +25,16 @@ try {
     $point = Java("java.awt.geom.Point2D")->Float(0.2, 0.2);
 
     // Adding slide comment for an author on slide 1
-    $author->getComments()->addComment("Hello Jawad, this is slide comment", $presentation->getSlides()->get_Item(0), point, new Java("java.util.Date"));
+    $author->getComments()->addComment("Hello Jawad, this is slide comment", $presentation->getSlides()->get_Item(0), $point, new Java("java.util.Date"));
 
     // Adding slide comment for an author on slide 1
-    $author->getComments()->addComment("Hello Jawad, this is second slide comment", $presentation->getSlides()->get_Item(1), point, new Java("java.util.Date"));
+    $author->getComments()->addComment("Hello Jawad, this is second slide comment", $presentation->getSlides()->get_Item(1), $point, new Java("java.util.Date"));
 
     // Accessing ISlide 1
     $slide = $presentation->getSlides()->get_Item(0);
 
     // if null is passed as an argument then it will bring comments from all authors on selected slide
-    $comments = $slide->getSlideComments(author);
+    $comments = $slide->getSlideComments($author);
 
     // Accessin the comment at index 0 for slide 1
     $str = $comments[0]->getText();

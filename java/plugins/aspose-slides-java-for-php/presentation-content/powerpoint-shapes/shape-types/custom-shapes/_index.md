@@ -134,7 +134,7 @@ try {
 - Apply the path to the shape.
 
 ```php
-List<Java("java.awt.geom.Point2D")->Float> points = new ArrayList<Java("java.awt.geom.Point2D")->Float>();
+$points = new Java("java.util.ArrayList");
 
 $R = 100;
 $r = 50;
@@ -148,9 +148,9 @@ for ($angle = -90; $angle < 270; $angle += $step)
     $points->add(Java("java.awt.geom.Point2D")->Float($x + $R, $y + $R));
 
     $radians = M_PI * ($angle + step / 2) / 180.0;
-    $x = r * cos($radians);
-    $y = r * sin($radians);
-    points->add(Java("java.awt.geom.Point2D")->Float($x + $R, $y + $R));
+    $x = $r * cos($radians);
+    $y = $r * sin($radians);
+    $points->add(Java("java.awt.geom.Point2D")->Float($x + $R, $y + $R));
 }
 
 $starPath = new Java("com.aspose.slides.GeometryPath");

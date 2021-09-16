@@ -142,7 +142,7 @@ try {
     if ($pres != null) $pres->dispose();
 }
 ```
-```php
+```java
 public class CustomFormattingController implements IHtmlFormattingController
 {
     @Override
@@ -154,23 +154,23 @@ public class CustomFormattingController implements IHtmlFormattingController
     @Override
     public void writeSlideStart(IHtmlGenerator generator, ISlide slide) 
 	{
-        generator->addHtml(sprintf(SlideHeader, generator->getSlideIndex() + 1));
+        generator.addHtml(String.format(SlideHeader, generator.getSlideIndex() + 1));
     }
 
     @Override
     public void writeSlideEnd(IHtmlGenerator generator, ISlide slide) 
 	{
-        generator->addHtml(SlideFooter);
+        generator.addHtml(SlideFooter);
     }
 
     @Override
-    public void writeShapeStart(IHtmlGenerator generator, $shape) { }
+    public void writeShapeStart(IHtmlGenerator generator, IShape shape) { }
 
     @Override
-    public void writeShapeEnd(IHtmlGenerator generator, $shape) { }
+    public void writeShapeEnd(IHtmlGenerator generator, IShape shape) { }
 
-    private $SlideHeader = "<div class=\"slide\" name=\"slide\" id=\"slide%d\">";
-    private $SlideFooter = "</div>";
+    private final String SlideHeader = "<div class=\"slide\" name=\"slide\" id=\"slide%d\">";
+    private final String SlideFooter = "</div>";
 }
 ```
 

@@ -42,7 +42,7 @@ try {
 
     foreach( $autoShape->getTextFrame()->getParagraphs() as $paragraph )
     {
-        $effects = sequence->getEffectsByParagraph($paragraph);
+        $effects = $sequence->getEffectsByParagraph($paragraph);
 
         if ($effects->length > 0)
             echo("Paragraph \"" . $paragraph->getText() . "\" has " . $effects[0]->getType() . " effect.");

@@ -48,7 +48,7 @@ try {
     $slide3->getBackground()->getFillFormat()->getSolidFillColor()->setColor(Java("java.awt.Color")->DARK_GRAY);
 
     // Create a text box for the third slide
-    autoshape = $slide3->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
+    $autoshape = $slide3->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 100, 200, 500, 200);
     $autoshape->getTextFrame()->setText("Trird Slide");
 
     //Add ZoomFrame objects
@@ -205,7 +205,7 @@ This sample code shows you how to create a summary zoom using Aspose.Slides for 
 $pres = new Java("com.aspose.slides.Presentation");
 try {
     // Create slides array
-    for ($slideNumber = 0; slideNumber < 5; slideNumber++)
+    for ($slideNumber = 0; $slideNumber < 5; $slideNumber++)
     {
         //Add new slides to presentation
         $slide = $pres->getSlides()->addEmptySlide($pres->getSlides()->get_Item(0)->getLayoutSlide());
@@ -221,7 +221,7 @@ try {
     }
 
     // Create zoom objects for all slides in the first slide
-    for ($slideNumber = 1; slideNumber < $pres->getSlides()->size(); $slideNumber++)
+    for ($slideNumber = 1; $slideNumber < $pres->getSlides()->size(); $slideNumber++)
     {
         $x = ($slideNumber - 1) * 100;
         $y = ($slideNumber - 1) * 100;

@@ -57,7 +57,7 @@ try {
     $slide = $pres->getSlides()->get_Item(0);
     foreach( $slide->getSlide()->getShapes() as $shape ) // iterate through the slide
     {
-        if ($shape->getPlaceholder() != null && shape instanceof AutoShape)
+        if ($shape->getPlaceholder() != null && $shape instanceof AutoShape)
         {
             $text = "";
             if ($shape->getPlaceholder()->getType() == Java("com.aspose.slides.PlaceholderType")->CenteredTitle) //PowerPoint displays "Click to add title". 

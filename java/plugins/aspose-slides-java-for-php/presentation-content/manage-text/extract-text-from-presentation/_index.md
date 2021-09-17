@@ -92,10 +92,10 @@ try {
 ## **Categorized and Fast Text Extraction**
 The new static method getPresentationText has been added to Presentation class. There are three overloads for this method:
 
-```php
-public $getPresentationText($file, $mode);
-public $getPresentationText($stream, $mode);
-public $getPresentationText($stream, $mode, $options);
+```java
+public IPresentationText getPresentationText(String file, int mode);
+public IPresentationText getPresentationText(InputStream stream, int mode);
+public IPresentationText getPresentationText(InputStream stream, int mode, ILoadOptions options);
 ``` 
 
 The [TextExtractionArrangingMode](https://apireference.aspose.com/slides/java/com.aspose.slides/TextExtractionArrangingMode) enum argument indicates the mode to organize the output of text result and can be set to the following values:

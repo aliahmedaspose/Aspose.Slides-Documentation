@@ -41,15 +41,15 @@ try {
 ```
 ```php
 // Method to set Header/Footer Text
-public static void updateHeaderFooterText($master)
+public static function updateHeaderFooterText($master)
 {
-    foreach ($shape in master.Shapes)
+    foreach ($master->Shapes as $shape)
     {
         if ($shape->Placeholder != null)
         {
-            if ($shape->Placeholder.Type == Java("com.aspose.slides.PlaceholderType")->Header)
+            if ($shape->Placeholder->Type == Java("com.aspose.slides.PlaceholderType")->Header)
             {
-                $shape->TextFrame.Text = "HI there new header";
+                $shape->TextFrame->Text = "HI there new header";
             }
         }
     }

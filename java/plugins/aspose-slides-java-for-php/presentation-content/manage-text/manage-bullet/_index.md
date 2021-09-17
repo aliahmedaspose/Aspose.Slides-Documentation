@@ -37,7 +37,7 @@ try {
     $aShp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 200, 400, 200);
     
     // Accessing the text frame of created autoshape
-    $txtFrm = aShp->getTextFrame();
+    $txtFrm = $aShp->getTextFrame();
     
     // Removing the default exisiting paragraph
     $txtFrm->getParagraphs()->removeAt(0);
@@ -110,7 +110,7 @@ try {
     $aShp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 200, 400, 200);
 
     // Accessing the text frame of created autoshape
-    $txtFrm = aShp->getTextFrame();
+    $txtFrm = $aShp->getTextFrame();
     // Removing the default exisiting paragraph
     $txtFrm->getParagraphs()->removeAt(0);
 
@@ -164,7 +164,7 @@ try {
     $aShp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 200, 400, 200);
     
     // Accessing the text frame of created autoshape
-    $txtFrm = aShp->addTextFrame("");
+    $txtFrm = $aShp->addTextFrame("");
     
     // Removing the default exisiting paragraph
     $txtFrm->getParagraphs()->clear();
@@ -253,7 +253,7 @@ try {
     $aShp = $slide->getShapes()->addAutoShape(Java("com.aspose.slides.ShapeType")->Rectangle, 200, 200, 400, 200);
 
     // Accessing the text frame of created autoshape
-    $txtFrm = aShp->addTextFrame("");
+    $txtFrm = $aShp->addTextFrame("");
 
     // Removing the default exisiting paragraph
     $txtFrm->getParagraphs()->clear();
